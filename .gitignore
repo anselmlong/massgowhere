@@ -9,3 +9,5 @@ scripts/cache/
 bot/state.json
 .impeccable/review/
 node_modules/
+data/allsched.raw.json
+data/parishes/_report.json

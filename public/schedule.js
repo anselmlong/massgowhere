@@ -1,6 +1,7 @@
 // Expands parish schedule rules into concrete service times.
 // All date math is done in fixed Singapore time (UTC+8, no DST), independent of the viewer's timezone.
 //
+// Public holidays are not modelled: parishes vary too much; the UI shows a "check with the parish" notice instead.
 // Recurring rule: {d: weekday 0=Sun, t: "HH:MM", weeks: [] | [1..5, -1=last], except: [...], type, lang, loc, note}
 // Dated entry:    {k: "a"dd | "r"emove | "o"verride, date: "YYYY-MM-DD", t, type, lang, loc, note}
 (function (root) {
@@ -41,38 +42,32 @@
     const want = (e) => !types || types.includes(e.type || "Mass");
     const rules = (data.rules[pid] || []).filter(want);
     const dated = (data.dated[pid] || []).filter(want);
-    const parish = (data.parishes || []).find((p) => String(p.id) === String(pid)) || {};
-    const ph = parish.publicHoliday || {};
-    const holidays = data.holidays || {};
     const start = sgtDay(fromMs);
     const byKey = new Map();
 
     for (let i = 0; i <= days; i++) {
       const day = new Date(start.getTime() + i * 86400000);
       const date = iso(day);
-      const dow = day.getUTCDay();
-      const phWeekday = holidays[date] && dow >= 1 && dow <= 5 && (ph.noWeekday || (ph.times || []).length);
       for (const r of rules) {
-        if (!ruleOn(r, day)) continue;
-        if (phWeekday && (r.type || "Mass") === "Mass") continue; // replaced by the public-holiday schedule
-        byKey.set(slotKey(date, r), { ...r, date });
-      }
-      if (phWeekday && want({ type: "Mass" })) {
-        for (const t of ph.times || []) {
-          const e = { type: "Mass", t, lang: "English", loc: "Main Church", note: `${holidays[date]} (public holiday)` };
-          byKey.set(slotKey(date, e), { ...e, date });
-        }
+        if (ruleOn(r, day)) byKey.set(slotKey(date, r), { ...r, date });
       }
     }
     for (const e of dated) {
       if (e.k !== "r" && e.k !== "o") continue;
       if (byKey.delete(slotKey(e.date, e))) continue;
-      // location strings get renamed after cancellations are entered; fall back to same date + time + type
+      // location strings get renamed after cancellations are entered: accept same date + time + type,
+      // but only when exactly one slot matches (never cancel a church and a chapel Mass at once)
       const loose = [e.date, e.t, norm(e.type)].join("|") + "|";
-      for (const k of byKey.keys()) if (k.startsWith(loose)) byKey.delete(k);
+      const hits = [...byKey.keys()].filter((k) => k.startsWith(loose));
+      if (hits.length === 1) byKey.delete(hits[0]);
     }
     for (const e of dated) {
-      if (e.k === "a" || e.k === "o") byKey.set(slotKey(e.date, e) + "|" + e.k, { ...e });
+      if (e.k === "o") byKey.set(slotKey(e.date, e), { ...e });
+      else if (e.k === "a") {
+        const k = slotKey(e.date, e);
+        if (byKey.has(k)) byKey.set(k, { ...byKey.get(k), note: e.note || byKey.get(k).note }); // same slot: keep one, prefer the special note
+        else byKey.set(k, { ...e });
+      }
     }
     const endMs = start.getTime() - SGT_OFFSET_MS + (days + 1) * 86400000;
     const out = [];
@@ -89,7 +84,25 @@
     return all.sort((a, b) => a.start - b.start);
   }
 
-  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, SGT_OFFSET_MS };
+  // A day when regular times often change: public holidays, Christmas Eve/Day, 1 Jan, Holy Thursday to Easter Sunday.
+  function easterUTC(y) {
+    const a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+    const g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4;
+    const l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+    return Date.UTC(y, Math.floor((h + l - 7 * m + 114) / 31) - 1, ((h + l - 7 * m + 114) % 31) + 1);
+  }
+  function specialDay(ms, data) {
+    const day = sgtDay(ms), date = iso(day), md = date.slice(5);
+    if (md === "12-24") return "Christmas Eve";
+    if (md === "12-25") return "Christmas Day";
+    if (md === "01-01") return "New Year's Day";
+    const off = Math.round((day.getTime() - easterUTC(day.getUTCFullYear())) / 86400000);
+    const triduum = { "-3": "Holy Thursday", "-2": "Good Friday", "-1": "Holy Saturday", "0": "Easter Sunday" }[off];
+    if (triduum) return triduum;
+    return (data && data.holidays && data.holidays[date]) || null;
+  }
+
+  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, specialDay, easterUTC, SGT_OFFSET_MS };
   if (typeof module !== "undefined") module.exports = api;
   else root.MassSchedule = api;
 })(this);

@@ -12,13 +12,14 @@ const parishes = [
 const origin = { lat: 1.30, lng: 103.801 };
 const fixedTravel = (m) => async (p) => ({ minutes: m[p.id], source: "test" });
 
-test("skips a Mass you can no longer make and picks the next reachable one", async () => {
+test("skips a Mass you can no longer make; a nearer Mass later in the window beats a farther earlier one", async () => {
   const events = [{ pid: 1, start: min(10) }, { pid: 1, start: min(90) }, { pid: 2, start: min(40) }];
   const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 8, 2: 20, 3: 50 }) });
-  // 08:10 at Near needs 8+5 min -> leave by 07:57, too late. 08:40 at Mid: leave by 08:15. OK.
-  assert.equal(r.best.pid, 2);
-  assert.equal(r.best.start, min(40));
-  assert.equal(r.best.leaveBy, min(15));
+  // 08:10 at Near needs 8+5 min: too late. Earliest reachable is Mid 08:40; Near 09:30 is within 90 min and 12 min closer.
+  assert.equal(r.best.pid, 1);
+  assert.equal(r.best.start, min(90));
+  assert.equal(r.best.leaveBy, min(77));
+  assert.deepEqual(r.alternatives.map((e) => e.pid), [2]);
 });
 
 test("prefers a slightly later Mass that is much closer", async () => {
@@ -28,8 +29,8 @@ test("prefers a slightly later Mass that is much closer", async () => {
   assert.deepEqual(r.alternatives.map((e) => e.pid), [2]);
 });
 
-test("does not trade a much earlier Mass for a closer one beyond the window", async () => {
-  const events = [{ pid: 2, start: min(30) }, { pid: 1, start: min(120) }];
+test("does not trade a much earlier Mass for a closer one beyond the 90-minute window", async () => {
+  const events = [{ pid: 2, start: min(30) }, { pid: 1, start: min(150) }];
   const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 5, 2: 20, 3: 50 }) });
   assert.equal(r.best.pid, 2);
 });
@@ -61,4 +62,21 @@ test("never suggests a trip over 75 minutes", async () => {
   const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 8, 2: 20, 3: 90 }) });
   assert.equal(r.best.pid, 1);
   assert.deepEqual(r.alternatives, []);
+});
+
+test("nearest wins inside the window, earlier start breaks ties", async () => {
+  const ps = [...parishes, { id: 4, name: "Near2", lat: 1.301, lng: 103.80 }];
+  const events = [{ pid: 2, start: min(30) }, { pid: 1, start: min(100) }, { pid: 4, start: min(60) }];
+  const r = await rank({ origin, now: T0, parishes: ps, events, travel: fixedTravel({ 1: 8, 2: 20, 4: 8 }) });
+  assert.equal(r.best.pid, 4); // same 8-min trip as Near, but earlier
+  assert.deepEqual(r.alternatives.map((e) => e.pid), [1, 2]);
+});
+
+test("a crowd of same-time parishes cannot push the reachable best out of the shortlist", async () => {
+  const many = Array.from({ length: 8 }, (_, i) => ({ id: 10 + i, name: `P${i}`, lat: 1.30 + 0.005 * (i + 1), lng: 103.80 }));
+  const ps = [...parishes, ...many];
+  const events = [...many.map((p) => ({ pid: p.id, start: min(10) })), { pid: 2, start: min(40) }];
+  const travel = async (p) => ({ minutes: p.id >= 10 ? 14 : 20, source: "test" });
+  const r = await rank({ origin, now: T0, parishes: ps, events, travel });
+  assert.equal(r.best.pid, 2);
 });

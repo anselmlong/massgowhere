@@ -1,64 +1,63 @@
-"""Build public/data.json: parish websites first (data/parishes/<id>.json), myCatholicSG as fallback.
+"""Build public/data.json. Source of truth: myCatholicSG (data/mycatholic.json).
+
+The monthly parish-website check (data/parishes/<id>.json, see scripts/scrape_parishes.py) never changes times;
+it only adds a per-parish "siteCheck" so the site can say whether the parish's own website agrees.
 
 Usage: python3 scripts/build_data.py
-Inputs:  scripts/parishes_geo.json, data/parishes/*.json, data/mycatholic.json, data/holidays.json
 No network access.
 """
 import json
 import os
-import re
 from datetime import datetime, timedelta, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SGT = timezone(timedelta(hours=8))
-MAX_AGE_DAYS = 45  # a parish-site extraction older than this falls back to myCatholicSG
 
 
 def load(path, default=None):
     p = os.path.join(ROOT, path)
-    return json.load(open(p)) if os.path.exists(p) else default
+    if not os.path.exists(p):
+        return default
+    try:
+        return json.load(open(p))
+    except ValueError:
+        return default
+
+
+def site_check(pid):
+    site = load(f"data/parishes/{pid}.json")
+    if not site or "vs_mycatholic" not in site:
+        return None
+    diff = site["vs_mycatholic"]
+    return {"url": site["source_urls"][0], "checkedAt": site["fetched_at"],
+            "agrees": not diff["only_on_parish_site"] and not diff["only_on_mycatholic"]}
 
 
 def main():
     parishes = load("scripts/parishes_geo.json")
-    mc = load("data/mycatholic.json", {"rules": {}, "dated": {}})
+    mc = load("data/mycatholic.json")
     holidays = load("data/holidays.json", {"dates": {}})
-    now = datetime.now(SGT)
-    rules, dated, out_parishes, counts = {}, {}, [], {"parish site": 0, "myCatholicSG": 0}
-
+    out_parishes = []
     for p in sorted(parishes, key=lambda p: p["name"]):
         pid = str(p["id"])
-        site = load(f"data/parishes/{pid}.json")
-        fresh = site and (now - datetime.fromisoformat(site["fetched_at"])).days <= MAX_AGE_DAYS
-        if fresh:
-            rules[pid] = site["rules"]
-            source = {"kind": "parish site", "url": site["source_urls"][0], "fetchedAt": site["fetched_at"]}
-            dated[pid] = [{"k": "r" if d["action"] == "cancel" else "a", "date": d["date"], "t": d["time"], "type": d["type"],
-                           "lang": d["language"] or "English", "loc": d["location"], "note": d["title"]} for d in site["dated"]]
-            ph = {"noWeekday": site["no_weekday_mass_on_public_holidays"], "times": site["public_holiday_masses"]}
-            # drop notes that describe the web page rather than help a visitor
-            notes = [n for n in site["notes"] if not re.search(r"\b(listed|page|not (specified|stated|mentioned)|no specific)\b", n, re.I)]
-        else:
-            rules[pid] = mc["rules"].get(pid, [])
-            source = {"kind": "myCatholicSG", "url": f"https://mycatholic.sg/parish/{p.get('link', '')}", "fetchedAt": mc.get("asOf")}
-            dated[pid] = []
-            ph = {"noWeekday": False, "times": []}
-            notes = []
-        # myCatholicSG dated entries (feasts, cancellations) apply regardless of the recurring source
-        dated[pid] += mc["dated"].get(pid, [])
-        counts[source["kind"]] += 1
         out_parishes.append({
             "id": int(p["id"]), "name": p["name"], "address": p["address"], "postal": p.get("postal"),
             "lat": round(p["lat"], 6), "lng": round(p["lng"], 6), "phone": p.get("phone", ""),
-            "website": p.get("website", ""), "link": p.get("link", ""), "source": source, "publicHoliday": ph, "notes": notes,
+            "website": p.get("website", ""), "link": p.get("link", ""),
+            "source": {"kind": "myCatholicSG", "url": f"https://mycatholic.sg/parish/{p.get('link', '')}", "fetchedAt": mc["asOf"]},
+            "siteCheck": site_check(pid),
         })
-
-    out = {"builtAt": now.isoformat(timespec="minutes"), "holidays": holidays.get("dates", {}),
-           "parishes": out_parishes, "rules": rules, "dated": {k: v for k, v in dated.items() if v}}
+    out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),
+           "parishes": out_parishes, "rules": mc["rules"], "dated": {k: v for k, v in mc["dated"].items() if v}}
     path = os.path.join(ROOT, "public", "data.json")
-    json.dump(out, open(path, "w"), ensure_ascii=False, separators=(",", ":"))
-    n = sum(1 for v in rules.values() for r in v if r["type"] == "Mass")
-    print(f"wrote {path}: {len(out_parishes)} parishes ({counts}), {n} weekly Mass slots, {os.path.getsize(path) // 1024} KB")
+    tmp = path + ".tmp"
+    json.dump(out, open(tmp, "w"), ensure_ascii=False, separators=(",", ":"))
+    os.replace(tmp, path)
+    n = sum(1 for v in mc["rules"].values() for r in v if r["type"] == "Mass")
+    agree = sum(1 for p in out_parishes if p["siteCheck"] and p["siteCheck"]["agrees"])
+    checked = sum(1 for p in out_parishes if p["siteCheck"])
+    print(f"wrote {path}: {len(out_parishes)} parishes, {n} weekly Mass slots (myCatholicSG as of {mc['asOf']}); "
+          f"parish websites agree for {agree}/{checked} checked; {os.path.getsize(path) // 1024} KB")
 
 
 if __name__ == "__main__":

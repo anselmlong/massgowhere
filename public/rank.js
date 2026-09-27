@@ -2,15 +2,15 @@
 // Picks the Mass you can realistically make, given where you are, how you travel, and the time.
 //
 // Rule (kept deliberately explainable, every client shows the same answer):
-//   1. A Mass is reachable if  now + travel + buffer <= start.
+//   1. A Mass is reachable if  now + travel + buffer <= start  (and the trip is at most MAX_TRIP_MIN).
 //   2. Take the earliest reachable start time S.
-//   3. Among reachable Masses starting within WINDOW of S, prefer the shortest trip
-//      (a Mass 10 min later but 20 min closer is the better pick).
+//   3. Among reachable Masses starting within WINDOW_MIN of S, pick the SHORTEST TRIP;
+//      the earlier start breaks ties. Travel efficiency first, while still "a Mass that starts soon".
 //   4. "Leave by" = start - travel - buffer.
 
 const BUFFER_MIN = 5;
-const WINDOW_MIN = 15;
-const MAX_ROUTED = 6;
+const WINDOW_MIN = 90;
+const MAX_ROUTED = 8;
 const MAX_TRIP_MIN = 75; // never suggest a trip longer than this
 
 function haversineKm(a, b) {
@@ -42,21 +42,19 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel })
   const byId = new Map(parishes.map((p) => [p.id, p]));
   const est = new Map(parishes.map((p) => [p.id, estimateMinutes(haversineKm(origin, p), mode)]));
 
-  // Shortlist parishes by when you could plausibly arrive at one of their Masses (optimistic estimate).
-  const firstPlausible = new Map(); // pid -> {arrival score, departure time to route for}
+  // Shortlist: the nearest parishes (travel efficiency) plus those with the earliest Mass reachable on the
+  // estimate, so neither the closest church nor the soonest Mass can be missed.
+  const firstReachable = new Map(); // pid -> {start, depart}
   for (const e of [...events].sort((a, b) => a.start - b.start)) {
-    if (firstPlausible.has(e.pid)) continue;
-    const optimistic = now + est.get(e.pid) * 0.6 * 60000;
-    if (e.start >= optimistic) {
-      const depart = Math.max(now, e.start - (est.get(e.pid) + BUFFER_MIN) * 60000);
-      firstPlausible.set(e.pid, { score: e.start + est.get(e.pid) * 60000, depart });
-    }
+    if (firstReachable.has(e.pid)) continue;
+    const need = (est.get(e.pid) + BUFFER_MIN) * 60000;
+    if (e.start - need >= now - 10 * 60000) firstReachable.set(e.pid, { start: e.start, depart: Math.max(now, e.start - need) });
   }
+  const withMass = [...firstReachable.keys()];
+  const byNear = [...withMass].sort((a, b) => est.get(a) - est.get(b)).slice(0, 5);
+  const bySoon = [...withMass].sort((a, b) => firstReachable.get(a).start - firstReachable.get(b).start).slice(0, 3);
   const nearestIds = [...est.entries()].sort((a, b) => a[1] - b[1]).slice(0, 2).map(([id]) => id);
-  const shortlist = [...new Set([
-    ...[...firstPlausible.entries()].sort((a, b) => a[1].score - b[1].score).slice(0, MAX_ROUTED).map(([id]) => id),
-    ...nearestIds,
-  ])];
+  const shortlist = [...new Set([...byNear, ...bySoon, ...nearestIds])].slice(0, MAX_ROUTED + 2);
 
   // Real travel time for the shortlist (parallel), estimate otherwise.
   const trip = new Map();
@@ -64,7 +62,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel })
     let r = null;
     if (travel) {
       // route for when you'd actually set off (transit at 1am is not transit at 6am)
-      try { r = await travel(byId.get(id), firstPlausible.get(id)?.depart ?? now); } catch { r = null; }
+      try { r = await travel(byId.get(id), firstReachable.get(id)?.depart ?? now); } catch { r = null; }
     }
     trip.set(id, r && Number.isFinite(r.minutes) ? { minutes: Math.round(r.minutes), source: r.source || "route" } : { minutes: est.get(id), source: "estimate" });
   }));
@@ -79,24 +77,26 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel })
     .filter((e) => e.leaveBy >= now && e.travelMin <= MAX_TRIP_MIN)
     .sort((a, b) => a.start - b.start || a.travelMin - b.travelMin);
 
+  const byTrip = (a, b) => a.travelMin - b.travelMin || a.start - b.start;
   let best = null;
+  let windowEnd = -Infinity;
   if (reachable.length) {
-    const cutoff = reachable[0].start + WINDOW_MIN * 60000;
-    best = reachable.filter((e) => e.start <= cutoff).sort((a, b) => a.travelMin - b.travelMin || a.start - b.start)[0];
+    windowEnd = reachable[0].start + WINDOW_MIN * 60000;
+    best = reachable.filter((e) => e.start <= windowEnd).sort(byTrip)[0];
   }
-  // alternatives: other churches, same preference (soon, then short trip) using 15-min start buckets
-  const bucket = (e) => Math.floor((e.start - now) / (WINDOW_MIN * 60000));
-  const ordered = [...reachable].sort((a, b) => bucket(a) - bucket(b) || a.travelMin - b.travelMin);
+  // alternatives: other churches in the same window by trip length, then later Masses by start
+  const inWindow = reachable.filter((e) => e.start <= windowEnd).sort(byTrip);
+  const later = reachable.filter((e) => e.start > windowEnd);
   const seen = new Set(best ? [best.pid] : []);
   const alternatives = [];
-  for (const e of ordered) {
+  for (const e of [...inWindow, ...later]) {
     if (seen.has(e.pid)) continue;
     seen.add(e.pid);
     alternatives.push(e);
     if (alternatives.length === 3) break;
   }
 
-  const nearestId = [...trip.entries()].sort((a, b) => a[1].minutes - b[1].minutes)[0]?.[0];
+  const nearestId = [...trip.entries()].filter(([, t]) => t.minutes <= MAX_TRIP_MIN).sort((a, b) => a[1].minutes - b[1].minutes)[0]?.[0];
   const nearest = nearestId == null ? null : {
     pid: nearestId,
     travelMin: trip.get(nearestId).minutes,

@@ -20,20 +20,20 @@ test("last-Sunday and except-3rd-Sunday rules (Blessed Sacrament style)", () => 
   ]);
 });
 
-test("public holiday replaces weekday Masses with the listed holiday times", () => {
-  const data = base([{ d: 5, t: "06:30", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" }],
-    { parish: { publicHoliday: { noWeekday: false, times: ["08:30"] } }, holidays: { "2026-12-25": "Christmas Day" } });
-  const evs = S.expandParish("1", data, at("2026-12-24"), 1); // Thu 24 (no Mass rule), Fri 25 = holiday
-  assert.deepEqual(times(evs), ["2026-12-25 08:30 English"]);
+test("special days are flagged: public holidays, Christmas, Triduum", () => {
+  const data = { holidays: { "2026-11-09": "Deepavali (Observed)" } };
+  assert.equal(S.specialDay(at("2026-11-09", "10:00"), data), "Deepavali (Observed)");
+  assert.equal(S.specialDay(at("2026-12-25", "10:00"), data), "Christmas Day");
+  assert.equal(S.specialDay(at("2026-04-03", "10:00"), data), "Good Friday"); // Easter 2026 = 5 Apr
+  assert.equal(S.specialDay(at("2026-10-07", "10:00"), data), null);
 });
 
-test("no weekday Mass on public holidays drops them, weekends unaffected", () => {
-  const data = base([
-    { d: 1, t: "13:15", weeks: [], except: [], type: "Mass", lang: "English", loc: "" },
-    { d: 0, t: "08:30", weeks: [], except: [], type: "Mass", lang: "English", loc: "" },
-  ], { parish: { publicHoliday: { noWeekday: true, times: [] } }, holidays: { "2026-11-09": "Deepavali (Observed)", "2026-11-08": "Deepavali" } });
-  const evs = S.expandParish("1", data, at("2026-11-08"), 1); // Sun 8 (holiday but weekend), Mon 9 (holiday)
-  assert.deepEqual(times(evs), ["2026-11-08 08:30 English"]);
+test("a dated addition in an existing slot does not duplicate it", () => {
+  const data = base([{ d: 3, t: "18:00", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church", note: "" }],
+    { dated: [{ k: "a", date: "2026-10-07", t: "18:00", type: "Mass", lang: "English", loc: "Main Church", note: "Feast of Our Lady of the Rosary" }] });
+  const evs = S.expandParish("1", data, at("2026-10-07"), 0);
+  assert.equal(evs.length, 1);
+  assert.equal(evs[0].note, "Feast of Our Lady of the Rosary");
 });
 
 test("dated cancellation removes the slot; other types filtered out by default", () => {

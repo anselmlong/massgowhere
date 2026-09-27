@@ -5,9 +5,11 @@ so the bot always says exactly what the website says.
 
 Run: python3 bot/bot.py      (reads TELEGRAM_BOT_TOKEN from .env; MASSGOWHERE_API overrides the site URL)
 """
+import concurrent.futures as cf
 import json
 import logging
 import os
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -66,11 +68,16 @@ def mode_for(chat_id):
     return STATE.get(str(chat_id), "transit")
 
 
+STATE_LOCK = __import__("threading").Lock()
+
+
 def set_mode(chat_id, mode):
-    STATE[str(chat_id)] = mode
-    tmp = STATE_FILE + ".tmp"
-    json.dump(STATE, open(tmp, "w"))
-    os.replace(tmp, STATE_FILE)
+    with STATE_LOCK:
+        STATE[str(chat_id)] = mode
+        tmp = STATE_FILE + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(STATE, f)
+        os.replace(tmp, STATE_FILE)
 
 
 # ---------- formatting ----------
@@ -117,13 +124,20 @@ WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can actually make, 
 
 # ---------- answers ----------
 
+def in_singapore(lat, lng):
+    return 1.15 < lat < 1.472 and 103.59 < lng < 104.1  # rough box; the north edge stops short of Johor Bahru
+
+
 def answer(chat_id, lat, lng, place=None):
     mode = mode_for(chat_id)
+    if not in_singapore(lat, lng):
+        return tg("sendMessage", chat_id=chat_id, text="That location isn't in Singapore. MassGoWhere only covers Singapore's parishes; "
+                  "send a Singapore postal code or place name instead.")
     tg("sendChatAction", chat_id=chat_id, action="find_location")
     q = urllib.parse.urlencode({"lat": f"{lat:.5f}", "lng": f"{lng:.5f}", "mode": mode})
     try:
-        res = http_json(f"{SITE}/api/next?{q}", timeout=30)
-    except (urllib.error.URLError, TimeoutError, ValueError) as e:
+        res = http_json(f"{SITE}/api/next?{q}", timeout=15)
+    except Exception as e:  # noqa: BLE001 - any API trouble gets the same friendly reply
         log.warning("api error: %s", e)
         return tg("sendMessage", chat_id=chat_id, text="Sorry, I couldn't check Mass times just now. Please try again in a minute.")
     b = res.get("best")
@@ -150,6 +164,8 @@ def answer(chat_id, lat, lng, place=None):
         nn = near.get("next")
         when = f", next Mass you can make {clock(nn['start'])} {day_label(nn['start'])}" if nn else ""
         lines += ["", f"<i>Nearest church:</i> {esc(near['parish']['name'])} ({mins(near['travelMin'])}{when})"]
+    if res.get("specialDay"):
+        lines += ["", f"<i>{esc(res['specialDay'])}: Mass times often change today. Please check with the parish.</i>"]
     lines += ["", "Go in peace."]
     kb = [[{"text": "Navigate", "url": gmaps(p, mode, lat, lng)}],
           [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}]] + mode_keyboard(mode)
@@ -164,7 +180,7 @@ def search_place(text):
         return None
     x = res[0]
     name = x["BUILDING"] if x.get("BUILDING") not in (None, "", "NIL") else x["SEARCHVAL"]
-    return float(x["LATITUDE"]), float(x["LONGITUDE"]), name.title()
+    return float(x["LATITUDE"]), float(x["LONGITUDE"]), re.sub(r"\b(Mrt|Lrt|Nus|Ntu|Smu|Cbd)\b", lambda m: m.group(0).upper(), name.title())
 
 
 LAST = {}  # chat id -> (lat, lng, place) of the last query, in memory only, to redo it after a mode change
@@ -213,9 +229,20 @@ def handle(update):
     answer(chat_id, *hit)
 
 
+def safe_handle(u):
+    try:
+        handle(u)
+    except Exception:  # noqa: BLE001 - one bad update must not stop the bot
+        log.exception("failed to handle update %s", u.get("update_id"))
+
+
 def main():
-    tg("setMyCommands", commands=[{"command": "start", "description": "Find a Mass you can make"},
-                                  {"command": "mode", "description": "Change how you're travelling"}])
+    try:
+        tg("setMyCommands", commands=[{"command": "start", "description": "Find a Mass you can make"},
+                                      {"command": "mode", "description": "Change how you're travelling"}])
+    except Exception as e:  # noqa: BLE001 - not needed to serve users
+        log.warning("setMyCommands failed: %s", e)
+    pool = cf.ThreadPoolExecutor(max_workers=6)  # one slow answer must not hold up other chats
     offset = None
     log.info("bot started, api=%s", SITE)
     while True:
@@ -225,12 +252,9 @@ def main():
                 params["offset"] = offset
             for u in http_json(f"{TG}/getUpdates", params, timeout=45).get("result", []):
                 offset = u["update_id"] + 1
-                try:
-                    handle(u)
-                except Exception:  # noqa: BLE001 - one bad update must not stop the bot
-                    log.exception("failed to handle update %s", u.get("update_id"))
-        except (urllib.error.URLError, TimeoutError, ValueError) as e:
-            log.warning("polling error: %s", e)
+                pool.submit(safe_handle, u)
+        except Exception as e:  # noqa: BLE001 - dropped connections, SSL errors, bad JSON: back off and keep polling
+            log.warning("polling error: %s: %s", type(e).__name__, e)
             time.sleep(5)
 
 

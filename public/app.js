@@ -15,6 +15,7 @@
     search: '<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>',
     back: '<path d="M15 5l-7 7 7 7"/>',
     nav: '<path d="M4 11.5 20 4l-7.5 16-2-6.5z"/>',
+    x: '<path d="M6 6l12 12M18 6 6 18"/>',
     phone: '<path d="M6.5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>',
   };
 
@@ -32,22 +33,34 @@
     const month = Math.floor((h + l - 7 * m + 114) / 31), day = ((h + l - 7 * m + 114) % 31) + 1;
     return Date.UTC(y, month - 1, day);
   }
+  const ord = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th"}`;
   function season(ms) {
-    const day = S.sgtDay(ms).getTime(), y = S.sgtDay(ms).getUTCFullYear(), D = 864e5;
+    const dayDate = S.sgtDay(ms), day = dayDate.getTime(), y = dayDate.getUTCFullYear(), D = 864e5, W = 7 * D;
+    const isSun = dayDate.getUTCDay() === 0;
+    const sunOnOrBefore = day - dayDate.getUTCDay() * D;
+    const label = (n, of) => `${ord(n)} ${isSun ? "Sunday" : "Week"} ${of}`;
     const E = easter(y);
     const xmas = Date.UTC(y, 11, 25);
-    const advent = xmas - ((new Date(xmas).getUTCDay() || 7) + 21) * D;   // 4th Sunday before Christmas
+    const advent = xmas - ((new Date(xmas).getUTCDay() || 7) + 21) * D; // 1st Sunday of Advent
+    const christKing = advent - W;
     const jan6 = Date.UTC(y, 0, 6);
-    const baptism = jan6 + (7 - new Date(jan6).getUTCDay()) * D;           // Sunday after 6 Jan
-    if (day <= baptism) return { name: "Christmas", accent: "gold" };
-    if (day >= E - 46 * D && day < E - 7 * D) return { name: "Lent", accent: "violet" };
-    if (day === E - 7 * D || day === E - 2 * D) return { name: day === E - 7 * D ? "Palm Sunday" : "Good Friday", accent: "red" };
+    const baptism = jan6 + (7 - new Date(jan6).getUTCDay()) * D;         // Sunday after 6 Jan
+    const ash = E - 46 * D, pentecost = E + 49 * D;
+    if (day <= baptism) return { name: day === baptism ? "Baptism of the Lord" : "Christmas season", accent: "gold" };
+    if (day === E - 7 * D) return { name: "Palm Sunday", accent: "red" };
+    if (day === E - 2 * D) return { name: "Good Friday", accent: "red" };
     if (day > E - 7 * D && day < E) return { name: "Holy Week", accent: "violet" };
-    if (day >= E && day < E + 49 * D) return { name: "Easter", accent: "gold" };
-    if (day === E + 49 * D) return { name: "Pentecost", accent: "red" };
-    if (day >= advent && day < xmas) return { name: "Advent", accent: "violet" };
-    if (day >= xmas) return { name: "Christmas", accent: "gold" };
-    return { name: "Ordinary Time", accent: "green" };
+    if (day >= ash && day < E - 7 * D) {
+      if (day < ash + 4 * D) return { name: "Ash Wednesday week", accent: "violet" };
+      return { name: label(Math.floor((sunOnOrBefore - (ash + 4 * D)) / W) + 1, "of Lent"), accent: "violet" };
+    }
+    if (day >= E && day < pentecost) return { name: day === E ? "Easter Sunday" : label(Math.floor((sunOnOrBefore - E) / W) + 1, "of Easter"), accent: "gold" };
+    if (day === pentecost) return { name: "Pentecost Sunday", accent: "red" };
+    if (day >= advent && day < xmas) return { name: label(Math.floor((sunOnOrBefore - advent) / W) + 1, "of Advent"), accent: "violet" };
+    if (day >= xmas) return { name: day === xmas ? "Christmas Day" : "Christmas season", accent: "gold" };
+    // Ordinary Time: part 1 counts up from the Baptism of the Lord; part 2 counts back from Christ the King (34th)
+    const n = day < ash ? Math.floor((sunOnOrBefore - baptism) / W) + 1 : 34 - Math.round((christKing - sunOnOrBefore) / W);
+    return { name: label(n, "in Ordinary Time"), accent: "green" };
   }
   const PALETTES = [
     { id: "season", label: "Seasonal" }, { id: "green", label: "Green" }, { id: "blue", label: "Marian blue" },
@@ -112,21 +125,22 @@
   }
   function until(ms) {
     const m = Math.round((ms - Date.now()) / 60000);
-    if (m <= 1) return "now";
-    if (m < 60) return `in ${m} min`;
-    const h = Math.floor(m / 60);
-    return h < 24 ? `in ${h} h ${m % 60 ? `${m % 60} min` : ""}`.trim() : dayLabel(ms);
+    if (m <= 1) return "starting now";
+    if (m < 60) return `in ${m} minutes`;
+    const h = Math.round(m / 60);
+    return h < 24 ? `in about ${h} hour${h === 1 ? "" : "s"}` : dayLabel(ms);
   }
   const mins = (m) => (m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${m % 60 ? `${m % 60} min` : ""}`.trim());
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const short = (n) => n.replace(/^Church of (the )?/, "").replace(/^(St|Sts) /, "$1 ");
   const gmaps = (p, mode, origin) =>
     `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${p.name}, Singapore ${p.postal || ""}`.trim())}` +
     `&travelmode=${modeOf(mode).gmaps}${origin ? `&origin=${origin.lat},${origin.lng}` : ""}`;
 
   // ---------- data ----------
   let dataP = null;
-  const data = () => (dataP ||= fetch("data.json", { cache: "no-cache" }).then((r) => r.json()));
+  const data = () => (dataP ||= fetch("data.json", { cache: "no-cache" })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .catch((e) => { dataP = null; throw e; }));
 
   // ---------- router ----------
   function route() {
@@ -150,7 +164,7 @@
   function renderHome() {
     const mode = store.get("mgw-mode") || "transit";
     view.innerHTML = `
-      <section class="home reveal">
+      <section class="home">
         <div>
           <h1>Find a Mass you can make.</h1>
           <p class="lede">From wherever you are in Singapore: the next Mass you can reach in time, and when to set off.</p>
@@ -164,6 +178,7 @@
             <div class="search">
               ${svg(ICON.search)}
               <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Postal code or place" aria-label="Postal code or place" aria-controls="suggest">
+              <button class="clear" type="button" aria-label="Clear search" hidden>${svg(ICON.x)}</button>
             </div>
             <ul class="suggest" id="suggest" hidden></ul>
           </div>
@@ -191,6 +206,7 @@
     const currentMode = () => view.querySelector('input[name="mode"]:checked').value;
 
     const input = view.querySelector("#q"), list = view.querySelector("#suggest");
+    clearable(input, () => { list.hidden = true; });
     let timer, seq = 0;
     input.addEventListener("input", () => {
       clearTimeout(timer);
@@ -214,14 +230,22 @@
         } catch { list.innerHTML = `<li><button type="button" disabled>Search is unavailable right now<small>Use your location instead</small></button></li>`; list.hidden = false; }
       }, 250);
     });
-    const title = (x) => (x.BUILDING && x.BUILDING !== "NIL" ? x.BUILDING : x.SEARCHVAL).replace(/\b\w+/g, (w) => w[0] + w.slice(1).toLowerCase());
+    const title = (x) => (x.BUILDING && x.BUILDING !== "NIL" ? x.BUILDING : x.SEARCHVAL)
+      .replace(/\b\w+/g, (w) => (/^(MRT|LRT|NUS|NTU|SMU|CBD|HDB)$/.test(w) ? w : w[0] + w.slice(1).toLowerCase()));
+  }
+
+  function clearable(input, onClear) {
+    const btn = input.parentElement.querySelector(".clear");
+    const sync = () => { btn.hidden = !input.value; };
+    input.addEventListener("input", sync);
+    btn.addEventListener("click", () => { input.value = ""; sync(); onClear && onClear(); input.dispatchEvent(new Event("input")); input.focus(); });
   }
 
   // ---------- result ----------
   async function fetchNext(q) {
     const params = new URLSearchParams({ lat: q.get("lat"), lng: q.get("lng"), mode: q.get("mode") || "transit" });
     try {
-      const r = await fetch(`api/next?${params}`, { cache: "no-store" });
+      const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
       if (!r.ok) throw new Error(r.status);
       return await r.json();
     } catch {
@@ -245,7 +269,17 @@
     const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
       <span class="from">From ${esc(from)} · ${mode.label}</span></div>`;
     view.innerHTML = `${bar}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p>Checking Mass times and routes…</p></div>`;
-    const [res, d] = await Promise.all([fetchNext(q), data()]);
+    let res, d;
+    try {
+      res = await fetchNext(q);
+      d = await data().catch(() => ({ parishes: [], holidays: {} }));
+    } catch {
+      if (!location.hash.startsWith("#/next")) return;
+      view.innerHTML = `${bar}<section class="answer"><h1>We couldn’t check Mass times just now.</h1>
+        <p class="lede">Check your connection and try again.</p>
+        <p style="margin-top:28px"><button class="btn btn-primary" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Try again</button></p></section>`;
+      return;
+    }
     if (!location.hash.startsWith("#/next")) return;
     const b = res.best;
     if (!b) {
@@ -261,26 +295,28 @@
     const leaveText = leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}`;
     const meta = [b.language !== "English" ? `${b.language} Mass` : "", b.note].filter(Boolean).join(" · ");
     const src = d.parishes.find((x) => x.id === p.id)?.source;
+    const special = S.specialDay(start, d);
     const alt = (res.alternatives || []).filter(Boolean);
     const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
     view.innerHTML = `${bar}
-      <section class="answer reveal" aria-labelledby="ans">
-        <p class="day">${dayLabel(start)}${start - Date.now() < 12 * 3600e3 ? ` · ${until(start)}` : ""}</p>
-        <p class="time" id="ans">${t.hm}<small>${t.ap}</small></p>
-        <p class="church">${esc(p.name)}</p>
+      <section class="answer reveal">
+        <p class="day">${dayLabel(start)}${start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
+        <p class="time">${t.hm}<small>${t.ap}</small></p>
+        <h1 class="church">${esc(p.name)}</h1>
         ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
         <div class="leave"><strong>${leaveText}</strong><span>${est ? "about " : ""}${mins(b.travelMin)} ${mode.phrase}</span></div>
         <a class="btn btn-primary" href="${gmaps(p, mode.id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
         <div class="sub"><a class="link" href="#/church/${p.id}">Mass times at this church</a></div>
         ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; Google Maps will give the live route.</p>` : ""}
+        ${special ? `<p class="notice">${esc(special)}: Mass times often change today. Please check with the parish.</p>` : ""}
       </section>
       ${alt.length || near ? `<section class="more" aria-label="Other options">
         ${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
         ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
           <a class="row" href="#/church/${near.parish.id}"><span class="t">${mins(near.travelMin)}<small>${mode.label.toLowerCase()}</small></span>
-          <span class="n">${esc(short(near.parish.name))}<small>${near.next ? `Next Mass you can make: ${clock(new Date(near.next.start).getTime())} ${dayLabel(new Date(near.next.start).getTime()).toLowerCase()}` : "No reachable Mass soon"}</small></span><span class="d"></span></a></li></ul>` : ""}
+          <span class="n">${esc(near.parish.name)}<small>${near.next ? `Next Mass you can make: ${clock(new Date(near.next.start).getTime())} ${dayLabel(new Date(near.next.start).getTime()).toLowerCase()}` : "No reachable Mass soon"}</small></span><span class="d"></span></a></li></ul>` : ""}
       </section>` : ""}
-      <p class="source">${src ? `Times from ${src.kind === "parish site" ? "the parish website" : "myCatholicSG"}, checked ${new Date(src.fetchedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short" })}. ` : ""}Please confirm special feast days with the parish.</p>
+      <p class="source">${src ? `Times from <a href="${esc(src.url)}" target="_blank" rel="noopener">myCatholicSG</a>, updated ${new Date(src.fetchedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short" })}. ` : ""}Please confirm feast days with the parish.</p>
       <p class="blessing">Go in peace.</p>`;
     view.focus({ preventScroll: true });
   }
@@ -288,7 +324,7 @@
     const s = new Date(a.start).getTime();
     return `<li><a class="row" href="#/church/${a.parish.id}">
       <span class="t">${clock(s)}<small>${dayLabel(s)}</small></span>
-      <span class="n">${esc(short(a.parish.name))}${a.language !== "English" ? `<span class="tag">${esc(a.language)}</span>` : ""}<small>Leave by ${clock(new Date(a.leaveBy).getTime())}</small></span>
+      <span class="n">${esc(a.parish.name)}${a.language !== "English" ? `<span class="tag">${esc(a.language)}</span>` : ""}<small>Leave by ${clock(new Date(a.leaveBy).getTime())}</small></span>
       <span class="d">${mins(a.travelMin)}</span></a></li>`;
   }
 
@@ -299,42 +335,65 @@
     if (!p) return go("/churches");
     const origin = store.get("mgw-origin");
     const mode = store.get("mgw-mode") || "transit";
-    const evs = S.expandParish(String(id), d, Date.now(), 7);
+    const now = Date.now();
+    const evs = S.expandParish(String(id), d, now, 7);
     const days = new Map();
     for (const e of evs) {
       const k = dayLabel(e.start);
       if (!days.has(k)) days.set(k, []);
       days.get(k).push(e);
     }
+    // the next Mass you can still make here, if we know where you are (estimated trip)
+    let lead = "";
+    if (origin) {
+      const trip = R.estimateMinutes(R.haversineKm(origin, p), mode);
+      const n = evs.find((e) => e.start - (trip + R.BUFFER_MIN) * 60000 >= now);
+      if (n) lead = `<div class="next-here"><strong>Next Mass you can make: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
+        <span>Leave by about ${clock(n.start - (trip + R.BUFFER_MIN) * 60000)} · about ${mins(trip)} ${modeOf(mode).phrase}</span></div>`;
+    }
+    const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
+    const dayList = ([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => {
+      const bits = [e.loc && !/^main church$/i.test(e.loc) ? esc(e.loc) : "", e.note ? esc(e.note) : ""].filter(Boolean).join(" · ");
+      return `<li><span class="t">${clock(e.start)}</span><span>${langTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}</span></li>`;
+    }).join("")}</ul>`;
+    const all = [...days];
+    const soon = all.slice(0, 2), rest = all.slice(2);
+    // notes that only restate a language already tagged on the rows add nothing
+    const notes = (p.notes || []).filter((n) => !/^(all )?(saturday|sunday|weekday|masses?)\b.*\b(is|are) in (english|mandarin|tamil|tagalog|indonesian)/i.test(n) && !/unless (otherwise )?(indicated|stated)/i.test(n));
     const src = p.source || {};
     view.innerHTML = `
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="history.length > 1 ? history.back() : (location.hash='#/')">${svg(ICON.back)}</button></div>
-      <section class="church-page reveal">
+      <section class="church-page">
         <h1>${esc(p.name)}</h1>
         <p class="addr">${esc(p.address)}, Singapore ${esc(p.postal || "")}</p>
-        <div class="acts">
+        ${lead}
+        <div class="acts" style="margin-top:${lead ? 14 : 0}px">
           <a class="btn btn-primary" href="${gmaps(p, mode, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
           ${p.phone ? `<a class="btn btn-quiet" href="tel:${esc(p.phone.replace(/\s/g, ""))}" aria-label="Call the parish">${svg(ICON.phone)}</a>` : ""}
         </div>
         <div class="week">
-          ${[...days].map(([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => `<li><span class="t">${clock(e.start)}</span><span>${esc(e.lang)}${e.loc && !/^main church$/i.test(e.loc) ? ` · ${esc(e.loc)}` : ""}${e.note ? `<span class="x"> · ${esc(e.note)}</span>` : ""}</span></li>`).join("")}</ul>`).join("") || `<p class="lede">No Masses listed for the coming week. Please check with the parish.</p>`}
+          ${soon.map(dayList).join("") || `<p class="lede">No Masses listed for the coming week. Please check with the parish.</p>`}
+          ${rest.length ? `<details class="rest"><summary>Rest of the week</summary>${rest.map(dayList).join("")}</details>` : ""}
         </div>
-        ${(p.notes || []).length ? `<ul class="notes">${p.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
-        <p class="source">Times from <a href="${esc(src.url || p.website || "#")}" target="_blank" rel="noopener">${src.kind === "parish site" ? "the parish website" : "myCatholicSG"}</a>${src.fetchedAt ? `, checked ${new Date(src.fetchedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short", year: "numeric" })}` : ""}.${p.website && src.kind !== "parish site" ? ` Parish website: <a href="${esc(p.website)}" target="_blank" rel="noopener">${esc(p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>.` : ""}</p>
+        ${notes.length ? `<ul class="notes">${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
+        ${all.some(([, es]) => S.specialDay(es[0].start, d)) ? `<p class="notice">${esc(all.map(([, es]) => S.specialDay(es[0].start, d)).filter(Boolean)[0])} is coming up: times that day may differ. Please check with the parish.</p>` : ""}
+        <p class="source">Times from <a href="${esc(src.url || "#")}" target="_blank" rel="noopener">myCatholicSG</a>${src.fetchedAt ? `, updated ${new Date(src.fetchedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short", year: "numeric" })}` : ""}.
+        ${p.siteCheck ? (p.siteCheck.agrees ? `The <a href="${esc(p.siteCheck.url)}" target="_blank" rel="noopener">parish website</a> agrees (checked ${new Date(p.siteCheck.checkedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short" })}).` : `The <a href="${esc(p.siteCheck.url)}" target="_blank" rel="noopener">parish website</a> lists some different times; please check it before you go.`) : p.website ? `Parish website: <a href="${esc(p.website)}" target="_blank" rel="noopener">${esc(p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>.` : ""}</p>
       </section>`;
   }
 
   // ---------- all churches ----------
-  let leafletP = null;
-  const leaflet = () => (leafletP ||= new Promise((ok, fail) => {
+  let maplibreP = null;
+  const maplibre = () => (maplibreP ||= new Promise((ok, fail) => {
     const css = document.createElement("link");
-    css.rel = "stylesheet"; css.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+    css.rel = "stylesheet"; css.href = "https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.css";
     document.head.appendChild(css);
-    const s = document.createElement("script");
-    s.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
-    s.onload = () => ok(window.L); s.onerror = fail;
-    document.head.appendChild(s);
+    const js = document.createElement("script");
+    js.src = "https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js";
+    js.onload = () => ok(window.maplibregl); js.onerror = (e) => { maplibreP = null; fail(e); };
+    document.head.appendChild(js);
   }));
+  const PIN = '<svg viewBox="0 0 32 40" aria-hidden="true"><path d="M16 39s13-12.4 13-22.5C29 8.9 23.2 3 16 3S3 8.9 3 16.5C3 26.6 16 39 16 39z"/><path class="x" d="M14.6 9.5h2.8v4.3h4.1v2.7h-4.1v8.3h-2.8v-8.3h-4.1v-2.7h4.1z"/></svg>';
 
   async function renderChurches(q) {
     const d = await data();
@@ -347,16 +406,17 @@
     const asMap = q.get("view") === "map";
     view.innerHTML = `
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button></div>
-      <section class="list-head reveal">
+      <section class="list-head">
         <h1>All churches</h1>
         <div class="seg" role="group" aria-label="View">
           <button type="button" aria-pressed="${!asMap}" data-v="list">List</button>
           <button type="button" aria-pressed="${asMap}" data-v="map">Map</button>
         </div>
-        ${asMap ? "" : `<div class="search">${svg(ICON.search)}<input id="filter" type="search" placeholder="Filter by name or area" aria-label="Filter churches"></div>`}
+        ${asMap ? "" : `<div class="search">${svg(ICON.search)}<input id="filter" type="search" placeholder="Filter by name or area" aria-label="Filter churches"><button class="clear" type="button" aria-label="Clear filter" hidden>${svg(ICON.x)}</button></div>`}
+        <p class="muted" style="margin:0" ${asMap ? "hidden" : ""}>${origin ? `Nearest first, from ${esc(origin.label)}` : "A to Z. Share your location on the home screen to sort by distance."}</p>
       </section>
       ${asMap ? `<div id="map" role="region" aria-label="Map of churches"></div>` : `<ul class="rows" id="rows"></ul>`}
-      <p class="source">${origin ? `Sorted by distance from ${esc(origin.label)}.` : "Sorted by name."} ${d.parishes.length} parishes.</p>`;
+      <p class="source">${d.parishes.length} parishes.</p>`;
     view.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => go(`/churches${b.dataset.v === "map" ? "?view=map" : ""}`)));
     if (!asMap) {
       const rows = view.querySelector("#rows");
@@ -365,27 +425,56 @@
         rows.innerHTML = list.map((p) => {
           const n = next.get(p.id);
           const km = dist(p);
-          return `<li><a class="row" href="#/church/${p.id}"><span class="t">${n ? clock(n.start) : "–"}<small>${n ? dayLabel(n.start) : ""}</small></span>
-            <span class="n">${esc(short(p.name))}<small>${esc(p.address)}</small></span><span class="d">${km != null ? `${km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(1) + " km"}` : ""}</span></a></li>`;
+          const far = km != null ? `${km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(1) + " km"} · ` : "";
+          return `<li><a class="row row-church" href="#/church/${p.id}">
+            <span class="n">${esc(p.name)}<small>${far}${n ? `Next Mass ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}` : "No Mass listed this week"}</small></span></a></li>`;
         }).join("") || `<li class="lede">No church matches that.</li>`;
       };
       draw("");
-      view.querySelector("#filter").addEventListener("input", (e) => draw(e.target.value.trim().toLowerCase()));
+      const filter = view.querySelector("#filter");
+      clearable(filter);
+      filter.addEventListener("input", (e) => draw(e.target.value.trim().toLowerCase()));
       return;
     }
-    const L = await leaflet();
-    const map = L.map("map", { zoomControl: true }).setView([1.3521, 103.8198], 11);
-    L.tileLayer("https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{y}.png", {
-      minZoom: 11, maxZoom: 19, detectRetina: true,
-      attribution: '<a href="https://www.onemap.gov.sg/" target="_blank" rel="noopener">OneMap</a> © contributors | <a href="https://www.sla.gov.sg/" target="_blank" rel="noopener">Singapore Land Authority</a>',
-    }).addTo(map);
-    const icon = L.divIcon({ className: "", html: '<div class="pin"></div>', iconSize: [14, 14], iconAnchor: [7, 7] });
+    const mapEl = view.querySelector("#map");
+    let ml;
+    try { ml = await maplibre(); } catch { mapEl.innerHTML = '<p class="lede" style="padding:20px">The map could not load. Use the list instead.</p>'; return; }
+    const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+    const map = new ml.Map({
+      container: mapEl,
+      style: `https://tiles.openfreemap.org/styles/${dark ? "dark" : "positron"}`,
+      // frame you and your five nearest churches, or every church when we don't know where you are
+      bounds: (() => {
+        const pts = origin ? [origin, ...ps.slice(0, 5)] : d.parishes;
+        return [[Math.min(...pts.map((p) => p.lng)), Math.min(...pts.map((p) => p.lat))],
+                [Math.max(...pts.map((p) => p.lng)), Math.max(...pts.map((p) => p.lat))]];
+      })(),
+      fitBoundsOptions: { padding: { top: 56, bottom: 40, left: 36, right: 36 } },
+      maxBounds: [[103.45, 1.1], [104.2, 1.55]],
+      attributionControl: { compact: true },
+      cooperativeGestures: false,
+      dragRotate: false,
+      pitchWithRotate: false,
+    });
+    map.touchZoomRotate.disableRotation();
+    map.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
     for (const p of d.parishes) {
       const n = next.get(p.id);
-      L.marker([p.lat, p.lng], { icon, title: p.name }).addTo(map)
-        .bindPopup(`<strong>${esc(p.name)}</strong><br>${n ? `Next Mass ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}` : ""}<br><a href="#/church/${p.id}">Mass times</a>`);
+      const el = document.createElement("button");
+      el.type = "button";
+      el.className = "church-pin";
+      el.setAttribute("aria-label", p.name);
+      el.innerHTML = PIN;
+      const popup = new ml.Popup({ offset: 30, closeButton: false, maxWidth: "260px" }).setHTML(
+        `<strong>${esc(p.name)}</strong><span>${n ? `Next Mass ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}` : "No Mass listed this week"}</span><a href="#/church/${p.id}">Mass times</a>`);
+      new ml.Marker({ element: el, anchor: "bottom" }).setLngLat([p.lng, p.lat]).setPopup(popup).addTo(map);
     }
-    if (origin) L.circleMarker([origin.lat, origin.lng], { radius: 7, color: "#fff", weight: 3, fillColor: "#2563eb", fillOpacity: 1 }).addTo(map);
+    if (origin) {
+      const me = document.createElement("div");
+      me.className = "me";
+      me.setAttribute("aria-label", "You");
+      new ml.Marker({ element: me }).setLngLat([origin.lng, origin.lat]).addTo(map);
+    }
   }
 
   applyPalette();

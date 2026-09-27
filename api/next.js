@@ -1,4 +1,4 @@
-// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&type=Mass]
+// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English]
 // The one answer every client (website, Telegram bots) shows: which Mass you can make, and when to leave.
 const S = require("../public/schedule.js");
 const data = require("../public/data.json");
@@ -24,20 +24,34 @@ function summarize(e, byId) {
   };
 }
 
+function send(res, status, body) {
+  res.statusCode = status;
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Cache-Control", "no-store");
+  res.end(JSON.stringify(body));
+}
+
 module.exports = async function handler(req, res) {
+  try {
+    await answer(req, res);
+  } catch (e) {
+    console.error(e);
+    send(res, 500, { error: "Something went wrong working out the next Mass. Please try again." });
+  }
+};
+
+async function answer(req, res) {
   const u = new URL(req.url, "http://x");
   const lat = Number(u.searchParams.get("lat"));
   const lng = Number(u.searchParams.get("lng"));
   const mode = MODES.has(u.searchParams.get("mode")) ? u.searchParams.get("mode") : "transit";
   const lang = u.searchParams.get("lang") || "";
   if (!(lat > 1.1 && lat < 1.5 && lng > 103.5 && lng < 104.1)) {
-    res.statusCode = 400;
-    res.setHeader("Content-Type", "application/json");
-    return res.end(JSON.stringify({ error: "lat/lng must be a point in Singapore" }));
+    return send(res, 400, { error: "lat/lng must be a point in Singapore" });
   }
   const now = Date.now();
   const origin = { lat, lng };
-  const events = S.expandAll(data, now, HORIZON_DAYS).filter((e) => !lang || e.lang === lang);
+  const events = S.expandAll(data, now, HORIZON_DAYS).filter((e) => !lang || e.lang.toLowerCase() === lang.toLowerCase());
   const travel = async (p, departMs) => {
     const minutes = await routeMinutes(origin, p, mode, departMs);
     return minutes == null ? null : { minutes, source: "onemap" };
@@ -45,9 +59,7 @@ module.exports = async function handler(req, res) {
   const r = await rank({ origin, now, mode, parishes: data.parishes, events, travel });
   const byId = new Map(data.parishes.map((p) => [p.id, p]));
 
-  res.setHeader("Content-Type", "application/json");
-  res.setHeader("Cache-Control", "no-store");
-  res.end(JSON.stringify({
+  send(res, 200, {
     now: new Date(now).toISOString(),
     mode,
     best: summarize(r.best, byId),
@@ -59,6 +71,7 @@ module.exports = async function handler(req, res) {
       distanceKm: Math.round(r.nearest.distanceKm * 10) / 10,
       next: summarize(r.nearest.next, byId),
     },
+    specialDay: r.best ? S.specialDay(r.best.start, data) : null,
     dataAsOf: data.asOf,
-  }));
-};
+  });
+}

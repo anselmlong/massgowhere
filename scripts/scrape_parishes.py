@@ -54,7 +54,7 @@ def page_text(html):
 
 def fetch_static(url):
     r = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25, context=ssl.create_default_context())
-    return page_text(r.read().decode("utf-8", "replace"))
+    return page_text(r.read().decode(r.headers.get_content_charset() or "utf-8", "replace"))
 
 
 def fetch_rendered(url):
@@ -134,7 +134,7 @@ Today is {today} (Singapore). Parish: {name}. Page: {url}
 Rules:
 - Only use what the page states. Never guess or fill in typical times. If the page has no Mass times for this parish, set has_schedule=false and leave lists empty.
 - "regular": one entry per weekday per time. Expand ranges: "Mon-Fri 6.30am" is five entries. Saturday evening "sunset"/anticipated Masses are Saturday entries.
-- Times: 24-hour HH:MM. "12pm"/"noon" = 12:00. "8am" = 08:00.
+- Times: 24-hour HH:MM. "12pm"/"noon" = 12:00. "8am" = 08:00. A midnight Mass belonging to the evening of date D is date D, time 23:59.
 - weeks / except_weeks: "3rd Saturday only" -> weeks [3]; "last Sunday" -> weeks [-1]; "Mon-Fri 6pm except 1st Friday" -> except_weeks [1] on the Friday entry, plus a separate Friday entry with weeks [1] if another time is given for that week.
 - A Mass whose language differs in certain weeks ("Tagalog, except 3rd Sunday in English") becomes two entries using weeks/except_weeks.
 - language: the language of the Mass; use "English" when the page says Masses are English unless stated otherwise, or states nothing.
@@ -215,6 +215,7 @@ def validate(res):
         exc = [w for w in e["except_weeks"] if w in (-1, 1, 2, 3, 4, 5)]
         ok.append({**e, "weeks": sorted(set(weeks)), "except_weeks": sorted(set(exc)),
                    "language": e["language"].strip() or "English", "location": e["location"].strip(), "note": e["note"].strip()})
+    res["public_holiday_masses"] = [t for t in res.get("public_holiday_masses", []) if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t)]
     today = dt.datetime.now(SGT).date().isoformat()
     dated = [d for d in res.get("dated", []) if re.fullmatch(r"\d{4}-\d\d-\d\d", d["date"]) and d["date"] >= today
              and re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", d["time"])]
@@ -223,6 +224,41 @@ def validate(res):
     if res.get("has_schedule") and not any(e["day"] == "Sunday" for e in masses):
         problems.append("no Sunday Mass found")
     return res, problems
+
+
+def write_json(path, obj):
+    tmp = path + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(obj, f, indent=1, ensure_ascii=False)
+    os.replace(tmp, path)
+
+
+def write_site_check(recs, out_dir):
+    """Human-readable monthly report: where each parish's own website disagrees with myCatholicSG."""
+    fmt = lambda k: f"{k[1][:3]} {k[2]}" + (f" (weeks {k[3]})" if k[3] else "") + (f" (not weeks {k[4]})" if k[4] else "")
+    lines = [f"# Parish website check, {dt.datetime.now(SGT):%-d %b %Y}", "",
+             "myCatholicSG is the source of truth. This lists where a parish's own website says something different.",
+             "Review these and, if the parish site is right, tell myCatholicSG / the parish office.", ""]
+    agree, differ, unchecked = [], [], []
+    for r in sorted(recs, key=lambda r: r["name"]):
+        path = os.path.join(out_dir, f"{r['id']}.json")
+        doc = None
+        if r["status"] == "updated" and os.path.exists(path):
+            doc = json.load(open(path))
+        if not doc:
+            unchecked.append(f"- {r['name']}: {r['status']}" + (f" ({'; '.join(r['warnings'])[:120]})" if r["warnings"] else ""))
+            continue
+        d = doc["vs_mycatholic"]
+        if not d["only_on_parish_site"] and not d["only_on_mycatholic"]:
+            agree.append(r["name"])
+            continue
+        differ.append(f"### {r['name']}\n{doc['source_urls'][0]}\n"
+                      + (f"- Only on parish website: {', '.join(fmt(k) for k in d['only_on_parish_site'])}\n" if d["only_on_parish_site"] else "")
+                      + (f"- Only on myCatholicSG: {', '.join(fmt(k) for k in d['only_on_mycatholic'])}\n" if d["only_on_mycatholic"] else ""))
+    lines += [f"## Differences ({len(differ)})", ""] + differ + [f"## Agree ({len(agree)})", "", ", ".join(agree) or "none", "",
+              f"## Not checked ({len(unchecked)})", ""] + unchecked
+    with open(os.path.join(ROOT, "data", "site-check.md"), "w") as f:
+        f.write("\n".join(lines) + "\n")
 
 
 def slot_key(e):
@@ -273,7 +309,10 @@ def mass_slots(doc):
 
 def run_one(pid, urls, parish, mc, args):
     out_path = os.path.join(args.out, f"{pid}.json")
-    prev = json.load(open(out_path)) if os.path.exists(out_path) else None
+    try:
+        prev = json.load(open(out_path)) if os.path.exists(out_path) else None
+    except ValueError:
+        prev = None
     rec = {"id": int(pid), "name": parish["name"], "warnings": [], "usage": {}}
     if not urls:
         rec["status"] = "no-source"
@@ -333,7 +372,7 @@ def run_one(pid, urls, parish, mc, args):
             rec["warnings"].append(f"{changed:.0%} of Mass slots changed; kept previous (rerun with --force to accept)")
             rec["status"] = "kept-previous"
             return rec
-    json.dump(doc, open(out_path, "w"), indent=1, ensure_ascii=False)
+    write_json(out_path, doc)
     rec["status"] = "updated"
     rec["masses"] = sum(1 for r in doc["rules"] if r["type"] == "Mass")
     return rec
@@ -356,7 +395,7 @@ def main():
 
     sources = {k: v for k, v in json.load(open(os.path.join(ROOT, "data", "sources.json"))).items() if not k.startswith("_")}
     parishes = {str(p["id"]): p for p in json.load(open(os.path.join(ROOT, "scripts", "parishes_geo.json")))}
-    ids = args.only.split(",") if args.only else sorted(sources, key=int)
+    ids = [i for i in (args.only.split(",") if args.only else sorted(sources, key=int)) if i in parishes and i in sources]
 
     with cf.ThreadPoolExecutor(args.workers) as ex:
         recs = list(ex.map(lambda pid: run_one(pid, sources[pid], parishes[pid], mc, args), ids))
@@ -373,8 +412,10 @@ def main():
         print(f"{r['id']:>2} {r['name'][:40]:40} {r['status']:14} {r.get('masses', ''):>3} {extra} {'; '.join(r['warnings'])}")
     for m, (i, o) in tokens.items():
         print(f"{m}: {i} prompt + {o} completion tokens")
-    json.dump({"ran_at": dt.datetime.now(SGT).isoformat(timespec="minutes"), "models": args.models, "results": recs},
-              open(os.path.join(args.out, "_report.json"), "w"), indent=1)
+    write_json(os.path.join(args.out, "_report.json"),
+               {"ran_at": dt.datetime.now(SGT).isoformat(timespec="minutes"), "models": args.models, "results": recs})
+    if args.out == os.path.join(ROOT, "data", "parishes"):
+        write_site_check(recs, args.out)
     # a few failures are normal (sites down); they fall back to myCatholicSG. Many failures means something is broken.
     bad = sum(r["status"] in ("failed", "kept-previous") for r in recs)
     if bad > len(recs) // 4:
