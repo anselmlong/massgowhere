@@ -2,29 +2,30 @@
 
 Find a Catholic Mass in Singapore you can actually make: from where you are, by bus/MRT, car or on foot, and when to leave.
 
-- Website: https://mass.anselmlong.com (Vercel project `massgowhere`, auto-deploys from `main`)
+- Website: https://mass.anselmlong.com (Vercel project `massgowhere`, auto-deploys on every push to `main`)
 - Telegram bot: runs on the VPS (`systemctl --user status massgowhere-bot`)
 - Product brief: [PRODUCT.md](PRODUCT.md)
 
 ## How it works
 
 ```
-parish websites ──(weekly, DeepSeek via OpenRouter)──> data/parishes/<id>.json ─┐
-myCatholicSG export (manual, fallback) ──> data/mycatholic.json ────────────────┼─> scripts/build_data.py ─> public/data.json
-MOM public holidays ──> data/holidays.json ─────────────────────────────────────┘
-public/data.json + OneMap routing ──> api/next.js (public/rank.js) ──> website + Telegram bots
+myCatholicSG schedules ──(scripts/update_mycatholic.sh)──> data/mycatholic.json ─┐   source of truth
+parish websites ──(monthly, DeepSeek via OpenRouter)──> data/parishes/<id>.json ─┼─> scripts/build_data.py ─> public/data.json
+MOM public holidays ──> data/holidays.json ──────────────────────────────────────┘
+public/data.json + OneMap routing ──> api/next.js (public/rank.js) ──> website + Telegram bot
 ```
 
-- **Source of truth is each parish's own website** (`data/sources.json` lists the page per parish). `scripts/scrape_parishes.py` fetches it, an LLM extracts a structured schedule (JSON schema), results are validated, compared with myCatholicSG (differences recorded in each file's `vs_mycatholic`), and a parish keeps its last good data if anything fails or more than half its Mass slots change (`--force` to accept).
-- Parishes with no usable site (Nativity, Star of the Sea, and Holy Trinity until the VPS has Playwright) use the myCatholicSG snapshot.
-- **Ranking** (`public/rank.js`, shared by browser and API): a Mass is reachable if now + travel + 5 min ≤ start; take the earliest reachable start, then within 15 minutes of it prefer the shortest trip; never suggest trips over 75 min. Travel times come from OneMap routing (departure time = when you'd leave), falling back to a distance estimate.
-- **API**: `GET /api/next?lat=1.3151&lng=103.7652&mode=transit|drive|walk` → `best`, `alternatives`, `nearest`. Bots should call this so every surface gives the same answer.
+- **Times come from myCatholicSG.** `scripts/import_mycatholic.py` turns its export into weekly / nth-week / last-week rules plus dated additions and cancellations.
+- **Monthly parish-website check.** `scripts/scrape_parishes.py` reads each parish's own page (`data/sources.json`) with an LLM and compares it with myCatholicSG. It never changes times. The build marks each parish "parish website agrees" or "lists different times", and `data/site-check.md` lists every difference for review.
+- **Ranking** (`public/rank.js`, shared by browser and API): a Mass is reachable if now + travel + 5 min ≤ start (trip ≤ 75 min). Take the earliest reachable start S. Among Masses starting within 90 minutes of S, pick the **shortest trip**; the earlier start breaks ties. Travel comes from OneMap routing at the time you would leave, in two passes (nearest + soonest, then anything else inside the window), falling back to a distance estimate.
+- **API**: `GET /api/next?lat=1.3151&lng=103.7652&mode=transit|drive|walk` returns `best`, `alternatives`, `nearest`, `specialDay`, `dataAsOf`. Bots call this so every surface gives the same answer.
+- Public holidays, Christmas and the Triduum are not modelled as schedule changes. The site and bot show a "times may differ that day, check with the parish" notice instead.
 
 ## Run locally
 
 ```sh
-cp .env.example .env            # fill in keys (never overwrite an existing .env)
-node scripts/dev.js             # http://localhost:8787 (site + /api/next)
+cp -n .env.example .env         # -n: never overwrite an existing .env
+node scripts/dev.js             # http://localhost:8787 (site + /api/next; reads .env literally)
 node --test test/*.test.js      # schedule + ranking tests
 python3 bot/bot.py              # Telegram bot (uses the live API; MASSGOWHERE_API overrides)
 ```
@@ -33,25 +34,34 @@ Add `?preview=1` to the site URL to get the colour palette switcher (Seasonal / 
 
 ## Refreshing data
 
-- Weekly, automatic: `massgowhere-refresh.timer` on the VPS runs `refresh.sh` every Monday 03:00 SGT → scrape → build → commit + push → Vercel deploys.
-- By hand: `sh refresh.sh`, or `python3 scripts/scrape_parishes.py --only 5,6` then `python3 scripts/build_data.py`.
-- myCatholicSG fallback (manual only): fetch the export yourself, then `python3 scripts/import_mycatholic.py ~/allsched.json`.
-- Public holidays: `data/holidays.json` (MOM, data.gov.sg dataset `d_149b61ad0a22f61c09dc80f2df5bbec8`). Add next year's dataset when MOM publishes it.
+| What | How | Where |
+|---|---|---|
+| myCatholicSG times (source of truth) | `sh scripts/update_mycatholic.sh`: fetch, import, build, commit, push | Run it yourself. To automate it, add the cron line below yourself on the VPS. |
+| Parish website check | `sh scripts/check_sites.sh`, monthly | VPS timer `massgowhere-check.timer`, 1st of each month, 03:00 SGT |
+| Public holidays | edit `data/holidays.json` when MOM publishes next year's list | The build warns when fewer than 60 days remain |
+
+Both scripts start from `origin/main` (`git reset --hard`), take a lock (`flock`, Linux), and only commit regenerated files.
+
+Daily myCatholicSG refresh (install by hand on the VPS if you want it automatic):
+
+```sh
+(crontab -l 2>/dev/null; echo "0 4 * * * sh /home/ubuntu/massgowhere/scripts/update_mycatholic.sh >> /home/ubuntu/massgowhere/update.log 2>&1") | crontab -
+```
 
 ## Environment
 
-`.env` (Mac `~/src/massgowhere/.env`, VPS `~/massgowhere/.env`): `OPENROUTER_API_KEY`, `ONEMAP_EMAIL`, `ONEMAP_PASSWORD`, `TELEGRAM_BOT_TOKEN`, optional `OPENROUTER_MODELS`. Vercel needs `ONEMAP_EMAIL` and `ONEMAP_PASSWORD` (already set for production and preview).
+`.env` on the Mac (`~/src/massgowhere/.env`) and the VPS (`~/massgowhere/.env`) holds `OPENROUTER_API_KEY`, `ONEMAP_EMAIL`, `ONEMAP_PASSWORD` and `TELEGRAM_BOT_TOKEN`; `OPENROUTER_MODELS` is optional. Vercel needs `ONEMAP_EMAIL` and `ONEMAP_PASSWORD`, which are set for production and preview.
 
 ## VPS services
 
 ```sh
-systemctl --user status massgowhere-bot            # Telegram bot
-systemctl --user list-timers massgowhere-refresh.timer
-journalctl --user -u massgowhere-refresh -n 50     # last refresh log
+systemctl --user status massgowhere-bot
+systemctl --user list-timers massgowhere-check.timer
+journalctl --user -u massgowhere-check -n 50
 ```
 
 ## Open items
 
-- Gospel bot (catholic-bot) one-click button calling `/api/next`: not started; needs a go-ahead since that bot is live.
-- Holy Trinity needs a JS-rendered fetch: `pip install playwright && playwright install chromium` on the VPS (memory is tight).
-- Events board (vigils, feasts, devotions): data model already keeps Confession, Adoration and Devotion entries.
+- Gospel bot (catholic-bot) one-click button calling `/api/next`: not started. It needs a go-ahead because that bot is live.
+- Events board (vigils, feasts, devotions): the data model already keeps Confession, Adoration and Devotion entries.
+- Parish website check: Holy Trinity, OLPS and Transfiguration need a JS-rendered fetch (`pip install playwright && playwright install chromium` on the VPS; memory is tight).

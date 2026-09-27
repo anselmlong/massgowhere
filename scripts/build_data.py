@@ -57,6 +57,9 @@ def main():
     tmp = path + ".tmp"
     json.dump(out, open(tmp, "w"), ensure_ascii=False, separators=(",", ":"))
     os.replace(tmp, path)
+    last_holiday = max(holidays.get("dates", {}) or ["0000"])
+    if last_holiday < (datetime.now(SGT) + timedelta(days=60)).date().isoformat():
+        print(f"WARNING: public holidays end {last_holiday}; add next year's MOM list to data/holidays.json")
     n = sum(1 for v in mc["rules"].values() for r in v if r["type"] == "Mass")
     agree = sum(1 for p in out_parishes if p["siteCheck"] and p["siteCheck"]["agrees"])
     checked = sum(1 for p in out_parishes if p["siteCheck"])
