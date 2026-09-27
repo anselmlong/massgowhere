@@ -1,0 +1,40 @@
+{
+  "title": "MassGoWhere: the familiar end",
+  "question": "Safer hand: conventional, clean directions. Pick one; colour variants come next on your phone.",
+  "options": [
+    {
+      "id": "seasons",
+      "label": "Liturgical Seasons",
+      "kicker": "SAFER",
+      "lineage": "the Church's liturgical colours: green Ordinary Time, violet Advent/Lent, white-gold feasts, red for Pentecost and martyrs",
+      "thesis": "A clean, modern app whose one accent follows the Church year.",
+      "palette": ["#FFFFFF", "#16181D", "#2E6B4F", "#6B3FA0"],
+      "materials": ["flat white surfaces", "one seasonal accent"],
+      "viewport": "Big '6:30am', the church, 'Leave by 6:08 · 17 min by bus', one full-width Navigate button in the season's colour; a small 'Ordinary Time' tag.",
+      "risk": "Clean and familiar; the season accent is the only thing that makes it ours, so it must be done carefully."
+    },
+    {
+      "id": "bulletin",
+      "label": "Parish Bulletin",
+      "kicker": "SAFER",
+      "lineage": "the weekly parish bulletin: plain sheet, masthead, Mass-times box",
+      "thesis": "The answer set like the Mass-times box on the bulletin's back page.",
+      "palette": ["#FFFFFF", "#1F1F1F", "#8A1C1C", "#E9E6E0"],
+      "materials": ["plain sheet", "ruled boxes"],
+      "viewport": "A ruled box: time, church, leave-by, with Navigate beneath and a small masthead above.",
+      "risk": "Can look dry or dated if the rules and type are heavy."
+    }
+  ],
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard (Citymapper / Google Maps grade)",
+    "thesis": "A clean white result card over a map, done at Citymapper's level of craft.",
+    "palette": ["#FFFFFF", "#202124", "#1A73E8"],
+    "materials": ["map tiles", "result cards"],
+    "viewport": "Result card with time, church, leave-by and Go button; map peeks behind it.",
+    "risk": "Looks like every transit app; nothing Catholic about it."
+  },
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "steer": true
+}

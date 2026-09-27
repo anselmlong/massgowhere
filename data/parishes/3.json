@@ -1,0 +1,294 @@
+{
+ "id": 3,
+ "name": "Church of Christ the King",
+ "source_urls": [
+  "https://christtheking.com.sg/"
+ ],
+ "fetched_at": "2026-09-28T02:18+08:00",
+ "fetch_mode": [
+  "static"
+ ],
+ "models": [
+  "deepseek/deepseek-v4.1-flash"
+ ],
+ "rules": [
+  {
+   "d": 0,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Mandarin",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "10:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "18:30",
+   "weeks": [
+    4
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": "Every Fourth Sunday of the Month"
+  },
+  {
+   "d": 0,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Nightly Rosary, except Tuesdays"
+  },
+  {
+   "d": 1,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Nightly Rosary, except Tuesdays"
+  },
+  {
+   "d": 2,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Divine Mercy Devotion"
+  },
+  {
+   "d": 3,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Nightly Rosary, except Tuesdays"
+  },
+  {
+   "d": 4,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Nightly Rosary, except Tuesdays"
+  },
+  {
+   "d": 5,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Nightly Rosary, except Tuesdays"
+  },
+  {
+   "d": 6,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Sunset Mass"
+  },
+  {
+   "d": 6,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Nightly Rosary, except Tuesdays"
+  }
+ ],
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "07:30",
+  "09:00"
+ ],
+ "notes": [
+  "Confessions are available half an hour before all weekend Masses.",
+  "Nightly Rosary is on Zoom and not held on Tuesdays.",
+  "Church gates close at 12:00 noon."
+ ],
+ "disputes": [],
+ "vs_mycatholic": {
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Sunday",
+    "18:30",
+    [
+     4
+    ],
+    []
+   ]
+  ],
+  "only_on_mycatholic": []
+ }
+}

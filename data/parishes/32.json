@@ -1,0 +1,322 @@
+{
+ "id": 32,
+ "name": "Church of the Transfiguration",
+ "source_urls": [
+  "https://transfiguration.sg/masstimings/"
+ ],
+ "fetched_at": "2026-09-28T02:23+08:00",
+ "fetch_mode": [
+  "static"
+ ],
+ "models": [
+  "deepseek/deepseek-v4.1-flash"
+ ],
+ "rules": [
+  {
+   "d": 0,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 1,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 1,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 2,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 2,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 3,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 3,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 4,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 4,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "20:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Eucharistic Healing; moved to following Thursday if it falls on a Public Holiday"
+  },
+  {
+   "d": 5,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 5,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary"
+  },
+  {
+   "d": 6,
+   "t": "15:20",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Rosary before 4pm Sunset Mass"
+  },
+  {
+   "d": 6,
+   "t": "16:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Saturday Sunset Mass"
+  }
+ ],
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "08:30"
+ ],
+ "notes": [
+  "Days of Obligation (weekdays): 6.30am & 8.00pm.",
+  "Eucharistic Healing: first Thursdays, 8.00pm; if it falls on a public holiday, held on the following Thursday."
+ ],
+ "disputes": [],
+ "vs_mycatholic": {
+  "only_on_parish_site": [],
+  "only_on_mycatholic": [
+   [
+    "Mass",
+    "Saturday",
+    "19:00",
+    [
+     2
+    ],
+    []
+   ]
+  ]
+ }
+}

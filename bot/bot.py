@@ -1,0 +1,236 @@
+"""MassGoWhere Telegram bot: share your location (or send a postal code), get the Mass you can make.
+
+No dependencies: long-polls the Telegram Bot API and asks mass.anselmlong.com/api/next for the answer,
+so the bot always says exactly what the website says.
+
+Run: python3 bot/bot.py      (reads TELEGRAM_BOT_TOKEN from .env; MASSGOWHERE_API overrides the site URL)
+"""
+import json
+import logging
+import os
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from datetime import datetime, timedelta, timezone
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SGT = timezone(timedelta(hours=8))
+MODES = {"transit": ("Bus & MRT", "by bus & MRT", "transit"), "drive": ("Car", "by car", "driving"), "walk": ("Walk", "on foot", "walking")}
+STATE_FILE = os.path.join(ROOT, "bot", "state.json")  # chat id -> preferred mode (no locations are stored)
+
+logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s", level=logging.INFO)
+logging.getLogger("urllib3").setLevel(logging.WARNING)
+log = logging.getLogger("massgowhere-bot")
+
+
+def load_env():
+    path = os.path.join(ROOT, ".env")
+    if os.path.exists(path):
+        for line in open(path):
+            if "=" in line and not line.lstrip().startswith("#"):
+                k, v = line.rstrip("\n").split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+
+load_env()
+TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
+SITE = os.environ.get("MASSGOWHERE_API", "https://mass.anselmlong.com").rstrip("/")
+TG = f"https://api.telegram.org/bot{TOKEN}"
+
+
+def http_json(url, data=None, timeout=40):
+    body = json.dumps(data).encode() if data is not None else None
+    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "User-Agent": "MassGoWhere-bot"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.load(r)
+
+
+def tg(method, **params):
+    return http_json(f"{TG}/{method}", params)
+
+
+# ---------- state ----------
+
+def load_state():
+    try:
+        return json.load(open(STATE_FILE))
+    except (OSError, ValueError):
+        return {}
+
+
+STATE = load_state()
+
+
+def mode_for(chat_id):
+    return STATE.get(str(chat_id), "transit")
+
+
+def set_mode(chat_id, mode):
+    STATE[str(chat_id)] = mode
+    tmp = STATE_FILE + ".tmp"
+    json.dump(STATE, open(tmp, "w"))
+    os.replace(tmp, STATE_FILE)
+
+
+# ---------- formatting ----------
+
+def clock(iso):
+    t = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(SGT)
+    return t.strftime("%-I:%M%p").lower()
+
+
+def day_label(iso):
+    d = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(SGT).date()
+    today = datetime.now(SGT).date()
+    if d == today:
+        return "today"
+    if d == today + timedelta(days=1):
+        return "tomorrow"
+    return d.strftime("%A %-d %b")
+
+
+def mins(m):
+    return f"{m} min" if m < 60 else f"{m // 60} h {m % 60} min".replace(" 0 min", "")
+
+
+def esc(s):
+    return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def gmaps(parish, mode, lat, lng):
+    dest = urllib.parse.quote(f"{parish['name']}, Singapore {parish.get('postal') or ''}".strip())
+    return f"https://www.google.com/maps/dir/?api=1&destination={dest}&travelmode={MODES[mode][2]}&origin={lat},{lng}"
+
+
+def mode_keyboard(current):
+    return [[{"text": ("• " if k == current else "") + v[0], "callback_data": f"mode:{k}"} for k, v in MODES.items()]]
+
+
+LOCATION_KB = {"keyboard": [[{"text": "Share my location", "request_location": True}]], "resize_keyboard": True, "is_persistent": True,
+               "input_field_placeholder": "Or type a postal code or place"}
+
+WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can actually make, and tells you when to leave.\n\n"
+           "Tap <b>Share my location</b> below, or send a postal code or place name.\n"
+           "Travelling by: <b>{mode}</b> (change it with the buttons).")
+
+
+# ---------- answers ----------
+
+def answer(chat_id, lat, lng, place=None):
+    mode = mode_for(chat_id)
+    tg("sendChatAction", chat_id=chat_id, action="find_location")
+    q = urllib.parse.urlencode({"lat": f"{lat:.5f}", "lng": f"{lng:.5f}", "mode": mode})
+    try:
+        res = http_json(f"{SITE}/api/next?{q}", timeout=30)
+    except (urllib.error.URLError, TimeoutError, ValueError) as e:
+        log.warning("api error: %s", e)
+        return tg("sendMessage", chat_id=chat_id, text="Sorry, I couldn't check Mass times just now. Please try again in a minute.")
+    b = res.get("best")
+    where = f" from {esc(place)}" if place else ""
+    if not b:
+        return tg("sendMessage", chat_id=chat_id, parse_mode="HTML",
+                  text=f"I couldn't find a Mass you can reach in the next two days{where} {MODES[mode][1]}. Try another way of travelling.",
+                  reply_markup={"inline_keyboard": mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]]})
+    p = b["parish"]
+    about = "about " if b.get("travelSource") == "estimate" else ""
+    extra = " · ".join(x for x in [f"{b['language']} Mass" if b.get("language") and b["language"] != "English" else "", b.get("note") or ""] if x)
+    lines = [
+        f"<b>{clock(b['start'])} {day_label(b['start'])}</b>",
+        f"<b>{esc(p['name'])}</b>" + (f"\n{esc(extra)}" if extra else ""),
+        "",
+        f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[mode][1]}{where}",
+    ]
+    alts = [a for a in res.get("alternatives") or [] if a]
+    if alts:
+        lines += ["", "<i>Also reachable:</i>"] + [
+            f"{clock(a['start'])} {day_label(a['start'])} · {esc(a['parish']['name'])} ({mins(a['travelMin'])})" for a in alts]
+    near = res.get("nearest")
+    if near and near["parish"]["id"] != p["id"]:
+        lines += ["", f"<i>Nearest church:</i> {esc(near['parish']['name'])} ({mins(near['travelMin'])})"]
+    lines += ["", "Go in peace."]
+    kb = [[{"text": "Navigate", "url": gmaps(p, mode, lat, lng)}],
+          [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}]] + mode_keyboard(mode)
+    tg("sendMessage", chat_id=chat_id, parse_mode="HTML", text="\n".join(lines), reply_markup={"inline_keyboard": kb},
+       link_preview_options={"is_disabled": True})
+
+
+def search_place(text):
+    q = urllib.parse.urlencode({"searchVal": text, "returnGeom": "Y", "getAddrDetails": "Y", "pageNum": 1})
+    res = http_json(f"https://www.onemap.gov.sg/api/common/elastic/search?{q}", timeout=15).get("results") or []
+    if not res:
+        return None
+    x = res[0]
+    name = x["BUILDING"] if x.get("BUILDING") not in (None, "", "NIL") else x["SEARCHVAL"]
+    return float(x["LATITUDE"]), float(x["LONGITUDE"]), name.title()
+
+
+LAST = {}  # chat id -> (lat, lng, place) of the last query, in memory only, to redo it after a mode change
+
+
+def handle(update):
+    if "callback_query" in update:
+        cq = update["callback_query"]
+        chat_id = cq["message"]["chat"]["id"]
+        data = cq.get("data", "")
+        if data.startswith("mode:") and data[5:] in MODES:
+            set_mode(chat_id, data[5:])
+            tg("answerCallbackQuery", callback_query_id=cq["id"], text=f"Travelling by {MODES[data[5:]][0]}")
+            if chat_id in LAST:
+                answer(chat_id, *LAST[chat_id])
+            else:
+                tg("sendMessage", chat_id=chat_id, text=f"Got it: {MODES[data[5:]][0]}. Now share your location or send a postal code.")
+        else:
+            tg("answerCallbackQuery", callback_query_id=cq["id"])
+        return
+    msg = update.get("message") or {}
+    chat_id = msg.get("chat", {}).get("id")
+    if not chat_id:
+        return
+    if "location" in msg:
+        loc = msg["location"]
+        LAST[chat_id] = (loc["latitude"], loc["longitude"], None)
+        return answer(chat_id, loc["latitude"], loc["longitude"])
+    text = (msg.get("text") or "").strip()
+    if not text:
+        return
+    if text.startswith("/start") or text.startswith("/help"):
+        return tg("sendMessage", chat_id=chat_id, parse_mode="HTML", text=WELCOME.format(mode=MODES[mode_for(chat_id)][0]),
+                  reply_markup=LOCATION_KB)
+    if text.startswith("/mode"):
+        return tg("sendMessage", chat_id=chat_id, text="How are you travelling?", reply_markup={"inline_keyboard": mode_keyboard(mode_for(chat_id))})
+    if text.startswith("/"):
+        return tg("sendMessage", chat_id=chat_id, text="Share your location, or send a postal code or place name.", reply_markup=LOCATION_KB)
+    try:
+        hit = search_place(text)
+    except (urllib.error.URLError, TimeoutError, ValueError):
+        hit = None
+    if not hit:
+        return tg("sendMessage", chat_id=chat_id, text=f"I couldn't find “{text[:60]}”. Try a postal code, MRT station or street name.")
+    LAST[chat_id] = hit
+    answer(chat_id, *hit)
+
+
+def main():
+    tg("setMyCommands", commands=[{"command": "start", "description": "Find a Mass you can make"},
+                                  {"command": "mode", "description": "Change how you're travelling"}])
+    offset = None
+    log.info("bot started, api=%s", SITE)
+    while True:
+        try:
+            params = {"timeout": 30, "allowed_updates": ["message", "callback_query"]}
+            if offset is not None:
+                params["offset"] = offset
+            for u in http_json(f"{TG}/getUpdates", params, timeout=45).get("result", []):
+                offset = u["update_id"] + 1
+                try:
+                    handle(u)
+                except Exception:  # noqa: BLE001 - one bad update must not stop the bot
+                    log.exception("failed to handle update %s", u.get("update_id"))
+        except (urllib.error.URLError, TimeoutError, ValueError) as e:
+            log.warning("polling error: %s", e)
+            time.sleep(5)
+
+
+if __name__ == "__main__":
+    main()

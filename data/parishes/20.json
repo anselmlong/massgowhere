@@ -1,0 +1,275 @@
+{
+ "id": 20,
+ "name": "Church of St Bernadette",
+ "source_urls": [
+  "https://www.stbernadette.org.sg/"
+ ],
+ "fetched_at": "2026-09-28T02:19+08:00",
+ "fetch_mode": [
+  "static"
+ ],
+ "models": [
+  "deepseek/deepseek-v4.1-flash"
+ ],
+ "rules": [
+  {
+   "d": 0,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Chinese",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "10:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:45",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "13:45",
+   "weeks": [
+    4,
+    5
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Filipino",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "15:00",
+   "weeks": [
+    1,
+    3
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Indonesian",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Vigil Mass"
+  }
+ ],
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "09:00"
+ ],
+ "notes": [
+  "Saturday 6:00pm Mass is a Vigil Mass.",
+  "Reconciliation is available 30 minutes before weekend Masses, excluding Sat 7:00am Mass.",
+  "Mass times may change during feast days, solemnities or other special celebrations; check News & Events."
+ ],
+ "disputes": [],
+ "vs_mycatholic": {
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Sunday",
+    "13:45",
+    [
+     4,
+     5
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "15:00",
+    [
+     1,
+     3
+    ],
+    []
+   ]
+  ],
+  "only_on_mycatholic": [
+   [
+    "Mass",
+    "Sunday",
+    "13:45",
+    [
+     4
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "13:45",
+    [
+     5
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "15:00",
+    [
+     1
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "15:00",
+    [
+     3
+    ],
+    []
+   ]
+  ]
+ }
+}

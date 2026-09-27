@@ -1,0 +1,422 @@
+{
+ "id": 27,
+ "name": "Church of St Michael",
+ "source_urls": [
+  "https://stmichael.catholic.sg/mass-devotions/"
+ ],
+ "fetched_at": "2026-09-28T02:21+08:00",
+ "fetch_mode": [
+  "static"
+ ],
+ "models": [
+  "deepseek/deepseek-v4.1-flash"
+ ],
+ "rules": [
+  {
+   "d": 0,
+   "t": "07:45",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Mandarin",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Lauds Prayer"
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Lauds Prayer"
+  },
+  {
+   "d": 1,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Mid-day Prayer"
+  },
+  {
+   "d": 1,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Lauds Prayer"
+  },
+  {
+   "d": 2,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Mid-day Prayer"
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Lauds Prayer"
+  },
+  {
+   "d": 3,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Mid-day Prayer"
+  },
+  {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Lauds Prayer"
+  },
+  {
+   "d": 4,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Mid-day Prayer"
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Lauds Prayer"
+  },
+  {
+   "d": 5,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Mid-day Prayer"
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Lauds Prayer"
+  },
+  {
+   "d": 6,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Mid-day Prayer"
+  },
+  {
+   "d": 6,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  }
+ ],
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": true,
+ "public_holiday_masses": [
+  "Public Holiday (weekday): 07:30 Mass (English)"
+ ],
+ "notes": [
+  "Public holidays on weekdays: only 7.30am Mass; no 6.30am or 6pm Mass.",
+  "Public holidays on Saturdays follow regular Saturday Mass times; public holidays on Sundays use weekend Mass times and are observed on the following Monday.",
+  "Liturgy of the Hours is on Zoom; register with csm.secretariat@catholic.org.sg."
+ ],
+ "disputes": [],
+ "vs_mycatholic": {
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Saturday",
+    "07:30",
+    [],
+    []
+   ]
+  ],
+  "only_on_mycatholic": [
+   [
+    "Mass",
+    "Saturday",
+    "06:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "13:30",
+    [
+     1
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "13:30",
+    [
+     2
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "13:30",
+    [
+     3
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "13:30",
+    [
+     4
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "13:30",
+    [
+     5
+    ],
+    []
+   ]
+  ]
+ }
+}

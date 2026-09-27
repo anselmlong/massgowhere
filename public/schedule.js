@@ -1,5 +1,8 @@
-// Expands myCatholicSG-style schedule rules into concrete Mass times.
+// Expands parish schedule rules into concrete service times.
 // All date math is done in fixed Singapore time (UTC+8, no DST), independent of the viewer's timezone.
+//
+// Recurring rule: {d: weekday 0=Sun, t: "HH:MM", weeks: [] | [1..5, -1=last], except: [...], type, lang, loc, note}
+// Dated entry:    {k: "a"dd | "r"emove | "o"verride, date: "YYYY-MM-DD", t, type, lang, loc, note}
 (function (root) {
   const SGT_OFFSET_MS = 8 * 3600 * 1000;
 
@@ -8,10 +11,7 @@
     const d = new Date(ms + SGT_OFFSET_MS);
     return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
   }
-  function iso(day) {
-    return day.toISOString().slice(0, 10);
-  }
-  // instant for an SGT wall-clock date ("YYYY-MM-DD") + "HH:MM"
+  const iso = (day) => day.toISOString().slice(0, 10);
   function toInstant(isoDate, hhmm) {
     const [y, m, d] = isoDate.split("-").map(Number);
     const [h, mi] = hhmm.split(":").map(Number);
@@ -20,25 +20,50 @@
   const norm = (s) => (s || "").trim().toLowerCase();
   const slotKey = (date, e) => [date, e.t, norm(e.type), norm(e.loc)].join("|");
 
-  // Returns events sorted by start, for one parish, between fromMs and fromMs + days.
-  function expandParish(pid, data, fromMs, days) {
-    const rules = data.rules[pid] || [];
-    const dated = data.dated[pid] || [];
+  // which occurrence of its weekday this date is (1..5), and whether it is the last one in the month
+  function weekOf(day) {
+    const n = Math.floor((day.getUTCDate() - 1) / 7) + 1;
+    const last = new Date(day.getTime() + 7 * 86400000).getUTCMonth() !== day.getUTCMonth();
+    return { n, last };
+  }
+  function ruleOn(r, day) {
+    if (r.d !== day.getUTCDay()) return false;
+    const { n, last } = weekOf(day);
+    const inList = (list) => list.includes(n) || (last && list.includes(-1));
+    const weeks = r.weeks || (r.k === "n" ? [r.n] : []);
+    if (weeks.length && !inList(weeks)) return false;
+    if ((r.except || []).length && inList(r.except)) return false;
+    return true;
+  }
+
+  // Returns events sorted by start, for one parish, between fromMs and fromMs + days (inclusive of that SGT day).
+  function expandParish(pid, data, fromMs, days, types = ["Mass"]) {
+    const want = (e) => !types || types.includes(e.type || "Mass");
+    const rules = (data.rules[pid] || []).filter(want);
+    const dated = (data.dated[pid] || []).filter(want);
+    const parish = (data.parishes || []).find((p) => String(p.id) === String(pid)) || {};
+    const ph = parish.publicHoliday || {};
+    const holidays = data.holidays || {};
     const start = sgtDay(fromMs);
     const byKey = new Map();
 
     for (let i = 0; i <= days; i++) {
       const day = new Date(start.getTime() + i * 86400000);
-      const dow = day.getUTCDay();
       const date = iso(day);
-      const nth = Math.floor((day.getUTCDate() - 1) / 7) + 1; // this weekday's occurrence in the month
+      const dow = day.getUTCDay();
+      const phWeekday = holidays[date] && dow >= 1 && dow <= 5 && (ph.noWeekday || (ph.times || []).length);
       for (const r of rules) {
-        if (r.d !== dow) continue;
-        if (r.k === "n" && r.n !== nth) continue;
+        if (!ruleOn(r, day)) continue;
+        if (phWeekday && (r.type || "Mass") === "Mass") continue; // replaced by the public-holiday schedule
         byKey.set(slotKey(date, r), { ...r, date });
       }
+      if (phWeekday && want({ type: "Mass" })) {
+        for (const t of ph.times || []) {
+          const e = { type: "Mass", t, lang: "English", loc: "Main Church", note: `${holidays[date]} (public holiday)` };
+          byKey.set(slotKey(date, e), { ...e, date });
+        }
+      }
     }
-    // remove + override both cancel the matching recurring slot; override and add then add their own event
     for (const e of dated) {
       if (e.k !== "r" && e.k !== "o") continue;
       if (byKey.delete(slotKey(e.date, e))) continue;
@@ -58,36 +83,13 @@
     return out.sort((a, b) => a.start - b.start);
   }
 
-  function expandAll(data, fromMs, days) {
+  function expandAll(data, fromMs, days, types = ["Mass"]) {
     const all = [];
-    for (const p of data.parishes) all.push(...expandParish(String(p.id), data, fromMs, days));
+    for (const p of data.parishes) all.push(...expandParish(String(p.id), data, fromMs, days, types));
     return all.sort((a, b) => a.start - b.start);
   }
 
-  // Dated removes/overrides in the window that matched no recurring slot (data-quality check)
-  function unmatched(data, fromMs, days) {
-    const res = [];
-    const start = sgtDay(fromMs);
-    const endIso = iso(new Date(start.getTime() + days * 86400000));
-    for (const p of data.parishes) {
-      const pid = String(p.id);
-      const rules = data.rules[pid] || [];
-      for (const e of data.dated[pid] || []) {
-        if (e.k === "a" || e.date < iso(start) || e.date > endIso) continue;
-        const [y, m, d] = e.date.split("-").map(Number);
-        const day = new Date(Date.UTC(y, m - 1, d));
-        const nth = Math.floor((d - 1) / 7) + 1;
-        const hit = rules.some(
-          (r) => r.d === day.getUTCDay() && (r.k === "w" || r.n === nth) &&
-            slotKey(e.date, r) === slotKey(e.date, e)
-        );
-        if (!hit) res.push({ pid, ...e });
-      }
-    }
-    return res;
-  }
-
-  const api = { expandParish, expandAll, unmatched, toInstant, sgtDay, SGT_OFFSET_MS };
+  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, SGT_OFFSET_MS };
   if (typeof module !== "undefined") module.exports = api;
   else root.MassSchedule = api;
 })(this);

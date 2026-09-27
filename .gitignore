@@ -6,3 +6,6 @@ __pycache__/
 scripts/cache/
 *.log
 .omc/
+bot/state.json
+.impeccable/review/
+node_modules/

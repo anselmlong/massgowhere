@@ -1,0 +1,575 @@
+{
+ "id": 30,
+ "name": "Church of St Vincent de Paul",
+ "source_urls": [
+  "https://www.svdp.sg/"
+ ],
+ "fetched_at": "2026-09-28T02:22+08:00",
+ "fetch_mode": [
+  "static"
+ ],
+ "models": [
+  "deepseek/deepseek-v4.1-flash"
+ ],
+ "rules": [
+  {
+   "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion - 30 minutes before 07:00 Mass"
+  },
+  {
+   "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 mins to 10 mins before 07:00 Mass"
+  },
+  {
+   "d": 0,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Weekend Mass"
+  },
+  {
+   "d": 0,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Open 7am-6pm daily; closed on public holidays"
+  },
+  {
+   "d": 0,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion - 30 minutes before 09:00 Mass"
+  },
+  {
+   "d": 0,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 mins to 10 mins before 09:00 Mass"
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Weekend Mass"
+  },
+  {
+   "d": 0,
+   "t": "10:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion - 30 minutes before 11:00 Mass"
+  },
+  {
+   "d": 0,
+   "t": "10:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 mins to 10 mins before 11:00 Mass"
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Weekend Mass"
+  },
+  {
+   "d": 0,
+   "t": "14:30",
+   "weeks": [
+    5
+   ],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion - 30 minutes before Indonesian Mass"
+  },
+  {
+   "d": 0,
+   "t": "14:30",
+   "weeks": [
+    5
+   ],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 mins to 10 mins before Indonesian Mass"
+  },
+  {
+   "d": 0,
+   "t": "15:00",
+   "weeks": [
+    5
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Indonesian",
+   "loc": "",
+   "note": "Indonesian Mass - 5th Sunday of the month"
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion - 30 minutes before 18:00 Mass"
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 mins to 10 mins before 18:00 Mass"
+  },
+  {
+   "d": 0,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Weekend Mass"
+  },
+  {
+   "d": 1,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 1,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 1,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Open 7am-6pm daily; closed on public holidays"
+  },
+  {
+   "d": 1,
+   "t": "07:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Faustina Room",
+   "note": "Liturgy of the Hours (Divine Office)"
+  },
+  {
+   "d": 1,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 1,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 2,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 2,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 2,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Open 7am-6pm daily; closed on public holidays"
+  },
+  {
+   "d": 2,
+   "t": "07:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Faustina Room",
+   "note": "Liturgy of the Hours (Divine Office)"
+  },
+  {
+   "d": 2,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 3,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 3,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 3,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Open 7am-6pm daily; closed on public holidays"
+  },
+  {
+   "d": 3,
+   "t": "07:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Faustina Room",
+   "note": "Liturgy of the Hours (Divine Office)"
+  },
+  {
+   "d": 3,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Faustina Room",
+   "note": "Divine Mercy"
+  },
+  {
+   "d": 3,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 4,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 4,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 4,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Open 7am-6pm daily; closed on public holidays"
+  },
+  {
+   "d": 4,
+   "t": "07:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Faustina Room",
+   "note": "Liturgy of the Hours (Divine Office)"
+  },
+  {
+   "d": 4,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 5,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 5,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 5,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Open 7am-6pm daily; closed on public holidays"
+  },
+  {
+   "d": 5,
+   "t": "07:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Faustina Room",
+   "note": "Liturgy of the Hours (Divine Office)"
+  },
+  {
+   "d": 5,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 6,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 6,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Daily Mass"
+  },
+  {
+   "d": 6,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Open 7am-6pm daily; closed on public holidays"
+  },
+  {
+   "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary Devotion"
+  },
+  {
+   "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 mins to 10 mins before Sat Sunset Mass"
+  },
+  {
+   "d": 6,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Weekend Mass - Sat Sunset Mass"
+  }
+ ],
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [],
+ "notes": [
+  "Adoration is closed on public holidays.",
+  "Indonesian Mass is only on the 5th Sunday of the month.",
+  "Confession is 30 mins to 10 mins before all weekend Masses; Sunday Rosary is 30 minutes before Mass."
+ ],
+ "disputes": [],
+ "vs_mycatholic": {
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Sunday",
+    "15:00",
+    [
+     5
+    ],
+    []
+   ]
+  ],
+  "only_on_mycatholic": []
+ }
+}

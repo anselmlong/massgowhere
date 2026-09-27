@@ -1,0 +1,293 @@
+{
+ "id": 6,
+ "name": "Church of the Holy Family",
+ "source_urls": [
+  "https://w.holyfamily.org.sg/mass-times"
+ ],
+ "fetched_at": "2026-09-28T02:18+08:00",
+ "fetch_mode": [
+  "static"
+ ],
+ "models": [
+  "deepseek/deepseek-v4.1-flash"
+ ],
+ "rules": [
+  {
+   "d": 0,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary"
+  },
+  {
+   "d": 1,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary"
+  },
+  {
+   "d": 2,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Divine Mercy"
+  },
+  {
+   "d": 3,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary"
+  },
+  {
+   "d": 3,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary"
+  },
+  {
+   "d": 4,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary"
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "19:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "First Fridays"
+  },
+  {
+   "d": 6,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Novena"
+  },
+  {
+   "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "19:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Mandarin",
+   "loc": "Main Church",
+   "note": ""
+  }
+ ],
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "09:30"
+ ],
+ "notes": [
+  "Mass and services are held in the Main Church unless otherwise indicated.",
+  "Mass is in English unless otherwise indicated.",
+  "Confessions are heard 30 minutes before each weekend Mass."
+ ],
+ "disputes": [],
+ "vs_mycatholic": {
+  "only_on_parish_site": [],
+  "only_on_mycatholic": [
+   [
+    "Mass",
+    "Friday",
+    "19:30",
+    [
+     1
+    ],
+    []
+   ]
+  ]
+ }
+}

@@ -1,0 +1,993 @@
+{
+ "ran_at": "2026-09-28T02:23+08:00",
+ "models": [
+  "deepseek/deepseek-v4.1-flash"
+ ],
+ "results": [
+  {
+   "id": 1,
+   "name": "Blessed Sacrament Church",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1180,
+     "completion_tokens": 12260,
+     "total_tokens": 13440,
+     "cost": 0.014990736,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.014990736,
+      "upstream_inference_prompt_cost": 0.000278736,
+      "upstream_inference_completions_cost": 0.014712
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 9254,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+6/-3",
+   "status": "updated",
+   "masses": 28
+  },
+  {
+   "id": 2,
+   "name": "Cathedral of the Good Shepherd",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1506,
+     "completion_tokens": 5405,
+     "total_tokens": 6911,
+     "cost": 0.006862536,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.006862536,
+      "upstream_inference_prompt_cost": 0.000376536,
+      "upstream_inference_completions_cost": 0.006486
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 4266,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 9
+  },
+  {
+   "id": 3,
+   "name": "Church of Christ the King",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1493,
+     "completion_tokens": 7925,
+     "total_tokens": 9418,
+     "cost": 0.009882636,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.009882636,
+      "upstream_inference_prompt_cost": 0.000372636,
+      "upstream_inference_completions_cost": 0.00951
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 6183,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-0",
+   "status": "updated",
+   "masses": 18
+  },
+  {
+   "id": 4,
+   "name": "Church of Divine Mercy",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1415,
+     "completion_tokens": 8697,
+     "total_tokens": 10112,
+     "cost": 0.0108609,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0108609,
+      "upstream_inference_prompt_cost": 0.0004245,
+      "upstream_inference_completions_cost": 0.0104364
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 6720,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 17
+  },
+  {
+   "id": 5,
+   "name": "Church of the Holy Cross",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1086,
+     "completion_tokens": 3819,
+     "total_tokens": 4905,
+     "cost": 0.004833336,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.004833336,
+      "upstream_inference_prompt_cost": 0.000250536,
+      "upstream_inference_completions_cost": 0.0045828
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 2272,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 22
+  },
+  {
+   "id": 6,
+   "name": "Church of the Holy Family",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1333,
+     "completion_tokens": 7724,
+     "total_tokens": 9057,
+     "cost": 0.009593436,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.009593436,
+      "upstream_inference_prompt_cost": 0.000324636,
+      "upstream_inference_completions_cost": 0.0092688
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 5989,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-1",
+   "status": "updated",
+   "masses": 17
+  },
+  {
+   "id": 7,
+   "name": "Church of the Holy Spirit",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1151,
+     "completion_tokens": 2323,
+     "total_tokens": 3474,
+     "cost": 0.0031329,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0031329,
+      "upstream_inference_prompt_cost": 0.0003453,
+      "upstream_inference_completions_cost": 0.0027876
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 1266,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 16
+  },
+  {
+   "id": 8,
+   "name": "Church of the Holy Trinity",
+   "warnings": [
+    "fetch failed https://holytrinity.org.sg/: ModuleNotFoundError No module named 'playwright'"
+   ],
+   "usage": {},
+   "status": "failed"
+  },
+  {
+   "id": 9,
+   "name": "Church of the Immaculate Heart of Mary",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 4387,
+     "completion_tokens": 12182,
+     "total_tokens": 16569,
+     "cost": 0.015859236,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.015859236,
+      "upstream_inference_prompt_cost": 0.001240836,
+      "upstream_inference_completions_cost": 0.0146184
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 10461,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-2",
+   "status": "updated",
+   "masses": 18
+  },
+  {
+   "id": 10,
+   "name": "Church of Our Lady of Lourdes",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1659,
+     "completion_tokens": 8423,
+     "total_tokens": 10082,
+     "cost": 0.010530036,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.010530036,
+      "upstream_inference_prompt_cost": 0.000422436,
+      "upstream_inference_completions_cost": 0.0101076
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 6850,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 18
+  },
+  {
+   "id": 11,
+   "name": "Church of the Nativity of the Blessed Virgin Mary",
+   "warnings": [],
+   "usage": {},
+   "status": "no-source"
+  },
+  {
+   "id": 12,
+   "name": "Church of Our Lady of Perpetual Succour",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 5509,
+     "completion_tokens": 8578,
+     "total_tokens": 14087,
+     "cost": 0.0119463,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0119463,
+      "upstream_inference_prompt_cost": 0.0016527,
+      "upstream_inference_completions_cost": 0.0102936
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 7129,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-1",
+   "status": "updated",
+   "masses": 18
+  },
+  {
+   "id": 13,
+   "name": "Church of Our Lady Queen of Peace",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1066,
+     "completion_tokens": 2848,
+     "total_tokens": 3914,
+     "cost": 0.0037374,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0037374,
+      "upstream_inference_prompt_cost": 0.0003198,
+      "upstream_inference_completions_cost": 0.0034176
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 1689,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 16
+  },
+  {
+   "id": 14,
+   "name": "Church of Our Lady Star of the Sea",
+   "warnings": [],
+   "usage": {},
+   "status": "no-source"
+  },
+  {
+   "id": 15,
+   "name": "Church of the Risen Christ",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 2625,
+     "completion_tokens": 6241,
+     "total_tokens": 8866,
+     "cost": 0.0082767,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0082767,
+      "upstream_inference_prompt_cost": 0.0007875,
+      "upstream_inference_completions_cost": 0.0074892
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 4796,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 20
+  },
+  {
+   "id": 16,
+   "name": "Church of the Sacred Heart",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1561,
+     "completion_tokens": 11812,
+     "total_tokens": 13373,
+     "cost": 0.014567436,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.014567436,
+      "upstream_inference_prompt_cost": 0.000393036,
+      "upstream_inference_completions_cost": 0.0141744
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 10137,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+2/-3",
+   "status": "updated",
+   "masses": 15
+  },
+  {
+   "id": 17,
+   "name": "Church of St Alphonsus (Novena Church)",
+   "warnings": [
+    "deepseek/deepseek-v4.1-flash failed: TimeoutError no answer in 120s",
+    "need 1 good model results, got 0"
+   ],
+   "usage": {},
+   "status": "kept-previous"
+  },
+  {
+   "id": 18,
+   "name": "St Anne's Church",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1107,
+     "completion_tokens": 10124,
+     "total_tokens": 11231,
+     "cost": 0.012405636,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.012405636,
+      "upstream_inference_prompt_cost": 0.000256836,
+      "upstream_inference_completions_cost": 0.0121488
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 8226,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-2",
+   "status": "updated",
+   "masses": 18
+  },
+  {
+   "id": 19,
+   "name": "Church of St Anthony",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1988,
+     "completion_tokens": 8663,
+     "total_tokens": 10651,
+     "cost": 0.010916736,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.010916736,
+      "upstream_inference_prompt_cost": 0.000521136,
+      "upstream_inference_completions_cost": 0.0103956
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 7462,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-2",
+   "status": "updated",
+   "masses": 13
+  },
+  {
+   "id": 20,
+   "name": "Church of St Bernadette",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1148,
+     "completion_tokens": 6072,
+     "total_tokens": 7220,
+     "cost": 0.007555536,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.007555536,
+      "upstream_inference_prompt_cost": 0.000269136,
+      "upstream_inference_completions_cost": 0.0072864
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 4812,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+2/-4",
+   "status": "updated",
+   "masses": 18
+  },
+  {
+   "id": 21,
+   "name": "Church of St Francis of Assisi",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 3722,
+     "completion_tokens": 6803,
+     "total_tokens": 10525,
+     "cost": 0.009204936,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.009204936,
+      "upstream_inference_prompt_cost": 0.001041336,
+      "upstream_inference_completions_cost": 0.0081636
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 5779,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-5",
+   "status": "updated",
+   "masses": 19
+  },
+  {
+   "id": 22,
+   "name": "Church of St Francis Xavier",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 2116,
+     "completion_tokens": 6662,
+     "total_tokens": 8778,
+     "cost": 0.008553936,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.008553936,
+      "upstream_inference_prompt_cost": 0.000559536,
+      "upstream_inference_completions_cost": 0.0079944
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 5076,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 15
+  },
+  {
+   "id": 23,
+   "name": "Church of St Ignatius",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1914,
+     "completion_tokens": 4227,
+     "total_tokens": 6141,
+     "cost": 0.00184392,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.00184392,
+      "upstream_inference_prompt_cost": 0.00015312,
+      "upstream_inference_completions_cost": 0.0016908
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 2890,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-4",
+   "status": "updated",
+   "masses": 18
+  },
+  {
+   "id": 24,
+   "name": "St Joseph's Church (Bukit Timah)",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 4200,
+     "completion_tokens": 14705,
+     "total_tokens": 18905,
+     "cost": 0.017701776,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 4096,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.017701776,
+      "upstream_inference_prompt_cost": 5.5776e-05,
+      "upstream_inference_completions_cost": 0.017646
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 12911,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+2/-2",
+   "status": "updated",
+   "masses": 18
+  },
+  {
+   "id": 25,
+   "name": "St Joseph's Church (Victoria Street)",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 4093,
+     "completion_tokens": 6463,
+     "total_tokens": 10556,
+     "cost": 0.0089835,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0089835,
+      "upstream_inference_prompt_cost": 0.0012279,
+      "upstream_inference_completions_cost": 0.0077556
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 5681,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-0",
+   "status": "updated",
+   "masses": 9
+  },
+  {
+   "id": 26,
+   "name": "Church of St Mary of the Angels",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 3059,
+     "completion_tokens": 13695,
+     "total_tokens": 16754,
+     "cost": 0.0173517,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0173517,
+      "upstream_inference_prompt_cost": 0.0009177,
+      "upstream_inference_completions_cost": 0.016434
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 10959,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+4/-0",
+   "status": "updated",
+   "masses": 28
+  },
+  {
+   "id": 27,
+   "name": "Church of St Michael",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1429,
+     "completion_tokens": 8307,
+     "total_tokens": 9736,
+     "cost": 0.0103971,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0103971,
+      "upstream_inference_prompt_cost": 0.0004287,
+      "upstream_inference_completions_cost": 0.0099684
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 6462,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-6",
+   "status": "updated",
+   "masses": 16
+  },
+  {
+   "id": 28,
+   "name": "Church of St Stephen",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1420,
+     "completion_tokens": 6892,
+     "total_tokens": 8312,
+     "cost": 0.0086964,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0086964,
+      "upstream_inference_prompt_cost": 0.000426,
+      "upstream_inference_completions_cost": 0.0082704
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 5873,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+2/-0",
+   "status": "updated",
+   "masses": 12
+  },
+  {
+   "id": 29,
+   "name": "Church of St Teresa",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1298,
+     "completion_tokens": 9758,
+     "total_tokens": 11056,
+     "cost": 0.012099,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.012099,
+      "upstream_inference_prompt_cost": 0.0003894,
+      "upstream_inference_completions_cost": 0.0117096
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 8559,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-0",
+   "status": "updated",
+   "masses": 10
+  },
+  {
+   "id": 30,
+   "name": "Church of St Vincent de Paul",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 2557,
+     "completion_tokens": 10760,
+     "total_tokens": 13317,
+     "cost": 0.013603836,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.013603836,
+      "upstream_inference_prompt_cost": 0.000691836,
+      "upstream_inference_completions_cost": 0.012912
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 7650,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+1/-0",
+   "status": "updated",
+   "masses": 17
+  },
+  {
+   "id": 31,
+   "name": "Church of Sts Peter and Paul",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1085,
+     "completion_tokens": 10576,
+     "total_tokens": 11661,
+     "cost": 0.012941436,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.012941436,
+      "upstream_inference_prompt_cost": 0.000250236,
+      "upstream_inference_completions_cost": 0.0126912
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 8699,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+6/-6",
+   "status": "updated",
+   "masses": 16
+  },
+  {
+   "id": 32,
+   "name": "Church of the Transfiguration",
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1514,
+     "completion_tokens": 7929,
+     "total_tokens": 9443,
+     "cost": 0.009893736,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.009893736,
+      "upstream_inference_prompt_cost": 0.000378936,
+      "upstream_inference_completions_cost": 0.0095148
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 6061,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+0/-1",
+   "status": "updated",
+   "masses": 15
+  }
+ ]
+}

@@ -1,0 +1,276 @@
+{
+ "id": 21,
+ "name": "Church of St Francis of Assisi",
+ "source_urls": [
+  "https://www.csfa.sg/pastoral-services"
+ ],
+ "fetched_at": "2026-09-28T02:20+08:00",
+ "fetch_mode": [
+  "static"
+ ],
+ "models": [
+  "deepseek/deepseek-v4.1-flash"
+ ],
+ "rules": [
+  {
+   "d": 0,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "14:00",
+   "weeks": [
+    3
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tagalog",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Mandarin",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "19:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "19:30",
+   "weeks": [
+    4
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Malayalam",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Sunset Mass"
+  }
+ ],
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": true,
+ "public_holiday_masses": [],
+ "notes": [
+  "No evening Mass on public holidays.",
+  "Weekend Confession starts 15 minutes before Mass."
+ ],
+ "disputes": [],
+ "vs_mycatholic": {
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Sunday",
+    "19:30",
+    [],
+    []
+   ]
+  ],
+  "only_on_mycatholic": [
+   [
+    "Mass",
+    "Saturday",
+    "19:30",
+    [
+     4
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "19:30",
+    [
+     1
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "19:30",
+    [
+     2
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "19:30",
+    [
+     3
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "19:30",
+    [
+     5
+    ],
+    []
+   ]
+  ]
+ }
+}

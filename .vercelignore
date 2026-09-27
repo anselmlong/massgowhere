@@ -1,2 +1,9 @@
 scripts
+data
+bot
+test
+.impeccable
+.omc
 *.md
+.env
+.env.*

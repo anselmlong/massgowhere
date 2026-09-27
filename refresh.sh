@@ -1,14 +1,20 @@
 #!/bin/sh
-# Refresh Mass times from myCatholicSG (read-only), rebuild data.json, and redeploy mass.anselmlong.com.
-# Run by hand:  sh ~/massgowhere/refresh.sh
-set -e
+# Weekly refresh (runs on the VPS via a systemd timer; safe to run by hand):
+#   re-read every parish website -> rebuild public/data.json -> commit + push -> Vercel deploys from GitHub.
+# The myCatholicSG fallback (data/mycatholic.json) is refreshed by hand only; see README.
+set -eu
 cd "$(dirname "$0")"
 
-P=mycatholicsg-prod01
-K=AIzaSyC6lHqLReCtzoh8LdHLJfPD9-b_ZLKi3h0
-U="https://firestore.googleapis.com/v1/projects/$P/databases/(default)/documents/settings/schedule/config"
-curl -sf "$U?pageSize=100&key=$K" -o ~/allsched.json
+git pull --ff-only --quiet
+python3 scripts/scrape_parishes.py --workers 4 || echo "scrape reported problems; parishes that failed keep their previous data"
+python3 scripts/build_data.py
 
-python3 scripts/build_data.py ~/allsched.json
-node scripts/check.js | head -2
-vercel deploy --prod --yes --scope anselms-projects-0f2defbb | tail -1
+git add data/parishes public/data.json
+if git diff --cached --quiet; then
+  echo "no schedule changes"
+  exit 0
+fi
+git -c user.name="MassGoWhere refresh" -c user.email="refresh@mass.anselmlong.com" \
+  commit --quiet -m "data: weekly parish schedule refresh $(date +%F)"
+git push --quiet
+echo "pushed; Vercel will deploy"

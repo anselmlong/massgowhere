@@ -1,0 +1,122 @@
+{
+  "title": "MassGoWhere: choose the visual world",
+  "question": "One direction was dealt from the roll. Keep it, take an alternate, or re-roll. Colour variants of whichever you pick come next, on your phone.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Pew Missal",
+      "kicker": "THE ROLL",
+      "lineage": "Roman Missal two-ink printing: black text, red rubrics, silk ribbon markers",
+      "thesis": "The answer is printed like the missal: what it is in black, what to do in red.",
+      "palette": ["#FBFAF8", "#1B1A19", "#B3261E", "#2F5D46"],
+      "materials": ["two-ink print on thin bright paper", "silk ribbon markers in liturgical colours"],
+      "viewport": "Monumental '6:30am' in black, one red rubric line 'Leave by 6:08 · 17 min by bus', the church name, and one full-width Navigate button; travel mode sits in a ribbon tab at the top edge.",
+      "risk": "Tips into old-fashioned church printing if the type turns ornamental; it must stay a modern text face.",
+      "raised": [
+        { "from": "challenger-crouwel", "raise": "The Mass time is set monumental, the headline of every result page." },
+        { "from": "challenger-cathode", "raise": "Masses you can no longer make stay visible as grey ghosts above the answer, so the pick explains itself." },
+        { "from": "challenger-cape", "raise": "Colour is reserved: the ribbon colour appears only on the one action you should take." },
+        { "from": "challenger-steprow", "raise": "A thin day-line marks now, your leave-by, and the Mass, the only chart on the page." }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Platform Board",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Singapore transit wayfinding and bus-stop arrival boards",
+      "thesis": "The next Mass arrives like the next train: minutes to go, which way, when to leave.",
+      "palette": ["#FFFFFF", "#1C1C1C", "#C8102E", "#F2B705"],
+      "materials": ["enamel signage panels", "amber arrival-board digits"],
+      "viewport": "A board row 'Holy Cross · 6:30am · leave in 22 min' in countdown digits, platform-style arrow directions under it, Navigate as the exit sign.",
+      "risk": "The most familiar reading of 'GoWhere plus transport'; feels like a transit app more than a Catholic one."
+    },
+    {
+      "id": "challenger-crouwel",
+      "label": "Grid Specimen",
+      "verdict": "competitive",
+      "lineage": "Wim Crouwel gridded type specimens",
+      "thesis": "Mass times built as monumental numerals on a visible grid.",
+      "palette": ["#FFFFFF", "#111111", "#1F4FD8"],
+      "materials": ["construction-grid hairlines", "grid-built numerals"],
+      "viewport": "A giant cell-built '6:30' fills the top half; church and leave-by sit in grid cells below.",
+      "case": "Strong on clarity (the time is unmissable); weak on audience identification, nothing about it says parish.",
+      "risk": "Reads as a design exercise rather than a church guide."
+    },
+    {
+      "id": "challenger-cathode",
+      "label": "Struck Numerals",
+      "verdict": "competitive",
+      "lineage": "nixie-tube decade counters",
+      "thesis": "Every Mass time glows faintly behind the gauze; the one you can make is struck bright.",
+      "palette": ["#0E1624", "#E8742A", "#8C7A5B", "#EDE6DA"],
+      "materials": ["bronze wire gauze", "cathode glow"],
+      "viewport": "Today's Mass times stacked as dim ghosts; your reachable one blazes orange with leave-by beneath.",
+      "case": "Dramatises the mechanism perfectly; loses on audience identification and daylight legibility.",
+      "risk": "Dark, techy mood sits oddly with a parish product and in bright sun."
+    },
+    {
+      "id": "challenger-cape",
+      "label": "Drawcord Cape",
+      "verdict": "declined",
+      "lineage": "transforming drawcord fashion",
+      "thesis": "One gold cord pulls a flat plane into shape.",
+      "palette": ["#0B0B0B", "#C9A227", "#4A4E57"],
+      "materials": ["matte silk", "gold cord"],
+      "viewport": "A black field with one gold control.",
+      "case": "No link to churchgoers or to finding a Mass.",
+      "kept": "One accent, reserved for the single control.",
+      "risk": "Fashion theatre in a utility."
+    },
+    {
+      "id": "challenger-rain",
+      "label": "Gravity-Rain Garden",
+      "verdict": "declined",
+      "lineage": "surreal impossible gardens",
+      "thesis": "Colour states the law each thing obeys.",
+      "palette": ["#5E6B63", "#3B6FD1", "#C0453B"],
+      "materials": ["painted rain", "floating ponds"],
+      "viewport": "A dusk garden with coloured rain.",
+      "case": "Beautiful, but hides the answer.",
+      "kept": "Every colour carries one meaning only.",
+      "risk": "Obscures the task."
+    },
+    {
+      "id": "challenger-leather",
+      "label": "Leather Studio",
+      "verdict": "declined",
+      "lineage": "skeuomorphic app canon",
+      "thesis": "Digital things as loved physical objects.",
+      "palette": ["#8B5A2B", "#E9E2D0", "#3E2A1C"],
+      "materials": ["stitched leather", "linen"],
+      "viewport": "A leather header over linen.",
+      "case": "Too heavy for clean and professional.",
+      "kept": "Only the chosen item is raised; everything else lies flat.",
+      "risk": "Dated and cluttered."
+    },
+    {
+      "id": "challenger-steprow",
+      "label": "Step Row",
+      "verdict": "declined",
+      "lineage": "early-80s drum machines",
+      "thesis": "A chase light always shows where now is.",
+      "palette": ["#2A2A2A", "#E0452B", "#F2A33A", "#F4E04D"],
+      "materials": ["candy step keys", "LED chase light"],
+      "viewport": "Sixteen keys under a running light.",
+      "case": "Playful, off-voice for a devotional utility.",
+      "kept": "A single line that always marks now.",
+      "risk": "Toy-like."
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A map with church pins and a bottom sheet listing the nearest Masses.",
+    "palette": ["#FFFFFF", "#202124", "#1A73E8"],
+    "materials": ["map tiles", "bottom sheet cards"],
+    "viewport": "Full-screen map, a pull-up sheet with the top three Masses and a Directions button.",
+    "risk": "Indistinguishable from Google Maps, which is what users already find slow."
+  },
+  "steer": true
+}
