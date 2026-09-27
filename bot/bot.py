@@ -125,7 +125,8 @@ WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can actually make, 
 # ---------- answers ----------
 
 def in_singapore(lat, lng):
-    return 1.15 < lat < 1.472 and 103.59 < lng < 104.1  # rough box; the north edge stops short of Johor Bahru
+    # same rough box as api/next.js; a box cannot fully separate Woodlands from Johor Bahru, the API is the last word
+    return 1.15 < lat < 1.475 and 103.59 < lng < 104.1
 
 
 def answer(chat_id, lat, lng, place=None):
@@ -189,8 +190,10 @@ LAST = {}  # chat id -> (lat, lng, place) of the last query, in memory only, to 
 def handle(update):
     if "callback_query" in update:
         cq = update["callback_query"]
-        chat_id = cq["message"]["chat"]["id"]
         data = cq.get("data", "")
+        chat_id = (cq.get("message") or {}).get("chat", {}).get("id")
+        if not chat_id:
+            return tg("answerCallbackQuery", callback_query_id=cq["id"], text="Please send /start again.")
         if data.startswith("mode:") and data[5:] in MODES:
             set_mode(chat_id, data[5:])
             tg("answerCallbackQuery", callback_query_id=cq["id"], text=f"Travelling by {MODES[data[5:]][0]}")
@@ -221,7 +224,7 @@ def handle(update):
         return tg("sendMessage", chat_id=chat_id, text="Share your location, or send a postal code or place name.", reply_markup=LOCATION_KB)
     try:
         hit = search_place(text)
-    except (urllib.error.URLError, TimeoutError, ValueError):
+    except Exception:  # noqa: BLE001 - search trouble reads the same as "not found"
         hit = None
     if not hit:
         return tg("sendMessage", chat_id=chat_id, text=f"I couldn't find “{text[:60]}”. Try a postal code, MRT station or street name.")
@@ -229,9 +232,21 @@ def handle(update):
     answer(chat_id, *hit)
 
 
+CHAT_LOCKS = {}
+
+
+def chat_of(u):
+    if "callback_query" in u:
+        return ((u["callback_query"].get("message") or {}).get("chat") or {}).get("id")
+    return ((u.get("message") or {}).get("chat") or {}).get("id")
+
+
 def safe_handle(u):
+    # one chat's updates run in order (tapping Car then Walk must end on Walk); different chats run in parallel
+    lock = CHAT_LOCKS.setdefault(chat_of(u), __import__("threading").Lock())
     try:
-        handle(u)
+        with lock:
+            handle(u)
     except Exception:  # noqa: BLE001 - one bad update must not stop the bot
         log.exception("failed to handle update %s", u.get("update_id"))
 

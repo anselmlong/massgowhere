@@ -24,13 +24,17 @@ def load(path, default=None):
         return default
 
 
-def site_check(pid):
+def mass_keys(rules):
+    return {(r["d"], r["t"], tuple(r.get("weeks") or []), tuple(r.get("except") or [])) for r in rules if r.get("type", "Mass") == "Mass"}
+
+
+def site_check(pid, mc_rules):
+    """Compare the parish website's Mass slots (last monthly check) with today's myCatholicSG data."""
     site = load(f"data/parishes/{pid}.json")
-    if not site or "vs_mycatholic" not in site:
+    urls = (site or {}).get("source_urls") or []
+    if not site or not urls or "rules" not in site:
         return None
-    diff = site["vs_mycatholic"]
-    return {"url": site["source_urls"][0], "checkedAt": site["fetched_at"],
-            "agrees": not diff["only_on_parish_site"] and not diff["only_on_mycatholic"]}
+    return {"url": urls[0], "checkedAt": site["fetched_at"], "agrees": mass_keys(site["rules"]) == mass_keys(mc_rules)}
 
 
 def main():
@@ -45,7 +49,7 @@ def main():
             "lat": round(p["lat"], 6), "lng": round(p["lng"], 6), "phone": p.get("phone", ""),
             "website": p.get("website", ""), "link": p.get("link", ""),
             "source": {"kind": "myCatholicSG", "url": f"https://mycatholic.sg/parish/{p.get('link', '')}", "fetchedAt": mc["asOf"]},
-            "siteCheck": site_check(pid),
+            "siteCheck": site_check(pid, mc["rules"].get(pid, [])),
         })
     out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),
            "parishes": out_parishes, "rules": mc["rules"], "dated": {k: v for k, v in mc["dated"].items() if v}}

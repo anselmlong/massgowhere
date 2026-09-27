@@ -26,25 +26,21 @@
   };
 
   // ---------- liturgical season -> accent ----------
-  function easter(y) { // anonymous Gregorian computus
-    const a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
-    const g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4;
-    const l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
-    const month = Math.floor((h + l - 7 * m + 114) / 31), day = ((h + l - 7 * m + 114) % 31) + 1;
-    return Date.UTC(y, month - 1, day);
-  }
   const ord = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th"}`;
   function season(ms) {
     const dayDate = S.sgtDay(ms), day = dayDate.getTime(), y = dayDate.getUTCFullYear(), D = 864e5, W = 7 * D;
     const isSun = dayDate.getUTCDay() === 0;
     const sunOnOrBefore = day - dayDate.getUTCDay() * D;
     const label = (n, of) => `${ord(n)} ${isSun ? "Sunday" : "Week"} ${of}`;
-    const E = easter(y);
+    const E = S.easterUTC(y);
     const xmas = Date.UTC(y, 11, 25);
     const advent = xmas - ((new Date(xmas).getUTCDay() || 7) + 21) * D; // 1st Sunday of Advent
     const christKing = advent - W;
-    const jan6 = Date.UTC(y, 0, 6);
-    const baptism = jan6 + (7 - new Date(jan6).getUTCDay()) * D;         // Sunday after 6 Jan
+    // Singapore keeps Epiphany on the Sunday between 2 and 8 Jan; Baptism of the Lord is the next Sunday,
+    // or the Monday after when Epiphany falls on 7 or 8 Jan
+    const jan2 = Date.UTC(y, 0, 2);
+    const epiphany = jan2 + ((7 - new Date(jan2).getUTCDay()) % 7) * D;
+    const baptism = new Date(epiphany).getUTCDate() >= 7 ? epiphany + D : epiphany + W;
     const ash = E - 46 * D, pentecost = E + 49 * D;
     if (day <= baptism) return { kind: "christmas", name: day === baptism ? "Baptism of the Lord" : "Christmas season", accent: "gold" };
     if (day === E - 7 * D) return { kind: "holyweek", name: "Palm Sunday", accent: "red" };
@@ -59,7 +55,9 @@
     if (day >= advent && day < xmas) return { kind: "advent", name: label(Math.floor((sunOnOrBefore - advent) / W) + 1, "of Advent"), accent: "violet" };
     if (day >= xmas) return { kind: "christmas", name: day === xmas ? "Christmas Day" : "Christmas season", accent: "gold" };
     // Ordinary Time: part 1 counts up from the Baptism of the Lord; part 2 counts back from Christ the King (34th)
-    const n = day < ash ? Math.floor((sunOnOrBefore - baptism) / W) + 1 : 34 - Math.round((christKing - sunOnOrBefore) / W);
+    // week 1 is the week of the Baptism; the Sunday after it is always the 2nd Sunday (Baptism may be a Monday)
+    const otBase = baptism - (new Date(baptism).getUTCDay() * D);
+    const n = day < ash ? Math.floor((sunOnOrBefore - otBase) / W) + 1 : 34 - Math.round((christKing - sunOnOrBefore) / W);
     return { kind: "ordinary", name: label(n, "in Ordinary Time"), accent: "green" };
   }
   // closing line on an answer, in the voice of the season
@@ -147,12 +145,14 @@
 
   // ---------- data ----------
   let dataP = null;
-  const data = () => (dataP ||= fetch("data.json", { cache: "no-cache" })
+  const data = () => (dataP ||= fetch("data.json", { cache: "no-cache", signal: AbortSignal.timeout(8000) })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .catch((e) => { dataP = null; throw e; }));
 
   // ---------- router ----------
+  let currentMap = null;
   function route() {
+    if (currentMap) { currentMap.remove(); currentMap = null; }
     const [path, qs] = location.hash.replace(/^#/, "").split("?");
     const q = new URLSearchParams(qs || "");
     window.scrollTo(0, 0);
@@ -263,6 +263,7 @@
     const params = new URLSearchParams({ lat: q.get("lat"), lng: q.get("lng"), mode: q.get("mode") || "transit" });
     try {
       const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
+      if (r.status === 400) return { outside: true };
       if (!r.ok) throw new Error(r.status);
       return await r.json();
     } catch {
@@ -282,6 +283,8 @@
     const mode = modeOf(q.get("mode"));
     const origin = { lat: Number(q.get("lat")), lng: Number(q.get("lng")) };
     const from = q.get("from") || "your location";
+    const myHash = location.hash;
+    const stale = () => location.hash !== myHash;
     store.set("mgw-origin", { ...origin, label: from, at: Date.now() });
     const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
       <span class="from">From ${esc(from)} · ${mode.label}</span></div>`;
@@ -290,16 +293,23 @@
     let res, d;
     try {
       res = await fetchNext(q);
-      d = await data().catch(() => ({ parishes: [], holidays: {} }));
+      // the answer must not wait on data.json; it only adds the source line and special-day notice
+      d = await Promise.race([data(), new Promise((_, no) => setTimeout(no, 4000))]).catch(() => ({ parishes: [], holidays: {} }));
     } catch {
-      if (!location.hash.startsWith("#/next")) return;
+      if (stale()) return;
       view.innerHTML = `${bar}<section class="answer"><h1>We couldn’t check Mass times just now.</h1>
         <p class="lede">Check your connection and try again.</p>
         <p style="margin-top:28px"><button class="btn btn-primary" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Try again</button></p></section>`;
       return;
     }
     clearTimeout(stepTimer);
-    if (!location.hash.startsWith("#/next")) return;
+    if (stale()) return;
+    if (res.outside) {
+      view.innerHTML = `${bar}<section class="answer"><h1>That’s outside Singapore.</h1>
+        <p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p>
+        <p style="margin-top:28px"><a class="btn btn-quiet" href="#/">Back to search</a></p></section>`;
+      return;
+    }
     const b = res.best;
     if (!b) {
       view.innerHTML = `${bar}<section class="answer reveal"><h1>No Mass you can reach in the next two days.</h1>
@@ -326,7 +336,7 @@
         <a class="btn btn-primary" href="${gmaps(p, mode.id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
         <div class="sub"><a class="link" href="#/church/${p.id}">Mass times at this church</a></div>
         ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; Google Maps will give the live route.</p>` : ""}
-        ${special ? `<p class="notice">${esc(special)}: Mass times often change today. Please check with the parish.</p>` : ""}
+        ${special ? `<p class="notice">${esc(special)}: Mass times often change ${dayKey(start) === dayKey(Date.now()) ? "today" : "that day"}. Please check with the parish.</p>` : ""}
       </section>
       ${alt.length || near ? `<section class="more" aria-label="Other options">
         ${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
@@ -393,8 +403,22 @@
   }
 
   // ---------- church ----------
+  async function loadData() {
+    const h = location.hash;
+    try {
+      const d = await data();
+      return location.hash === h ? d : null;
+    } catch {
+      if (location.hash === h) view.innerHTML = `<section class="answer"><h1>We couldn’t load the church list.</h1>
+        <p class="lede">Check your connection and try again.</p>
+        <p style="margin-top:28px"><button class="btn btn-primary" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Try again</button></p></section>`;
+      return null;
+    }
+  }
+
   async function renderChurch(id) {
-    const d = await data();
+    const d = await loadData();
+    if (!d) return;
     const p = d.parishes.find((x) => x.id === id);
     if (!p) return go("/churches");
     const origin = store.get("mgw-origin");
@@ -458,7 +482,8 @@
   const PIN = '<svg viewBox="0 0 32 40" aria-hidden="true"><path d="M16 39s13-12.4 13-22.5C29 8.9 23.2 3 16 3S3 8.9 3 16.5C3 26.6 16 39 16 39z"/><path class="x" d="M14.6 9.5h2.8v4.3h4.1v2.7h-4.1v8.3h-2.8v-8.3h-4.1v-2.7h4.1z"/></svg>';
 
   async function renderChurches(q) {
-    const d = await data();
+    const d = await loadData();
+    if (!d) return;
     const origin = store.get("mgw-origin");
     const now = Date.now();
     const next = new Map();
@@ -501,6 +526,7 @@
     const mapEl = view.querySelector("#map");
     let ml;
     try { ml = await maplibre(); } catch { mapEl.innerHTML = '<p class="lede" style="padding:20px">The map could not load. Use the list instead.</p>'; return; }
+    if (!mapEl.isConnected) return;
     const dark = matchMedia("(prefers-color-scheme: dark)").matches;
     const map = new ml.Map({
       container: mapEl,
@@ -518,6 +544,7 @@
       dragRotate: false,
       pitchWithRotate: false,
     });
+    currentMap = map;
     map.touchZoomRotate.disableRotation();
     map.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
     for (const p of d.parishes) {

@@ -42,30 +42,51 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel })
   const byId = new Map(parishes.map((p) => [p.id, p]));
   const est = new Map(parishes.map((p) => [p.id, estimateMinutes(haversineKm(origin, p), mode)]));
 
-  // Shortlist: the nearest parishes (travel efficiency) plus those with the earliest Mass reachable on the
-  // estimate, so neither the closest church nor the soonest Mass can be missed.
-  const firstReachable = new Map(); // pid -> {start, depart}
-  for (const e of [...events].sort((a, b) => a.start - b.start)) {
+  // Travel is routed in two passes so neither the closest church nor the soonest Mass can be missed:
+  //   pass 1: the nearest parishes, those whose first Mass is reachable on the estimate, and the nearest overall;
+  //   pass 2: once the window [S, S+WINDOW] is known, any other parish with a Mass in it, nearest first.
+  const sorted = [...events].sort((a, b) => a.start - b.start);
+  const departFor = (pid, e) => Math.max(now, e.start - (est.get(pid) + BUFFER_MIN) * 60000);
+  const firstReachable = new Map(); // strict: reachable on the estimate
+  for (const e of sorted) {
     if (firstReachable.has(e.pid)) continue;
-    const need = (est.get(e.pid) + BUFFER_MIN) * 60000;
-    if (e.start - need >= now - 10 * 60000) firstReachable.set(e.pid, { start: e.start, depart: Math.max(now, e.start - need) });
+    if (e.start - (est.get(e.pid) + BUFFER_MIN) * 60000 >= now) firstReachable.set(e.pid, e);
   }
+  const trip = new Map();
+  const departAt = new Map();
+  async function route(ids) {
+    await Promise.all(ids.filter((id) => !trip.has(id)).map(async (id) => {
+      let r = null;
+      // route for when you'd actually set off (transit at 1am is not transit at 6am)
+      if (travel) {
+        try { r = await travel(byId.get(id), departAt.get(id) ?? now); } catch { r = null; }
+      }
+      trip.set(id, r && Number.isFinite(r.minutes) ? { minutes: Math.round(r.minutes), source: r.source || "route" } : { minutes: est.get(id), source: "estimate" });
+    }));
+  }
+  for (const [pid, e] of firstReachable) departAt.set(pid, departFor(pid, e));
   const withMass = [...firstReachable.keys()];
   const byNear = [...withMass].sort((a, b) => est.get(a) - est.get(b)).slice(0, 5);
   const bySoon = [...withMass].sort((a, b) => firstReachable.get(a).start - firstReachable.get(b).start).slice(0, 3);
   const nearestIds = [...est.entries()].sort((a, b) => a[1] - b[1]).slice(0, 2).map(([id]) => id);
-  const shortlist = [...new Set([...byNear, ...bySoon, ...nearestIds])].slice(0, MAX_ROUTED + 2);
+  await route([...new Set([...byNear, ...bySoon, ...nearestIds])]);
 
-  // Real travel time for the shortlist (parallel), estimate otherwise.
-  const trip = new Map();
-  await Promise.all(shortlist.map(async (id) => {
-    let r = null;
-    if (travel) {
-      // route for when you'd actually set off (transit at 1am is not transit at 6am)
-      try { r = await travel(byId.get(id), firstReachable.get(id)?.depart ?? now); } catch { r = null; }
+  const reachableNow = () => events
+    .filter((e) => trip.has(e.pid) && trip.get(e.pid).minutes <= MAX_TRIP_MIN)
+    .filter((e) => e.start - (trip.get(e.pid).minutes + BUFFER_MIN) * 60000 >= now)
+    .sort((a, b) => a.start - b.start);
+  const first = reachableNow()[0] || firstReachable.get(bySoon[0]);
+  if (first) {
+    const end = first.start + WINDOW_MIN * 60000;
+    const inWindow = new Map();
+    for (const e of sorted) {
+      if (e.start < first.start || e.start > end || trip.has(e.pid) || inWindow.has(e.pid)) continue;
+      if (e.start - (est.get(e.pid) + BUFFER_MIN) * 60000 >= now) inWindow.set(e.pid, e);
     }
-    trip.set(id, r && Number.isFinite(r.minutes) ? { minutes: Math.round(r.minutes), source: r.source || "route" } : { minutes: est.get(id), source: "estimate" });
-  }));
+    const extra = [...inWindow.keys()].sort((a, b) => est.get(a) - est.get(b)).slice(0, MAX_ROUTED - 3);
+    for (const pid of extra) departAt.set(pid, departFor(pid, inWindow.get(pid)));
+    await route(extra);
+  }
 
   const reachable = events
     .filter((e) => trip.has(e.pid))
@@ -104,7 +125,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel })
     distanceKm: haversineKm(origin, byId.get(nearestId)),
     next: reachable.find((e) => e.pid === nearestId) || null,
   };
-  return { best, alternatives, nearest, considered: shortlist.length };
+  return { best, alternatives, nearest, considered: trip.size };
 }
 
 const api = { rank, estimateMinutes, haversineKm, BUFFER_MIN, WINDOW_MIN };

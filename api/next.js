@@ -46,7 +46,8 @@ async function answer(req, res) {
   const lng = Number(u.searchParams.get("lng"));
   const mode = MODES.has(u.searchParams.get("mode")) ? u.searchParams.get("mode") : "transit";
   const lang = u.searchParams.get("lang") || "";
-  if (!(lat > 1.1 && lat < 1.5 && lng > 103.5 && lng < 104.1)) {
+  // same rough box as bot/bot.py: a lat/lng box cannot fully separate Woodlands from Johor Bahru
+  if (!(lat > 1.15 && lat < 1.475 && lng > 103.59 && lng < 104.1)) {
     return send(res, 400, { error: "lat/lng must be a point in Singapore" });
   }
   const now = Date.now();

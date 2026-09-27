@@ -76,40 +76,47 @@ def main():
     as_of = None
     rules, dated = {}, {}
 
+    skipped = []
     for doc in raw["documents"]:
         code = doc["name"].rsplit("/", 1)[1]
+        if code not in CODE_TO_ID:
+            print(f"warning: unknown parish code {code!r}, skipped")
+            continue
         pid = CODE_TO_ID[code]
         f = {k: un(v) for k, v in doc.get("fields", {}).items()}
         upd = doc.get("updateTime", "")[:10]
         as_of = max(as_of or upd, upd)
         seen = set()
         for x in f.get("schedule", []):
-            # `hide` is not filtered by myCatholicSG's own frontend (Holy Family marks every regular Mass hidden)
-            raw_type = clean(x.get("type")) or "Mass"
-            typ = TYPE_MAP.get(raw_type, "Other")
-            note = clean(x.get("notes"))
-            if raw_type not in TYPE_MAP or (typ == "Mass" and raw_type != "Mass"):
-                note = " · ".join(filter(None, [raw_type, note]))
-            base = {"type": typ, "t": to_24h(x["time"]), "lang": lang_name(x.get("lang")),
-                    "loc": clean(x.get("location")) or "Main Church", "note": note}
-            a = x.get("action")
-            if a == "weekly":
-                ev = {"d": DAYS.index(x["text"].strip().lower()), "weeks": [], "except": [], **base}
-            elif a == "nthweek":
-                n, day = x["text"].strip().lower().split()
-                ev = {"d": DAYS.index(day), "weeks": [int(re.match(r"\d+", n)[0])], "except": [], **base}
-            elif a in ("add", "remove", "override"):
-                d = datetime.strptime(clean(x["text"]), "%d %B %Y").date()
-                if d < cutoff:
-                    continue
-                ev = {"k": a[0], "date": d.isoformat(), **base}
-            else:
-                continue
-            key = json.dumps({k: v for k, v in ev.items() if k != "note"}, sort_keys=True)
-            if key in seen:
-                continue
-            seen.add(key)
-            (dated if "date" in ev else rules).setdefault(str(pid), []).append(ev)
+          try:
+              # `hide` is not filtered by myCatholicSG's own frontend (Holy Family marks every regular Mass hidden)
+              raw_type = clean(x.get("type")) or "Mass"
+              typ = TYPE_MAP.get(raw_type, "Other")
+              note = clean(x.get("notes"))
+              if raw_type not in TYPE_MAP or (typ == "Mass" and raw_type != "Mass"):
+                  note = " · ".join(filter(None, [raw_type, note]))
+              base = {"type": typ, "t": to_24h(x["time"]), "lang": lang_name(x.get("lang")),
+                      "loc": clean(x.get("location")) or "Main Church", "note": note}
+              a = x.get("action")
+              if a == "weekly":
+                  ev = {"d": DAYS.index(x["text"].strip().lower()), "weeks": [], "except": [], **base}
+              elif a == "nthweek":
+                  n, day = x["text"].strip().lower().split()
+                  ev = {"d": DAYS.index(day), "weeks": [int(re.match(r"\d+", n)[0])], "except": [], **base}
+              elif a in ("add", "remove", "override"):
+                  d = datetime.strptime(clean(x["text"]), "%d %B %Y").date()
+                  if d < cutoff:
+                      continue
+                  ev = {"k": a[0], "date": d.isoformat(), **base}
+              else:
+                  continue
+              key = json.dumps({k: v for k, v in ev.items() if k != "note"}, sort_keys=True)
+              if key in seen:
+                  continue
+              seen.add(key)
+              (dated if "date" in ev else rules).setdefault(str(pid), []).append(ev)
+          except (ValueError, KeyError, TypeError, IndexError) as e:  # one bad entry must not stop the import
+            skipped.append(f"{code}: {x.get('action')} {x.get('text')} {x.get('time')} ({type(e).__name__})")
 
     # myCatholicSG often stores "every Monday" as five nth-week entries; fold those back into one weekly rule
     for pid, lst in rules.items():
@@ -121,12 +128,19 @@ def main():
             weeks = {w for r in g for w in r["weeks"]}
             if any(not r["weeks"] for r in g) or {1, 2, 3, 4, 5} <= weeks:
                 folded.append({**g[0], "weeks": [], "except": []})
+            elif weeks == {4, 5} or (4 in weeks and 5 in weeks and any(re.search(r"\blast\b", r["note"], re.I) for r in g)):
+                # "last Sunday of the month" is stored as 4th + 5th, which invents a Mass in five-week months
+                folded.append({**g[0], "weeks": [-1], "except": []})
             else:
                 folded.extend(g)
         rules[pid] = folded
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump({"asOf": as_of, "rules": rules, "dated": dated}, open(OUT, "w"), ensure_ascii=False, indent=0)
+    if skipped:
+        print(f"skipped {len(skipped)} malformed entries: " + "; ".join(skipped[:10]))
+    if len(skipped) > 50:
+        raise SystemExit("too many malformed entries; refusing to publish")
     print(f"wrote {OUT}: {sum(map(len, rules.values()))} recurring, {sum(map(len, dated.values()))} dated, as of {as_of}")
 
 

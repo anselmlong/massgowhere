@@ -80,3 +80,25 @@ test("a crowd of same-time parishes cannot push the reachable best out of the sh
   const r = await rank({ origin, now: T0, parishes: ps, events, travel });
   assert.equal(r.best.pid, 2);
 });
+
+test("the earliest reachable Mass is found even when unreachable-but-sooner Masses crowd the list", async () => {
+  // four parishes with Masses too soon to reach, one farther parish whose later Mass is reachable
+  const ps = [
+    ...[0, 1, 2, 3].map((i) => ({ id: 20 + i, name: `Soon${i}`, lat: 1.40 + 0.002 * i, lng: 103.80 })),
+    { id: 30, name: "Reachable", lat: 1.30, lng: 103.90 },
+  ];
+  const o = { lat: 1.30, lng: 103.80 };
+  const events = [...[0, 1, 2, 3].map((i) => ({ pid: 20 + i, start: min(20 + i) })), { pid: 30, start: min(90) }];
+  const r = await rank({ origin: o, now: T0, parishes: ps, events });
+  assert.equal(r.best.pid, 30);
+});
+
+test("a nearer church with a Mass inside the window is routed even if it is not in the first shortlist", async () => {
+  const ring = Array.from({ length: 7 }, (_, i) => ({ id: 40 + i, name: `R${i}`, lat: 1.30 + 0.01 * (i + 1), lng: 103.80 }));
+  const o = { lat: 1.30, lng: 103.80 };
+  // the 5 nearest have Masses only much later; parish 46 (7th nearest) has one inside the window
+  const events = [...ring.slice(0, 5).map((p) => ({ pid: p.id, start: min(600) })), { pid: 45, start: min(60) }, { pid: 46, start: min(80) }];
+  const travel = async (p) => ({ minutes: p.id === 46 ? 20 : 40, source: "test" });
+  const r = await rank({ origin: o, now: T0, parishes: ring, events, travel });
+  assert.equal(r.best.pid, 46);
+});

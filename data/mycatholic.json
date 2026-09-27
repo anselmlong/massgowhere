@@ -271,19 +271,7 @@
 {
 "d": 0,
 "weeks": [
-4
-],
-"except": [],
-"type": "Mass",
-"t": "13:00",
-"lang": "Bahasa Indonesia",
-"loc": "Main Church",
-"note": "Last Sunday of every month"
-},
-{
-"d": 0,
-"weeks": [
-5
+-1
 ],
 "except": [],
 "type": "Mass",
@@ -3975,19 +3963,7 @@
 {
 "d": 0,
 "weeks": [
-4
-],
-"except": [],
-"type": "Mass",
-"t": "13:45",
-"lang": "Tagalog",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 0,
-"weeks": [
-5
+-1
 ],
 "except": [],
 "type": "Mass",
