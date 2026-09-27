@@ -1,6 +1,6 @@
 #!/bin/sh
 # Refresh Mass times from myCatholicSG (read-only), rebuild data.json, and redeploy mass.anselmlong.com.
-# Run by hand:  sh ~/mass-finder/refresh.sh
+# Run by hand:  sh ~/massgowhere/refresh.sh
 set -e
 cd "$(dirname "$0")"
 

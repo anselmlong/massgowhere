@@ -1,4 +1,4 @@
-# Mass near me — mass.anselmlong.com
+# MassGoWhere — mass.anselmlong.com
 
 Static site: map of Singapore's 32 Catholic parishes, nearest church, next Mass (sorted by time or distance), travel estimates, Google Maps directions.
 
@@ -9,6 +9,6 @@ Static site: map of Singapore's 32 Catholic parishes, nearest church, next Mass 
 
 ## Refreshing Mass times
 
-`sh refresh.sh` — fetches the schedule export, rebuilds, checks, deploys to Vercel (team `anselms-projects-0f2defbb`, project `mass-finder`).
+`sh refresh.sh` — fetches the schedule export, rebuilds, checks, deploys to Vercel (team `anselms-projects-0f2defbb`, project `massgowhere`).
 
 Travel times are straight-line × 1.3 heuristics, labelled as estimates; Google Maps links give live directions.
