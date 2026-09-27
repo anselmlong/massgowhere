@@ -180,7 +180,7 @@ def search_place(text):
         return None
     x = res[0]
     name = x["BUILDING"] if x.get("BUILDING") not in (None, "", "NIL") else x["SEARCHVAL"]
-    return float(x["LATITUDE"]), float(x["LONGITUDE"]), re.sub(r"\b(Mrt|Lrt|Nus|Ntu|Smu|Cbd)\b", lambda m: m.group(0).upper(), name.title())
+    return float(x["LATITUDE"]), float(x["LONGITUDE"]), re.sub(r"\b(Mrt|Lrt|Nus|Ntu|Smu|Cbd|Hdb|[A-Za-z]{1,3}\d+)\b", lambda m: m.group(0).upper(), name.title())
 
 
 LAST = {}  # chat id -> (lat, lng, place) of the last query, in memory only, to redo it after a mode change

@@ -62,6 +62,17 @@
     const n = day < ash ? Math.floor((sunOnOrBefore - baptism) / W) + 1 : 34 - Math.round((christKing - sunOnOrBefore) / W);
     return { name: label(n, "in Ordinary Time"), accent: "green" };
   }
+  // closing line on an answer, in the voice of the season
+  const BLESSING = {
+    "Ordinary Time": "Go in peace.", Advent: "Come, Lord Jesus.", Christmas: "Glory to God in the highest.",
+    Lent: "Return to the Lord with all your heart.", "Holy Week": "We adore you, O Christ, and we bless you.",
+    Easter: "Alleluia, He is risen.", Pentecost: "Come, Holy Spirit.",
+  };
+  function blessing(ms) {
+    const n = season(ms).name;
+    const key = Object.keys(BLESSING).find((k) => n.includes(k)) || (/Palm|Good Friday/.test(n) ? "Holy Week" : "Ordinary Time");
+    return BLESSING[key];
+  }
   const PALETTES = [
     { id: "season", label: "Seasonal" }, { id: "green", label: "Green" }, { id: "blue", label: "Marian blue" },
     { id: "violet", label: "Violet" }, { id: "red", label: "Red" },
@@ -163,6 +174,9 @@
   }
   function renderHome() {
     const mode = store.get("mgw-mode") || "transit";
+    const last = store.get("mgw-origin");
+    // a named place from last time (not raw GPS, which is stale by now), within the last 30 days
+    const again = last && last.label !== "your location" && Date.now() - (last.at || 0) < 30 * 864e5 ? last : null;
     view.innerHTML = `
       <section class="home">
         <div>
@@ -172,6 +186,7 @@
         ${modePicker(mode)}
         <div class="actions">
           <button class="btn btn-primary" id="locate" type="button">${svg(ICON.locate)}<span>Use my location</span></button>
+          ${again ? `<a class="again" href="#/next?lat=${again.lat}&lng=${again.lng}&mode=${mode}&from=${encodeURIComponent(again.label)}">Check again from ${esc(again.label)}</a>` : ""}
           <p class="msg" id="msg" role="status" hidden></p>
           <div class="or">or</div>
           <div>
@@ -231,7 +246,7 @@
       }, 250);
     });
     const title = (x) => (x.BUILDING && x.BUILDING !== "NIL" ? x.BUILDING : x.SEARCHVAL)
-      .replace(/\b\w+/g, (w) => (/^(MRT|LRT|NUS|NTU|SMU|CBD|HDB)$/.test(w) ? w : w[0] + w.slice(1).toLowerCase()));
+      .replace(/\b\w+/g, (w) => (/^(MRT|LRT|NUS|NTU|SMU|CBD|HDB)$/.test(w) || /^[A-Z]{1,3}\d+$/.test(w) ? w : w[0] + w.slice(1).toLowerCase()));
   }
 
   function clearable(input, onClear) {
@@ -268,7 +283,8 @@
     store.set("mgw-origin", { ...origin, label: from, at: Date.now() });
     const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
       <span class="from">From ${esc(from)} · ${mode.label}</span></div>`;
-    view.innerHTML = `${bar}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p>Checking Mass times and routes…</p></div>`;
+    view.innerHTML = `${bar}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p id="step">Looking at Mass times at 32 parishes…</p></div>`;
+    const stepTimer = setTimeout(() => { const el = document.getElementById("step"); if (el) el.textContent = `Checking ${mode.id === "transit" ? "bus & MRT routes" : mode.id === "drive" ? "driving routes" : "walking routes"} from ${from}…`; }, 900);
     let res, d;
     try {
       res = await fetchNext(q);
@@ -280,6 +296,7 @@
         <p style="margin-top:28px"><button class="btn btn-primary" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Try again</button></p></section>`;
       return;
     }
+    clearTimeout(stepTimer);
     if (!location.hash.startsWith("#/next")) return;
     const b = res.best;
     if (!b) {
@@ -304,7 +321,7 @@
         <p class="time">${t.hm}<small>${t.ap}</small></p>
         <h1 class="church">${esc(p.name)}</h1>
         ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
-        <div class="leave"><strong>${leaveText}</strong><span>${est ? "about " : ""}${mins(b.travelMin)} ${mode.phrase}</span></div>
+        <div class="leave" id="leave"><strong>${leaveText}</strong><span>${est ? "about " : ""}${mins(b.travelMin)} ${mode.phrase}</span></div>
         <a class="btn btn-primary" href="${gmaps(p, mode.id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
         <div class="sub"><a class="link" href="#/church/${p.id}">Mass times at this church</a></div>
         ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; Google Maps will give the live route.</p>` : ""}
@@ -313,13 +330,34 @@
       ${alt.length || near ? `<section class="more" aria-label="Other options">
         ${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
         ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
-          <a class="row" href="#/church/${near.parish.id}"><span class="t">${mins(near.travelMin)}<small>${mode.label.toLowerCase()}</small></span>
+          <a class="row" href="#/church/${near.parish.id}"><span class="t">${mins(near.travelMin)}<small>${mode.label}</small></span>
           <span class="n">${esc(near.parish.name)}<small>${near.next ? `Next Mass you can make: ${clock(new Date(near.next.start).getTime())} ${dayLabel(new Date(near.next.start).getTime()).toLowerCase()}` : "No reachable Mass soon"}</small></span><span class="d"></span></a></li></ul>` : ""}
       </section>` : ""}
       <p class="source">${src ? `Times from <a href="${esc(src.url)}" target="_blank" rel="noopener">myCatholicSG</a>, updated ${new Date(src.fetchedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short" })}. ` : ""}Please confirm feast days with the parish.</p>
-      <p class="blessing">Go in peace.</p>`;
+      <p class="blessing">${esc(blessing(start))}</p>`;
     view.focus({ preventScroll: true });
+    tickLeave(leave, b.travelMin, est, mode);
   }
+  // the leave-by line counts down while the page is open; at zero it says so and the Navigate button draws the eye
+  let leaveTimer = null;
+  function tickLeave(leave, travelMin, est, mode) {
+    clearInterval(leaveTimer);
+    const draw = () => {
+      const box = document.getElementById("leave");
+      if (!box) return clearInterval(leaveTimer);
+      const m = Math.ceil((leave - Date.now()) / 60000);
+      const trip = `${est ? "about " : ""}${mins(travelMin)} ${mode.phrase}`;
+      if (m <= 0) {
+        box.innerHTML = `<strong>Time to leave</strong><span>${trip}</span>`;
+        document.querySelector(".answer .btn-primary")?.classList.add("go-now");
+      } else if (m <= 60) {
+        box.innerHTML = `<strong>Leave in ${mins(m)}</strong><span>by ${clock(leave)} · ${trip}</span>`;
+      }
+    };
+    draw();
+    leaveTimer = setInterval(draw, 30000);
+  }
+
   function row(a, mode) {
     const s = new Date(a.start).getTime();
     return `<li><a class="row" href="#/church/${a.parish.id}">
@@ -477,6 +515,9 @@
     }
   }
 
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".btn-primary[href^='https://www.google.com/maps']") && navigator.vibrate) navigator.vibrate(12);
+  });
   applyPalette();
   paletteMenu();
   route();
