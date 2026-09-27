@@ -46,33 +46,29 @@
     const jan6 = Date.UTC(y, 0, 6);
     const baptism = jan6 + (7 - new Date(jan6).getUTCDay()) * D;         // Sunday after 6 Jan
     const ash = E - 46 * D, pentecost = E + 49 * D;
-    if (day <= baptism) return { name: day === baptism ? "Baptism of the Lord" : "Christmas season", accent: "gold" };
-    if (day === E - 7 * D) return { name: "Palm Sunday", accent: "red" };
-    if (day === E - 2 * D) return { name: "Good Friday", accent: "red" };
-    if (day > E - 7 * D && day < E) return { name: "Holy Week", accent: "violet" };
+    if (day <= baptism) return { kind: "christmas", name: day === baptism ? "Baptism of the Lord" : "Christmas season", accent: "gold" };
+    if (day === E - 7 * D) return { kind: "holyweek", name: "Palm Sunday", accent: "red" };
+    if (day === E - 2 * D) return { kind: "holyweek", name: "Good Friday", accent: "red" };
+    if (day > E - 7 * D && day < E) return { kind: "holyweek", name: "Holy Week", accent: "violet" };
     if (day >= ash && day < E - 7 * D) {
-      if (day < ash + 4 * D) return { name: "Ash Wednesday week", accent: "violet" };
-      return { name: label(Math.floor((sunOnOrBefore - (ash + 4 * D)) / W) + 1, "of Lent"), accent: "violet" };
+      if (day < ash + 4 * D) return { kind: "lent", name: day === ash ? "Ash Wednesday" : "After Ash Wednesday", accent: "violet" };
+      return { kind: "lent", name: label(Math.floor((sunOnOrBefore - (ash + 4 * D)) / W) + 1, "of Lent"), accent: "violet" };
     }
-    if (day >= E && day < pentecost) return { name: day === E ? "Easter Sunday" : label(Math.floor((sunOnOrBefore - E) / W) + 1, "of Easter"), accent: "gold" };
-    if (day === pentecost) return { name: "Pentecost Sunday", accent: "red" };
-    if (day >= advent && day < xmas) return { name: label(Math.floor((sunOnOrBefore - advent) / W) + 1, "of Advent"), accent: "violet" };
-    if (day >= xmas) return { name: day === xmas ? "Christmas Day" : "Christmas season", accent: "gold" };
+    if (day >= E && day < pentecost) return { kind: "easter", name: day === E ? "Easter Sunday" : label(Math.floor((sunOnOrBefore - E) / W) + 1, "of Easter"), accent: "gold" };
+    if (day === pentecost) return { kind: "pentecost", name: "Pentecost Sunday", accent: "red" };
+    if (day >= advent && day < xmas) return { kind: "advent", name: label(Math.floor((sunOnOrBefore - advent) / W) + 1, "of Advent"), accent: "violet" };
+    if (day >= xmas) return { kind: "christmas", name: day === xmas ? "Christmas Day" : "Christmas season", accent: "gold" };
     // Ordinary Time: part 1 counts up from the Baptism of the Lord; part 2 counts back from Christ the King (34th)
     const n = day < ash ? Math.floor((sunOnOrBefore - baptism) / W) + 1 : 34 - Math.round((christKing - sunOnOrBefore) / W);
-    return { name: label(n, "in Ordinary Time"), accent: "green" };
+    return { kind: "ordinary", name: label(n, "in Ordinary Time"), accent: "green" };
   }
   // closing line on an answer, in the voice of the season
   const BLESSING = {
-    "Ordinary Time": "Go in peace.", Advent: "Come, Lord Jesus.", Christmas: "Glory to God in the highest.",
-    Lent: "Return to the Lord with all your heart.", "Holy Week": "We adore you, O Christ, and we bless you.",
-    Easter: "Alleluia, He is risen.", Pentecost: "Come, Holy Spirit.",
+    ordinary: "Go in peace.", advent: "Come, Lord Jesus.", christmas: "Glory to God in the highest.",
+    lent: "Return to the Lord with all your heart.", holyweek: "We adore you, O Christ, and we bless you.",
+    easter: "Alleluia, He is risen.", pentecost: "Come, Holy Spirit.",
   };
-  function blessing(ms) {
-    const n = season(ms).name;
-    const key = Object.keys(BLESSING).find((k) => n.includes(k)) || (/Palm|Good Friday/.test(n) ? "Holy Week" : "Ordinary Time");
-    return BLESSING[key];
-  }
+  const blessing = (ms) => BLESSING[season(ms).kind] || BLESSING.ordinary;
   const PALETTES = [
     { id: "season", label: "Seasonal" }, { id: "green", label: "Green" }, { id: "blue", label: "Marian blue" },
     { id: "violet", label: "Violet" }, { id: "red", label: "Red" },
@@ -127,6 +123,8 @@
     const m = s.match(/^(.*?)(am|pm)$/);
     return m ? { hm: m[1], ap: m[2] } : { hm: s, ap: "" };
   }
+  const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const fmtDate = (v) => { const d = S.sgtDay(new Date(v).getTime()); return `${d.getUTCDate()} ${MON[d.getUTCMonth()]}`; };
   const dayKey = (ms) => new Date(ms).toLocaleDateString("en-CA", TZ);
   function dayLabel(ms) {
     const now = Date.now();
@@ -200,7 +198,11 @@
         </div>
       </section>
       <div class="home-foot"><a class="link" href="#/churches">Browse all churches</a></div>`;
-    view.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", () => store.set("mgw-mode", r.value)));
+    view.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", () => {
+      store.set("mgw-mode", r.value);
+      const a = view.querySelector(".again");
+      if (a) a.href = a.href.replace(/mode=\w+/, `mode=${r.value}`);
+    }));
     const msg = view.querySelector("#msg");
     const btn = view.querySelector("#locate");
     btn.addEventListener("click", () => {
@@ -311,7 +313,6 @@
     const est = b.travelSource === "estimate";
     const leaveText = leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}`;
     const meta = [b.language !== "English" ? `${b.language} Mass` : "", b.note].filter(Boolean).join(" · ");
-    const src = d.parishes.find((x) => x.id === p.id)?.source;
     const special = S.specialDay(start, d);
     const alt = (res.alternatives || []).filter(Boolean);
     const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
@@ -330,24 +331,29 @@
       ${alt.length || near ? `<section class="more" aria-label="Other options">
         ${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
         ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
-          <a class="row" href="#/church/${near.parish.id}"><span class="t">${mins(near.travelMin)}<small>${mode.label}</small></span>
-          <span class="n">${esc(near.parish.name)}<small>${near.next ? `Next Mass you can make: ${clock(new Date(near.next.start).getTime())} ${dayLabel(new Date(near.next.start).getTime()).toLowerCase()}` : "No reachable Mass soon"}</small></span><span class="d"></span></a></li></ul>` : ""}
+          <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
+          <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}</span></a></li></ul>` : ""}
       </section>` : ""}
-      <p class="source">${src ? `Times from <a href="${esc(src.url)}" target="_blank" rel="noopener">myCatholicSG</a>, updated ${new Date(src.fetchedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short" })}. ` : ""}Please confirm feast days with the parish.</p>
+      <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>
       <p class="blessing">${esc(blessing(start))}</p>`;
+    rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource }]);
     view.focus({ preventScroll: true });
-    tickLeave(leave, b.travelMin, est, mode);
+    tickLeave(start, leave, b.travelMin, est, mode);
   }
   // the leave-by line counts down while the page is open; at zero it says so and the Navigate button draws the eye
   let leaveTimer = null;
-  function tickLeave(leave, travelMin, est, mode) {
+  function tickLeave(start, leave, travelMin, est, mode) {
     clearInterval(leaveTimer);
     const draw = () => {
       const box = document.getElementById("leave");
       if (!box) return clearInterval(leaveTimer);
       const m = Math.ceil((leave - Date.now()) / 60000);
       const trip = `${est ? "about " : ""}${mins(travelMin)} ${mode.phrase}`;
-      if (m <= 0) {
+      if (Date.now() > leave + 5 * 60000 || Date.now() >= start) {
+        clearInterval(leaveTimer);
+        box.innerHTML = `<strong>You may have missed this one</strong><span><button class="link" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Find the next Mass</button></span>`;
+        document.querySelector(".answer .btn-primary")?.classList.remove("go-now");
+      } else if (m <= 0) {
         box.innerHTML = `<strong>Time to leave</strong><span>${trip}</span>`;
         document.querySelector(".answer .btn-primary")?.classList.add("go-now");
       } else if (m <= 60) {
@@ -356,6 +362,26 @@
     };
     draw();
     leaveTimer = setInterval(draw, 30000);
+  }
+
+  // trips routed for the answer screen, so the church page shows the same numbers (principle: same answer everywhere)
+  function rememberTrips(origin, mode, list) {
+    const trips = {};
+    for (const e of list) if (e && e.parish) trips[e.parish.id] = { minutes: e.travelMin, source: e.travelSource };
+    store.set("mgw-trips", { key: `${origin.lat},${origin.lng},${mode}`, at: Date.now(), trips });
+  }
+  function tripTo(p, origin, mode) {
+    const t = store.get("mgw-trips");
+    if (t && t.key === `${origin.lat},${origin.lng},${mode}` && Date.now() - t.at < 30 * 60000 && t.trips[p.id]) return t.trips[p.id];
+    return { minutes: R.estimateMinutes(R.haversineKm(origin, p), mode), source: "estimate" };
+  }
+  function sourceLine(p) {
+    if (!p) return "";
+    const src = p.source || {}, sc = p.siteCheck;
+    const mc = `<a href="${esc(src.url || "#")}" target="_blank" rel="noopener">myCatholicSG</a>`;
+    if (sc && sc.agrees) return `Times from ${mc}, confirmed on the <a href="${esc(sc.url)}" target="_blank" rel="noopener">parish website</a> ${fmtDate(sc.checkedAt)}.`;
+    if (sc) return `Times from ${mc} (updated ${fmtDate(src.fetchedAt)}). The <a href="${esc(sc.url)}" target="_blank" rel="noopener">parish website</a> lists some different times; check it before you go.`;
+    return `Times from ${mc}, updated ${fmtDate(src.fetchedAt)}.`;
   }
 
   function row(a, mode) {
@@ -384,10 +410,10 @@
     // the next Mass you can still make here, if we know where you are (estimated trip)
     let lead = "";
     if (origin) {
-      const trip = R.estimateMinutes(R.haversineKm(origin, p), mode);
-      const n = evs.find((e) => e.start - (trip + R.BUFFER_MIN) * 60000 >= now);
+      const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
+      const n = evs.find((e) => e.start - (t.minutes + R.BUFFER_MIN) * 60000 >= now);
       if (n) lead = `<div class="next-here"><strong>Next Mass you can make: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
-        <span>Leave by about ${clock(n.start - (trip + R.BUFFER_MIN) * 60000)} · about ${mins(trip)} ${modeOf(mode).phrase}</span></div>`;
+        <span>Leave by ${about}${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${modeOf(mode).phrase}</span></div>`;
     }
     const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
     const dayList = ([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => {
@@ -398,7 +424,6 @@
     const soon = all.slice(0, 2), rest = all.slice(2);
     // notes that only restate a language already tagged on the rows add nothing
     const notes = (p.notes || []).filter((n) => !/^(all )?(saturday|sunday|weekday|masses?)\b.*\b(is|are) in (english|mandarin|tamil|tagalog|indonesian)/i.test(n) && !/unless (otherwise )?(indicated|stated)/i.test(n));
-    const src = p.source || {};
     view.innerHTML = `
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="history.length > 1 ? history.back() : (location.hash='#/')">${svg(ICON.back)}</button></div>
       <section class="church-page">
@@ -415,8 +440,7 @@
         </div>
         ${notes.length ? `<ul class="notes">${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
         ${all.some(([, es]) => S.specialDay(es[0].start, d)) ? `<p class="notice">${esc(all.map(([, es]) => S.specialDay(es[0].start, d)).filter(Boolean)[0])} is coming up: times that day may differ. Please check with the parish.</p>` : ""}
-        <p class="source">Times from <a href="${esc(src.url || "#")}" target="_blank" rel="noopener">myCatholicSG</a>${src.fetchedAt ? `, updated ${new Date(src.fetchedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short", year: "numeric" })}` : ""}.
-        ${p.siteCheck ? (p.siteCheck.agrees ? `The <a href="${esc(p.siteCheck.url)}" target="_blank" rel="noopener">parish website</a> agrees (checked ${new Date(p.siteCheck.checkedAt).toLocaleDateString("en-SG", { day: "numeric", month: "short" })}).` : `The <a href="${esc(p.siteCheck.url)}" target="_blank" rel="noopener">parish website</a> lists some different times; please check it before you go.`) : p.website ? `Parish website: <a href="${esc(p.website)}" target="_blank" rel="noopener">${esc(p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>.` : ""}</p>
+        <p class="source">${sourceLine(p)}${!p.siteCheck && p.website ? ` Parish website: <a href="${esc(p.website)}" target="_blank" rel="noopener">${esc(p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>.` : ""}</p>
       </section>`;
   }
 
