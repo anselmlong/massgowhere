@@ -4,7 +4,7 @@
  "source_urls": [
   "https://stanne.catholic.sg/services/"
  ],
- "fetched_at": "2026-09-28T02:19+08:00",
+ "fetched_at": "2026-09-28T02:37+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,8 +19,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -29,8 +29,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -39,8 +39,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -52,8 +52,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Main Church",
-   "note": "First and third Sundays of the month"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -64,8 +64,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "Main Church",
-   "note": "Fourth Sunday of the month"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -74,8 +74,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -84,8 +84,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday morning Mass (Monday to Saturday)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -94,8 +94,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Holy Rosary before evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -104,8 +104,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -114,8 +114,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday morning Mass (Monday to Saturday)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -124,8 +124,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Holy Rosary before evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -134,8 +134,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -144,8 +144,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday morning Mass (Monday to Saturday)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -154,8 +154,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Holy Rosary before evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -164,8 +164,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -174,8 +174,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday morning Mass (Monday to Saturday)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -184,8 +184,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Holy Rosary before evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -194,8 +194,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -206,8 +206,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Holy Hour every first Thursday after evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -216,8 +216,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday morning Mass (Monday to Saturday)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -226,8 +226,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Holy Rosary before evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -236,8 +236,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -246,8 +246,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Weekday morning Mass (Monday to Saturday)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -258,8 +258,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Divine Mercy every second Saturday"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -268,18 +268,14 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Saturday evening Mass"
+   "loc": "",
+   "note": ""
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "Confessions are heard 20 minutes before each weekend Mass in the Confessional Box at the back of the Main Church.",
-  "Adoration Room is open Monday to Saturday 7am-10pm and Sunday 7am-6pm; closed on Public Holidays and during the Easter Triduum.",
-  "Mandarin Mass is on the first and third Sundays; Tamil Mass is on the fourth Sunday."
- ],
+ "notes": [],
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

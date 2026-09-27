@@ -4,7 +4,7 @@
  "source_urls": [
   "https://ihm.sg/"
  ],
- "fetched_at": "2026-09-28T02:19+08:00",
+ "fetched_at": "2026-09-28T02:36+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,7 +19,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -39,7 +39,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -52,7 +52,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Burmese",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -62,7 +62,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -72,7 +72,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -83,7 +83,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "Priest's Office",
-   "note": "Walk-in Confession, 9am-11am, except public holidays"
+   "note": ""
   },
   {
    "d": 1,
@@ -92,7 +92,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -102,7 +102,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -113,7 +113,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "Priest's Office",
-   "note": "Walk-in Confession, 9am-11am, except public holidays"
+   "note": ""
   },
   {
    "d": 2,
@@ -122,7 +122,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -132,7 +132,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -142,7 +142,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -152,7 +152,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -162,7 +162,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -172,7 +172,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -182,7 +182,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -194,8 +194,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Holy Hour"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -204,8 +204,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Followed by Novena Devotion"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -218,8 +218,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "Mandarin",
-   "loc": "Main Church",
-   "note": "Mandarin Rosary"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -231,8 +231,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "Teochew",
-   "loc": "Main Church",
-   "note": "Teochew Rosary"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -241,8 +241,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Main Church",
-   "note": "Anticipatory Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -251,17 +251,16 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Anticipatory Mass"
+   "loc": "",
+   "note": ""
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Walk-in Confession Mon & Tue 9-11am except public holidays.",
-  "Vietnamese Mass at IHM ended 17 Nov 2024; contact Church of the Sacred Heart for Vietnamese Mass timings.",
-  "Main Church Reconciliation is 30 min before Mass; weekday Rosary Devotion is 40 min before Mass."
+  "Walk-in Confession is not held on public holidays.",
+  "2nd Friday evening Mass is offered for the faithful departed in the Columbarium."
  ],
  "disputes": [],
  "vs_mycatholic": {

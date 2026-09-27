@@ -1,5 +1,5 @@
 {
- "ran_at": "2026-09-28T02:23+08:00",
+ "ran_at": "2026-09-28T02:42+08:00",
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -10,24 +10,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1180,
-     "completion_tokens": 12260,
-     "total_tokens": 13440,
-     "cost": 0.014990736,
+     "prompt_tokens": 1207,
+     "completion_tokens": 13333,
+     "total_tokens": 14540,
+     "cost": 0.0163617,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 0,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.014990736,
-      "upstream_inference_prompt_cost": 0.000278736,
-      "upstream_inference_completions_cost": 0.014712
+      "upstream_inference_cost": 0.0163617,
+      "upstream_inference_prompt_cost": 0.0003621,
+      "upstream_inference_completions_cost": 0.0159996
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 9254,
+      "reasoning_tokens": 10072,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -41,36 +41,11 @@
   {
    "id": 2,
    "name": "Cathedral of the Good Shepherd",
-   "warnings": [],
-   "usage": {
-    "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1506,
-     "completion_tokens": 5405,
-     "total_tokens": 6911,
-     "cost": 0.006862536,
-     "is_byok": false,
-     "prompt_tokens_details": {
-      "cached_tokens": 256,
-      "cache_write_tokens": 0,
-      "audio_tokens": 0,
-      "video_tokens": 0
-     },
-     "cost_details": {
-      "upstream_inference_cost": 0.006862536,
-      "upstream_inference_prompt_cost": 0.000376536,
-      "upstream_inference_completions_cost": 0.006486
-     },
-     "completion_tokens_details": {
-      "reasoning_tokens": 4266,
-      "image_tokens": 0,
-      "audio_tokens": 0
-     }
-    }
-   },
-   "disputes": 0,
-   "vs_mycatholic": "+0/-0",
-   "status": "updated",
-   "masses": 9
+   "warnings": [
+    "fetch failed https://cathedral.catholic.sg/sacraments/: HTTPError HTTP Error 403: Forbidden"
+   ],
+   "usage": {},
+   "status": "kept-previous"
   },
   {
    "id": 3,
@@ -78,24 +53,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1493,
-     "completion_tokens": 7925,
-     "total_tokens": 9418,
-     "cost": 0.009882636,
+     "prompt_tokens": 1520,
+     "completion_tokens": 9382,
+     "total_tokens": 10902,
+     "cost": 0.011563872,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.009882636,
-      "upstream_inference_prompt_cost": 0.000372636,
-      "upstream_inference_completions_cost": 0.00951
+      "upstream_inference_cost": 0.011563872,
+      "upstream_inference_prompt_cost": 0.000305472,
+      "upstream_inference_completions_cost": 0.0112584
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 6183,
+      "reasoning_tokens": 7266,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -112,10 +87,10 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1415,
-     "completion_tokens": 8697,
-     "total_tokens": 10112,
-     "cost": 0.0108609,
+     "prompt_tokens": 2197,
+     "completion_tokens": 3490,
+     "total_tokens": 5687,
+     "cost": 0.00157176,
      "is_byok": false,
      "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -124,12 +99,12 @@
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.0108609,
-      "upstream_inference_prompt_cost": 0.0004245,
-      "upstream_inference_completions_cost": 0.0104364
+      "upstream_inference_cost": 0.00157176,
+      "upstream_inference_prompt_cost": 0.00017576,
+      "upstream_inference_completions_cost": 0.001396
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 6720,
+      "reasoning_tokens": 1987,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -146,24 +121,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1086,
-     "completion_tokens": 3819,
-     "total_tokens": 4905,
-     "cost": 0.004833336,
+     "prompt_tokens": 1113,
+     "completion_tokens": 3339,
+     "total_tokens": 4452,
+     "cost": 0.004190172,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.004833336,
-      "upstream_inference_prompt_cost": 0.000250536,
-      "upstream_inference_completions_cost": 0.0045828
+      "upstream_inference_cost": 0.004190172,
+      "upstream_inference_prompt_cost": 0.000183372,
+      "upstream_inference_completions_cost": 0.0040068
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 2272,
+      "reasoning_tokens": 1840,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -180,33 +155,33 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1333,
-     "completion_tokens": 7724,
-     "total_tokens": 9057,
-     "cost": 0.009593436,
+     "prompt_tokens": 1360,
+     "completion_tokens": 6972,
+     "total_tokens": 8332,
+     "cost": 0.008623872,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.009593436,
-      "upstream_inference_prompt_cost": 0.000324636,
-      "upstream_inference_completions_cost": 0.0092688
+      "upstream_inference_cost": 0.008623872,
+      "upstream_inference_prompt_cost": 0.000257472,
+      "upstream_inference_completions_cost": 0.0083664
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 5989,
+      "reasoning_tokens": 5262,
       "image_tokens": 0,
       "audio_tokens": 0
      }
     }
    },
    "disputes": 0,
-   "vs_mycatholic": "+0/-1",
+   "vs_mycatholic": "+8/-1",
    "status": "updated",
-   "masses": 17
+   "masses": 25
   },
   {
    "id": 7,
@@ -214,24 +189,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1151,
-     "completion_tokens": 2323,
-     "total_tokens": 3474,
-     "cost": 0.0031329,
+     "prompt_tokens": 1178,
+     "completion_tokens": 2240,
+     "total_tokens": 3418,
+     "cost": 0.002890872,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 0,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.0031329,
-      "upstream_inference_prompt_cost": 0.0003453,
-      "upstream_inference_completions_cost": 0.0027876
+      "upstream_inference_cost": 0.002890872,
+      "upstream_inference_prompt_cost": 0.000202872,
+      "upstream_inference_completions_cost": 0.002688
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 1266,
+      "reasoning_tokens": 1183,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -257,24 +232,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 4387,
-     "completion_tokens": 12182,
-     "total_tokens": 16569,
-     "cost": 0.015859236,
+     "prompt_tokens": 4414,
+     "completion_tokens": 9189,
+     "total_tokens": 13603,
+     "cost": 0.012351,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 0,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.015859236,
-      "upstream_inference_prompt_cost": 0.001240836,
-      "upstream_inference_completions_cost": 0.0146184
+      "upstream_inference_cost": 0.012351,
+      "upstream_inference_prompt_cost": 0.0013242,
+      "upstream_inference_completions_cost": 0.0110268
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 10461,
+      "reasoning_tokens": 7192,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -291,24 +266,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1659,
-     "completion_tokens": 8423,
-     "total_tokens": 10082,
-     "cost": 0.010530036,
+     "prompt_tokens": 1686,
+     "completion_tokens": 10357,
+     "total_tokens": 12043,
+     "cost": 0.012783672,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.010530036,
-      "upstream_inference_prompt_cost": 0.000422436,
-      "upstream_inference_completions_cost": 0.0101076
+      "upstream_inference_cost": 0.012783672,
+      "upstream_inference_prompt_cost": 0.000355272,
+      "upstream_inference_completions_cost": 0.0124284
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 6850,
+      "reasoning_tokens": 8673,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -329,36 +304,11 @@
   {
    "id": 12,
    "name": "Church of Our Lady of Perpetual Succour",
-   "warnings": [],
-   "usage": {
-    "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 5509,
-     "completion_tokens": 8578,
-     "total_tokens": 14087,
-     "cost": 0.0119463,
-     "is_byok": false,
-     "prompt_tokens_details": {
-      "cached_tokens": 0,
-      "cache_write_tokens": 0,
-      "audio_tokens": 0,
-      "video_tokens": 0
-     },
-     "cost_details": {
-      "upstream_inference_cost": 0.0119463,
-      "upstream_inference_prompt_cost": 0.0016527,
-      "upstream_inference_completions_cost": 0.0102936
-     },
-     "completion_tokens_details": {
-      "reasoning_tokens": 7129,
-      "image_tokens": 0,
-      "audio_tokens": 0
-     }
-    }
-   },
-   "disputes": 0,
-   "vs_mycatholic": "+1/-1",
-   "status": "updated",
-   "masses": 18
+   "warnings": [
+    "fetch failed https://www.olps.sg/: ModuleNotFoundError No module named 'playwright'"
+   ],
+   "usage": {},
+   "status": "kept-previous"
   },
   {
    "id": 13,
@@ -366,24 +316,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1066,
-     "completion_tokens": 2848,
-     "total_tokens": 3914,
-     "cost": 0.0037374,
+     "prompt_tokens": 1093,
+     "completion_tokens": 3274,
+     "total_tokens": 4367,
+     "cost": 0.004181436,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 0,
+      "cached_tokens": 256,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.0037374,
-      "upstream_inference_prompt_cost": 0.0003198,
-      "upstream_inference_completions_cost": 0.0034176
+      "upstream_inference_cost": 0.004181436,
+      "upstream_inference_prompt_cost": 0.000252636,
+      "upstream_inference_completions_cost": 0.0039288
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 1689,
+      "reasoning_tokens": 2163,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -407,10 +357,10 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 2625,
-     "completion_tokens": 6241,
-     "total_tokens": 8866,
-     "cost": 0.0082767,
+     "prompt_tokens": 2652,
+     "completion_tokens": 6538,
+     "total_tokens": 9190,
+     "cost": 0.0086412,
      "is_byok": false,
      "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -419,12 +369,12 @@
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.0082767,
-      "upstream_inference_prompt_cost": 0.0007875,
-      "upstream_inference_completions_cost": 0.0074892
+      "upstream_inference_cost": 0.0086412,
+      "upstream_inference_prompt_cost": 0.0007956,
+      "upstream_inference_completions_cost": 0.0078456
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 4796,
+      "reasoning_tokens": 4751,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -441,24 +391,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1561,
-     "completion_tokens": 11812,
-     "total_tokens": 13373,
-     "cost": 0.014567436,
+     "prompt_tokens": 1588,
+     "completion_tokens": 9761,
+     "total_tokens": 11349,
+     "cost": 0.012039072,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.014567436,
-      "upstream_inference_prompt_cost": 0.000393036,
-      "upstream_inference_completions_cost": 0.0141744
+      "upstream_inference_cost": 0.012039072,
+      "upstream_inference_prompt_cost": 0.000325872,
+      "upstream_inference_completions_cost": 0.0117132
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 10137,
+      "reasoning_tokens": 8338,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -472,12 +422,36 @@
   {
    "id": 17,
    "name": "Church of St Alphonsus (Novena Church)",
-   "warnings": [
-    "deepseek/deepseek-v4.1-flash failed: TimeoutError no answer in 120s",
-    "need 1 good model results, got 0"
-   ],
-   "usage": {},
-   "status": "kept-previous"
+   "warnings": [],
+   "usage": {
+    "deepseek/deepseek-v4.1-flash": {
+     "prompt_tokens": 1611,
+     "completion_tokens": 8571,
+     "total_tokens": 10182,
+     "cost": 0.0107685,
+     "is_byok": false,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+     },
+     "cost_details": {
+      "upstream_inference_cost": 0.0107685,
+      "upstream_inference_prompt_cost": 0.0004833,
+      "upstream_inference_completions_cost": 0.0102852
+     },
+     "completion_tokens_details": {
+      "reasoning_tokens": 6187,
+      "image_tokens": 0,
+      "audio_tokens": 0
+     }
+    }
+   },
+   "disputes": 0,
+   "vs_mycatholic": "+2/-0",
+   "status": "updated",
+   "masses": 18
   },
   {
    "id": 18,
@@ -485,24 +459,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1107,
-     "completion_tokens": 10124,
-     "total_tokens": 11231,
-     "cost": 0.012405636,
+     "prompt_tokens": 1134,
+     "completion_tokens": 9311,
+     "total_tokens": 10445,
+     "cost": 0.0115134,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 0,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.012405636,
-      "upstream_inference_prompt_cost": 0.000256836,
-      "upstream_inference_completions_cost": 0.0121488
+      "upstream_inference_cost": 0.0115134,
+      "upstream_inference_prompt_cost": 0.0003402,
+      "upstream_inference_completions_cost": 0.0111732
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 8226,
+      "reasoning_tokens": 8033,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -519,24 +493,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1988,
-     "completion_tokens": 8663,
-     "total_tokens": 10651,
-     "cost": 0.010916736,
+     "prompt_tokens": 2015,
+     "completion_tokens": 9746,
+     "total_tokens": 11761,
+     "cost": 0.0122997,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 0,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.010916736,
-      "upstream_inference_prompt_cost": 0.000521136,
-      "upstream_inference_completions_cost": 0.0103956
+      "upstream_inference_cost": 0.0122997,
+      "upstream_inference_prompt_cost": 0.0006045,
+      "upstream_inference_completions_cost": 0.0116952
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 7462,
+      "reasoning_tokens": 8017,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -553,24 +527,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1148,
-     "completion_tokens": 6072,
-     "total_tokens": 7220,
-     "cost": 0.007555536,
+     "prompt_tokens": 1175,
+     "completion_tokens": 5543,
+     "total_tokens": 6718,
+     "cost": 0.006853572,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.007555536,
-      "upstream_inference_prompt_cost": 0.000269136,
-      "upstream_inference_completions_cost": 0.0072864
+      "upstream_inference_cost": 0.006853572,
+      "upstream_inference_prompt_cost": 0.000201972,
+      "upstream_inference_completions_cost": 0.0066516
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 4812,
+      "reasoning_tokens": 4309,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -587,24 +561,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 3722,
-     "completion_tokens": 6803,
-     "total_tokens": 10525,
-     "cost": 0.009204936,
+     "prompt_tokens": 3749,
+     "completion_tokens": 12212,
+     "total_tokens": 15961,
+     "cost": 0.0157791,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 0,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.009204936,
-      "upstream_inference_prompt_cost": 0.001041336,
-      "upstream_inference_completions_cost": 0.0081636
+      "upstream_inference_cost": 0.0157791,
+      "upstream_inference_prompt_cost": 0.0011247,
+      "upstream_inference_completions_cost": 0.0146544
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 5779,
+      "reasoning_tokens": 8806,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -621,24 +595,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 2116,
-     "completion_tokens": 6662,
-     "total_tokens": 8778,
-     "cost": 0.008553936,
+     "prompt_tokens": 2143,
+     "completion_tokens": 5879,
+     "total_tokens": 8022,
+     "cost": 0.007547172,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.008553936,
-      "upstream_inference_prompt_cost": 0.000559536,
-      "upstream_inference_completions_cost": 0.0079944
+      "upstream_inference_cost": 0.007547172,
+      "upstream_inference_prompt_cost": 0.000492372,
+      "upstream_inference_completions_cost": 0.0070548
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 5076,
+      "reasoning_tokens": 4486,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -655,10 +629,10 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1914,
-     "completion_tokens": 4227,
-     "total_tokens": 6141,
-     "cost": 0.00184392,
+     "prompt_tokens": 1186,
+     "completion_tokens": 14534,
+     "total_tokens": 15720,
+     "cost": 0.01245762,
      "is_byok": false,
      "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -667,12 +641,12 @@
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.00184392,
-      "upstream_inference_prompt_cost": 0.00015312,
-      "upstream_inference_completions_cost": 0.0016908
+      "upstream_inference_cost": 0.01245762,
+      "upstream_inference_prompt_cost": 0.00024906,
+      "upstream_inference_completions_cost": 0.01220856
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 2890,
+      "reasoning_tokens": 13098,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -686,36 +660,12 @@
   {
    "id": 24,
    "name": "St Joseph's Church (Bukit Timah)",
-   "warnings": [],
-   "usage": {
-    "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 4200,
-     "completion_tokens": 14705,
-     "total_tokens": 18905,
-     "cost": 0.017701776,
-     "is_byok": false,
-     "prompt_tokens_details": {
-      "cached_tokens": 4096,
-      "cache_write_tokens": 0,
-      "audio_tokens": 0,
-      "video_tokens": 0
-     },
-     "cost_details": {
-      "upstream_inference_cost": 0.017701776,
-      "upstream_inference_prompt_cost": 5.5776e-05,
-      "upstream_inference_completions_cost": 0.017646
-     },
-     "completion_tokens_details": {
-      "reasoning_tokens": 12911,
-      "image_tokens": 0,
-      "audio_tokens": 0
-     }
-    }
-   },
-   "disputes": 0,
-   "vs_mycatholic": "+2/-2",
-   "status": "updated",
-   "masses": 18
+   "warnings": [
+    "deepseek/deepseek-v4.1-flash failed: TimeoutError no answer in 120s",
+    "need 1 good model results, got 0"
+   ],
+   "usage": {},
+   "status": "kept-previous"
   },
   {
    "id": 25,
@@ -723,24 +673,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 4093,
-     "completion_tokens": 6463,
-     "total_tokens": 10556,
-     "cost": 0.0089835,
+     "prompt_tokens": 4120,
+     "completion_tokens": 5415,
+     "total_tokens": 9535,
+     "cost": 0.007583472,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 0,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.0089835,
-      "upstream_inference_prompt_cost": 0.0012279,
-      "upstream_inference_completions_cost": 0.0077556
+      "upstream_inference_cost": 0.007583472,
+      "upstream_inference_prompt_cost": 0.001085472,
+      "upstream_inference_completions_cost": 0.006498
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 5681,
+      "reasoning_tokens": 4729,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -757,10 +707,10 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 3059,
-     "completion_tokens": 13695,
-     "total_tokens": 16754,
-     "cost": 0.0173517,
+     "prompt_tokens": 3086,
+     "completion_tokens": 10653,
+     "total_tokens": 13739,
+     "cost": 0.0137094,
      "is_byok": false,
      "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -769,12 +719,12 @@
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.0173517,
-      "upstream_inference_prompt_cost": 0.0009177,
-      "upstream_inference_completions_cost": 0.016434
+      "upstream_inference_cost": 0.0137094,
+      "upstream_inference_prompt_cost": 0.0009258,
+      "upstream_inference_completions_cost": 0.0127836
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 10959,
+      "reasoning_tokens": 7996,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -791,10 +741,10 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1429,
-     "completion_tokens": 8307,
-     "total_tokens": 9736,
-     "cost": 0.0103971,
+     "prompt_tokens": 1456,
+     "completion_tokens": 10299,
+     "total_tokens": 11755,
+     "cost": 0.0127956,
      "is_byok": false,
      "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -803,12 +753,12 @@
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.0103971,
-      "upstream_inference_prompt_cost": 0.0004287,
-      "upstream_inference_completions_cost": 0.0099684
+      "upstream_inference_cost": 0.0127956,
+      "upstream_inference_prompt_cost": 0.0004368,
+      "upstream_inference_completions_cost": 0.0123588
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 6462,
+      "reasoning_tokens": 8509,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -825,24 +775,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1420,
-     "completion_tokens": 6892,
-     "total_tokens": 8312,
-     "cost": 0.0086964,
+     "prompt_tokens": 1447,
+     "completion_tokens": 7910,
+     "total_tokens": 9357,
+     "cost": 0.009775572,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 0,
+      "cached_tokens": 512,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.0086964,
-      "upstream_inference_prompt_cost": 0.000426,
-      "upstream_inference_completions_cost": 0.0082704
+      "upstream_inference_cost": 0.009775572,
+      "upstream_inference_prompt_cost": 0.000283572,
+      "upstream_inference_completions_cost": 0.009492
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 5873,
+      "reasoning_tokens": 6968,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -859,10 +809,10 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1298,
-     "completion_tokens": 9758,
-     "total_tokens": 11056,
-     "cost": 0.012099,
+     "prompt_tokens": 1325,
+     "completion_tokens": 7571,
+     "total_tokens": 8896,
+     "cost": 0.0094827,
      "is_byok": false,
      "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -871,12 +821,12 @@
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.012099,
-      "upstream_inference_prompt_cost": 0.0003894,
-      "upstream_inference_completions_cost": 0.0117096
+      "upstream_inference_cost": 0.0094827,
+      "upstream_inference_prompt_cost": 0.0003975,
+      "upstream_inference_completions_cost": 0.0090852
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 8559,
+      "reasoning_tokens": 6199,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -893,24 +843,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 2557,
-     "completion_tokens": 10760,
-     "total_tokens": 13317,
-     "cost": 0.013603836,
+     "prompt_tokens": 2584,
+     "completion_tokens": 7955,
+     "total_tokens": 10539,
+     "cost": 0.0103212,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 0,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.013603836,
-      "upstream_inference_prompt_cost": 0.000691836,
-      "upstream_inference_completions_cost": 0.012912
+      "upstream_inference_cost": 0.0103212,
+      "upstream_inference_prompt_cost": 0.0007752,
+      "upstream_inference_completions_cost": 0.009546
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 7650,
+      "reasoning_tokens": 5519,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -927,24 +877,24 @@
    "warnings": [],
    "usage": {
     "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1085,
-     "completion_tokens": 10576,
-     "total_tokens": 11661,
-     "cost": 0.012941436,
+     "prompt_tokens": 1112,
+     "completion_tokens": 11136,
+     "total_tokens": 12248,
+     "cost": 0.0136968,
      "is_byok": false,
      "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 0,
       "cache_write_tokens": 0,
       "audio_tokens": 0,
       "video_tokens": 0
      },
      "cost_details": {
-      "upstream_inference_cost": 0.012941436,
-      "upstream_inference_prompt_cost": 0.000250236,
-      "upstream_inference_completions_cost": 0.0126912
+      "upstream_inference_cost": 0.0136968,
+      "upstream_inference_prompt_cost": 0.0003336,
+      "upstream_inference_completions_cost": 0.0133632
      },
      "completion_tokens_details": {
-      "reasoning_tokens": 8699,
+      "reasoning_tokens": 9558,
       "image_tokens": 0,
       "audio_tokens": 0
      }
@@ -958,36 +908,11 @@
   {
    "id": 32,
    "name": "Church of the Transfiguration",
-   "warnings": [],
-   "usage": {
-    "deepseek/deepseek-v4.1-flash": {
-     "prompt_tokens": 1514,
-     "completion_tokens": 7929,
-     "total_tokens": 9443,
-     "cost": 0.009893736,
-     "is_byok": false,
-     "prompt_tokens_details": {
-      "cached_tokens": 256,
-      "cache_write_tokens": 0,
-      "audio_tokens": 0,
-      "video_tokens": 0
-     },
-     "cost_details": {
-      "upstream_inference_cost": 0.009893736,
-      "upstream_inference_prompt_cost": 0.000378936,
-      "upstream_inference_completions_cost": 0.0095148
-     },
-     "completion_tokens_details": {
-      "reasoning_tokens": 6061,
-      "image_tokens": 0,
-      "audio_tokens": 0
-     }
-    }
-   },
-   "disputes": 0,
-   "vs_mycatholic": "+0/-1",
-   "status": "updated",
-   "masses": 15
+   "warnings": [
+    "fetch failed https://transfiguration.sg/masstimings/: ModuleNotFoundError No module named 'playwright'"
+   ],
+   "usage": {},
+   "status": "kept-previous"
   }
  ]
 }

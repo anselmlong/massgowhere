@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.csfa.sg/pastoral-services"
  ],
- "fetched_at": "2026-09-28T02:20+08:00",
+ "fetched_at": "2026-09-28T02:38+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -211,8 +211,7 @@
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [],
  "notes": [
-  "No evening Mass on public holidays.",
-  "Weekend Confession starts 15 minutes before Mass."
+  "No evening Mass on public holidays."
  ],
  "disputes": [],
  "vs_mycatholic": {

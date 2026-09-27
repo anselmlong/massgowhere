@@ -4,7 +4,7 @@
  "source_urls": [
   "https://sppchurch.org.sg/schedules/"
  ],
- "fetched_at": "2026-09-28T02:22+08:00",
+ "fetched_at": "2026-09-28T02:42+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,7 +19,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -39,8 +39,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "Chinese",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Divine Mercy"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -49,7 +49,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Cantonese",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -59,7 +59,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -69,8 +69,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Morning Prayer"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -79,7 +79,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -89,8 +89,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Divine Mercy"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -99,7 +99,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -109,8 +109,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Morning Prayer"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -119,7 +119,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -129,8 +129,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Divine Mercy"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -139,7 +139,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -149,8 +149,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Morning Prayer"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -159,7 +159,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -169,8 +169,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Divine Mercy"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -179,7 +179,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -189,8 +189,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Morning Prayer"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -199,7 +199,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -209,8 +209,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Divine Mercy"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -219,8 +219,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Infant Jesus of Prague Devotion"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -229,7 +229,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -239,8 +239,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Morning Prayer"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -249,7 +249,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -259,8 +259,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Divine Mercy"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -269,7 +269,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -279,8 +279,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Morning Prayer"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -289,7 +289,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
+   "loc": "",
    "note": ""
   },
   {
@@ -299,8 +299,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Holy Hour with Jesus"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -309,19 +309,19 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of Sts Peter and Paul",
-   "note": "Sunset Mass"
+   "loc": "",
+   "note": ""
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "08:00"
  ],
  "notes": [
-  "On public holidays, weekday Mass is 08:00 (preceded by Morning Prayer 07:40); no evening Mass if the public holiday falls on a weekday.",
-  "No Devotions/Prayers on public holidays.",
-  "Confessions are 30 minutes before weekday evening and weekend Masses; not available Thursday evenings."
+  "No evening Mass on public holidays that fall on weekdays.",
+  "No Divine Mercy, Infant Jesus, or Sion Adorers on public holidays.",
+  "Confessions: 30 min before weekday evening and weekend Masses; not Thursday evenings."
  ],
  "disputes": [],
  "vs_mycatholic": {

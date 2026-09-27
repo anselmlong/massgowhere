@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.sfxchurch.sg/"
  ],
- "fetched_at": "2026-09-28T02:20+08:00",
+ "fetched_at": "2026-09-28T02:37+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -30,7 +30,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Closed on public holidays"
+   "note": ""
   },
   {
    "d": 0,
@@ -70,7 +70,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Closed on public holidays"
+   "note": ""
   },
   {
    "d": 1,
@@ -100,7 +100,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Closed on public holidays"
+   "note": ""
   },
   {
    "d": 2,
@@ -130,7 +130,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Closed on public holidays"
+   "note": ""
   },
   {
    "d": 3,
@@ -160,7 +160,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Closed on public holidays"
+   "note": ""
   },
   {
    "d": 4,
@@ -190,7 +190,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Closed on public holidays"
+   "note": ""
   },
   {
    "d": 5,
@@ -200,7 +200,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Strictly via appointment only"
+   "note": ""
   },
   {
    "d": 5,
@@ -230,7 +230,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Closed on public holidays"
+   "note": ""
   },
   {
    "d": 6,
@@ -240,7 +240,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Strictly via appointment only"
+   "note": ""
   },
   {
    "d": 6,
@@ -257,9 +257,8 @@
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Reconciliation is strictly by appointment only.",
-  "Adoration is closed on public holidays.",
-  "Special Mass schedules for Days of Obligation, Christmas, and Holy Week are listed without dates and are not included in regular."
+  "Confession is strictly by appointment only.",
+  "Adoration is closed on public holidays."
  ],
  "disputes": [],
  "vs_mycatholic": {

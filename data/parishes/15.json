@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.risenchrist.org.sg/"
  ],
- "fetched_at": "2026-09-28T02:19+08:00",
+ "fetched_at": "2026-09-28T02:36+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -177,7 +177,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Intercessory Prayer"
+   "note": ""
   },
   {
    "d": 5,
@@ -235,13 +235,13 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
-  "Public Holiday (Mon-Fri): 07:30",
-  "Public Holiday (Sat): 07:30",
-  "Public Holiday (Sat): 17:30"
+  "Public Holiday (Mon-Fri) 07:30 Mass English",
+  "Public Holiday (Sat) 07:30 Mass English",
+  "Public Holiday (Sat) 17:30 Mass English"
  ],
  "notes": [
-  "No regular weekday Mass times on public holidays; see public holiday Masses.",
-  "Monthly language Masses are on specific weeks."
+  "Public holiday Masses replace the regular weekday and Saturday Masses.",
+  "Monthly language Masses are additional to the regular schedule."
  ],
  "disputes": [],
  "vs_mycatholic": {

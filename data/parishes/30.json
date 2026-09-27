@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.svdp.sg/"
  ],
- "fetched_at": "2026-09-28T02:22+08:00",
+ "fetched_at": "2026-09-28T02:40+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,33 +14,13 @@
  "rules": [
   {
    "d": 0,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary Devotion - 30 minutes before 07:00 Mass"
-  },
-  {
-   "d": 0,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 mins to 10 mins before 07:00 Mass"
-  },
-  {
-   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Weekend Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -50,27 +30,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Open 7am-6pm daily; closed on public holidays"
-  },
-  {
-   "d": 0,
-   "t": "08:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary Devotion - 30 minutes before 09:00 Mass"
-  },
-  {
-   "d": 0,
-   "t": "08:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 mins to 10 mins before 09:00 Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -80,27 +40,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Weekend Mass"
-  },
-  {
-   "d": 0,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary Devotion - 30 minutes before 11:00 Mass"
-  },
-  {
-   "d": 0,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 mins to 10 mins before 11:00 Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -110,31 +50,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Weekend Mass"
-  },
-  {
-   "d": 0,
-   "t": "14:30",
-   "weeks": [
-    5
-   ],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary Devotion - 30 minutes before Indonesian Mass"
-  },
-  {
-   "d": 0,
-   "t": "14:30",
-   "weeks": [
-    5
-   ],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 mins to 10 mins before Indonesian Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -146,27 +62,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "Indonesian Mass - 5th Sunday of the month"
-  },
-  {
-   "d": 0,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary Devotion - 30 minutes before 18:00 Mass"
-  },
-  {
-   "d": 0,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 mins to 10 mins before 18:00 Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -176,7 +72,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Weekend Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -186,7 +82,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 1,
@@ -196,7 +92,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -206,7 +102,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Open 7am-6pm daily; closed on public holidays"
+   "note": ""
   },
   {
    "d": 1,
@@ -216,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 1,
@@ -226,7 +122,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 1,
@@ -236,7 +132,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -246,7 +142,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 2,
@@ -256,7 +152,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -266,7 +162,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Open 7am-6pm daily; closed on public holidays"
+   "note": ""
   },
   {
    "d": 2,
@@ -276,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 2,
@@ -286,7 +182,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 2,
@@ -296,7 +192,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 3,
@@ -306,7 +202,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 3,
@@ -316,7 +212,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 3,
@@ -326,7 +222,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Open 7am-6pm daily; closed on public holidays"
+   "note": ""
   },
   {
    "d": 3,
@@ -336,7 +232,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 3,
@@ -346,7 +242,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Divine Mercy"
+   "note": ""
   },
   {
    "d": 3,
@@ -356,7 +252,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 3,
@@ -366,7 +262,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -376,7 +272,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 4,
@@ -386,7 +282,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -396,7 +292,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Open 7am-6pm daily; closed on public holidays"
+   "note": ""
   },
   {
    "d": 4,
@@ -406,7 +302,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 4,
@@ -416,7 +312,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 4,
@@ -426,7 +322,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -436,7 +332,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 5,
@@ -446,7 +342,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -456,7 +352,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Open 7am-6pm daily; closed on public holidays"
+   "note": ""
   },
   {
    "d": 5,
@@ -466,7 +362,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 5,
@@ -476,7 +372,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 5,
@@ -486,7 +382,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -496,7 +392,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
+   "note": ""
   },
   {
    "d": 6,
@@ -506,7 +402,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -516,7 +412,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Open 7am-6pm daily; closed on public holidays"
+   "note": ""
   },
   {
    "d": 6,
@@ -526,17 +422,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary Devotion"
-  },
-  {
-   "d": 6,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 mins to 10 mins before Sat Sunset Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -546,16 +432,14 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Weekend Mass - Sat Sunset Mass"
+   "note": ""
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Adoration is closed on public holidays.",
-  "Indonesian Mass is only on the 5th Sunday of the month.",
-  "Confession is 30 mins to 10 mins before all weekend Masses; Sunday Rosary is 30 minutes before Mass."
+  "Adoration is closed on public holidays."
  ],
  "disputes": [],
  "vs_mycatholic": {

@@ -4,7 +4,7 @@
  "source_urls": [
   "https://novenachurch.com/novena-mass-schedule/"
  ],
- "fetched_at": "2026-09-28T02:13+08:00",
+ "fetched_at": "2026-09-28T02:37+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,8 +19,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -29,8 +29,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -39,8 +39,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -51,8 +51,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Children's Mass, every 1st Sunday"
+   "loc": "",
+   "note": "Children's Mass"
   },
   {
    "d": 0,
@@ -61,8 +61,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -71,8 +71,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -81,8 +81,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -91,8 +91,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -101,8 +101,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -111,8 +111,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -121,8 +121,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -131,8 +131,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -141,8 +141,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -151,8 +151,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -161,8 +161,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Weekday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -171,8 +171,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Saturday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -181,8 +181,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Novena"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -191,8 +191,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Novena"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -201,8 +201,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Novena"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -211,8 +211,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "Chinese",
-   "loc": "Novena Church",
-   "note": "Novena"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -221,8 +221,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Novena"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -231,8 +231,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Novena Church",
-   "note": "Novena"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -241,7 +241,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Novena Church",
+   "loc": "",
    "note": "Sunset Mass"
   },
   {
@@ -253,8 +253,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "Tamil",
-   "loc": "Novena Church",
-   "note": "Tamil Novena, every 4th Saturday"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -265,8 +265,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "Novena Church",
-   "note": "Tamil Mass, every 4th Saturday"
+   "loc": "",
+   "note": ""
   }
  ],
  "dated": [],
@@ -276,8 +276,7 @@
   "18:30"
  ],
  "notes": [
-  "Confession available 30 minutes before Mass.",
-  "No booking required; no standing allowed in the main church hall due to fire regulation."
+  "Confession available 30 minutes before Mass."
  ],
  "disputes": [],
  "vs_mycatholic": {

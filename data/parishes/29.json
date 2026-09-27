@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.stteresa.sg/"
  ],
- "fetched_at": "2026-09-28T02:22+08:00",
+ "fetched_at": "2026-09-28T02:39+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -20,7 +20,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "15 mins before 08:00 Mass"
+   "note": "Reconciliation"
   },
   {
    "d": 0,
@@ -40,7 +40,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "15 mins before 10:00 Mass"
+   "note": "Reconciliation"
   },
   {
    "d": 0,
@@ -60,7 +60,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "15 mins before 12:00 Mass"
+   "note": "Reconciliation"
   },
   {
    "d": 0,
@@ -80,7 +80,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "15 mins before 17:30 Mass"
+   "note": "Reconciliation"
   },
   {
    "d": 0,
@@ -212,7 +212,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "15 mins before 17:30 Mass"
+   "note": "Reconciliation"
   },
   {
    "d": 6,
@@ -230,11 +230,7 @@
  "public_holiday_masses": [
   "08:00"
  ],
- "notes": [
-  "Reconciliation is 15 minutes before all weekend Masses.",
-  "Divine Mercy Devotion is every Thursday after the 18:00 Mass; no start time is listed.",
-  "Holy Hour is on the first Friday of the month at 20:00."
- ],
+ "notes": [],
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

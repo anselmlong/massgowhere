@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.stignatius.org.sg/mass-schedule"
  ],
- "fetched_at": "2026-09-28T02:20+08:00",
+ "fetched_at": "2026-09-28T02:38+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,7 +19,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -39,7 +39,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -49,7 +49,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -59,7 +59,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -69,7 +69,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -79,8 +79,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "before the 6pm Mass"
+   "loc": "St Ignatius Church",
+   "note": ""
   },
   {
    "d": 1,
@@ -89,7 +89,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -99,7 +99,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -109,8 +109,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "before the 6pm Mass"
+   "loc": "St Ignatius Church",
+   "note": ""
   },
   {
    "d": 2,
@@ -119,7 +119,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -129,7 +129,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -139,8 +139,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "before the 6pm Mass"
+   "loc": "St Ignatius Church",
+   "note": ""
   },
   {
    "d": 3,
@@ -149,7 +149,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -159,7 +159,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -169,8 +169,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "before the 6pm Mass"
+   "loc": "St Ignatius Church",
+   "note": ""
   },
   {
    "d": 4,
@@ -179,7 +179,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -189,7 +189,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -199,8 +199,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "before the 6pm Mass"
+   "loc": "St Ignatius Church",
+   "note": ""
   },
   {
    "d": 5,
@@ -211,8 +211,8 @@
    ],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": "4th Friday: Memorial Mass, followed by prayers at the Columbarium"
+   "loc": "St Ignatius Church",
+   "note": ""
   },
   {
    "d": 5,
@@ -223,8 +223,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "",
-   "note": "Eucharistic Adoration for Children"
+   "loc": "St Ignatius Church",
+   "note": ""
   },
   {
    "d": 5,
@@ -235,8 +235,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": "First Friday Mass to the Sacred Heart of Jesus, followed by Eucharistic Adoration"
+   "loc": "St Ignatius Church",
+   "note": ""
   },
   {
    "d": 6,
@@ -245,7 +245,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Ignatius Church",
    "note": ""
   },
   {
@@ -255,18 +255,14 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": "Sunday vigil Mass"
+   "loc": "St Ignatius Church",
+   "note": ""
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "Confessions are 30 min before Friday evening Mass and before every weekend Mass (they end 5 min before Mass starts).",
-  "Divine Mercy Devotion every Wednesday after the 6pm Mass; Rosary Mon-Sat after the 7.30am Mass (no fixed start time).",
-  "All Masses are in English."
- ],
+ "notes": [],
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

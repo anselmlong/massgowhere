@@ -4,7 +4,7 @@
  "source_urls": [
   "https://new.divinemercy.sg/timings/"
  ],
- "fetched_at": "2026-09-28T02:21+08:00",
+ "fetched_at": "2026-09-28T02:36+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -20,7 +20,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -30,7 +30,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -40,7 +40,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "May exceed an hour due to attendance, baptisms, events, or solemnities"
+   "note": ""
   },
   {
    "d": 0,
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -60,7 +60,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Lauds"
+   "note": ""
   },
   {
    "d": 1,
@@ -70,7 +70,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -80,7 +80,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Vespers"
+   "note": ""
   },
   {
    "d": 1,
@@ -90,7 +90,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -100,7 +100,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Lauds"
+   "note": ""
   },
   {
    "d": 2,
@@ -110,7 +110,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -120,7 +120,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Vespers"
+   "note": ""
   },
   {
    "d": 2,
@@ -130,7 +130,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 3,
@@ -140,7 +140,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Lauds"
+   "note": ""
   },
   {
    "d": 3,
@@ -150,7 +150,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 3,
@@ -160,7 +160,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Vespers"
+   "note": ""
   },
   {
    "d": 3,
@@ -170,7 +170,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -180,7 +180,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Lauds"
+   "note": ""
   },
   {
    "d": 4,
@@ -190,7 +190,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -210,7 +210,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Vespers"
+   "note": ""
   },
   {
    "d": 4,
@@ -220,7 +220,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -230,7 +230,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Lauds"
+   "note": ""
   },
   {
    "d": 5,
@@ -240,7 +240,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -250,7 +250,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Vespers"
+   "note": ""
   },
   {
    "d": 5,
@@ -260,7 +260,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Weekday Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -270,7 +270,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Saturday morning Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -292,7 +292,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "Main Church",
-   "note": "Every 3rd Saturday"
+   "note": ""
   }
  ],
  "dated": [],
@@ -301,9 +301,7 @@
   "08:00"
  ],
  "notes": [
-  "On public holidays, weekday Masses are replaced by an 8am Mass only.",
-  "Sunday 11:30am Mass may exceed an hour due to attendance, baptisms, events, or solemnities.",
-  "Tagalog Mass is every 3rd Saturday at 7:30pm."
+  "Confessions are heard 20 minutes before all weekend Masses, ending 3–5 minutes before Mass."
  ],
  "disputes": [],
  "vs_mycatholic": {

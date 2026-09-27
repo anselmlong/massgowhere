@@ -4,7 +4,7 @@
  "source_urls": [
   "https://stmichael.catholic.sg/mass-devotions/"
  ],
- "fetched_at": "2026-09-28T02:21+08:00",
+ "fetched_at": "2026-09-28T02:39+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Lauds Prayer"
   },
   {
@@ -109,7 +109,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Lauds Prayer"
   },
   {
@@ -119,7 +119,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Mid-day Prayer"
   },
   {
@@ -149,7 +149,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Lauds Prayer"
   },
   {
@@ -159,7 +159,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Mid-day Prayer"
   },
   {
@@ -189,7 +189,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Lauds Prayer"
   },
   {
@@ -199,7 +199,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Mid-day Prayer"
   },
   {
@@ -229,7 +229,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Lauds Prayer"
   },
   {
@@ -239,7 +239,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Mid-day Prayer"
   },
   {
@@ -269,7 +269,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Lauds Prayer"
   },
   {
@@ -279,7 +279,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Mid-day Prayer"
   },
   {
@@ -309,7 +309,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Lauds Prayer"
   },
   {
@@ -319,7 +319,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
+   "loc": "",
    "note": "Mid-day Prayer"
   },
   {
@@ -346,12 +346,12 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
-  "Public Holiday (weekday): 07:30 Mass (English)"
+  "Public Holiday (weekday): 07:30"
  ],
  "notes": [
-  "Public holidays on weekdays: only 7.30am Mass; no 6.30am or 6pm Mass.",
-  "Public holidays on Saturdays follow regular Saturday Mass times; public holidays on Sundays use weekend Mass times and are observed on the following Monday.",
-  "Liturgy of the Hours is on Zoom; register with csm.secretariat@catholic.org.sg."
+  "Usual weekday Masses do not apply on public holidays; only the public holiday Mass is held.",
+  "If a public holiday falls on Sunday, it is observed on the following Monday.",
+  "Liturgy of the Hours is conducted on Zoom; registration required."
  ],
  "disputes": [],
  "vs_mycatholic": {

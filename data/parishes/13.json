@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.queenofpeace.sg/"
  ],
- "fetched_at": "2026-09-28T02:18+08:00",
+ "fetched_at": "2026-09-28T02:36+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -176,18 +176,14 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
-  "Friday 09:00 English Mass",
-  "Monday 09:00 English Mass",
-  "Saturday 07:30 English Mass",
-  "Thursday 09:00 English Mass",
-  "Tuesday 09:00 English Mass",
-  "Wednesday 09:00 English Mass"
+  "Friday 09:00 Mass English",
+  "Monday 09:00 Mass English",
+  "Saturday 07:30 Mass English",
+  "Thursday 09:00 Mass English",
+  "Tuesday 09:00 Mass English",
+  "Wednesday 09:00 Mass English"
  ],
- "notes": [
-  "Public holiday Masses are listed separately from regular Masses.",
-  "No Confession, Adoration, or devotion times are listed on the page.",
-  "Weekday Mass language is not specified; treated as English."
- ],
+ "notes": [],
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

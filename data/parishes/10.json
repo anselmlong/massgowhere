@@ -4,7 +4,7 @@
  "source_urls": [
   "https://ourladyoflourdes.sg/"
  ],
- "fetched_at": "2026-09-28T02:19+08:00",
+ "fetched_at": "2026-09-28T02:36+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -21,6 +21,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Adoration Room"
   },
   {
    "d": 0,
@@ -100,7 +110,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy"
   },
   {
    "d": 2,
@@ -256,13 +266,13 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
-  "Public Holiday (Mon-Fri) 09:00 English Mass",
-  "Public Holiday (Mon-Fri) 10:00 Tamil Mass"
+  "English 09:00",
+  "Tamil 10:00"
  ],
  "notes": [
-  "Sacrament of Reconciliation is available 15 mins before weekend Masses.",
-  "On public holidays (Mon-Fri), Parish Office is closed and main entrance gates close at 5pm.",
-  "Adoration Room is open 8am-8pm."
+  "Reconciliation is available 15 minutes before Masses.",
+  "Public holiday Masses are on Mon-Fri public holidays.",
+  "On public holidays, the parish office is closed and main gates close at 5pm."
  ],
  "disputes": [],
  "vs_mycatholic": {

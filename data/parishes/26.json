@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.stmary.sg/mass"
  ],
- "fetched_at": "2026-09-28T02:21+08:00",
+ "fetched_at": "2026-09-28T02:38+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,7 +19,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals, Main Church",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -39,7 +39,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -49,7 +49,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals, Main Church",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -59,7 +59,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -79,7 +79,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals, Main Church",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -89,7 +89,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -102,7 +102,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "St Clare Hall, Level B1",
-   "note": "4th Sunday of the month."
+   "note": ""
   },
   {
    "d": 0,
@@ -111,8 +111,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Clare Hall, Level B1 (venue may vary; check latest info)",
-   "note": "Mass for the Deaf Community."
+   "loc": "St Clare Hall, Level B1",
+   "note": "Mass for the Deaf Community"
   },
   {
    "d": 0,
@@ -121,7 +121,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals, Main Church",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -131,7 +131,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -141,7 +141,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals, Main Church",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -151,7 +151,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -161,8 +161,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "loc": "Main Church",
+   "note": ""
   },
   {
    "d": 1,
@@ -171,7 +171,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -181,7 +181,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -191,8 +191,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "loc": "Main Church",
+   "note": ""
   },
   {
    "d": 2,
@@ -201,7 +201,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -211,7 +211,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -221,8 +221,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church, Level 1",
-   "note": "Devotion to St Anthony; incorporated into the 6.30pm Mass from 2 June."
+   "loc": "Main Church",
+   "note": ""
   },
   {
    "d": 3,
@@ -231,8 +231,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "loc": "Main Church",
+   "note": ""
   },
   {
    "d": 3,
@@ -241,7 +241,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -251,7 +251,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -261,8 +261,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "loc": "Main Church",
+   "note": ""
   },
   {
    "d": 4,
@@ -271,7 +271,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -281,7 +281,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -291,8 +291,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "loc": "Main Church",
+   "note": ""
   },
   {
    "d": 5,
@@ -301,7 +301,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -311,7 +311,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -321,7 +321,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals, Main Church",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -331,7 +331,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -341,7 +341,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals, Main Church",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -351,7 +351,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -364,7 +364,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "St Clare Hall, Level B1",
-   "note": "Syro-Malabar Malayalam Qurbana; 3rd Saturday of the month."
+   "note": "Syro-Malabar Malayalam Qurbana"
   },
   {
    "d": 6,
@@ -373,40 +373,17 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "Main Church, Level 1",
+   "loc": "Main Church",
    "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-10-01",
-   "time": "09:45",
-   "language": "English",
-   "location": "Main Church, Level 1",
-   "title": "Mass for the Sick & Elderly with Anointing",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-10-01",
-   "time": "12:15",
-   "language": "English",
-   "location": "Main Church, Level 1",
-   "title": "12.15pm Mass",
-   "action": "cancel"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "08:00",
   "18:30"
  ],
- "notes": [
-  "All Masses and Services are held in the Main Church, Level 1, unless otherwise indicated.",
-  "All Masses are in English unless otherwise indicated.",
-  "No weekday confessions; weekend confessions are 30 minutes before English Masses until 10 minutes before Mass begins."
- ],
+ "notes": [],
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

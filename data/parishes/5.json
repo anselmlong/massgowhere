@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.holycross.org.sg/services/mass-schedule"
  ],
- "fetched_at": "2026-09-28T02:18+08:00",
+ "fetched_at": "2026-09-28T02:35+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -220,7 +220,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": ""
   },
   {
    "d": 6,
@@ -249,11 +249,7 @@
   "07:00",
   "08:30"
  ],
- "notes": [
-  "Weekday Masses are listed for Monday to Friday.",
-  "Saturday 6:00pm Mass is in Mandarin.",
-  "No specific Confession or Holy Hour times are listed on this page."
- ],
+ "notes": [],
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

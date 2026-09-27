@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.stbernadette.org.sg/"
  ],
- "fetched_at": "2026-09-28T02:19+08:00",
+ "fetched_at": "2026-09-28T02:37+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -196,7 +196,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Vigil Mass"
+   "note": "Vigil"
   }
  ],
  "dated": [],
@@ -205,9 +205,8 @@
   "09:00"
  ],
  "notes": [
-  "Saturday 6:00pm Mass is a Vigil Mass.",
-  "Reconciliation is available 30 minutes before weekend Masses, excluding Sat 7:00am Mass.",
-  "Mass times may change during feast days, solemnities or other special celebrations; check News & Events."
+  "Mass times may change during feast days, solemnities, or special celebrations.",
+  "Reconciliation is available before weekend Masses, except before the Saturday morning Mass."
  ],
  "disputes": [],
  "vs_mycatholic": {

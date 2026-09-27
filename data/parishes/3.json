@@ -4,7 +4,7 @@
  "source_urls": [
   "https://christtheking.com.sg/"
  ],
- "fetched_at": "2026-09-28T02:18+08:00",
+ "fetched_at": "2026-09-28T02:35+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,10 +14,30 @@
  "rules": [
   {
    "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -34,10 +54,30 @@
   },
   {
    "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "10:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -54,10 +94,32 @@
   },
   {
    "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "17:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "18:00",
+   "weeks": [
+    4
+   ],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -72,7 +134,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": "Every Fourth Sunday of the Month"
+   "note": ""
   },
   {
    "d": 0,
@@ -81,8 +143,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
-   "note": "Nightly Rosary, except Tuesdays"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -111,8 +173,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
-   "note": "Nightly Rosary, except Tuesdays"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -141,8 +203,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Divine Mercy Devotion"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -171,8 +233,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
-   "note": "Nightly Rosary, except Tuesdays"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -201,8 +263,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
-   "note": "Nightly Rosary, except Tuesdays"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -231,8 +293,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
-   "note": "Nightly Rosary, except Tuesdays"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -240,6 +302,16 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -252,7 +324,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -261,8 +333,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Zoom",
-   "note": "Nightly Rosary, except Tuesdays"
+   "loc": "",
+   "note": ""
   }
  ],
  "dated": [],
@@ -272,9 +344,9 @@
   "09:00"
  ],
  "notes": [
-  "Confessions are available half an hour before all weekend Masses.",
-  "Nightly Rosary is on Zoom and not held on Tuesdays.",
-  "Church gates close at 12:00 noon."
+  "Church gates close at 12:00 noon.",
+  "Confessions are in the Confession booth (Main Church).",
+  "CTK Nightly Rosary is on Zoom."
  ],
  "disputes": [],
  "vs_mycatholic": {

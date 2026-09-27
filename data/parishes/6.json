@@ -4,7 +4,7 @@
  "source_urls": [
   "https://w.holyfamily.org.sg/mass-times"
  ],
- "fetched_at": "2026-09-28T02:18+08:00",
+ "fetched_at": "2026-09-28T02:35+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -67,10 +67,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 1,
@@ -97,10 +97,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 2,
@@ -117,10 +117,10 @@
    "t": "19:00",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Divine Mercy"
+   "note": ""
   },
   {
    "d": 3,
@@ -137,10 +137,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 3,
@@ -167,10 +167,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 4,
@@ -197,10 +197,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 5,
@@ -219,10 +219,10 @@
     1
    ],
    "except": [],
-   "type": "Adoration",
+   "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "First Fridays"
+   "note": ""
   },
   {
    "d": 6,
@@ -239,10 +239,10 @@
    "t": "16:30",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Mass",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Novena"
+   "note": ""
   },
   {
    "d": 6,
@@ -271,13 +271,70 @@
   "09:30"
  ],
  "notes": [
-  "Mass and services are held in the Main Church unless otherwise indicated.",
-  "Mass is in English unless otherwise indicated.",
-  "Confessions are heard 30 minutes before each weekend Mass."
+  "Mass and services are held in the Main Church unless otherwise indicated."
  ],
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [],
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Friday",
+    "17:45",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Friday",
+    "19:00",
+    [
+     1
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Monday",
+    "17:45",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Saturday",
+    "16:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "17:45",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "17:45",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "19:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "17:45",
+    [],
+    []
+   ]
+  ],
   "only_on_mycatholic": [
    [
     "Mass",

@@ -4,7 +4,7 @@
  "source_urls": [
   "https://sjcvs.org.sg/"
  ],
- "fetched_at": "2026-09-28T02:21+08:00",
+ "fetched_at": "2026-09-28T02:38+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -84,16 +84,6 @@
   },
   {
    "d": 5,
-   "t": "11:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
    "t": "17:30",
    "weeks": [],
    "except": [],
@@ -128,10 +118,7 @@
  "public_holiday_masses": [
   "10:00"
  ],
- "notes": [
-  "Confession also daily 45 mins before Mass and 30 mins before Spanish Mass.",
-  "Public holiday Mass at 10:00am."
- ],
+ "notes": [],
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
