@@ -147,7 +147,9 @@ def answer(chat_id, lat, lng, place=None):
             f"{clock(a['start'])} {day_label(a['start'])} · {esc(a['parish']['name'])} ({mins(a['travelMin'])})" for a in alts]
     near = res.get("nearest")
     if near and near["parish"]["id"] != p["id"]:
-        lines += ["", f"<i>Nearest church:</i> {esc(near['parish']['name'])} ({mins(near['travelMin'])})"]
+        nn = near.get("next")
+        when = f", next Mass you can make {clock(nn['start'])} {day_label(nn['start'])}" if nn else ""
+        lines += ["", f"<i>Nearest church:</i> {esc(near['parish']['name'])} ({mins(near['travelMin'])}{when})"]
     lines += ["", "Go in peace."]
     kb = [[{"text": "Navigate", "url": gmaps(p, mode, lat, lng)}],
           [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}]] + mode_keyboard(mode)
