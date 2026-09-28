@@ -8,7 +8,7 @@
 //      the earlier start breaks ties. Travel efficiency first, while still "a Mass that starts soon".
 //   4. "Leave by" = start - travel - buffer.
 
-const BUFFER_MIN = 5;
+const BUFFER_MIN = 0; // leave-by gets you there as Mass starts: an honest time, not a padded one
 const WINDOW_MIN = 90;
 const MAX_ROUTED = 8;
 const MAX_TRIP_MIN = 75; // never suggest a trip longer than this
@@ -21,15 +21,19 @@ function haversineKm(a, b) {
 }
 
 // Rough door-to-door minutes from straight-line distance; used to shortlist and as a fallback.
-// "Bus & MRT" never beats walking to a church down the road: when walking is quicker, that is the trip.
+// In "Bus & MRT" mode a church down the road is a walk, but anything more than a short walk is a bus or
+// train ride, because that is how the person chose to travel (and a bus trip's time includes the wait).
+const SHORT_WALK_MIN = 10; // always walk this far
+const MAX_WALK_MIN = 15;   // walk this far only if it is no slower than the bus
+const preferWalk = (walk, pt) => walk != null && (walk <= SHORT_WALK_MIN || (walk <= MAX_WALK_MIN && (pt == null || walk <= pt)));
 const walkMinutes = (km) => Math.round(((km * 1.3) / 4.8) * 60);
 const transitMinutes = (km) => Math.round(10 + ((km * 1.3) / 17) * 60); // includes getting to the stop and waiting
 function estimateMinutes(km, mode) {
   if (mode === "walk") return walkMinutes(km);
   if (mode === "drive") return Math.round(4 + ((km * 1.3) / 30) * 60);
-  return Math.min(transitMinutes(km), walkMinutes(km));
+  return walksFaster(km, mode) ? walkMinutes(km) : transitMinutes(km);
 }
-const walksFaster = (km, mode) => mode === "transit" && walkMinutes(km) <= transitMinutes(km);
+function walksFaster(km, mode) { return mode === "transit" && preferWalk(walkMinutes(km), transitMinutes(km)); }
 
 /**
  * @param {object} p
@@ -144,7 +148,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
   return { best, alternatives, nearest, considered: trip.size };
 }
 
-const api = { rank, estimateMinutes, walksFaster, haversineKm, BUFFER_MIN, WINDOW_MIN };
+const api = { rank, estimateMinutes, walksFaster, preferWalk, haversineKm, BUFFER_MIN, WINDOW_MIN };
 if (typeof module !== "undefined") module.exports = api;
 else root.MassRank = api;
 })(this);
