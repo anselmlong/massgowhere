@@ -175,6 +175,9 @@ html.sheet-lock { overflow: hidden; }
 .sheet { position: fixed; left: 50%; bottom: 0; z-index: 4001; width: 100%; max-width: 560px; max-height: 85dvh; display: flex; flex-direction: column; background: var(--raised); border-top: 1px solid var(--line); border-radius: 22px 22px 0 0; box-shadow: 0 -10px 40px rgb(0 0 0 / .18); translate: -50% 102%; visibility: hidden; transition: translate .35s var(--ease), visibility 0s .35s; padding-bottom: env(safe-area-inset-bottom); }
 .sheet-root.open .scrim { opacity: 1; pointer-events: auto; }
 .sheet-root.open .sheet { translate: -50% 0; visibility: visible; transition: translate .35s var(--ease); }
+/* closing is quicker than opening: the choice is made, get out of the way */
+.sheet-root:not(.open) .sheet { transition: translate .24s cubic-bezier(.4, 0, 1, 1), visibility 0s .24s; }
+.sheet-root:not(.open) .scrim { transition-duration: .2s; }
 .grab { width: 38px; height: 5px; border-radius: 3px; background: var(--line); margin: 8px auto 2px; flex: none; }
 .sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 6px var(--gutter) 10px; flex: none; }
 .sheet-head h2 { margin: 0; font-size: 19px; color: var(--ink); letter-spacing: -0.01em; }
@@ -446,12 +449,18 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
   .answer { padding-top: 8vh; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .answer.reveal > * { animation: rise .5s var(--ease) both; }
-  .answer.reveal > *:nth-child(2) { animation-delay: .05s; }
-  .answer.reveal > *:nth-child(3) { animation-delay: .1s; }
-  .answer.reveal > *:nth-child(4) { animation-delay: .15s; }
-  .answer.reveal > *:nth-child(5) { animation-delay: .2s; }
   @keyframes rise { from { opacity: .001; translate: 0 8px; } }
+  /* the one authored moment: after "Looking at Mass times…", the answer comes into focus. The time resolves out of
+     a soft blur, then the church, when to leave and Navigate settle in beneath it, in reading order. */
+  .answer.reveal > * { animation: rise .45s var(--ease) both; animation-delay: .3s; }
+  .answer.reveal > .day-row { animation: fade .3s var(--ease) both; animation-delay: 0s; }
+  .answer.reveal > .time { animation: resolve .7s var(--ease) both; animation-delay: .04s; }
+  .answer.reveal > .church { animation-delay: .16s; }
+  .answer.reveal > .meta { animation-delay: .2s; }
+  .answer.reveal > .leave { animation-delay: .24s; }
+  .answer.reveal > .btn-primary { animation-delay: .3s; }
+  @keyframes resolve { from { opacity: 0; filter: blur(12px); scale: .96; } 60% { opacity: 1; } }
+  @keyframes fade { from { opacity: 0; } }
 }
 .services li .x { display: block; }
 
@@ -484,3 +493,32 @@ html.previewing .shell { padding-bottom: 96px; }
 .why-built[open] summary::before { rotate: 45deg; translate: 0 -2px; }
 .why-built p { margin: 2px 0 6px; max-width: 60ch; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
 @media (prefers-reduced-motion: no-preference) { .why-built[open] p { animation: rise .35s var(--ease) both; } }
+
+/* ---------- motion ---------- */
+/* quick picks: one highlight that slides to the new choice, so the change reads as a move, not a redraw */
+.qseg { position: relative; isolation: isolate; }
+.qseg::before {
+  content: ""; position: absolute; z-index: -1; top: 4px; bottom: 4px; left: 4px;
+  width: calc((100% - 8px - (var(--n) - 1) * 4px) / var(--n));
+  translate: calc(var(--i) * (100% + 4px)) 0;
+  border-radius: var(--radius); background: var(--bg);
+  box-shadow: inset 0 0 0 2px var(--accent), 0 1px 2px rgb(0 0 0 / .08), 0 2px 8px -2px rgb(0 0 0 / .1);
+  transition: translate .32s var(--ease);
+}
+.qseg button[aria-checked="true"] { background: none; box-shadow: none; }
+.qseg button { transition: color .2s; }
+.qseg button svg { transition: color .2s, scale .2s var(--ease); }
+.qseg button:active svg { scale: .9; }
+/* finding you: the locate mark breathes until the answer screen takes over */
+@media (prefers-reduced-motion: no-preference) {
+  .btn-primary[aria-busy="true"] svg { animation: locate 1.2s var(--ease) infinite; }
+  @keyframes locate { 50% { scale: .8; opacity: .6; } }
+}
+/* a new leave time: the answer just crossfades, the arrival is kept for the first answer */
+@media (prefers-reduced-motion: no-preference) { .answer.again { animation: fade .25s var(--ease) both; } }
+/* reduced motion: no travel, no blur; the answer still fades in and choices still change colour */
+@media (prefers-reduced-motion: reduce) {
+  .qseg::before { transition: none; }
+  .answer.reveal > * { animation: fade .25s ease both; }
+  @keyframes fade { from { opacity: 0; } }
+}

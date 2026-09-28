@@ -491,7 +491,7 @@
         </ul>
         <div class="actions">${findBtn}</div>${more}`;
     } else if (layout === "quick") {
-      const seg = (name, opts, cur) => `<div class="qseg" role="radiogroup" aria-label="${name}">${opts.map(([v, l, icon]) =>
+      const seg = (name, opts, cur) => `<div class="qseg" role="radiogroup" aria-label="${name}" style="--n:${opts.length};--i:${Math.max(0, opts.findIndex(([v]) => v === cur))}">${opts.map(([v, l, icon]) =>
         `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}"${name === "Mass" && v ? ` title="${esc(PARTS[v].range)}"` : ""}>${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
       body = `${promise}
         <div class="quick-form">
@@ -540,13 +540,21 @@
         setTimeout({ place: pickPlace, time: pickTime, mode: pickMode, part: pickPart }[b.dataset.o], 200);
       }));
     });
-    view.querySelectorAll("[data-qmode]").forEach((b) => b.addEventListener("click", () => { store.set("mgw-mode", b.dataset.qmode); renderHome(); view.querySelector(`[data-qmode="${b.dataset.qmode}"]`).focus(); }));
-    view.querySelectorAll("[data-qpart]").forEach((b) => b.addEventListener("click", () => { plan.part = b.dataset.qpart; renderHome(); view.querySelector(`[data-qpart="${b.dataset.qpart}"]`).focus(); }));
+    // a tap moves the highlight to the new choice (see .qseg::before); nothing else on the screen depends on it
+    const choose = (b, set) => {
+      const group = b.closest(".qseg"), all = [...group.querySelectorAll("[role=radio]")];
+      all.forEach((x) => x.setAttribute("aria-checked", String(x === b)));
+      group.style.setProperty("--i", all.indexOf(b));
+      set();
+    };
+    view.querySelectorAll("[data-qmode]").forEach((b) => b.addEventListener("click", () => choose(b, () => store.set("mgw-mode", b.dataset.qmode))));
+    view.querySelectorAll("[data-qpart]").forEach((b) => b.addEventListener("click", () => choose(b, () => { plan.part = b.dataset.qpart; })));
     const msg = view.querySelector("#msg");
     const say = (t) => { msg.textContent = t; msg.hidden = false; };
     const btn = view.querySelector("#find");
     const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "") + (plan.part ? `&part=${plan.part}` : "");
     btn.addEventListener("click", () => {
+      const mode = store.get("mgw-mode") || "transit"; // the quick picks change it without redrawing
       if (plan.place) return go(`/next?lat=${plan.place.lat}&lng=${plan.place.lng}&mode=${mode}&from=${encodeURIComponent(plan.place.label)}${at()}`);
       if (!navigator.geolocation) return say("Your browser can’t share location. Choose a place to leave from instead.");
       btn.setAttribute("aria-busy", "true");
@@ -672,7 +680,7 @@
       const alt = (res.alternatives || []).filter(Boolean);
       const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
       view.innerHTML = `${bar}
-        <section class="answer reveal">
+        <section class="answer ${soft ? "again" : "reveal"}">
           <div class="day-row"><p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) && new Date(b.leaveBy).getTime() - at <= LONG_WAIT ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
             <button class="why-btn" type="button" id="why" aria-label="Why this Mass?" title="Why this Mass?">${svg(ICON.info)}</button></div>
           <p class="time">${t.hm}<small>${t.ap}</small></p>
