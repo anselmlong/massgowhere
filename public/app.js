@@ -774,10 +774,10 @@
     let ml;
     try { ml = await maplibre(); } catch { mapEl.innerHTML = '<p class="lede" style="padding:20px">The map could not load. Use the list instead.</p>'; return; }
     if (!mapEl.isConnected) return;
-    const dark = matchMedia("(prefers-color-scheme: dark)").matches;
     const map = new ml.Map({
       container: mapEl,
-      style: `https://tiles.openfreemap.org/styles/${dark ? "dark" : "positron"}`,
+      // a normal full-colour street map (parks, water, MRT lines) in both themes, so places are easy to recognise
+      style: "https://tiles.openfreemap.org/styles/liberty",
       // frame you and your five nearest churches, or every church when we don't know where you are
       bounds: (() => {
         const pts = origin ? [origin, ...ps.slice(0, 5)] : d.parishes;
