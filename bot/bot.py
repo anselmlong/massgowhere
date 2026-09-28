@@ -37,7 +37,8 @@ def load_env():
 
 load_env()
 TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
-SITE = os.environ.get("MASSGOWHERE_API", "https://mass.anselmlong.com").rstrip("/")
+SITE = os.environ.get("MASSGOWHERE_API", "https://mass.anselmlong.com").rstrip("/")  # the website and its API; set this when the domain moves
+SITE_NAME = SITE.split("//")[-1]
 TG = f"https://api.telegram.org/bot{TOKEN}"
 
 
@@ -119,7 +120,8 @@ LOCATION_KB = {"keyboard": [[{"text": "Share my location", "request_location": T
 
 WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can attend, and tells you when to leave.\n\n"
            "Tap <b>Share my location</b> below, or send a postal code or place name.\n"
-           "Travelling by: <b>{mode}</b> (change it with the buttons).")
+           "Travelling by: <b>{mode}</b> (change it with the buttons).\n\n"
+           f"To plan ahead or browse every church on a map, open <a href=\"{SITE}\">{SITE_NAME}</a>.")
 
 
 # ---------- answers ----------
@@ -162,15 +164,17 @@ def answer(chat_id, lat, lng, place=None):
         near = res.get("nearest")
         if near and near["parish"]["id"] != p["id"]:
             nn = near.get("next")
-            when = f", next Mass you can make {clock(nn['start'])} {day_label(nn['start'])}" if nn else ""
+            when = f", next Mass you can attend {clock(nn['start'])} {day_label(nn['start'])}" if nn else ""
             lines += ["", f"<i>Nearest church:</i> {esc(near['parish']['name'])} ({mins(near['travelMin'])}{when})"]
         if fast:
             lines += ["", "<i>Refining live travel times…</i>"]
         if res.get("specialDay"):
             lines += ["", f"<i>{esc(res['specialDay'])}: Mass times often change today. Please check with the parish.</i>"]
-        lines += ["", "Go in peace!"]
+        lines += ["", "Peace be with you!"]
         kb = [[{"text": "Navigate", "url": gmaps(p, how, lat, lng)}],
-              [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}]] + mode_keyboard(mode)
+              [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}],
+              # the same answer on the website, where you can also pick a later leave time
+              [{"text": f"Open on {SITE_NAME}", "url": f"{SITE}/#/next?{build}&" + urllib.parse.urlencode({"from": place or "your location"})}]] + mode_keyboard(mode)
         return ("\n".join(lines), kb)
 
     def send(text, kb):
@@ -198,7 +202,7 @@ def answer(chat_id, lat, lng, place=None):
         log.warning("api error: %s", e)
         if not msg:
             return send("Sorry, I couldn't check Mass times just now. Please try again in a minute.",
-                        {"inline_keyboard": mode_keyboard(mode)})
+                        mode_keyboard(mode))
 
 
 def search_place(text):
@@ -244,7 +248,7 @@ def handle(update):
         return
     if text.startswith("/start") or text.startswith("/help"):
         return tg("sendMessage", chat_id=chat_id, parse_mode="HTML", text=WELCOME.format(mode=MODES[mode_for(chat_id)][0]),
-                  reply_markup=LOCATION_KB)
+                  reply_markup=LOCATION_KB, link_preview_options={"is_disabled": True})
     if text.startswith("/mode"):
         return tg("sendMessage", chat_id=chat_id, text="How are you travelling?", reply_markup={"inline_keyboard": mode_keyboard(mode_for(chat_id))})
     if text.startswith("/"):
