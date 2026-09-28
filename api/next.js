@@ -3,7 +3,7 @@
 const S = require("../public/schedule.js");
 const data = require("../public/data.json");
 const { rank } = require("../public/rank.js");
-const { routeMinutes } = require("../lib/onemap.js");
+const { tripMinutes } = require("../lib/onemap.js");
 
 const HORIZON_DAYS = 2;
 const MODES = new Set(["transit", "drive", "walk"]);
@@ -26,6 +26,7 @@ function summarize(e, byId) {
     leaveBy: e.leaveBy != null ? new Date(e.leaveBy).toISOString() : null,
     travelMin: e.travelMin,
     travelSource: e.travelSource,
+    walk: !!e.travelWalk, // bus & MRT mode, but walking there is quicker
     distanceKm: Math.round(e.distanceKm * 10) / 10,
     language: e.lang,
     location: e.loc,
@@ -66,8 +67,8 @@ async function answer(req, res) {
   const origin = { lat, lng };
   const events = S.expandAll(data, now, HORIZON_DAYS).filter((e) => !lang || e.lang.toLowerCase() === lang.toLowerCase());
   const travel = async (p, departMs) => {
-    const minutes = await routeMinutes(origin, p, mode, departMs);
-    return minutes == null ? null : { minutes, source: "onemap" };
+    const t = await tripMinutes(origin, p, mode, departMs);
+    return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
   };
   // fast=1: estimate-only ranking (no OneMap routing) for an instant first frame;
   // the client follows up with the default full call to refine exact travel times.
@@ -85,6 +86,7 @@ async function answer(req, res) {
       parish: summarize({ ...r.nearest, start: now, leaveBy: null, lang: "", loc: "" }, byId).parish,
       travelMin: r.nearest.travelMin,
       travelSource: r.nearest.travelSource,
+      walk: !!r.nearest.travelWalk,
       distanceKm: Math.round(r.nearest.distanceKm * 10) / 10,
       next: summarize(r.nearest.next, byId),
     },

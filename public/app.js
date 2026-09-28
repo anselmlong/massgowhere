@@ -9,6 +9,8 @@
     { id: "walk", label: "Walk", word: "walking", phrase: "on foot", gmaps: "walking", icon: '<circle cx="13" cy="4.5" r="1.8"/><path d="M9 21l2.5-6.5L14 16v5M11.5 14.5L12.5 9l-3 1.5L8 13.5M12.5 9l2 3.5 3 1"/>' },
   ];
   const modeOf = (id) => MODES.find((m) => m.id === id) || MODES[0];
+  // in bus & MRT mode a church close by is quicker on foot; the answer then says so and Navigate walks you there
+  const tripMode = (e, mode) => (e && e.walk ? modeOf("walk") : mode);
   const svg = (paths, cls = "") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
   const ICON = {
     locate: '<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/><circle cx="12" cy="12" r="7"/>',
@@ -415,9 +417,9 @@
       const now = at ?? Date.now();
       const out = await R.rank({ origin, now, mode: params.get("mode"), parishes: d.parishes, events: S.expandAll(d, now, 2) });
       const byId = new Map(d.parishes.map((p) => [p.id, p]));
-      const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
+      const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
       return { mode: params.get("mode"), best: pack(out.best), alternatives: out.alternatives.map(pack),
-        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, next: pack(out.nearest.next) } };
+        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) } };
     }
   }
 
@@ -486,7 +488,7 @@
           <h1 class="church">${esc(p.name)}</h1>
           ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
           <div class="leave${at ? " plan" : ""}" id="leave">${leaveHTML(b, at, mode)}</div>
-          <a class="btn btn-primary" href="${gmaps(p, mode.id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
+          <a class="btn btn-primary" href="${gmaps(p, tripMode(b, mode).id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
           <div class="sub"><a class="link" href="#/church/${p.id}">Mass times at this church</a></div>
           ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; checking live routes…</p>` : ""}
           ${special ? `<p class="notice">${esc(special)}: Mass times often change ${dayKey(start) === dayKey(Date.now()) ? "today" : "that day"}. Please check with the parish.</p>` : ""}
@@ -496,14 +498,14 @@
           ${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
           ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
             <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
-            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}</span></a></li></ul>` : ""}
+            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}${near.walk ? " walk" : ""}</span></a></li></ul>` : ""}
         </section>` : ""}
         <p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>See all churches on a map</span></a></p>
         <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>
         <p class="blessing">${esc(blessing(start))}</p>`;
-      rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource }]);
+      rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
       view.focus({ preventScroll: true });
-      if (at) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, mode);
+      if (at) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, tripMode(b, mode));
       painted = true;
     };
 
@@ -530,7 +532,7 @@
       // drop the "checking live routes…" note once we have exact numbers
       const estNote = view.querySelector(".answer .est");
       if (estNote && !est) estNote.remove();
-      if (!at) tickLeave(new Date(b.start).getTime(), leave, b.travelMin, est, mode);
+      if (!at) tickLeave(new Date(b.start).getTime(), leave, b.travelMin, est, tripMode(b, mode));
       // re-render only the "other options" block with exact times (keeps the hero steady)
       const alt = (res.alternatives || []).filter(Boolean);
       const near = res.nearest && res.nearest.parish.id !== b.parish.id ? res.nearest : null;
@@ -539,9 +541,9 @@
         more.innerHTML = `${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
           ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
             <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
-            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}</span></a></li></ul>` : ""}`;
+            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}${near.walk ? " walk" : ""}</span></a></li></ul>` : ""}`;
       }
-      rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource }]);
+      rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
     };
     try {
       const full = await fetchNext(q, false);
@@ -555,6 +557,7 @@
   }
   // "Leave by" when you're going now; "Leave at" (with arrival and the latest you could go) when planning
   function leaveHTML(b, at, mode) {
+    mode = tripMode(b, mode);
     const about = b.travelSource === "estimate" ? "about " : "";
     const leave = new Date(b.leaveBy).getTime();
     if (!at) return `<strong>${leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}`}</strong><span>${about}${mins(b.travelMin)} ${mode.phrase}</span>`;
@@ -608,13 +611,14 @@
   // trips routed for the answer screen, so the church page shows the same numbers (principle: same answer everywhere)
   function rememberTrips(origin, mode, list) {
     const trips = {};
-    for (const e of list) if (e && e.parish) trips[e.parish.id] = { minutes: e.travelMin, source: e.travelSource };
+    for (const e of list) if (e && e.parish) trips[e.parish.id] = { minutes: e.travelMin, source: e.travelSource, walk: !!e.walk };
     store.set("mgw-trips", { key: `${origin.lat},${origin.lng},${mode}`, at: Date.now(), trips });
   }
   function tripTo(p, origin, mode) {
     const t = store.get("mgw-trips");
     if (t && t.key === `${origin.lat},${origin.lng},${mode}` && Date.now() - t.at < 30 * 60000 && t.trips[p.id]) return t.trips[p.id];
-    return { minutes: R.estimateMinutes(R.haversineKm(origin, p), mode), source: "estimate" };
+    const km = R.haversineKm(origin, p);
+    return { minutes: R.estimateMinutes(km, mode), source: "estimate", walk: R.walksFaster(km, mode) };
   }
   function sourceLine(p) {
     if (!p) return "";
@@ -630,7 +634,7 @@
     return `<li><a class="row" href="#/church/${a.parish.id}">
       <span class="t">${clock(s)}<small>${dayLabel(s)}</small></span>
       <span class="n">${esc(a.parish.name)}${a.language !== "English" ? `<span class="tag">${esc(a.language)}</span>` : ""}<small>Leave by ${clock(new Date(a.leaveBy).getTime())}</small></span>
-      <span class="d">${mins(a.travelMin)}</span></a></li>`;
+      <span class="d">${mins(a.travelMin)}${a.walk ? " walk" : ""}</span></a></li>`;
   }
 
   // ---------- church ----------
@@ -668,7 +672,7 @@
       const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
       const n = evs.find((e) => e.start - (t.minutes + R.BUFFER_MIN) * 60000 >= now);
       if (n) lead = `<div class="next-here"><strong>Next Mass you can make: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
-        <span>Leave by ${about}${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${modeOf(mode).phrase}</span></div>`;
+        <span>Leave by ${about}${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${tripMode(t, modeOf(mode)).phrase}</span></div>`;
     }
     const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
     const dayList = ([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => {

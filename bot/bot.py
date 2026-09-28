@@ -147,12 +147,13 @@ def answer(chat_id, lat, lng, place=None):
                     {"inline_keyboard": mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]]})
         p = b["parish"]
         about = "about " if b.get("travelSource") == "estimate" else ""
+        how = "walk" if b.get("walk") else mode  # bus & MRT mode, but it's quicker on foot
         extra = " · ".join(x for x in [f"{b['language']} Mass" if b.get("language") and b["language"] != "English" else "", b.get("note") or ""] if x)
         lines = [
             f"<b>{clock(b['start'])} {day_label(b['start'])}</b>",
             f"<b>{esc(p['name'])}</b>" + (f"\n{esc(extra)}" if extra else ""),
             "",
-            f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[mode][1]}{where}",
+            f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[how][1]}{where}",
         ]
         alts = [a for a in res.get("alternatives") or [] if a]
         if alts:
@@ -167,8 +168,8 @@ def answer(chat_id, lat, lng, place=None):
             lines += ["", "<i>Refining live travel times…</i>"]
         if res.get("specialDay"):
             lines += ["", f"<i>{esc(res['specialDay'])}: Mass times often change today. Please check with the parish.</i>"]
-        lines += ["", "Go in peace."]
-        kb = [[{"text": "Navigate", "url": gmaps(p, mode, lat, lng)}],
+        lines += ["", "Go in peace!"]
+        kb = [[{"text": "Navigate", "url": gmaps(p, how, lat, lng)}],
               [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}]] + mode_keyboard(mode)
         return ("\n".join(lines), kb)
 
