@@ -116,6 +116,17 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--ink-2); }
 @media (hover: hover) { .browse:hover { background: var(--field); } }
 .browse-wrap { margin: 28px 0 0; }
 .msg { font-size: 15px; color: var(--warn); margin: 0; }
+/* the Telegram bot: its own row under the two actions, plainly a way in rather than a footnote */
+.tg { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; padding: 14px 16px; border-radius: var(--radius); background: var(--accent-soft); color: var(--ink); text-decoration: none; transition: background-color .15s; }
+.tg > svg { width: 24px; height: 24px; color: var(--accent); }
+.tg strong { display: block; font-size: 16px; font-weight: 600; }
+.tg small { display: block; margin-top: 2px; font-size: 14px; color: var(--ink-2); line-height: 1.4; }
+.tg .go { width: 18px; height: 18px; color: var(--accent); stroke-width: 2.4; }
+@media (hover: hover) { .tg:hover strong { text-decoration: underline; text-underline-offset: 3px; } }
+/* credit and the sister bots, quietly at the foot of every page */
+.foot { margin-top: 48px; padding: 18px 0 4px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.6; color: var(--ink-3); }
+.foot p { margin: 0; }
+.foot a { color: var(--ink-2); font-weight: 500; }
 
 /* home: the plan as a sentence; each underlined word opens a picker */
 .sentence { font-size: clamp(21px, 6vw, 24px); line-height: 1.75; font-weight: 500; letter-spacing: -0.015em; color: var(--ink-2); margin: 0; }
@@ -309,13 +320,10 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .sort { position: relative; flex: none; display: grid; gap: 4px; }
 .sort select { min-height: 44px; font-size: 15px; }
 .sort svg { bottom: 13px; }
-.rows .empty { padding: 18px 0; }
-.rows .empty .lede { margin: 0; }
 .row-church .times { color: var(--ink-2); font-size: 14px; margin-top: 2px; }
 .row-church .times .tag { margin-left: 4px; font-size: 11px; }
 .row-church .sep { color: var(--ink-3); }
-.row-church.none .n { color: var(--ink-2); }
-.row-church.none .times { color: var(--ink-3); }
+
 #map { height: 60dvh; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--field); margin-top: 8px; }
 /* pins: saturated fill with a white keyline and a dark halo, so they stand off both the pale and the dark basemap */
 .church-pin { --pin: var(--accent-deep); width: 48px; height: 52px; padding: 2px 5px 0; display: flex; align-items: flex-end; justify-content: center; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 0 1px rgb(0 0 0 / .55)) drop-shadow(0 3px 4px rgb(0 0 0 / .35)); transition: transform .15s var(--ease); }

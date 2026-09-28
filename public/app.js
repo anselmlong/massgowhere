@@ -31,6 +31,7 @@
     clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
     pin: '<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
     recent: '<path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4l2.5 1.5"/>',
+    telegram: '<path d="M21 4 3 11.2l6.3 2.3M21 4l-3.2 16-8.5-6.5M21 4 9.3 13.5v5.7l3.2-3.3"/>',
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.2"/>',
     phone: '<path d="M6.5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>',
   };
@@ -430,6 +431,7 @@
           <p class="msg" id="msg" role="status" hidden></p>
           <a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span></a>
         </div>
+        <a class="tg" href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span><strong>Prefer Telegram? Use @massgowherebot</strong><small>Send it your location or a postal code and it replies with the Mass you can make.</small></span>${svg(ICON.right, "go")}</a>
       </section>`;
     view.querySelector("#how").addEventListener("click", openHowSheet);
     // the word you just changed glows for a moment, so the sentence visibly answers back
@@ -908,7 +910,7 @@
       <div class="results"><p class="count" id="count" aria-live="polite"></p>
         <label class="sort"><span>Sort</span><select data-key="sort">${SORTS.filter(([k]) => k !== "near" || origin).map(([v, l]) => `<option value="${v}"${st.sort === v ? " selected" : ""}>${l}</option>`).join("")}</select>${svg(ICON.chev)}</label></div>
       <ul class="rows" id="rows"></ul>
-      <p class="source">Times from myCatholicSG.${origin ? ` Distances are from ${esc(origin.label)}, as the crow flies.` : ` <span id="nearby-note">Share your location on the home screen to sort and filter by distance.</span>`} Please confirm feast days and public holidays with the parish.</p>`;
+      <p class="source">Times from myCatholicSG.${origin ? ` Distances are from ${esc(origin.label)}.` : ` <span id="nearby-note">Share your location on the home screen to sort and filter by distance.</span>`} Please confirm feast days and public holidays with the parish.</p>`;
       toggle();
       const rows = view.querySelector("#rows"), count = view.querySelector("#count");
       const draw = () => {
@@ -923,27 +925,27 @@
           az: (a, b) => a.name.localeCompare(b.name),
         }[st.sort];
         const f = st.text.toLowerCase();
+        // only churches with a Mass that fits: a row saying "no Mass" is noise in a timetable
         const shown = d.parishes
+          .filter((p) => masses.get(p.id).length)
           .filter((p) => !st.km || dist(p) <= st.km)
           .filter((p) => !f || `${p.name} ${p.address} ${p.postal}`.toLowerCase().includes(f))
-          // churches with a Mass that fits come first, whatever the sort
-          .sort((a, b) => (masses.get(b.id).length > 0) - (masses.get(a.id).length > 0) || order(a, b));
-        const fits = shown.filter((p) => masses.get(p.id).length).length;
+          .sort(order);
+        const fits = shown.length;
+        view.querySelector(".sort").hidden = !fits;
         const what = `${st.part ? partWord(st.part).replace(/ Mass$/, "") : "a"}${st.lang ? ` ${st.lang}` : ""} Mass`;
         const when = st.day === 0 ? "still to come today" : dayName;
         const narrowed = st.part || st.lang || st.km || st.text;
         count.innerHTML = fits
           ? `${fits} ${fits === 1 ? "church has" : "churches have"} ${esc(what)} ${when}`
-          : `No church here has ${esc(what)} ${when}.${narrowed ? ` <a class="link" href="${link({ part: "", lang: "", km: 0, text: "" })}" data-clear>Clear filters</a>` : ""}`;
+          : `No church has ${esc(what)} ${when}${st.km ? ` within ${st.km} km` : ""}${st.text ? " that matches your search" : ""}.${narrowed ? ` <a class="link" href="${link({ part: "", lang: "", km: 0, text: "" })}" data-clear>Clear filters</a>` : ""}`;
         rows.innerHTML = shown.map((p) => {
           const es = masses.get(p.id), km = dist(p);
           const far = km != null ? `<span class="d">${km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(1) + " km"}</span>` : "";
-          const times = es.length
-            ? es.map((e) => `${clock(e.start)}${langName(e.lang) !== "English" && !st.lang ? ` <span class="tag">${esc(langName(e.lang))}</span>` : ""}`).join('<span class="sep"> · </span>')
-            : `No ${what.replace(/^(a|an) /, "")} ${st.day === 0 ? "left today" : dayName}`;
-          return `<li><a class="row row-church${es.length ? "" : " none"}" href="#/church/${p.id}">
+          const times = es.map((e) => `${clock(e.start)}${langName(e.lang) !== "English" && !st.lang ? ` <span class="tag">${esc(langName(e.lang))}</span>` : ""}`).join('<span class="sep"> · </span>');
+          return `<li><a class="row row-church" href="#/church/${p.id}">
             <span class="n">${esc(p.name)}<small class="times">${times}</small></span>${far}</a></li>`;
-        }).join("") || `<li class="empty"><p class="lede">No church matches all of that.</p><a class="link" href="${link({ part: "", lang: "", km: 0, text: "" })}">Clear the filters</a></li>`;
+        }).join("");
       };
       draw();
       const sync = () => {
@@ -961,7 +963,7 @@
       clearable(filter);
       filter.addEventListener("input", (e) => { st.text = e.target.value.trim(); sync(); });
       view.addEventListener("click", (e) => {
-        const clear = e.target.closest(".empty a, [data-clear]");
+        const clear = e.target.closest("[data-clear]");
         if (!clear) return;
         e.preventDefault();
         history.replaceState(null, "", clear.getAttribute("href"));
