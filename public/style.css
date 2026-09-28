@@ -40,6 +40,17 @@
   :root:not([data-theme="light"])[data-accent="red"]    { --accent: #f0999b; --accent-soft: #321a1b; }
   :root:not([data-theme="light"])[data-accent="blue"]   { --accent: #9dbdf0; --accent-soft: #172335; }
 }
+/* dark by default: the same dark rules, keyed on data-theme="dark" instead of the phone's setting */
+:root[data-theme="dark"] {
+    --bg: #111317; --ink: #eef0f3; --ink-2: #b4bac5; --ink-3: #9aa1ad; --line: #262a31; --field: #1a1d23; --field-line: #4a505a; --raised: #1b1e24;
+    --ok: #7fd3a8; --warn: #f0b26b; --accent-ink: #0d0f12; color-scheme: dark;
+  }
+  :root[data-theme="dark"][data-accent="green"],  :root[data-theme="dark"]:not([data-accent]) { --accent: #7cc4a0; --accent-soft: #17291f; }
+  :root[data-theme="dark"][data-accent="violet"] { --accent: #b9a0e3; --accent-soft: #231b30; }
+  :root[data-theme="dark"][data-accent="gold"]   { --accent: #e3bd6b; --accent-soft: #2b2415; }
+  :root[data-theme="dark"][data-accent="red"]    { --accent: #f0999b; --accent-soft: #321a1b; }
+  :root[data-theme="dark"][data-accent="blue"]   { --accent: #9dbdf0; --accent-soft: #172335; }
+
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -353,6 +364,9 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .maplibregl-ctrl-attrib { background: color-mix(in srgb, var(--bg) 85%, transparent) !important; color: var(--ink-2); }
 .maplibregl-ctrl-attrib a { color: var(--ink-2) !important; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .maplibregl-ctrl-group button .maplibregl-ctrl-icon { filter: invert(1); } :root:not([data-theme="light"]) .maplibregl-ctrl-attrib-button { filter: invert(1); } }
+/* dark by default: the same dark rules, keyed on data-theme="dark" instead of the phone's setting */
+:root[data-theme="dark"] .maplibregl-ctrl-group button .maplibregl-ctrl-icon { filter: invert(1); } :root[data-theme="dark"] .maplibregl-ctrl-attrib-button { filter: invert(1); }
+
 
 /* preview-only palette picker */
 .palette-picker { position: fixed; left: 50%; bottom: max(12px, env(safe-area-inset-bottom)); translate: -50% 0; z-index: 3000; display: flex; gap: 6px; padding: 6px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); box-shadow: 0 8px 30px rgb(0 0 0 / .15); }
@@ -363,8 +377,8 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .sheet .pick select { font-size: 15px; }
 
 /* ---------- fonts (design options) ---------- */
-:root { --font-body: Geist, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; --font-head: var(--font-body); }
-:root[data-font="atkinson"] { --font-body: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, sans-serif; }
+:root { --font-body: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; --font-head: var(--font-body); }
+:root[data-font="geist"] { --font-body: Geist, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
 :root[data-font="figtree"] { --font-body: Figtree, ui-sans-serif, system-ui, sans-serif; }
 :root[data-font="nunito"] { --font-body: Nunito, ui-sans-serif, system-ui, sans-serif; }
 :root[data-font="serif"] { --font-body: "Source Sans 3", ui-sans-serif, system-ui, sans-serif; --font-head: "Source Serif 4", Georgia, serif; }
@@ -382,6 +396,12 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
   :root[data-look="terracotta"]:not([data-theme="light"]) { --bg: #1a1210; --raised: #211714; --field: #261a17; --line: #372723; --field-line: #604b43; --ink: #f6ece7; --ink-2: #d0bdb3; --ink-3: #b09c92; --accent: #f0a58c; --accent-soft: #3a2019; --accent-ink: #1a1210; }
   :root[data-look="sage"]:not([data-theme="light"]) { --bg: #11150f; --raised: #171c14; --field: #1a2017; --line: #283024; --field-line: #4d5a45; --ink: #eef2ea; --ink-2: #bcc6b3; --ink-3: #9ca893; --accent: #9fcf95; --accent-soft: #1d2d1a; --accent-ink: #11150f; }
 }
+/* dark by default: the same dark rules, keyed on data-theme="dark" instead of the phone's setting */
+:root[data-look="parchment"]:not([data-theme="light"]) { --bg: #17140f; --raised: #1f1b15; --field: #221e17; --line: #332c22; --field-line: #5a5042; --ink: #f3ede3; --ink-2: #c7bcac; --ink-3: #a89c8b; --accent: #e0b366; --accent-soft: #2e2615; --accent-ink: #17140f; }
+  :root[data-look="marian"]:not([data-theme="light"]) { --bg: #0e1524; --raised: #141c2e; --field: #172035; --line: #243049; --field-line: #4a5873; --ink: #eef2f9; --ink-2: #b5c0d4; --ink-3: #93a0b8; --accent: #9dbdf0; --accent-soft: #1a2944; --accent-ink: #0e1524; }
+  :root[data-look="terracotta"]:not([data-theme="light"]) { --bg: #1a1210; --raised: #211714; --field: #261a17; --line: #372723; --field-line: #604b43; --ink: #f6ece7; --ink-2: #d0bdb3; --ink-3: #b09c92; --accent: #f0a58c; --accent-soft: #3a2019; --accent-ink: #1a1210; }
+  :root[data-look="sage"]:not([data-theme="light"]) { --bg: #11150f; --raised: #171c14; --field: #1a2017; --line: #283024; --field-line: #4d5a45; --ink: #eef2ea; --ink-2: #bcc6b3; --ink-3: #9ca893; --accent: #9fcf95; --accent-soft: #1d2d1a; --accent-ink: #11150f; }
+
 
 /* ---------- home layouts (design options) ---------- */
 .home .lede { font-size: 17px; }
@@ -438,3 +458,5 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 /* preview: room under the page for the floating Design options button */
 html.previewing .shell { padding-bottom: 96px; }
 .qseg button { white-space: nowrap; font-size: 14px; gap: 5px; }
+/* the chosen option carries the accent ring, so it reads in light and dark alike */
+.qseg button[aria-checked="true"] { box-shadow: inset 0 0 0 2px var(--accent); }

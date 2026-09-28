@@ -93,8 +93,8 @@
     ["terracotta", "Terracotta", "Warm clay, like a parish courtyard"], ["sage", "Sage", "Quiet green-grey, very calm"],
   ];
   const FONTS = [
-    ["geist", "Geist", "Crisp and modern (current)", "Geist:wght@400;500;600;700"],
-    ["atkinson", "Atkinson Hyperlegible", "Designed for easy reading, good for older eyes", "Atkinson+Hyperlegible+Next:wght@400;500;600;700"],
+    ["geist", "Geist", "Crisp and modern", "Geist:wght@400;500;600;700"],
+    ["atkinson", "Atkinson Hyperlegible", "Designed for easy reading (default)", "Atkinson+Hyperlegible+Next:wght@400;500;600;700"],
     ["figtree", "Figtree", "Friendly and round", "Figtree:wght@400;500;600;700"],
     ["nunito", "Nunito", "Soft and gentle", "Nunito:wght@400;500;600;700"],
     ["serif", "Source Serif + Sans", "Serif headings, like a missal", "Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700"],
@@ -102,33 +102,41 @@
   const LAYOUTS = [
     ["simple", "Simple", "One big button; options tucked behind “Change”"],
     ["list", "Settings list", "Labelled rows: From, Leaving, Travel, Mass"],
-    ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons"],
-    ["sentence", "Sentence", "The current “I’m leaving from…” sentence"],
+    ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons (default)"],
+    ["sentence", "Sentence", "The earlier “I’m leaving from…” sentence"],
   ];
+  const MODES_UI = [["dark", "Dark", "Dark background (default)"], ["light", "Light", "White background"], ["auto", "Match my phone", "Follows the phone’s light or dark setting"]];
   const pickFrom = (list, v, dflt) => (list.some(([k]) => k === v) ? v : dflt);
   const design = () => ({
     look: pickFrom(LOOKS, store.get("mgw-palette"), "season"),
-    font: pickFrom(FONTS, store.get("mgw-font"), "geist"),
-    layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "sentence"),
+    font: pickFrom(FONTS, store.get("mgw-font"), "atkinson"),
+    layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "quick"),
+    scheme: pickFrom(MODES_UI, store.get("mgw-scheme"), "dark"),
   });
   function applyPalette() {
     const qs = new URLSearchParams(location.search);
     if (qs.get("palette") || qs.get("look")) store.set("mgw-palette", qs.get("look") || qs.get("palette"));
     if (qs.get("font")) store.set("mgw-font", qs.get("font"));
     if (qs.get("layout")) store.set("mgw-layout", qs.get("layout"));
-    const { look, font } = design();
+    if (qs.get("scheme")) store.set("mgw-scheme", qs.get("scheme"));
+    const { look, font, scheme } = design();
     const s = season(Date.now());
     const root = document.documentElement;
     const accents = ["green", "blue", "violet", "red"];
     root.dataset.accent = look === "season" ? s.accent : accents.includes(look) ? look : "green";
     if (accents.includes(look) || look === "season") delete root.dataset.look; else root.dataset.look = look;
     const f = FONTS.find(([k]) => k === font);
-    if (font !== "geist" && !document.getElementById(`font-${font}`)) {
+    // Atkinson is in index.html; any other font is fetched when chosen
+    if (font !== "atkinson" && !document.getElementById(`font-${font}`)) {
       const l = document.createElement("link");
       l.id = `font-${font}`; l.rel = "stylesheet"; l.href = `https://fonts.googleapis.com/css2?family=${f[3]}&display=swap`;
       document.head.appendChild(l);
     }
     root.dataset.font = font;
+    // dark unless chosen otherwise; "auto" leaves it to the phone
+    if (scheme === "auto") delete root.dataset.theme; else root.dataset.theme = scheme;
+    const dark = scheme === "dark" || (scheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
+    requestAnimationFrame(() => document.getElementById("theme-color")?.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim() || (dark ? "#111317" : "#ffffff")));
     const el = document.getElementById("season");
     el.querySelector("span").textContent = s.name;
     el.hidden = look !== "season";
@@ -140,10 +148,11 @@
     openSheet("Design options", `
       <p class="muted" style="margin:0">Try each combination on this phone. Only you see these choices.</p>
       ${sel("layout", "Home screen layout", LAYOUTS)}
+      ${sel("scheme", "Light or dark", MODES_UI)}
       ${sel("look", "Colour theme", LOOKS)}
       ${sel("font", "Font", FONTS)}
       <button class="btn btn-quiet" type="button" data-share>${svg(ICON.recent)}<span>Copy a link to this combination</span></button>`, "select");
-    const store_ = { layout: "mgw-layout", look: "mgw-palette", font: "mgw-font" };
+    const store_ = { layout: "mgw-layout", look: "mgw-palette", font: "mgw-font", scheme: "mgw-scheme" };
     sheet.querySelectorAll("select[data-d]").forEach((x) => x.addEventListener("change", () => {
       store.set(store_[x.dataset.d], x.value);
       applyPalette();
@@ -151,7 +160,7 @@
     }));
     sheet.querySelector("[data-share]").addEventListener("click", async (e) => {
       const d = design();
-      const url = `${location.origin}/?preview=1&layout=${d.layout}&look=${d.look}&font=${d.font}${location.hash}`;
+      const url = `${location.origin}/?preview=1&layout=${d.layout}&look=${d.look}&font=${d.font}&scheme=${d.scheme}${location.hash}`;
       try { await navigator.clipboard.writeText(url); e.currentTarget.querySelector("span").textContent = "Link copied"; } catch { prompt("Copy this link", url); }
     });
   }
