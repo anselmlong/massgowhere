@@ -9,6 +9,12 @@
     { id: "walk", label: "Walk", word: "walking", phrase: "on foot", gmaps: "walking", icon: '<circle cx="13" cy="4.5" r="1.8"/><path d="M9 21l2.5-6.5L14 16v5M11.5 14.5L12.5 9l-3 1.5L8 13.5M12.5 9l2 3.5 3 1"/>' },
   ];
   const modeOf = (id) => MODES.find((m) => m.id === id) || MODES[0];
+  // time of day (see schedule.js): "any" when unset
+  const PARTS = window.MassSchedule.PARTS;
+  const partOf = (id) => (PARTS[id] ? id : "");
+  const partWord = (id) => ({ morning: "a morning Mass", lunch: "a lunchtime Mass", evening: "an evening Mass" }[id] || "any Mass");
+  const partIcon = (id) => ICON[id] || ICON.clock;
+  const partAdj = (id) => (PARTS[id] ? `${PARTS[id].label.toLowerCase()} ` : "");
   // in bus & MRT mode a church close by is quicker on foot; the answer then says so and Navigate walks you there
   const tripMode = (e, mode) => (e && e.walk ? modeOf("walk") : mode);
   const svg = (paths, cls = "") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
@@ -26,6 +32,12 @@
     clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
     pin: '<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
     recent: '<path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4l2.5 1.5"/>',
+    telegram: '<path d="M21 4 3 11.2l6.3 2.3M21 4l-3.2 16-8.5-6.5M21 4 9.3 13.5v5.7l3.2-3.3"/>',
+    morning: '<path d="M3 17.5h18M6.5 17.5a5.5 5.5 0 0 1 11 0M12 5v3.2M5.2 9.7l1.9 1.6M18.8 9.7l-1.9 1.6M9 20.5h6"/>',
+    lunch: '<circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.5 5.5l1.5 1.5M17 17l1.5 1.5M5.5 18.5 7 17M17 7l1.5-1.5"/>',
+    evening: '<path d="M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.2 6.2 0 0 0 10.1 10.1z"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.2"/>',
     phone: '<path d="M6.5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>',
   };
 
@@ -77,51 +89,95 @@
     easter: "Alleluia, He is risen.", pentecost: "Come, Holy Spirit.",
   };
   const blessing = (ms) => BLESSING[season(ms).kind] || BLESSING.ordinary;
-  const PALETTES = [
-    { id: "season", label: "Seasonal" }, { id: "green", label: "Green" }, { id: "blue", label: "Marian blue" },
-    { id: "violet", label: "Violet" }, { id: "red", label: "Red" },
+  // ---------- design options (preview only, ?preview=1): layout, colour theme, font ----------
+  // Each choice is remembered per browser and can be set by link (?layout=list&look=parchment&font=atkinson).
+  const LOOKS = [
+    ["season", "Seasonal", "White, accent follows the Church’s season"], ["green", "Green", "White with liturgical green"],
+    ["blue", "Blue", "White with Marian blue"], ["violet", "Violet", "White with Advent violet"], ["red", "Red", "White with feast red"],
+    ["parchment", "Parchment & gold", "Warm paper and old gold"], ["marian", "Marian", "Soft blue-white and deep blue"],
+    ["terracotta", "Terracotta", "Warm clay, like a parish courtyard"], ["sage", "Sage", "Quiet green-grey, very calm"],
   ];
+  const FONTS = [
+    ["geist", "Geist", "Crisp and modern", "Geist:wght@400;500;600;700"],
+    ["atkinson", "Atkinson Hyperlegible", "Designed for easy reading (default)", "Atkinson+Hyperlegible+Next:wght@400;500;600;700"],
+    ["figtree", "Figtree", "Friendly and round", "Figtree:wght@400;500;600;700"],
+    ["nunito", "Nunito", "Soft and gentle", "Nunito:wght@400;500;600;700"],
+    ["serif", "Source Serif + Sans", "Serif headings, like a missal", "Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700"],
+  ];
+  const LAYOUTS = [
+    ["simple", "Simple", "One big button; options tucked behind “Change”"],
+    ["list", "Settings list", "Labelled rows: From, Leaving, Travel, Mass"],
+    ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons (default)"],
+    ["sentence", "Sentence", "The earlier “I’m leaving from…” sentence"],
+  ];
+  const MODES_UI = [["dark", "Dark", "Dark background (default)"], ["light", "Light", "White background"], ["auto", "Match my phone", "Follows the phone’s light or dark setting"]];
+  const pickFrom = (list, v, dflt) => (list.some(([k]) => k === v) ? v : dflt);
+  const design = () => ({
+    look: pickFrom(LOOKS, store.get("mgw-palette"), "season"),
+    font: pickFrom(FONTS, store.get("mgw-font"), "atkinson"),
+    layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "quick"),
+    scheme: pickFrom(MODES_UI, store.get("mgw-scheme"), "dark"),
+  });
   function applyPalette() {
-    const qp = new URLSearchParams(location.search).get("palette");
-    if (qp) store.set("mgw-palette", qp);
-    const choice = store.get("mgw-palette") || "season";
+    const qs = new URLSearchParams(location.search);
+    if (qs.get("palette") || qs.get("look")) store.set("mgw-palette", qs.get("look") || qs.get("palette"));
+    if (qs.get("font")) store.set("mgw-font", qs.get("font"));
+    if (qs.get("layout")) store.set("mgw-layout", qs.get("layout"));
+    if (qs.get("scheme")) store.set("mgw-scheme", qs.get("scheme"));
+    const { look, font, scheme } = design();
     const s = season(Date.now());
-    document.documentElement.dataset.accent = choice === "season" ? s.accent : choice;
+    const root = document.documentElement;
+    const accents = ["green", "blue", "violet", "red"];
+    root.dataset.accent = look === "season" ? s.accent : accents.includes(look) ? look : "green";
+    if (accents.includes(look) || look === "season") delete root.dataset.look; else root.dataset.look = look;
+    const f = FONTS.find(([k]) => k === font);
+    // Atkinson is in index.html; any other font is fetched when chosen
+    if (font !== "atkinson" && !document.getElementById(`font-${font}`)) {
+      const l = document.createElement("link");
+      l.id = `font-${font}`; l.rel = "stylesheet"; l.href = `https://fonts.googleapis.com/css2?family=${f[3]}&display=swap`;
+      document.head.appendChild(l);
+    }
+    root.dataset.font = font;
+    // dark unless chosen otherwise; "auto" leaves it to the phone
+    if (scheme === "auto") delete root.dataset.theme; else root.dataset.theme = scheme;
+    const dark = scheme === "dark" || (scheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
+    requestAnimationFrame(() => document.getElementById("theme-color")?.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim() || (dark ? "#111317" : "#ffffff")));
     const el = document.getElementById("season");
     el.querySelector("span").textContent = s.name;
-    el.hidden = choice !== "season";
-    return choice;
+    el.hidden = look !== "season";
+  }
+  function openDesignSheet() {
+    const cur = design();
+    const sel = (key, label, list) => `<label class="pick"><span>${label}</span><select data-d="${key}">${list.map(([k, l, sub]) =>
+      `<option value="${k}"${cur[key] === k ? " selected" : ""}>${esc(l)} — ${esc(sub)}</option>`).join("")}</select>${svg(ICON.chev)}</label>`;
+    openSheet("Design options", `
+      <p class="muted" style="margin:0">Try each combination on this phone. Only you see these choices.</p>
+      ${sel("layout", "Home screen layout", LAYOUTS)}
+      ${sel("scheme", "Light or dark", MODES_UI)}
+      ${sel("look", "Colour theme", LOOKS)}
+      ${sel("font", "Font", FONTS)}
+      <button class="btn btn-quiet" type="button" data-share>${svg(ICON.recent)}<span>Copy a link to this combination</span></button>`, "select");
+    const store_ = { layout: "mgw-layout", look: "mgw-palette", font: "mgw-font", scheme: "mgw-scheme" };
+    sheet.querySelectorAll("select[data-d]").forEach((x) => x.addEventListener("change", () => {
+      store.set(store_[x.dataset.d], x.value);
+      applyPalette();
+      if (!location.hash || location.hash === "#/") renderHome();
+    }));
+    sheet.querySelector("[data-share]").addEventListener("click", async (e) => {
+      const d = design();
+      const url = `${location.origin}/?preview=1&layout=${d.layout}&look=${d.look}&font=${d.font}&scheme=${d.scheme}${location.hash}`;
+      try { await navigator.clipboard.writeText(url); e.currentTarget.querySelector("span").textContent = "Link copied"; } catch { prompt("Copy this link", url); }
+    });
   }
   function paletteMenu() {
     const params = new URLSearchParams(location.search);
     if (params.has("preview")) store.set("mgw-preview", true);
     if (!store.get("mgw-preview")) return;
     const box = document.getElementById("palette-picker");
-    const draw = () => {
-      const cur = applyPalette();
-      box.innerHTML = PALETTES.map((p) => {
-        const acc = p.id === "season" ? season(Date.now()).accent : p.id;
-        return `<button type="button" data-p="${p.id}" aria-pressed="${cur === p.id}"><i style="background:var(--accent)" data-accent="${acc}"></i>${p.label}</button>`;
-      }).join("");
-      box.querySelectorAll("i").forEach((i) => { i.style.background = getComputedStyle(document.documentElement).getPropertyValue("--accent"); });
-      // show each chip in its own colour
-      box.querySelectorAll("button").forEach((b) => {
-        const probe = document.createElement("span");
-        probe.dataset.accent = b.querySelector("i").dataset.accent;
-        probe.style.display = "none";
-        document.body.appendChild(probe);
-        b.querySelector("i").style.background = getComputedStyle(probe).getPropertyValue("--accent");
-        probe.remove();
-      });
-    };
-    box.addEventListener("click", (e) => {
-      const b = e.target.closest("button[data-p]");
-      if (!b) return;
-      store.set("mgw-palette", b.dataset.p);
-      draw();
-    });
+    box.innerHTML = `<button type="button">${svg(ICON.info)}Design options</button>`;
+    box.querySelector("button").addEventListener("click", openDesignSheet);
     box.hidden = false;
-    draw();
+    document.documentElement.classList.add("previewing");
   }
 
   // ---------- formatting ----------
@@ -238,6 +294,35 @@
     openSheet("How are you travelling?", `<div class="opts">${MODES.map((m) => `
       <button class="opt" type="button" data-mode="${m.id}" aria-pressed="${m.id === current}">${svg(m.icon)}<span>${m.label}<small>${sub[m.id]}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
     sheet.querySelectorAll("[data-mode]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.mode); }));
+  }
+
+  function openPartSheet(current, pick) {
+    const opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)])];
+    openSheet("Which Mass?", `<div class="opts">${opts.map(([id, l, sub]) => `
+      <button class="opt" type="button" data-part="${id}" aria-pressed="${id === current}">${svg(partIcon(id))}<span>${l}<small>${sub}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
+    sheet.querySelectorAll("[data-part]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.part); }));
+  }
+
+  // the two explainers, for anyone unsure what the site does or why it picked a Mass
+  function openHowSheet() {
+    openSheet("How MassGoWhere works", `
+      <ol class="how-steps">
+        <li><strong>Mass times for all 32 parishes.</strong> Gathered from myCatholicSG, and checked each month against every parish’s own website.</li>
+        <li><strong>Where you are.</strong> Your location, or a postal code or place you search for, tells us which churches are around you.</li>
+        <li><strong>Real travel times.</strong> For the nearby churches we ask OneMap, Singapore’s official map, how long the trip takes by bus &amp; MRT, car or on foot, and check that you can arrive before Mass begins.</li>
+        <li><strong>One answer.</strong> The Mass you can make and when to leave, with the other churches you can reach listed below. Navigate opens Google Maps.</li>
+      </ol>
+      <p class="muted">Tap the underlined words to change where you leave from, when, how you travel, or the time of day. Times can change on feast days and public holidays, so check with the parish. MassGoWhere is an independent project, not run by the Archdiocese.</p>`, ".sheet-close");
+  }
+  function openWhySheet({ from, mode, at, part }) {
+    const adj = partAdj(part);
+    openSheet("Why this Mass?", `
+      <div class="why">
+        <p>We looked for the earliest ${adj}Mass you can still reach, leaving ${esc(at ? whenText(at) : "now")} ${mode.phrase} from ${esc(from)}.</p>
+        <p>If another church has a Mass starting within ${R.WINDOW_MIN} minutes of that one, we pick the shortest trip, so you aren’t sent across the island to arrive a few minutes sooner.</p>
+        <p>Travel times come from OneMap, Singapore’s official map. A quick estimate shows first while live routes load, and “Leave by” gets you there as Mass begins.</p>
+        <p>The other churches you can make it to are listed below the answer.</p>
+      </div>`, ".sheet-close");
   }
 
   // places people searched before, newest first (not raw GPS, which is stale by now)
@@ -372,37 +457,107 @@
 
   // ---------- home ----------
   // the plan being written on the home screen; kept while you look at answers, reset on reload
-  const plan = { place: null, at: null };
+  const plan = { place: null, at: null, part: "" };
   function renderHome() {
     const mode = store.get("mgw-mode") || "transit";
     if (plan.at != null && plan.at <= Date.now()) plan.at = null;
     const here = !plan.place && plan.at == null;
-    view.innerHTML = `
-      <section class="home">
-        <h1>Find a Mass you can attend.</h1>
-        <p class="sentence">I’m leaving from
-          <button class="tok" type="button" id="t-place" aria-label="Leaving from: ${esc(plan.place ? plan.place.label : "my location")}. Change"><span>${esc(plan.place ? plan.place.label : "my location")}</span>${svg(ICON.chev)}</button><br>at
-          <button class="tok" type="button" id="t-time" aria-label="Leaving at: ${esc(whenText(plan.at))}. Change"><span>${esc(whenText(plan.at))}</span>${svg(ICON.chev)}</button> by
-          <button class="tok" type="button" id="t-mode" aria-label="Travelling by: ${esc(modeOf(mode).label)}. Change"><span>${esc(modeOf(mode).word)}</span>${svg(ICON.chev)}</button></p>
-        <p class="hint">Tap an underlined word to change it.</p>
-        <div class="actions">
-          <button class="btn btn-primary" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
-          <p class="msg" id="msg" role="status" hidden></p>
-          <a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>Browse all churches on a map</span></a>
+    const layout = design().layout;
+    const place = plan.place ? plan.place.label : "my location";
+    const findBtn = `<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
+          <p class="msg" id="msg" role="status" hidden></p>`;
+    // the ways out of the home screen that aren't the answer: quiet rows, not rival buttons
+    const more = `<ul class="more-ways">
+        <li><a href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span>${svg(ICON.right, "go")}</a></li>
+        <li><a href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span>Use it on Telegram: @massgowherebot</span>${svg(ICON.right, "go")}</a></li>
+        <li><button type="button" id="how">${svg(ICON.info)}<span>How does this work?</span>${svg(ICON.right, "go")}</button></li>
+      </ul>`;
+    const promise = `<div class="intro"><h1>Find a Mass you can make.</h1>
+        <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p></div>`;
+    const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass"].filter(Boolean).join(" · ");
+    let body;
+    if (layout === "simple") {
+      body = `${promise}
+        <div class="actions">${findBtn}
+          <div class="summary"><span>${esc(summary)}</span><button class="link" type="button" id="opts">Change</button></div>
+        </div>${more}`;
+    } else if (layout === "list") {
+      const row = (id, label, value) => `<li><button type="button" id="${id}"><span class="k">${label}</span><span class="v">${esc(value)}</span>${svg(ICON.right, "go")}</button></li>`;
+      body = `${promise}
+        <ul class="settings" aria-label="Your trip">
+          ${row("t-place", "From", plan.place ? place : "My location")}
+          ${row("t-time", "Leaving", plan.at == null ? "Now" : whenText(plan.at))}
+          ${row("t-mode", "Travel by", modeOf(mode).label)}
+          ${row("t-part", "Mass", plan.part ? `${PARTS[plan.part].label} (${PARTS[plan.part].range})` : "Any time")}
+        </ul>
+        <div class="actions">${findBtn}</div>${more}`;
+    } else if (layout === "quick") {
+      const seg = (name, opts, cur) => `<div class="qseg" role="radiogroup" aria-label="${name}" style="--n:${opts.length};--i:${Math.max(0, opts.findIndex(([v]) => v === cur))}">${opts.map(([v, l, icon]) =>
+        `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}"${name === "Mass" && v ? ` title="${esc(PARTS[v].range)}"` : ""}>${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
+      body = `${promise}
+        <div class="quick-form">
+          <p class="qlabel">How are you travelling?</p>
+          ${seg("Travel", MODES.map((m) => [m.id, m.label, m.icon]), mode)}
+          <p class="qlabel">Which Mass?</p>
+          ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, x.label, partIcon(k)])], plan.part)}
+          <p class="from-line">${esc(plan.place ? `From ${place}` : "From where you are")}, ${esc(plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`)}. <button class="link" type="button" id="opts">Change</button></p>
         </div>
-      </section>`;
-    // the word you just changed glows for a moment, so the sentence visibly answers back
-    const changed = (id) => { renderHome(); const t = view.querySelector(id); t.focus({ preventScroll: true }); t.classList.add("just"); };
-    view.querySelector("#t-place").addEventListener("click", () => openPlaceSheet((p) => { plan.place = p; changed("#t-place"); }));
-    view.querySelector("#t-time").addEventListener("click", () => openTimeSheet(plan.at, (at) => { plan.at = at; changed("#t-time"); }));
-    view.querySelector("#t-mode").addEventListener("click", () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); changed("#t-mode"); }));
+        <div class="actions">${findBtn}</div>${more}`;
+    } else {
+      body = `<div class="intro"><h1>Find a Mass you can make.</h1>
+          <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>
+          <button class="how" type="button" id="how">${svg(ICON.info)}<span>How does this work?</span></button>
+        </div>
+        <p class="sentence">I’m leaving from
+          <button class="tok" type="button" id="t-place" aria-label="Leaving from: ${esc(place)}. Change"><span>${esc(place)}</span>${svg(ICON.chev)}</button><br>at
+          <button class="tok" type="button" id="t-time" aria-label="Leaving at: ${esc(whenText(plan.at))}. Change"><span>${esc(whenText(plan.at))}</span>${svg(ICON.chev)}</button> by
+          <button class="tok" type="button" id="t-mode" aria-label="Travelling by: ${esc(modeOf(mode).label)}. Change"><span>${esc(modeOf(mode).word)}</span>${svg(ICON.chev)}</button><br>for
+          <button class="tok" type="button" id="t-part" aria-label="Looking for: ${esc(partWord(plan.part))}. Change"><span>${esc(partWord(plan.part))}</span>${svg(ICON.chev)}</button></p>
+        <p class="hint">Tap an underlined word to change it.</p>
+        <div class="actions">${findBtn}
+          <a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span></a>
+        </div>
+        <a class="tg" href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span><strong>Prefer Telegram? Use @massgowherebot</strong><small>Send it your location or a postal code and it replies with the Mass you can make.</small></span>${svg(ICON.right, "go")}</a>`;
+    }
+    view.innerHTML = `<section class="home home-${layout}">${body}</section>`;
+    // the choice you just changed glows for a moment, so the screen visibly answers back
+    const changed = (id) => { renderHome(); const t = view.querySelector(id) || view.querySelector("#opts"); t?.focus({ preventScroll: true }); t?.classList.add("just"); };
+    const on = (id, fn) => view.querySelector(id)?.addEventListener("click", fn);
+    const pickPlace = () => openPlaceSheet((p) => { plan.place = p; changed("#t-place"); });
+    const pickTime = () => openTimeSheet(plan.at, (at) => { plan.at = at; changed("#t-time"); });
+    const pickMode = () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); changed("#t-mode"); });
+    const pickPart = () => openPartSheet(plan.part, (x) => { plan.part = x; changed("#t-part"); });
+    on("#how", openHowSheet);
+    on("#t-place", pickPlace); on("#t-time", pickTime); on("#t-mode", pickMode); on("#t-part", pickPart);
+    // "Change": every option in one sheet, each opening its own picker
+    on("#opts", () => {
+      const all = layout === "quick"
+        ? [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)]]
+        : [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)],
+           ["mode", modeOf(mode).icon, "Travelling by", modeOf(mode).label], ["part", partIcon(plan.part), "Which Mass", plan.part ? PARTS[plan.part].label : "Any time"]];
+      openSheet("Your trip", `<div class="opts">${all.map(([k, icon, l, v]) => `<button class="opt" type="button" data-o="${k}">${svg(icon)}<span>${l}<small>${esc(v)}</small></span></button>`).join("")}</div>`);
+      sheet.querySelectorAll("[data-o]").forEach((b) => b.addEventListener("click", () => {
+        closeSheet();
+        setTimeout({ place: pickPlace, time: pickTime, mode: pickMode, part: pickPart }[b.dataset.o], 200);
+      }));
+    });
+    // a tap moves the highlight to the new choice (see .qseg::before); nothing else on the screen depends on it
+    const choose = (b, set) => {
+      const group = b.closest(".qseg"), all = [...group.querySelectorAll("[role=radio]")];
+      all.forEach((x) => x.setAttribute("aria-checked", String(x === b)));
+      group.style.setProperty("--i", all.indexOf(b));
+      set();
+    };
+    view.querySelectorAll("[data-qmode]").forEach((b) => b.addEventListener("click", () => choose(b, () => store.set("mgw-mode", b.dataset.qmode))));
+    view.querySelectorAll("[data-qpart]").forEach((b) => b.addEventListener("click", () => choose(b, () => { plan.part = b.dataset.qpart; })));
     const msg = view.querySelector("#msg");
     const say = (t) => { msg.textContent = t; msg.hidden = false; };
     const btn = view.querySelector("#find");
-    const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "");
+    const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "") + (plan.part ? `&part=${plan.part}` : "");
     btn.addEventListener("click", () => {
+      const mode = store.get("mgw-mode") || "transit"; // the quick picks change it without redrawing
       if (plan.place) return go(`/next?lat=${plan.place.lat}&lng=${plan.place.lng}&mode=${mode}&from=${encodeURIComponent(plan.place.label)}${at()}`);
-      if (!navigator.geolocation) return say("Your browser can’t share location. Tap “my location” to search for a place instead.");
+      if (!navigator.geolocation) return say("Your browser can’t share location. Choose a place to leave from instead.");
       btn.setAttribute("aria-busy", "true");
       btn.querySelector("span").textContent = "Finding you…";
       navigator.geolocation.getCurrentPosition(
@@ -410,7 +565,7 @@
         (err) => {
           btn.removeAttribute("aria-busy");
           btn.querySelector("span").textContent = here ? "Find a Mass near me" : "Find a Mass";
-          say(err.code === 1 ? "Location is blocked for this site. Allow it in your browser settings, or tap “my location” to search for a place." : "Couldn’t get your location just now. Tap “my location” to search for a place instead.");
+          say(err.code === 1 ? "Location is blocked for this site. Allow it in your browser settings, or choose a place to leave from." : "Couldn’t get your location just now. Choose a place to leave from instead.");
         },
         { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 }
       );
@@ -429,6 +584,8 @@
     const params = new URLSearchParams({ lat: q.get("lat"), lng: q.get("lng"), mode: q.get("mode") || "transit" });
     const at = parseAt(q.get("at"));
     if (at) params.set("at", at);
+    const part = partOf(q.get("part"));
+    if (part) params.set("part", part);
     if (fast) params.set("fast", "1");
     try {
       const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 4000 : 12000) });
@@ -440,7 +597,7 @@
       const d = await data();
       const origin = { lat: Number(q.get("lat")), lng: Number(q.get("lng")) };
       const now = at ?? Date.now();
-      const out = await R.rank({ origin, now, mode: params.get("mode"), parishes: d.parishes, events: S.expandAll(d, now, 2) });
+      const out = await R.rank({ origin, now, mode: params.get("mode"), parishes: d.parishes, events: S.expandAll(d, now, 2).filter(S.inPart(part)) });
       const byId = new Map(d.parishes.map((p) => [p.id, p]));
       const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
       return { mode: params.get("mode"), best: pack(out.best), alternatives: out.alternatives.map(pack),
@@ -453,13 +610,15 @@
     const origin = { lat: Number(q.get("lat")), lng: Number(q.get("lng")) };
     const from = q.get("from") || "your location";
     const at = parseAt(q.get("at"));
+    const part = partOf(q.get("part"));
+    const adj = partAdj(part);
     const myHash = location.hash;
     const stale = () => location.hash !== myHash;
     store.set("mgw-origin", { ...origin, label: from, at: Date.now() });
     rememberPlace({ ...origin, label: from });
     // only the leave time changes here; where from and how are set on the home screen
     const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
-        <span class="from">From ${esc(from)} · ${mode.label}</span></div>
+        <span class="from">From ${esc(from)} · ${mode.label}${part ? ` · ${PARTS[part].label} Masses` : ""}</span></div>
       <div class="when${at ? " set" : ""}"><button class="nudge" type="button" data-nudge="-1" aria-label="Leave 15 minutes earlier" ${at ? "" : "disabled"}>${svg(ICON.left)}</button>
         <button class="when-chip" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time">${svg(ICON.clock)}<span>${at ? `Leaving ${esc(whenText(at))}` : "Leaving now"}</span></button>
         <button class="nudge" type="button" data-nudge="1" aria-label="Leave 15 minutes later">${svg(ICON.right)}</button></div>`;
@@ -507,8 +666,8 @@
       }
       const b = res.best;
       if (!b) {
-        view.innerHTML = `${bar}<section class="answer reveal"><h1>No Mass you can reach ${at ? `within two days of ${esc(whenText(at))}` : "in the next two days"}.</h1>
-          <p class="lede">Try another time or way of travelling, or browse the churches and their times.</p>
+        view.innerHTML = `${bar}<section class="answer reveal"><h1>No ${adj}Mass you can reach ${at ? `within two days of ${esc(whenText(at))}` : "in the next two days"}.</h1>
+          <p class="lede">Try another time${part ? ", time of day" : ""} or way of travelling, or browse the churches and their times.</p>
           <p style="margin-top:28px"><a class="btn btn-quiet" href="#/churches">Browse all churches</a></p></section>`;
         painted = true;
         return;
@@ -522,14 +681,14 @@
       const alt = (res.alternatives || []).filter(Boolean);
       const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
       view.innerHTML = `${bar}
-        <section class="answer reveal">
-          <p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) && new Date(b.leaveBy).getTime() - at <= LONG_WAIT ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
+        <section class="answer ${soft ? "retimed" : "reveal"}">
+          <div class="day-row"><p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) && new Date(b.leaveBy).getTime() - at <= LONG_WAIT ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
+            <button class="why-btn" type="button" id="why" aria-label="Why this Mass?" title="Why this Mass?">${svg(ICON.info)}</button></div>
           <p class="time">${t.hm}<small>${t.ap}</small></p>
-          <h1 class="church" data-id="${p.id}">${esc(p.name)}</h1>
+          <h1 class="church" data-id="${p.id}"><a href="#/church/${p.id}" aria-label="${esc(p.name)}: Mass times and details"><span>${esc(p.name)}</span>${svg(ICON.right)}</a></h1>
           ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
           <div class="leave${at ? " plan" : ""}" id="leave">${leaveHTML(b, at, mode)}</div>
           <a class="btn btn-primary" href="${gmaps(p, tripMode(b, mode).id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
-          <div class="sub"><a class="link" href="#/church/${p.id}">Mass times at this church</a></div>
           ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; checking live routes…</p>` : ""}
           ${special ? `<p class="notice">${esc(special)}: Mass times often change ${dayKey(start) === dayKey(Date.now()) ? "today" : "that day"}. Please check with the parish.</p>` : ""}
           ${alt.length || near ? `<button class="see-more" type="button" onclick="document.getElementById('more').scrollIntoView({ behavior: 'smooth' })">${svg(ICON.down)}<span>${alt.length ? "More churches you can make it to" : "See the nearest church"}</span></button>` : ""}
@@ -538,11 +697,11 @@
           ${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
           ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
             <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
-            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}${near.walk ? " walk" : ""}</span></a></li></ul>` : ""}
+            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : `No reachable ${adj}Mass in the next two days`}</small></span><span class="d">${mins(near.travelMin)}${near.walk ? " walk" : ""}</span></a></li></ul>` : ""}
         </section>` : ""}
-        <p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>See all churches on a map</span></a></p>
+        <p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches${part ? `?part=${part}` : ""}">${svg(ICON.map)}<span>Browse churches and Mass times</span></a></p>
         <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>
-        <p class="blessing">${esc(blessing(start))}</p>`;
+        <p class="blessing"><svg class="cross" viewBox="0 0 32 32" aria-hidden="true"><path d="M14.5 5h3v6h6v3h-6v13h-3V14h-6v-3h6z"/></svg>${esc(blessing(start))}</p>`;
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
       view.focus({ preventScroll: true });
       if (at) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, tripMode(b, mode));
@@ -584,7 +743,7 @@
         more.innerHTML = `${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
           ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
             <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
-            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}${near.walk ? " walk" : ""}</span></a></li></ul>` : ""}`;
+            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : `No reachable ${adj}Mass in the next two days`}</small></span><span class="d">${mins(near.travelMin)}${near.walk ? " walk" : ""}</span></a></li></ul>` : ""}`;
       }
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
     };
@@ -642,6 +801,10 @@
       return setLeaveAt(t <= Date.now() ? null : Math.min(t, maxAt()));
     }
     if (e.target.closest("#when")) openTimeSheet(cur, setLeaveAt);
+    if (e.target.closest("#why")) {
+      const q = new URLSearchParams(location.hash.split("?")[1] || "");
+      openWhySheet({ from: q.get("from") || "your location", mode: modeOf(q.get("mode")), at: cur, part: partOf(q.get("part")) });
+    }
   });
   // the leave-by line counts down while the page is open; at zero it says so and the Navigate button draws the eye
   let leaveTimer = null;
@@ -733,6 +896,8 @@
       if (n) lead = `<div class="next-here"><strong>Next Mass you can attend: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
         <span>Leave by ${about}${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${tripMode(t, modeOf(mode)).phrase}</span></div>`;
     }
+    // the parish's own website (31 of 32 list one); the one without keeps the call button
+    const site = p.website || (p.siteCheck && p.siteCheck.url) || "";
     const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
     const dayList = ([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => {
       const bits = [e.loc && !/^main church$/i.test(e.loc) ? esc(e.loc) : "", e.note ? esc(e.note) : ""].filter(Boolean).join(" · ");
@@ -741,6 +906,18 @@
     const all = [...days];
     const soon = all.slice(0, 2), rest = all.slice(2);
     // notes that only restate a language already tagged on the rows add nothing
+    // Confession, Adoration and devotions, where myCatholicSG lists them (about a third of parishes do)
+    const SERVICES = [["Confession", "Confession"], ["Adoration", "Adoration"], ["Devotion", "Devotions"]];
+    const services = SERVICES.map(([type, title]) => {
+      const es = S.expandParish(String(id), d, now, 7, [type]);
+      if (!es.length) return "";
+      // a note every row shares ("Subject to availability of priest") is said once, under the list
+      const shared = es.every((e) => e.note && e.note === es[0].note) ? es[0].note : "";
+      return `<h2>${title}</h2><ul>${es.map((e) => {
+        const bits = [e.loc && !/^main church$/i.test(e.loc) ? esc(e.loc) : "", !shared && e.note ? esc(e.note) : ""].filter(Boolean).join(" · ");
+        return `<li><span class="t">${clock(e.start)}</span><span>${esc(dayLabel(e.start))}${langTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}</span></li>`;
+      }).join("")}</ul>${shared ? `<p class="x">${esc(shared)}</p>` : ""}`;
+    }).join("");
     const notes = (p.notes || []).filter((n) => !/^(all )?(saturday|sunday|weekday|masses?)\b.*\b(is|are) in (english|mandarin|tamil|tagalog|indonesian)/i.test(n) && !/unless (otherwise )?(indicated|stated)/i.test(n));
     view.innerHTML = `
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="history.length > 1 ? history.back() : (location.hash='#/')">${svg(ICON.back)}</button></div>
@@ -750,12 +927,14 @@
         ${lead}
         <div class="acts" style="margin-top:${lead ? 14 : 0}px">
           <a class="btn btn-primary" href="${gmaps(p, mode, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
-          ${p.phone ? `<a class="btn btn-quiet" href="tel:${esc(p.phone.replace(/\s/g, ""))}" aria-label="Call the parish">${svg(ICON.phone)}</a>` : ""}
+          ${site ? `<a class="btn btn-quiet" href="${esc(site)}" target="_blank" rel="noopener" aria-label="Parish website (opens in a new tab)">${svg(ICON.globe)}<span>Website</span></a>`
+            : p.phone ? `<a class="btn btn-quiet" href="tel:${esc(p.phone.replace(/\s/g, ""))}" aria-label="Call the parish">${svg(ICON.phone)}</a>` : ""}
         </div>
         <div class="week">
           ${soon.map(dayList).join("") || `<p class="lede">No Masses listed for the coming week. Please check with the parish.</p>`}
           ${rest.length ? `<details class="rest"><summary>Rest of the week</summary>${rest.map(dayList).join("")}</details>` : ""}
         </div>
+        ${services ? `<div class="week services">${services}</div>` : ""}
         ${notes.length ? `<ul class="notes">${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
         ${all.some(([, es]) => S.specialDay(es[0].start, d)) ? `<p class="notice">${esc(all.map(([, es]) => S.specialDay(es[0].start, d)).filter(Boolean)[0])} is coming up: times that day may differ. Please check with the parish.</p>` : ""}
         <p class="source">${sourceLine(p)}${!p.siteCheck && p.website ? ` Parish website: <a href="${esc(p.website)}" target="_blank" rel="noopener">${esc(p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>.` : ""}</p>
@@ -775,69 +954,167 @@
   }));
   const PIN = '<svg viewBox="0 0 32 40" aria-hidden="true"><path d="M16 39s13-12.4 13-22.5C29 8.9 23.2 3 16 3S3 8.9 3 16.5C3 26.6 16 39 16 39z"/><path class="x" d="M14.6 9.5h2.8v4.3h4.1v2.7h-4.1v8.3h-2.8v-8.3h-4.1v-2.7h4.1z"/></svg>';
 
+  // browse. The map is just the map: every church, tap for its next Mass. The list is the timetable: one day's
+  // Masses per church, narrowed with dropdowns. The choices live in the link (#/churches?view=list&day=1&part=evening),
+  // so Back, Map/List and sharing all keep them.
+  const SORTS = [["near", "Nearest"], ["soon", "Earliest Mass"], ["az", "A to Z"]];
+  const RADII = [2, 5, 10];
+  // myCatholicSG spells a few languages two ways ("English.", "Mandarin (中文)")
+  const langName = (l) => String(l || "English").replace(/\s*\(.*\)$/, "").replace(/\.$/, "").trim();
   async function renderChurches(q) {
     const d = await loadData();
     if (!d) return;
     const origin = store.get("mgw-origin");
-    const now = Date.now();
-    const next = new Map();
-    for (const e of S.expandAll(d, now, 7)) if (!next.has(e.pid)) next.set(e.pid, e);
-    const dist = (p) => (origin ? R.haversineKm(origin, p) : null);
-    const mode = store.get("mgw-mode") || "transit";
-    // the next Mass here, and when to leave for it, when we know where you are (same estimate as the church page)
-    const nextLine = (p) => {
-      const n = next.get(p.id);
-      if (!origin) return n ? `Next Mass ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}` : "No Mass listed this week";
-      const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
-      const lead = (t.minutes + R.BUFFER_MIN) * 60000;
-      const m = S.expandParish(String(p.id), d, now, 7).find((e) => e.start - lead >= now);
-      return m ? `Next Mass ${clock(m.start)} ${dayLabel(m.start).toLowerCase()} · leave by ${about}${clock(m.start - lead)}` : "No Mass you can make this week";
+    const now = Date.now(), today = sgMidnight(now);
+    const langs = [...new Set(Object.values(d.rules).flat().filter((r) => r.type === "Mass").map((r) => langName(r.lang)))]
+      .sort((a, b) => (a === "English" ? -1 : b === "English" ? 1 : a.localeCompare(b)));
+    const st = {
+      view: q.get("view") === "list" ? "list" : "map",
+      day: Math.max(0, Math.min(6, Number(q.get("day")) || 0)),
+      part: partOf(q.get("part")),
+      lang: langs.includes(q.get("lang")) ? q.get("lang") : "",
+      km: origin && RADII.includes(Number(q.get("km"))) ? Number(q.get("km")) : 0,
+      sort: SORTS.some(([k]) => k === q.get("sort")) ? q.get("sort") : origin ? "near" : "az",
+      text: q.get("q") || "",
     };
-    const ps = [...d.parishes].sort((a, b) => (origin ? dist(a) - dist(b) : a.name.localeCompare(b.name)));
-    const asMap = q.get("view") !== "list";
-    view.innerHTML = `
+    if (st.sort === "near" && !origin) st.sort = "az";
+    const link = (o = {}) => {
+      const x = { ...st, ...o }, qs = new URLSearchParams();
+      if (x.view === "list") qs.set("view", "list");
+      if (x.day) qs.set("day", x.day);
+      if (x.part) qs.set("part", x.part);
+      if (x.lang) qs.set("lang", x.lang);
+      if (x.km) qs.set("km", x.km);
+      if (x.sort !== (origin ? "near" : "az")) qs.set("sort", x.sort);
+      if (x.text) qs.set("q", x.text);
+      return `#/churches${String(qs) ? `?${qs}` : ""}`;
+    };
+    const dist = (p) => (origin ? R.haversineKm(origin, p) : null);
+    const head = (asMap) => `
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button></div>
       <section class="list-head">
         <h1>All churches</h1>
         <div class="seg" role="group" aria-label="View">
-          <button type="button" aria-pressed="${asMap}" data-v="map">Map</button>
-          <button type="button" aria-pressed="${!asMap}" data-v="list">List</button>
+          <a href="${link({ view: "map" })}" aria-current="${asMap}">Map</a>
+          <a href="${link({ view: "list" })}" aria-current="${!asMap}">List</a>
+        </div>`;
+    const toggle = () => view.querySelectorAll(".seg a").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      history.replaceState(null, "", a.getAttribute("href"));
+      route();
+      view.querySelector(`.seg a[aria-current="true"]`)?.focus({ preventScroll: true });
+    }));
+
+    if (st.view === "list") {
+      const dayStart = today + st.day * DAY;
+      const dayName = st.day === 0 ? "today" : st.day === 1 ? "tomorrow" : `on ${wk(dayStart, "long")}`;
+      const pick = (key, label, opts, extra = "") => `<label class="pick"><span>${label}</span>
+        <select data-key="${key}" ${extra}>${opts.map(([v, l]) => `<option value="${v}"${String(st[key]) === String(v) ? " selected" : ""}>${esc(l)}</option>`).join("")}</select>${svg(ICON.chev)}</label>`;
+      const days = Array.from({ length: 7 }, (_, i) => [i, i === 0 ? "Today" : i === 1 ? "Tomorrow" : `${wk(today + i * DAY, "long")} ${dnum(today + i * DAY)}`]);
+      view.innerHTML = `${head(false)}
+        <div class="picks">
+          ${pick("day", "Day", days)}
+          ${pick("part", "Time", [["", "Any time"], ...Object.entries(PARTS).map(([k, x]) => [k, x.label])])}
+          ${pick("lang", "Language", [["", "Any language"], ...langs.map((l) => [l, l])])}
+          ${origin ? pick("km", "Distance", [[0, "Any distance"], ...RADII.map((k) => [k, `Within ${k} km`])])
+            : `<label class="pick" aria-disabled="true"><span>Distance</span><select disabled aria-describedby="nearby-note"><option value="">No location</option></select>${svg(ICON.chev)}</label>`}
         </div>
-        ${asMap ? "" : `<div class="search">${svg(ICON.search)}<input id="filter" type="search" placeholder="Filter by name or area" aria-label="Filter churches"><button class="clear" type="button" aria-label="Clear filter" hidden>${svg(ICON.x)}</button></div>`}
-        <p class="muted" style="margin:0">${asMap ? "Tap a church for its next Mass." : origin ? `Nearest first, from ${esc(origin.label)}` : "A to Z. Share your location on the home screen to sort by distance."}</p>
+        <div class="search">${svg(ICON.search)}<input id="filter" type="search" placeholder="Search by church name or area" aria-label="Search churches" value="${esc(st.text)}"><button class="clear" type="button" aria-label="Clear search" ${st.text ? "" : "hidden"}>${svg(ICON.x)}</button></div>
       </section>
-      ${asMap ? `<div id="map" role="region" aria-label="Map of churches"></div>
-        <p class="legend"><span><i class="l-church"></i>Church</span>${origin ? `<span><i class="l-you"></i>${esc(origin.label === "your location" ? "You" : origin.label)}</span>` : ""}</p>` : `<ul class="rows" id="rows"></ul>`}
-      <p class="source">${d.parishes.length} parishes.</p>`;
-    view.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => go(`/churches${b.dataset.v === "list" ? "?view=list" : ""}`)));
-    if (!asMap) {
-      const rows = view.querySelector("#rows");
-      const draw = (f) => {
-        const list = ps.filter((p) => !f || `${p.name} ${p.address}`.toLowerCase().includes(f));
-        rows.innerHTML = list.map((p) => {
-          const km = dist(p);
-          const far = km != null ? `${km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(1) + " km"} · ` : "";
+      <div class="results"><p class="count" id="count" aria-live="polite"></p>
+        <label class="sort"><span>Sort</span><select data-key="sort">${SORTS.filter(([k]) => k !== "near" || origin).map(([v, l]) => `<option value="${v}"${st.sort === v ? " selected" : ""}>${l}</option>`).join("")}</select>${svg(ICON.chev)}</label></div>
+      <ul class="rows" id="rows"></ul>
+      <p class="source">Times from myCatholicSG.${origin ? ` Distances are from ${esc(origin.label)}.` : ` <span id="nearby-note">Share your location on the home screen to sort and filter by distance.</span>`} Please confirm feast days and public holidays with the parish.</p>`;
+      toggle();
+      const rows = view.querySelector("#rows"), count = view.querySelector("#count");
+      const draw = () => {
+        // that day's Masses at each church in the chosen time and language (today: only those still to come)
+        const masses = new Map(d.parishes.map((p) => [p.id, S.expandParish(String(p.id), d, dayStart, 0)
+          .filter((e) => e.start >= (st.day === 0 ? now : dayStart)).filter(S.inPart(st.part))
+          .filter((e) => !st.lang || langName(e.lang) === st.lang)]));
+        const first = (p) => masses.get(p.id)[0]?.start ?? Infinity;
+        const order = {
+          near: (a, b) => dist(a) - dist(b),
+          soon: (a, b) => first(a) - first(b) || (origin ? dist(a) - dist(b) : a.name.localeCompare(b.name)),
+          az: (a, b) => a.name.localeCompare(b.name),
+        }[st.sort];
+        const f = st.text.toLowerCase();
+        // only churches with a Mass that fits: a row saying "no Mass" is noise in a timetable
+        const shown = d.parishes
+          .filter((p) => masses.get(p.id).length)
+          .filter((p) => !st.km || dist(p) <= st.km)
+          .filter((p) => !f || `${p.name} ${p.address} ${p.postal}`.toLowerCase().includes(f))
+          .sort(order);
+        const fits = shown.length;
+        view.querySelector(".sort").hidden = !fits;
+        const what = `${st.part ? partWord(st.part).replace(/ Mass$/, "") : "a"}${st.lang ? ` ${st.lang}` : ""} Mass`;
+        const when = st.day === 0 ? "still to come today" : dayName;
+        const narrowed = st.part || st.lang || st.km || st.text;
+        count.innerHTML = fits
+          ? `${fits} ${fits === 1 ? "church has" : "churches have"} ${esc(what)} ${when}`
+          : `No church has ${esc(what)} ${when}${st.km ? ` within ${st.km} km` : ""}${st.text ? " that matches your search" : ""}.${narrowed ? ` <a class="link" href="${link({ part: "", lang: "", km: 0, text: "" })}" data-clear>Clear filters</a>` : ""}`;
+        rows.innerHTML = shown.map((p) => {
+          const es = masses.get(p.id), km = dist(p);
+          const far = km != null ? `<span class="d">${km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(1) + " km"}</span>` : "";
+          const times = es.map((e) => `${clock(e.start)}${langName(e.lang) !== "English" && !st.lang ? ` <span class="tag">${esc(langName(e.lang))}</span>` : ""}`).join('<span class="sep"> · </span>');
           return `<li><a class="row row-church" href="#/church/${p.id}">
-            <span class="n">${esc(p.name)}<small>${far}${nextLine(p)}</small></span></a></li>`;
-        }).join("") || `<li class="lede">No church matches that.</li>`;
+            <span class="n">${esc(p.name)}<small class="times">${times}</small></span>${far}</a></li>`;
+        }).join("");
       };
-      draw("");
+      draw();
+      const sync = () => {
+        history.replaceState(null, "", link());
+        view.querySelectorAll(".seg a").forEach((a) => { a.href = link({ view: a.textContent === "Map" ? "map" : "list" }); });
+        draw();
+      };
+      view.querySelectorAll("select[data-key]").forEach((sel) => sel.addEventListener("change", () => {
+        const k = sel.dataset.key;
+        st[k] = k === "day" || k === "km" ? Number(sel.value) : sel.value;
+        if (k === "day") return (history.replaceState(null, "", link()), route(), view.querySelector('select[data-key="day"]').focus());
+        sync();
+      }));
       const filter = view.querySelector("#filter");
       clearable(filter);
-      filter.addEventListener("input", (e) => draw(e.target.value.trim().toLowerCase()));
+      filter.addEventListener("input", (e) => { st.text = e.target.value.trim(); sync(); });
+      view.addEventListener("click", (e) => {
+        const clear = e.target.closest("[data-clear]");
+        if (!clear) return;
+        e.preventDefault();
+        history.replaceState(null, "", clear.getAttribute("href"));
+        route();
+      });
       return;
     }
+
+    // the map: every church, tap for its next Mass (and when to leave for it, once we know where you are)
+    const mode = store.get("mgw-mode") || "transit";
+    const nextLine = (p) => {
+      const evs = S.expandParish(String(p.id), d, now, 7);
+      if (!origin) return evs[0] ? `Next Mass ${clock(evs[0].start)} ${dayLabel(evs[0].start).toLowerCase()}` : "No Mass listed this week";
+      const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
+      const lead = (t.minutes + R.BUFFER_MIN) * 60000;
+      const m = evs.find((e) => e.start - lead >= now);
+      return m ? `Next Mass ${clock(m.start)} ${dayLabel(m.start).toLowerCase()} · leave by ${about}${clock(m.start - lead)}` : "No Mass you can make this week";
+    };
+    view.innerHTML = `${head(true)}
+        <p class="muted" style="margin:0">Tap a church for its next Mass. For times by day, language or distance, use the list.</p>
+      </section>
+      <div id="map" role="region" aria-label="Map of churches"></div>
+      <p class="legend"><span><i class="l-church"></i>Church</span>${origin ? `<span><i class="l-you"></i>${esc(origin.label === "your location" ? "You" : origin.label)}</span>` : ""}</p>
+      <p class="source">${d.parishes.length} parishes. Times from myCatholicSG.</p>`;
+    toggle();
     const mapEl = view.querySelector("#map");
     let ml;
     try { ml = await maplibre(); } catch { mapEl.innerHTML = '<p class="lede" style="padding:20px">The map could not load. Use the list instead.</p>'; return; }
     if (!mapEl.isConnected) return;
+    const near5 = origin ? [...d.parishes].sort((a, b) => dist(a) - dist(b)).slice(0, 5) : [];
     const map = new ml.Map({
       container: mapEl,
       // a normal full-colour street map (parks, water, MRT lines) in both themes, so places are easy to recognise
       style: "https://tiles.openfreemap.org/styles/liberty",
       // frame you and your five nearest churches, or every church when we don't know where you are
       bounds: (() => {
-        const pts = origin ? [origin, ...ps.slice(0, 5)] : d.parishes;
+        const pts = origin ? [origin, ...near5] : d.parishes;
         return [[Math.min(...pts.map((p) => p.lng)), Math.min(...pts.map((p) => p.lat))],
                 [Math.max(...pts.map((p) => p.lng)), Math.max(...pts.map((p) => p.lat))]];
       })(),

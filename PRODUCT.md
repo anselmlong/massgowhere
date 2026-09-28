@@ -28,8 +28,14 @@ Not "nearest church" and not a timetable directory. It picks the Mass you can *r
 
 ## Capabilities and Constraints
 
-- User stories: locate the nearest church; locate the soonest Mass; navigate to the Mass that is soonest *and* realistically reachable by the chosen mode.
-- Future (not yet built): an events board for special Masses (vigils, feasts) and other parish events. The data model already keeps Confession, Adoration and devotions.
+- User stories: locate the nearest church; locate the soonest Mass; navigate to the Mass that is soonest *and* realistically reachable by the chosen mode; narrow either to a morning, lunchtime or evening Mass; browse every church's Mass times for a day, sorted by distance, earliest Mass or name.
+- The home screen says what problem it solves (somewhere unfamiliar: the churches near you and the Mass you can still get to) and offers "How does this work?"; the answer offers "Why this Mass?". Both are sheets, one tap away.
+- Church pages show Confession, Adoration and devotions where myCatholicSG lists them (about a third of parishes). They never say "none" when a parish simply has no listing.
+- Future (not yet built):
+  - An events board for special Masses (vigils, feasts) and other parish events.
+  - Adoration rooms: which parishes have one, and its opening hours. This needs a scraper change: `scripts/scrape_parishes.py` only keeps items with a specific start time, so "adoration room open 7am to 10pm" is skipped today. Add an opening-hours shape to its schema, re-run the monthly check, and show it on the church page.
+  - Confession and Adoration from parish websites: the monthly check already reads them for more parishes than myCatholicSG lists (Confession 8 → 15, Adoration 9 → 16), but they are LLM-read, so they need the same "confirmed on the parish website" treatment as Mass times before being shown.
+  - Possibly "Find a Confession" as a choice next to Mass on the home screen, once coverage is good enough to be useful.
 - Every page carries one main message; clutter is a defect.
 - Times can be wrong or change: always show the source and when it was checked, and link to the parish.
 - 32 parishes in Singapore.

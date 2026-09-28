@@ -44,3 +44,14 @@ test("dated cancellation removes the slot; other types filtered out by default",
   assert.deepEqual(times(S.expandParish("1", data, at("2026-10-07"), 0)), []);
   assert.equal(S.expandParish("1", data, at("2026-10-07"), 0, ["Devotion"]).length, 1);
 });
+
+test("time of day: contiguous buckets in Singapore time", () => {
+  const S = require("../public/schedule.js");
+  const at = (hhmm) => S.toInstant("2026-10-04", hhmm);
+  assert.equal(S.partOf(at("06:00")), "morning");
+  assert.equal(S.partOf(at("11:59")), "morning");
+  assert.equal(S.partOf(at("12:00")), "lunch");
+  assert.equal(S.partOf(at("14:59")), "lunch");
+  assert.equal(S.partOf(at("15:00")), "evening");
+  assert.equal(S.partOf(at("23:30")), "evening");
+});

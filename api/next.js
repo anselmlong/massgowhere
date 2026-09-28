@@ -1,4 +1,4 @@
-// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&at=<epoch ms or ISO time>]
+// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&part=morning|lunch|evening][&at=<epoch ms or ISO time>]
 // The one answer every client (website, Telegram bots) shows: which Mass you can make, and when to leave.
 const S = require("../public/schedule.js");
 const data = require("../public/data.json");
@@ -56,6 +56,8 @@ async function answer(req, res) {
   const lng = Number(u.searchParams.get("lng"));
   const mode = MODES.has(u.searchParams.get("mode")) ? u.searchParams.get("mode") : "transit";
   const lang = u.searchParams.get("lang") || "";
+  const part = u.searchParams.get("part") || "";
+  if (part && !S.PARTS[part]) return send(res, 400, { error: `part must be one of ${Object.keys(S.PARTS).join(", ")}` });
   // same rough box as bot/bot.py: a lat/lng box cannot fully separate Woodlands from Johor Bahru
   if (!(lat > 1.15 && lat < 1.475 && lng > 103.59 && lng < 104.1)) {
     return send(res, 400, { error: "lat/lng must be a point in Singapore" });
@@ -65,7 +67,9 @@ async function answer(req, res) {
   if (at === undefined) return send(res, 400, { error: `at must be within the next ${PLAN_DAYS} days` });
   const now = at ?? Date.now();
   const origin = { lat, lng };
-  const events = S.expandAll(data, now, HORIZON_DAYS).filter((e) => !lang || e.lang.toLowerCase() === lang.toLowerCase());
+  const events = S.expandAll(data, now, HORIZON_DAYS)
+    .filter((e) => !lang || e.lang.toLowerCase() === lang.toLowerCase())
+    .filter(S.inPart(part));
   const travel = async (p, departMs) => {
     const t = await tripMinutes(origin, p, mode, departMs);
     return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
@@ -80,6 +84,7 @@ async function answer(req, res) {
     now: new Date(now).toISOString(),
     at: at ? new Date(at).toISOString() : null,
     mode,
+    part: part || null,
     best: summarize(r.best, byId),
     alternatives: r.alternatives.map((e) => summarize(e, byId)),
     nearest: r.nearest && {
