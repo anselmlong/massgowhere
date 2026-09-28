@@ -211,6 +211,25 @@
     if (sheetOpener && sheetOpener.isConnected) sheetOpener.focus({ preventScroll: true });
   }
   sheetRoot.addEventListener("click", (e) => { if (e.target.closest("[data-close]")) closeSheet(); });
+  // drag the handle or title down to dismiss, like a native sheet
+  let drag = null;
+  sheet.addEventListener("touchstart", (e) => {
+    if (!e.target.closest(".grab, .sheet-head") || e.target.closest("button")) return;
+    drag = { y: e.touches[0].clientY, dy: 0 };
+    sheet.style.transition = "none";
+  }, { passive: true });
+  sheet.addEventListener("touchmove", (e) => {
+    if (!drag) return;
+    drag.dy = Math.max(0, e.touches[0].clientY - drag.y);
+    sheet.style.translate = `-50% ${drag.dy}px`;
+  }, { passive: true });
+  sheet.addEventListener("touchend", () => {
+    if (!drag) return;
+    const far = drag.dy > 90;
+    drag = null;
+    sheet.style.transition = sheet.style.translate = "";
+    if (far) closeSheet();
+  });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
   window.addEventListener("hashchange", closeSheet);
 
@@ -284,8 +303,12 @@
       const mid = el.scrollTop / ROW;
       items.forEach((it, i) => { const d = Math.max(-3, Math.min(3, i - mid)); it.style.transform = `rotateX(${d * -20}deg) scale(${1 - Math.abs(d) * 0.04})`; });
     };
+    const born = Date.now();
     const read = () => {
+      const was = cur;
       cur = Math.max(0, Math.min(labels.length - 1, Math.round(el.scrollTop / ROW)));
+      // a faint tick per row, like a real picker (Android; iOS Safari has no vibration)
+      if (cur !== was && Date.now() - born > 300 && navigator.vibrate) navigator.vibrate(4);
       items.forEach((it, i) => it.classList.toggle("sel", i === cur));
       el.setAttribute("aria-valuenow", cur);
       el.setAttribute("aria-valuetext", labels[cur]);
@@ -365,12 +388,14 @@
         <div class="actions">
           <button class="btn btn-primary" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
           <p class="msg" id="msg" role="status" hidden></p>
+          <a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>Browse all churches on a map</span></a>
         </div>
-      </section>
-      <div class="home-foot"><a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>Browse all churches on a map</span></a></div>`;
-    view.querySelector("#t-place").addEventListener("click", () => openPlaceSheet((p) => { plan.place = p; renderHome(); view.querySelector("#t-place").focus(); }));
-    view.querySelector("#t-time").addEventListener("click", () => openTimeSheet(plan.at, (at) => { plan.at = at; renderHome(); view.querySelector("#t-time").focus(); }));
-    view.querySelector("#t-mode").addEventListener("click", () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); renderHome(); view.querySelector("#t-mode").focus(); }));
+      </section>`;
+    // the word you just changed glows for a moment, so the sentence visibly answers back
+    const changed = (id) => { renderHome(); const t = view.querySelector(id); t.focus({ preventScroll: true }); t.classList.add("just"); };
+    view.querySelector("#t-place").addEventListener("click", () => openPlaceSheet((p) => { plan.place = p; changed("#t-place"); }));
+    view.querySelector("#t-time").addEventListener("click", () => openTimeSheet(plan.at, (at) => { plan.at = at; changed("#t-time"); }));
+    view.querySelector("#t-mode").addEventListener("click", () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); changed("#t-mode"); }));
     const msg = view.querySelector("#msg");
     const say = (t) => { msg.textContent = t; msg.hidden = false; };
     const btn = view.querySelector("#find");
@@ -445,6 +470,8 @@
       view.querySelector(".bar").remove();
       view.querySelector(".when")?.remove();
       view.insertAdjacentHTML("afterbegin", bar);
+      if (nudgeDir) view.querySelector("#when span").classList.add(nudgeDir > 0 ? "from-right" : "from-left");
+      nudgeDir = 0;
       view.querySelectorAll(".answer, .more").forEach((el) => el.classList.add("busy"));
     } else view.innerHTML = `${bar}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p id="step">Looking at Mass times at 32 parishes…</p></div>`;
     const stepTimer = setTimeout(() => { const el = document.getElementById("step"); if (el) el.textContent = `Checking ${mode.id === "transit" ? "bus & MRT routes" : mode.id === "drive" ? "driving routes" : "walking routes"} from ${from}…`;
@@ -506,6 +533,9 @@
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
       view.focus({ preventScroll: true });
       if (at) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, tripMode(b, mode));
+      // the "more churches" cue is only for when the list starts below the fold
+      const moreEl = view.querySelector("section.more"), cue = view.querySelector(".see-more");
+      if (moreEl && cue && moreEl.getBoundingClientRect().top < innerHeight - 80) cue.hidden = true;
       painted = true;
     };
 
@@ -567,7 +597,7 @@
       (leave - at >= 5 * 60000 ? `<span>You could leave as late as <em>${clock(leave)}</em></span>` : "");
   }
   // changing the leave time on the answer screen rewrites the link in place (no history entry per tap) and re-ranks
-  let softNext = false;
+  let softNext = false, nudgeDir = 0;
   function setLeaveAt(at) {
     const [path, qs] = location.hash.replace(/^#/, "").split("?");
     const q = new URLSearchParams(qs || "");
@@ -582,6 +612,7 @@
     const n = e.target.closest("[data-nudge]");
     if (n) {
       const t = (cur ?? nextQuarter(Date.now()) - Q) + Number(n.dataset.nudge) * Q;
+      nudgeDir = Number(n.dataset.nudge);
       return setLeaveAt(t <= Date.now() ? null : Math.min(t, maxAt()));
     }
     if (e.target.closest("#when")) openTimeSheet(cur, setLeaveAt);
@@ -673,7 +704,7 @@
     if (origin) {
       const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
       const n = evs.find((e) => e.start - (t.minutes + R.BUFFER_MIN) * 60000 >= now);
-      if (n) lead = `<div class="next-here"><strong>Next Mass you can make: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
+      if (n) lead = `<div class="next-here"><strong>Next Mass you can attend: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
         <span>Leave by ${about}${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${tripMode(t, modeOf(mode)).phrase}</span></div>`;
     }
     const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
