@@ -195,7 +195,7 @@ def _extract(name, url, text, model):
     req = urllib.request.Request(
         "https://openrouter.ai/api/v1/chat/completions", data=json.dumps(body).encode(), method="POST",
         headers={"Authorization": f"Bearer {os.environ['OPENROUTER_API_KEY']}", "Content-Type": "application/json",
-                 "HTTP-Referer": "https://mass.anselmlong.com", "X-Title": "MassGoWhere"})
+                 "HTTP-Referer": "https://massgowhere.com", "X-Title": "MassGoWhere"})
     r = json.load(urllib.request.urlopen(req, timeout=180))
     content = r["choices"][0]["message"]["content"]
     return json.loads(content), r.get("usage", {})

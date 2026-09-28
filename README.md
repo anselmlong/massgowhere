@@ -2,7 +2,7 @@
 
 Find a Catholic Mass in Singapore you can actually make: from where you are, by bus/MRT, car or on foot, and when to leave.
 
-- Website: https://mass.anselmlong.com (Vercel project `massgowhere`, auto-deploys on every push to `main`)
+- Website: https://massgowhere.com (Vercel project `massgowhere`, auto-deploys on every push to `main`). The old `mass.anselmlong.com` stays attached as an alias, not a redirect, because the bots POST to `/api/next` and urllib does not follow redirects on POST
 - Telegram bot: runs on the VPS (`systemctl --user status massgowhere-bot`)
 - Product brief: [PRODUCT.md](PRODUCT.md)
 

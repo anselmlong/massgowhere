@@ -22,7 +22,7 @@ Not "nearest church" and not a timetable directory. It picks the Mass you can *r
 
 ## Operating Context
 
-- Main surface: a mobile website at mass.anselmlong.com.
+- Main surface: a mobile website at massgowhere.com.
 - The same ranking is served from one API endpoint (`/api/next`) so a dedicated Telegram bot and a one-click button in the existing daily-gospel Telegram bot (catholic-bot) show identical answers. The gospel bot already has an established user base among the owner's friends.
 - Schedules are refreshed weekly from each parish's own website (source of truth), read by two LLMs that vote; myCatholicSG is the fallback and tie-breaker. Travel times come from OneMap (Singapore Land Authority).
 
