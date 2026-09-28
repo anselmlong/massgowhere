@@ -84,51 +84,86 @@
     easter: "Alleluia, He is risen.", pentecost: "Come, Holy Spirit.",
   };
   const blessing = (ms) => BLESSING[season(ms).kind] || BLESSING.ordinary;
-  const PALETTES = [
-    { id: "season", label: "Seasonal" }, { id: "green", label: "Green" }, { id: "blue", label: "Marian blue" },
-    { id: "violet", label: "Violet" }, { id: "red", label: "Red" },
+  // ---------- design options (preview only, ?preview=1): layout, colour theme, font ----------
+  // Each choice is remembered per browser and can be set by link (?layout=list&look=parchment&font=atkinson).
+  const LOOKS = [
+    ["season", "Seasonal", "White, accent follows the Church’s season"], ["green", "Green", "White with liturgical green"],
+    ["blue", "Blue", "White with Marian blue"], ["violet", "Violet", "White with Advent violet"], ["red", "Red", "White with feast red"],
+    ["parchment", "Parchment & gold", "Warm paper and old gold"], ["marian", "Marian", "Soft blue-white and deep blue"],
+    ["terracotta", "Terracotta", "Warm clay, like a parish courtyard"], ["sage", "Sage", "Quiet green-grey, very calm"],
   ];
+  const FONTS = [
+    ["geist", "Geist", "Crisp and modern (current)", "Geist:wght@400;500;600;700"],
+    ["atkinson", "Atkinson Hyperlegible", "Designed for easy reading, good for older eyes", "Atkinson+Hyperlegible+Next:wght@400;500;600;700"],
+    ["figtree", "Figtree", "Friendly and round", "Figtree:wght@400;500;600;700"],
+    ["nunito", "Nunito", "Soft and gentle", "Nunito:wght@400;500;600;700"],
+    ["serif", "Source Serif + Sans", "Serif headings, like a missal", "Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700"],
+  ];
+  const LAYOUTS = [
+    ["simple", "Simple", "One big button; options tucked behind “Change”"],
+    ["list", "Settings list", "Labelled rows: From, Leaving, Travel, Mass"],
+    ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons"],
+    ["sentence", "Sentence", "The current “I’m leaving from…” sentence"],
+  ];
+  const pickFrom = (list, v, dflt) => (list.some(([k]) => k === v) ? v : dflt);
+  const design = () => ({
+    look: pickFrom(LOOKS, store.get("mgw-palette"), "season"),
+    font: pickFrom(FONTS, store.get("mgw-font"), "geist"),
+    layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "sentence"),
+  });
   function applyPalette() {
-    const qp = new URLSearchParams(location.search).get("palette");
-    if (qp) store.set("mgw-palette", qp);
-    const choice = store.get("mgw-palette") || "season";
+    const qs = new URLSearchParams(location.search);
+    if (qs.get("palette") || qs.get("look")) store.set("mgw-palette", qs.get("look") || qs.get("palette"));
+    if (qs.get("font")) store.set("mgw-font", qs.get("font"));
+    if (qs.get("layout")) store.set("mgw-layout", qs.get("layout"));
+    const { look, font } = design();
     const s = season(Date.now());
-    document.documentElement.dataset.accent = choice === "season" ? s.accent : choice;
+    const root = document.documentElement;
+    const accents = ["green", "blue", "violet", "red"];
+    root.dataset.accent = look === "season" ? s.accent : accents.includes(look) ? look : "green";
+    if (accents.includes(look) || look === "season") delete root.dataset.look; else root.dataset.look = look;
+    const f = FONTS.find(([k]) => k === font);
+    if (font !== "geist" && !document.getElementById(`font-${font}`)) {
+      const l = document.createElement("link");
+      l.id = `font-${font}`; l.rel = "stylesheet"; l.href = `https://fonts.googleapis.com/css2?family=${f[3]}&display=swap`;
+      document.head.appendChild(l);
+    }
+    root.dataset.font = font;
     const el = document.getElementById("season");
     el.querySelector("span").textContent = s.name;
-    el.hidden = choice !== "season";
-    return choice;
+    el.hidden = look !== "season";
+  }
+  function openDesignSheet() {
+    const cur = design();
+    const sel = (key, label, list) => `<label class="pick"><span>${label}</span><select data-d="${key}">${list.map(([k, l, sub]) =>
+      `<option value="${k}"${cur[key] === k ? " selected" : ""}>${esc(l)} — ${esc(sub)}</option>`).join("")}</select>${svg(ICON.chev)}</label>`;
+    openSheet("Design options", `
+      <p class="muted" style="margin:0">Try each combination on this phone. Only you see these choices.</p>
+      ${sel("layout", "Home screen layout", LAYOUTS)}
+      ${sel("look", "Colour theme", LOOKS)}
+      ${sel("font", "Font", FONTS)}
+      <button class="btn btn-quiet" type="button" data-share>${svg(ICON.recent)}<span>Copy a link to this combination</span></button>`, "select");
+    const store_ = { layout: "mgw-layout", look: "mgw-palette", font: "mgw-font" };
+    sheet.querySelectorAll("select[data-d]").forEach((x) => x.addEventListener("change", () => {
+      store.set(store_[x.dataset.d], x.value);
+      applyPalette();
+      if (!location.hash || location.hash === "#/") renderHome();
+    }));
+    sheet.querySelector("[data-share]").addEventListener("click", async (e) => {
+      const d = design();
+      const url = `${location.origin}/?preview=1&layout=${d.layout}&look=${d.look}&font=${d.font}${location.hash}`;
+      try { await navigator.clipboard.writeText(url); e.currentTarget.querySelector("span").textContent = "Link copied"; } catch { prompt("Copy this link", url); }
+    });
   }
   function paletteMenu() {
     const params = new URLSearchParams(location.search);
     if (params.has("preview")) store.set("mgw-preview", true);
     if (!store.get("mgw-preview")) return;
     const box = document.getElementById("palette-picker");
-    const draw = () => {
-      const cur = applyPalette();
-      box.innerHTML = PALETTES.map((p) => {
-        const acc = p.id === "season" ? season(Date.now()).accent : p.id;
-        return `<button type="button" data-p="${p.id}" aria-pressed="${cur === p.id}"><i style="background:var(--accent)" data-accent="${acc}"></i>${p.label}</button>`;
-      }).join("");
-      box.querySelectorAll("i").forEach((i) => { i.style.background = getComputedStyle(document.documentElement).getPropertyValue("--accent"); });
-      // show each chip in its own colour
-      box.querySelectorAll("button").forEach((b) => {
-        const probe = document.createElement("span");
-        probe.dataset.accent = b.querySelector("i").dataset.accent;
-        probe.style.display = "none";
-        document.body.appendChild(probe);
-        b.querySelector("i").style.background = getComputedStyle(probe).getPropertyValue("--accent");
-        probe.remove();
-      });
-    };
-    box.addEventListener("click", (e) => {
-      const b = e.target.closest("button[data-p]");
-      if (!b) return;
-      store.set("mgw-palette", b.dataset.p);
-      draw();
-    });
+    box.innerHTML = `<button type="button">${svg(ICON.info)}Design options</button>`;
+    box.querySelector("button").addEventListener("click", openDesignSheet);
     box.hidden = false;
-    draw();
+    document.documentElement.classList.add("previewing");
   }
 
   // ---------- formatting ----------
@@ -413,40 +448,94 @@
     const mode = store.get("mgw-mode") || "transit";
     if (plan.at != null && plan.at <= Date.now()) plan.at = null;
     const here = !plan.place && plan.at == null;
-    view.innerHTML = `
-      <section class="home">
-        <div class="intro">
-          <h1>Find a Mass you can make.</h1>
-          <p class="lede">Somewhere unfamiliar? We find the churches near you and the next Mass you can get to in time, and tell you when to leave.</p>
+    const layout = design().layout;
+    const place = plan.place ? plan.place.label : "my location";
+    const findBtn = `<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
+          <p class="msg" id="msg" role="status" hidden></p>`;
+    // the ways out of the home screen that aren't the answer: quiet rows, not rival buttons
+    const more = `<ul class="more-ways">
+        <li><a href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span>${svg(ICON.right, "go")}</a></li>
+        <li><a href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span>Use it on Telegram: @massgowherebot</span>${svg(ICON.right, "go")}</a></li>
+        <li><button type="button" id="how">${svg(ICON.info)}<span>How does this work?</span>${svg(ICON.right, "go")}</button></li>
+      </ul>`;
+    const promise = `<div class="intro"><h1>Find a Mass you can make.</h1>
+        <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p></div>`;
+    const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass"].filter(Boolean).join(" · ");
+    let body;
+    if (layout === "simple") {
+      body = `${promise}
+        <div class="actions">${findBtn}
+          <div class="summary"><span>${esc(summary)}</span><button class="link" type="button" id="opts">Change</button></div>
+        </div>${more}`;
+    } else if (layout === "list") {
+      const row = (id, label, value) => `<li><button type="button" id="${id}"><span class="k">${label}</span><span class="v">${esc(value)}</span>${svg(ICON.right, "go")}</button></li>`;
+      body = `${promise}
+        <ul class="settings" aria-label="Your trip">
+          ${row("t-place", "From", plan.place ? place : "My location")}
+          ${row("t-time", "Leaving", plan.at == null ? "Now" : whenText(plan.at))}
+          ${row("t-mode", "Travel by", modeOf(mode).label)}
+          ${row("t-part", "Mass", plan.part ? `${PARTS[plan.part].label} (${PARTS[plan.part].range})` : "Any time")}
+        </ul>
+        <div class="actions">${findBtn}</div>${more}`;
+    } else if (layout === "quick") {
+      const seg = (name, opts, cur) => `<div class="qseg" role="radiogroup" aria-label="${name}">${opts.map(([v, l, icon]) =>
+        `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}">${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
+      body = `${promise}
+        <div class="quick-form">
+          <p class="qlabel">How are you travelling?</p>
+          ${seg("Travel", MODES.map((m) => [m.id, m.label, m.icon]), mode)}
+          <p class="qlabel">Which Mass?</p>
+          ${seg("Mass", [["", "Any"], ...Object.entries(PARTS).map(([k, x]) => [k, x.label])], plan.part)}
+          <p class="from-line">${esc(plan.place ? `From ${place}` : "From where you are")}, ${esc(plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`)}. <button class="link" type="button" id="opts">Change</button></p>
+        </div>
+        <div class="actions">${findBtn}</div>${more}`;
+    } else {
+      body = `<div class="intro"><h1>Find a Mass you can make.</h1>
+          <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>
           <button class="how" type="button" id="how">${svg(ICON.info)}<span>How does this work?</span></button>
         </div>
         <p class="sentence">I’m leaving from
-          <button class="tok" type="button" id="t-place" aria-label="Leaving from: ${esc(plan.place ? plan.place.label : "my location")}. Change"><span>${esc(plan.place ? plan.place.label : "my location")}</span>${svg(ICON.chev)}</button><br>at
+          <button class="tok" type="button" id="t-place" aria-label="Leaving from: ${esc(place)}. Change"><span>${esc(place)}</span>${svg(ICON.chev)}</button><br>at
           <button class="tok" type="button" id="t-time" aria-label="Leaving at: ${esc(whenText(plan.at))}. Change"><span>${esc(whenText(plan.at))}</span>${svg(ICON.chev)}</button> by
           <button class="tok" type="button" id="t-mode" aria-label="Travelling by: ${esc(modeOf(mode).label)}. Change"><span>${esc(modeOf(mode).word)}</span>${svg(ICON.chev)}</button><br>for
           <button class="tok" type="button" id="t-part" aria-label="Looking for: ${esc(partWord(plan.part))}. Change"><span>${esc(partWord(plan.part))}</span>${svg(ICON.chev)}</button></p>
         <p class="hint">Tap an underlined word to change it.</p>
-        <div class="actions">
-          <button class="btn btn-primary" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
-          <p class="msg" id="msg" role="status" hidden></p>
+        <div class="actions">${findBtn}
           <a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span></a>
         </div>
-        <a class="tg" href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span><strong>Prefer Telegram? Use @massgowherebot</strong><small>Send it your location or a postal code and it replies with the Mass you can make.</small></span>${svg(ICON.right, "go")}</a>
-      </section>`;
-    view.querySelector("#how").addEventListener("click", openHowSheet);
-    // the word you just changed glows for a moment, so the sentence visibly answers back
-    const changed = (id) => { renderHome(); const t = view.querySelector(id); t.focus({ preventScroll: true }); t.classList.add("just"); };
-    view.querySelector("#t-place").addEventListener("click", () => openPlaceSheet((p) => { plan.place = p; changed("#t-place"); }));
-    view.querySelector("#t-time").addEventListener("click", () => openTimeSheet(plan.at, (at) => { plan.at = at; changed("#t-time"); }));
-    view.querySelector("#t-mode").addEventListener("click", () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); changed("#t-mode"); }));
-    view.querySelector("#t-part").addEventListener("click", () => openPartSheet(plan.part, (x) => { plan.part = x; changed("#t-part"); }));
+        <a class="tg" href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span><strong>Prefer Telegram? Use @massgowherebot</strong><small>Send it your location or a postal code and it replies with the Mass you can make.</small></span>${svg(ICON.right, "go")}</a>`;
+    }
+    view.innerHTML = `<section class="home home-${layout}">${body}</section>`;
+    // the choice you just changed glows for a moment, so the screen visibly answers back
+    const changed = (id) => { renderHome(); const t = view.querySelector(id) || view.querySelector("#opts"); t?.focus({ preventScroll: true }); t?.classList.add("just"); };
+    const on = (id, fn) => view.querySelector(id)?.addEventListener("click", fn);
+    const pickPlace = () => openPlaceSheet((p) => { plan.place = p; changed("#t-place"); });
+    const pickTime = () => openTimeSheet(plan.at, (at) => { plan.at = at; changed("#t-time"); });
+    const pickMode = () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); changed("#t-mode"); });
+    const pickPart = () => openPartSheet(plan.part, (x) => { plan.part = x; changed("#t-part"); });
+    on("#how", openHowSheet);
+    on("#t-place", pickPlace); on("#t-time", pickTime); on("#t-mode", pickMode); on("#t-part", pickPart);
+    // "Change": every option in one sheet, each opening its own picker
+    on("#opts", () => {
+      const all = layout === "quick"
+        ? [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)]]
+        : [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)],
+           ["mode", modeOf(mode).icon, "Travelling by", modeOf(mode).label], ["part", ICON.clock, "Which Mass", plan.part ? PARTS[plan.part].label : "Any time"]];
+      openSheet("Your trip", `<div class="opts">${all.map(([k, icon, l, v]) => `<button class="opt" type="button" data-o="${k}">${svg(icon)}<span>${l}<small>${esc(v)}</small></span></button>`).join("")}</div>`);
+      sheet.querySelectorAll("[data-o]").forEach((b) => b.addEventListener("click", () => {
+        closeSheet();
+        setTimeout({ place: pickPlace, time: pickTime, mode: pickMode, part: pickPart }[b.dataset.o], 200);
+      }));
+    });
+    view.querySelectorAll("[data-qmode]").forEach((b) => b.addEventListener("click", () => { store.set("mgw-mode", b.dataset.qmode); renderHome(); view.querySelector(`[data-qmode="${b.dataset.qmode}"]`).focus(); }));
+    view.querySelectorAll("[data-qpart]").forEach((b) => b.addEventListener("click", () => { plan.part = b.dataset.qpart; renderHome(); view.querySelector(`[data-qpart="${b.dataset.qpart}"]`).focus(); }));
     const msg = view.querySelector("#msg");
     const say = (t) => { msg.textContent = t; msg.hidden = false; };
     const btn = view.querySelector("#find");
     const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "") + (plan.part ? `&part=${plan.part}` : "");
     btn.addEventListener("click", () => {
       if (plan.place) return go(`/next?lat=${plan.place.lat}&lng=${plan.place.lng}&mode=${mode}&from=${encodeURIComponent(plan.place.label)}${at()}`);
-      if (!navigator.geolocation) return say("Your browser can’t share location. Tap “my location” to search for a place instead.");
+      if (!navigator.geolocation) return say("Your browser can’t share location. Choose a place to leave from instead.");
       btn.setAttribute("aria-busy", "true");
       btn.querySelector("span").textContent = "Finding you…";
       navigator.geolocation.getCurrentPosition(
@@ -454,7 +543,7 @@
         (err) => {
           btn.removeAttribute("aria-busy");
           btn.querySelector("span").textContent = here ? "Find a Mass near me" : "Find a Mass";
-          say(err.code === 1 ? "Location is blocked for this site. Allow it in your browser settings, or tap “my location” to search for a place." : "Couldn’t get your location just now. Tap “my location” to search for a place instead.");
+          say(err.code === 1 ? "Location is blocked for this site. Allow it in your browser settings, or choose a place to leave from." : "Couldn’t get your location just now. Choose a place to leave from instead.");
         },
         { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 }
       );
