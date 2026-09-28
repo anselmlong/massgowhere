@@ -16,6 +16,8 @@
     back: '<path d="M15 5l-7 7 7 7"/>',
     nav: '<path d="M4 11.5 20 4l-7.5 16-2-6.5z"/>',
     x: '<path d="M6 6l12 12M18 6 6 18"/>',
+    map: '<path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/>',
+    down: '<path d="M12 5v14M6 13l6 6 6-6"/>',
     phone: '<path d="M6.5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>',
   };
 
@@ -62,7 +64,7 @@
   }
   // closing line on an answer, in the voice of the season
   const BLESSING = {
-    ordinary: "Go in peace.", advent: "Come, Lord Jesus.", christmas: "Glory to God in the highest.",
+    ordinary: "Go in peace!", advent: "Come, Lord Jesus.", christmas: "Glory to God in the highest.",
     lent: "Return to the Lord with all your heart.", holyweek: "We adore you, O Christ, and we bless you.",
     easter: "Alleluia, He is risen.", pentecost: "Come, Holy Spirit.",
   };
@@ -197,7 +199,7 @@
           </div>
         </div>
       </section>
-      <div class="home-foot"><a class="link" href="#/churches">Browse all churches</a></div>`;
+      <div class="home-foot"><a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>Browse all churches on a map</span></a></div>`;
     view.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", () => {
       store.set("mgw-mode", r.value);
       const a = view.querySelector(".again");
@@ -334,13 +336,15 @@
           <div class="sub"><a class="link" href="#/church/${p.id}">Mass times at this church</a></div>
           ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; checking live routes…</p>` : ""}
           ${special ? `<p class="notice">${esc(special)}: Mass times often change ${dayKey(start) === dayKey(Date.now()) ? "today" : "that day"}. Please check with the parish.</p>` : ""}
+          ${alt.length || near ? `<button class="see-more" type="button" onclick="document.getElementById('more').scrollIntoView({ behavior: 'smooth' })">${svg(ICON.down)}<span>${alt.length ? "More churches you can make it to" : "See the nearest church"}</span></button>` : ""}
         </section>
-        ${alt.length || near ? `<section class="more" aria-label="Other options">
-          ${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
+        ${alt.length || near ? `<section class="more" id="more" aria-label="Other options">
+          ${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
           ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
             <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
             <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}</span></a></li></ul>` : ""}
         </section>` : ""}
+        <p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>See all churches on a map</span></a></p>
         <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>
         <p class="blessing">${esc(blessing(start))}</p>`;
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource }]);
@@ -381,7 +385,7 @@
       const near = res.nearest && res.nearest.parish.id !== b.parish.id ? res.nearest : null;
       const more = view.querySelector("section.more");
       if (more) {
-        more.innerHTML = `${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
+        more.innerHTML = `${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
           ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
             <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
             <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}</span></a></li></ul>` : ""}`;
@@ -415,7 +419,7 @@
         box.innerHTML = `<strong>Time to leave</strong><span>${trip}</span>`;
         document.querySelector(".answer .btn-primary")?.classList.add("go-now");
       } else if (m <= 60) {
-        box.innerHTML = `<strong>Leave in ${mins(m)}</strong><span>by ${clock(leave)} · ${trip}</span>`;
+        box.innerHTML = `<strong>Leave by ${clock(leave)}</strong><span>in ${mins(m)} · ${trip}</span>`;
       }
     };
     draw();
@@ -537,32 +541,42 @@
     const next = new Map();
     for (const e of S.expandAll(d, now, 7)) if (!next.has(e.pid)) next.set(e.pid, e);
     const dist = (p) => (origin ? R.haversineKm(origin, p) : null);
+    const mode = store.get("mgw-mode") || "transit";
+    // the next Mass here, and when to leave for it, when we know where you are (same estimate as the church page)
+    const nextLine = (p) => {
+      const n = next.get(p.id);
+      if (!origin) return n ? `Next Mass ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}` : "No Mass listed this week";
+      const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
+      const lead = (t.minutes + R.BUFFER_MIN) * 60000;
+      const m = S.expandParish(String(p.id), d, now, 7).find((e) => e.start - lead >= now);
+      return m ? `Next Mass ${clock(m.start)} ${dayLabel(m.start).toLowerCase()} · leave by ${about}${clock(m.start - lead)}` : "No Mass you can make this week";
+    };
     const ps = [...d.parishes].sort((a, b) => (origin ? dist(a) - dist(b) : a.name.localeCompare(b.name)));
-    const asMap = q.get("view") === "map";
+    const asMap = q.get("view") !== "list";
     view.innerHTML = `
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button></div>
       <section class="list-head">
         <h1>All churches</h1>
         <div class="seg" role="group" aria-label="View">
-          <button type="button" aria-pressed="${!asMap}" data-v="list">List</button>
           <button type="button" aria-pressed="${asMap}" data-v="map">Map</button>
+          <button type="button" aria-pressed="${!asMap}" data-v="list">List</button>
         </div>
         ${asMap ? "" : `<div class="search">${svg(ICON.search)}<input id="filter" type="search" placeholder="Filter by name or area" aria-label="Filter churches"><button class="clear" type="button" aria-label="Clear filter" hidden>${svg(ICON.x)}</button></div>`}
-        <p class="muted" style="margin:0" ${asMap ? "hidden" : ""}>${origin ? `Nearest first, from ${esc(origin.label)}` : "A to Z. Share your location on the home screen to sort by distance."}</p>
+        <p class="muted" style="margin:0">${asMap ? "Tap a church for its next Mass." : origin ? `Nearest first, from ${esc(origin.label)}` : "A to Z. Share your location on the home screen to sort by distance."}</p>
       </section>
-      ${asMap ? `<div id="map" role="region" aria-label="Map of churches"></div>` : `<ul class="rows" id="rows"></ul>`}
+      ${asMap ? `<div id="map" role="region" aria-label="Map of churches"></div>
+        <p class="legend"><span><i class="l-church"></i>Church</span>${origin ? `<span><i class="l-you"></i>${esc(origin.label === "your location" ? "You" : origin.label)}</span>` : ""}</p>` : `<ul class="rows" id="rows"></ul>`}
       <p class="source">${d.parishes.length} parishes.</p>`;
-    view.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => go(`/churches${b.dataset.v === "map" ? "?view=map" : ""}`)));
+    view.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => go(`/churches${b.dataset.v === "list" ? "?view=list" : ""}`)));
     if (!asMap) {
       const rows = view.querySelector("#rows");
       const draw = (f) => {
         const list = ps.filter((p) => !f || `${p.name} ${p.address}`.toLowerCase().includes(f));
         rows.innerHTML = list.map((p) => {
-          const n = next.get(p.id);
           const km = dist(p);
           const far = km != null ? `${km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(1) + " km"} · ` : "";
           return `<li><a class="row row-church" href="#/church/${p.id}">
-            <span class="n">${esc(p.name)}<small>${far}${n ? `Next Mass ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}` : "No Mass listed this week"}</small></span></a></li>`;
+            <span class="n">${esc(p.name)}<small>${far}${nextLine(p)}</small></span></a></li>`;
         }).join("") || `<li class="lede">No church matches that.</li>`;
       };
       draw("");
@@ -596,14 +610,15 @@
     map.touchZoomRotate.disableRotation();
     map.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
     for (const p of d.parishes) {
-      const n = next.get(p.id);
       const el = document.createElement("button");
       el.type = "button";
       el.className = "church-pin";
       el.setAttribute("aria-label", p.name);
       el.innerHTML = PIN;
-      const popup = new ml.Popup({ offset: 30, closeButton: false, maxWidth: "260px" }).setHTML(
-        `<strong>${esc(p.name)}</strong><span>${n ? `Next Mass ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}` : "No Mass listed this week"}</span><a href="#/church/${p.id}">Mass times</a>`);
+      const popup = new ml.Popup({ offset: 40, closeButton: false, maxWidth: "260px" }).setHTML(
+        `<strong>${esc(p.name)}</strong><span>${nextLine(p)}</span><a href="#/church/${p.id}">Mass times and directions</a>`);
+      popup.on("open", () => el.setAttribute("aria-expanded", "true"));
+      popup.on("close", () => el.setAttribute("aria-expanded", "false"));
       new ml.Marker({ element: el, anchor: "bottom" }).setLngLat([p.lng, p.lat]).setPopup(popup).addTo(map);
     }
     if (origin) {
