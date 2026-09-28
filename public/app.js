@@ -355,10 +355,42 @@
     } catch { /* offline; the refine attempt below may also fail -> error screen */ }
     clearTimeout(stepTimer);
     if (stale()) return;
-    // 2) exact refine — swap in real OneMap times when they arrive
+
+    // 2) exact refine — swap in live OneMap times without repainting the hero answer
+    const refine = (res) => {
+      if (stale()) return;
+      if (!res.best) return; // answer unchanged on "no Mass"; leave the frame as-is
+      const b = res.best;
+      // if real routing moved the best to a different church, repaint the whole view
+      const heroName = view.querySelector(".answer .church");
+      const same = heroName && heroName.textContent === b.parish.name;
+      if (!same) return paint(res);
+      const leave = new Date(b.leaveBy).getTime();
+      const est = b.travelSource === "estimate";
+      const leaveBox = document.getElementById("leave");
+      if (leaveBox) {
+        const leaveText = leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}`;
+        leaveBox.innerHTML = `<strong>${leaveText}</strong><span>${est ? "about " : ""}${mins(b.travelMin)} ${mode.phrase}</span>`;
+      }
+      // drop the "checking live routes…" note once we have exact numbers
+      const estNote = view.querySelector(".answer .est");
+      if (estNote && !est) estNote.remove();
+      tickLeave(new Date(b.start).getTime(), leave, b.travelMin, est, mode);
+      // re-render only the "other options" block with exact times (keeps the hero steady)
+      const alt = (res.alternatives || []).filter(Boolean);
+      const near = res.nearest && res.nearest.parish.id !== b.parish.id ? res.nearest : null;
+      const more = view.querySelector("section.more");
+      if (more) {
+        more.innerHTML = `${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
+          ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
+            <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
+            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}</span></a></li></ul>` : ""}`;
+      }
+      rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource }]);
+    };
     try {
       const full = await fetchNext(q, false);
-      if (!stale()) paint(full);
+      if (!stale()) refine(full);
     } catch { /* keep the estimate frame on network failure */ }
     if (!painted) {
       view.innerHTML = `${bar}<section class="answer"><h1>We couldn’t check Mass times just now.</h1>
