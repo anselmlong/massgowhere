@@ -1,6 +1,6 @@
 """MassGoWhere Telegram bot: share your location (or send a postal code), get the Mass you can attend.
 
-No dependencies: long-polls the Telegram Bot API and asks mass.anselmlong.com/api/next for the answer,
+No dependencies: long-polls the Telegram Bot API and asks massgowhere.com/api/next for the answer,
 so the bot always says exactly what the website says.
 
 Run: python3 bot/bot.py      (reads TELEGRAM_BOT_TOKEN from .env; MASSGOWHERE_API overrides the site URL)
@@ -37,7 +37,7 @@ def load_env():
 
 load_env()
 TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
-SITE = os.environ.get("MASSGOWHERE_API", "https://mass.anselmlong.com").rstrip("/")  # the website and its API; set this when the domain moves
+SITE = os.environ.get("MASSGOWHERE_API", "https://massgowhere.com").rstrip("/")  # the website and its API; set this when the domain moves
 SITE_NAME = SITE.split("//")[-1]
 TG = f"https://api.telegram.org/bot{TOKEN}"
 

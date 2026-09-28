@@ -17,6 +17,6 @@ rm -f data/allsched.raw.json
 python3 scripts/build_data.py
 git add data/mycatholic.json public/data.json
 if git diff --cached --quiet; then echo "no changes"; exit 0; fi
-git -c user.name="MassGoWhere refresh" -c user.email="refresh@mass.anselmlong.com" commit --quiet -m "data: myCatholicSG refresh $(date +%F)"
+git -c user.name="MassGoWhere refresh" -c user.email="refresh@massgowhere.com" commit --quiet -m "data: myCatholicSG refresh $(date +%F)"
 git push --quiet origin HEAD:main || { echo "push rejected; the next run starts again from origin/main" >&2; exit 1; }
 echo "pushed; Vercel will deploy"
