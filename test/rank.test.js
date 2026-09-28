@@ -14,11 +14,11 @@ const fixedTravel = (m) => async (p) => ({ minutes: m[p.id], source: "test" });
 
 test("skips a Mass you can no longer make; a nearer Mass later in the window beats a farther earlier one", async () => {
   const events = [{ pid: 1, start: min(10) }, { pid: 1, start: min(90) }, { pid: 2, start: min(40) }];
-  const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 8, 2: 20, 3: 50 }) });
-  // 08:10 at Near needs 8+5 min: too late. Earliest reachable is Mid 08:40; Near 09:30 is within 90 min and 12 min closer.
+  const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 13, 2: 20, 3: 50 }) });
+  // 08:10 at Near needs 13 min: too late. Earliest reachable is Mid 08:40; Near 09:30 is within 90 min and 7 min closer.
   assert.equal(r.best.pid, 1);
   assert.equal(r.best.start, min(90));
-  assert.equal(r.best.leaveBy, min(77));
+  assert.equal(r.best.leaveBy, min(77)); // leave by = start - travel: you arrive as Mass starts, no padding
   assert.deepEqual(r.alternatives.map((e) => e.pid), [2]);
 });
 
@@ -120,4 +120,14 @@ test("bus & MRT mode: a church a few hundred metres away is a walk, not a 10-min
   const r = await rank({ origin, now: T0, mode: "transit", parishes: close, events: [{ pid: 9, start: min(60) }], fast: true });
   assert.equal(r.best.travelWalk, true);
   assert.ok(r.best.travelMin < 10, `expected a short walk, got ${r.best.travelMin} min`);
+});
+
+test("bus & MRT mode walks only a short way: 10 min always, up to 15 if no slower, never further", () => {
+  const { preferWalk } = require("../public/rank.js");
+  assert.equal(preferWalk(6, 12), true);   // the church across the road
+  assert.equal(preferWalk(9, 5), true);    // still a short walk even if one bus stop is quicker
+  assert.equal(preferWalk(14, 16), true);  // a modest walk that beats the bus
+  assert.equal(preferWalk(14, 12), false); // the bus is quicker
+  assert.equal(preferWalk(20, 21), false); // 20 min on foot is not what "bus & MRT" means
+  assert.equal(preferWalk(null, 12), false);
 });
