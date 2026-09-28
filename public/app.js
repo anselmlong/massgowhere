@@ -510,7 +510,7 @@
       const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
       view.innerHTML = `${bar}
         <section class="answer reveal">
-          <p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
+          <p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) && new Date(b.leaveBy).getTime() - at <= LONG_WAIT ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
           <p class="time">${t.hm}<small>${t.ap}</small></p>
           <h1 class="church">${esc(p.name)}</h1>
           ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
@@ -588,12 +588,22 @@
     }
   }
   // "Leave by" when you're going now; "Leave at" (with arrival and the latest you could go) when planning
+  // a leave-by on another day than the one you're setting off from says which day
+  const onDay = (ms, from) => {
+    if (dayKey(ms) === dayKey(from)) return "";
+    return dayKey(ms) === dayKey(from + DAY) ? " tomorrow" : ` on ${wk(ms, "long")}`;
+  };
+  const LONG_WAIT = 60 * 60000; // arriving more than an hour early isn't a plan anyone means
   function leaveHTML(b, at, mode) {
     mode = tripMode(b, mode);
     const about = b.travelSource === "estimate" ? "about " : "";
     const leave = new Date(b.leaveBy).getTime();
-    if (!at) return `<strong>${leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}`}</strong><span>${about}${mins(b.travelMin)} ${mode.phrase}</span>`;
-    return `<strong>Leave at ${clock(at)}</strong><span>Arrive ${about}${clock(at + b.travelMin * 60000)} · ${mins(b.travelMin)} ${mode.phrase}</span>` +
+    const trip = `${about}${mins(b.travelMin)} ${mode.phrase}`;
+    if (!at) return `<strong>${leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}${onDay(leave, Date.now())}`}</strong><span>${trip}</span>`;
+    // the first Mass after your time may be hours away (late at night: tomorrow morning); then the useful
+    // answer is when to set off for it, not "arrive at 10:31pm" for a 7am Mass
+    if (leave - at > LONG_WAIT) return `<strong>Leave by ${clock(leave)}${onDay(leave, at)}</strong><span>${trip}</span><span>First Mass after ${esc(whenText(at))}</span>`;
+    return `<strong>Leave at ${clock(at)}</strong><span>Arrive ${about}${clock(at + b.travelMin * 60000)} · ${trip}</span>` +
       (leave - at >= 5 * 60000 ? `<span>You could leave as late as <em>${clock(leave)}</em></span>` : "");
   }
   // changing the leave time on the answer screen rewrites the link in place (no history entry per tap) and re-ranks
