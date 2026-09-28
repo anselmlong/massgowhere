@@ -131,12 +131,34 @@ def in_singapore(lat, lng):
     return 1.15 < lat < 1.475 and 103.59 < lng < 104.1
 
 
-def answer(chat_id, lat, lng, place=None):
+def placeholder(chat_id, text):
+    """A message that appears the moment someone asks; the answer then replaces it in place."""
+    try:
+        return tg("sendMessage", chat_id=chat_id, text=text)["result"]["message_id"]
+    except Exception as e:  # noqa: BLE001 - the answer is still sent as a fresh message
+        log.warning("placeholder failed: %s", e)
+        return None
+
+
+def answer(chat_id, lat, lng, place=None, msg_id=None):
     mode = mode_for(chat_id)
+
+    def show(text, kb=None, html=True):
+        extra = {"parse_mode": "HTML", "link_preview_options": {"is_disabled": True}} if html else {}
+        if kb is not None:
+            extra["reply_markup"] = {"inline_keyboard": kb}
+        if msg_id:
+            try:
+                return tg("editMessageText", chat_id=chat_id, message_id=msg_id, text=text, **extra)
+            except Exception as e:  # noqa: BLE001 - e.g. "message is not modified"; fall through to a new message
+                log.warning("edit failed: %s", e)
+        return tg("sendMessage", chat_id=chat_id, text=text, **extra)
+
     if not in_singapore(lat, lng):
-        return tg("sendMessage", chat_id=chat_id, text="That location isn't in Singapore. MassGoWhere only covers Singapore's parishes; "
-                  "send a Singapore postal code or place name instead.")
-    tg("sendChatAction", chat_id=chat_id, action="find_location")
+        return show("That location isn't in Singapore. MassGoWhere only covers Singapore's parishes; "
+                    "send a Singapore postal code or place name instead.", html=False)
+    if not msg_id:
+        msg_id = placeholder(chat_id, f"Looking for a Mass near {place}…" if place else "Looking for a Mass near you…")
     build = urllib.parse.urlencode({"lat": f"{lat:.5f}", "lng": f"{lng:.5f}", "mode": mode})
 
     def paint(res, fast):
@@ -177,32 +199,21 @@ def answer(chat_id, lat, lng, place=None):
               [{"text": f"Open on {SITE_NAME}", "url": f"{SITE}/#/next?{build}&" + urllib.parse.urlencode({"from": place or "your location"})}]] + mode_keyboard(mode)
         return ("\n".join(lines), kb)
 
-    def send(text, kb):
-        return tg("sendMessage", chat_id=chat_id, parse_mode="HTML", text=text, reply_markup={"inline_keyboard": kb},
-                  link_preview_options={"is_disabled": True})
-
-    # 1) instant estimate answer, then 2) refine with exact OneMap times via an edit
-    msg = None
+    # placeholder (already on screen) -> 1) estimate answer in about a second -> 2) exact OneMap times, each an edit
+    estimate = None
     try:
-        res = http_json(f"{SITE}/api/next?{build}&fast=1", timeout=15)
-        text, kb = paint(res, fast=True)
-        msg = send(text, kb)
+        estimate = http_json(f"{SITE}/api/next?{build}&fast=1", timeout=8)
+        show(*paint(estimate, fast=True))
     except Exception as e:  # noqa: BLE001
         log.warning("fast api error: %s", e)
     try:
-        res = http_json(f"{SITE}/api/next?{build}", timeout=15)
-        text, kb = paint(res, fast=False)
-        if msg:
-            tg("editMessageText", chat_id=chat_id, message_id=msg["result"]["message_id"],
-               parse_mode="HTML", text=text, reply_markup={"inline_keyboard": kb},
-               link_preview_options={"is_disabled": True})
-        else:
-            send(text, kb)
+        show(*paint(http_json(f"{SITE}/api/next?{build}", timeout=15), fast=False))
     except Exception as e:  # noqa: BLE001
         log.warning("api error: %s", e)
-        if not msg:
-            return send("Sorry, I couldn't check Mass times just now. Please try again in a minute.",
-                        mode_keyboard(mode))
+        if estimate:  # live routing failed: keep the estimate ("about" times), drop the "refining" note
+            show(*paint(estimate, fast=False))
+        else:
+            show("Sorry, I couldn't check Mass times just now. Please try again in a minute.", mode_keyboard(mode))
 
 
 def search_place(text):
@@ -253,14 +264,18 @@ def handle(update):
         return tg("sendMessage", chat_id=chat_id, text="How are you travelling?", reply_markup={"inline_keyboard": mode_keyboard(mode_for(chat_id))})
     if text.startswith("/"):
         return tg("sendMessage", chat_id=chat_id, text="Share your location, or send a postal code or place name.", reply_markup=LOCATION_KB)
+    msg_id = placeholder(chat_id, f"Looking up “{text[:60]}”…")
     try:
         hit = search_place(text)
     except Exception:  # noqa: BLE001 - search trouble reads the same as "not found"
         hit = None
     if not hit:
-        return tg("sendMessage", chat_id=chat_id, text=f"I couldn't find “{text[:60]}”. Try a postal code, MRT station or street name.")
+        not_found = f"I couldn't find “{text[:60]}”. Try a postal code, MRT station or street name."
+        if msg_id:
+            return tg("editMessageText", chat_id=chat_id, message_id=msg_id, text=not_found)
+        return tg("sendMessage", chat_id=chat_id, text=not_found)
     LAST[chat_id] = hit
-    answer(chat_id, *hit)
+    answer(chat_id, *hit, msg_id=msg_id)
 
 
 CHAT_LOCKS = {}
