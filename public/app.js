@@ -477,9 +477,22 @@
     const stepTimer = setTimeout(() => { const el = document.getElementById("step"); if (el) el.textContent = `Checking ${mode.id === "transit" ? "bus & MRT routes" : mode.id === "drive" ? "driving routes" : "walking routes"} from ${from}…`;
     }, 900);
     if (soft) clearTimeout(stepTimer);
-    // data.json only adds the source line and special-day notice; never block the answer on it
-    const d = await Promise.race([data(), new Promise((_, no) => setTimeout(no, 4000))]).catch(() => ({ parishes: [], holidays: {} }));
-    if (stale()) return;
+    // data.json only adds the source line and special-day notice; it must not
+    // hold up the answer, so fetch it in parallel and patch it in when it lands.
+    const d = { parishes: [], holidays: {} };
+    const dataP = Promise.race([data(), new Promise((_, no) => setTimeout(no, 4000))])
+      .then((loaded) => { for (const k of Object.keys(loaded || {})) d[k] = loaded[k]; })
+      .catch(() => {});
+    // backfill whatever depends on data.json, only if the answer is already painted
+    const applyData = () => {
+      const church = view.querySelector(".answer .church");
+      const src = view.querySelector(".source");
+      if (src && d.parishes.length) {
+        const pid = church?.getAttribute("data-id");
+        const p = d.parishes.find((x) => String(x.id) === String(pid)) || d.parishes[0];
+        if (p) src.innerHTML = `${sourceLine(p)} Please confirm feast days with the parish.`;
+      }
+    };
 
     // Fast first frame: estimate-only answer in a few ms, then auto-refine with exact OneMap times.
     let painted = false;
@@ -512,7 +525,7 @@
         <section class="answer reveal">
           <p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) && new Date(b.leaveBy).getTime() - at <= LONG_WAIT ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
           <p class="time">${t.hm}<small>${t.ap}</small></p>
-          <h1 class="church">${esc(p.name)}</h1>
+          <h1 class="church" data-id="${p.id}">${esc(p.name)}</h1>
           ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
           <div class="leave${at ? " plan" : ""}" id="leave">${leaveHTML(b, at, mode)}</div>
           <a class="btn btn-primary" href="${gmaps(p, tripMode(b, mode).id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
@@ -579,6 +592,9 @@
       const full = await fetchNext(q, false);
       if (!stale()) refine(full);
     } catch { /* keep the estimate frame on network failure */ }
+    // once data.json has landed, backfill the source line (and any data-dependent bits)
+    await dataP;
+    if (!stale()) applyData();
     // never leave the answer dimmed and unclickable, whichever frames arrived
     view.querySelectorAll(".busy").forEach((el) => el.classList.remove("busy"));
     if (!painted) {
