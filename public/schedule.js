@@ -102,7 +102,20 @@
     return (data && data.holidays && data.holidays[date]) || null;
   }
 
-  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, specialDay, easterUTC, SGT_OFFSET_MS };
+  // Time of day, in Singapore time. Contiguous so every Mass falls in exactly one: a Sunday 11:30am is
+  // morning, a 3:15pm Tagalog Mass is evening (Saturday 4pm vigils sit there too).
+  const PARTS = {
+    morning: { label: "Morning", range: "before noon", from: 0, to: 12 },
+    lunch: { label: "Lunchtime", range: "noon to 3pm", from: 12, to: 15 },
+    evening: { label: "Evening", range: "from 3pm", from: 15, to: 24 },
+  };
+  function partOf(ms) {
+    const h = new Date(ms + SGT_OFFSET_MS).getUTCHours();
+    return Object.keys(PARTS).find((k) => h >= PARTS[k].from && h < PARTS[k].to);
+  }
+  const inPart = (part) => (e) => !PARTS[part] || partOf(e.start) === part;
+
+  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, specialDay, easterUTC, SGT_OFFSET_MS, PARTS, partOf, inPart };
   if (typeof module !== "undefined") module.exports = api;
   else root.MassSchedule = api;
 })(this);

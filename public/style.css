@@ -135,6 +135,16 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--ink-2); }
   @keyframes in-left { from { opacity: 0; translate: -10px 0; } }
 }
 .hint { font-size: 14px; color: var(--ink-3); margin: -14px 0 0; }
+.intro .lede { margin-top: 12px; font-size: 17px; }
+/* "How does this work?": the explainer for anyone unsure, one tap from the promise */
+.how { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin: 6px 0 -10px; padding: 0; border: 0; background: none; color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: underline; text-decoration-color: var(--field-line); text-underline-offset: 4px; }
+.how svg { width: 19px; height: 19px; color: var(--accent); flex: none; }
+@media (hover: hover) { .how:hover { text-decoration-color: currentColor; } }
+.how-steps { margin: 0; padding: 0 0 0 22px; display: grid; gap: 12px; color: var(--ink-2); font-size: 16px; line-height: 1.45; }
+.how-steps li::marker { color: var(--accent); font-weight: 700; }
+.how-steps strong { color: var(--ink); font-weight: 600; }
+.why { display: grid; gap: 12px; color: var(--ink-2); font-size: 16px; line-height: 1.45; }
+.why p { margin: 0; }
 
 /* bottom sheets */
 html.sheet-lock { overflow: hidden; }
@@ -201,7 +211,7 @@ html.sheet-lock { overflow: hidden; }
 .leave strong { font-size: 19px; font-weight: 650; white-space: nowrap; }
 .leave span { color: var(--ink-2); font-size: 15px; }
 .leave em { font-style: normal; font-weight: 600; color: var(--ink); }
-.answer .sub { display: flex; justify-content: center; gap: 24px; margin-top: 16px; }
+.answer .sub { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 24px; margin-top: 16px; }
 .see-more { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; margin-top: 18px; padding: 10px 16px; border: 0; border-radius: var(--radius); background: var(--accent-soft); color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; }
 .see-more svg { width: 18px; height: 18px; color: var(--accent); flex: none; }
 @media (prefers-reduced-motion: no-preference) { .see-more svg { animation: bob 1.6s var(--ease) 3 .8s; } @keyframes bob { 50% { translate: 0 3px; } } }
@@ -253,14 +263,37 @@ details.rest summary { min-height: 44px; display: flex; align-items: center; cur
 details.rest summary::-webkit-details-marker { display: none; }
 details.rest summary::after { content: ""; width: 8px; height: 8px; margin-left: 10px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; rotate: 45deg; translate: 0 -2px; transition: rotate .2s var(--ease); }
 details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
-.row-church { grid-template-columns: 1fr; }
+.row-church { grid-template-columns: 1fr auto; align-items: start; }
+.row-church .d { padding-top: 2px; }
+.services { margin-top: 34px; padding-top: 6px; border-top: 1px solid var(--line); }
+.services h2 { margin: 22px 0 6px; font-size: 15px; color: var(--ink); }
+.services p.x { margin: 6px 0 0; color: var(--ink-3); font-size: 14px; }
+.services li > span:last-child { color: var(--ink-2); }
 .notes { margin: 24px 0 0; padding: 0 0 0 18px; color: var(--ink-2); font-size: 15px; }
 
 /* ---------- churches ---------- */
 .list-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 8px; }
 .seg { display: inline-grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; background: var(--field); border-radius: 12px; align-self: flex-start; }
-.seg button { border: 0; background: none; min-height: 44px; padding: 0 16px; border-radius: 9px; font-size: 14px; font-weight: 500; color: var(--ink-2); cursor: pointer; }
-.seg button[aria-pressed="true"] { background: var(--bg); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+.seg a { display: grid; place-items: center; min-height: 44px; padding: 0 16px; border-radius: 9px; font-size: 14px; font-weight: 500; color: var(--ink-2); text-decoration: none; }
+.seg a[aria-current="true"] { background: var(--bg); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+/* filters: one row of days, one of times of day; each row scrolls sideways on a phone */
+.filters { display: grid; gap: 8px; }
+.chips { display: flex; gap: 6px; overflow-x: auto; margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter) 2px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; position: relative; }
+.chip::after { content: ""; position: absolute; inset: -2px 0; } /* 44px tap target */
+.chip[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+@media (hover: hover) { .chip:not([aria-current="true"]):hover { background: var(--field); } }
+.sortby { display: flex; align-items: center; gap: 10px; }
+.sortby > span { font-size: 13px; color: var(--ink-3); flex: none; }
+.sortby .chips { margin: 0; padding: 0; }
+.sortby .chip { min-height: 36px; padding: 0 12px; font-size: 13px; }
+.sortby .chip::after { inset: -4px 0; }
+.row-church .times { color: var(--ink-2); font-size: 14px; margin-top: 2px; }
+.row-church .times .tag { margin-left: 4px; font-size: 11px; }
+.row-church .sep { color: var(--ink-3); }
+.row-church.none .n { color: var(--ink-2); }
+.row-church.none .times { color: var(--ink-3); }
 #map { height: 60dvh; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--field); margin-top: 8px; }
 /* pins: saturated fill with a white keyline and a dark halo, so they stand off both the pale and the dark basemap */
 .church-pin { --pin: var(--accent-deep); width: 48px; height: 52px; padding: 2px 5px 0; display: flex; align-items: flex-end; justify-content: center; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 0 1px rgb(0 0 0 / .55)) drop-shadow(0 3px 4px rgb(0 0 0 / .35)); transition: transform .15s var(--ease); }
@@ -268,6 +301,9 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .church-pin path:first-child { fill: var(--pin); stroke: #fff; stroke-width: 2.5; }
 .church-pin .x { fill: #fff; }
 .church-pin[aria-expanded="true"] { transform: scale(1.15); z-index: 2; }
+/* a church with no Mass for the chosen day and time: still findable, but grey and behind the others */
+.church-pin.none { --pin: #8a909b; opacity: .8; z-index: 0; }
+.church-pin.none[aria-expanded="true"] { opacity: 1; }
 @media (hover: hover) { .church-pin:hover { transform: translateY(-2px) scale(1.08); } }
 .church-pin:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 8px; }
 .me { width: 22px; height: 22px; border-radius: 50%; background: #1a73e8; border: 3px solid #fff; box-shadow: 0 0 0 8px rgb(26 115 232 / .25), 0 1px 4px rgb(0 0 0 / .4); }
@@ -275,6 +311,7 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 .legend i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px rgb(0 0 0 / .35); }
 .legend .l-church { background: var(--accent-deep); }
+.legend .l-none { background: #8a909b; }
 .legend .l-you { background: #1a73e8; }
 #map .maplibregl-popup-content { font: 14px/1.4 Geist, system-ui, sans-serif; color: var(--ink); background: var(--bg); padding: 12px 14px; border-radius: 12px; box-shadow: 0 8px 28px rgb(0 0 0 / .22); display: grid; gap: 2px; }
 #map .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: var(--bg); }
@@ -306,3 +343,4 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
   .answer.reveal > *:nth-child(5) { animation-delay: .2s; }
   @keyframes rise { from { opacity: .001; translate: 0 8px; } }
 }
+.services li .x { display: block; }

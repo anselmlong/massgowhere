@@ -23,3 +23,15 @@ test("at= in the past or missing means now; more than a week ahead is refused", 
   assert.equal((await call("")).body.at, null);
   assert.equal((await call(`at=${Date.now() + 10 * 864e5}`)).statusCode, 400);
 });
+
+test("part= keeps every answer in that time of day; an unknown part is refused", async () => {
+  const S = require("../public/schedule.js");
+  for (const part of Object.keys(S.PARTS)) {
+    const r = await call(`part=${part}`);
+    assert.equal(r.statusCode, 200);
+    assert.equal(r.body.part, part);
+    assert.ok(r.body.best, `a ${part} Mass within two days`);
+    for (const e of [r.body.best, ...r.body.alternatives]) assert.equal(S.partOf(Date.parse(e.start)), part, `${e.start} is ${part}`);
+  }
+  assert.equal((await call("part=brunch")).statusCode, 400);
+});
