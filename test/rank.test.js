@@ -114,3 +114,10 @@ test("fast mode does not call the travel function and reports every trip as an e
   for (const a of r.alternatives) assert.equal(a.travelSource, "estimate");
   assert.ok(r.best.travelMin > 0);
 });
+
+test("bus & MRT mode: a church a few hundred metres away is a walk, not a 10-minute-minimum transit trip", async () => {
+  const close = [{ id: 9, name: "Round the corner", lat: 1.3005, lng: 103.8039 }]; // ~0.3 km
+  const r = await rank({ origin, now: T0, mode: "transit", parishes: close, events: [{ pid: 9, start: min(60) }], fast: true });
+  assert.equal(r.best.travelWalk, true);
+  assert.ok(r.best.travelMin < 10, `expected a short walk, got ${r.best.travelMin} min`);
+});

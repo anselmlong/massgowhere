@@ -21,12 +21,15 @@ function haversineKm(a, b) {
 }
 
 // Rough door-to-door minutes from straight-line distance; used to shortlist and as a fallback.
+// "Bus & MRT" never beats walking to a church down the road: when walking is quicker, that is the trip.
+const walkMinutes = (km) => Math.round(((km * 1.3) / 4.8) * 60);
+const transitMinutes = (km) => Math.round(10 + ((km * 1.3) / 17) * 60); // includes getting to the stop and waiting
 function estimateMinutes(km, mode) {
-  const road = km * 1.3;
-  if (mode === "walk") return Math.round((road / 4.8) * 60);
-  if (mode === "drive") return Math.round(4 + (road / 30) * 60);
-  return Math.round(10 + (road / 17) * 60); // transit
+  if (mode === "walk") return walkMinutes(km);
+  if (mode === "drive") return Math.round(4 + ((km * 1.3) / 30) * 60);
+  return Math.min(transitMinutes(km), walkMinutes(km));
 }
+const walksFaster = (km, mode) => mode === "transit" && walkMinutes(km) <= transitMinutes(km);
 
 /**
  * @param {object} p
@@ -42,6 +45,7 @@ function estimateMinutes(km, mode) {
 async function rank({ origin, now, mode = "transit", parishes, events, travel, fast = false }) {
   const byId = new Map(parishes.map((p) => [p.id, p]));
   const est = new Map(parishes.map((p) => [p.id, estimateMinutes(haversineKm(origin, p), mode)]));
+  const estWalk = (id) => walksFaster(haversineKm(origin, byId.get(id)), mode);
 
   const trip = new Map();
   const departAt = new Map();
@@ -50,7 +54,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
   // Reaching and leave-by are then judged on the estimate, same as a cold-cache
   // fallback — a slower /api/next refine swaps in exact OneMap times.
   if (fast) {
-    for (const id of est.keys()) trip.set(id, { minutes: est.get(id), source: "estimate" });
+    for (const id of est.keys()) trip.set(id, { minutes: est.get(id), source: "estimate", walk: estWalk(id) });
   }
 
   // Travel is routed in two passes so neither the closest church nor the soonest Mass can be missed:
@@ -70,7 +74,9 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
       if (travel) {
         try { r = await travel(byId.get(id), departAt.get(id) ?? now); } catch { r = null; }
       }
-      trip.set(id, r && Number.isFinite(r.minutes) ? { minutes: Math.round(r.minutes), source: r.source || "route" } : { minutes: est.get(id), source: "estimate" });
+      trip.set(id, r && Number.isFinite(r.minutes)
+        ? { minutes: Math.round(r.minutes), source: r.source || "route", walk: mode === "transit" && !!r.walk }
+        : { minutes: est.get(id), source: "estimate", walk: estWalk(id) });
     }));
   }
   for (const [pid, e] of firstReachable) departAt.set(pid, departFor(pid, e));
@@ -102,7 +108,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
     .map((e) => {
       const t = trip.get(e.pid);
       const leaveBy = e.start - (t.minutes + BUFFER_MIN) * 60000;
-      return { ...e, travelMin: t.minutes, travelSource: t.source, leaveBy, distanceKm: haversineKm(origin, byId.get(e.pid)) };
+      return { ...e, travelMin: t.minutes, travelSource: t.source, travelWalk: !!t.walk, leaveBy, distanceKm: haversineKm(origin, byId.get(e.pid)) };
     })
     .filter((e) => e.leaveBy >= now && e.travelMin <= MAX_TRIP_MIN)
     .sort((a, b) => a.start - b.start || a.travelMin - b.travelMin);
@@ -131,13 +137,14 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
     pid: nearestId,
     travelMin: trip.get(nearestId).minutes,
     travelSource: trip.get(nearestId).source,
+    travelWalk: !!trip.get(nearestId).walk,
     distanceKm: haversineKm(origin, byId.get(nearestId)),
     next: reachable.find((e) => e.pid === nearestId) || null,
   };
   return { best, alternatives, nearest, considered: trip.size };
 }
 
-const api = { rank, estimateMinutes, haversineKm, BUFFER_MIN, WINDOW_MIN };
+const api = { rank, estimateMinutes, walksFaster, haversineKm, BUFFER_MIN, WINDOW_MIN };
 if (typeof module !== "undefined") module.exports = api;
 else root.MassRank = api;
 })(this);

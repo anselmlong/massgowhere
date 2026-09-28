@@ -1,4 +1,4 @@
-"""MassGoWhere Telegram bot: share your location (or send a postal code), get the Mass you can make.
+"""MassGoWhere Telegram bot: share your location (or send a postal code), get the Mass you can attend.
 
 No dependencies: long-polls the Telegram Bot API and asks mass.anselmlong.com/api/next for the answer,
 so the bot always says exactly what the website says.
@@ -117,7 +117,7 @@ def mode_keyboard(current):
 LOCATION_KB = {"keyboard": [[{"text": "Share my location", "request_location": True}]], "resize_keyboard": True, "is_persistent": True,
                "input_field_placeholder": "Or type a postal code or place"}
 
-WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can actually make, and tells you when to leave.\n\n"
+WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can attend, and tells you when to leave.\n\n"
            "Tap <b>Share my location</b> below, or send a postal code or place name.\n"
            "Travelling by: <b>{mode}</b> (change it with the buttons).")
 
@@ -147,12 +147,13 @@ def answer(chat_id, lat, lng, place=None):
                     {"inline_keyboard": mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]]})
         p = b["parish"]
         about = "about " if b.get("travelSource") == "estimate" else ""
+        how = "walk" if b.get("walk") else mode  # bus & MRT mode, but it's quicker on foot
         extra = " · ".join(x for x in [f"{b['language']} Mass" if b.get("language") and b["language"] != "English" else "", b.get("note") or ""] if x)
         lines = [
             f"<b>{clock(b['start'])} {day_label(b['start'])}</b>",
             f"<b>{esc(p['name'])}</b>" + (f"\n{esc(extra)}" if extra else ""),
             "",
-            f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[mode][1]}{where}",
+            f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[how][1]}{where}",
         ]
         alts = [a for a in res.get("alternatives") or [] if a]
         if alts:
@@ -167,8 +168,8 @@ def answer(chat_id, lat, lng, place=None):
             lines += ["", "<i>Refining live travel times…</i>"]
         if res.get("specialDay"):
             lines += ["", f"<i>{esc(res['specialDay'])}: Mass times often change today. Please check with the parish.</i>"]
-        lines += ["", "Go in peace."]
-        kb = [[{"text": "Navigate", "url": gmaps(p, mode, lat, lng)}],
+        lines += ["", "Go in peace!"]
+        kb = [[{"text": "Navigate", "url": gmaps(p, how, lat, lng)}],
               [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}]] + mode_keyboard(mode)
         return ("\n".join(lines), kb)
 
@@ -279,7 +280,7 @@ def safe_handle(u):
 
 def main():
     try:
-        tg("setMyCommands", commands=[{"command": "start", "description": "Find a Mass you can make"},
+        tg("setMyCommands", commands=[{"command": "start", "description": "Find a Mass you can attend"},
                                       {"command": "mode", "description": "Change how you're travelling"}])
     except Exception as e:  # noqa: BLE001 - not needed to serve users
         log.warning("setMyCommands failed: %s", e)

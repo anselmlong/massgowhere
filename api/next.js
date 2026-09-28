@@ -1,12 +1,21 @@
-// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English]
+// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&at=<epoch ms or ISO time>]
 // The one answer every client (website, Telegram bots) shows: which Mass you can make, and when to leave.
 const S = require("../public/schedule.js");
 const data = require("../public/data.json");
 const { rank } = require("../public/rank.js");
-const { routeMinutes } = require("../lib/onemap.js");
+const { tripMinutes } = require("../lib/onemap.js");
 
 const HORIZON_DAYS = 2;
 const MODES = new Set(["transit", "drive", "walk"]);
+const PLAN_DAYS = 7;
+
+// "leave at": a planned departure time, up to a week ahead. Missing, unreadable or already past -> now.
+function leaveAt(raw, now) {
+  if (!raw) return null;
+  const ms = /^\d+$/.test(raw) ? Number(raw) : Date.parse(raw);
+  if (!Number.isFinite(ms) || ms <= now) return null;
+  return ms > now + (PLAN_DAYS + 1) * 864e5 ? undefined : ms;
+}
 
 function summarize(e, byId) {
   if (!e) return null;
@@ -17,6 +26,7 @@ function summarize(e, byId) {
     leaveBy: e.leaveBy != null ? new Date(e.leaveBy).toISOString() : null,
     travelMin: e.travelMin,
     travelSource: e.travelSource,
+    walk: !!e.travelWalk, // bus & MRT mode, but walking there is quicker
     distanceKm: Math.round(e.distanceKm * 10) / 10,
     language: e.lang,
     location: e.loc,
@@ -51,12 +61,14 @@ async function answer(req, res) {
     return send(res, 400, { error: "lat/lng must be a point in Singapore" });
   }
   const fast = u.searchParams.get("fast") === "1";
-  const now = Date.now();
+  const at = leaveAt(u.searchParams.get("at"), Date.now());
+  if (at === undefined) return send(res, 400, { error: `at must be within the next ${PLAN_DAYS} days` });
+  const now = at ?? Date.now();
   const origin = { lat, lng };
   const events = S.expandAll(data, now, HORIZON_DAYS).filter((e) => !lang || e.lang.toLowerCase() === lang.toLowerCase());
   const travel = async (p, departMs) => {
-    const minutes = await routeMinutes(origin, p, mode, departMs);
-    return minutes == null ? null : { minutes, source: "onemap" };
+    const t = await tripMinutes(origin, p, mode, departMs);
+    return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
   };
   // fast=1: estimate-only ranking (no OneMap routing) for an instant first frame;
   // the client follows up with the default full call to refine exact travel times.
@@ -66,6 +78,7 @@ async function answer(req, res) {
 
   send(res, 200, {
     now: new Date(now).toISOString(),
+    at: at ? new Date(at).toISOString() : null,
     mode,
     best: summarize(r.best, byId),
     alternatives: r.alternatives.map((e) => summarize(e, byId)),
@@ -73,6 +86,7 @@ async function answer(req, res) {
       parish: summarize({ ...r.nearest, start: now, leaveBy: null, lang: "", loc: "" }, byId).parish,
       travelMin: r.nearest.travelMin,
       travelSource: r.nearest.travelSource,
+      walk: !!r.nearest.travelWalk,
       distanceKm: Math.round(r.nearest.distanceKm * 10) / 10,
       next: summarize(r.nearest.next, byId),
     },
