@@ -62,6 +62,6 @@ journalctl --user -u massgowhere-check -n 50
 
 ## Open items
 
-- Gospel bot (catholic-bot) one-click button calling `/api/next`: not started. It needs a go-ahead because that bot is live.
+- Gospel bot (catholic-bot): a **⛪ Nearest Mass** button calls `/api/next` (bus & MRT, leaving now) and points to @massgowherebot for more.
 - Events board (vigils, feasts, devotions): the data model already keeps Confession, Adoration and Devotion entries.
 - Parish website check: Holy Trinity, OLPS and Transfiguration need a JS-rendered fetch (`pip install playwright && playwright install chromium` on the VPS; memory is tight).
