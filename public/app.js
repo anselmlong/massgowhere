@@ -13,6 +13,7 @@
   const PARTS = window.MassSchedule.PARTS;
   const partOf = (id) => (PARTS[id] ? id : "");
   const partWord = (id) => ({ morning: "a morning Mass", lunch: "a lunchtime Mass", evening: "an evening Mass" }[id] || "any Mass");
+  const partIcon = (id) => ICON[id] || ICON.clock;
   const partAdj = (id) => (PARTS[id] ? `${PARTS[id].label.toLowerCase()} ` : "");
   // in bus & MRT mode a church close by is quicker on foot; the answer then says so and Navigate walks you there
   const tripMode = (e, mode) => (e && e.walk ? modeOf("walk") : mode);
@@ -32,6 +33,9 @@
     pin: '<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
     recent: '<path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4l2.5 1.5"/>',
     telegram: '<path d="M21 4 3 11.2l6.3 2.3M21 4l-3.2 16-8.5-6.5M21 4 9.3 13.5v5.7l3.2-3.3"/>',
+    morning: '<path d="M3 17.5h18M6.5 17.5a5.5 5.5 0 0 1 11 0M12 5v3.2M5.2 9.7l1.9 1.6M18.8 9.7l-1.9 1.6M9 20.5h6"/>',
+    lunch: '<circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.5 5.5l1.5 1.5M17 17l1.5 1.5M5.5 18.5 7 17M17 7l1.5-1.5"/>',
+    evening: '<path d="M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.2 6.2 0 0 0 10.1 10.1z"/>',
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.2"/>',
     phone: '<path d="M6.5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>',
   };
@@ -294,7 +298,7 @@
   function openPartSheet(current, pick) {
     const opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)])];
     openSheet("Which Mass?", `<div class="opts">${opts.map(([id, l, sub]) => `
-      <button class="opt" type="button" data-part="${id}" aria-pressed="${id === current}">${svg(ICON.clock)}<span>${l}<small>${sub}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
+      <button class="opt" type="button" data-part="${id}" aria-pressed="${id === current}">${svg(partIcon(id))}<span>${l}<small>${sub}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
     sheet.querySelectorAll("[data-part]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.part); }));
   }
 
@@ -488,13 +492,13 @@
         <div class="actions">${findBtn}</div>${more}`;
     } else if (layout === "quick") {
       const seg = (name, opts, cur) => `<div class="qseg" role="radiogroup" aria-label="${name}">${opts.map(([v, l, icon]) =>
-        `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}">${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
+        `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}"${name === "Mass" && v ? ` title="${esc(PARTS[v].range)}"` : ""}>${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
       body = `${promise}
         <div class="quick-form">
           <p class="qlabel">How are you travelling?</p>
           ${seg("Travel", MODES.map((m) => [m.id, m.label, m.icon]), mode)}
           <p class="qlabel">Which Mass?</p>
-          ${seg("Mass", [["", "Any"], ...Object.entries(PARTS).map(([k, x]) => [k, x.label])], plan.part)}
+          ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, x.label, partIcon(k)])], plan.part)}
           <p class="from-line">${esc(plan.place ? `From ${place}` : "From where you are")}, ${esc(plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`)}. <button class="link" type="button" id="opts">Change</button></p>
         </div>
         <div class="actions">${findBtn}</div>${more}`;
@@ -529,7 +533,7 @@
       const all = layout === "quick"
         ? [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)]]
         : [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)],
-           ["mode", modeOf(mode).icon, "Travelling by", modeOf(mode).label], ["part", ICON.clock, "Which Mass", plan.part ? PARTS[plan.part].label : "Any time"]];
+           ["mode", modeOf(mode).icon, "Travelling by", modeOf(mode).label], ["part", partIcon(plan.part), "Which Mass", plan.part ? PARTS[plan.part].label : "Any time"]];
       openSheet("Your trip", `<div class="opts">${all.map(([k, icon, l, v]) => `<button class="opt" type="button" data-o="${k}">${svg(icon)}<span>${l}<small>${esc(v)}</small></span></button>`).join("")}</div>`);
       sheet.querySelectorAll("[data-o]").forEach((b) => b.addEventListener("click", () => {
         closeSheet();
@@ -688,7 +692,7 @@
         </section>` : ""}
         <p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches${part ? `?part=${part}` : ""}">${svg(ICON.map)}<span>Browse churches and Mass times</span></a></p>
         <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>
-        <p class="blessing">${esc(blessing(start))}</p>`;
+        <p class="blessing"><svg class="cross" viewBox="0 0 32 32" aria-hidden="true"><path d="M14.5 5h3v6h6v3h-6v13h-3V14h-6v-3h6z"/></svg>${esc(blessing(start))}</p>`;
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
       view.focus({ preventScroll: true });
       if (at) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, tripMode(b, mode));

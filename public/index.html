@@ -7,6 +7,7 @@
 <meta name="description" content="Find a Catholic Mass in Singapore you can actually make, from where you are, and when to leave.">
 <meta name="theme-color" content="#111317" id="theme-color">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232E6B4F'/><path d='M14.5 7h3v5h5v3h-5v10h-3V15h-5v-3h5z' fill='white'/></svg>">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,11 +24,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 -->
 <div class="shell">
   <header class="top">
-    <a class="wordmark" href="#/" aria-label="MassGoWhere home">MassGoWhere</a>
+    <a class="wordmark" href="#/" aria-label="MassGoWhere home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M14.5 7h3v5h5v3h-5v10h-3V15h-5v-3h5z"/></svg>MassGoWhere</a>
     <span class="season" id="season" title="Current liturgical season"><i aria-hidden="true"></i><span></span></span>
   </header>
   <main id="view" tabindex="-1"></main>
   <footer class="foot">
+    <details class="why-built">
+      <summary>Why I built this</summary>
+      <p>Whenever I was out somewhere unfamiliar, finding Mass was a scramble: search for churches nearby, open each parish’s website to find its times, then work out whether I could actually get there in time. I built MassGoWhere so that answer is one tap away, for me and for anyone else caught in the same spot.</p>
+    </details>
     <p>Built by <a href="https://anselmlong.com" target="_blank" rel="noopener">Anselm</a>. Also on Telegram: <a href="https://t.me/massgowherebot" target="_blank" rel="noopener">@massgowherebot</a>, and the <a href="https://t.me/sg_daily_gospel_bot" target="_blank" rel="noopener">Daily Gospel bot</a> for each day’s readings.</p>
   </footer>
 </div>
