@@ -180,7 +180,7 @@
     view.innerHTML = `
       <section class="home">
         <div>
-          <h1>Find a Mass you can make.</h1>
+          <h1>Find a Mass you can attend.</h1>
           <p class="lede">From wherever you are in Singapore: the next Mass you can reach in time, and when to set off.</p>
         </div>
         ${modePicker(mode)}
