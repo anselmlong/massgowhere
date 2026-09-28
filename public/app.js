@@ -199,7 +199,7 @@
   function openSheet(title, body, focusSel) {
     sheetOpener = document.activeElement;
     sheet.innerHTML = `<div class="grab" aria-hidden="true"></div><div class="sheet-head"><h2 id="sheet-title">${title}</h2>
-      <button class="x" type="button" data-close aria-label="Close">${svg(ICON.x)}</button></div><div class="sheet-body">${body}</div>`;
+      <button class="sheet-close" type="button" data-close aria-label="Close">${svg(ICON.x)}</button></div><div class="sheet-body">${body}</div>`;
     sheetRoot.classList.add("open");
     document.documentElement.classList.add("sheet-lock");
     setTimeout(() => sheet.querySelector(focusSel || "button")?.focus({ preventScroll: true }), 40);
@@ -549,6 +549,8 @@
       const full = await fetchNext(q, false);
       if (!stale()) refine(full);
     } catch { /* keep the estimate frame on network failure */ }
+    // never leave the answer dimmed and unclickable, whichever frames arrived
+    view.querySelectorAll(".busy").forEach((el) => el.classList.remove("busy"));
     if (!painted) {
       view.innerHTML = `${bar}<section class="answer"><h1>We couldn’t check Mass times just now.</h1>
         <p class="lede">Check your connection and try again.</p>
