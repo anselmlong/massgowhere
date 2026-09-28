@@ -61,6 +61,7 @@ button, input { font: inherit; color: inherit; }
 .season { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-2); }
 .season i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
 main { flex: 1; display: flex; flex-direction: column; outline: none; }
+main:focus-visible { outline: none; } /* focus moves here after each answer so screen readers start at the top */
 
 /* ---------- shared pieces ---------- */
 h1 { font-size: clamp(30px, 8vw, 38px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; margin: 0; text-wrap: balance; }
@@ -165,26 +166,29 @@ html.sheet-lock { overflow: hidden; }
 .bar { display: flex; align-items: center; gap: 4px; min-height: 44px; margin: 4px 0 6px; }
 .back { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: -12px; border-radius: 50%; color: var(--ink); background: none; border: 0; cursor: pointer; }
 .back svg { width: 22px; height: 22px; }
-.from { margin: 0 0 4px; font-size: 14px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.from { flex: 1; min-width: 0; font-size: 14px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 /* the one thing you change on the answer screen: when you leave */
-.when { display: inline-flex; align-items: stretch; min-width: 0; border-radius: 999px; background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); }
-.when-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; border: 0; background: none; font-size: 15px; font-weight: 600; cursor: pointer; min-width: 0; }
+/* a full-width stepper under the bar, on the same edges as the leave box and Navigate below it */
+.when { display: grid; grid-template-columns: 48px 1fr 48px; align-items: stretch; min-height: 50px; border-radius: var(--radius); background: var(--field); }
+.when.set { background: var(--accent-soft); }
+.when-chip { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; background: none; font-size: 16px; font-weight: 600; cursor: pointer; min-width: 0; padding: 0 4px; border-inline: 1px solid color-mix(in srgb, var(--ink) 8%, transparent); }
 .when-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .when-chip svg { width: 17px; height: 17px; color: var(--accent); flex: none; }
-.nudge { width: 44px; min-height: 44px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; color: var(--accent); border-radius: 999px; flex: none; }
+.nudge { min-height: 48px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; color: var(--accent); border-radius: var(--radius); }
 .nudge svg { width: 18px; height: 18px; stroke-width: 2.4; }
 .nudge:disabled { color: var(--ink-3); opacity: .45; cursor: default; }
 .busy { opacity: .45; transition: opacity .2s; pointer-events: none; }
 .answer { padding-top: 6vh; }
+.when + .answer { padding-top: 28px; }
+.when + .loading { padding-top: 14vh; }
 .answer .day { font-size: 17px; font-weight: 500; color: var(--ink-2); margin: 0; }
 .answer .time { font-size: clamp(64px, 22vw, 96px); line-height: .95; letter-spacing: -0.045em; font-weight: 700; margin: 4px 0 14px; }
 .answer .time small { font-size: .36em; letter-spacing: -0.01em; font-weight: 600; margin-left: .08em; }
 .answer h1.church { font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; margin: 0; text-wrap: balance; }
 .answer .meta { color: var(--ink-2); margin: 6px 0 0; }
-.leave { display: flex; align-items: baseline; gap: 10px; margin: 22px 0 22px; padding: 14px 16px; border-radius: var(--radius); background: var(--field); }
+.leave { display: grid; gap: 2px; margin: 22px 0 22px; padding: 14px 16px; border-radius: var(--radius); background: var(--field); }
 .leave strong { font-size: 19px; font-weight: 650; white-space: nowrap; }
 .leave span { color: var(--ink-2); font-size: 15px; }
-.leave.plan { display: grid; gap: 2px; }
 .leave em { font-style: normal; font-weight: 600; color: var(--ink); }
 .answer .sub { display: flex; justify-content: center; gap: 24px; margin-top: 16px; }
 .see-more { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; margin-top: 18px; padding: 10px 16px; border: 0; border-radius: var(--radius); background: var(--accent-soft); color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; }

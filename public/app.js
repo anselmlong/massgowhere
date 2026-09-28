@@ -434,16 +434,16 @@
     rememberPlace({ ...origin, label: from });
     // only the leave time changes here; where from and how are set on the home screen
     const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
-        <span class="when"><button class="nudge" type="button" data-nudge="-1" aria-label="Leave 15 minutes earlier" ${at ? "" : "disabled"}>${svg(ICON.left)}</button>
-        <button class="when-chip" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time">${svg(ICON.clock)}<span>${at ? esc(whenText(at).replace(/^./, (c) => c.toUpperCase())) : "Leaving now"}</span></button>
-        <button class="nudge" type="button" data-nudge="1" aria-label="Leave 15 minutes later">${svg(ICON.right)}</button></span></div>
-      <p class="from">From ${esc(from)} · ${mode.label}</p>`;
+        <span class="from">From ${esc(from)} · ${mode.label}</span></div>
+      <div class="when${at ? " set" : ""}"><button class="nudge" type="button" data-nudge="-1" aria-label="Leave 15 minutes earlier" ${at ? "" : "disabled"}>${svg(ICON.left)}</button>
+        <button class="when-chip" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time">${svg(ICON.clock)}<span>${at ? `Leaving ${esc(whenText(at))}` : "Leaving now"}</span></button>
+        <button class="nudge" type="button" data-nudge="1" aria-label="Leave 15 minutes later">${svg(ICON.right)}</button></div>`;
     // a time change keeps the answer on screen, dimmed, until the new one arrives
     const soft = softNext && view.querySelector(".answer");
     softNext = false;
     if (soft) {
       view.querySelector(".bar").remove();
-      view.querySelector(".from")?.remove();
+      view.querySelector(".when")?.remove();
       view.insertAdjacentHTML("afterbegin", bar);
       view.querySelectorAll(".answer, .more").forEach((el) => el.classList.add("busy"));
     } else view.innerHTML = `${bar}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p id="step">Looking at Mass times at 32 parishes…</p></div>`;
