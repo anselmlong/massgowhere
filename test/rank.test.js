@@ -102,3 +102,15 @@ test("a nearer church with a Mass inside the window is routed even if it is not 
   const r = await rank({ origin: o, now: T0, parishes: ring, events, travel });
   assert.equal(r.best.pid, 46);
 });
+
+test("fast mode does not call the travel function and reports every trip as an estimate", async () => {
+  let travelCalls = 0;
+  const travel = async (p) => { travelCalls++; return { minutes: 1, source: "onemap" }; };
+  const events = [{ pid: 1, start: min(40) }, { pid: 2, start: min(60) }];
+  const r = await rank({ origin, now: T0, parishes, events, travel, fast: true });
+  assert.equal(travelCalls, 0, "fast must not touch OneMap");
+  assert.ok(r.best);
+  assert.equal(r.best.travelSource, "estimate");
+  for (const a of r.alternatives) assert.equal(a.travelSource, "estimate");
+  assert.ok(r.best.travelMin > 0);
+});

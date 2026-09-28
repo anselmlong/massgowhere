@@ -36,11 +36,22 @@ function estimateMinutes(km, mode) {
  * @param {Array} p.parishes        [{id,name,lat,lng,...}]
  * @param {Array} p.events          upcoming Masses [{pid,start,...}], any order
  * @param {(parish, departMs)=>Promise<{minutes:number,source:string}|null>} [p.travel]  real routing; null -> estimate
+ * @param {boolean} [p.fast]        estimate-only: skip real routing, every trip is an estimate (much faster)
  * @returns {Promise<{best, alternatives, nearest, considered}>}
  */
-async function rank({ origin, now, mode = "transit", parishes, events, travel }) {
+async function rank({ origin, now, mode = "transit", parishes, events, travel, fast = false }) {
   const byId = new Map(parishes.map((p) => [p.id, p]));
   const est = new Map(parishes.map((p) => [p.id, estimateMinutes(haversineKm(origin, p), mode)]));
+
+  const trip = new Map();
+  const departAt = new Map();
+  // fast mode: pre-fill every parish's trip with its distance estimate (no network
+  // calls), so ranking runs entirely locally and answers in a few milliseconds.
+  // Reaching and leave-by are then judged on the estimate, same as a cold-cache
+  // fallback — a slower /api/next refine swaps in exact OneMap times.
+  if (fast) {
+    for (const id of est.keys()) trip.set(id, { minutes: est.get(id), source: "estimate" });
+  }
 
   // Travel is routed in two passes so neither the closest church nor the soonest Mass can be missed:
   //   pass 1: the nearest parishes, those whose first Mass is reachable on the estimate, and the nearest overall;
@@ -52,8 +63,6 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel })
     if (firstReachable.has(e.pid)) continue;
     if (e.start - (est.get(e.pid) + BUFFER_MIN) * 60000 >= now) firstReachable.set(e.pid, e);
   }
-  const trip = new Map();
-  const departAt = new Map();
   async function route(ids) {
     await Promise.all(ids.filter((id) => !trip.has(id)).map(async (id) => {
       let r = null;

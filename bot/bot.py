@@ -135,43 +135,69 @@ def answer(chat_id, lat, lng, place=None):
         return tg("sendMessage", chat_id=chat_id, text="That location isn't in Singapore. MassGoWhere only covers Singapore's parishes; "
                   "send a Singapore postal code or place name instead.")
     tg("sendChatAction", chat_id=chat_id, action="find_location")
-    q = urllib.parse.urlencode({"lat": f"{lat:.5f}", "lng": f"{lng:.5f}", "mode": mode})
+    build = urllib.parse.urlencode({"lat": f"{lat:.5f}", "lng": f"{lng:.5f}", "mode": mode})
+
+    def paint(res, fast):
+        """(text, keyboard) for an /api/next payload. fast -> "about" flagged on estimates."""
+        b = res.get("best")
+        where = f" from {esc(place)}" if place else ""
+        if not b:
+            return ("I couldn't find a Mass you can reach in the next two days{where} {mode}. Try another way of travelling.".format(
+                        where=where, mode=MODES[mode][1]),
+                    {"inline_keyboard": mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]]})
+        p = b["parish"]
+        about = "about " if b.get("travelSource") == "estimate" else ""
+        extra = " · ".join(x for x in [f"{b['language']} Mass" if b.get("language") and b["language"] != "English" else "", b.get("note") or ""] if x)
+        lines = [
+            f"<b>{clock(b['start'])} {day_label(b['start'])}</b>",
+            f"<b>{esc(p['name'])}</b>" + (f"\n{esc(extra)}" if extra else ""),
+            "",
+            f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[mode][1]}{where}",
+        ]
+        alts = [a for a in res.get("alternatives") or [] if a]
+        if alts:
+            lines += ["", "<i>Also reachable:</i>"] + [
+                f"{clock(a['start'])} {day_label(a['start'])} · {esc(a['parish']['name'])} ({mins(a['travelMin'])})" for a in alts]
+        near = res.get("nearest")
+        if near and near["parish"]["id"] != p["id"]:
+            nn = near.get("next")
+            when = f", next Mass you can make {clock(nn['start'])} {day_label(nn['start'])}" if nn else ""
+            lines += ["", f"<i>Nearest church:</i> {esc(near['parish']['name'])} ({mins(near['travelMin'])}{when})"]
+        if fast:
+            lines += ["", "<i>Refining live travel times…</i>"]
+        if res.get("specialDay"):
+            lines += ["", f"<i>{esc(res['specialDay'])}: Mass times often change today. Please check with the parish.</i>"]
+        lines += ["", "Go in peace."]
+        kb = [[{"text": "Navigate", "url": gmaps(p, mode, lat, lng)}],
+              [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}]] + mode_keyboard(mode)
+        return ("\n".join(lines), kb)
+
+    def send(text, kb):
+        return tg("sendMessage", chat_id=chat_id, parse_mode="HTML", text=text, reply_markup={"inline_keyboard": kb},
+                  link_preview_options={"is_disabled": True})
+
+    # 1) instant estimate answer, then 2) refine with exact OneMap times via an edit
+    msg = None
     try:
-        res = http_json(f"{SITE}/api/next?{q}", timeout=15)
-    except Exception as e:  # noqa: BLE001 - any API trouble gets the same friendly reply
+        res = http_json(f"{SITE}/api/next?{build}&fast=1", timeout=15)
+        text, kb = paint(res, fast=True)
+        msg = send(text, kb)
+    except Exception as e:  # noqa: BLE001
+        log.warning("fast api error: %s", e)
+    try:
+        res = http_json(f"{SITE}/api/next?{build}", timeout=15)
+        text, kb = paint(res, fast=False)
+        if msg:
+            tg("editMessageText", chat_id=chat_id, message_id=msg["result"]["message_id"],
+               parse_mode="HTML", text=text, reply_markup={"inline_keyboard": kb},
+               link_preview_options={"is_disabled": True})
+        else:
+            send(text, kb)
+    except Exception as e:  # noqa: BLE001
         log.warning("api error: %s", e)
-        return tg("sendMessage", chat_id=chat_id, text="Sorry, I couldn't check Mass times just now. Please try again in a minute.")
-    b = res.get("best")
-    where = f" from {esc(place)}" if place else ""
-    if not b:
-        return tg("sendMessage", chat_id=chat_id, parse_mode="HTML",
-                  text=f"I couldn't find a Mass you can reach in the next two days{where} {MODES[mode][1]}. Try another way of travelling.",
-                  reply_markup={"inline_keyboard": mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]]})
-    p = b["parish"]
-    about = "about " if b.get("travelSource") == "estimate" else ""
-    extra = " · ".join(x for x in [f"{b['language']} Mass" if b.get("language") and b["language"] != "English" else "", b.get("note") or ""] if x)
-    lines = [
-        f"<b>{clock(b['start'])} {day_label(b['start'])}</b>",
-        f"<b>{esc(p['name'])}</b>" + (f"\n{esc(extra)}" if extra else ""),
-        "",
-        f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[mode][1]}{where}",
-    ]
-    alts = [a for a in res.get("alternatives") or [] if a]
-    if alts:
-        lines += ["", "<i>Also reachable:</i>"] + [
-            f"{clock(a['start'])} {day_label(a['start'])} · {esc(a['parish']['name'])} ({mins(a['travelMin'])})" for a in alts]
-    near = res.get("nearest")
-    if near and near["parish"]["id"] != p["id"]:
-        nn = near.get("next")
-        when = f", next Mass you can make {clock(nn['start'])} {day_label(nn['start'])}" if nn else ""
-        lines += ["", f"<i>Nearest church:</i> {esc(near['parish']['name'])} ({mins(near['travelMin'])}{when})"]
-    if res.get("specialDay"):
-        lines += ["", f"<i>{esc(res['specialDay'])}: Mass times often change today. Please check with the parish.</i>"]
-    lines += ["", "Go in peace."]
-    kb = [[{"text": "Navigate", "url": gmaps(p, mode, lat, lng)}],
-          [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}]] + mode_keyboard(mode)
-    tg("sendMessage", chat_id=chat_id, parse_mode="HTML", text="\n".join(lines), reply_markup={"inline_keyboard": kb},
-       link_preview_options={"is_disabled": True})
+        if not msg:
+            return send("Sorry, I couldn't check Mass times just now. Please try again in a minute.",
+                        {"inline_keyboard": mode_keyboard(mode)})
 
 
 def search_place(text):

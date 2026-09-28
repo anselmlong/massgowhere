@@ -259,10 +259,11 @@
   }
 
   // ---------- result ----------
-  async function fetchNext(q) {
+  async function fetchNext(q, fast = false) {
     const params = new URLSearchParams({ lat: q.get("lat"), lng: q.get("lng"), mode: q.get("mode") || "transit" });
+    if (fast) params.set("fast", "1");
     try {
-      const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
+      const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 4000 : 12000) });
       if (r.status === 400) return { outside: true };
       if (!r.ok) throw new Error(r.status);
       return await r.json();
@@ -290,65 +291,80 @@
       <span class="from">From ${esc(from)} · ${mode.label}</span></div>`;
     view.innerHTML = `${bar}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p id="step">Looking at Mass times at 32 parishes…</p></div>`;
     const stepTimer = setTimeout(() => { const el = document.getElementById("step"); if (el) el.textContent = `Checking ${mode.id === "transit" ? "bus & MRT routes" : mode.id === "drive" ? "driving routes" : "walking routes"} from ${from}…`; }, 900);
-    let res, d;
-    try {
-      res = await fetchNext(q);
-      // the answer must not wait on data.json; it only adds the source line and special-day notice
-      d = await Promise.race([data(), new Promise((_, no) => setTimeout(no, 4000))]).catch(() => ({ parishes: [], holidays: {} }));
-    } catch {
+    // data.json only adds the source line and special-day notice; never block the answer on it
+    const d = await Promise.race([data(), new Promise((_, no) => setTimeout(no, 4000))]).catch(() => ({ parishes: [], holidays: {} }));
+    if (stale()) return;
+
+    // Fast first frame: estimate-only answer in a few ms, then auto-refine with exact OneMap times.
+    let painted = false;
+    const paint = (res) => {
       if (stale()) return;
+      if (res.outside) {
+        view.innerHTML = `${bar}<section class="answer"><h1>That’s outside Singapore.</h1>
+          <p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p>
+          <p style="margin-top:28px"><a class="btn btn-quiet" href="#/">Back to search</a></p></section>`;
+        painted = true;
+        return;
+      }
+      const b = res.best;
+      if (!b) {
+        view.innerHTML = `${bar}<section class="answer reveal"><h1>No Mass you can reach in the next two days.</h1>
+          <p class="lede">Try another way of travelling, or browse the churches and their times.</p>
+          <p style="margin-top:28px"><a class="btn btn-quiet" href="#/churches">Browse all churches</a></p></section>`;
+        painted = true;
+        return;
+      }
+      const start = new Date(b.start).getTime(), leave = new Date(b.leaveBy).getTime();
+      const t = clockParts(start);
+      const p = b.parish;
+      const est = b.travelSource === "estimate";
+      const leaveText = leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}`;
+      const meta = [b.language !== "English" ? `${b.language} Mass` : "", b.note].filter(Boolean).join(" · ");
+      const special = S.specialDay(start, d);
+      const alt = (res.alternatives || []).filter(Boolean);
+      const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
+      view.innerHTML = `${bar}
+        <section class="answer reveal">
+          <p class="day">${dayLabel(start)}${start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
+          <p class="time">${t.hm}<small>${t.ap}</small></p>
+          <h1 class="church">${esc(p.name)}</h1>
+          ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
+          <div class="leave" id="leave"><strong>${leaveText}</strong><span>${est ? "about " : ""}${mins(b.travelMin)} ${mode.phrase}</span></div>
+          <a class="btn btn-primary" href="${gmaps(p, mode.id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
+          <div class="sub"><a class="link" href="#/church/${p.id}">Mass times at this church</a></div>
+          ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; checking live routes…</p>` : ""}
+          ${special ? `<p class="notice">${esc(special)}: Mass times often change ${dayKey(start) === dayKey(Date.now()) ? "today" : "that day"}. Please check with the parish.</p>` : ""}
+        </section>
+        ${alt.length || near ? `<section class="more" aria-label="Other options">
+          ${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
+          ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
+            <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
+            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}</span></a></li></ul>` : ""}
+        </section>` : ""}
+        <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>
+        <p class="blessing">${esc(blessing(start))}</p>`;
+      rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource }]);
+      view.focus({ preventScroll: true });
+      tickLeave(start, leave, b.travelMin, est, mode);
+      painted = true;
+    };
+
+    // 1) instant estimate frame
+    try {
+      paint(await fetchNext(q, true));
+    } catch { /* offline; the refine attempt below may also fail -> error screen */ }
+    clearTimeout(stepTimer);
+    if (stale()) return;
+    // 2) exact refine — swap in real OneMap times when they arrive
+    try {
+      const full = await fetchNext(q, false);
+      if (!stale()) paint(full);
+    } catch { /* keep the estimate frame on network failure */ }
+    if (!painted) {
       view.innerHTML = `${bar}<section class="answer"><h1>We couldn’t check Mass times just now.</h1>
         <p class="lede">Check your connection and try again.</p>
         <p style="margin-top:28px"><button class="btn btn-primary" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Try again</button></p></section>`;
-      return;
     }
-    clearTimeout(stepTimer);
-    if (stale()) return;
-    if (res.outside) {
-      view.innerHTML = `${bar}<section class="answer"><h1>That’s outside Singapore.</h1>
-        <p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p>
-        <p style="margin-top:28px"><a class="btn btn-quiet" href="#/">Back to search</a></p></section>`;
-      return;
-    }
-    const b = res.best;
-    if (!b) {
-      view.innerHTML = `${bar}<section class="answer reveal"><h1>No Mass you can reach in the next two days.</h1>
-        <p class="lede">Try another way of travelling, or browse the churches and their times.</p>
-        <p style="margin-top:28px"><a class="btn btn-quiet" href="#/churches">Browse all churches</a></p></section>`;
-      return;
-    }
-    const start = new Date(b.start).getTime(), leave = new Date(b.leaveBy).getTime();
-    const t = clockParts(start);
-    const p = b.parish;
-    const est = b.travelSource === "estimate";
-    const leaveText = leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}`;
-    const meta = [b.language !== "English" ? `${b.language} Mass` : "", b.note].filter(Boolean).join(" · ");
-    const special = S.specialDay(start, d);
-    const alt = (res.alternatives || []).filter(Boolean);
-    const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
-    view.innerHTML = `${bar}
-      <section class="answer reveal">
-        <p class="day">${dayLabel(start)}${start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
-        <p class="time">${t.hm}<small>${t.ap}</small></p>
-        <h1 class="church">${esc(p.name)}</h1>
-        ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
-        <div class="leave" id="leave"><strong>${leaveText}</strong><span>${est ? "about " : ""}${mins(b.travelMin)} ${mode.phrase}</span></div>
-        <a class="btn btn-primary" href="${gmaps(p, mode.id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
-        <div class="sub"><a class="link" href="#/church/${p.id}">Mass times at this church</a></div>
-        ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; Google Maps will give the live route.</p>` : ""}
-        ${special ? `<p class="notice">${esc(special)}: Mass times often change ${dayKey(start) === dayKey(Date.now()) ? "today" : "that day"}. Please check with the parish.</p>` : ""}
-      </section>
-      ${alt.length || near ? `<section class="more" aria-label="Other options">
-        ${alt.length ? `<h2>Other Masses you can make</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
-        ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
-          <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
-          <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : "No reachable Mass in the next two days"}</small></span><span class="d">${mins(near.travelMin)}</span></a></li></ul>` : ""}
-      </section>` : ""}
-      <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>
-      <p class="blessing">${esc(blessing(start))}</p>`;
-    rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource }]);
-    view.focus({ preventScroll: true });
-    tickLeave(start, leave, b.travelMin, est, mode);
   }
   // the leave-by line counts down while the page is open; at zero it says so and the Navigate button draws the eye
   let leaveTimer = null;

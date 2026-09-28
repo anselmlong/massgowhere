@@ -50,6 +50,7 @@ async function answer(req, res) {
   if (!(lat > 1.15 && lat < 1.475 && lng > 103.59 && lng < 104.1)) {
     return send(res, 400, { error: "lat/lng must be a point in Singapore" });
   }
+  const fast = u.searchParams.get("fast") === "1";
   const now = Date.now();
   const origin = { lat, lng };
   const events = S.expandAll(data, now, HORIZON_DAYS).filter((e) => !lang || e.lang.toLowerCase() === lang.toLowerCase());
@@ -57,7 +58,10 @@ async function answer(req, res) {
     const minutes = await routeMinutes(origin, p, mode, departMs);
     return minutes == null ? null : { minutes, source: "onemap" };
   };
-  const r = await rank({ origin, now, mode, parishes: data.parishes, events, travel });
+  // fast=1: estimate-only ranking (no OneMap routing) for an instant first frame;
+  // the client follows up with the default full call to refine exact travel times.
+  const travelFn = fast ? null : travel;
+  const r = await rank({ origin, now, mode, parishes: data.parishes, events, travel: travelFn, fast });
   const byId = new Map(data.parishes.map((p) => [p.id, p]));
 
   send(res, 200, {
