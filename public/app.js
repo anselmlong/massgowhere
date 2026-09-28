@@ -36,6 +36,7 @@
     morning: '<path d="M3 17.5h18M6.5 17.5a5.5 5.5 0 0 1 11 0M12 5v3.2M5.2 9.7l1.9 1.6M18.8 9.7l-1.9 1.6M9 20.5h6"/>',
     lunch: '<circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.5 5.5l1.5 1.5M17 17l1.5 1.5M5.5 18.5 7 17M17 7l1.5-1.5"/>',
     evening: '<path d="M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.2 6.2 0 0 0 10.1 10.1z"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/>',
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.2"/>',
     phone: '<path d="M6.5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>',
   };
@@ -680,7 +681,7 @@
       const alt = (res.alternatives || []).filter(Boolean);
       const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
       view.innerHTML = `${bar}
-        <section class="answer ${soft ? "again" : "reveal"}">
+        <section class="answer ${soft ? "retimed" : "reveal"}">
           <div class="day-row"><p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) && new Date(b.leaveBy).getTime() - at <= LONG_WAIT ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
             <button class="why-btn" type="button" id="why" aria-label="Why this Mass?" title="Why this Mass?">${svg(ICON.info)}</button></div>
           <p class="time">${t.hm}<small>${t.ap}</small></p>
@@ -895,6 +896,8 @@
       if (n) lead = `<div class="next-here"><strong>Next Mass you can attend: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
         <span>Leave by ${about}${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${tripMode(t, modeOf(mode)).phrase}</span></div>`;
     }
+    // the parish's own website (31 of 32 list one); the one without keeps the call button
+    const site = p.website || (p.siteCheck && p.siteCheck.url) || "";
     const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
     const dayList = ([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => {
       const bits = [e.loc && !/^main church$/i.test(e.loc) ? esc(e.loc) : "", e.note ? esc(e.note) : ""].filter(Boolean).join(" · ");
@@ -924,7 +927,8 @@
         ${lead}
         <div class="acts" style="margin-top:${lead ? 14 : 0}px">
           <a class="btn btn-primary" href="${gmaps(p, mode, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
-          ${p.phone ? `<a class="btn btn-quiet" href="tel:${esc(p.phone.replace(/\s/g, ""))}" aria-label="Call the parish">${svg(ICON.phone)}</a>` : ""}
+          ${site ? `<a class="btn btn-quiet" href="${esc(site)}" target="_blank" rel="noopener" aria-label="Parish website (opens in a new tab)">${svg(ICON.globe)}<span>Website</span></a>`
+            : p.phone ? `<a class="btn btn-quiet" href="tel:${esc(p.phone.replace(/\s/g, ""))}" aria-label="Call the parish">${svg(ICON.phone)}</a>` : ""}
         </div>
         <div class="week">
           ${soon.map(dayList).join("") || `<p class="lede">No Masses listed for the coming week. Please check with the parish.</p>`}

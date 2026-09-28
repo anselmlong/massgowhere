@@ -269,7 +269,6 @@ html.sheet-lock { overflow: hidden; }
 
 .source { margin-top: 36px; font-size: 13px; color: var(--ink-3); line-height: 1.5; }
 .blessing { margin: 28px 0 0; text-align: center; font-size: 15px; color: var(--ink-2); font-style: italic; letter-spacing: .005em; }
-.again { display: flex; align-items: center; justify-content: center; min-height: 44px; font-size: 15px; color: var(--ink); text-underline-offset: 4px; }
 @media (prefers-reduced-motion: no-preference) {
   .go-now { animation: nudge 2.4s var(--ease) 3; }
   @keyframes nudge { 0%, 100% { box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 6px 18px -8px var(--accent); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent), 0 6px 18px -8px var(--accent); } }
@@ -515,7 +514,7 @@ html.previewing .shell { padding-bottom: 96px; }
   @keyframes locate { 50% { scale: .8; opacity: .6; } }
 }
 /* a new leave time: the answer just crossfades, the arrival is kept for the first answer */
-@media (prefers-reduced-motion: no-preference) { .answer.again { animation: fade .25s var(--ease) both; } }
+@media (prefers-reduced-motion: no-preference) { .answer.retimed { animation: fade .25s var(--ease) both; } }
 /* reduced motion: no travel, no blur; the answer still fades in and choices still change colour */
 @media (prefers-reduced-motion: reduce) {
   .qseg::before { transition: none; }
