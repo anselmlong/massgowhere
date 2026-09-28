@@ -110,13 +110,13 @@
     ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons (default)"],
     ["sentence", "Sentence", "The earlier “I’m leaving from…” sentence"],
   ];
-  const MODES_UI = [["dark", "Dark", "Dark background (default)"], ["light", "Light", "White background"], ["auto", "Match my phone", "Follows the phone’s light or dark setting"]];
+  const MODES_UI = [["auto", "Match my phone", "Follows the phone’s light or dark setting (default)"], ["dark", "Dark", "Always dark"], ["light", "Light", "Always light"]];
   const pickFrom = (list, v, dflt) => (list.some(([k]) => k === v) ? v : dflt);
   const design = () => ({
     look: pickFrom(LOOKS, store.get("mgw-palette"), "season"),
     font: pickFrom(FONTS, store.get("mgw-font"), "atkinson"),
     layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "quick"),
-    scheme: pickFrom(MODES_UI, store.get("mgw-scheme"), "dark"),
+    scheme: pickFrom(MODES_UI, store.get("mgw-scheme"), "auto"),
   });
   function applyPalette() {
     const qs = new URLSearchParams(location.search);
@@ -138,7 +138,7 @@
       document.head.appendChild(l);
     }
     root.dataset.font = font;
-    // dark unless chosen otherwise; "auto" leaves it to the phone
+    // follows the phone unless chosen otherwise in design options
     if (scheme === "auto") delete root.dataset.theme; else root.dataset.theme = scheme;
     const dark = scheme === "dark" || (scheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
     requestAnimationFrame(() => document.getElementById("theme-color")?.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim() || (dark ? "#111317" : "#ffffff")));
@@ -1152,6 +1152,8 @@
     if (e.target.closest(".btn-primary[href^='https://www.google.com/maps']") && navigator.vibrate) navigator.vibrate(12);
   });
   applyPalette();
+  // the browser bar colour follows the phone switching between light and dark
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyPalette);
   paletteMenu();
   route();
 })();

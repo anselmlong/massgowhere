@@ -500,8 +500,7 @@ html.previewing .shell { padding-bottom: 96px; }
   content: ""; position: absolute; z-index: -1; top: 4px; bottom: 4px; left: 4px;
   width: calc((100% - 8px - (var(--n) - 1) * 4px) / var(--n));
   translate: calc(var(--i) * (100% + 4px)) 0;
-  border-radius: var(--radius); background: var(--bg);
-  box-shadow: inset 0 0 0 2px var(--accent), 0 1px 2px rgb(0 0 0 / .08), 0 2px 8px -2px rgb(0 0 0 / .1);
+  border-radius: var(--radius); background: var(--accent-soft);
   transition: translate .32s var(--ease);
 }
 .qseg button[aria-checked="true"] { background: none; box-shadow: none; }
