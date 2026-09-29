@@ -475,7 +475,7 @@
     // the ways out of the home screen that aren't the answer: quiet rows, not rival buttons
     const more = `<ul class="more-ways">
         <li><a href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span>${svg(ICON.right, "go")}</a></li>
-        <li><a href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span>Use it on Telegram: @massgowherebot</span>${svg(ICON.right, "go")}</a></li>
+        <li><a href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span>Use it on Telegram<small>@massgowherebot</small></span>${svg(ICON.right, "go")}</a></li>
         <li><button type="button" id="how">${svg(ICON.info)}<span>How does this work?</span>${svg(ICON.right, "go")}</button></li>
       </ul>`;
     const promise = `<div class="intro"><h1>Find a Mass you can make.</h1>
