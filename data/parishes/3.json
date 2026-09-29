@@ -4,7 +4,7 @@
  "source_urls": [
   "https://christtheking.com.sg/"
  ],
- "fetched_at": "2026-09-29T09:39+08:00",
+ "fetched_at": "2026-09-29T18:26+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,8 +19,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Main Church confession booth",
-   "note": "Half hour before weekend Mass"
+   "loc": "Confession booth (Main Church)",
+   "note": ""
   },
   {
    "d": 0,
@@ -39,8 +39,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Main Church confession booth",
-   "note": "Half hour before weekend Mass"
+   "loc": "Confession booth (Main Church)",
+   "note": ""
   },
   {
    "d": 0,
@@ -59,8 +59,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Main Church confession booth",
-   "note": "Half hour before weekend Mass"
+   "loc": "Confession booth (Main Church)",
+   "note": ""
   },
   {
    "d": 0,
@@ -79,8 +79,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Main Church confession booth",
-   "note": "Half hour before weekend Mass"
+   "loc": "Confession booth (Main Church)",
+   "note": ""
   },
   {
    "d": 0,
@@ -99,8 +99,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Main Church confession booth",
-   "note": "Half hour before weekend Mass"
+   "loc": "Confession booth (Main Church)",
+   "note": ""
   },
   {
    "d": 0,
@@ -121,8 +121,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Main Church confession booth",
-   "note": "Half hour before Tamil Mass"
+   "loc": "Confession booth (Main Church)",
+   "note": ""
   },
   {
    "d": 0,
@@ -144,7 +144,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary on Zoom"
+   "note": ""
   },
   {
    "d": 1,
@@ -174,7 +174,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary on Zoom"
+   "note": ""
   },
   {
    "d": 2,
@@ -203,8 +203,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Divine Mercy"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -234,7 +234,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary on Zoom"
+   "note": ""
   },
   {
    "d": 4,
@@ -264,7 +264,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary on Zoom"
+   "note": ""
   },
   {
    "d": 5,
@@ -294,7 +294,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary on Zoom"
+   "note": ""
   },
   {
    "d": 6,
@@ -313,8 +313,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Main Church confession booth",
-   "note": "Half hour before weekend Mass"
+   "loc": "Confession booth (Main Church)",
+   "note": ""
   },
   {
    "d": 6,
@@ -334,7 +334,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary on Zoom"
+   "note": ""
   }
  ],
  "dated": [],
@@ -344,10 +344,20 @@
   "09:00"
  ],
  "notes": [
-  "On public holidays, church gates close at 12:00 noon.",
-  "Nightly Rosary is held on Zoom and is not held on Tuesdays.",
-  "Confession booth is in the Main Church."
+  "Church gates close at 12:00 noon."
  ],
+ "info": {
+  "confession": "In the Confession booth (Main Church).",
+  "devotions": [
+   "Divine Mercy Devotion every Tuesday at 8pm in the Main Church.",
+   "Nightly Zoom Rosary at 8.30pm except Tuesdays.",
+   "Sacred Heart Devotion every Friday after Mass in the Main Church."
+  ],
+  "office_hours": "Mondays - Fridays: 9.00am to 6.00pm; Saturdays & Sundays: 9.00am to 1.00pm; Closed on Public Holidays",
+  "good_to_know": [
+   "Church gates close at 12:00 noon."
+  ]
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

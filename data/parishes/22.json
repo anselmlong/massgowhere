@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.sfxchurch.sg/"
  ],
- "fetched_at": "2026-09-29T09:45+08:00",
+ "fetched_at": "2026-09-29T18:29+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,17 +19,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunday Mass"
-  },
-  {
-   "d": 0,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Closed on Public Holidays",
+   "loc": "",
    "note": ""
   },
   {
@@ -39,8 +29,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -49,8 +39,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunday Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -59,17 +49,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunday Mass"
-  },
-  {
-   "d": 1,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Closed on Public Holidays",
+   "loc": "",
    "note": ""
   },
   {
@@ -79,8 +59,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -89,17 +69,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Morning Mass"
-  },
-  {
-   "d": 2,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Closed on Public Holidays",
+   "loc": "",
    "note": ""
   },
   {
@@ -109,8 +79,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -119,17 +89,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Morning Mass"
-  },
-  {
-   "d": 3,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Closed on Public Holidays",
+   "loc": "",
    "note": ""
   },
   {
@@ -139,8 +99,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -149,17 +109,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Morning Mass"
-  },
-  {
-   "d": 4,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Closed on Public Holidays",
+   "loc": "",
    "note": ""
   },
   {
@@ -169,8 +119,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -179,17 +129,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Morning Mass"
-  },
-  {
-   "d": 5,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Closed on Public Holidays",
+   "loc": "",
    "note": ""
   },
   {
@@ -199,7 +139,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Strictly via appointment only",
+   "loc": "",
    "note": ""
   },
   {
@@ -209,8 +149,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -219,17 +159,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Morning Mass"
-  },
-  {
-   "d": 6,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Closed on Public Holidays",
+   "loc": "",
    "note": ""
   },
   {
@@ -239,7 +169,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Strictly via appointment only",
+   "loc": "",
    "note": ""
   },
   {
@@ -249,8 +179,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Anticipated Sunday Mass"
+   "loc": "",
+   "note": ""
   }
  ],
  "dated": [
@@ -259,7 +189,7 @@
    "date": "2026-10-31",
    "time": "18:30",
    "language": "English",
-   "location": "Day of Obligation Eve",
+   "location": "",
    "title": "All Saints Eve",
    "action": "add"
   },
@@ -268,7 +198,7 @@
    "date": "2026-11-01",
    "time": "06:30",
    "language": "English",
-   "location": "Day of Obligation",
+   "location": "",
    "title": "All Saints",
    "action": "add"
   },
@@ -277,7 +207,7 @@
    "date": "2026-11-01",
    "time": "18:30",
    "language": "English",
-   "location": "Day of Obligation",
+   "location": "",
    "title": "All Saints",
    "action": "add"
   },
@@ -286,7 +216,7 @@
    "date": "2026-11-01",
    "time": "20:30",
    "language": "English",
-   "location": "Day of Obligation",
+   "location": "",
    "title": "All Saints",
    "action": "add"
   },
@@ -295,7 +225,7 @@
    "date": "2026-12-24",
    "time": "18:30",
    "language": "English",
-   "location": "Christmas Eve",
+   "location": "",
    "title": "Christmas Eve",
    "action": "add"
   },
@@ -304,7 +234,7 @@
    "date": "2026-12-24",
    "time": "21:00",
    "language": "English",
-   "location": "Christmas Eve",
+   "location": "",
    "title": "Christmas Eve",
    "action": "add"
   },
@@ -313,8 +243,8 @@
    "date": "2026-12-24",
    "time": "23:59",
    "language": "English",
-   "location": "Christmas Eve Midnight",
-   "title": "Christmas Eve",
+   "location": "",
+   "title": "Christmas Eve midnight Mass",
    "action": "add"
   },
   {
@@ -322,7 +252,7 @@
    "date": "2026-12-25",
    "time": "09:00",
    "language": "English",
-   "location": "Christmas Day",
+   "location": "",
    "title": "Christmas Day",
    "action": "add"
   },
@@ -331,18 +261,21 @@
    "date": "2026-12-25",
    "time": "11:00",
    "language": "English",
-   "location": "Christmas Day",
+   "location": "",
    "title": "Christmas Day",
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Sacrament of Reconciliation is strictly by appointment only.",
-  "Adoration is closed on public holidays.",
-  "Days of Obligation and Christmas schedules are included for upcoming dates."
+  "Reconciliation is strictly by appointment only.",
+  "Adoration is closed on public holidays."
  ],
+ "info": {
+  "adoration": "Monday-Sunday 07:00-23:00; closed on public holidays.",
+  "confession": "Strictly by appointment only."
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

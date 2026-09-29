@@ -4,7 +4,7 @@
  "source_urls": [
   "https://stmichael.catholic.sg/mass-devotions/"
  ],
- "fetched_at": "2026-09-29T09:47+08:00",
+ "fetched_at": "2026-09-29T18:29+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -347,10 +347,18 @@
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [],
  "notes": [
-  "No regular weekday Masses on public holidays.",
-  "Public holidays on Sundays use weekend Mass times; the public holiday is observed on the following Monday.",
-  "Liturgy of the Hours is conducted on Zoom and requires registration."
+  "When a public holiday falls on Sunday, it is observed on the following Monday.",
+  "Public holiday weekday Masses replace the usual weekday schedule.",
+  "Liturgy of the Hours is conducted on Zoom; registration is required."
  ],
+ "info": {
+  "adoration": "Adoration Room open 7am to 10.30pm.",
+  "confession": "30 minutes before weekend Eucharistic Celebrations.",
+  "devotions": [
+   "Liturgy of the Hours on Zoom; register with csm.secretariat@catholic.org.sg for Zoom details."
+  ],
+  "office_hours": "Parish Office: Mon-Fri 8.30am-5pm; Sat 8.30am-11.30am and 2pm-4.30pm."
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

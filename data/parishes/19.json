@@ -4,7 +4,7 @@
  "source_urls": [
   "https://saint-anthony.org/mass-schedules-devotion-timings-singapore-mass-timing-schedule/"
  ],
- "fetched_at": "2026-09-29T09:44+08:00",
+ "fetched_at": "2026-09-29T18:27+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -53,7 +53,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 0,
@@ -94,8 +94,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "St Agnes Room",
+   "note": "Divine Mercy"
   },
   {
    "d": 3,
@@ -127,7 +127,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 5,
@@ -188,12 +188,19 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [],
- "notes": [
-  "No regular weekday evening Mass on public holidays.",
-  "No devotions on public holidays that fall on weekdays except Days of Obligation.",
-  "Saturday evening ethnic-community Masses are on the eve of the specified Sunday; dates follow the parish bulletin."
+ "public_holiday_masses": [
+  "07:30"
  ],
+ "notes": [
+  "No usual weekday evening Mass on public holidays."
+ ],
+ "info": {
+  "good_to_know": [
+   "Special Mass timings for days of obligation, feast days, liturgical seasons and major solemnities are in the Parish Bulletin or mycatholic.sg.",
+   "No devotions on public holidays that fall on weekdays except Days of Obligation.",
+   "Church is closed after the public holiday morning Mass; vehicles should be removed from church premises after Mass."
+  ]
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

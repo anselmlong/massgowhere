@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.svdp.sg/"
  ],
- "fetched_at": "2026-09-29T09:49+08:00",
+ "fetched_at": "2026-09-29T18:30+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,43 +14,13 @@
  "rules": [
   {
    "d": 0,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Confession"
-  },
-  {
-   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Mass"
-  },
-  {
-   "d": 0,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Adoration"
-  },
-  {
-   "d": 0,
-   "t": "08:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Confession"
+   "note": ""
   },
   {
    "d": 0,
@@ -60,17 +30,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Mass"
-  },
-  {
-   "d": 0,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Confession"
+   "note": ""
   },
   {
    "d": 0,
@@ -80,7 +40,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -92,17 +52,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "Indonesian Mass"
-  },
-  {
-   "d": 0,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Confession"
+   "note": "5th Sunday of the month"
   },
   {
    "d": 0,
@@ -112,7 +62,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -132,17 +82,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
-  },
-  {
-   "d": 1,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Adoration"
+   "note": ""
   },
   {
    "d": 1,
@@ -152,7 +92,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 1,
@@ -172,7 +112,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -192,17 +132,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
-  },
-  {
-   "d": 2,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Adoration"
+   "note": ""
   },
   {
    "d": 2,
@@ -212,7 +142,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 2,
@@ -232,7 +162,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 3,
@@ -252,17 +182,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
-  },
-  {
-   "d": 3,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Adoration"
+   "note": ""
   },
   {
    "d": 3,
@@ -272,7 +192,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 3,
@@ -302,7 +222,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -322,17 +242,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
-  },
-  {
-   "d": 4,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Adoration"
+   "note": ""
   },
   {
    "d": 4,
@@ -342,7 +252,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 4,
@@ -362,7 +272,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -382,17 +292,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
-  },
-  {
-   "d": 5,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Adoration"
+   "note": ""
   },
   {
    "d": 5,
@@ -402,7 +302,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 5,
@@ -422,7 +322,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -442,17 +342,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Daily Mass"
-  },
-  {
-   "d": 6,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Adoration"
+   "note": ""
   },
   {
    "d": 6,
@@ -463,16 +353,6 @@
    "lang": "English",
    "loc": "",
    "note": "Rosary"
-  },
-  {
-   "d": 6,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Confession"
   },
   {
    "d": 6,
@@ -489,9 +369,23 @@
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Adoration is closed on public holidays.",
-  "Confession ends 10 minutes before weekend Masses."
+  "No 6pm Mass on 23-25 Sep 2026 (Feast Day Masses at 8pm)."
  ],
+ "info": {
+  "adoration": "Adoration Room open 7am-6pm daily; closed on public holidays.",
+  "confession": "30 minutes to 10 minutes before all weekend Masses.",
+  "devotions": [
+   "Rosary: Mon-Sat 6:15am and 5:30pm; Sundays 30 minutes before Mass",
+   "Divine Mercy: Wednesdays 5pm, St Faustina Room",
+   "Liturgy of the Hours (Divine Office): Mon-Fri 7:45am, St Faustina Room"
+  ],
+  "office_hours": "Mon-Fri 9am-12pm and 1pm-6pm; Sat 9am-12pm and 5pm-6pm; Sun 8am-12pm and 5pm-6pm; closed on public holidays.",
+  "good_to_know": [
+   "Parking on church grounds: Mon-Fri 6am-8am and 5pm-7pm; Sat 6am-7.30pm; Sun 6am-1pm and 5pm-7.30pm.",
+   "Bus services 50, 70, 70A, 70B, 70M, 103, 104 and 854; closest MRT Buangkok/Thanggam (not nearby).",
+   "Address: 301 Yio Chu Kang Road, Singapore 805910."
+  ]
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

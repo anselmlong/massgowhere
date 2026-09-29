@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.holyspirit.sg/"
  ],
- "fetched_at": "2026-09-29T09:37+08:00",
+ "fetched_at": "2026-09-29T18:25+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -170,7 +170,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": "Sunset"
   }
  ],
  "dated": [],
@@ -179,9 +179,10 @@
   "09:00"
  ],
  "notes": [
-  "Church gates close at 10:00 PM daily.",
-  "Parking is for worshippers and participants of church activities only."
+  "Parking is for worshippers and participants of church activities only.",
+  "Gates will be closed at 10:00 PM daily."
  ],
+ "info": {},
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

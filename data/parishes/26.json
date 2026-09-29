@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.stmary.sg/mass"
  ],
- "fetched_at": "2026-09-29T09:47+08:00",
+ "fetched_at": "2026-09-29T18:30+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals in the Main Church",
+   "loc": "Confessionals, Main Church",
    "note": ""
   },
   {
@@ -49,7 +49,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals in the Main Church",
+   "loc": "Confessionals, Main Church",
    "note": ""
   },
   {
@@ -79,7 +79,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals in the Main Church",
+   "loc": "Confessionals, Main Church",
    "note": ""
   },
   {
@@ -102,7 +102,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "St Clare Hall, Level B1",
-   "note": ""
+   "note": "Indonesian Mass"
   },
   {
    "d": 0,
@@ -112,7 +112,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "St Clare Hall, Level B1",
-   "note": "Mass for the Deaf Community; check latest venue info."
+   "note": "Mass for the Deaf Community"
   },
   {
    "d": 0,
@@ -121,7 +121,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals in the Main Church",
+   "loc": "Confessionals, Main Church",
    "note": ""
   },
   {
@@ -141,7 +141,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals in the Main Church",
+   "loc": "Confessionals, Main Church",
    "note": ""
   },
   {
@@ -162,7 +162,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "note": "Morning Prayer (Lauds) will be said"
   },
   {
    "d": 1,
@@ -192,7 +192,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "note": "Morning Prayer (Lauds) will be said"
   },
   {
    "d": 2,
@@ -222,7 +222,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church, Level 1",
-   "note": "Devotion to St Anthony."
+   "note": "Devotion to St Anthony"
   },
   {
    "d": 3,
@@ -232,7 +232,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "note": "Morning Prayer (Lauds) will be said"
   },
   {
    "d": 3,
@@ -262,7 +262,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "note": "Morning Prayer (Lauds) will be said"
   },
   {
    "d": 4,
@@ -292,7 +292,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Main Church, Level 1",
-   "note": "Morning Prayer (Lauds) will be said."
+   "note": "Morning Prayer (Lauds) will be said"
   },
   {
    "d": 5,
@@ -321,7 +321,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals in the Main Church",
+   "loc": "Confessionals, Main Church",
    "note": ""
   },
   {
@@ -341,7 +341,7 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "Confessionals in the Main Church",
+   "loc": "Confessionals, Main Church",
    "note": ""
   },
   {
@@ -364,7 +364,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "St Clare Hall, Level B1",
-   "note": "Syro-Malabar Malayalam Qurbana."
+   "note": "Syro-Malabar Malayalam Qurbana"
   },
   {
    "d": 6,
@@ -393,7 +393,7 @@
    "time": "12:15",
    "language": "English",
    "location": "Main Church, Level 1",
-   "title": "",
+   "title": "12.15pm Mass is cancelled",
    "action": "cancel"
   }
  ],
@@ -403,10 +403,24 @@
   "18:30"
  ],
  "notes": [
-  "Public holiday Masses are usually at 8am and 6.30pm unless it is a Church Solemnity.",
-  "Confessions are not held on weekdays from 1 January 2026; they are on weekends 30 minutes before English Masses until 10 minutes before Mass begins.",
-  "Confessions may not be available at listed times when parish friars are away or special events are held."
+  "No confessions on weekdays.",
+  "Confessions may not be available when parish friars are away or special events are held at the Main Church.",
+  "No standing ruling: keep all walkways and corridors free; follow Hospitality team guidance for seating."
  ],
+ "info": {
+  "adoration": "Adoration Chapel at St Mary’s is located next to the Main Church at Level 1. Opening Hours: Daily 07:00 to 21:30. The chapel has the Jubilee monstrance commissioned for the Jubilee Year of Hope in 2025.",
+  "confession": "Confessions are held at the Confessionals in the Main Church. No appointment is needed. No confessions on weekdays. Confessions are heard on weekends 30 minutes before the English Masses until 10 minutes before Mass begins. Outside these ti",
+  "devotions": [
+   "Devotion to St Anthony on Tuesdays is incorporated into the Mass; confessions are available every Tuesday after the St Anthony’s Devotion until 10 January 2027."
+  ],
+  "office_hours": "Reception (Level 1, beside the sacristy of the main church): Monday to Friday 09:00-18:00 (lunch break 13:00-14:00); Saturday 09:00-18:00; Sunday 09:00-13:00; Closed on Public Holidays.",
+  "good_to_know": [
+   "All Masses and Services are held in the Main Church, Level 1, unless otherwise indicated.",
+   "All Masses are in English, unless otherwise indicated.",
+   "There are usually two Masses at 8am and 6.30pm on Public Holidays unless it is a Church Solemnity.",
+   "Morning Prayer (Lauds) will be said at the 7am weekday Mass."
+  ]
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

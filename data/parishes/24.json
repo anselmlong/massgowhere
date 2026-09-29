@@ -4,7 +4,7 @@
  "source_urls": [
   "https://stjoseph-bt.org.sg/"
  ],
- "fetched_at": "2026-09-28T02:23+08:00",
+ "fetched_at": "2026-09-29T18:30+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -122,7 +122,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel of St Joseph",
-   "note": "No 6:30pm Mass on First Wed"
+   "note": ""
   },
   {
    "d": 3,
@@ -200,7 +200,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel of St Joseph",
-   "note": "No 6:30pm Mass on First Fri"
+   "note": ""
   },
   {
    "d": 5,
@@ -256,7 +256,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Saturday Sunset Mass; 2nd Saturdays during school term: Children's Mass"
+   "note": "Sunset Mass; 2nd Saturday of the month: Children's Mass (during school term)"
   }
  ],
  "dated": [
@@ -270,22 +270,40 @@
    "action": "add"
   },
   {
+   "type": "Mass",
+   "date": "2026-10-04",
+   "time": "17:30",
+   "language": "English",
+   "location": "",
+   "title": "Feast of Our Lady of the Rosary - evening Mass moved to 6pm",
+   "action": "cancel"
+  },
+  {
    "type": "Devotion",
    "date": "2026-10-04",
    "time": "19:00",
-   "language": "",
+   "language": "English",
    "location": "",
-   "title": "Candlelight Procession",
+   "title": "Candlelight Procession after the Feast of Our Lady of the Rosary Mass",
    "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "Confessions are 15 minutes before all weekend Masses in the open foyer of the main Church.",
-  "No 6:30pm Mass in the Chapel of St Joseph on First Wed and First Fri; see regular entries for replacement times.",
-  "On Sun 4 Oct 2026, evening Mass is at 6:00pm instead of 5:30pm, followed by Candlelight Procession at 7:00pm."
- ],
+ "notes": [],
+ "info": {
+  "adoration": "Holy Hour: 1st Fridays 8pm, Main Church (after the 7.30pm Mass). Holy Hour for Vocations: 3rd Thursdays 8pm, Chapel of St Joseph.",
+  "confession": "15 minutes before all weekend Masses, in the open foyer of the main Church.",
+  "devotions": [
+   "St Joseph Rosary: 1st Wednesdays 7.30pm, Main Church",
+   "Divine Mercy Devotion: Fridays except 1st Friday, 8pm, Chapel of St Joseph",
+   "Meditation: Tuesdays 8pm, Adoration Room"
+  ],
+  "good_to_know": [
+   "Address: 620 Upper Bukit Timah Road, Singapore 678116.",
+   "Nearest MRT: Cashew. Buses: 67, 75, 170, 176, 178, 184, 961, 963, 970."
+  ]
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

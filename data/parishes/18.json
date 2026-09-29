@@ -4,7 +4,7 @@
  "source_urls": [
   "https://stanne.catholic.sg/services/"
  ],
- "fetched_at": "2026-09-29T09:42+08:00",
+ "fetched_at": "2026-09-29T18:27+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -12,16 +12,6 @@
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Adoration Room, Level 3",
-   "note": ""
-  },
   {
    "d": 0,
    "t": "07:10",
@@ -164,16 +154,6 @@
   },
   {
    "d": 1,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Adoration Room, Level 3",
-   "note": ""
-  },
-  {
-   "d": 1,
    "t": "19:00",
    "weeks": [],
    "except": [],
@@ -204,16 +184,6 @@
   },
   {
    "d": 2,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Adoration Room, Level 3",
-   "note": ""
-  },
-  {
-   "d": 2,
    "t": "19:00",
    "weeks": [],
    "except": [],
@@ -244,16 +214,6 @@
   },
   {
    "d": 3,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Adoration Room, Level 3",
-   "note": ""
-  },
-  {
-   "d": 3,
    "t": "19:00",
    "weeks": [],
    "except": [],
@@ -280,16 +240,6 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Adoration Room, Level 3",
    "note": ""
   },
   {
@@ -322,7 +272,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Holy Hour"
+   "note": "Holy Hour, after the evening Mass"
   },
   {
    "d": 5,
@@ -332,16 +282,6 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Adoration Room, Level 3",
    "note": ""
   },
   {
@@ -372,16 +312,6 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Adoration Room, Level 3",
    "note": ""
   },
   {
@@ -420,10 +350,11 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "Adoration Room is closed on Public Holidays and during the Easter Triduum.",
-  "Confessions are heard in the Confessional Box at the back of the Main Church."
- ],
+ "notes": [],
+ "info": {
+  "adoration": "Adoration Room is on Level 3. Monday to Saturday: 07:00-22:00; Sunday: 07:00-18:00. Closed on Public Holidays and during the Easter Triduum.",
+  "confession": "Confessions will be heard 20 minutes before each weekend Mass in the Confessional Box at the back of the Main Church."
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

@@ -4,7 +4,7 @@
  "source_urls": [
   "https://ststephen.sg/masses-devotions/"
  ],
- "fetched_at": "2026-09-29T09:47+08:00",
+ "fetched_at": "2026-09-29T18:32+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -159,13 +159,21 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "07:30"
- ],
+ "public_holiday_masses": [],
  "notes": [
-  "Public holiday weekday Mass replaces the usual weekday morning Mass.",
-  "Additional 19:00 Mass on weekday eves/holy days of obligation."
+  "All Masses are in English except the 1st Sunday Tagalog Mass and the 2nd Sunday Malayalam Mass."
  ],
+ "info": {
+  "devotions": [
+   "Saturday Rosary: 16:40",
+   "Sunday Divine Mercy: 10:15"
+  ],
+  "good_to_know": [
+   "Weekday Mass Monday to Saturday is at 06:30.",
+   "On Public Holidays, weekday Mass is at 07:30.",
+   "Eve / Day of Obligation if it is a weekday: 06:30 and 19:00."
+  ]
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

@@ -4,7 +4,7 @@
  "source_urls": [
   "https://ihm.sg/"
  ],
- "fetched_at": "2026-09-28T02:36+08:00",
+ "fetched_at": "2026-09-29T18:26+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -195,7 +195,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Holy Hour"
   },
   {
    "d": 6,
@@ -219,7 +219,7 @@
    "type": "Devotion",
    "lang": "Mandarin",
    "loc": "",
-   "note": ""
+   "note": "Mandarin Rosary"
   },
   {
    "d": 6,
@@ -232,7 +232,7 @@
    "type": "Devotion",
    "lang": "Teochew",
    "loc": "",
-   "note": ""
+   "note": "Teochew Rosary"
   },
   {
    "d": 6,
@@ -242,7 +242,7 @@
    "type": "Mass",
    "lang": "Mandarin",
    "loc": "",
-   "note": ""
+   "note": "Anticipatory Mass"
   },
   {
    "d": 6,
@@ -252,16 +252,23 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Anticipatory Mass"
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Walk-in Confession is not held on public holidays.",
-  "2nd Friday evening Mass is offered for the faithful departed in the Columbarium."
+  "Every 2nd Friday evening Mass is dedicated to the souls of the faithful departed whose ashes are interred in the Columbarium."
  ],
+ "info": {
+  "confession": "Reconciliation in Main Church 30 minutes before Mass. Walk-in Confession at Priest's Office Monday & Tuesday 9am-11am, except public holidays.",
+  "devotions": [
+   "Rosary Devotion 40 minutes before weekday Masses.",
+   "Novena Devotion follows Saturday 7:00am Mass."
+  ],
+  "office_hours": "Mon-Fri 9:30am to 5:30pm; Saturday 9am to 12pm (Columbarium matters only); Lunch 12:00 to 1:00pm; Closed on public holidays."
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

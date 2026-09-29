@@ -4,7 +4,7 @@
  "source_urls": [
   "https://new.divinemercy.sg/timings/"
  ],
- "fetched_at": "2026-09-29T09:39+08:00",
+ "fetched_at": "2026-09-29T18:25+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,12 +14,32 @@
  "rules": [
   {
    "d": 0,
+   "t": "06:40",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Confessional booths at back of main parish hall",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:40",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Confessional booths at back of main parish hall",
    "note": ""
   },
   {
@@ -29,7 +49,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:10",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Confessional booths at back of main parish hall",
    "note": ""
   },
   {
@@ -39,7 +69,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
+   "note": "May take more than an hour due to high attendance and Infant Baptism on alternate months, special events and solemnity."
+  },
+  {
+   "d": 0,
+   "t": "17:10",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Confessional booths at back of main parish hall",
    "note": ""
   },
   {
@@ -49,7 +89,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -59,7 +99,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Lauds"
   },
   {
@@ -69,7 +109,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -79,7 +119,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Vespers"
   },
   {
@@ -89,7 +129,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -99,7 +139,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Lauds"
   },
   {
@@ -109,7 +149,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -119,7 +159,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Vespers"
   },
   {
@@ -129,7 +169,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -139,7 +179,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Lauds"
   },
   {
@@ -149,7 +189,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -159,7 +199,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Vespers"
   },
   {
@@ -169,7 +209,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -179,7 +219,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Lauds"
   },
   {
@@ -189,7 +229,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -199,7 +239,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Prayer for Priest, Religious & Vocations"
   },
   {
@@ -209,7 +249,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Vespers"
   },
   {
@@ -219,7 +259,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -229,7 +269,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Lauds"
   },
   {
@@ -239,7 +279,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": ""
   },
   {
@@ -249,7 +289,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
    "note": "Vespers"
   },
   {
@@ -259,7 +299,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Chapel",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "06:10",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Confessional booths at back of main parish hall",
    "note": ""
   },
   {
@@ -269,7 +319,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:10",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Confessional booths at back of main parish hall",
    "note": ""
   },
   {
@@ -279,8 +339,20 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": "Sunset Mass"
+  },
+  {
+   "d": 6,
+   "t": "19:10",
+   "weeks": [
+    3
+   ],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Confessional booths at back of main parish hall",
+   "note": ""
   },
   {
    "d": 6,
@@ -291,7 +363,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "",
+   "loc": "Main Church",
    "note": "Tagalog Mass"
   }
  ],
@@ -301,9 +373,23 @@
   "08:00"
  ],
  "notes": [
-  "Weekday Masses do not apply on public holidays.",
-  "Some Sunday Masses may exceed an hour due to attendance, baptisms, events or solemnities."
+  "On public holidays, the usual weekday Mass times do not apply.",
+  "Confessions are held 20 minutes before all weekend Masses and end 3-5 minutes before Mass."
  ],
+ "info": {
+  "adoration": "Eucharistic Adoration Room (Basement 1) open Mon-Fri 7am-9pm; Sat & Sun 7am-6pm; closed on public holidays.",
+  "confession": "Confessions with parish priests can be done at the confessional booths located at the back of the main parish hall 20 minutes before all weekend Masses up till 3-5 minutes before Mass.",
+  "devotions": [
+   "Lauds Mon-Fri 6.10am",
+   "Vespers Mon-Fri 6.00pm",
+   "Prayer for Priest, Religious & Vocations Thursdays 5.15pm"
+  ],
+  "office_hours": "Mon-Fri 10.30am-6pm (closed on weekday public holidays), Sat 9am-5pm, Sun 9am-1pm (lunch 1pm-2pm)",
+  "good_to_know": [
+   "Church gates closed daily at 9pm and on public holidays at 9am.",
+   "Bookshop open Sat evenings and Sun mornings before/after weekend Masses."
+  ]
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

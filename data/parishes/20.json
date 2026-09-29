@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.stbernadette.org.sg/"
  ],
- "fetched_at": "2026-09-28T02:37+08:00",
+ "fetched_at": "2026-09-29T18:28+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -12,6 +12,16 @@
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
   {
    "d": 0,
    "t": "08:30",
@@ -24,10 +34,30 @@
   },
   {
    "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "10:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -65,6 +95,16 @@
    "except": [],
    "type": "Mass",
    "lang": "Indonesian",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
    "loc": "",
    "note": ""
   },
@@ -190,13 +230,23 @@
   },
   {
    "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
    "t": "18:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Vigil"
+   "note": ""
   }
  ],
  "dated": [],
@@ -205,9 +255,13 @@
   "09:00"
  ],
  "notes": [
-  "Mass times may change during feast days, solemnities, or special celebrations.",
-  "Reconciliation is available before weekend Masses, except before the Saturday morning Mass."
+  "Mass times may change during feast days, solemnities, or other special celebrations."
  ],
+ "info": {
+  "adoration": "The Adoration Room is accessible for prayers & adoration after the first Mass of the day until 22:00. It is closed for cleaning every Saturday morning from 09:45 to 11:45.",
+  "confession": "The Sacrament of Reconciliation is available 30 minutes before Weekend Masses, excluding the Sat 07:00 Mass.",
+  "office_hours": "Parish Office Opening Hours: Mon-Fri 09:30-18:30, Sat 09:30-19:30, Sun 07:30-19:30; Public Holidays: Closed."
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
@@ -238,16 +292,7 @@
     "Sunday",
     "13:45",
     [
-     4
-    ],
-    []
-   ],
-   [
-    "Mass",
-    "Sunday",
-    "13:45",
-    [
-     5
+     -1
     ],
     []
    ],

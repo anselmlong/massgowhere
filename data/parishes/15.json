@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.risenchrist.org.sg/"
  ],
- "fetched_at": "2026-09-29T09:42+08:00",
+ "fetched_at": "2026-09-29T18:28+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -235,9 +235,10 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "Public holiday Mass times replace the regular weekday/Saturday schedule."
- ],
+ "notes": [],
+ "info": {
+  "adoration": "Adoration Room opening hours: Mon 12:00-22:00; Tue-Sat 07:00-22:00; Sun 07:00-18:00; Public Holidays 08:00-18:00."
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

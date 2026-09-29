@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.churchofthesacredheart.sg/services"
  ],
- "fetched_at": "2026-09-28T02:37+08:00",
+ "fetched_at": "2026-09-29T18:26+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -20,7 +20,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before Sunday Mass"
   },
   {
    "d": 0,
@@ -44,7 +44,7 @@
    "type": "Mass",
    "lang": "Bilingual (English & Mandarin)",
    "loc": "",
-   "note": ""
+   "note": "2nd Sunday of the month"
   },
   {
    "d": 0,
@@ -54,7 +54,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before Sunday Mass"
   },
   {
    "d": 0,
@@ -74,7 +74,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before Sunday Mass"
   },
   {
    "d": 0,
@@ -96,7 +96,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before 1st Sunday 4pm Mass"
   },
   {
    "d": 0,
@@ -108,17 +108,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "19:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Mary's Shrine",
-   "note": "Rosary with Mary, every 13th of the month"
+   "note": "1st Sunday of the month"
   },
   {
    "d": 1,
@@ -170,7 +160,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Church",
-   "note": ""
+   "note": "1st Thursday of the month"
   },
   {
    "d": 5,
@@ -230,7 +220,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before Sunset Mass"
   },
   {
    "d": 6,
@@ -239,7 +229,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church",
    "note": "Sunset Mass"
   }
  ],
@@ -249,6 +239,18 @@
   "08:00"
  ],
  "notes": [],
+ "info": {
+  "devotions": [
+   "Holy Hour follows 7pm Mass on 1st Thursday in the Church.",
+   "Rosary with Mary 7:30pm at Mary's Shrine on every 13th of the month.",
+   "Sacred Heart Devotion is also live on YouTube & Facebook."
+  ],
+  "good_to_know": [
+   "Masses are in English unless otherwise stated.",
+   "Sunday 8am is Mandarin, bilingual on every 2nd Sunday.",
+   "1st Sunday 4pm is Tagalog."
+  ]
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
