@@ -13,3 +13,5 @@ data/allsched.raw.json
 data/parishes/_report.json
 bot/stats.json
 bot/stats.json.tmp
+bot/nudges.json
+bot/nudges.json.tmp
