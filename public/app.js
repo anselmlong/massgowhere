@@ -931,6 +931,10 @@
     const mode = store.get("mgw-mode") || "transit";
     const now = Date.now();
     const evs = S.expandParish(String(id), d, now, 7);
+    // a Mass the parish's bulletin or website says is off that day: kept in the list (times stay myCatholicSG's), marked
+    const hm = (ms) => new Date(ms).toLocaleTimeString("en-GB", { ...TZ, hour: "2-digit", minute: "2-digit" });
+    const offs = new Set((info?.dated || []).filter((x) => x.action === "cancel").map((x) => `${x.date} ${x.time}`));
+    const isOff = (e) => offs.has(`${dayKey(e.start)} ${hm(e.start)}`);
     const days = new Map();
     for (const e of evs) {
       const k = dayLabel(e.start);
@@ -941,7 +945,7 @@
     let lead = "";
     if (origin) {
       const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
-      const n = evs.find((e) => e.start - (t.minutes + R.BUFFER_MIN) * 60000 >= now);
+      const n = evs.find((e) => !isOff(e) && e.start - (t.minutes + R.BUFFER_MIN) * 60000 >= now);
       if (n) lead = `<div class="next-here"><strong>Next Mass you can attend: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
         <span>Leave by ${about}${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${tripMode(t, modeOf(mode)).phrase}</span></div>`;
     }
@@ -950,7 +954,7 @@
     const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
     const dayList = ([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => {
       const bits = [e.loc && !/^main church$/i.test(e.loc) ? esc(e.loc) : "", e.note ? esc(e.note) : ""].filter(Boolean).join(" · ");
-      return `<li><span class="t">${clock(e.start)}</span><span>${langTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}</span></li>`;
+      return `<li${isOff(e) ? ` class="off"` : ""}><span class="t">${clock(e.start)}</span><span>${langTag(e)}${isOff(e) ? `<span class="tag">Cancelled by the parish</span>` : ""}${bits ? `<span class="x">${bits}</span>` : ""}</span></li>`;
     }).join("")}</ul>`;
     const all = [...days];
     const soon = all.slice(0, 2), rest = all.slice(2);

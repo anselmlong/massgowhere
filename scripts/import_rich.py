@@ -32,11 +32,17 @@ def spaced(s):
     return " ".join(w if re.search(r"https?:|www\.|@|\.[a-z]{2,}/", w) else SPACE.sub(r"\1 \2", w) for w in s.split(" "))
 
 
+# sentences that describe the read rather than the parish ("... four days old at capture", "No separate ... hours found")
+LOGNOTE = re.compile(r"[^.;]*\b(at capture|not printed on poster|hours found|Separate adoration-room hours not stated)\b[^.;]*[.;]?\s*", re.I)
+
+
 def item(o, *keys):
     """{text, ..., url} with the source kept only when it is a public link; None when there is no text."""
     if not o or not (o.get("text") or o.get("title")):
         return None
-    out = {k: o[k] if k in ("date", "time", "action") else spaced(o[k]) for k in keys if o.get(k)}
+    out = {k: o[k] if k in ("date", "time", "action") else spaced(LOGNOTE.sub("", o[k]).strip()) for k in keys if o.get(k)}
+    if not any(out.get(k) for k in ("text", "title", "name")):
+        return None
     if url(o.get("source")):
         out["url"] = o["source"]
     return out
