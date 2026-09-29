@@ -11,3 +11,5 @@ bot/state.json
 node_modules/
 data/allsched.raw.json
 data/parishes/_report.json
+bot/stats.json
+bot/stats.json.tmp

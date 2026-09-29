@@ -244,6 +244,12 @@
   }
   const go = (hash) => { location.hash = hash; };
   window.addEventListener("hashchange", route);
+  // screens are #/ routes, which Vercel Analytics can't see on its own: report each one as a page view,
+  // by route name only (never the query string, which holds coordinates)
+  window.addEventListener("hashchange", () => {
+    const path = location.hash.replace(/^#/, "").split("?")[0].replace(/^\/church\/\d+/, "/church/[id]") || "/";
+    try { window.va && window.va("pageview", { route: path, path }); } catch { /* analytics is optional */ }
+  });
 
   // ---------- bottom sheets (place, time, travel) ----------
   const sheetRoot = document.createElement("div");
