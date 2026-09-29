@@ -40,6 +40,290 @@
   "text": "Only the 08:30 Mass is celebrated on public holidays.",
   "url": "https://bsc.org.sg/"
  },
+ "rules": [
+  {
+   "d": 1,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "19:30",
+   "weeks": [
+    3
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Mandarin",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "13:00",
+   "weeks": [
+    -1
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Bahasa Indonesia",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "15:15",
+   "weeks": [],
+   "except": [
+    3
+   ],
+   "type": "Mass",
+   "lang": "Tagalog",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "15:15",
+   "weeks": [
+    3
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "22:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "First Friday vigil, 22:00–05:00; second Mass at 04:30 next morning."
+  },
+  {
+   "d": 6,
+   "t": "21:30",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": "First Saturday vigil, 21:00–05:00."
+  }
+ ],
  "dated": [
   {
    "date": "2026-10-04",

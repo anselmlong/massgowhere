@@ -36,6 +36,192 @@
   "text": "Monday–Friday public holidays: English 09:00; Tamil 10:00. Office closed; main entrance gates close at 17:00.",
   "url": "https://ourladyoflourdes.sg/"
  },
+ "rules": [
+  {
+   "d": 1,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Effective 3 October 2026; replaces 17:00/18:15/19:30."
+  },
+  {
+   "d": 6,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Effective 3 October 2026; replaces 17:00/18:15/19:30."
+  },
+  {
+   "d": 0,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Effective weekend of 3 October 2026; replaces 08:00/11:00/12:30."
+  },
+  {
+   "d": 0,
+   "t": "11:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Effective weekend of 3 October 2026; replaces 08:00/11:00/12:30."
+  },
+  {
+   "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "15:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Malayalam",
+   "loc": "",
+   "note": "Listed in bulletin; omitted from new weekend English/Tamil change poster. Confirm continuation."
+  },
+  {
+   "d": 0,
+   "t": "15:00",
+   "weeks": [
+    2
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Bahasa Indonesia",
+   "loc": "",
+   "note": "Printed as Bahasa Indonesia; omitted from change poster. Confirm continuation."
+  }
+ ],
  "events": [
   {
    "date": "2026-10-02",

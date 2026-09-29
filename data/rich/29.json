@@ -39,6 +39,108 @@
   "text": "Weekday public holiday Mass 08:00.",
   "url": "https://www.stteresa.sg/mass-reconciliation"
  },
+ "rules": [
+  {
+   "d": 1,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "10:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "12:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  }
+ ],
  "dated": [
   {
    "date": "2026-09-30",

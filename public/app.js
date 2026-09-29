@@ -933,10 +933,26 @@
     const evs = S.expandParish(String(id), d, now, 7);
     // a Mass the parish's bulletin or website says is off that day: kept in the list (times stay myCatholicSG's), marked
     const hm = (ms) => new Date(ms).toLocaleTimeString("en-GB", { ...TZ, hour: "2-digit", minute: "2-digit" });
-    const offs = new Set((info?.dated || []).filter((x) => x.action === "cancel").map((x) => `${x.date} ${x.time}`));
-    const isOff = (e) => offs.has(`${dayKey(e.start)} ${hm(e.start)}`);
+    // (only a reviewed read may strike one off; the automatic bulletin read is listed under "Changes" instead)
+    const key = (e) => `${dayKey(e.start)} ${hm(e.start)}`;
+    const offs = new Set((info?.dated || []).filter((x) => x.action === "cancel" && x.reviewed).map((x) => `${x.date} ${x.time}`));
+    const isOff = (e) => offs.has(key(e));
+    // The parish website's own regular Masses next to myCatholicSG's: a time on both shows once; a time on only one is
+    // marked with where it comes from (tap for details). Answers and "Next Mass" still use myCatholicSG only.
+    const siteEvs = info?.rules?.length ? S.expandParish(String(id), { rules: { [id]: info.rules }, dated: {} }, now, 7) : [];
+    const lang = (l) => (l || "English").toLowerCase().replace(/^bahasa /, "").replace(/^indonesian$/, "indonesia");
+    const siteBy = new Map(siteEvs.map((e) => [key(e), e]));
+    const listEvs = !siteEvs.length ? evs : [...evs.map((e) => {
+      const s = siteBy.get(key(e));
+      siteBy.delete(key(e));
+      return { ...e, src: s ? "both" : "mc", siteLang: s && lang(s.lang) !== lang(e.lang) ? s.lang : "" };
+    }), ...[...siteBy.values()].map((e) => ({ ...e, src: "site" }))].sort((a, b) => a.start - b.start);
+    const siteAt = info?.readAt?.[info?.from?.rules];
+    const srcNote = { site: `On the parish website (read ${siteAt ? fmtDate(siteAt) : "recently"}), not on myCatholicSG. Check with the parish before you go.`,
+      mc: `On myCatholicSG (updated ${fmtDate(d.asOf)}), not on the parish website. Check with the parish before you go.` };
+    const srcTag = (e) => (e.src === "site" || e.src === "mc" ? `<button class="src" type="button" aria-expanded="false">${e.src === "site" ? "Parish website" : "myCatholicSG"}</button><span class="x src-note" hidden>${srcNote[e.src]}</span>` : "");
     const days = new Map();
-    for (const e of evs) {
+    for (const e of listEvs) {
       const k = dayLabel(e.start);
       if (!days.has(k)) days.set(k, []);
       days.get(k).push(e);
@@ -954,7 +970,7 @@
     const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
     const dayList = ([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => {
       const bits = [e.loc && !/^main church$/i.test(e.loc) ? esc(e.loc) : "", e.note ? esc(e.note) : ""].filter(Boolean).join(" · ");
-      return `<li${isOff(e) ? ` class="off"` : ""}><span class="t">${clock(e.start)}</span><span>${langTag(e)}${isOff(e) ? `<span class="tag">Cancelled by the parish</span>` : ""}${bits ? `<span class="x">${bits}</span>` : ""}</span></li>`;
+      return `<li${isOff(e) ? ` class="off"` : ""}><span class="t">${clock(e.start)}</span><span>${langTag(e)}${isOff(e) ? `<span class="tag">Cancelled by the parish</span>` : ""}${srcTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}${e.siteLang ? `<span class="x">Parish website says ${esc(e.siteLang)}</span>` : ""}</span></li>`;
     }).join("")}</ul>`;
     const all = [...days];
     const soon = all.slice(0, 2), rest = all.slice(2);
@@ -979,7 +995,7 @@
       const bits = [x.location, x.language].filter(Boolean).map(esc).join(" · ");
       return `<li><span class="t">${x.time ? clock(at(x)) : ""}</span><span>${esc(dayLabel(at(x)))}${x.action === "cancel" ? `<span class="tag">Cancelled</span>` : ""}
         <span class="x">${esc(x.title)}${bits ? ` · ${bits}` : ""}</span></span></li>`;
-    }).join("")}</ul><p class="x">From the parish’s bulletin and website. The times above don’t include these yet.</p></div>` : "";
+    }).join("")}</ul><p class="x">${changes.every((x) => x.reviewed) ? "From the parish’s bulletin and website." : `Read automatically from the parish’s ${info.bulletin ? `<a href="${esc(info.bulletin.url)}" target="_blank" rel="noopener">latest bulletin</a>` : "bulletin"} and website.`} Check with the parish before you go.</p></div>` : "";
     const events = ahead(info?.events);
     const eventLi = (x) => `<li><span class="t">${esc(dnum(at(x)))}</span><span><strong>${esc(x.title)}</strong>
       <span class="x">${[x.time ? `${wk(at(x))} ${clock(at(x))}` : wk(at(x)), x.text].filter(Boolean).map(esc).join(" · ")}${x.url ? ` <a href="${esc(x.url)}" target="_blank" rel="noopener">More</a>` : ""}</span></span></li>`;
@@ -1002,7 +1018,8 @@
         ["Online", info.social && info.social.map((x) => linkOut(x, x.platform)).join(" · ")],
         ["Also", lines(info.other)]])),
     ].join("") : "";
-    const infoSource = info ? `<p class="x">From the <a href="${esc(info.url || p.website || "")}" target="_blank" rel="noopener">parish website</a>${info.readAt ? `, read ${fmtDate(info.readAt)}` : ""}. Parishes change things; check with them before you go.</p>` : "";
+    const readAt = info && Object.values(info.readAt || {}).filter(Boolean).sort().pop();
+    const infoSource = info ? `<p class="x">From the <a href="${esc(info.url || p.website || "")}" target="_blank" rel="noopener">parish website</a>${info.bulletin ? " and bulletin" : ""}${readAt ? `, read ${fmtDate(readAt)}` : ""}. Parishes change things; check with them before you go.</p>` : "";
     const services = infoHTML + eventsHTML + SERVICES.filter(([type]) => !covered.has(type)).map(([type, title]) => {
       const es = S.expandParish(String(id), d, now, 7, [type]);
       if (!es.length) return "";
@@ -1033,8 +1050,14 @@
         ${services ? `<div class="week services">${services}</div>` : ""}
         ${notes.length ? `<ul class="notes">${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
         ${all.some(([, es]) => S.specialDay(es[0].start, d)) ? `<p class="notice">${esc(all.map(([, es]) => S.specialDay(es[0].start, d)).filter(Boolean)[0])} is coming up: times that day may differ. Please check with the parish.</p>` : ""}
-        <p class="source">${sourceLine(p)}${!p.siteCheck && p.website ? ` Parish website: <a href="${esc(p.website)}" target="_blank" rel="noopener">${esc(p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>.` : ""}</p>
+        <p class="source">${siteEvs.length ? `Times from myCatholicSG and the parish website; a time only one of them lists is marked. ` : sourceLine(p)}${!p.siteCheck && p.website ? ` Parish website: <a href="${esc(p.website)}" target="_blank" rel="noopener">${esc(p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>.` : ""}</p>
       </section>`;
+    // a source marker opens its note in place (a hover tooltip never shows on a phone)
+    view.querySelectorAll(".week button.src").forEach((b) => b.addEventListener("click", () => {
+      const open = b.getAttribute("aria-expanded") !== "true";
+      b.setAttribute("aria-expanded", String(open));
+      b.nextElementSibling.hidden = !open;
+    }));
   }
 
   // ---------- a Mass on the way (#/way) ----------

@@ -24,6 +24,180 @@
    "text": "Mini exhibition on St Francis of Assisi in church foyer, announced for September–October 2026."
   }
  ],
+ "rules": [
+  {
+   "d": 1,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "15:00",
+   "weeks": [
+    5
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Bahasa Indonesia",
+   "loc": "",
+   "note": ""
+  }
+ ],
  "events": [
   {
    "date": "2026-10-05",

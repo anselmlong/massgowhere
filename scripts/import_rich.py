@@ -2,8 +2,9 @@
 
 That read reviewed each parish's website, bulletins and posters by hand-checked browser capture. This keeps only what a
 visitor would use (Adoration, Confession, devotions, office and church hours, public-holiday Masses, dated Mass changes,
-events, getting there, sacraments, ministries, contacts, livestream, bulletin). It drops the Mass rules (myCatholicSG stays
-the source of truth), the reviewer notes, and links to the read's local evidence files, which are not published.
+events, getting there, sacraments, ministries, contacts, livestream, bulletin) and the website's regular Mass times, which
+the church page shows next to myCatholicSG's (never instead of them). It drops the reviewer notes and links to the read's
+local evidence files, which are not published.
 
 Usage: python3 scripts/import_rich.py [path to massgowhere-rich]   (default ~/massgowhere-rich)
 No network access. build_data.py reads data/rich/ and writes public/parish/<id>.json for the church page.
@@ -33,7 +34,7 @@ def spaced(s):
 
 
 # sentences that describe the read rather than the parish ("... four days old at capture", "No separate ... hours found")
-LOGNOTE = re.compile(r"[^.;]*\b(at capture|not printed on poster|hours found|Separate adoration-room hours not stated)\b[^.;]*[.;]?\s*", re.I)
+LOGNOTE = re.compile(r"[^.;]*\b(at capture|not printed on poster|hours found|Separate adoration-room hours not stated|reviewer note|cannot (always|safely) be represented|recurrence)\b[^.;]*[.;]?\s*", re.I)
 
 
 def item(o, *keys):
@@ -52,6 +53,16 @@ def items(lst, *keys):
     return [x for x in (item(o, *keys) for o in lst or []) if x]
 
 
+DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+
+def rules(regular):
+    """The website's regular Masses in public/schedule.js's rule format."""
+    return [{"d": DAYS.index(r["day"]), "t": r["time"], "weeks": r.get("weeks") or [], "except": r.get("except_weeks") or [],
+             "type": "Mass", "lang": r.get("language") or "", "loc": spaced(r.get("location") or ""), "note": spaced(LOGNOTE.sub("", r.get("note") or "").strip())}
+            for r in regular or [] if r.get("day") in DAYS and re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", r.get("time") or "")]
+
+
 def trim(d):
     info, extra, mass = d.get("info") or {}, d.get("extra") or {}, d.get("mass") or {}
     c = extra.get("contacts") or {}
@@ -67,6 +78,7 @@ def trim(d):
         "good_to_know": items(info.get("good_to_know"), "text"),
         "church_hours": item(extra.get("church_opening_hours"), "text"),
         "public_holidays": item(mass.get("public_holidays"), "text"),
+        "rules": rules(mass.get("regular")),
         "dated": items(mass.get("dated"), "date", "time", "title", "action", "language", "location"),
         "events": items(extra.get("upcoming_events"), "date", "time", "title", "text"),
         "getting_there": items(extra.get("parking_and_access"), "text"),
@@ -95,7 +107,7 @@ def main():
             sys.exit(f"{f}: id {d['id']} is {geo.get(d['id'])!r} here, {d['name']!r} there")
         out = trim(d)
         path = os.path.join(dest, f"{d['id']}.json")
-        if len(out) <= 2:  # nothing beyond id and readAt (blocked, or no website)
+        if not set(out) - {"id", "readAt", "rules"}:  # nothing beyond id and readAt (blocked, or no website)
             if os.path.exists(path):
                 os.remove(path)
             continue

@@ -41,25 +41,44 @@ def site_check(pid, mc_rules):
 
 
 INFO_FIELDS = ("adoration", "confession", "devotions", "office_hours", "good_to_know")
+RICH_FRESH_DAYS = 45  # after this the monthly read (website + latest bulletin) wins over the Sept 2026 rich read
 
 
-def site_info(pid, website):
-    """Everything the parish's own website says beyond Mass times, for the church page. The rich read (hand-reviewed,
-    with sources) wins field by field; the monthly LLM read fills what it lacks. None when neither has anything."""
+def site_info(pid, website, today):
+    """Everything the parish's own website says beyond myCatholicSG, for the church page: the rich read (hand-reviewed)
+    and the monthly LLM read (website + latest bulletin), field by field. While the rich read is under RICH_FRESH_DAYS
+    old it wins; after that the monthly read wins and the rich read only fills gaps. None when neither has anything.
+
+    Dated Mass changes carry "reviewed": only reviewed cancellations may strike a Mass off the week list."""
     rich = load(f"data/rich/{pid}.json") or {}
     site = load(f"data/parishes/{pid}.json") or {}
     urls = site.get("source_urls") or []
-    monthly = site.get("info") if urls else None
-    out = {k: v for k, v in rich.items() if k not in ("id", "readAt")}
-    for k in INFO_FIELDS:
-        v = (monthly or {}).get(k)
-        if k not in out and v:
-            out[k] = [{"text": x} for x in v] if isinstance(v, list) else {"text": v}
+    m_at = (site.get("fetched_at") or "")[:10] if urls else ""
+    r_at = rich.get("readAt", "")
+    wrap = lambda v: [{"text": x} for x in v] if isinstance(v, list) else {"text": v}
+    monthly = {k: wrap(v) for k, v in ((site.get("info") or {}) if urls else {}).items() if k in INFO_FIELDS and v}
+    if urls and site.get("rules"):
+        monthly["rules"] = [r for r in site["rules"] if r.get("type") == "Mass"]
+    if urls and site.get("dated"):
+        monthly["dated"] = [{"date": d["date"], "time": d["time"], "title": d["title"], "action": d["action"],
+                             "language": d.get("language", ""), "location": d.get("location", "")}
+                            for d in site["dated"] if d.get("type", "Mass") == "Mass"] or None
+    if urls and site.get("events"):
+        monthly["events"] = site["events"]
+    if urls and site.get("bulletin"):
+        monthly["bulletin"] = site["bulletin"]
+    rich = {k: v for k, v in rich.items() if k not in ("id", "readAt") and v}
+    rich["dated"] = [{**d, "reviewed": True} for d in rich.get("dated", [])] or None
+    monthly = {k: v for k, v in monthly.items() if v}
+    rich = {k: v for k, v in rich.items() if v}
+    fresh = r_at and (today - datetime.fromisoformat(r_at).date()).days <= RICH_FRESH_DAYS
+    first, second = (rich, monthly) if fresh else (monthly, rich)
+    out = {**second, **first}
     if not out:
         return None
-    # when it was read and where to check it: the monthly read if it filled anything, else the rich read
-    used_monthly = any(k not in rich and (monthly or {}).get(k) for k in INFO_FIELDS)
-    out["readAt"] = site["fetched_at"][:10] if used_monthly else rich.get("readAt", "")
+    # where each part came from, for the page's source notes
+    out["from"] = {k: ("reviewed" if k in rich and out[k] is rich[k] else "monthly") for k in out}
+    out["readAt"] = {"reviewed": r_at, "monthly": m_at}
     out["url"] = website or (urls[0] if urls else "")
     return out
 
@@ -78,7 +97,7 @@ def main():
             "source": {"kind": "myCatholicSG", "url": f"https://mycatholic.sg/parish/{p.get('link', '')}", "fetchedAt": mc["asOf"]},
             "siteCheck": site_check(pid, mc["rules"].get(pid, [])),
         })
-        info = site_info(pid, p.get("website", ""))
+        info = site_info(pid, p.get("website", ""), datetime.now(SGT).date())
         if info:
             infos[pid] = info
     out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),

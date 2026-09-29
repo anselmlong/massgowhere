@@ -31,6 +31,152 @@
   "text": "08:00 Mass in Chapel.",
   "url": "https://www.churchofthesacredheart.sg/services"
  },
+ "rules": [
+  {
+   "d": 1,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Church",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Church",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "10:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "12:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Mandarin",
+   "loc": "",
+   "note": "Bilingual English/Mandarin on second Sunday; current bulletin also specifies 25 October 2026."
+  },
+  {
+   "d": 0,
+   "t": "16:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tagalog",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "19:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Church",
+   "note": "Followed by Holy Hour."
+  }
+ ],
  "dated": [
   {
    "date": "2026-11-02",

@@ -568,3 +568,6 @@ html.previewing .shell { padding-bottom: 96px; }
 .info dd { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.45; }
 @media (max-width: 420px) { .info { grid-template-columns: 1fr; gap: 2px; } .info dd { margin-bottom: 10px; } }
 .week li.off .t { text-decoration: line-through; color: var(--ink-3); }
+.week button.src { font: inherit; font-size: 12px; font-weight: 600; padding: 1px 8px; margin-left: 6px; border: 1px dashed var(--ink-3); border-radius: 999px; background: none; color: var(--ink-2); cursor: pointer; vertical-align: 1px; min-height: 24px; }
+.week button.src[aria-expanded="true"] { background: var(--field); border-style: solid; }
+.week .src-note { display: block; }

@@ -33,6 +33,292 @@
   "text": "Usually 08:00 and 18:30 unless a Church Solemnity.",
   "url": "https://www.stmary.sg/mass"
  },
+ "rules": [
+  {
+   "d": 1,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "19:45",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "07:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Mandarin",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "13:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church, Level 1",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Sinhala",
+   "loc": "St Clare Hall, LevelB1",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "19:00",
+   "weeks": [
+    3
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Malayalam",
+   "loc": "St Clare Hall, LevelB1",
+   "note": "Syro-Malabar Qurbana"
+  },
+  {
+   "d": 0,
+   "t": "14:00",
+   "weeks": [
+    4
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Bahasa Indonesia",
+   "loc": "St Clare Hall, LevelB1",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "16:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Deaf Community Mass; check linked latest venue information. English follows page default; sign language not explicitly named."
+  }
+ ],
  "dated": [
   {
    "date": "2026-10-01",

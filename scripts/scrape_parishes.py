@@ -81,6 +81,129 @@ def fetch(url):
     return fetch_rendered(url), "rendered"
 
 
+# ---------- the latest weekly bulletin ----------
+# Deterministic: data/bulletins.json names the page that links a parish's bulletins; the newest date written in a link
+# (or its text) wins, else the first PDF. A PDF is read with pdftotext; only the reading of its text uses the LLM.
+
+MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+
+
+def link_date(s):
+    """Latest plausible date written in a link or its text: 2026-09-27, 20260927, 27 Sep 2026, 26-27-september-2026, 27sep26, 0927-2026."""
+    s, found = s.lower(), []
+    for y, m, d in re.findall(r"(?<!\d)(20\d\d)[-_/.]?(0[1-9]|1[0-2])[-_/.]?(0[1-9]|[12]\d|3[01])(?!\d)", s):
+        found.append((y, m, d))
+    for d, mon, y in re.findall(r"(?<!\d)(\d{1,2})(?:st|nd|rd|th)?[-_ ]*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?[-_ ,]*(20\d\d|\d\d)(?!\d)", s):
+        found.append((y if len(y) == 4 else "20" + y, MONTHS.index(mon) + 1, d))
+    for mon, d, y in re.findall(r"(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*[-_ ]+(?:\d{1,2}[-_ ]+)?(\d{1,2})[-_ ,]+(20\d\d)(?!\d)", s):
+        found.append((y, MONTHS.index(mon) + 1, d))
+    for m, d, y in re.findall(r"(?<!\d)(0[1-9]|1[0-2])([0-2]\d|3[01])[-_](20\d\d)(?!\d)", s):
+        found.append((y, m, d))
+    latest = dt.datetime.now(SGT).date() + dt.timedelta(days=10)
+    out = []
+    for y, m, d in found:
+        try:
+            day = dt.date(int(y), int(m), int(d))
+        except ValueError:
+            continue
+        if day <= latest:
+            out.append(day)
+    return max(out) if out else None
+
+
+def fetch_html(url, rendered=False):
+    try:
+        if rendered:
+            raise urllib.error.HTTPError(url, 0, "rendered", None, None)
+        r = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25, context=ssl.create_default_context())
+        html = r.read().decode(r.headers.get_content_charset() or "utf-8", "replace")
+        if len(re.findall(r"(?i)<a\b", html)) >= 5:
+            return html
+    except urllib.error.HTTPError:
+        pass
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        b = p.chromium.launch(args=["--disable-dev-shm-usage"])
+        try:
+            pg = b.new_page(user_agent=UA["User-Agent"])
+            pg.goto(url, wait_until="domcontentloaded", timeout=30000)
+            pg.wait_for_timeout(3000)
+            return pg.content()
+        finally:
+            b.close()
+
+
+def is_pdf(u):
+    return u.lower().split("?")[0].endswith(".pdf") or "drive.google.com/file/d/" in u
+
+
+def pick_bulletin(url, html):
+    """(link, date) of the newest bulletin linked from a page; date may be None. An embedded Google Drive folder
+    (plain HTML at drive.google.com/embeddedfolderview) is read as part of the page."""
+    from urllib.parse import urljoin
+
+    for fid in re.findall(r"drive\.google\.com/embeddedfolderview\?id=([\w-]+)", html)[:2]:
+        try:
+            html += fetch_html(f"https://drive.google.com/embeddedfolderview?id={fid}")
+        except Exception:  # noqa: BLE001 - the page's own links still count
+            pass
+    from urllib.parse import quote
+
+    links = [(quote(urljoin(url, htmllib.unescape(h)), safe=":/?&=%#+,;@~"), page_text(t)) for h, t in re.findall(r"""(?is)<a\b[^>]*href=["']([^"'#]+)["'][^>]*>(.*?)</a>""", html)]
+    cands = [(h, t) for h, t in links if h.startswith("http") and h.rstrip("/") != url.rstrip("/")
+             and (is_pdf(h) or re.search(r"bulletin|newsletter|leaven|voice", h + " " + t, re.I))
+             and not re.search(r"/(category|tag|page)/|facebook|instagram|youtube|mailto", h, re.I)]
+    named = [(h, t) for h, t in cands if re.search(r"bulletin|newsletter|leaven|voice", h + " " + t, re.I)]
+    # a dated link wins (newest first); else an undated PDF that calls itself a bulletin. Never guess from other PDFs
+    # (privacy policies, reflections, forms).
+    dated = sorted(((link_date(h + " " + t) or dt.date.min, -i, h) for i, (h, t) in enumerate(named or cands)), reverse=True)
+    if dated and dated[0][0] > dt.date.min:
+        return dated[0][2], dated[0][0]
+    pdf = next((h for h, _ in named if is_pdf(h)), None)
+    return (pdf, None) if pdf else (None, None)
+
+
+def pdf_text(u):
+    import subprocess
+    import tempfile
+
+    m = re.search(r"drive\.google\.com/file/d/([\w-]+)", u)
+    if m:
+        u = f"https://drive.google.com/uc?export=download&id={m.group(1)}"
+    u = u.replace("://www.dropbox.com/", "://dl.dropboxusercontent.com/")  # www serves a browser an HTML preview
+    data = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=90, context=ssl.create_default_context()).read()
+    if not data.startswith(b"%PDF"):
+        raise ValueError("not a PDF")
+    with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
+        f.write(data)
+        f.flush()
+        return subprocess.run(["pdftotext", f.name, "-"], capture_output=True, text=True, timeout=60, check=True).stdout
+
+
+def latest_bulletin(url):
+    """{url, date, text} of the newest bulletin linked from url. A bulletin that is a web page with a PDF on it reads the PDF."""
+    link, date = pick_bulletin(url, fetch_html(url))
+    if not link:  # links added by the page's scripts
+        link, date = pick_bulletin(url, fetch_html(url, rendered=True))
+    if not link:
+        raise ValueError("no bulletin link found")
+    if not is_pdf(link):
+        html = fetch_html(link)
+        pdf = next((h for h, _ in [(u, "") for u in re.findall(r"""href=["']([^"']+\.pdf)["']""", html, re.I)]), None)
+        if pdf:
+            from urllib.parse import urljoin
+
+            link, date = urljoin(link, pdf), date or link_date(pdf)
+        else:
+            text = page_text(html)
+            return {"url": link, "date": (date or "") and date.isoformat(), "text": text}
+    text = pdf_text(link)
+    if len(text.strip()) < 200:
+        raise ValueError("bulletin has no text (an image?)")
+    return {"url": link, "date": (date or "") and date.isoformat(), "text": text}
+
+
 # ---------- extraction ----------
 
 ENTRY = {
@@ -133,10 +256,22 @@ INFO = {
     },
 }
 
+EVENT = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["date", "time", "title", "text"],
+    "properties": {
+        "date": {"type": "string", "description": "YYYY-MM-DD"},
+        "time": {"type": "string", "description": "24-hour HH:MM start, '' if not stated"},
+        "title": {"type": "string"},
+        "text": {"type": "string", "description": "one or two short sentences: where, who it is for, how to sign up"},
+    },
+}
+
 SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["has_schedule", "regular", "dated", "no_weekday_mass_on_public_holidays", "public_holiday_masses", "notes", "info"],
+    "required": ["has_schedule", "regular", "dated", "no_weekday_mass_on_public_holidays", "public_holiday_masses", "notes", "info", "events"],
     "properties": {
         "has_schedule": {"type": "boolean", "description": "true only if the page states this parish's regular Mass times"},
         "regular": {"type": "array", "items": ENTRY},
@@ -145,6 +280,8 @@ SCHEMA = {
         "public_holiday_masses": {"type": "array", "items": {"type": "string"},
                                   "description": "HH:MM times of Masses held on public holidays, if the page says so; [] otherwise"},
         "info": INFO,
+        "events": {"type": "array", "items": EVENT,
+                   "description": "parish events a visitor could go to, dated today or later (max 12): talks, retreats, feasts, courses"},
         "notes": {"type": "array", "items": {"type": "string"},
                   "description": "short schedule caveats worth showing a visitor (max 3)"},
     },
@@ -165,6 +302,8 @@ Rules:
 - Include Confession, Adoration and devotions (Novena, Rosary, Divine Mercy...) only when a specific start time is given. Skip office hours, columbarium hours, livestream-only broadcasts, and events that are not services.
 - "dated": one-off services or cancellations with an explicit date on or after today (e.g. feast days, Christmas, "no 7am Mass on 3 Oct"). Skip past dates.
 - info: what else a visitor would want, in short plain sentences, only as the page states it. An Adoration room or chapel that is open for hours is described in info.adoration with its opening hours; a "Holy Hour" is a set time of prayer, so say "Holy Hour" and its time, not "Adoration at" that time. Leave a field '' (or []) when the page doesn't say.
+- The text may end with the parish's latest weekly bulletin (marked [bulletin ...]). It is the most current source: use it for "dated" (one-off Masses, changed or cancelled Masses) and "events". Regular Mass times come from the website pages unless the bulletin states a new regular schedule.
+- events: talks, retreats, courses, feasts, gatherings open to parishioners, dated today or later; not Masses (those go in "dated"), not appeals, not prayers.
 - notes: at most 3 short caveats a visitor needs, e.g. "No weekday Mass on public holidays". Never describe the page itself, never restate times or languages already in the entries, never say what is missing. Empty is fine.
 
 Page text:
@@ -211,7 +350,7 @@ def _extract(name, url, text, model):
         "model": model,
         "temperature": 0,
         "messages": [{"role": "user", "content": PROMPT.format(
-            today=dt.datetime.now(SGT).date().isoformat(), name=name, url=url, text=text[:30000])}],
+            today=dt.datetime.now(SGT).date().isoformat(), name=name, url=url, text=text[:52000])}],
         "response_format": {"type": "json_schema", "json_schema": {"name": "parish_schedule", "strict": True, "schema": SCHEMA}},
         "provider": {"require_parameters": True},
     }
@@ -249,6 +388,15 @@ def validate(res):
     return res, problems
 
 
+def clean_events(events):
+    today = dt.datetime.now(SGT).date().isoformat()
+    one = lambda v, n: re.sub(r"\s+", " ", str(v or "")).strip()[:n]
+    out = [{"date": e["date"], "time": e["time"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", e.get("time") or "") else "",
+            "title": one(e.get("title"), 120), "text": one(e.get("text"), 300)}
+           for e in events or [] if re.fullmatch(r"\d{4}-\d\d-\d\d", e.get("date") or "") and e["date"] >= today and e.get("title")]
+    return sorted(out, key=lambda e: (e["date"], e["time"]))[:12]
+
+
 def clean_info(info):
     """Trim the free-text parish info: short strings only, capped lists, empties dropped."""
     info = info or {}
@@ -258,6 +406,40 @@ def clean_info(info):
            "devotions": many(info.get("devotions"), 6), "office_hours": one(info.get("office_hours")),
            "good_to_know": many(info.get("good_to_know"), 4)}
     return {k: v for k, v in out.items() if v}
+
+
+def grounded(e, text, mc_rules, holidays):
+    """Keep a one-off change only when the page or bulletin says it: its date and start time are written within a few
+    hundred characters of each other, within the next 45 days; a cancellation must hit a myCatholicSG slot and say
+    no/cancelled/moved nearby; a "public holiday" Mass must fall on one. Models invent these otherwise."""
+    try:
+        day = dt.date.fromisoformat(e["date"])
+    except ValueError:
+        return False
+    today = dt.datetime.now(SGT).date()
+    if not today <= day <= today + dt.timedelta(days=45):
+        return False
+    if re.search(r"public holiday", e.get("title", ""), re.I) and e["date"] not in holidays:
+        return False
+    mon = MONTHS[day.month - 1]
+    dates = [rf"\b0?{day.day}(st|nd|rd|th)?\s*(of\s*)?{mon}", rf"\b{mon}[a-z]*\.?\s*0?{day.day}\b", rf"\b0?{day.day}/0?{day.month}\b"]
+    h, m = map(int, e["time"].split(":"))
+    h12 = h % 12 or 12
+    times = [rf"\b{h:02d}[:.]?{m:02d}\b", rf"\b{h}[:.]{m:02d}\b", rf"\b{h12}[:.]{m:02d}\s*[ap]\.?m", rf"\b{h12}\s*[ap]\.?m" if m == 0 else r"(?!)"]
+    low = text.lower()
+    near = False
+    for dm in re.finditer("|".join(dates), low):
+        window = low[max(0, dm.start() - 300):dm.end() + 300]
+        if any(re.search(t, window) for t in times):
+            if e["action"] != "cancel" or re.search(r"\bno\b|\bnot\b|cancel|replac|moved|instead|suspend", window):
+                near = True
+                break
+    if not near:
+        return False
+    if e["action"] == "cancel":
+        wd = (day.weekday() + 1) % 7  # myCatholicSG: 0 = Sunday
+        return any(r["d"] == wd and r["t"] == e["time"] and r.get("type", "Mass") == e.get("type", "Mass") for r in mc_rules)
+    return True
 
 
 def write_json(path, obj):
@@ -330,6 +512,7 @@ def vote(results, mc_keys):
         "public_holiday_masses": sorted(set.intersection(*[set(r["public_holiday_masses"]) for r in results.values()])),
         "notes": first["notes"][:3],
         "info": clean_info(first.get("info")),
+        "events": clean_events(first.get("events")),
     }, disputes
 
 
@@ -356,13 +539,20 @@ def run_one(pid, urls, parish, mc, args):
     for u in urls:
         try:
             t, mode = fetch(u)
-            texts.append(f"[{u}]\n{t}")
+            texts.append(f"[{u}]\n{t[:30000 // len(urls)]}")
             how.append(mode)
         except Exception as e:  # noqa: BLE001 - any fetch failure just means "keep previous"
             rec["warnings"].append(f"fetch failed {u}: {type(e).__name__} {str(e)[:80]}")
     if not texts:
         rec["status"] = "kept-previous" if prev else "failed"
         return rec
+    bulletin = None
+    if args.bulletins.get(pid):
+        try:
+            bulletin = latest_bulletin(args.bulletins[pid])
+            texts.append(f"[bulletin {bulletin['url']} dated {bulletin['date'] or 'unknown'}]\n{bulletin['text'][:20000]}")
+        except Exception as e:  # noqa: BLE001 - the website alone still gives the schedule
+            rec["warnings"].append(f"bulletin: {type(e).__name__} {str(e)[:80]}")
 
     results = {}
     with cf.ThreadPoolExecutor(len(args.models)) as ex:
@@ -388,6 +578,11 @@ def run_one(pid, urls, parish, mc, args):
 
     mc_keys = mycatholic_keys(mc, pid)
     merged, disputes = vote(results, mc_keys)
+    source_text = "\n\n".join(texts)
+    kept = [e for e in merged["dated"] if grounded(e, source_text, mc.get("rules", {}).get(pid, []), args.holidays)]
+    if len(kept) < len(merged["dated"]):
+        rec["warnings"].append(f"dropped {len(merged['dated']) - len(kept)} dated item(s) the text does not state")
+    merged["dated"] = kept
     site_keys = {slot_key(e) for e in merged["regular"]}
     mc_mass = {k for k in mc_keys if k[0] == "Mass"}
     site_mass = {k for k in site_keys if k[0] == "Mass"}
@@ -397,6 +592,8 @@ def run_one(pid, urls, parish, mc, args):
            "rules": to_rules(merged["regular"]), "dated": merged["dated"],
            "no_weekday_mass_on_public_holidays": merged["no_weekday_mass_on_public_holidays"],
            "public_holiday_masses": merged["public_holiday_masses"], "notes": merged["notes"], "info": merged.get("info", {}),
+           "events": merged.get("events", []),
+           "bulletin": {"url": bulletin["url"], "date": bulletin["date"]} if bulletin else None,
            "disputes": disputes,
            "vs_mycatholic": diff}
     rec["disputes"] = len(disputes)
@@ -429,6 +626,10 @@ def main():
     mc_path = os.path.join(ROOT, "data", "mycatholic.json")
     mc = json.load(open(mc_path)) if os.path.exists(mc_path) else {}
 
+    hpath = os.path.join(ROOT, "data", "holidays.json")
+    args.holidays = set(json.load(open(hpath)).get("dates", {})) if os.path.exists(hpath) else set()
+    bpath = os.path.join(ROOT, "data", "bulletins.json")
+    args.bulletins = {k: v for k, v in json.load(open(bpath)).items() if not k.startswith("_")} if os.path.exists(bpath) else {}
     sources = {k: v for k, v in json.load(open(os.path.join(ROOT, "data", "sources.json"))).items() if not k.startswith("_")}
     parishes = {str(p["id"]): p for p in json.load(open(os.path.join(ROOT, "scripts", "parishes_geo.json")))}
     ids = [i for i in (args.only.split(",") if args.only else sorted(sources, key=int)) if i in parishes and i in sources]
