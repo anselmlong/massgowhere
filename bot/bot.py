@@ -168,7 +168,7 @@ def answer(chat_id, lat, lng, place=None, msg_id=None):
         if not b:
             return ("I couldn't find a Mass you can reach in the next two days{where} {mode}. Try another way of travelling.".format(
                         where=where, mode=MODES[mode][1]),
-                    {"inline_keyboard": mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]]})
+                    mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]])
         p = b["parish"]
         about = "about " if b.get("travelSource") == "estimate" else ""
         how = "walk" if b.get("walk") else mode  # bus & MRT mode, but it's quicker on foot
