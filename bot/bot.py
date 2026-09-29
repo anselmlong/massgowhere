@@ -6,6 +6,7 @@ so the bot always says exactly what the website says.
 Run: python3 bot/bot.py      (reads TELEGRAM_BOT_TOKEN from .env; MASSGOWHERE_API overrides the site URL)
 """
 import concurrent.futures as cf
+import hashlib
 import json
 import logging
 import os
@@ -20,6 +21,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SGT = timezone(timedelta(hours=8))
 MODES = {"transit": ("Bus & MRT", "by bus & MRT", "transit"), "drive": ("Car", "by car", "driving"), "walk": ("Walk", "on foot", "walking")}
 STATE_FILE = os.path.join(ROOT, "bot", "state.json")  # chat id -> preferred mode (no locations are stored)
+STATS_FILE = os.path.join(ROOT, "bot", "stats.json")  # daily counts; people as salted hashes, never names or locations
 
 logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s", level=logging.INFO)
 logging.getLogger("urllib3").setLevel(logging.WARNING)
@@ -79,6 +81,86 @@ def set_mode(chat_id, mode):
         with open(tmp, "w") as f:
             json.dump(STATE, f)
         os.replace(tmp, STATE_FILE)
+
+
+# ---------- usage stats (for the owner's /stats) ----------
+# Per SGT day: answers given, how people asked (location / typed place / re-run after a mode change),
+# travel mode, and the set of people who asked, as salted hashes of their chat id.
+
+ADMIN_IDS = {x.strip() for x in os.environ.get("ADMIN_CHAT_IDS", "495290408").split(",") if x.strip()}
+STATS_LOCK = __import__("threading").Lock()
+
+
+def load_stats():
+    try:
+        st = json.load(open(STATS_FILE))
+    except (OSError, ValueError):
+        st = {}
+    st.setdefault("salt", os.urandom(8).hex())
+    st.setdefault("days", {})
+    return st
+
+
+STATS = load_stats()
+
+
+def sgt_day(offset=0):
+    return (datetime.now(timezone(timedelta(hours=8))) - timedelta(days=offset)).strftime("%Y-%m-%d")
+
+
+def record(chat_id, via):
+    """Count one answer. Never lets a stats problem get in the way of the answer."""
+    try:
+        who = hashlib.sha256(f"{STATS['salt']}:{chat_id}".encode()).hexdigest()[:12]
+        with STATS_LOCK:
+            d = STATS["days"].setdefault(sgt_day(), {"answers": 0, "people": [], "via": {}, "mode": {}})
+            d["answers"] += 1
+            if who not in d["people"]:
+                d["people"].append(who)
+            d["via"][via] = d["via"].get(via, 0) + 1
+            m = mode_for(chat_id)
+            d["mode"][m] = d["mode"].get(m, 0) + 1
+            tmp = STATS_FILE + ".tmp"
+            with open(tmp, "w") as f:
+                json.dump(STATS, f)
+            os.replace(tmp, STATS_FILE)
+    except Exception as e:  # noqa: BLE001
+        log.warning("stats not recorded: %s", e)
+
+
+def stats_text():
+    days = STATS["days"]
+
+    def span(n):
+        ds = [days[k] for k in (sgt_day(i) for i in range(n)) if k in days]
+        people = set().union(*[set(d["people"]) for d in ds]) if ds else set()
+        via, mode = {}, {}
+        for d in ds:
+            for k, v in d["via"].items():
+                via[k] = via.get(k, 0) + v
+            for k, v in d["mode"].items():
+                mode[k] = mode.get(k, 0) + v
+        return sum(d["answers"] for d in ds), people, via, mode
+
+    everyone = set().union(*[set(d["people"]) for d in days.values()]) if days else set()
+    week_people = span(7)[1]
+    before = set().union(*[set(d["people"]) for k, d in days.items() if k < sgt_day(6)]) if days else set()
+    lines = ["<b>MassGoWhere bot</b>"]
+    for label, n in (("Today", 1), ("Last 7 days", 7), ("Last 30 days", 30)):
+        a, p, _, _ = span(n)
+        lines.append(f"{label}: {a} searches · {len(p)} {'person' if len(p) == 1 else 'people'}")
+    lines.append(f"All time: {sum(d['answers'] for d in days.values())} searches · {len(everyone)} people")
+    lines.append(f"New this week: {len(week_people - before)}")
+    _, _, via, mode = span(30)
+    total = sum(mode.values()) or 1
+    if mode:
+        lines.append("30-day travel: " + " · ".join(f"{MODES[k][0]} {round(100 * v / total)}%" for k, v in sorted(mode.items(), key=lambda x: -x[1]) if k in MODES))
+    if via:
+        names = {"location": "shared location", "text": "typed a place", "mode": "switched mode"}
+        lines.append("30-day asked by: " + " · ".join(f"{names.get(k, k)} {v}" for k, v in sorted(via.items(), key=lambda x: -x[1])))
+    lines.append("")
+    lines.append("<i>Website visitors are in Vercel → Analytics.</i>")
+    return "\n".join(lines)
 
 
 # ---------- formatting ----------
@@ -249,6 +331,7 @@ def handle(update):
             set_mode(chat_id, data[5:])
             ack(cq, f"Travelling by {MODES[data[5:]][0]}")
             if chat_id in LAST:
+                record(chat_id, "mode")
                 answer(chat_id, *LAST[chat_id])
             else:
                 tg("sendMessage", chat_id=chat_id, text=f"Got it: {MODES[data[5:]][0]}. Now share your location or send a postal code.")
@@ -262,6 +345,7 @@ def handle(update):
     if "location" in msg:
         loc = msg["location"]
         LAST[chat_id] = (loc["latitude"], loc["longitude"], None)
+        record(chat_id, "location")
         return answer(chat_id, loc["latitude"], loc["longitude"])
     text = (msg.get("text") or "").strip()
     if not text:
@@ -269,6 +353,10 @@ def handle(update):
     if text.startswith("/start") or text.startswith("/help"):
         return tg("sendMessage", chat_id=chat_id, parse_mode="HTML", text=WELCOME.format(mode=MODES[mode_for(chat_id)][0]),
                   reply_markup=LOCATION_KB, link_preview_options={"is_disabled": True})
+    if text.startswith("/stats"):
+        if str(chat_id) not in ADMIN_IDS:  # to everyone else it's an unknown command
+            return tg("sendMessage", chat_id=chat_id, text="Share your location, or send a postal code or place name.", reply_markup=LOCATION_KB)
+        return tg("sendMessage", chat_id=chat_id, parse_mode="HTML", text=stats_text())
     if text.startswith("/mode"):
         return tg("sendMessage", chat_id=chat_id, text="How are you travelling?", reply_markup={"inline_keyboard": mode_keyboard(mode_for(chat_id))})
     if text.startswith("/"):
@@ -284,6 +372,7 @@ def handle(update):
             return tg("editMessageText", chat_id=chat_id, message_id=msg_id, text=not_found)
         return tg("sendMessage", chat_id=chat_id, text=not_found)
     LAST[chat_id] = hit
+    record(chat_id, "text")
     answer(chat_id, *hit, msg_id=msg_id)
 
 
