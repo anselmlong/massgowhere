@@ -4,7 +4,7 @@
  "source_urls": [
   "https://stmichael.catholic.sg/mass-devotions/"
  ],
- "fetched_at": "2026-09-28T02:39+08:00",
+ "fetched_at": "2026-09-29T09:47+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -345,13 +345,11 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [
-  "Public Holiday (weekday): 07:30"
- ],
+ "public_holiday_masses": [],
  "notes": [
-  "Usual weekday Masses do not apply on public holidays; only the public holiday Mass is held.",
-  "If a public holiday falls on Sunday, it is observed on the following Monday.",
-  "Liturgy of the Hours is conducted on Zoom; registration required."
+  "No regular weekday Masses on public holidays.",
+  "Public holidays on Sundays use weekend Mass times; the public holiday is observed on the following Monday.",
+  "Liturgy of the Hours is conducted on Zoom and requires registration."
  ],
  "disputes": [],
  "vs_mycatholic": {

@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.svdp.sg/"
  ],
- "fetched_at": "2026-09-28T02:40+08:00",
+ "fetched_at": "2026-09-29T09:49+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,13 +14,23 @@
  "rules": [
   {
    "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Confession"
+  },
+  {
+   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -30,7 +40,17 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Adoration"
+  },
+  {
+   "d": 0,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Confession"
   },
   {
    "d": 0,
@@ -40,7 +60,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Mass"
+  },
+  {
+   "d": 0,
+   "t": "10:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Confession"
   },
   {
    "d": 0,
@@ -50,7 +80,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -62,7 +92,17 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": ""
+   "note": "Indonesian Mass"
+  },
+  {
+   "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Confession"
   },
   {
    "d": 0,
@@ -72,7 +112,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Mass"
   },
   {
    "d": 1,
@@ -82,7 +122,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -92,7 +132,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 1,
@@ -102,7 +142,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Adoration"
   },
   {
    "d": 1,
@@ -112,7 +152,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Divine Office"
   },
   {
    "d": 1,
@@ -122,7 +162,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -132,7 +172,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 2,
@@ -142,7 +182,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -152,7 +192,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 2,
@@ -162,7 +202,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Adoration"
   },
   {
    "d": 2,
@@ -172,7 +212,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Divine Office"
   },
   {
    "d": 2,
@@ -182,7 +222,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -192,7 +232,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 3,
@@ -202,7 +242,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -212,7 +252,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 3,
@@ -222,7 +262,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Adoration"
   },
   {
    "d": 3,
@@ -232,7 +272,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Divine Office"
   },
   {
    "d": 3,
@@ -242,7 +282,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 3,
@@ -252,7 +292,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -262,7 +302,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 4,
@@ -272,7 +312,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -282,7 +322,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 4,
@@ -292,7 +332,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Adoration"
   },
   {
    "d": 4,
@@ -302,7 +342,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Divine Office"
   },
   {
    "d": 4,
@@ -312,7 +352,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -322,7 +362,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 5,
@@ -332,7 +372,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -342,7 +382,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 5,
@@ -352,7 +392,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Adoration"
   },
   {
    "d": 5,
@@ -362,7 +402,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Divine Office"
   },
   {
    "d": 5,
@@ -372,7 +412,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -382,7 +422,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 6,
@@ -392,7 +432,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -402,7 +442,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Daily Mass"
   },
   {
    "d": 6,
@@ -412,7 +452,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Adoration"
   },
   {
    "d": 6,
@@ -422,7 +462,17 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
+  },
+  {
+   "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Confession"
   },
   {
    "d": 6,
@@ -432,14 +482,15 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Adoration is closed on public holidays."
+  "Adoration is closed on public holidays.",
+  "Confession ends 10 minutes before weekend Masses."
  ],
  "disputes": [],
  "vs_mycatholic": {

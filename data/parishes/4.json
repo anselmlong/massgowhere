@@ -4,7 +4,7 @@
  "source_urls": [
   "https://new.divinemercy.sg/timings/"
  ],
- "fetched_at": "2026-09-28T02:36+08:00",
+ "fetched_at": "2026-09-29T09:39+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,7 +19,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -39,7 +39,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -49,7 +49,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -59,8 +59,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Lauds"
   },
   {
    "d": 1,
@@ -69,7 +69,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -79,8 +79,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 1,
@@ -89,7 +89,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -99,8 +99,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Lauds"
   },
   {
    "d": 2,
@@ -109,7 +109,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -119,8 +119,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 2,
@@ -129,7 +129,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -139,8 +139,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Lauds"
   },
   {
    "d": 3,
@@ -149,7 +149,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -159,8 +159,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 3,
@@ -169,7 +169,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -179,8 +179,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Lauds"
   },
   {
    "d": 4,
@@ -189,7 +189,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -199,7 +199,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": "Prayer for Priest, Religious & Vocations"
   },
   {
@@ -209,8 +209,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 4,
@@ -219,7 +219,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -229,8 +229,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Lauds"
   },
   {
    "d": 5,
@@ -239,7 +239,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -249,8 +249,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 5,
@@ -259,7 +259,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -269,7 +269,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -279,7 +279,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": "Sunset Mass"
   },
   {
@@ -291,8 +291,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "Main Church",
-   "note": ""
+   "loc": "",
+   "note": "Tagalog Mass"
   }
  ],
  "dated": [],
@@ -301,7 +301,8 @@
   "08:00"
  ],
  "notes": [
-  "Confessions are heard 20 minutes before all weekend Masses, ending 3–5 minutes before Mass."
+  "Weekday Masses do not apply on public holidays.",
+  "Some Sunday Masses may exceed an hour due to attendance, baptisms, events or solemnities."
  ],
  "disputes": [],
  "vs_mycatholic": {

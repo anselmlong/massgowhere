@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.csfa.sg/pastoral-services"
  ],
- "fetched_at": "2026-09-28T02:38+08:00",
+ "fetched_at": "2026-09-29T09:45+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -67,7 +67,13 @@
   {
    "d": 0,
    "t": "19:30",
-   "weeks": [],
+   "weeks": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
@@ -220,7 +226,13 @@
     "Mass",
     "Sunday",
     "19:30",
-    [],
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
     []
    ]
   ],

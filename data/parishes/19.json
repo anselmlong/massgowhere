@@ -4,7 +4,7 @@
  "source_urls": [
   "https://saint-anthony.org/mass-schedules-devotion-timings-singapore-mass-timing-schedule/"
  ],
- "fetched_at": "2026-09-28T02:37+08:00",
+ "fetched_at": "2026-09-29T09:44+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -94,7 +94,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Agnes Room",
+   "loc": "",
    "note": ""
   },
   {
@@ -188,13 +188,11 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [
-  "07:30"
- ],
+ "public_holiday_masses": [],
  "notes": [
-  "Weekday Mass is not held on public holidays.",
-  "No devotions on weekday public holidays except Days of Obligation.",
-  "Monthly vernacular Mass dates are per the parish bulletin."
+  "No regular weekday evening Mass on public holidays.",
+  "No devotions on public holidays that fall on weekdays except Days of Obligation.",
+  "Saturday evening ethnic-community Masses are on the eve of the specified Sunday; dates follow the parish bulletin."
  ],
  "disputes": [],
  "vs_mycatholic": {

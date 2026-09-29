@@ -4,7 +4,7 @@
  "source_urls": [
   "https://christtheking.com.sg/"
  ],
- "fetched_at": "2026-09-28T02:35+08:00",
+ "fetched_at": "2026-09-29T09:39+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,8 +19,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church confession booth",
+   "note": "Half hour before weekend Mass"
   },
   {
    "d": 0,
@@ -39,8 +39,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church confession booth",
+   "note": "Half hour before weekend Mass"
   },
   {
    "d": 0,
@@ -59,8 +59,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church confession booth",
+   "note": "Half hour before weekend Mass"
   },
   {
    "d": 0,
@@ -79,8 +79,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church confession booth",
+   "note": "Half hour before weekend Mass"
   },
   {
    "d": 0,
@@ -99,8 +99,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church confession booth",
+   "note": "Half hour before weekend Mass"
   },
   {
    "d": 0,
@@ -121,8 +121,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church confession booth",
+   "note": "Half hour before Tamil Mass"
   },
   {
    "d": 0,
@@ -144,7 +144,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary on Zoom"
   },
   {
    "d": 1,
@@ -174,7 +174,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary on Zoom"
   },
   {
    "d": 2,
@@ -203,8 +203,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Divine Mercy"
   },
   {
    "d": 3,
@@ -234,7 +234,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary on Zoom"
   },
   {
    "d": 4,
@@ -264,7 +264,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary on Zoom"
   },
   {
    "d": 5,
@@ -294,7 +294,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary on Zoom"
   },
   {
    "d": 6,
@@ -313,8 +313,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church confession booth",
+   "note": "Half hour before weekend Mass"
   },
   {
    "d": 6,
@@ -324,7 +324,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   },
   {
    "d": 6,
@@ -334,7 +334,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary on Zoom"
   }
  ],
  "dated": [],
@@ -344,9 +344,9 @@
   "09:00"
  ],
  "notes": [
-  "Church gates close at 12:00 noon.",
-  "Confessions are in the Confession booth (Main Church).",
-  "CTK Nightly Rosary is on Zoom."
+  "On public holidays, church gates close at 12:00 noon.",
+  "Nightly Rosary is held on Zoom and is not held on Tuesdays.",
+  "Confession booth is in the Main Church."
  ],
  "disputes": [],
  "vs_mycatholic": {

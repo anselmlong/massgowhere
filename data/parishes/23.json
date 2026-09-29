@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.stignatius.org.sg/mass-schedule"
  ],
- "fetched_at": "2026-09-28T02:38+08:00",
+ "fetched_at": "2026-09-29T09:45+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,7 +19,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -39,7 +39,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -49,7 +49,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -59,7 +59,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -69,7 +69,37 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -79,8 +109,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Ignatius Church",
-   "note": ""
+   "loc": "",
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -89,7 +119,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -99,7 +129,37 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -109,8 +169,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Ignatius Church",
-   "note": ""
+   "loc": "",
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -119,7 +179,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -129,7 +189,37 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -139,8 +229,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Ignatius Church",
-   "note": ""
+   "loc": "",
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -149,7 +239,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -159,7 +249,37 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -169,8 +289,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Ignatius Church",
-   "note": ""
+   "loc": "",
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -179,7 +299,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -189,7 +309,37 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -199,8 +349,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Ignatius Church",
-   "note": ""
+   "loc": "",
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -211,8 +361,20 @@
    ],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [
+    4
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Memorial Mass, followed by prayers at the Columbarium"
   },
   {
    "d": 5,
@@ -223,8 +385,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "St Ignatius Church",
-   "note": ""
+   "loc": "",
+   "note": "Eucharistic Adoration for Children"
   },
   {
    "d": 5,
@@ -235,8 +397,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
-   "note": ""
+   "loc": "",
+   "note": "First Friday Mass to the Sacred Heart of Jesus, followed by Eucharistic Adoration"
   },
   {
    "d": 6,
@@ -245,7 +407,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -255,7 +417,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Ignatius Church",
+   "loc": "",
    "note": ""
   }
  ],
@@ -269,11 +431,116 @@
    [
     "Mass",
     "Friday",
+    "08:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Friday",
+    "09:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Friday",
+    "12:15",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Friday",
     "18:00",
     [],
     [
      1
     ]
+   ],
+   [
+    "Mass",
+    "Monday",
+    "08:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Monday",
+    "09:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Monday",
+    "12:15",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "08:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "09:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "12:15",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "08:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "09:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "12:15",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "08:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "09:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "12:15",
+    [],
+    []
    ]
   ],
   "only_on_mycatholic": [
@@ -292,15 +559,6 @@
     "18:00",
     [
      3
-    ],
-    []
-   ],
-   [
-    "Mass",
-    "Friday",
-    "18:00",
-    [
-     4
     ],
     []
    ],

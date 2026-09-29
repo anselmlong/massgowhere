@@ -4,7 +4,7 @@
  "source_urls": [
   "https://w.holyfamily.org.sg/mass-times"
  ],
- "fetched_at": "2026-09-28T02:35+08:00",
+ "fetched_at": "2026-09-29T09:37+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,6 +14,16 @@
  "rules": [
   {
    "d": 0,
+   "t": "07:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "30 minutes before weekend Mass"
+  },
+  {
+   "d": 0,
    "t": "07:30",
    "weeks": [],
    "except": [],
@@ -21,6 +31,16 @@
    "lang": "English",
    "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "30 minutes before weekend Mass"
   },
   {
    "d": 0,
@@ -34,6 +54,16 @@
   },
   {
    "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "30 minutes before weekend Mass"
+  },
+  {
+   "d": 0,
    "t": "11:30",
    "weeks": [],
    "except": [],
@@ -41,6 +71,16 @@
    "lang": "English",
    "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "30 minutes before weekend Mass"
   },
   {
    "d": 0,
@@ -67,10 +107,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -97,10 +137,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -117,10 +157,10 @@
    "t": "19:00",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 3,
@@ -137,10 +177,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -167,10 +207,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -197,10 +237,10 @@
    "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -219,10 +259,10 @@
     1
    ],
    "except": [],
-   "type": "Mass",
+   "type": "Adoration",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "First Fridays"
   },
   {
    "d": 6,
@@ -239,10 +279,20 @@
    "t": "16:30",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Novena"
+  },
+  {
+   "d": 6,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "30 minutes before weekend Mass"
   },
   {
    "d": 6,
@@ -253,6 +303,16 @@
    "lang": "English",
    "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "30 minutes before weekend Mass"
   },
   {
    "d": 6,
@@ -271,70 +331,12 @@
   "09:30"
  ],
  "notes": [
-  "Mass and services are held in the Main Church unless otherwise indicated."
+  "Mass and services are held in the Main Church unless otherwise indicated.",
+  "Confessions are 30 minutes before each weekend Mass."
  ],
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [
-   [
-    "Mass",
-    "Friday",
-    "17:45",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Friday",
-    "19:00",
-    [
-     1
-    ],
-    []
-   ],
-   [
-    "Mass",
-    "Monday",
-    "17:45",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Saturday",
-    "16:30",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Thursday",
-    "17:45",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Tuesday",
-    "17:45",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Tuesday",
-    "19:00",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Wednesday",
-    "17:45",
-    [],
-    []
-   ]
-  ],
+  "only_on_parish_site": [],
   "only_on_mycatholic": [
    [
     "Mass",

@@ -4,7 +4,7 @@
  "source_urls": [
   "https://sjcvs.org.sg/"
  ],
- "fetched_at": "2026-09-28T02:38+08:00",
+ "fetched_at": "2026-09-29T09:45+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -78,6 +78,16 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
