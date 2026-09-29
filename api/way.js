@@ -1,4 +1,4 @@
-// GET /api/way?from=1.35,103.85&to=1.30,103.83&mode=transit|drive|walk[&at=<epoch ms>][&by=<epoch ms>][&fast=1]
+// GET /api/way?from=1.35,103.85&to=1.30,103.83&mode=transit|drive|walk[&at=<epoch ms>][&by=<epoch ms>][&late=15][&fast=1]
 // A Mass on the way from A to B: the one that adds the least to the trip, and still gets you to B by `by` if given.
 const S = require("../public/schedule.js");
 const data = require("../public/data.json");
@@ -50,19 +50,20 @@ async function answer(req, res) {
   const fast = u.searchParams.get("fast") === "1";
 
   // Masses from when you set off until you need to arrive (or two days, when there's no deadline)
-  const events = S.expandAll(data, depart, 2).filter((e) => e.start >= depart && (by == null || e.start < by));
+  const lateMin = Math.max(0, Math.min(15, Number(u.searchParams.get("late")) || 0));
+  const events = S.expandAll(data, depart - lateMin * 60000, 2).filter((e) => e.start >= depart - lateMin * 60000 && (by == null || e.start < by));
   const travel = async (a, b, departMs) => {
     const t = await tripMinutes(a, b, mode, departMs);
     return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
   };
-  const r = await planWay({ from, to, depart, arriveBy: by, mode, parishes: data.parishes, events, travel: fast ? null : travel, fast });
+  const r = await planWay({ from, to, depart, arriveBy: by, mode, parishes: data.parishes, events, travel: fast ? null : travel, fast, lateMin });
   const byId = new Map(data.parishes.map((p) => [p.id, p]));
   const iso = (ms) => new Date(ms).toISOString();
   const pack = (s) => s && {
     parish: (({ id, name, address, postal, lat, lng }) => ({ id, name, address, postal, lat, lng }))(byId.get(s.pid)),
     start: iso(s.start), end: iso(s.end), leaveBy: iso(s.leaveBy), arrive: iso(s.arrive),
     toMin: s.toMin, toWalk: !!s.toWalk, onwardMin: s.onwardMin, onwardWalk: !!s.onwardWalk,
-    detourMin: s.detourMin, travelSource: s.travelSource,
+    detourMin: s.detourMin, lateMin: s.lateMin || 0, travelSource: s.travelSource,
     language: s.lang, location: s.loc, note: s.note || "",
   };
   send(res, 200, {

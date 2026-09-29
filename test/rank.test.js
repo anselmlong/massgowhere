@@ -131,3 +131,28 @@ test("bus & MRT mode walks only a short way: 10 min always, up to 15 if no slowe
   assert.equal(preferWalk(20, 21), false); // 20 min on foot is not what "bus & MRT" means
   assert.equal(preferWalk(null, 12), false);
 });
+
+test("a little late is allowed only when asked, and the least-late Mass wins", async () => {
+  // it's 08:00; Near (8 min) has Mass at 07:55 (already started) and Mid (20 min) at 08:15
+  const events = [{ pid: 1, start: min(-5) }, { pid: 2, start: min(15) }];
+  const travel = fixedTravel({ 1: 8, 2: 20, 3: 50 });
+  const strict = await rank({ origin, now: T0, parishes, events, travel });
+  assert.equal(strict.best, null); // on time, neither works
+  const late = await rank({ origin, now: T0, parishes, events, travel, lateMin: 15 });
+  assert.equal(late.best.pid, 2);   // 08:15 at Mid: 5 min late beats 13 min late at Near
+  assert.equal(late.best.lateMin, 5);
+  assert.equal(late.alternatives[0].lateMin, 13);
+});
+
+test("with lateness allowed, an on-time Mass shortly after beats arriving late now", async () => {
+  const events = [{ pid: 1, start: min(5) }, { pid: 1, start: min(30) }];
+  const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 8, 2: 20, 3: 50 }), lateMin: 15 });
+  assert.equal(r.best.start, min(30));
+  assert.equal(r.best.lateMin, 0);
+});
+
+test("never more than 15 minutes late", async () => {
+  const events = [{ pid: 1, start: min(-10) }];
+  const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 8, 2: 20, 3: 50 }), lateMin: 60 });
+  assert.equal(r.best, null); // 18 min late: clamped to 15
+});

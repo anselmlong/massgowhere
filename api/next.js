@@ -1,4 +1,4 @@
-// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&part=morning|lunch|evening][&at=<epoch ms or ISO time>]
+// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&part=morning|lunch|evening][&at=<epoch ms or ISO time>][&late=15]
 // The one answer every client (website, Telegram bots) shows: which Mass you can make, and when to leave.
 const S = require("../public/schedule.js");
 const data = require("../public/data.json");
@@ -27,6 +27,7 @@ function summarize(e, byId) {
     travelMin: e.travelMin,
     travelSource: e.travelSource,
     walk: !!e.travelWalk, // bus & MRT mode, but walking there is quicker
+    lateMin: e.lateMin || 0, // leaving now, minutes after the start you'd arrive (only with late=)
     distanceKm: Math.round(e.distanceKm * 10) / 10,
     language: e.lang,
     location: e.loc,
@@ -67,7 +68,9 @@ async function answer(req, res) {
   if (at === undefined) return send(res, 400, { error: `at must be within the next ${PLAN_DAYS} days` });
   const now = at ?? Date.now();
   const origin = { lat, lng };
-  const events = S.expandAll(data, now, HORIZON_DAYS)
+  // late=N (max 15): Masses that have just started still count if you'd walk in at most N minutes late
+  const lateMin = Math.max(0, Math.min(15, Number(u.searchParams.get("late")) || 0));
+  const events = S.expandAll(data, now - lateMin * 60000, HORIZON_DAYS)
     .filter((e) => !lang || e.lang.toLowerCase() === lang.toLowerCase())
     .filter(S.inPart(part));
   const travel = async (p, departMs) => {
@@ -77,7 +80,7 @@ async function answer(req, res) {
   // fast=1: estimate-only ranking (no OneMap routing) for an instant first frame;
   // the client follows up with the default full call to refine exact travel times.
   const travelFn = fast ? null : travel;
-  const r = await rank({ origin, now, mode, parishes: data.parishes, events, travel: travelFn, fast });
+  const r = await rank({ origin, now, mode, parishes: data.parishes, events, travel: travelFn, fast, lateMin });
   const byId = new Map(data.parishes.map((p) => [p.id, p]));
 
   send(res, 200, {

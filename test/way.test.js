@@ -54,3 +54,13 @@ test("Mass length: about an hour on Sunday and Saturday evening, 40 minutes othe
   assert.equal(massMinutes(Date.UTC(2026, 9, 3, 0)), 40);  // Sat 08:00 SGT
   assert.equal(massMinutes(T0), 40);                        // Mon 17:00 SGT
 });
+
+test("on the way, a little late only when asked; lateness counts double against the detour", async () => {
+  // 1 starts in 5 min but is 15 min away: 10 min late, 2-min detour. 2 starts in 40 min: on time, 25-min detour
+  const events = [{ pid: 1, start: min(5) }, { pid: 2, start: min(40) }];
+  const strict = await planWay({ from: A, to: B, depart: T0, parishes, events, travel });
+  assert.equal(strict.best.pid, 2);
+  const late = await planWay({ from: A, to: B, depart: T0, parishes, events, travel, lateMin: 15 });
+  assert.equal(late.best.pid, 1); // 2 + 2*10 = 22 < 25
+  assert.equal(late.best.lateMin, 10);
+});
