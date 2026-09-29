@@ -1,0 +1,120 @@
+{
+ "id": 8,
+ "readAt": "2026-09-29",
+ "confession": {
+  "text": "30 minutes before Saturday 17:30 Mass and all Sunday Masses.",
+  "url": "https://holytrinity.org.sg/"
+ },
+ "devotions": [
+  {
+   "text": "Rosary before Mass: weekdays 17:25 in Chapel; weekends 16:55 in Main Church. Prayer for Priests Tuesdays 16:50 in Chapel."
+  },
+  {
+   "text": "Hour of Prayer first/third Monday 20:00, Chapel; Christian Meditation Tuesdays 20:00, Room 8; Divine Mercy Fridays 20:00, Chapel. Monday/Friday devotions exclude public holidays and solemnities.",
+   "url": "https://holytrinity.org.sg/page/announcements"
+  },
+  {
+   "text": "Holy Family Rosary home shrine: Sunday transfer at 15:00 followed by one hour of prayer; seven-day home stay within Tampines/Simei/Pasir Ris. Table required, prayer materials provided. Julliana Yeo 9446 8890; Maureen Tok 9015 6826.",
+   "url": "https://holytrinity.org.sg/page/the-holy-family-rosary-devotion-group"
+  }
+ ],
+ "office_hours": {
+  "text": "Monday–Friday 09:00–18:00, lunch closure 12:00–13:00. Saturday/Sunday 09:00–13:00. Closed public holidays.",
+  "url": "https://holytrinity.org.sg/"
+ },
+ "church_hours": {
+  "text": "Chapel daily 06:00–18:00; columbarium daily 06:30–18:00. Main church opening hours not stated.",
+  "url": "https://holytrinity.org.sg/page/visiting-hours"
+ },
+ "public_holidays": {
+  "text": "09:00 Mass."
+ },
+ "events": [
+  {
+   "date": "2026-09-30",
+   "time": "10:00",
+   "title": "JOY Ministry for the Elderly",
+   "text": "Until 12:00; venue not specified in bulletin."
+  },
+  {
+   "date": "2026-10-02",
+   "time": "09:30",
+   "title": "Catholic Praying Mothers",
+   "text": "Until 11:30; venue not specified."
+  },
+  {
+   "date": "2026-10-02",
+   "time": "20:00",
+   "title": "Divine Mercy Devotion",
+   "text": "Until 21:00; Chapel per announcements page."
+  }
+ ],
+ "languages": [
+  {
+   "text": "English Masses except Sunday 08:30 Mandarin. English and Mandarin RCIA are offered.",
+   "url": "https://holytrinity.org.sg/"
+  }
+ ],
+ "sacraments": [
+  {
+   "topic": "Baptism",
+   "text": "Preparatory session for parents/godparents Saturday 11:00; Rite of Baptism following Saturday 11:00, subject to minimum enrolment and office confirmation. Submit form, child birth certificate, parents’ church marriage/baptism certificates and godparents’ confirmation certificates by deadline. Godparents normally at least 16, confirmed practising Catholics; cannot be child’s parents.",
+   "url": "https://holytrinity.org.sg/page/infant-baptism"
+  },
+  {
+   "topic": "Baptism registration windows",
+   "text": "Bulletin invites October registration by 30 September; homepage separately announces December registration with documents due 30 November 2026. Confirm intended round with parish office."
+  },
+  {
+   "topic": "Anointing",
+   "text": "Contact Parish Office for serious illness/old age. Parish asks those preparing for major surgery to seek Reconciliation and Anointing before hospital admission.",
+   "contact": "6784 2332",
+   "url": "https://holytrinity.org.sg/page/anointing-of-the-sick"
+  },
+  {
+   "topic": "Marriage",
+   "text": "Arrange at least one year ahead to allow time for MPC or Engaged Encounter. Get application forms/book dates at Parish Office.",
+   "contact": "6784 2332",
+   "url": "https://holytrinity.org.sg/page/announcements"
+  },
+  {
+   "topic": "RCIA",
+   "text": "2026–2027 registration open. English: began 18 June 2026, Thursdays 19:45. Mandarin: began 20 July 2026, Mondays 19:30. About a one-year journey; practising Catholics can join as sponsors.",
+   "contact": "rcia@holytrinity.org.sg",
+   "url": "https://holytrinity.org.sg/page/rite-of-christian-initiation-for-adults"
+  }
+ ],
+ "ministries": [
+  {
+   "name": "JOY Ministry",
+   "text": "For the elderly; current bulletin lists Wednesday 30 September 10:00–12:00."
+  },
+  {
+   "name": "Catholic Praying Mothers",
+   "text": "Current bulletin lists Friday 2 October 09:30–11:30."
+  },
+  {
+   "name": "Holy Trinity Youth",
+   "text": "Announcements page lists Saturday 10:00–12:00, excluding holidays/solemnities. Current bulletin lists 3 October 10:30–12:30am (end-time typo unresolved).",
+   "url": "https://holytrinity.org.sg/page/announcements"
+  }
+ ],
+ "contacts": {
+  "phone": "+65 6784 2332",
+  "email": "htadmin@holytrinity.org.sg"
+ },
+ "social": [
+  {
+   "platform": "Facebook",
+   "url": "https://www.facebook.com/catholicchurchoftheholytrinity.sg"
+  },
+  {
+   "platform": "Instagram",
+   "url": "https://www.instagram.com/htc.sg"
+  }
+ ],
+ "bulletin": {
+  "date": "2026-09-27",
+  "url": "https://holytrinity.org.sg/page/bulletin"
+ }
+}

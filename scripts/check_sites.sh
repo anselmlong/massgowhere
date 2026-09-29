@@ -10,7 +10,7 @@ git fetch --quiet origin main
 git reset --quiet --hard origin/main
 python3 scripts/scrape_parishes.py --workers 4 --force || echo "some parishes could not be checked"
 python3 scripts/build_data.py
-git add data/parishes data/site-check.md public/data.json
+git add data/parishes data/site-check.md public/data.json public/parish
 if git diff --cached --quiet; then echo "no changes"; exit 0; fi
 git -c user.name="MassGoWhere check" -c user.email="refresh@massgowhere.com" commit --quiet -m "data: monthly parish website check $(date +%F)"
 git push --quiet origin HEAD:main || { echo "push rejected; the next run starts again from origin/main" >&2; exit 1; }

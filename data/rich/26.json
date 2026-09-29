@@ -1,0 +1,203 @@
+{
+ "id": 26,
+ "readAt": "2026-09-29",
+ "adoration": {
+  "text": "Adoration Chapel next to Main Church, Level 1: daily 07:00–21:30.",
+  "url": "https://www.stmary.sg/mass"
+ },
+ "confession": {
+  "text": "From 1 January 2026: weekends 30 minutes before English Masses, ending 10 minutes before; Saturday 15:30/17:30, Sunday 08:30/10:30/12:30/16:30/18:30. Main Church confessionals, no appointment. No regular weekdays; privately arrange priest outside times. Special Jubilee exception: Tuesdays after 18:30 Mass/St Anthony devotion until 10 January 2027. May be unavailable when friars away or special events.",
+  "url": "https://www.stmary.sg/mass"
+ },
+ "devotions": [
+  {
+   "text": "Morning Prayer at 07:00 weekday Mass; St Anthony devotion incorporated into Tuesday 18:30 Mass from 2 June. Novena to St Francis at all Masses 25 September–3 October 2026; prayers at pray.stmary.sg.",
+   "url": "https://www.stmary.sg/mass"
+  }
+ ],
+ "office_hours": {
+  "text": "Reception Level 1 opposite Sacristy: Monday–Saturday 09:00–18:00, lunch 13:00–14:00; Sunday 09:00–13:00, closed public holidays. Parish Office LevelB1 opposite classrooms 4/5: Monday–Friday 09:00–18:00, lunch 13:00–14:00, closed weekends/public holidays.",
+  "url": "https://www.stmary.sg/contact-us"
+ },
+ "good_to_know": [
+  {
+   "text": "No standing in walkways/corridors; follow Hospitality team to available seats.",
+   "url": "https://www.stmary.sg/mass"
+  },
+  {
+   "text": "Columbarium LevelB1 daily 07:30–21:30.",
+   "url": "https://www.stmary.sg/contact-us"
+  }
+ ],
+ "public_holidays": {
+  "text": "Usually 08:00 and 18:30 unless a Church Solemnity.",
+  "url": "https://www.stmary.sg/mass"
+ },
+ "dated": [
+  {
+   "date": "2026-10-01",
+   "time": "12:15",
+   "title": "Mass for Sick and Elderly with Anointing",
+   "action": "cancel",
+   "language": "English",
+   "location": "Main Church, Level 1",
+   "url": "https://www.stmary.sg/mass"
+  },
+  {
+   "date": "2026-10-01",
+   "time": "09:45",
+   "title": "Mass for Sick and Elderly with Anointing",
+   "action": "add",
+   "language": "English",
+   "location": "Main Church, Level 1",
+   "url": "https://www.stmary.sg/mass"
+  }
+ ],
+ "events": [
+  {
+   "date": "2026-10-01",
+   "time": "09:45",
+   "title": "Mass for Sick and Elderly with Anointing",
+   "text": "Main Church; registration closed. Current Mass schedule 09:45 differs from jubilee overview poster 10:00.",
+   "url": "https://www.stmary.sg/mass"
+  },
+  {
+   "date": "2026-10-03",
+   "time": "10:00",
+   "title": "Catechesis of the Good Shepherd information session",
+   "text": "10:00–12:00 Room 7.",
+   "url": "https://www.stmary.sg/"
+  },
+  {
+   "date": "2026-10-03",
+   "time": "20:00",
+   "title": "Transitus — Death of St Francis of Assisi",
+   "text": "Main Church; original play, Franciscan-family testimonies and song."
+  },
+  {
+   "date": "2026-10-04",
+   "time": "15:00",
+   "title": "Animal Blessing Service",
+   "text": "Piazza outside Main Church; thanksgiving and blessing for pets."
+  },
+  {
+   "date": "2026-10-16",
+   "time": "20:15",
+   "title": "To Gaze: St Clare of Assisi",
+   "text": "16/17 October 20:15 Main Church, Sharda Harrison with Fra Rowland Yeo; tickets$100/$40/$30, QR on poster."
+  },
+  {
+   "date": "2026-09-30",
+   "time": "20:00",
+   "title": "St Francis: a conversion still speaking to the world",
+   "text": "Fra Joe Nathan, Jubilee programme; venue unstated on overview poster."
+  },
+  {
+   "date": "2026-10-01",
+   "time": "20:00",
+   "title": "St Francis Triduum penitential service",
+   "text": "Jubilee programme; venue unstated on overview poster."
+  },
+  {
+   "date": "2026-10-02",
+   "time": "20:00",
+   "title": "Gospel life through the Franciscan lens",
+   "text": "Fra Derrick Yap; venue unstated on overview poster."
+  }
+ ],
+ "getting_there": [
+  {
+   "text": "Vehicle entrance Avenue 2; limited parking LevelsB1/B2. Exit promptly after Mass; double-parking disallowed but may block vehicles during Mass. Alternatives HDB Blocks 271/269 and Bukit Batok Nature Park opposite. Nearest MRT Bukit Batok NS2 / Beauty World DT5.",
+   "url": "https://www.stmary.sg/mass"
+  },
+  {
+   "text": "Published buses: Avenue 6 61/66/157/174/178/852/871 (wheelchair accessible); Avenue 2 970/985; Avenue 3 61/77/106/157/174/178/506/653/852/963/990; Avenue 4 173/177/963.",
+   "url": "https://www.stmary.sg/mass"
+  }
+ ],
+ "accessibility": [
+  {
+   "text": "Wheelchair ramps from Avenue 6 bus-stop entrance to Level 1 Main Church and beside Block 286 near Market Carpark to LevelB2 Gubbio. Sunday 16:00 Deaf Community Mass; check current venue via schedule link.",
+   "url": "https://www.stmary.sg/mass"
+  }
+ ],
+ "sacraments": [
+  {
+   "topic": "RCIA",
+   "text": "English and Mandarin inquiry pathways; contact for next intake. Poster explicitly says 2026/27 registration closed. No-pressure inquiry welcome; sponsor/service-team volunteers can enquire.",
+   "contact": "rcia.stmary@catholic.org.sg; mandarin.stmary@catholic.org.sg;6567 3866",
+   "url": "https://www.stmary.sg/rcia"
+  },
+  {
+   "topic": "Baptism",
+   "text": "Infant/child portal https://baptism.stmary.sg/ for schedules, preparation and registration. At least one Catholic parent/guardian; max 2 godparents of different genders, practising Catholics over 16. Birth certificate, church wedding/ROM certificates, godparent baptism/confirmation certificates, minor consent form. Parents/godparents compulsory in-person preparation Tuesday 19:30 at Gubbio LevelB2, pre-scheduled. First-come booking; minimum 5 children for service. Register online and email documents.",
+   "contact": "baptisms.stmary@catholic.org.sg",
+   "url": "https://www.stmary.sg/baptism"
+  },
+  {
+   "topic": "Anointing / Home Communion / Pastoral care",
+   "text": "Request appointment online or through reception for home/hospital Communion, reconciliation, anointing or pastoral counselling. Served institutions include St Luke’s, Ren Ci, Ng Teng Fong General, Jurong Community, All Saints Home, United Medicare, Bukit Batok Home and Bukit Batok Care Home.",
+   "contact": "6567 3866; pastoralcare.stmary@catholic.org.sg",
+   "url": "https://www.stmary.sg/pastoral-care"
+  },
+  {
+   "topic": "Funeral / Wakes / Niches / Wall of Remembrance",
+   "text": "Contact Columbarium Office Monday–Friday 09:00–18:00; separate after-hours/weekend/public-holiday number.",
+   "contact": "6560 6361; after-hours 9774 7053",
+   "url": "https://www.stmary.sg/contact-us"
+  },
+  {
+   "topic": "Catechism",
+   "text": "2026 P1/P2 Children’s Liturgy Saturday 16:00 or Sunday 09:00 Mass. Saturday hybrid P3/P5 and primary bridging 09:15–10:45; P4/P6 11:00–12:30. Secondary 1/2 12:45–14:15; Secondary 3 14:20–15:50; secondary bridging 11:00–12:30. Confirmation Secondary 3.",
+   "contact": "acheong.stmary@catholic.org.sg",
+   "url": "https://www.stmary.sg/catechism"
+  },
+  {
+   "topic": "Baptism —2027 schedule",
+   "text": "2027 infant/child baptisms Sundays 15:00 Main Church:17 January,16 May,18 July,19 September,21 November. No March 2027 baptism. Required Tuesday preparation 19:30 Gubbio:5 January,4 May,6 July,7 September,9 November respectively. First-come after complete documents; minimum 5 confirmed children.",
+   "contact": "baptisms.stmary@catholic.org.sg"
+  }
+ ],
+ "ministries": [
+  {
+   "name": "St Clare Intercessory Prayer Ministry",
+   "text": "Second/fourth Tuesday; prayer intentions and membership via William Lam, Barbara Chan or Janet Ng. Time not stated.",
+   "url": "https://www.stmary.sg/liturgy-and-prayer"
+  },
+  {
+   "name": "Liturgical and prayer ministries",
+   "text": "Lectors, Music, Eucharistic Ministers, Sacristy, Art/Flowers, Altar Servers, Children’s Liturgy, AV, Mandarin/Tamil liturgy, Legion of Mary and Divine Mercy; join via contact page.",
+   "url": "https://www.stmary.sg/liturgy-and-prayer"
+  }
+ ],
+ "contacts": {
+  "phone": "+65 6567 3866; after-hours pastoral emergencies only +65 9682 7875",
+  "email": "parish.stmary@catholic.org.sg"
+ },
+ "social": [
+  {
+   "platform": "YouTube",
+   "url": "https://www.youtube.com/c/StMarysgtv/featured"
+  },
+  {
+   "platform": "Instagram",
+   "url": "https://instagram.com/stmary.sg"
+  },
+  {
+   "platform": "Telegram",
+   "url": "https://t.me/stmarysg"
+  },
+  {
+   "platform": "Facebook",
+   "url": "https://www.facebook.com/sfsignlight"
+  },
+  {
+   "platform": "YouTube",
+   "url": "https://www.youtube.com/channel/UCoEwQswKc8rBI1q94w_ieeQ"
+  }
+ ],
+ "livestream": {
+  "text": "Daily liturgy and weekend online Masses provided on parish media page.",
+  "url": "https://www.stmary.sg/mass-daily-liturgy"
+ }
+}

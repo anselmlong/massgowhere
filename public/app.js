@@ -225,6 +225,14 @@
   const data = () => (dataP ||= fetch("data.json", { cache: "no-cache", signal: AbortSignal.timeout(8000) })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .catch((e) => { dataP = null; throw e; }));
+  // what a parish's own website says beyond Mass times (public/parish/<id>.json, not every parish has one);
+  // the church page renders without it
+  const infoP = new Map();
+  const parishInfo = (id) => {
+    if (!infoP.has(id)) infoP.set(id, fetch(`parish/${id}.json`, { cache: "no-cache", signal: AbortSignal.timeout(8000) })
+      .then((r) => (r.ok ? r.json() : null)).catch(() => { infoP.delete(id); return null; }));
+    return infoP.get(id);
+  };
 
   // ---------- router ----------
   let currentMap = null;
@@ -914,8 +922,9 @@
   }
 
   async function renderChurch(id) {
-    const d = await loadData();
-    if (!d) return;
+    const h = location.hash;
+    const [d, info] = await Promise.all([loadData(), parishInfo(id)]);
+    if (!d || location.hash !== h) return;
     const p = d.parishes.find((x) => x.id === id);
     if (!p) return go("/churches");
     const origin = store.get("mgw-origin");
@@ -950,14 +959,47 @@
     const SERVICES = [["Confession", "Confession"], ["Adoration", "Adoration"], ["Devotion", "Devotions"]];
     // What the parish's own website says (Adoration room hours, Holy Hour, Confession, devotions, office hours) reads
     // better than myCatholicSG's single start times, so it replaces those lists once a parish has been read.
-    const info = p.info;
-    const infoRows = info ? [["Adoration", info.adoration], ["Confession", info.confession], ["Devotions", (info.devotions || []).join("\n")],
-      ["Parish office", info.office_hours], ["Good to know", (info.good_to_know || []).join("\n")]].filter(([, v]) => v) : [];
-    const infoHTML = infoRows.length ? `<h2>At this parish</h2><dl class="info">${infoRows.map(([k, v]) =>
-      `<dt>${k}</dt><dd>${v.split("\n").map(esc).join("<br>")}</dd>`).join("")}</dl>
-      <p class="x">From the <a href="${esc(info.url)}" target="_blank" rel="noopener">parish website</a>, read ${fmtDate(info.checkedAt)}.</p>` : "";
+    const lines = (v) => [].concat(v || []).map((x) => esc(x.text)).join("<br>");
+    const dl = (rows) => { const r = rows.filter(([, v]) => v); return r.length ? `<dl class="info">${r.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>` : ""; };
+    const infoRows = info ? [["Adoration", info.adoration], ["Confession", info.confession], ["Devotions", info.devotions],
+      ["Church open", info.church_hours], ["Parish office", info.office_hours], ["Public holidays", info.public_holidays],
+      ["Languages", info.languages], ["Good to know", info.good_to_know]].map(([k, v]) => [k, lines(v)]).filter(([, v]) => v) : [];
+    const infoHTML = infoRows.length ? `<h2>At this parish</h2>${dl(infoRows)}` : "";
     const covered = new Set([info?.adoration && "Adoration", info?.confession && "Confession", info?.devotions?.length && "Devotion"].filter(Boolean));
-    const services = infoHTML + SERVICES.filter(([type]) => !covered.has(type)).map(([type, title]) => {
+    // dated items from the parish's bulletin and posters, from today on (the read ages; the page shouldn't)
+    const today = dayKey(now);
+    const at = (x) => Date.parse(`${x.date}T${x.time || "00:00"}:00+08:00`);
+    const ahead = (xs) => (xs || []).filter((x) => /^\d{4}-\d\d-\d\d$/.test(x.date) && x.date >= today).sort((a, b) => at(a) - at(b));
+    const changes = ahead(info?.dated);
+    const changesHTML = changes.length ? `<div class="week services"><h2>Changes to the usual Masses</h2><ul>${changes.map((x) => {
+      const bits = [x.location, x.language].filter(Boolean).map(esc).join(" · ");
+      return `<li><span class="t">${x.time ? clock(at(x)) : ""}</span><span>${esc(dayLabel(at(x)))}${x.action === "cancel" ? `<span class="tag">Cancelled</span>` : ""}
+        <span class="x">${esc(x.title)}${bits ? ` · ${bits}` : ""}</span></span></li>`;
+    }).join("")}</ul><p class="x">From the parish’s bulletin and website. The times above don’t include these yet.</p></div>` : "";
+    const events = ahead(info?.events);
+    const eventLi = (x) => `<li><span class="t">${esc(dnum(at(x)))}</span><span><strong>${esc(x.title)}</strong>
+      <span class="x">${[x.time ? `${wk(at(x))} ${clock(at(x))}` : wk(at(x)), x.text].filter(Boolean).map(esc).join(" · ")}${x.url ? ` <a href="${esc(x.url)}" target="_blank" rel="noopener">More</a>` : ""}</span></span></li>`;
+    const eventsHTML = events.length ? `<h2>Coming up</h2><ul class="events">${events.slice(0, 4).map(eventLi).join("")}</ul>
+      ${events.length > 4 ? `<details class="rest"><summary>${events.length - 4} more</summary><ul class="events">${events.slice(4).map(eventLi).join("")}</ul></details>` : ""}` : "";
+    // everything else, folded so the times stay near the top
+    const c = info?.contacts || {};
+    const tel = (n) => `<a href="tel:${esc(n.replace(/[^\d+]/g, ""))}">${esc(n)}</a>`;
+    const contactHTML = dl([["Phone", c.phone && tel(c.phone)], ["WhatsApp", c.whatsapp && esc(c.whatsapp)],
+      ["Email", c.email && `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`]]);
+    const fold = (title, body) => (body ? `<details class="rest"><summary>${title}</summary>${body}</details>` : "");
+    const linkOut = (x, label) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(label)}</a>`;
+    const more = info ? [
+      fold("Getting there", dl([["Parking and transport", lines(info.getting_there)], ["Accessibility", lines(info.accessibility)]])),
+      fold("Sacraments", info.sacraments ? dl(info.sacraments.map((x) => [esc(x.topic || "Sacraments"), `${esc(x.text)}${x.contact ? `<br><span class="x">Contact: ${esc(x.contact)}</span>` : ""}`])) : ""),
+      fold("Groups and ministries", info.ministries ? dl(info.ministries.map((x) => [esc(x.name || ""), x.text !== x.name ? esc(x.text) : ""]).filter(([k]) => k)) : ""),
+      fold("Contact the parish", contactHTML + dl([
+        ["Livestream", info.livestream && `${esc(info.livestream.text)}${info.livestream.url ? ` ${linkOut(info.livestream, "Watch")}` : ""}`],
+        ["Bulletin", info.bulletin && linkOut(info.bulletin, info.bulletin.date ? `Latest bulletin (${fmtDate(info.bulletin.date)})` : "Latest bulletin")],
+        ["Online", info.social && info.social.map((x) => linkOut(x, x.platform)).join(" · ")],
+        ["Also", lines(info.other)]])),
+    ].join("") : "";
+    const infoSource = info ? `<p class="x">From the <a href="${esc(info.url || p.website || "")}" target="_blank" rel="noopener">parish website</a>${info.readAt ? `, read ${fmtDate(info.readAt)}` : ""}. Parishes change things; check with them before you go.</p>` : "";
+    const services = infoHTML + eventsHTML + SERVICES.filter(([type]) => !covered.has(type)).map(([type, title]) => {
       const es = S.expandParish(String(id), d, now, 7, [type]);
       if (!es.length) return "";
       // a note every row shares ("Subject to availability of priest") is said once, under the list
@@ -966,7 +1008,7 @@
         const bits = [e.loc && !/^main church$/i.test(e.loc) ? esc(e.loc) : "", !shared && e.note ? esc(e.note) : ""].filter(Boolean).join(" · ");
         return `<li><span class="t">${clock(e.start)}</span><span>${esc(dayLabel(e.start))}${langTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}</span></li>`;
       }).join("")}</ul>${shared ? `<p class="x">${esc(shared)}</p>` : ""}`;
-    }).join("");
+    }).join("") + more + infoSource;
     const notes = (p.notes || []).filter((n) => !/^(all )?(saturday|sunday|weekday|masses?)\b.*\b(is|are) in (english|mandarin|tamil|tagalog|indonesian)/i.test(n) && !/unless (otherwise )?(indicated|stated)/i.test(n));
     view.innerHTML = `
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="history.length > 1 ? history.back() : (location.hash='#/')">${svg(ICON.back)}</button></div>
@@ -983,6 +1025,7 @@
           ${soon.map(dayList).join("") || `<p class="lede">No Masses listed for the coming week. Please check with the parish.</p>`}
           ${rest.length ? `<details class="rest"><summary>Rest of the week</summary>${rest.map(dayList).join("")}</details>` : ""}
         </div>
+        ${changesHTML}
         ${services ? `<div class="week services">${services}</div>` : ""}
         ${notes.length ? `<ul class="notes">${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
         ${all.some(([, es]) => S.specialDay(es[0].start, d)) ? `<p class="notice">${esc(all.map(([, es]) => S.specialDay(es[0].start, d)).filter(Boolean)[0])} is coming up: times that day may differ. Please check with the parish.</p>` : ""}
