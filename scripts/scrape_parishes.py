@@ -112,23 +112,6 @@ DATED = {
                    "description": "add = an extra/special service; cancel = a regular service that will not happen that day"},
     },
 }
-SCHEMA = {
-    "type": "object",
-    "additionalProperties": False,
-    "required": ["has_schedule", "regular", "dated", "no_weekday_mass_on_public_holidays", "public_holiday_masses", "notes", "info"],
-    "properties": {
-        "has_schedule": {"type": "boolean", "description": "true only if the page states this parish's regular Mass times"},
-        "regular": {"type": "array", "items": ENTRY},
-        "dated": {"type": "array", "items": DATED},
-        "no_weekday_mass_on_public_holidays": {"type": "boolean"},
-        "public_holiday_masses": {"type": "array", "items": {"type": "string"},
-                                  "description": "HH:MM times of Masses held on public holidays, if the page says so; [] otherwise"},
-        "info": INFO,
-        "notes": {"type": "array", "items": {"type": "string"},
-                  "description": "short schedule caveats worth showing a visitor (max 3)"},
-    },
-}
-
 # what a visitor wants to know beyond Mass times, in the parish's own words (shown on the church page as is)
 INFO = {
     "type": "object",
@@ -144,6 +127,23 @@ INFO = {
         "good_to_know": {"type": "array", "items": {"type": "string"},
                          "description": "at most 4 practical facts for a visitor: church opening hours, parking, access, dress code. "
                                         "Never Mass times (they are elsewhere), never events or fundraising."},
+    },
+}
+
+SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["has_schedule", "regular", "dated", "no_weekday_mass_on_public_holidays", "public_holiday_masses", "notes", "info"],
+    "properties": {
+        "has_schedule": {"type": "boolean", "description": "true only if the page states this parish's regular Mass times"},
+        "regular": {"type": "array", "items": ENTRY},
+        "dated": {"type": "array", "items": DATED},
+        "no_weekday_mass_on_public_holidays": {"type": "boolean"},
+        "public_holiday_masses": {"type": "array", "items": {"type": "string"},
+                                  "description": "HH:MM times of Masses held on public holidays, if the page says so; [] otherwise"},
+        "info": INFO,
+        "notes": {"type": "array", "items": {"type": "string"},
+                  "description": "short schedule caveats worth showing a visitor (max 3)"},
     },
 }
 
