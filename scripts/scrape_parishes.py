@@ -115,7 +115,7 @@ DATED = {
 SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["has_schedule", "regular", "dated", "no_weekday_mass_on_public_holidays", "public_holiday_masses", "notes"],
+    "required": ["has_schedule", "regular", "dated", "no_weekday_mass_on_public_holidays", "public_holiday_masses", "notes", "info"],
     "properties": {
         "has_schedule": {"type": "boolean", "description": "true only if the page states this parish's regular Mass times"},
         "regular": {"type": "array", "items": ENTRY},
@@ -123,8 +123,27 @@ SCHEMA = {
         "no_weekday_mass_on_public_holidays": {"type": "boolean"},
         "public_holiday_masses": {"type": "array", "items": {"type": "string"},
                                   "description": "HH:MM times of Masses held on public holidays, if the page says so; [] otherwise"},
+        "info": INFO,
         "notes": {"type": "array", "items": {"type": "string"},
                   "description": "short schedule caveats worth showing a visitor (max 3)"},
+    },
+}
+
+# what a visitor wants to know beyond Mass times, in the parish's own words (shown on the church page as is)
+INFO = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["adoration", "confession", "devotions", "office_hours", "good_to_know"],
+    "properties": {
+        "adoration": {"type": "string", "description": "when Adoration is available, including an Adoration room/chapel's opening hours "
+                      "and any Holy Hour, e.g. 'Adoration Room open daily 7am-10pm. Holy Hour: Thursdays 8pm.' '' if not stated"},
+        "confession": {"type": "string", "description": "when Confession is heard, e.g. '15 min before every weekend Mass; Saturdays 4-5pm'. '' if not stated"},
+        "devotions": {"type": "array", "items": {"type": "string"},
+                      "description": "regular devotions with day and time, e.g. 'Novena to Our Lady of Perpetual Help: Saturdays 9am' (max 6)"},
+        "office_hours": {"type": "string", "description": "parish office opening hours, e.g. 'Tue-Sun 9am-5pm; closed Mondays'. '' if not stated"},
+        "good_to_know": {"type": "array", "items": {"type": "string"},
+                         "description": "at most 4 practical facts for a visitor: church opening hours, parking, access, dress code. "
+                                        "Never Mass times (they are elsewhere), never events or fundraising."},
     },
 }
 
@@ -142,6 +161,7 @@ Rules:
 - type is what the item itself is, not the heading it sits under: "Novena", "Rosary", "Divine Mercy", "Stations" are Devotion; "Adoration"/"Holy Hour" are Adoration; "Confession"/"Reconciliation" are Confession. Only a Mass is Mass.
 - Include Confession, Adoration and devotions (Novena, Rosary, Divine Mercy...) only when a specific start time is given. Skip office hours, columbarium hours, livestream-only broadcasts, and events that are not services.
 - "dated": one-off services or cancellations with an explicit date on or after today (e.g. feast days, Christmas, "no 7am Mass on 3 Oct"). Skip past dates.
+- info: what else a visitor would want, in short plain sentences, only as the page states it. An Adoration room or chapel that is open for hours is described in info.adoration with its opening hours; a "Holy Hour" is a set time of prayer, so say "Holy Hour" and its time, not "Adoration at" that time. Leave a field '' (or []) when the page doesn't say.
 - notes: at most 3 short caveats a visitor needs, e.g. "No weekday Mass on public holidays". Never describe the page itself, never restate times or languages already in the entries, never say what is missing. Empty is fine.
 
 Page text:
@@ -226,6 +246,17 @@ def validate(res):
     return res, problems
 
 
+def clean_info(info):
+    """Trim the free-text parish info: short strings only, capped lists, empties dropped."""
+    info = info or {}
+    one = lambda v: re.sub(r"\s+", " ", str(v or "")).strip()[:240]
+    many = lambda v, n: [x for x in (one(i) for i in (v or [])) if x][:n]
+    out = {"adoration": one(info.get("adoration")), "confession": one(info.get("confession")),
+           "devotions": many(info.get("devotions"), 6), "office_hours": one(info.get("office_hours")),
+           "good_to_know": many(info.get("good_to_know"), 4)}
+    return {k: v for k, v in out.items() if v}
+
+
 def write_json(path, obj):
     tmp = path + ".tmp"
     with open(tmp, "w") as f:
@@ -295,6 +326,7 @@ def vote(results, mc_keys):
         "no_weekday_mass_on_public_holidays": all(r["no_weekday_mass_on_public_holidays"] for r in results.values()),
         "public_holiday_masses": sorted(set.intersection(*[set(r["public_holiday_masses"]) for r in results.values()])),
         "notes": first["notes"][:3],
+        "info": clean_info(first.get("info")),
     }, disputes
 
 
@@ -361,7 +393,8 @@ def run_one(pid, urls, parish, mc, args):
            "fetched_at": dt.datetime.now(SGT).isoformat(timespec="minutes"), "fetch_mode": how, "models": list(results),
            "rules": to_rules(merged["regular"]), "dated": merged["dated"],
            "no_weekday_mass_on_public_holidays": merged["no_weekday_mass_on_public_holidays"],
-           "public_holiday_masses": merged["public_holiday_masses"], "notes": merged["notes"], "disputes": disputes,
+           "public_holiday_masses": merged["public_holiday_masses"], "notes": merged["notes"], "info": merged.get("info", {}),
+           "disputes": disputes,
            "vs_mycatholic": diff}
     rec["disputes"] = len(disputes)
     rec["vs_mycatholic"] = f"+{len(diff['only_on_parish_site'])}/-{len(diff['only_on_mycatholic'])}"

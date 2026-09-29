@@ -213,6 +213,32 @@ WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can attend, and tel
 
 # ---------- answers ----------
 
+LIVE_WAIT_S = 3  # wait this long for live travel times before showing the estimate, so most answers appear once
+LIVE_POOL = cf.ThreadPoolExecutor(max_workers=4)
+
+
+def live_then_estimate(live_url, fast_url, show_live, show_estimate, on_fail):
+    """Start the live request; if it lands within LIVE_WAIT_S show only that. Otherwise show the estimate, then
+    the live answer as an edit when it comes; if live fails, keep the estimate (show_estimate(res, final=True))."""
+    live = LIVE_POOL.submit(http_json, live_url, timeout=20)
+    try:
+        return show_live(live.result(timeout=LIVE_WAIT_S))
+    except cf.TimeoutError:
+        pass
+    except Exception as e:  # noqa: BLE001 - live failed quickly; fall through to the estimate
+        log.warning("live api error: %s", e)
+    estimate = None
+    try:
+        estimate = http_json(fast_url, timeout=8)
+        show_estimate(estimate, False)
+    except Exception as e:  # noqa: BLE001
+        log.warning("fast api error: %s", e)
+    try:
+        return show_live(live.result(timeout=20))
+    except Exception as e:  # noqa: BLE001
+        log.warning("api error: %s", e)
+        return show_estimate(estimate, True) if estimate else on_fail()
+
 def in_singapore(lat, lng):
     # same rough box as api/next.js; a box cannot fully separate Woodlands from Johor Bahru, the API is the last word
     return 1.15 < lat < 1.475 and 103.59 < lng < 104.1
@@ -286,21 +312,12 @@ def answer(chat_id, lat, lng, place=None, msg_id=None):
               [{"text": f"Open on {SITE_NAME}", "url": f"{SITE}/#/next?{build}&" + urllib.parse.urlencode({"from": place or "your location"})}]] + mode_keyboard(mode)
         return ("\n".join(lines), kb)
 
-    # placeholder (already on screen) -> 1) estimate answer in about a second -> 2) exact OneMap times, each an edit
-    estimate = None
-    try:
-        estimate = http_json(f"{SITE}/api/next?{build}&fast=1", timeout=8)
-        show(*paint(estimate, fast=True))
-    except Exception as e:  # noqa: BLE001
-        log.warning("fast api error: %s", e)
-    try:
-        show(*paint(http_json(f"{SITE}/api/next?{build}", timeout=15), fast=False))
-    except Exception as e:  # noqa: BLE001
-        log.warning("api error: %s", e)
-        if estimate:  # live routing failed: keep the estimate ("about" times), drop the "refining" note
-            show(*paint(estimate, fast=False))
-        else:
-            show("Sorry, I couldn't check Mass times just now. Please try again in a minute.", mode_keyboard(mode))
+    # placeholder (already on screen) -> the live answer, or the estimate first when live is slow; each an edit
+    live_then_estimate(
+        f"{SITE}/api/next?{build}", f"{SITE}/api/next?{build}&fast=1",
+        lambda res: show(*paint(res, fast=False)),
+        lambda res, final: show(*paint(res, fast=not final)),
+        lambda: show("Sorry, I couldn't check Mass times just now. Please try again in a minute.", mode_keyboard(mode)))
 
 
 def search_place(text):
@@ -467,20 +484,11 @@ def way_answer(chat_id, by_ms=None):
                                    [{"text": f"Then on to {tlabel[:40]}", "url": on_dir}],
                                    [{"text": "See it on a map", "url": site}]])
 
-    estimate = None
-    try:
-        estimate = http_json(f"{SITE}/api/way?{build}&fast=1", timeout=8)
-        show(*paint(estimate, fast=True))
-    except Exception as e:  # noqa: BLE001
-        log.warning("way fast api error: %s", e)
-    try:
-        show(*paint(http_json(f"{SITE}/api/way?{build}", timeout=20), fast=False))
-    except Exception as e:  # noqa: BLE001
-        log.warning("way api error: %s", e)
-        if estimate:
-            show(*paint(estimate, fast=False))
-        else:
-            show("Sorry, I couldn't plan that just now. Please try again in a minute.", [[{"text": "Try it on the website", "url": site}]])
+    live_then_estimate(
+        f"{SITE}/api/way?{build}", f"{SITE}/api/way?{build}&fast=1",
+        lambda res: show(*paint(res, fast=False)),
+        lambda res, final: show(*paint(res, fast=not final)),
+        lambda: show("Sorry, I couldn't plan that just now. Please try again in a minute.", [[{"text": "Try it on the website", "url": site}]]))
     maybe_nudge(chat_id)
 
 

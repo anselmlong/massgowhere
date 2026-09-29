@@ -200,6 +200,7 @@
   }
   function until(ms) {
     const m = Math.round((ms - Date.now()) / 60000);
+    if (m < -1) return `started ${-m} minutes ago`;
     if (m <= 1) return "starting now";
     if (m < 60) return `in ${m} minutes`;
     const h = Math.round(m / 60);
@@ -313,15 +314,28 @@
   }
 
   // the two explainers, for anyone unsure what the site does or why it picked a Mass
-  function openHowSheet() {
-    openSheet("How MassGoWhere works", `
+  const HOW_STEPS = () => `
       <ol class="how-steps">
         <li><strong>Mass times for all 32 parishes.</strong> Gathered from myCatholicSG, and checked each month against every parish’s own website.</li>
         <li><strong>Where you are.</strong> Your location, or a postal code or place you search for, tells us which churches are around you.</li>
         <li><strong>Real travel times.</strong> For the nearby churches we ask OneMap, Singapore’s official map, how long the trip takes by bus &amp; MRT, car or on foot, and check that you can arrive before Mass begins.</li>
         <li><strong>One answer.</strong> The Mass you can make and when to leave, with the other churches you can reach listed below. Navigate opens Google Maps.</li>
       </ol>
-      <p class="muted">Tap the underlined words to change where you leave from, when, how you travel, or the time of day. Times can change on feast days and public holidays, so check with the parish. MassGoWhere is an independent project, not run by the Archdiocese.</p>`, ".sheet-close");
+      <p class="muted">Times can change on feast days and public holidays, so check with the parish. MassGoWhere is an independent project, not run by the Archdiocese.</p>`;
+  // "How does this work?" sits right under the promise and opens in place (tap, or hover with a mouse),
+  // instead of being a row at the bottom that nobody reaches
+  const howLink = () => `<button class="how" type="button" id="how" aria-expanded="false" aria-controls="how-pop">${svg(ICON.info)}<span>How does this work?</span></button>
+      <div class="how-pop" id="how-pop" hidden>${HOW_STEPS()}</div>`;
+  function wireHow(root) {
+    const btn = root.querySelector("#how"), pop = root.querySelector("#how-pop");
+    if (!btn || !pop) return;
+    const set = (open) => { pop.hidden = !open; btn.setAttribute("aria-expanded", String(open)); };
+    btn.addEventListener("click", () => set(pop.hidden));
+    if (matchMedia("(hover: hover)").matches) {
+      let t;
+      btn.addEventListener("mouseenter", () => { clearTimeout(t); t = setTimeout(() => set(true), 250); });
+      btn.addEventListener("mouseleave", () => clearTimeout(t));
+    }
   }
   function openWhySheet({ from, mode, at, part }) {
     const adj = partAdj(part);
@@ -474,17 +488,19 @@
     const here = !plan.place && plan.at == null;
     const layout = design().layout;
     const place = plan.place ? plan.place.label : "my location";
-    const findBtn = `<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
+    // rushing? a Mass that has just started still counts, up to 15 minutes late
+    const lateSwitch = `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
+          <span>I don’t mind being a little late<small>A Mass still counts if you’d arrive up to 15 min after it starts</small></span></label>`;
+    const findBtn = `${lateSwitch}<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
           <p class="msg" id="msg" role="status" hidden></p>`;
     // the ways out of the home screen that aren't the answer: quiet rows, not rival buttons
     const more = `<ul class="more-ways">
         <li><a href="#/way">${svg(ICON.route)}<span>Catch a Mass on the way<small>Going somewhere? Fit in a Mass along your route</small></span>${svg(ICON.right, "go")}</a></li>
         <li><a href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span>${svg(ICON.right, "go")}</a></li>
         <li><a href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span>Use it on Telegram<small>@massgowherebot</small></span>${svg(ICON.right, "go")}</a></li>
-        <li><button type="button" id="how">${svg(ICON.info)}<span>How does this work?</span>${svg(ICON.right, "go")}</button></li>
       </ul>`;
     const promise = `<div class="intro"><h1>Find a Mass you can make.</h1>
-        <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p></div>`;
+        <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>${howLink()}</div>`;
     const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass"].filter(Boolean).join(" · ");
     let body;
     if (layout === "simple") {
@@ -517,7 +533,7 @@
     } else {
       body = `<div class="intro"><h1>Find a Mass you can make.</h1>
           <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>
-          <button class="how" type="button" id="how">${svg(ICON.info)}<span>How does this work?</span></button>
+          ${howLink()}
         </div>
         <p class="sentence">I’m leaving from
           <button class="tok" type="button" id="t-place" aria-label="Leaving from: ${esc(place)}. Change"><span>${esc(place)}</span>${svg(ICON.chev)}</button><br>at
@@ -540,7 +556,7 @@
     const pickTime = () => openTimeSheet(plan.at, (at) => { plan.at = at; changed("#t-time"); });
     const pickMode = () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); changed("#t-mode"); });
     const pickPart = () => openPartSheet(plan.part, (x) => { plan.part = x; changed("#t-part"); });
-    on("#how", openHowSheet);
+    wireHow(view);
     on("#t-place", pickPlace); on("#t-time", pickTime); on("#t-mode", pickMode); on("#t-part", pickPart);
     // "Change": every option in one sheet, each opening its own picker
     on("#opts", () => {
@@ -566,7 +582,8 @@
     const msg = view.querySelector("#msg");
     const say = (t) => { msg.textContent = t; msg.hidden = false; };
     const btn = view.querySelector("#find");
-    const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "") + (plan.part ? `&part=${plan.part}` : "");
+    view.querySelector("#late")?.addEventListener("change", (e) => store.set("mgw-late", e.target.checked));
+    const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "") + (plan.part ? `&part=${plan.part}` : "") + (store.get("mgw-late") ? "&late=15" : "");
     btn.addEventListener("click", () => {
       const mode = store.get("mgw-mode") || "transit"; // the quick picks change it without redrawing
       if (plan.place) return go(`/next?lat=${plan.place.lat}&lng=${plan.place.lng}&mode=${mode}&from=${encodeURIComponent(plan.place.label)}${at()}`);
@@ -599,6 +616,8 @@
     if (at) params.set("at", at);
     const part = partOf(q.get("part"));
     if (part) params.set("part", part);
+    const late = Math.min(15, Number(q.get("late")) || 0);
+    if (late) params.set("late", late);
     if (fast) params.set("fast", "1");
     try {
       const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 4000 : 12000) });
@@ -610,9 +629,9 @@
       const d = await data();
       const origin = { lat: Number(q.get("lat")), lng: Number(q.get("lng")) };
       const now = at ?? Date.now();
-      const out = await R.rank({ origin, now, mode: params.get("mode"), parishes: d.parishes, events: S.expandAll(d, now, 2).filter(S.inPart(part)) });
+      const out = await R.rank({ origin, now, mode: params.get("mode"), parishes: d.parishes, events: S.expandAll(d, now - late * 60000, 2).filter(S.inPart(part)), lateMin: late });
       const byId = new Map(d.parishes.map((p) => [p.id, p]));
-      const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
+      const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, lateMin: e.lateMin || 0, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
       return { mode: params.get("mode"), best: pack(out.best), alternatives: out.alternatives.map(pack),
         nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) } };
     }
@@ -717,17 +736,27 @@
         <p class="blessing"><svg class="cross" viewBox="0 0 32 32" aria-hidden="true"><path d="M14.5 5h3v6h6v3h-6v13h-3V14h-6v-3h6z"/></svg>${esc(blessing(start))}</p>`;
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
       view.focus({ preventScroll: true });
-      if (at) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, tripMode(b, mode));
+      if (at || b.lateMin > 0) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, tripMode(b, mode));
       // the "more churches" cue is only for when the list starts below the fold
       const moreEl = view.querySelector("section.more"), cue = view.querySelector(".see-more");
       if (moreEl && cue && moreEl.getBoundingClientRect().top < innerHeight - 80) cue.hidden = true;
       painted = true;
     };
 
-    // 1) instant estimate frame
-    try {
-      paint(await fetchNext(q, true));
-    } catch { /* offline; the refine attempt below may also fail -> error screen */ }
+    // Ask for the estimate and the live answer together. Live usually lands within a couple of seconds: wait for it
+    // so the answer appears once and never jumps. Only when it's slow do we show the estimate first, then settle
+    // the live times in place (a gentle highlight, no repaint).
+    const fullP = fetchNext(q, false).then((r) => ({ r }), (e) => ({ e }));
+    const fastP = fetchNext(q, true);
+    const LIVE_WAIT_MS = 2500;
+    const quick = await Promise.race([fullP, new Promise((ok) => setTimeout(() => ok(null), LIVE_WAIT_MS))]);
+    let liveShown = false;
+    if (quick && quick.r) {
+      paint(quick.r);
+      liveShown = true;
+    } else {
+      try { paint(await fastP); } catch { /* offline; the live attempt below may also fail -> error screen */ }
+    }
     clearTimeout(stepTimer);
     if (stale()) return;
 
@@ -743,11 +772,16 @@
       const leave = new Date(b.leaveBy).getTime();
       const est = b.travelSource === "estimate";
       const leaveBox = document.getElementById("leave");
-      if (leaveBox) leaveBox.innerHTML = leaveHTML(b, at, mode);
+      if (leaveBox) {
+        const before = leaveBox.textContent;
+        leaveBox.innerHTML = leaveHTML(b, at, mode);
+        // times moved a little: say so quietly rather than flicker
+        if (leaveBox.textContent !== before) { leaveBox.classList.remove("updated"); void leaveBox.offsetWidth; leaveBox.classList.add("updated"); }
+      }
       // drop the "checking live routes…" note once we have exact numbers
       const estNote = view.querySelector(".answer .est");
       if (estNote && !est) estNote.remove();
-      if (!at) tickLeave(new Date(b.start).getTime(), leave, b.travelMin, est, tripMode(b, mode));
+      if (!at && !(b.lateMin > 0)) tickLeave(new Date(b.start).getTime(), leave, b.travelMin, est, tripMode(b, mode));
       // re-render only the "other options" block with exact times (keeps the hero steady)
       const alt = (res.alternatives || []).filter(Boolean);
       const near = res.nearest && res.nearest.parish.id !== b.parish.id ? res.nearest : null;
@@ -760,10 +794,10 @@
       }
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
     };
-    try {
-      const full = await fetchNext(q, false);
-      if (!stale()) refine(full);
-    } catch { /* keep the estimate frame on network failure */ }
+    if (!liveShown) {
+      const full = await fullP;
+      if (full.r && !stale()) refine(full.r);
+    }
     // once data.json has landed, backfill the source line (and any data-dependent bits)
     await dataP;
     if (!stale()) applyData();
@@ -787,6 +821,7 @@
     const about = b.travelSource === "estimate" ? "about " : "";
     const leave = new Date(b.leaveBy).getTime();
     const trip = `${about}${mins(b.travelMin)} ${mode.phrase}`;
+    if (b.lateMin > 0) return `<strong>${at ? `Leave at ${clock(at)}` : "Leave now"}</strong><span class="late">You’ll be about ${mins(b.lateMin)} late</span><span>${trip}</span>`;
     if (!at) return `<strong>${leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}${onDay(leave, Date.now())}`}</strong><span>${trip}</span>`;
     // the first Mass after your time may be hours away (late at night: tomorrow morning); then the useful
     // answer is when to set off for it, not "arrive at 10:31pm" for a 7am Mass
@@ -868,7 +903,7 @@
     const s = new Date(a.start).getTime();
     return `<li><a class="row" href="#/church/${a.parish.id}">
       <span class="t">${clock(s)}<small>${dayLabel(s)}</small></span>
-      <span class="n">${esc(a.parish.name)}${a.language !== "English" ? `<span class="tag">${esc(a.language)}</span>` : ""}<small>Leave by ${clock(new Date(a.leaveBy).getTime())}</small></span>
+      <span class="n">${esc(a.parish.name)}${a.language !== "English" ? `<span class="tag">${esc(a.language)}</span>` : ""}<small>${a.lateMin > 0 ? `<span class="late">Leave now · ${mins(a.lateMin)} late</span>` : `Leave by ${clock(new Date(a.leaveBy).getTime())}`}</small></span>
       <span class="d">${mins(a.travelMin)}${a.walk ? " walk" : ""}</span></a></li>`;
   }
 
@@ -921,7 +956,16 @@
     // notes that only restate a language already tagged on the rows add nothing
     // Confession, Adoration and devotions, where myCatholicSG lists them (about a third of parishes do)
     const SERVICES = [["Confession", "Confession"], ["Adoration", "Adoration"], ["Devotion", "Devotions"]];
-    const services = SERVICES.map(([type, title]) => {
+    // What the parish's own website says (Adoration room hours, Holy Hour, Confession, devotions, office hours) reads
+    // better than myCatholicSG's single start times, so it replaces those lists once a parish has been read.
+    const info = p.info;
+    const infoRows = info ? [["Adoration", info.adoration], ["Confession", info.confession], ["Devotions", (info.devotions || []).join("\n")],
+      ["Parish office", info.office_hours], ["Good to know", (info.good_to_know || []).join("\n")]].filter(([, v]) => v) : [];
+    const infoHTML = infoRows.length ? `<h2>At this parish</h2><dl class="info">${infoRows.map(([k, v]) =>
+      `<dt>${k}</dt><dd>${v.split("\n").map(esc).join("<br>")}</dd>`).join("")}</dl>
+      <p class="x">From the <a href="${esc(info.url)}" target="_blank" rel="noopener">parish website</a>, read ${fmtDate(info.checkedAt)}.</p>` : "";
+    const covered = new Set([info?.adoration && "Adoration", info?.confession && "Confession", info?.devotions?.length && "Devotion"].filter(Boolean));
+    const services = infoHTML + SERVICES.filter(([type]) => !covered.has(type)).map(([type, title]) => {
       const es = S.expandParish(String(id), d, now, 7, [type]);
       if (!es.length) return "";
       // a note every row shares ("Subject to availability of priest") is said once, under the list
@@ -979,6 +1023,7 @@
           ${row("w-at", "Leaving", trip.at == null ? "Now" : whenText(trip.at))}
           ${row("w-by", "Be there by", trip.by == null ? "No rush" : whenText(trip.by))}
           ${row("w-mode", "Travel by", modeOf(mode).label)}
+          ${row("w-late", "A bit late", store.get("mgw-late") ? "Fine, up to 15 min" : "No, be on time")}
         </ul>
         <div class="actions">
           <button class="btn btn-primary btn-find" id="w-find" type="button">${svg(ICON.route)}<span>Find a Mass on the way</span></button>
@@ -999,12 +1044,14 @@
         { title: "Need to be there by", none: "No rush", verb: "Be there", quick, earliest: nextQuarter(base + 45 * 60000) });
     });
     on("#w-mode", () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); redraw("#w-mode"); }));
+    on("#w-late", () => { store.set("mgw-late", !store.get("mgw-late")); redraw("#w-late"); });
     const btn = view.querySelector("#w-find"), msg = view.querySelector("#msg");
     const say = (t) => { msg.textContent = t; msg.hidden = false; };
     const goWith = (from) => {
       const qs = new URLSearchParams({ from: pt(from), fromName: from.label, to: pt(trip.to), toName: trip.to.label, mode: store.get("mgw-mode") || "transit" });
       if (trip.at) qs.set("at", trip.at);
       if (trip.by) qs.set("by", trip.by);
+      if (store.get("mgw-late")) qs.set("late", 15);
       go(`/way?${qs}`);
     };
     btn.addEventListener("click", () => {
@@ -1027,6 +1074,8 @@
   async function fetchWay(q, fast) {
     const params = new URLSearchParams({ from: q.get("from"), to: q.get("to"), mode: q.get("mode") || "transit" });
     for (const k of ["at", "by"]) { const v = parseAt(q.get(k)); if (v) params.set(k, v); }
+    const late = Math.min(15, Number(q.get("late")) || 0);
+    if (late) params.set("late", late);
     if (fast) params.set("fast", "1");
     try {
       const r = await fetch(`api/way?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 5000 : 15000) });
@@ -1038,10 +1087,10 @@
       const d = await data();
       const depart = parseAt(q.get("at")) ?? Date.now(), by = parseAt(q.get("by"));
       const out = await window.MassWay.planWay({ from: readPt(q.get("from")), to: readPt(q.get("to")), depart, arriveBy: by, mode: params.get("mode"),
-        parishes: d.parishes, events: S.expandAll(d, depart, 2).filter((e) => e.start >= depart && (!by || e.start < by)), fast: true });
+        parishes: d.parishes, events: S.expandAll(d, depart - late * 60000, 2).filter((e) => e.start >= depart - late * 60000 && (!by || e.start < by)), fast: true, lateMin: late });
       const byId = new Map(d.parishes.map((p) => [p.id, p]));
       const pack = (x) => x && { parish: byId.get(x.pid), start: x.start, end: x.end, leaveBy: x.leaveBy, arrive: x.arrive, toMin: x.toMin, toWalk: x.toWalk,
-        onwardMin: x.onwardMin, onwardWalk: x.onwardWalk, detourMin: x.detourMin, travelSource: "estimate", language: x.lang, note: x.note };
+        onwardMin: x.onwardMin, onwardWalk: x.onwardWalk, detourMin: x.detourMin, lateMin: x.lateMin, travelSource: "estimate", language: x.lang, note: x.note };
       return { best: pack(out.best), alternatives: out.alternatives.map(pack), direct: out.direct };
     }
   }
@@ -1091,7 +1140,7 @@
           <h1 class="church">${esc(p.name)}</h1>
           <p class="meta">Mass until about ${clock(end)}${b.language && b.language !== "English" ? ` · ${esc(b.language)}` : ""}</p>
           <div class="leave way-steps">
-            <strong>Leave by ${clock(leave)}${onDay(leave, at ?? Date.now())}</strong>
+            ${b.lateMin > 0 ? `<strong>Leave now</strong><span class="late">You’ll be about ${mins(b.lateMin)} late for Mass</span>` : `<strong>Leave by ${clock(leave)}${onDay(leave, at ?? Date.now())}</strong>`}
             <span>${about}${mins(b.toMin)} ${phrase(b.toWalk)} to the church</span>
             <span>Then ${about}${mins(b.onwardMin)} ${phrase(b.onwardWalk)} to ${esc(to.label)}, arriving ${about}<em>${clock(arrive)}</em></span>
           </div>
@@ -1103,7 +1152,7 @@
       moreEl.innerHTML = alt.length ? `<section class="more" aria-label="Other Masses on the way"><h2>Other Masses on the way</h2><ul class="rows">${alt.map((a) => {
         const s0 = new Date(a.start).getTime();
         return `<li><a class="row" href="#/church/${a.parish.id}"><span class="t">${clock(s0)}<small>${dayLabel(s0)}</small></span>
-          <span class="n">${esc(a.parish.name)}<small>Leave by ${clock(new Date(a.leaveBy).getTime())}</small></span>
+          <span class="n">${esc(a.parish.name)}<small>${a.lateMin > 0 ? `<span class="late">${mins(a.lateMin)} late</span>` : `Leave by ${clock(new Date(a.leaveBy).getTime())}`}</small></span>
           <span class="d">${a.detourMin <= 3 ? "on the way" : `+${mins(a.detourMin)}`}</span></a></li>`;
       }).join("")}</ul></section>` : "";
       drawMap(res);
@@ -1137,10 +1186,23 @@
       addDot(ml, map, to, "dest", to.label);
     };
 
-    // estimate first (about a second), then live routes, as on the main answer
-    try { const res = await fetchWay(q, true); paint(res, !res.outside && !!res.best); } catch { /* the live call may still work */ }
-    try { const res = await fetchWay(q, false); paint(res, false); } catch {
-      if (!answerEl.querySelector(".answer")) answerEl.innerHTML = `<section class="answer"><h1>We couldn’t plan that just now.</h1><p class="lede">Check your connection and try again.</p></section>`;
+    // as on the main answer: wait a moment for live routes so the answer appears once; show the estimate only if
+    // live is slow, then settle the live times in place
+    const fullP = fetchWay(q, false).then((r) => ({ r }), (e) => ({ e }));
+    const fastP = fetchWay(q, true);
+    const quick = await Promise.race([fullP, new Promise((ok) => setTimeout(() => ok(null), 3000))]);
+    if (quick && quick.r) paint(quick.r, false);
+    else {
+      try { const res = await fastP; paint(res, !res.outside && !!res.best); } catch { /* the live call may still work */ }
+      const full = await fullP;
+      if (full.r) {
+        const box = answerEl.querySelector(".way-steps"), before = box && box.textContent;
+        paint(full.r, false);
+        const after = answerEl.querySelector(".way-steps");
+        if (after && before && after.textContent !== before) after.classList.add("updated");
+      } else if (!answerEl.querySelector(".answer")) {
+        answerEl.innerHTML = `<section class="answer"><h1>We couldn’t plan that just now.</h1><p class="lede">Check your connection and try again.</p></section>`;
+      }
     }
     answerEl.querySelector(".est")?.remove();
   }

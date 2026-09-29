@@ -163,6 +163,10 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--ink-2); }
 .how { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin: 6px 0 -10px; padding: 0; border: 0; background: none; color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: underline; text-decoration-color: var(--field-line); text-underline-offset: 4px; }
 .how svg { width: 19px; height: 19px; color: var(--accent); flex: none; }
 @media (hover: hover) { .how:hover { text-decoration-color: currentColor; } }
+.how-pop { margin: 12px 0 0; padding: 16px 18px; border-radius: var(--radius); background: var(--field); display: grid; gap: 12px; }
+.how-pop .muted { margin: 0; font-size: 14px; }
+@media (prefers-reduced-motion: no-preference) { .how-pop:not([hidden]) { animation: rise .3s var(--ease) both; } }
+.how[aria-expanded="true"] { text-decoration-color: currentColor; }
 .how-steps { margin: 0; padding: 0 0 0 22px; display: grid; gap: 12px; color: var(--ink-2); font-size: 16px; line-height: 1.45; }
 .how-steps li::marker { color: var(--accent); font-weight: 700; }
 .how-steps strong { color: var(--ink); font-weight: 600; }
@@ -542,3 +546,25 @@ html.previewing .shell { padding-bottom: 96px; }
 .feedback .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .feedback .btn { width: auto; justify-self: start; min-height: 44px; padding: 0 18px; font-size: 15px; }
 .feedback .fb-status { margin: 0; font-size: 14px; color: var(--ink-2); min-height: 1.4em; }
+
+/* live travel times replaced the estimate: a brief tint, no jump */
+@media (prefers-reduced-motion: no-preference) {
+  .leave.updated { animation: settle 1.6s var(--ease); }
+  @keyframes settle { 0% { background: var(--accent-soft); } 100% { background: var(--field); } }
+}
+
+/* "I don't mind being a little late" */
+.late-switch { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; padding: 4px 2px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--ink); }
+.late-switch input { appearance: none; -webkit-appearance: none; width: 42px; height: 26px; margin: 0; border-radius: 999px; background: var(--field-line); position: relative; cursor: pointer; transition: background-color .2s; flex: none; }
+.late-switch input::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .3); transition: translate .2s var(--ease); }
+.late-switch input:checked { background: var(--accent); }
+.late-switch input:checked::after { translate: 16px 0; }
+.late-switch input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.late-switch small { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: var(--ink-3); }
+.late, .leave .late, .row .late { color: var(--warn); font-weight: 600; }
+
+/* church page: what the parish's own website says */
+.info { display: grid; grid-template-columns: max-content 1fr; gap: 10px 16px; margin: 8px 0 6px; }
+.info dt { font-weight: 600; color: var(--ink); font-size: 15px; }
+.info dd { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.45; }
+@media (max-width: 420px) { .info { grid-template-columns: 1fr; gap: 2px; } .info dd { margin-bottom: 10px; } }

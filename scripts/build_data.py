@@ -37,6 +37,17 @@ def site_check(pid, mc_rules):
     return {"url": urls[0], "checkedAt": site["fetched_at"], "agrees": mass_keys(site["rules"]) == mass_keys(mc_rules)}
 
 
+def site_info(pid):
+    """What the parish's own website says beyond Mass times (Adoration hours, Confession, devotions, office hours),
+    from the last monthly read. None until a parish has been read with the richer extraction."""
+    site = load(f"data/parishes/{pid}.json")
+    info = (site or {}).get("info")
+    urls = (site or {}).get("source_urls") or []
+    if not info or not urls:
+        return None
+    return {**info, "url": urls[0], "checkedAt": site["fetched_at"]}
+
+
 def main():
     parishes = load("scripts/parishes_geo.json")
     mc = load("data/mycatholic.json")
@@ -50,6 +61,7 @@ def main():
             "website": p.get("website", ""), "link": p.get("link", ""),
             "source": {"kind": "myCatholicSG", "url": f"https://mycatholic.sg/parish/{p.get('link', '')}", "fetchedAt": mc["asOf"]},
             "siteCheck": site_check(pid, mc["rules"].get(pid, [])),
+            "info": site_info(pid),
         })
     out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),
            "parishes": out_parishes, "rules": mc["rules"], "dated": {k: v for k, v in mc["dated"].items() if v}}
