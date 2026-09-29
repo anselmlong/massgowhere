@@ -25,6 +25,8 @@
     nav: '<path d="M4 11.5 20 4l-7.5 16-2-6.5z"/>',
     x: '<path d="M6 6l12 12M18 6 6 18"/>',
     map: '<path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/>',
+    route: '<circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/>',
+    flag: '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
     down: '<path d="M12 5v14M6 13l6 6 6-6"/>',
     chev: '<path d="m6 9 6 6 6-6"/>',
     left: '<path d="M15 5l-7 7 7 7"/>',
@@ -240,6 +242,7 @@
     if (path.startsWith("/next")) return renderNext(q);
     if (path.startsWith("/church/")) return renderChurch(Number(path.split("/")[2]), q);
     if (path.startsWith("/churches")) return renderChurches(q);
+    if (path.startsWith("/way")) return renderWay(q);
     return renderHome();
   }
   const go = (hash) => { location.hash = hash; };
@@ -340,15 +343,15 @@
   const placeTitle = (x) => (x.BUILDING && x.BUILDING !== "NIL" ? x.BUILDING : x.SEARCHVAL)
     .replace(/\b\w+/g, (w) => (/^(MRT|LRT|NUS|NTU|SMU|CBD|HDB)$/.test(w) || /^[A-Z]{1,3}\d+$/.test(w) ? w : w[0] + w.slice(1).toLowerCase()));
 
-  function openPlaceSheet(pick) {
+  function openPlaceSheet(pick, { title = "Leaving from", here = true } = {}) {
     const recent = recentPlaces();
-    openSheet("Leaving from", `
+    openSheet(title, `
       <div class="search">${svg(ICON.search)}<input id="place-q" type="search" inputmode="search" autocomplete="off" placeholder="Postal code or place" aria-label="Postal code or place" aria-controls="place-res">
         <button class="clear" type="button" aria-label="Clear search" hidden>${svg(ICON.x)}</button></div>
       <div id="place-res" class="opts"></div>`, "#place-q");
     const input = sheet.querySelector("#place-q"), res = sheet.querySelector("#place-res");
     const home = () => {
-      res.innerHTML = `<button class="opt" type="button" data-here>${svg(ICON.locate)}<span>Use my location<small>Where you are when you tap Find</small></span></button>
+      res.innerHTML = `${here ? `<button class="opt" type="button" data-here>${svg(ICON.locate)}<span>Use my location<small>Where you are when you tap Find</small></span></button>` : ""}
         ${recent.length ? `<p class="label">Recent</p><div class="recent">${recent.map((r, i) => `<button type="button" data-recent="${i}">${svg(ICON.recent)}${esc(r.label)}</button>`).join("")}</div>` : ""}`;
     };
     home();
@@ -418,19 +421,20 @@
     return { get: () => cur, set };
   }
 
-  function openTimeSheet(current, pick) {
+  // title/none/verb/quick/earliest let the same wheels ask "Need to be there by" as well as "Leave at"
+  function openTimeSheet(current, pick, { title = "Leave at", none = "Leave now", verb = "Leave", quick: shortcuts = null, earliest = 0 } = {}) {
     const now = Date.now(), today = sgMidnight(now);
     const days = Array.from({ length: 7 }, (_, i) => today + i * DAY);
     // shortcuts for the times people plan around: after work, Saturday vigil, Sunday morning
     const sat = days.find((d) => wk(d) === "Sat"), sun = days.find((d) => wk(d) === "Sun");
-    const quick = [
+    const quick = shortcuts || [
       now + 30 * 60000 < today + 22 * 3600e3 ? { t: nextQuarter(now + 29 * 60000), l: "In 30 min" } : null,
       today + 18 * 3600e3 > now + Q ? { t: today + 18 * 3600e3, l: "Tonight 6pm" } : null,
       sat && sat + 16.5 * 3600e3 > now ? { t: sat + 16.5 * 3600e3, l: `${sat === today ? "Today" : "Sat"} 4:30pm` } : null,
       sun && sun + 7.5 * 3600e3 > now ? { t: sun + 7.5 * 3600e3, l: `${sun === today ? "Today" : "Sun"} 7:30am` } : null,
     ].filter(Boolean);
-    openSheet("Leave at", `
-      <div class="quick"><button class="q now" type="button" data-at="">Leave now</button>${quick.map((x) => `<button class="q" type="button" data-at="${x.t}">${x.l}</button>`).join("")}</div>
+    openSheet(title, `
+      <div class="quick"><button class="q now" type="button" data-at="">${none}</button>${quick.map((x) => `<button class="q" type="button" data-at="${x.t}">${x.l}</button>`).join("")}</div>
       <div class="wheels">
         <div class="wheel day" aria-label="Day"></div><div class="wheel" aria-label="Hour"></div><div class="wheel" aria-label="Minute"></div><div class="wheel" aria-label="AM or PM"></div>
       </div>
@@ -444,13 +448,13 @@
     // a time that has already passed springs forward to the next quarter hour
     const settle = () => {
       let at = compose();
-      const min = nextQuarter(Date.now());
+      const min = Math.max(nextQuarter(Date.now()), earliest);
       if (at < min) { at = min; split(at).forEach((v, k) => W[k].set(v, true)); }
       const d = dayLabel(at);
       setBtn.dataset.at = at;
-      setBtn.innerHTML = `${svg(ICON.clock)}<span>Leave ${d === "Today" ? "today" : d === "Tomorrow" ? "tomorrow" : wk(at, "long")} at ${clock(at)}</span>`;
+      setBtn.innerHTML = `${svg(ICON.clock)}<span>${verb} ${d === "Today" ? "today" : d === "Tomorrow" ? "tomorrow" : wk(at, "long")} at ${clock(at)}</span>`;
     };
-    const init = split(current ?? nextQuarter(now));
+    const init = split(current ?? Math.max(nextQuarter(now), earliest));
     const W = [
       wheel(els[0], days.map((d, i) => (i === 0 ? "Today" : i === 1 ? "Tomorrow" : `${wk(d)} ${dnum(d)}`)), init[0], settle),
       wheel(els[1], Array.from({ length: 12 }, (_, i) => String(i + 1)), init[1], settle),
@@ -474,6 +478,7 @@
           <p class="msg" id="msg" role="status" hidden></p>`;
     // the ways out of the home screen that aren't the answer: quiet rows, not rival buttons
     const more = `<ul class="more-ways">
+        <li><a href="#/way">${svg(ICON.route)}<span>Catch a Mass on the way<small>Going somewhere? Fit in a Mass along your route</small></span>${svg(ICON.right, "go")}</a></li>
         <li><a href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span>${svg(ICON.right, "go")}</a></li>
         <li><a href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span>Use it on Telegram<small>@massgowherebot</small></span>${svg(ICON.right, "go")}</a></li>
         <li><button type="button" id="how">${svg(ICON.info)}<span>How does this work?</span>${svg(ICON.right, "go")}</button></li>
@@ -522,10 +527,12 @@
         <p class="hint">Tap an underlined word to change it.</p>
         <div class="actions">${findBtn}
           <a class="btn btn-quiet browse" href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span></a>
+          <a class="btn btn-quiet browse" href="#/way">${svg(ICON.route)}<span>Catch a Mass on the way</span></a>
         </div>
         <a class="tg" href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span><strong>Prefer Telegram? Use @massgowherebot</strong><small>Send it your location or a postal code and it replies with the Mass you can make.</small></span>${svg(ICON.right, "go")}</a>`;
     }
     view.innerHTML = `<section class="home home-${layout}">${body}</section>`;
+    warmMap();
     // the choice you just changed glows for a moment, so the screen visibly answers back
     const changed = (id) => { renderHome(); const t = view.querySelector(id) || view.querySelector("#opts"); t?.focus({ preventScroll: true }); t?.classList.add("just"); };
     const on = (id, fn) => view.querySelector(id)?.addEventListener("click", fn);
@@ -947,18 +954,270 @@
       </section>`;
   }
 
+  // ---------- a Mass on the way (#/way) ----------
+  // You're going from A to B; which Mass can you fit in along the way? The form keeps its choices while you look at
+  // answers; the answer's link carries them all (#/way?from=lat,lng&to=lat,lng&...), so it can be shared.
+  const trip = { from: null, to: null, at: null, by: null };
+  const pt = (p) => `${p.lat},${p.lng}`;
+  const readPt = (v, label) => { const [lat, lng] = String(v || "").split(",").map(Number); return Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng, label } : null; };
+  const gdir = (a, b, mode) => `https://www.google.com/maps/dir/?api=1&origin=${a.lat},${a.lng}&destination=${b.lat},${b.lng}&travelmode=${modeOf(mode).gmaps}`;
+
+  function renderWay(q) {
+    if (q.get("to")) return renderWayAnswer(q);
+    const mode = store.get("mgw-mode") || "transit";
+    if (trip.at != null && trip.at <= Date.now()) trip.at = null;
+    if (trip.by != null && trip.by <= (trip.at ?? Date.now())) trip.by = null;
+    const row = (id, label, value, empty) => `<li><button type="button" id="${id}"><span class="k">${label}</span><span class="v${empty ? " empty" : ""}">${esc(value)}</span>${svg(ICON.right, "go")}</button></li>`;
+    view.innerHTML = `
+      <div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button></div>
+      <section class="way-form">
+        <div class="intro"><h1>Catch a Mass on the way</h1>
+          <p class="lede">Heading somewhere with time to spare? We’ll find a Mass along your route and how much time it adds.</p></div>
+        <ul class="settings" aria-label="Your trip">
+          ${row("w-from", "From", trip.from ? trip.from.label : "My location")}
+          ${row("w-to", "To", trip.to ? trip.to.label : "Choose where you’re going", !trip.to)}
+          ${row("w-at", "Leaving", trip.at == null ? "Now" : whenText(trip.at))}
+          ${row("w-by", "Be there by", trip.by == null ? "No rush" : whenText(trip.by))}
+          ${row("w-mode", "Travel by", modeOf(mode).label)}
+        </ul>
+        <div class="actions">
+          <button class="btn btn-primary btn-find" id="w-find" type="button">${svg(ICON.route)}<span>Find a Mass on the way</span></button>
+          <p class="msg" id="msg" role="status" hidden></p>
+        </div>
+        <p class="muted">We assume Mass takes about an hour on Sundays and Saturday evenings, and about 40 minutes on weekdays.</p>
+      </section>`;
+    const redraw = (id) => { renderWay(new URLSearchParams()); const t = view.querySelector(id); t?.focus({ preventScroll: true }); t?.classList.add("just"); };
+    const on = (id, fn) => view.querySelector(id).addEventListener("click", fn);
+    const pickTo = () => openPlaceSheet((p) => { trip.to = p; redraw("#w-to"); }, { title: "Going to", here: false });
+    on("#w-from", () => openPlaceSheet((p) => { trip.from = p; redraw("#w-from"); }));
+    on("#w-to", pickTo);
+    on("#w-at", () => openTimeSheet(trip.at, (at) => { trip.at = at; redraw("#w-at"); }));
+    on("#w-by", () => {
+      const base = trip.at ?? Date.now();
+      const quick = [1, 2, 3].map((h) => ({ t: nextQuarter(base + h * 3600e3 - 60000), l: `In ${h} hour${h > 1 ? "s" : ""}` }));
+      openTimeSheet(trip.by, (by) => { trip.by = by; redraw("#w-by"); },
+        { title: "Need to be there by", none: "No rush", verb: "Be there", quick, earliest: nextQuarter(base + 45 * 60000) });
+    });
+    on("#w-mode", () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); redraw("#w-mode"); }));
+    const btn = view.querySelector("#w-find"), msg = view.querySelector("#msg");
+    const say = (t) => { msg.textContent = t; msg.hidden = false; };
+    const goWith = (from) => {
+      const qs = new URLSearchParams({ from: pt(from), fromName: from.label, to: pt(trip.to), toName: trip.to.label, mode: store.get("mgw-mode") || "transit" });
+      if (trip.at) qs.set("at", trip.at);
+      if (trip.by) qs.set("by", trip.by);
+      go(`/way?${qs}`);
+    };
+    btn.addEventListener("click", () => {
+      if (!trip.to) return pickTo();
+      if (trip.from) return goWith(trip.from);
+      if (!navigator.geolocation) return say("Your browser can’t share location. Choose where you’re leaving from instead.");
+      btn.setAttribute("aria-busy", "true");
+      btn.querySelector("span").textContent = "Finding you…";
+      navigator.geolocation.getCurrentPosition(
+        (pos) => goWith({ lat: Number(pos.coords.latitude.toFixed(5)), lng: Number(pos.coords.longitude.toFixed(5)), label: "your location" }),
+        (err) => {
+          btn.removeAttribute("aria-busy");
+          btn.querySelector("span").textContent = "Find a Mass on the way";
+          say(err.code === 1 ? "Location is blocked for this site. Allow it in your browser settings, or choose where you’re leaving from." : "Couldn’t get your location just now. Choose where you’re leaving from instead.");
+        },
+        { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 });
+    });
+  }
+
+  async function fetchWay(q, fast) {
+    const params = new URLSearchParams({ from: q.get("from"), to: q.get("to"), mode: q.get("mode") || "transit" });
+    for (const k of ["at", "by"]) { const v = parseAt(q.get(k)); if (v) params.set(k, v); }
+    if (fast) params.set("fast", "1");
+    try {
+      const r = await fetch(`api/way?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 5000 : 15000) });
+      if (r.status === 400) return { outside: true };
+      if (!r.ok) throw new Error(r.status);
+      return await r.json();
+    } catch {
+      // offline or API down: the same plan in the browser, travel times estimated
+      const d = await data();
+      const depart = parseAt(q.get("at")) ?? Date.now(), by = parseAt(q.get("by"));
+      const out = await window.MassWay.planWay({ from: readPt(q.get("from")), to: readPt(q.get("to")), depart, arriveBy: by, mode: params.get("mode"),
+        parishes: d.parishes, events: S.expandAll(d, depart, 2).filter((e) => e.start >= depart && (!by || e.start < by)), fast: true });
+      const byId = new Map(d.parishes.map((p) => [p.id, p]));
+      const pack = (x) => x && { parish: byId.get(x.pid), start: x.start, end: x.end, leaveBy: x.leaveBy, arrive: x.arrive, toMin: x.toMin, toWalk: x.toWalk,
+        onwardMin: x.onwardMin, onwardWalk: x.onwardWalk, detourMin: x.detourMin, travelSource: "estimate", language: x.lang, note: x.note };
+      return { best: pack(out.best), alternatives: out.alternatives.map(pack), direct: out.direct };
+    }
+  }
+
+  async function renderWayAnswer(q) {
+    const mode = modeOf(q.get("mode"));
+    const from = readPt(q.get("from"), q.get("fromName") || "your location"), to = readPt(q.get("to"), q.get("toName") || "your destination");
+    const at = parseAt(q.get("at")), by = parseAt(q.get("by"));
+    const myHash = location.hash, stale = () => location.hash !== myHash;
+    if (!from || !to) return go("/way");
+    rememberPlace(to);
+    const summary = [`From ${from.label === "your location" ? "your location" : from.label} to ${to.label}`, at ? `leaving ${whenText(at)}` : "leaving now",
+      mode.phrase, by ? `there by ${whenText(by)}` : ""].filter(Boolean).join(" · ");
+    view.innerHTML = `
+      <div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/way'">${svg(ICON.back)}</button>
+        <span class="from wrap">${esc(summary)}</span></div>
+      <div id="way-answer"><div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p>Looking for a Mass along your way…</p></div></div>
+      <div id="map" class="way-map" role="region" aria-label="Map of your trip" hidden></div>
+      <p class="legend" id="way-legend" hidden><span><i class="l-you"></i>Start</span><span><i class="l-dest"></i>${esc(to.label)}</span><span><i class="l-church"></i>Mass on the way</span></p>
+      <div id="way-more"></div>`;
+    const answerEl = view.querySelector("#way-answer"), moreEl = view.querySelector("#way-more");
+    const phrase = (walk) => (walk ? "on foot" : mode.phrase);
+    let lastKey = "";
+
+    const paint = (res, refining) => {
+      if (stale()) return;
+      if (res.outside) {
+        answerEl.innerHTML = `<section class="answer"><h1>That trip isn’t in Singapore.</h1><p class="lede">MassGoWhere covers Singapore’s 32 parishes. Choose a start and destination in Singapore.</p>
+          <p style="margin-top:24px"><a class="btn btn-quiet" href="#/way">Change the trip</a></p></section>`;
+        return;
+      }
+      const b = res.best;
+      if (!b) {
+        answerEl.innerHTML = `<section class="answer"><h1>No Mass fits ${by ? `before you need to be there` : "on this trip"}.</h1>
+          <p class="lede">${by ? `Nothing along the way lets you reach ${esc(to.label)} by ${esc(whenText(by))}. Try a later time, or leaving earlier.` : "Try leaving at another time, or a different way of travelling."}</p>
+          <p style="margin-top:24px"><a class="btn btn-quiet" href="#/way">Change the trip</a></p></section>`;
+        moreEl.innerHTML = "";
+        return;
+      }
+      const start = new Date(b.start).getTime(), end = new Date(b.end).getTime(), leave = new Date(b.leaveBy).getTime(), arrive = new Date(b.arrive).getTime();
+      const t = clockParts(start), p = b.parish, about = b.travelSource === "estimate" ? "about " : "";
+      const adds = b.detourMin <= 3 ? "Right on your way" : `Adds ${mins(b.detourMin)} to your trip`;
+      answerEl.innerHTML = `
+        <section class="answer">
+          <p class="day">${dayLabel(start)} · ${adds}</p>
+          <p class="time">${t.hm}<small>${t.ap}</small></p>
+          <h1 class="church">${esc(p.name)}</h1>
+          <p class="meta">Mass until about ${clock(end)}${b.language && b.language !== "English" ? ` · ${esc(b.language)}` : ""}</p>
+          <div class="leave way-steps">
+            <strong>Leave by ${clock(leave)}${onDay(leave, at ?? Date.now())}</strong>
+            <span>${about}${mins(b.toMin)} ${phrase(b.toWalk)} to the church</span>
+            <span>Then ${about}${mins(b.onwardMin)} ${phrase(b.onwardWalk)} to ${esc(to.label)}, arriving ${about}<em>${clock(arrive)}</em></span>
+          </div>
+          <a class="btn btn-primary" href="${gdir(from, p, b.toWalk ? "walk" : mode.id)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate to the church</span></a>
+          <a class="btn btn-quiet way-on" href="${gdir(p, to, b.onwardWalk ? "walk" : mode.id)}" target="_blank" rel="noopener">${svg(ICON.flag)}<span>Then on to ${esc(to.label)}</span></a>
+          ${refining ? `<p class="est" style="text-align:center">Travel times are estimates; checking live routes…</p>` : ""}
+        </section>`;
+      const alt = (res.alternatives || []).filter(Boolean);
+      moreEl.innerHTML = alt.length ? `<section class="more" aria-label="Other Masses on the way"><h2>Other Masses on the way</h2><ul class="rows">${alt.map((a) => {
+        const s0 = new Date(a.start).getTime();
+        return `<li><a class="row" href="#/church/${a.parish.id}"><span class="t">${clock(s0)}<small>${dayLabel(s0)}</small></span>
+          <span class="n">${esc(a.parish.name)}<small>Leave by ${clock(new Date(a.leaveBy).getTime())}</small></span>
+          <span class="d">${a.detourMin <= 3 ? "on the way" : `+${mins(a.detourMin)}`}</span></a></li>`;
+      }).join("")}</ul></section>` : "";
+      drawMap(res);
+    };
+
+    // the map: start, destination, the stop (big pin) and the other options (small pins), joined by a dashed line
+    // through the stop. Straight lines show the order of the trip, not the streets.
+    const drawMap = async (res) => {
+      const key = [res.best?.parish.id, ...(res.alternatives || []).map((a) => a?.parish.id)].join(",");
+      if (key === lastKey) return;
+      lastKey = key;
+      const el = view.querySelector("#map");
+      if (!el) return;
+      el.hidden = false;
+      view.querySelector("#way-legend").hidden = false;
+      let ml;
+      try { ml = await maplibre(); } catch { el.innerHTML = '<p class="lede" style="padding:20px">The map could not load.</p>'; return; }
+      if (stale() || !el.isConnected) return;
+      if (currentMap) { currentMap.remove(); currentMap = null; }
+      const stops = [res.best, ...(res.alternatives || [])].filter(Boolean);
+      const map = newMap(ml, el, [from, to, ...stops.map((s0) => s0.parish)], 40);
+      currentMap = map;
+      const line = { type: "Feature", geometry: { type: "LineString", coordinates: [[from.lng, from.lat], [res.best.parish.lng, res.best.parish.lat], [to.lng, to.lat]] } };
+      map.on("load", () => {
+        map.addSource("trip", { type: "geojson", data: line });
+        map.addLayer({ id: "trip", type: "line", source: "trip", paint: { "line-color": getComputedStyle(document.documentElement).getPropertyValue("--accent-deep").trim() || "#2e6b4f", "line-width": 3, "line-dasharray": [1.5, 1.5] } });
+      });
+      stops.slice(1).forEach((s0) => addPin(ml, map, s0.parish, `<strong>${esc(s0.parish.name)}</strong><span>${clock(new Date(s0.start).getTime())} ${dayLabel(new Date(s0.start).getTime()).toLowerCase()} · ${s0.detourMin <= 3 ? "on the way" : `adds ${mins(s0.detourMin)}`}</span><a href="#/church/${s0.parish.id}">Mass times</a>`, { dim: true }));
+      addPin(ml, map, res.best.parish, `<strong>${esc(res.best.parish.name)}</strong><span>${clock(new Date(res.best.start).getTime())} · your stop</span><a href="#/church/${res.best.parish.id}">Mass times</a>`);
+      addDot(ml, map, from, "me", "Start");
+      addDot(ml, map, to, "dest", to.label);
+    };
+
+    // estimate first (about a second), then live routes, as on the main answer
+    try { const res = await fetchWay(q, true); paint(res, !res.outside && !!res.best); } catch { /* the live call may still work */ }
+    try { const res = await fetchWay(q, false); paint(res, false); } catch {
+      if (!answerEl.querySelector(".answer")) answerEl.innerHTML = `<section class="answer"><h1>We couldn’t plan that just now.</h1><p class="lede">Check your connection and try again.</p></section>`;
+    }
+    answerEl.querySelector(".est")?.remove();
+  }
+
   // ---------- all churches ----------
+  // The map library is big (~800 KB) and only some visits use it, so it loads on demand; the home screen warms it
+  // up in idle time (see warmMap) so opening a map is quick.
+  const ML = "https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl";
+  const MAP_STYLE = "https://tiles.openfreemap.org/styles/liberty";
   let maplibreP = null;
   const maplibre = () => (maplibreP ||= new Promise((ok, fail) => {
     const css = document.createElement("link");
-    css.rel = "stylesheet"; css.href = "https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.css";
+    css.rel = "stylesheet"; css.href = `${ML}.css`;
     document.head.appendChild(css);
     const js = document.createElement("script");
-    js.src = "https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js";
+    js.src = `${ML}.js`;
     js.onload = () => ok(window.maplibregl); js.onerror = (e) => { maplibreP = null; fail(e); };
     document.head.appendChild(js);
   }));
-  const PIN = '<svg viewBox="0 0 32 40" aria-hidden="true"><path d="M16 39s13-12.4 13-22.5C29 8.9 23.2 3 16 3S3 8.9 3 16.5C3 26.6 16 39 16 39z"/><path class="x" d="M14.6 9.5h2.8v4.3h4.1v2.7h-4.1v8.3h-2.8v-8.3h-4.1v-2.7h4.1z"/></svg>';
+  let warmed = false;
+  function warmMap() {
+    if (warmed) return;
+    warmed = true;
+    const idle = window.requestIdleCallback || ((f) => setTimeout(f, 1500));
+    idle(() => {
+      for (const [href, as] of [[`${ML}.js`, "script"], [`${ML}.css`, "style"], [MAP_STYLE, "fetch"]]) {
+        const l = document.createElement("link");
+        l.rel = "prefetch"; l.href = href; l.as = as;
+        if (as === "fetch") l.crossOrigin = "anonymous";
+        document.head.appendChild(l);
+      }
+    });
+  }
+  // a church pin: a small drop with a cross; "dim" for the other options on a route
+  const PIN = '<svg viewBox="0 0 32 40" aria-hidden="true"><path d="M16 39s13-12.4 13-22.5C29 8.9 23.2 3 16 3S3 8.9 3 16.5C3 26.6 16 39 16 39z"/><path class="x" d="M15 9.5h2v3.8h3.8v2H17v6.7h-2v-6.7h-3.8v-2H15z"/></svg>';
+  function newMap(ml, el, pts, pad = 44) {
+    const lngs = pts.map((p) => p.lng), lats = pts.map((p) => p.lat);
+    const map = new ml.Map({
+      container: el,
+      // a normal full-colour street map (parks, water, MRT lines) in both themes, so places are easy to recognise
+      style: MAP_STYLE,
+      bounds: [[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]],
+      fitBoundsOptions: { padding: { top: pad + 16, bottom: pad, left: pad, right: pad }, maxZoom: 15 },
+      maxBounds: [[103.45, 1.1], [104.2, 1.55]],
+      attributionControl: { compact: true },
+      dragRotate: false,
+      pitchWithRotate: false,
+      fadeDuration: 0,                                   // tiles appear at once instead of fading in
+      pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+    });
+    map.touchZoomRotate.disableRotation();
+    map.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
+    return map;
+  }
+  // a pin whose popup always fits: tapping it first slides the map so the pin sits low, with room above for the card
+  function addPin(ml, map, p, html, { dim = false, label = p.name } = {}) {
+    const el = document.createElement("button");
+    el.type = "button";
+    el.className = `church-pin${dim ? " dim" : ""}`;
+    el.setAttribute("aria-label", label);
+    el.innerHTML = PIN;
+    const popup = new ml.Popup({ offset: 30, closeButton: false, maxWidth: "240px", anchor: "bottom" }).setHTML(html);
+    popup.on("open", () => el.setAttribute("aria-expanded", "true"));
+    popup.on("close", () => el.setAttribute("aria-expanded", "false"));
+    el.addEventListener("click", () => {
+      const h = map.getContainer().clientHeight;
+      map.easeTo({ center: [p.lng, p.lat], offset: [0, Math.min(110, h / 2 - 40)], duration: reduceMotion() ? 0 : 300 });
+    });
+    return new ml.Marker({ element: el, anchor: "bottom" }).setLngLat([p.lng, p.lat]).setPopup(popup).addTo(map);
+  }
+  function addDot(ml, map, p, cls, label) {
+    const el = document.createElement("div");
+    el.className = cls;
+    el.setAttribute("role", "img");
+    el.setAttribute("aria-label", label);
+    return new ml.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map);
+  }
 
   // browse. The map is just the map: every church, tap for its next Mass. The list is the timetable: one day's
   // Masses per church, narrowed with dropdowns. The choices live in the link (#/churches?view=list&day=1&part=evening),
@@ -1114,45 +1373,32 @@
     try { ml = await maplibre(); } catch { mapEl.innerHTML = '<p class="lede" style="padding:20px">The map could not load. Use the list instead.</p>'; return; }
     if (!mapEl.isConnected) return;
     const near5 = origin ? [...d.parishes].sort((a, b) => dist(a) - dist(b)).slice(0, 5) : [];
-    const map = new ml.Map({
-      container: mapEl,
-      // a normal full-colour street map (parks, water, MRT lines) in both themes, so places are easy to recognise
-      style: "https://tiles.openfreemap.org/styles/liberty",
-      // frame you and your five nearest churches, or every church when we don't know where you are
-      bounds: (() => {
-        const pts = origin ? [origin, ...near5] : d.parishes;
-        return [[Math.min(...pts.map((p) => p.lng)), Math.min(...pts.map((p) => p.lat))],
-                [Math.max(...pts.map((p) => p.lng)), Math.max(...pts.map((p) => p.lat))]];
-      })(),
-      fitBoundsOptions: { padding: { top: 56, bottom: 40, left: 36, right: 36 } },
-      maxBounds: [[103.45, 1.1], [104.2, 1.55]],
-      attributionControl: { compact: true },
-      cooperativeGestures: false,
-      dragRotate: false,
-      pitchWithRotate: false,
-    });
+    // frame you and your five nearest churches, or every church when we don't know where you are
+    const map = newMap(ml, mapEl, origin ? [origin, ...near5] : d.parishes);
     currentMap = map;
-    map.touchZoomRotate.disableRotation();
-    map.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
-    for (const p of d.parishes) {
-      const el = document.createElement("button");
-      el.type = "button";
-      el.className = "church-pin";
-      el.setAttribute("aria-label", p.name);
-      el.innerHTML = PIN;
-      const popup = new ml.Popup({ offset: 40, closeButton: false, maxWidth: "260px" }).setHTML(
-        `<strong>${esc(p.name)}</strong><span>${nextLine(p)}</span><a href="#/church/${p.id}">Mass times and directions</a>`);
-      popup.on("open", () => el.setAttribute("aria-expanded", "true"));
-      popup.on("close", () => el.setAttribute("aria-expanded", "false"));
-      new ml.Marker({ element: el, anchor: "bottom" }).setLngLat([p.lng, p.lat]).setPopup(popup).addTo(map);
-    }
-    if (origin) {
-      const me = document.createElement("div");
-      me.className = "me";
-      me.setAttribute("aria-label", "You");
-      new ml.Marker({ element: me }).setLngLat([origin.lng, origin.lat]).addTo(map);
-    }
+    for (const p of d.parishes) addPin(ml, map, p, `<strong>${esc(p.name)}</strong><span>${nextLine(p)}</span><a href="#/church/${p.id}">Mass times and directions</a>`);
+    if (origin) addDot(ml, map, origin, "me", "You");
   }
+
+  // feedback form in the footer: sent to Anselm on Telegram by /api/feedback
+  const fb = document.getElementById("feedback");
+  fb?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const status = fb.querySelector(".fb-status"), btn = fb.querySelector("button");
+    const message = fb.message.value.trim();
+    if (message.length < 2) { status.textContent = "Write a few words first."; fb.message.focus(); return; }
+    btn.disabled = true; status.textContent = "Sending…";
+    try {
+      const r = await fetch("api/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, signal: AbortSignal.timeout(10000),
+        body: JSON.stringify({ message, contact: fb.contact.value.trim(), website: fb.website.value, page: location.hash.split("?")[0] || "#/" }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || r.status);
+      fb.reset();
+      status.textContent = "Thank you! Anselm will read it.";
+    } catch (err) {
+      status.textContent = `${err.message && !/^\d+$/.test(err.message) ? err.message + " " : ""}You can also message @massgowherebot and send /feedback.`;
+    } finally { btn.disabled = false; }
+  });
 
   document.addEventListener("click", (e) => {
     if (e.target.closest(".btn-primary[href^='https://www.google.com/maps']") && navigator.vibrate) navigator.vibrate(12);

@@ -340,8 +340,19 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 
 #map { height: 60dvh; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--field); margin-top: 8px; }
 /* pins: saturated fill with a white keyline and a dark halo, so they stand off both the pale and the dark basemap */
-.church-pin { --pin: var(--accent-deep); width: 48px; height: 52px; padding: 2px 5px 0; display: flex; align-items: flex-end; justify-content: center; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 0 1px rgb(0 0 0 / .55)) drop-shadow(0 3px 4px rgb(0 0 0 / .35)); transition: transform .15s var(--ease); }
-.church-pin svg { width: 38px; height: 47px; display: block; flex: none; }
+.church-pin { --pin: var(--accent-deep); width: 44px; height: 44px; padding: 4px 9px 0; display: flex; align-items: flex-end; justify-content: center; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 0 1px rgb(0 0 0 / .55)) drop-shadow(0 3px 4px rgb(0 0 0 / .35)); transition: transform .15s var(--ease); }
+.church-pin svg { width: 26px; height: 33px; display: block; flex: none; } /* small pin, 44px tap area */
+.church-pin.dim { --pin: color-mix(in srgb, var(--accent-deep) 55%, #6b7280); }
+.church-pin.dim svg { width: 22px; height: 28px; }
+.dest { width: 20px; height: 20px; border-radius: 6px; background: var(--ink); border: 3px solid #fff; box-shadow: 0 1px 4px rgb(0 0 0 / .45); } /* no rotate: it would also rotate the marker's position */
+.from.wrap { white-space: normal; line-height: 1.35; }
+.legend .l-dest { background: var(--ink); border-radius: 3px; }
+.way-map { height: 46dvh; margin-top: 18px; }
+.way-on { margin-top: 10px; }
+.way-steps span + span { margin-top: 2px; }
+.settings .v.empty { color: var(--accent); }
+.way-form { padding-top: 12px; display: flex; flex-direction: column; gap: 22px; }
+.way-form .muted { margin: 0; }
 .church-pin path:first-child { fill: var(--pin); stroke: #fff; stroke-width: 2.5; }
 .church-pin .x { fill: #fff; }
 .church-pin[aria-expanded="true"] { transform: scale(1.15); z-index: 2; }
@@ -522,3 +533,12 @@ html.previewing .shell { padding-bottom: 96px; }
   .answer.reveal > * { animation: fade .25s ease both; }
   @keyframes fade { from { opacity: 0; } }
 }
+
+/* footer feedback form */
+.feedback form { display: grid; gap: 8px; margin: 4px 0 12px; max-width: 60ch; }
+.feedback label { font-size: 14px; color: var(--ink-2); }
+.feedback label span { color: var(--ink-3); }
+.feedback textarea, .feedback input { width: 100%; padding: 10px 12px; border: 1px solid var(--field-line); border-radius: 10px; background: var(--bg); color: var(--ink); font: 16px/1.4 var(--font-body); resize: vertical; }
+.feedback .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.feedback .btn { width: auto; justify-self: start; min-height: 44px; padding: 0 18px; font-size: 15px; }
+.feedback .fb-status { margin: 0; font-size: 14px; color: var(--ink-2); min-height: 1.4em; }
