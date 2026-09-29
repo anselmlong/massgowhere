@@ -229,22 +229,31 @@ def search_place(text):
 LAST = {}  # chat id -> (lat, lng, place) of the last query, in memory only, to redo it after a mode change
 
 
+def ack(cq, text=None):
+    """Stop the button's spinner. Best effort: Telegram refuses (400 "query is too old") once a tap has
+    waited too long, e.g. across a restart, and the tap must still change the answer."""
+    try:
+        tg("answerCallbackQuery", callback_query_id=cq["id"], **({"text": text} if text else {}))
+    except Exception as e:  # noqa: BLE001
+        log.warning("answerCallbackQuery failed: %s", e)
+
+
 def handle(update):
     if "callback_query" in update:
         cq = update["callback_query"]
         data = cq.get("data", "")
         chat_id = (cq.get("message") or {}).get("chat", {}).get("id")
         if not chat_id:
-            return tg("answerCallbackQuery", callback_query_id=cq["id"], text="Please send /start again.")
+            return ack(cq, "Please send /start again.")
         if data.startswith("mode:") and data[5:] in MODES:
             set_mode(chat_id, data[5:])
-            tg("answerCallbackQuery", callback_query_id=cq["id"], text=f"Travelling by {MODES[data[5:]][0]}")
+            ack(cq, f"Travelling by {MODES[data[5:]][0]}")
             if chat_id in LAST:
                 answer(chat_id, *LAST[chat_id])
             else:
                 tg("sendMessage", chat_id=chat_id, text=f"Got it: {MODES[data[5:]][0]}. Now share your location or send a postal code.")
         else:
-            tg("answerCallbackQuery", callback_query_id=cq["id"])
+            ack(cq)
         return
     msg = update.get("message") or {}
     chat_id = msg.get("chat", {}).get("id")
