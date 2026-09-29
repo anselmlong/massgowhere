@@ -36,16 +36,16 @@ Add `?preview=1` to the site URL to get the colour palette switcher (Seasonal / 
 
 | What | How | Where |
 |---|---|---|
-| myCatholicSG times (source of truth) | `sh scripts/update_mycatholic.sh`: fetch, import, build, commit, push | Run it yourself. To automate it, add the cron line below yourself on the VPS. |
+| myCatholicSG times (source of truth) | `sh scripts/update_mycatholic.sh`: fetch, import, build, commit, push | VPS crontab, daily 04:00 server time (UTC, so 12:00 SGT); log in `~/mgw.log`. Or run it by hand. |
 | Parish website check | `sh scripts/check_sites.sh`, monthly | VPS timer `massgowhere-check.timer`, 1st of each month, 03:00 SGT |
 | Public holidays | edit `data/holidays.json` when MOM publishes next year's list | The build warns when fewer than 60 days remain |
 
 Both scripts start from `origin/main` (`git reset --hard`), take a lock (`flock`, Linux), and only commit regenerated files.
 
-Daily myCatholicSG refresh (install by hand on the VPS if you want it automatic):
+Daily myCatholicSG refresh, installed on the VPS (`crontab -l`). To set it up again on a new machine:
 
 ```sh
-(crontab -l 2>/dev/null; echo "0 4 * * * sh /home/ubuntu/massgowhere/scripts/update_mycatholic.sh >> /home/ubuntu/massgowhere/update.log 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo '0 4 * * * sh $HOME/massgowhere/scripts/update_mycatholic.sh >>$HOME/mgw.log 2>&1') | crontab -
 ```
 
 ## Environment
@@ -58,6 +58,7 @@ Daily myCatholicSG refresh (install by hand on the VPS if you want it automatic)
 systemctl --user status massgowhere-bot
 systemctl --user list-timers massgowhere-check.timer
 journalctl --user -u massgowhere-check -n 50
+tail ~/mgw.log                                  # daily myCatholicSG refresh (cron)
 ```
 
 ## Open items
