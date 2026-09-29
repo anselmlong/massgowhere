@@ -3,7 +3,7 @@
 myCatholicSG is the source of truth. This lists where a parish's own website says something different.
 Review these and, if the parish site is right, tell myCatholicSG / the parish office.
 
-## Differences (18)
+## Differences (19)
 
 ### Blessed Sacrament Church
 https://bsc.org.sg/
@@ -60,6 +60,11 @@ https://ststephen.sg/masses-devotions/
 https://www.svdp.sg/
 - Only on parish website: Sun 15:00 (weeks [5])
 
+### Church of Sts Peter and Paul
+https://sppchurch.org.sg/schedules/
+- Only on parish website: Fri 07:20, Mon 07:20, Sat 07:20, Thu 07:20, Tue 07:20, Wed 07:20
+- Only on myCatholicSG: Fri 07:00, Mon 07:00, Sat 07:00, Thu 07:00, Tue 07:00, Wed 07:00
+
 ### Church of the Holy Family
 https://w.holyfamily.org.sg/mass-times
 - Only on myCatholicSG: Fri 19:30 (weeks [1])
@@ -88,16 +93,14 @@ https://stjoseph-bt.org.sg/
 https://sjcvs.org.sg/
 - Only on parish website: Sun 12:15
 
-## Agree (7)
+## Agree (8)
 
-Church of Divine Mercy, Church of Our Lady Queen of Peace, Church of St Francis Xavier, Church of St Teresa, Church of the Holy Cross, Church of the Holy Spirit, Church of the Risen Christ
+Church of Divine Mercy, Church of Our Lady Queen of Peace, Church of St Francis Xavier, Church of St Teresa, Church of the Holy Cross, Church of the Holy Spirit, Church of the Holy Trinity, Church of the Risen Christ
 
-## Not checked (7)
+## Not checked (5)
 
-- Cathedral of the Good Shepherd: kept-previous (fetch failed https://cathedral.catholic.sg/sacraments/: HTTPError HTTP Error 403: Forbidden)
+- Cathedral of the Good Shepherd: kept-previous (deepseek/deepseek-v4.1-flash: no schedule on page; need 1 good model results, got 0)
 - Church of Our Lady Star of the Sea: no-source
-- Church of Our Lady of Perpetual Succour: kept-previous (fetch failed https://www.olps.sg/: ModuleNotFoundError No module named 'playwright')
-- Church of Sts Peter and Paul: kept-previous (deepseek/deepseek-v4.1-flash: no Sunday Mass found; need 1 good model results, got 0)
-- Church of the Holy Trinity: failed (fetch failed https://holytrinity.org.sg/: ModuleNotFoundError No module named 'playwright')
+- Church of Our Lady of Perpetual Succour: kept-previous (deepseek/deepseek-v4.1-flash: no schedule on page; need 1 good model results, got 0)
 - Church of the Nativity of the Blessed Virgin Mary: no-source
-- Church of the Transfiguration: kept-previous (fetch failed https://transfiguration.sg/masstimings/: ModuleNotFoundError No module named 'playwright')
+- Church of the Transfiguration: kept-previous (deepseek/deepseek-v4.1-flash: no schedule on page; need 1 good model results, got 0)

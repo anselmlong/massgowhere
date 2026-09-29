@@ -72,7 +72,10 @@ def fetch_rendered(url):
 
 
 def fetch(url):
-    text = fetch_static(url)
+    try:
+        text = fetch_static(url)
+    except urllib.error.HTTPError:  # some sites 403 plain clients but serve a real browser
+        return fetch_rendered(url), "rendered"
     if len(TIME_RE.findall(text)) >= 3:
         return text, "static"
     return fetch_rendered(url), "rendered"
@@ -432,6 +435,10 @@ def main():
 
     with cf.ThreadPoolExecutor(args.workers) as ex:
         recs = list(ex.map(lambda pid: run_one(pid, sources[pid], parishes[pid], mc, args), ids))
+    report_path = os.path.join(args.out, "_report.json")
+    if args.only and os.path.exists(report_path):  # a partial rerun keeps the other parishes' last results
+        rerun = {r["id"] for r in recs}
+        recs = sorted([r for r in json.load(open(report_path))["results"] if r["id"] not in rerun] + recs, key=lambda r: r["id"])
 
     tokens = {}
     for r in recs:
@@ -445,7 +452,7 @@ def main():
         print(f"{r['id']:>2} {r['name'][:40]:40} {r['status']:14} {r.get('masses', ''):>3} {extra} {'; '.join(r['warnings'])}")
     for m, (i, o) in tokens.items():
         print(f"{m}: {i} prompt + {o} completion tokens")
-    write_json(os.path.join(args.out, "_report.json"),
+    write_json(report_path,
                {"ran_at": dt.datetime.now(SGT).isoformat(timespec="minutes"), "models": args.models, "results": recs})
     if args.out == os.path.join(ROOT, "data", "parishes"):
         write_site_check(recs, args.out)

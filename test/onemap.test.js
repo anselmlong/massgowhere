@@ -22,3 +22,13 @@ test("tripMinutes takes the walk when it beats bus & MRT, and the transit route 
   // far away: transit only, no walk routed
   assert.deepEqual(await tripMinutes(from, { lat: 1.35, lng: 103.94 }, "transit", Date.UTC(2026, 9, 4, 1)), { minutes: 12, walk: false });
 });
+
+test("driving takes longer in weekday rush hours (OneMap's drive route ignores traffic)", () => {
+  const { driveFactor } = require("../lib/onemap.js");
+  const sgt = (iso) => Date.parse(`${iso}+08:00`);
+  assert.equal(driveFactor(sgt("2026-09-30T08:00")), 1.4); // Wednesday morning peak
+  assert.equal(driveFactor(sgt("2026-09-30T18:45")), 1.4); // Wednesday evening peak
+  assert.equal(driveFactor(sgt("2026-09-30T09:30")), 1);   // peak just over
+  assert.equal(driveFactor(sgt("2026-09-30T14:00")), 1);
+  assert.equal(driveFactor(sgt("2026-10-04T08:00")), 1);   // Sunday
+});

@@ -160,13 +160,16 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--ink-2); }
 .hint { font-size: 14px; color: var(--ink-3); margin: -14px 0 0; }
 .intro .lede { margin-top: 12px; font-size: 17px; }
 /* "How does this work?": the explainer for anyone unsure, one tap from the promise */
-.how { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin: 6px 0 -10px; padding: 0; border: 0; background: none; color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: underline; text-decoration-color: var(--field-line); text-underline-offset: 4px; }
-.how svg { width: 19px; height: 19px; color: var(--accent); flex: none; }
-@media (hover: hover) { .how:hover { text-decoration-color: currentColor; } }
+/* the info icon sits right after the headline's last word */
+.intro-head { font-size: clamp(30px, 8vw, 38px); line-height: 1.1; text-wrap: balance; }
+.intro-head h1 { display: inline; }
+.how { display: inline-grid; place-items: center; width: 44px; height: 44px; margin: -12px -10px -12px -6px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--accent); cursor: pointer; vertical-align: middle; }
+.how svg { width: 20px; height: 20px; }
+@media (hover: hover) { .how:hover { background: var(--field); } }
 .how-pop { margin: 12px 0 0; padding: 16px 18px; border-radius: var(--radius); background: var(--field); display: grid; gap: 12px; }
 .how-pop .muted { margin: 0; font-size: 14px; }
 @media (prefers-reduced-motion: no-preference) { .how-pop:not([hidden]) { animation: rise .3s var(--ease) both; } }
-.how[aria-expanded="true"] { text-decoration-color: currentColor; }
+.how[aria-expanded="true"] { background: var(--field); }
 .how-steps { margin: 0; padding: 0 0 0 22px; display: grid; gap: 12px; color: var(--ink-2); font-size: 16px; line-height: 1.45; }
 .how-steps li::marker { color: var(--accent); font-weight: 700; }
 .how-steps strong { color: var(--ink); font-weight: 600; }
@@ -272,7 +275,6 @@ html.sheet-lock { overflow: hidden; }
 .tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: var(--field); color: var(--ink-2); margin-left: 6px; vertical-align: 1px; }
 
 .source { margin-top: 36px; font-size: 13px; color: var(--ink-3); line-height: 1.5; }
-.blessing { margin: 28px 0 0; text-align: center; font-size: 15px; color: var(--ink-2); font-style: italic; letter-spacing: .005em; }
 @media (prefers-reduced-motion: no-preference) {
   .go-now { animation: nudge 2.4s var(--ease) 3; }
   @keyframes nudge { 0%, 100% { box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 6px 18px -8px var(--accent); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent), 0 6px 18px -8px var(--accent); } }
@@ -492,9 +494,6 @@ html.previewing .shell { padding-bottom: 96px; }
 .wordmark .mark { width: 24px; height: 24px; flex: none; }
 .wordmark .mark rect { fill: var(--accent-deep); }
 .wordmark .mark path { fill: #fff; }
-/* the closing blessing sits under a small cross, like the end of a prayer card */
-.blessing { display: grid; justify-items: center; gap: 10px; }
-.blessing .cross { width: 18px; height: 18px; fill: var(--accent); opacity: .85; }
 /* Mass times of day: icon above the word, so four fit on a phone without squeezing */
 .qseg[aria-label="Mass"] button { flex-direction: column; gap: 3px; min-height: 60px; padding: 6px 2px; font-size: 13.5px; }
 .qseg[aria-label="Mass"] button svg { width: 20px; height: 20px; }

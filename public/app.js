@@ -84,13 +84,6 @@
     const n = day < ash ? Math.floor((sunOnOrBefore - otBase) / W) + 1 : 34 - Math.round((christKing - sunOnOrBefore) / W);
     return { kind: "ordinary", name: label(n, "in Ordinary Time"), accent: "green" };
   }
-  // closing line on an answer, in the voice of the season
-  const BLESSING = {
-    ordinary: "Go in peace!", advent: "Come, Lord Jesus.", christmas: "Glory to God in the highest.",
-    lent: "Return to the Lord with all your heart.", holyweek: "We adore you, O Christ, and we bless you.",
-    easter: "Alleluia, He is risen.", pentecost: "Come, Holy Spirit.",
-  };
-  const blessing = (ms) => BLESSING[season(ms).kind] || BLESSING.ordinary;
   // ---------- design options (preview only, ?preview=1): layout, colour theme, font ----------
   // Each choice is remembered per browser and can be set by link (?layout=list&look=parchment&font=atkinson).
   const LOOKS = [
@@ -322,10 +315,10 @@
         <li><strong>One answer.</strong> The Mass you can make and when to leave, with the other churches you can reach listed below. Navigate opens Google Maps.</li>
       </ol>
       <p class="muted">Times can change on feast days and public holidays, so check with the parish. MassGoWhere is an independent project, not run by the Archdiocese.</p>`;
-  // "How does this work?" sits right under the promise and opens in place (tap, or hover with a mouse),
-  // instead of being a row at the bottom that nobody reaches
-  const howLink = () => `<button class="how" type="button" id="how" aria-expanded="false" aria-controls="how-pop">${svg(ICON.info)}<span>How does this work?</span></button>
-      <div class="how-pop" id="how-pop" hidden>${HOW_STEPS()}</div>`;
+  // the headline carries a small info icon that opens "how does this work" in place (tap, or hover with a mouse)
+  const headline = () => `<div class="intro-head"><h1>Find a Mass you can make.</h1>
+      <button class="how" type="button" id="how" aria-label="How does this work?" aria-expanded="false" aria-controls="how-pop">${svg(ICON.info)}</button></div>`;
+  const howPop = () => `<div class="how-pop" id="how-pop" hidden>${HOW_STEPS()}</div>`;
   function wireHow(root) {
     const btn = root.querySelector("#how"), pop = root.querySelector("#how-pop");
     if (!btn || !pop) return;
@@ -488,9 +481,9 @@
     const here = !plan.place && plan.at == null;
     const layout = design().layout;
     const place = plan.place ? plan.place.label : "my location";
-    // rushing? a Mass that has just started still counts, up to 15 minutes late
+    // can't avoid being late? a Mass that has just started still counts, up to 15 minutes in
     const lateSwitch = `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
-          <span>I don’t mind being a little late<small>A Mass still counts if you’d arrive up to 15 min after it starts</small></span></label>`;
+          <span>Can’t avoid being late?<small>We’ll show you the Masses you can still make, arriving up to 15 min after they start</small></span></label>`;
     const findBtn = `${lateSwitch}<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
           <p class="msg" id="msg" role="status" hidden></p>`;
     // the ways out of the home screen that aren't the answer: quiet rows, not rival buttons
@@ -499,8 +492,8 @@
         <li><a href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span>${svg(ICON.right, "go")}</a></li>
         <li><a href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span>Use it on Telegram<small>@massgowherebot</small></span>${svg(ICON.right, "go")}</a></li>
       </ul>`;
-    const promise = `<div class="intro"><h1>Find a Mass you can make.</h1>
-        <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>${howLink()}</div>`;
+    const promise = `<div class="intro">${headline()}
+        <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>${howPop()}</div>`;
     const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass"].filter(Boolean).join(" · ");
     let body;
     if (layout === "simple") {
@@ -531,9 +524,9 @@
         </div>
         <div class="actions">${findBtn}</div>${more}`;
     } else {
-      body = `<div class="intro"><h1>Find a Mass you can make.</h1>
+      body = `<div class="intro">${headline()}
           <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>
-          ${howLink()}
+          ${howPop()}
         </div>
         <p class="sentence">I’m leaving from
           <button class="tok" type="button" id="t-place" aria-label="Leaving from: ${esc(place)}. Change"><span>${esc(place)}</span>${svg(ICON.chev)}</button><br>at
@@ -732,8 +725,7 @@
             <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : `No reachable ${adj}Mass in the next two days`}</small></span><span class="d">${mins(near.travelMin)}${near.walk ? " walk" : ""}</span></a></li></ul>` : ""}
         </section>` : ""}
         <p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches${part ? `?part=${part}` : ""}">${svg(ICON.map)}<span>Browse churches and Mass times</span></a></p>
-        <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>
-        <p class="blessing"><svg class="cross" viewBox="0 0 32 32" aria-hidden="true"><path d="M14.5 5h3v6h6v3h-6v13h-3V14h-6v-3h6z"/></svg>${esc(blessing(start))}</p>`;
+        <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>`;
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
       view.focus({ preventScroll: true });
       if (at || b.lateMin > 0) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, tripMode(b, mode));
@@ -1023,7 +1015,7 @@
           ${row("w-at", "Leaving", trip.at == null ? "Now" : whenText(trip.at))}
           ${row("w-by", "Be there by", trip.by == null ? "No rush" : whenText(trip.by))}
           ${row("w-mode", "Travel by", modeOf(mode).label)}
-          ${row("w-late", "A bit late", store.get("mgw-late") ? "Fine, up to 15 min" : "No, be on time")}
+          ${row("w-late", "Can’t avoid being late", store.get("mgw-late") ? "Up to 15 min" : "Off")}
         </ul>
         <div class="actions">
           <button class="btn btn-primary btn-find" id="w-find" type="button">${svg(ICON.route)}<span>Find a Mass on the way</span></button>
