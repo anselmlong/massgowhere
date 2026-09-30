@@ -1385,9 +1385,9 @@
     return new ml.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map);
   }
 
-  // browse. The map is just the map: every church, tap for its next Mass. The list is the timetable: one day's
-  // Masses per church, narrowed with dropdowns. The choices live in the link (#/churches?view=list&day=1&part=evening),
-  // so Back, Map/List and sharing all keep them.
+  // browse. The map is just the map: every church, tap for its next Mass. The list is every church with its next
+  // Mass; "Filter" opens dropdowns that turn it into one day's timetable. The choices live in the link
+  // (#/churches?view=list&filters=1&day=1&part=evening), so Back, Map/List and sharing all keep them.
   const SORTS = [["near", "Nearest"], ["soon", "Earliest Mass"], ["az", "A to Z"]];
   const RADII = [2, 5, 10];
   // myCatholicSG spells a few languages two ways ("English.", "Mandarin (中文)")
@@ -1407,15 +1407,20 @@
       km: origin && RADII.includes(Number(q.get("km"))) ? Number(q.get("km")) : 0,
       sort: SORTS.some(([k]) => k === q.get("sort")) ? q.get("sort") : origin ? "near" : "az",
       text: q.get("q") || "",
+      // filters are off unless asked for; a link with a day, time, language or distance in it opens with them on
+      filters: q.get("filters") === "1" || ["day", "part", "lang", "km"].some((k) => q.has(k)),
     };
     if (st.sort === "near" && !origin) st.sort = "az";
     const link = (o = {}) => {
       const x = { ...st, ...o }, qs = new URLSearchParams();
       if (x.view === "list") qs.set("view", "list");
-      if (x.day) qs.set("day", x.day);
-      if (x.part) qs.set("part", x.part);
-      if (x.lang) qs.set("lang", x.lang);
-      if (x.km) qs.set("km", x.km);
+      if (x.filters) {
+        qs.set("filters", 1);
+        if (x.day) qs.set("day", x.day);
+        if (x.part) qs.set("part", x.part);
+        if (x.lang) qs.set("lang", x.lang);
+        if (x.km) qs.set("km", x.km);
+      }
       if (x.sort !== (origin ? "near" : "az")) qs.set("sort", x.sort);
       if (x.text) qs.set("q", x.text);
       return `#/churches${String(qs) ? `?${qs}` : ""}`;
@@ -1443,14 +1448,15 @@
         <select data-key="${key}" ${extra}>${opts.map(([v, l]) => `<option value="${v}"${String(st[key]) === String(v) ? " selected" : ""}>${esc(l)}</option>`).join("")}</select>${svg(ICON.chev)}</label>`;
       const days = Array.from({ length: 7 }, (_, i) => [i, i === 0 ? "Today" : i === 1 ? "Tomorrow" : `${wk(today + i * DAY, "long")} ${dnum(today + i * DAY)}`]);
       view.innerHTML = `${head(false)}
-        <div class="picks">
+        <div class="search">${svg(ICON.search)}<input id="filter" type="search" placeholder="Search by church name or area" aria-label="Search churches" value="${esc(st.text)}"><button class="clear" type="button" aria-label="Clear search" ${st.text ? "" : "hidden"}>${svg(ICON.x)}</button></div>
+        <button class="filter-toggle" type="button" id="filters" aria-expanded="${st.filters}" aria-controls="picks">${svg(ICON.chev)}<span>${st.filters ? "Hide filters" : "Filter by day, time, language or distance"}</span></button>
+        <div class="picks" id="picks"${st.filters ? "" : " hidden"}>
           ${pick("day", "Day", days)}
           ${pick("part", "Time", [["", "Any time"], ...Object.entries(PARTS).map(([k, x]) => [k, x.label])])}
           ${pick("lang", "Language", [["", "Any language"], ...langs.map((l) => [l, l])])}
           ${origin ? pick("km", "Distance", [[0, "Any distance"], ...RADII.map((k) => [k, `Within ${k} km`])])
             : `<label class="pick" aria-disabled="true"><span>Distance</span><select disabled aria-describedby="nearby-note"><option value="">No location</option></select>${svg(ICON.chev)}</label>`}
         </div>
-        <div class="search">${svg(ICON.search)}<input id="filter" type="search" placeholder="Search by church name or area" aria-label="Search churches" value="${esc(st.text)}"><button class="clear" type="button" aria-label="Clear search" ${st.text ? "" : "hidden"}>${svg(ICON.x)}</button></div>
       </section>
       <div class="results"><p class="count" id="count" aria-live="polite"></p>
         <label class="sort"><span>Sort</span><select data-key="sort">${SORTS.filter(([k]) => k !== "near" || origin).map(([v, l]) => `<option value="${v}"${st.sort === v ? " selected" : ""}>${l}</option>`).join("")}</select>${svg(ICON.chev)}</label></div>
@@ -1458,36 +1464,41 @@
       <p class="source">Times from myCatholicSG.${origin ? ` Distances are from ${esc(origin.label)}.` : ` <span id="nearby-note">Share your location on the home screen to sort and filter by distance.</span>`} Please confirm feast days and public holidays with the parish.</p>`;
       toggle();
       const rows = view.querySelector("#rows"), count = view.querySelector("#count");
+      // with no filters, each church's next Mass this week, so every church is listed and can be tapped
+      const next = new Map(d.parishes.map((p) => [p.id, S.expandParish(String(p.id), d, now, 7)[0]]));
       const draw = () => {
-        // that day's Masses at each church in the chosen time and language (today: only those still to come)
-        const masses = new Map(d.parishes.map((p) => [p.id, S.expandParish(String(p.id), d, dayStart, 0)
+        // filtered: that day's Masses at each church in the chosen time and language (today: only those still to come)
+        const masses = st.filters ? new Map(d.parishes.map((p) => [p.id, S.expandParish(String(p.id), d, dayStart, 0)
           .filter((e) => e.start >= (st.day === 0 ? now : dayStart)).filter(S.inPart(st.part))
-          .filter((e) => !st.lang || langName(e.lang) === st.lang)]));
-        const first = (p) => masses.get(p.id)[0]?.start ?? Infinity;
+          .filter((e) => !st.lang || langName(e.lang) === st.lang)])) : null;
+        const first = (p) => (masses ? masses.get(p.id)[0] : next.get(p.id))?.start ?? Infinity;
         const order = {
           near: (a, b) => dist(a) - dist(b),
           soon: (a, b) => first(a) - first(b) || (origin ? dist(a) - dist(b) : a.name.localeCompare(b.name)),
           az: (a, b) => a.name.localeCompare(b.name),
         }[st.sort];
         const f = st.text.toLowerCase();
-        // only churches with a Mass that fits: a row saying "no Mass" is noise in a timetable
+        // filtered, only churches with a Mass that fits: a row saying "no Mass" is noise in a timetable
         const shown = d.parishes
-          .filter((p) => masses.get(p.id).length)
-          .filter((p) => !st.km || dist(p) <= st.km)
+          .filter((p) => !masses || masses.get(p.id).length)
+          .filter((p) => !masses || !st.km || dist(p) <= st.km)
           .filter((p) => !f || `${p.name} ${p.address} ${p.postal}`.toLowerCase().includes(f))
           .sort(order);
         const fits = shown.length;
         view.querySelector(".sort").hidden = !fits;
         const what = `${st.part ? partWord(st.part).replace(/ Mass$/, "") : "a"}${st.lang ? ` ${st.lang}` : ""} Mass`;
         const when = st.day === 0 ? "still to come today" : dayName;
-        const narrowed = st.part || st.lang || st.km || st.text;
-        count.innerHTML = fits
+        const clear = `<a class="link" href="${link({ filters: false, text: "" })}" data-clear>${st.filters ? "Clear filters" : "Clear search"}</a>`;
+        count.innerHTML = !masses
+          ? (fits ? `${fits} ${st.text ? (fits === 1 ? "church matches" : "churches match") : "churches"}` : `No church matches your search. ${clear}`)
+          : fits
           ? `${fits} ${fits === 1 ? "church has" : "churches have"} ${esc(what)} ${when}`
-          : `No church has ${esc(what)} ${when}${st.km ? ` within ${st.km} km` : ""}${st.text ? " that matches your search" : ""}.${narrowed ? ` <a class="link" href="${link({ part: "", lang: "", km: 0, text: "" })}" data-clear>Clear filters</a>` : ""}`;
+          : `No church has ${esc(what)} ${when}${st.km ? ` within ${st.km} km` : ""}${st.text ? " that matches your search" : ""}. ${clear}`;
         rows.innerHTML = shown.map((p) => {
-          const es = masses.get(p.id), km = dist(p);
+          const km = dist(p);
           const far = km != null ? `<span class="d">${km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(1) + " km"}</span>` : "";
-          const times = es.map((e) => `${clock(e.start)}${langName(e.lang) !== "English" && !st.lang ? ` <span class="tag">${esc(langName(e.lang))}</span>` : ""}`).join('<span class="sep"> · </span>');
+          const n = next.get(p.id);
+          const times = !masses ? (n ? `Next Mass ${clock(n.start)} ${dayKey(n.start) === dayKey(now) ? "today" : dayKey(n.start) === dayKey(now + DAY) ? "tomorrow" : wk(n.start, "long")}` : "No Mass listed this week") : masses.get(p.id).map((e) => `${clock(e.start)}${langName(e.lang) !== "English" && !st.lang ? ` <span class="tag">${esc(langName(e.lang))}</span>` : ""}`).join('<span class="sep"> · </span>');
           return `<li><a class="row row-church" href="#/church/${p.id}">
             <span class="n">${esc(p.name)}<small class="times">${times}</small></span>${far}</a></li>`;
         }).join("");
@@ -1504,6 +1515,14 @@
         if (k === "day") return (history.replaceState(null, "", link()), route(), view.querySelector('select[data-key="day"]').focus());
         sync();
       }));
+      // opening or closing the filters redraws the page; closing them drops what they were set to
+      view.querySelector("#filters").addEventListener("click", () => {
+        st.filters = !st.filters;
+        if (!st.filters) Object.assign(st, { day: 0, part: "", lang: "", km: 0 });
+        history.replaceState(null, "", link());
+        route();
+        view.querySelector("#filters").focus({ preventScroll: true });
+      });
       const filter = view.querySelector("#filter");
       clearable(filter);
       filter.addEventListener("input", (e) => { st.text = e.target.value.trim(); sync(); });
