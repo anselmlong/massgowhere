@@ -206,6 +206,7 @@ LOCATION_KB = {"keyboard": [[{"text": "Share my location", "request_location": T
 WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can attend, and tells you when to leave.\n\n"
            "Tap <b>Share my location</b> below, or send a postal code or place name.\n"
            "Travelling by: <b>{mode}</b> (change it with the buttons).\n\n"
+           "Leave-by times get you there 5 minutes early, so you can settle in and prepare for Mass.\n\n"
            f"Going somewhere? Tap <b>{WAY_BUTTON}</b> to fit in a Mass along your route.\n\n"
            "Something not right, or an idea? Send /feedback. Anselm, who built this, reads every message.\n\n"
            f"To plan ahead or browse every church on a map, open <a href=\"{SITE}\">{SITE_NAME}</a>.")
@@ -291,6 +292,7 @@ def answer(chat_id, lat, lng, place=None, msg_id=None):
             f"<b>{esc(p['name'])}</b>" + (f"\n{esc(extra)}" if extra else ""),
             "",
             f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[how][1]}{where}",
+            "<i>That gets you there 5 minutes early, to settle in before Mass.</i>",
         ]
         alts = [a for a in res.get("alternatives") or [] if a]
         if alts:

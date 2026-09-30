@@ -252,6 +252,7 @@ html.sheet-lock { overflow: hidden; }
 .leave strong { font-size: 19px; font-weight: 650; white-space: nowrap; }
 .leave span { color: var(--ink-2); font-size: 15px; }
 .leave em { font-style: normal; font-weight: 600; color: var(--ink); }
+.leave .early { margin-top: 4px; font-size: 13px; color: var(--ink-3); }
 .answer .sub { display: flex; justify-content: center; gap: 24px; margin-top: 16px; }
 /* the day line carries the one explainer: a quiet info mark, a full 44px target */
 .day-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }

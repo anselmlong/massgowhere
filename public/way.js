@@ -39,6 +39,8 @@ function massMinutes(start) {
  */
 async function planWay({ from, to, depart, arriveBy = null, mode = "transit", parishes, events, travel, fast = false, lateMin = 0 }) {
   const grace = Math.max(0, Math.min(R.MAX_LATE_MIN || 15, lateMin)) * 60000;
+  // arrive at the church BUFFER_MIN early (to settle in before Mass), unless a little lateness is allowed
+  const early = grace ? 0 : R.BUFFER_MIN * 60000;
   const byId = new Map(parishes.map((p) => [p.id, p]));
   const est = (a, b) => {
     const km = R.haversineKm(a, b);
@@ -57,7 +59,7 @@ async function planWay({ from, to, depart, arriveBy = null, mode = "transit", pa
   // slow bus), so this pass is generous and the real routes in step 3 have the final say.
   const direct0 = est(from, to).minutes;
   const optimistic = (m) => Math.floor(m * 0.7);
-  const fitsEst = (e, toMin, onMin) => depart + optimistic(toMin) * 60000 <= e.start + grace &&
+  const fitsEst = (e, toMin, onMin) => depart + optimistic(toMin) * 60000 + early <= e.start + grace &&
     (!arriveBy || e.start + (massMinutes(e.start) + optimistic(onMin)) * 60000 <= arriveBy);
   const firstFit = new Map();
   const legs0 = new Map(parishes.map((p) => [p.id, { a: est(from, p).minutes, b: est(p, to).minutes }]));
@@ -87,10 +89,10 @@ async function planWay({ from, to, depart, arriveBy = null, mode = "transit", pa
 
   // 3. keep what still fits on real times; rank by detour, then earlier Mass
   const stops = routed
-    .filter((c) => depart + c.a.minutes * 60000 <= c.e.start + grace && (!arriveBy || c.end + c.b.minutes * 60000 <= arriveBy))
+    .filter((c) => depart + c.a.minutes * 60000 + early <= c.e.start + grace && (!arriveBy || c.end + c.b.minutes * 60000 <= arriveBy))
     .map((c) => ({
       pid: c.pid, start: c.e.start, end: c.end, lang: c.e.lang, loc: c.e.loc, note: c.e.note,
-      leaveBy: c.e.start - c.a.minutes * 60000,
+      leaveBy: c.e.start - c.a.minutes * 60000 - R.BUFFER_MIN * 60000,
       toMin: c.a.minutes, toWalk: c.a.walk, onwardMin: c.b.minutes, onwardWalk: c.b.walk,
       arrive: c.end + c.b.minutes * 60000,
       detourMin: Math.max(0, c.a.minutes + c.b.minutes - direct.minutes),
