@@ -5,7 +5,7 @@
   "text": "Holy Hour after 19:00 Mass on first Thursday monthly in Main Church."
  },
  "confession": {
-  "text": "30 minutes before Saturday Sunset/Sunday Masses, or arrange appointment directly with priest. Older news excerpt says 15 minutes; current services page and bulletin agree on 30."
+  "text": "30 minutes before Saturday Sunset and Sunday Masses, or arrange a time directly with a priest."
  },
  "devotions": [
   {
@@ -21,11 +21,11 @@
  },
  "good_to_know": [
   {
-   "text": "Columbarium visiting 07:30–18:30, closed public holidays per current bulletin; old news excerpt says daily 08:00–18:00. Confirm before visiting."
+   "text": "Columbarium visiting 07:30–18:30, closed on public holidays."
   }
  ],
  "church_hours": {
-  "text": "Bulletin lists 07:30–18:30, closed public holidays. This appears to concern general visiting: Masses also occur outside those hours and on public holidays; confirm access for non-service visits."
+  "text": "Open for visits 07:30–18:30, closed on public holidays (Masses are held outside these hours too)."
  },
  "public_holidays": {
   "text": "08:00 Mass in Chapel.",

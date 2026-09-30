@@ -949,8 +949,8 @@
     const src = p.source || {}, sc = p.siteCheck;
     const mc = `<a href="${esc(src.url || "#")}" target="_blank" rel="noopener">myCatholicSG</a>`;
     if (sc && sc.agrees) return `Times from ${mc}, confirmed on the <a href="${esc(sc.url)}" target="_blank" rel="noopener">parish website</a> ${fmtDate(sc.checkedAt)}.`;
-    if (sc) return `Times from ${mc} (updated ${fmtDate(src.fetchedAt)}). The <a href="${esc(sc.url)}" target="_blank" rel="noopener">parish website</a> lists some different times; check it before you go.`;
-    return `Times from ${mc}, updated ${fmtDate(src.fetchedAt)}.`;
+    if (sc) return `Times from ${mc}, checked daily. The <a href="${esc(sc.url)}" target="_blank" rel="noopener">parish website</a> lists some different times; check it before you go.`;
+    return `Times from ${mc}, checked daily.`;
   }
 
   function row(a, mode) {
@@ -1126,7 +1126,7 @@
     }), ...[...siteBy.values()].map((e) => ({ ...e, src: "site" }))].sort((a, b) => a.start - b.start);
     const siteAt = info?.readAt?.[info?.from?.rules];
     const srcNote = { site: `On the parish website (read ${siteAt ? fmtDate(siteAt) : "recently"}), not on myCatholicSG. Check with the parish before you go.`,
-      mc: `On myCatholicSG (updated ${fmtDate(d.asOf)}), not on the parish website. Check with the parish before you go.` };
+      mc: `On myCatholicSG, not on the parish website. Check with the parish before you go.` };
     const srcTag = (e) => (e.src === "site" || e.src === "mc" ? `<button class="src" type="button" aria-expanded="false">${e.src === "site" ? "Parish website" : "myCatholicSG"}</button><span class="x src-note" hidden>${srcNote[e.src]}</span>` : "");
     const days = new Map();
     for (const e of listEvs) {
@@ -1135,6 +1135,20 @@
       days.get(k).push(e);
     }
     // the next Mass you can still make here, if we know where you are (estimated trip)
+    const X = window.MassServices, rel = (x) => { const l = dayLabel(x); return l === "Today" || l === "Tomorrow" ? l.toLowerCase() : `${wk(x)} ${dnum(x)}`; };
+    const glance = (kind) => {
+      const spec = d.services?.parishes?.[id]?.[kind];
+      if (!spec) return "";
+      const w = X.expandServices(String(id), d, kind, now, X.HORIZON_DAYS[kind]).find((x) => (x.type === "session" ? x.start : x.end) > now);
+      const title = kind === "adoration" ? "Adoration" : "Confession";
+      let text;
+      if (w && w.type === "open" && w.start <= now) text = `${title} now, until ${clock(w.end)}`;
+      else if (w && w.type === "open") text = `${title} ${rel(w.start)} ${clock(w.start)}–${clock(w.end)}${w.mass ? `, before the ${clock(w.mass)} Mass` : ""}`;
+      else if (w) text = `${w.name || title} ${rel(w.start)} ${clock(w.start)}`;
+      if (spec.unconfirmed) text = `${text ? `${text}. ` : ""}${title}: times not clear, check with the parish`;
+      return text ? `<li>${svg(ICON[kind])}<span>${esc(text)}</span></li>` : "";
+    };
+    const glanceHTML = [glance("adoration"), glance("confession")].join("");
     let lead = "";
     if (origin) {
       const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
@@ -1214,7 +1228,8 @@
         <h1>${esc(p.name)}</h1>
         <p class="addr">${esc(p.address)}, Singapore ${esc(p.postal || "")}</p>
         ${lead}
-        <div class="acts" style="margin-top:${lead ? 14 : 0}px">
+        ${glanceHTML ? `<ul class="glance">${glanceHTML}</ul>` : ""}
+        <div class="acts" style="margin-top:${lead || glanceHTML ? 14 : 0}px">
           <a class="btn btn-primary" href="${gmaps(p, mode, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
           ${site ? `<a class="btn btn-quiet" href="${esc(site)}" target="_blank" rel="noopener" aria-label="Parish website (opens in a new tab)">${svg(ICON.globe)}<span>Website</span></a>`
             : p.phone ? `<a class="btn btn-quiet" href="tel:${esc(p.phone.replace(/\s/g, ""))}" aria-label="Call the parish">${svg(ICON.phone)}</a>` : ""}
@@ -1228,6 +1243,7 @@
         ${services ? `<div class="week services">${services}</div>` : ""}
         ${notes.length ? `<ul class="notes">${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
         ${all.some(([, es]) => S.specialDay(es[0].start, d)) ? `<p class="notice">${esc(all.map(([, es]) => S.specialDay(es[0].start, d)).filter(Boolean)[0])} is coming up: times that day may differ. Please check with the parish.</p>` : ""}
+        <p class="report">Something wrong or out of date? <button class="link" type="button" data-report="${esc(p.name)}">Tell us</button></p>
         <p class="source">${siteEvs.length ? `Times from myCatholicSG and the parish website; a time only one of them lists is marked. ` : sourceLine(p)}${!p.siteCheck && p.website ? ` Parish website: <a href="${esc(p.website)}" target="_blank" rel="noopener">${esc(p.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>.` : ""}</p>
       </section>`;
     // a source marker opens its note in place (a hover tooltip never shows on a phone)
@@ -1719,6 +1735,15 @@
 
   // feedback form in the footer: sent to Anselm on Telegram by /api/feedback
   const fb = document.getElementById("feedback");
+  // "Tell us" on a church page opens the feedback form below, already saying which church
+  document.addEventListener("click", (e) => {
+    const r = e.target.closest("[data-report]");
+    if (!r || !fb) return;
+    fb.closest("details").open = true;
+    if (!fb.message.value.trim()) fb.message.value = `${r.dataset.report}: `;
+    fb.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "center" });
+    fb.message.focus({ preventScroll: true });
+  });
   fb?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const status = fb.querySelector(".fb-status"), btn = fb.querySelector("button");

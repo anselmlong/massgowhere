@@ -259,15 +259,15 @@
  "ministries": [
   {
    "name": "JOY Ministry",
-   "text": "For the elderly; current bulletin lists Wednesday 30 September 10:00–12:00."
+   "text": "For the elderly. Next: Wednesday 30 September, 10:00–12:00."
   },
   {
    "name": "Catholic Praying Mothers",
-   "text": "Current bulletin lists Friday 2 October 09:30–11:30."
+   "text": "Next: Friday 2 October, 09:30–11:30."
   },
   {
    "name": "Holy Trinity Youth",
-   "text": "Announcements page lists Saturday 10:00–12:00, excluding holidays/solemnities. Current bulletin lists 3 October 10:30–12:30am (end-time typo unresolved).",
+   "text": "Saturdays 10:00–12:00, except holidays and solemnities. On 3 October: from 10:30.",
    "url": "https://holytrinity.org.sg/page/announcements"
   }
  ],

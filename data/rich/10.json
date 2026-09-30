@@ -2,10 +2,10 @@
  "id": 10,
  "readAt": "2026-09-29",
  "adoration": {
-  "text": "Daily 08:00–20:00. Tamil bulletin page indicates closed public holidays; homepage does not clarify this exception."
+  "text": "Daily 08:00–20:00. The Tamil bulletin says closed on public holidays; check with the parish."
  },
  "confession": {
-  "text": "30 minutes before each Mass with effect from 3 October 2026. Bulletin’s older schedule says 15 minutes before weekend Masses."
+  "text": "30 minutes before each Mass, from 3 October 2026. Before that: 15 minutes before weekend Masses."
  },
  "devotions": [
   {
@@ -227,7 +227,7 @@
    "date": "2026-10-02",
    "time": "19:45",
    "title": "Tamil Divine Mercy devotion",
-   "text": "Poster shows reflection 19:45 and Divine Mercy chaplet 20:15. First and third Fridays indicated; Tamil-only details should be checked with parish."
+   "text": "Reflection 19:45, Divine Mercy chaplet 20:15, on the first and third Fridays. In Tamil; check details with the parish."
   },
   {
    "date": "2026-10-03",

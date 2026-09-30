@@ -30,7 +30,7 @@
   }
  ],
  "church_hours": {
-  "text": "Church gate daily 06:00–22:00; Sunday closes after 19:30 Mass. Bulletin says closed public holidays, despite website retaining morning Mass; confirm access around holiday Mass."
+  "text": "Church gate daily 06:00–22:00; on Sundays it closes after the 19:30 Mass. The bulletin says closed on public holidays; check with the parish if you’re going to a public holiday Mass."
  },
  "public_holidays": {
   "text": "No evening Mass on public holidays; morning schedule not separately specified.",
@@ -219,7 +219,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": "Current bulletin excludes fourth Sunday; footer does not."
+   "note": "The current bulletin says not on the fourth Sunday."
   },
   {
    "d": 0,
@@ -343,7 +343,7 @@
  "sacraments": [
   {
    "topic": "Baptism",
-   "text": "Infant/child baptisms first Sunday of March, May, July, September and November at 12:30. Submit application two weeks ahead; forms downloadable or from church racks/Secretariat. Page has stale date fragment “Mar 3” and a duplicated email typo; confirm date with office.",
+   "text": "Infant and child baptisms on the first Sunday of March, May, July, September and November at 12:30. Apply two weeks ahead; forms are on the website, on the church racks or at the Secretariat. Check the date with the office.",
    "contact": "6264 0078; administrator@csfa.sg",
    "url": "https://www.csfa.sg/pastoral-services"
   },
@@ -384,7 +384,7 @@
   },
   {
    "topic": "Catechism",
-   "text": "Primary F2–L6 Saturday 16:15–17:30 in parish building. Secondary webpage says L7/L9 09:30–11:00 and L8/L10 11:00–12:30, but 2026 image timetable reverses these: L7/L9 11:00–12:30, L8 09:30–11:00, L10 monthly check-in 11:00 in semester 2. Confirm with coordinators. New seekers online; baptism certificate and Communion certificate from L4 required.",
+   "text": "Primary (F2–L6): Saturday 16:15–17:30 in the parish building. Secondary: the 2026 timetable has L7/L9 11:00–12:30 and L8 09:30–11:00, with L10 checking in monthly at 11:00 in semester 2; the website lists these the other way round, so check with the coordinators. New seekers apply online; bring the baptism certificate, and the First Communion certificate from L4.",
    "contact": "ict@csfa.sg / 6264 0078; primary agnes.tan@csfaministries.sg; secondary beatrice.ng@csfaministries.sg and matthew.tan@csfaministries.sg",
    "url": "https://www.csfa.sg/our-ministries/faith-formation-committee/pri-sec-catechetical-programme/announcements"
   },

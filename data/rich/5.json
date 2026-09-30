@@ -27,7 +27,7 @@
   }
  ],
  "public_holidays": {
-  "text": "Website schedule: 07:00 and 08:30. Bulletin dated 27 September 2026 instead lists 07:30. Conflict requires parish confirmation.",
+  "text": "The website says 07:00 and 08:30; the bulletin of 27 September says 07:30. Check with the parish.",
   "url": "https://www.holycross.org.sg/services/mass-schedule"
  },
  "rules": [
@@ -182,7 +182,7 @@
    "type": "Mass",
    "lang": "",
    "loc": "",
-   "note": "Effective 1 October 2026: no lunchtime Mass on first/second Thursday. Before that date the website lists all weekdays."
+   "note": "From 1 October 2026: no lunchtime Mass on the first and second Thursday."
   },
   {
    "d": 6,
