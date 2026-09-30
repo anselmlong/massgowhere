@@ -1043,6 +1043,7 @@
             : p.phone ? `<a class="btn btn-quiet" href="tel:${esc(p.phone.replace(/\s/g, ""))}" aria-label="Call the parish">${svg(ICON.phone)}</a>` : ""}
         </div>
         <div class="week">
+          <h2 class="sr-only">Mass times this week</h2>
           ${soon.map(dayList).join("") || `<p class="lede">No Masses listed for the coming week. Please check with the parish.</p>`}
           ${rest.length ? `<details class="rest"><summary>Rest of the week</summary>${rest.map(dayList).join("")}</details>` : ""}
         </div>
@@ -1316,6 +1317,8 @@
       pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
     });
     map.touchZoomRotate.disableRotation();
+    // the compact credit starts open and covers the bottom of a phone-sized map; start it folded to its (i) button
+    map.once("load", () => el.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show"));
     map.addControl(new ml.NavigationControl({ showCompass: false }), "top-right");
     return map;
   }
