@@ -338,6 +338,44 @@
       btn.addEventListener("mouseleave", () => clearTimeout(t));
     }
   }
+  // the season mark says why the site wears the colour it does, and shows the whole year of colours with today marked
+  const COLOUR_WORDS = {
+    ordinary: () => "Green for Ordinary Time: the long, steady season of growth between the great feasts.",
+    advent: () => "Violet for Advent: weeks of waiting and getting ready for Christmas.",
+    lent: () => "Violet for Lent: prayer, fasting and almsgiving on the way to Easter.",
+    holyweek: (s) => (s.accent === "red" ? `Red for ${s.name}, the colour of the Lord’s Passion.` : "Violet for Holy Week, as the Church walks towards Easter."),
+    christmas: () => "White and gold for Christmas: joy at the birth of Christ. Gold shows up on a white page, so the site wears gold.",
+    easter: () => "White and gold for Easter: the joy of the Resurrection. Gold shows up on a white page, so the site wears gold.",
+    pentecost: () => "Red for Pentecost: the fire of the Holy Spirit.",
+  };
+  function openSeasonSheet() {
+    const now = Date.now(), s = season(now), D = 864e5;
+    const y = S.sgtDay(now).getUTCFullYear();
+    const days = Math.round((Date.UTC(y + 1, 0, 1) - Date.UTC(y, 0, 1)) / D);
+    // one run per stretch of the same colour, from 1 Jan to 31 Dec (noon in Singapore, so each day is itself)
+    const runs = [];
+    for (let i = 0; i < days; i++) {
+      const a = season(Date.UTC(y, 0, 1, 4) + i * D).accent;
+      if (runs.length && runs[runs.length - 1].a === a) runs[runs.length - 1].n++; else runs.push({ a, n: 1 });
+    }
+    const today = Math.round((S.sgtDay(now).getTime() - Date.UTC(y, 0, 1)) / D);
+    openSheet("Today’s colour", `
+      <div class="why">
+        <p>MassGoWhere takes its colour from the Church’s year, the way the vestments change at Mass.</p>
+        <p><strong>${esc(s.name)}.</strong> ${esc(COLOUR_WORDS[s.kind](s))}</p>
+      </div>
+      <figure class="year" aria-label="The Church’s year in colour, January to December, with today marked">
+        <div class="year-band" aria-hidden="true">${runs.map((r) => `<i class="c-${r.a}" style="flex:${r.n}"></i>`).join("")}</div>
+        <b class="year-now" style="left:${((today + 0.5) / days * 100).toFixed(2)}%" aria-hidden="true"></b>
+        <figcaption><span>Jan</span><span>Today</span><span>Dec</span></figcaption>
+      </figure>
+      <p class="muted" style="margin:0">Feasts and saints’ days can have a colour of their own; the site follows the season.</p>`, ".sheet-close");
+    const cap = sheet.querySelector(".year figcaption span:nth-child(2)");
+    // "Today" sits under the marker, kept clear of the two ends
+    cap.style.left = `clamp(3.2em, ${((today + 0.5) / days * 100).toFixed(2)}%, calc(100% - 3.2em))`;
+  }
+  document.getElementById("season").addEventListener("click", openSeasonSheet);
+
   function openWhySheet({ from, mode, at, part }) {
     const adj = partAdj(part);
     openSheet("Why this Mass?", `
