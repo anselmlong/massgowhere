@@ -38,6 +38,7 @@
     morning: '<path d="M3 17.5h18M6.5 17.5a5.5 5.5 0 0 1 11 0M12 5v3.2M5.2 9.7l1.9 1.6M18.8 9.7l-1.9 1.6M9 20.5h6"/>',
     lunch: '<circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.5 5.5l1.5 1.5M17 17l1.5 1.5M5.5 18.5 7 17M17 7l1.5-1.5"/>',
     evening: '<path d="M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.2 6.2 0 0 0 10.1 10.1z"/>',
+    sunday: '<path d="M12 3v18M7 8.5h10"/>',
     globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/>',
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.2"/>',
     phone: '<path d="M6.5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>',
@@ -311,9 +312,10 @@
   }
 
   function openPartSheet(current, pick) {
-    const opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)])];
+    const opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)]),
+      ["sunday", "Sunday Mass", "Sunday, or Saturday from 4pm"]];
     openSheet("Which Mass?", `<div class="opts">${opts.map(([id, l, sub]) => `
-      <button class="opt" type="button" data-part="${id}" aria-pressed="${id === current}">${svg(partIcon(id))}<span>${l}<small>${sub}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
+      <button class="opt" type="button" data-part="${id}" aria-pressed="${id === current}">${svg(id === "sunday" ? ICON.sunday : partIcon(id))}<span>${l}<small>${sub}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
     sheet.querySelectorAll("[data-part]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.part); }));
   }
 
@@ -537,6 +539,8 @@
   // the plan being written on the home screen; kept while you look at answers, reset on reload
   // sunday: only Masses for the Sunday obligation (not remembered: it's for this weekend); lang is remembered
   const plan = { place: null, at: null, part: "", sunday: false, lang: store.get("mgw-lang") || "" };
+  // "Sunday" is a Which Mass choice but its own filter (sunday=1): any Sunday Mass, or Saturday's from 4pm
+  const setPart = (x) => { plan.sunday = x === "sunday"; plan.part = plan.sunday ? "" : x; };
   function renderHome() {
     const mode = store.get("mgw-mode") || "transit";
     if (plan.at != null && plan.at <= Date.now()) plan.at = null;
@@ -545,10 +549,8 @@
     const place = plan.place ? plan.place.label : "my location";
     // can't avoid being late? a Mass that has just started still counts, up to 15 minutes in
     const lateSwitch = `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
-          <span>Can’t avoid being late?<small>We’ll show you the Masses you can still make, arriving up to 15 min after they start</small></span></label>`;
-    const sundaySwitch = `<label class="late-switch"><input type="checkbox" id="sunday" ${plan.sunday ? "checked" : ""}>
-          <span>Sunday Mass only<small>For your Sunday obligation: Sunday Masses, and Saturday Masses from 4pm</small></span></label>`;
-    const findBtn = `${sundaySwitch}${lateSwitch}<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
+          <span>I might be up to 15 min late</span></label>`;
+    const findBtn = `${lateSwitch}<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
           <p class="msg" id="msg" role="status" hidden></p>
           <details class="also">
             <summary>Adoration or Confession</summary>
@@ -559,9 +561,8 @@
           </details>`;
     // the ways out of the home screen that aren't the answer: quiet rows, not rival buttons
     const more = `<ul class="more-ways">
-        <li><a href="#/way">${svg(ICON.route)}<span>Catch a Mass on the way<small>Going somewhere? Fit in a Mass along your route</small></span>${svg(ICON.right, "go")}</a></li>
+        <li><a href="#/way">${svg(ICON.route)}<span>Catch a Mass on the way</span>${svg(ICON.right, "go")}</a></li>
         <li><a href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span>${svg(ICON.right, "go")}</a></li>
-        <li><a href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span>Use it on Telegram<small>@massgowherebot</small></span>${svg(ICON.right, "go")}</a></li>
       </ul>`;
     const promise = `<div class="intro">${headline()}
         <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>${howPop()}</div>`;
@@ -585,13 +586,13 @@
         <div class="actions">${findBtn}</div>${more}`;
     } else if (layout === "quick") {
       const seg = (name, opts, cur) => `<div class="qseg" role="radiogroup" aria-label="${name}" style="--n:${opts.length};--i:${Math.max(0, opts.findIndex(([v]) => v === cur))}">${opts.map(([v, l, icon]) =>
-        `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}"${name === "Mass" && v ? ` title="${esc(PARTS[v].range)}"` : ""}>${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
+        `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}"${name === "Mass" && v ? ` title="${esc(v === "sunday" ? "Sunday, or Saturday from 4pm: for your Sunday obligation" : PARTS[v].range)}"` : ""}>${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
       body = `${promise}
         <div class="quick-form">
           <p class="qlabel">How are you travelling?</p>
           ${seg("Travel", MODES.map((m) => [m.id, m.label, m.icon]), mode)}
           <p class="qlabel">Which Mass?</p>
-          ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, x.label, partIcon(k)])], plan.part)}
+          ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, k === "lunch" ? "Lunch" : x.label, partIcon(k)]), ["sunday", "Sunday", ICON.sunday]], plan.sunday ? "sunday" : plan.part)}
           <p class="from-line">${esc(plan.place ? `From ${place}` : "From where you are")}, ${esc(plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`)}${plan.lang ? `, Mass in ${esc(plan.lang)}` : ""}. <button class="link" type="button" id="opts">Change</button></p>
         </div>
         <div class="actions">${findBtn}</div>${more}`;
@@ -620,7 +621,7 @@
     const pickPlace = () => openPlaceSheet((p) => { plan.place = p; changed("#t-place"); });
     const pickTime = () => openTimeSheet(plan.at, (at) => { plan.at = at; changed("#t-time"); });
     const pickMode = () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); changed("#t-mode"); });
-    const pickPart = () => openPartSheet(plan.part, (x) => { plan.part = x; changed("#t-part"); });
+    const pickPart = () => openPartSheet(plan.sunday ? "sunday" : plan.part, (x) => { setPart(x); changed("#t-part"); });
     const pickLang = () => openLangSheet(plan.lang, (x) => { plan.lang = x; store.set("mgw-lang", x); changed("#t-lang"); });
     wireHow(view);
     on("#t-place", pickPlace); on("#t-time", pickTime); on("#t-mode", pickMode); on("#t-part", pickPart); on("#t-lang", pickLang);
@@ -645,12 +646,11 @@
       set();
     };
     view.querySelectorAll("[data-qmode]").forEach((b) => b.addEventListener("click", () => choose(b, () => store.set("mgw-mode", b.dataset.qmode))));
-    view.querySelectorAll("[data-qpart]").forEach((b) => b.addEventListener("click", () => choose(b, () => { plan.part = b.dataset.qpart; })));
+    view.querySelectorAll("[data-qpart]").forEach((b) => b.addEventListener("click", () => choose(b, () => setPart(b.dataset.qpart))));
     const msg = view.querySelector("#msg");
     const say = (t) => { msg.textContent = t; msg.hidden = false; };
     const btn = view.querySelector("#find");
     view.querySelector("#late")?.addEventListener("change", (e) => store.set("mgw-late", e.target.checked));
-    view.querySelector("#sunday")?.addEventListener("change", (e) => { plan.sunday = e.target.checked; });
     const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "");
     const massOpts = () => at() + (plan.part ? `&part=${plan.part}` : "") + (plan.sunday ? "&sunday=1" : "") + (plan.lang ? `&lang=${encodeURIComponent(plan.lang)}` : "") + (store.get("mgw-late") ? "&late=15" : "");
     // the Mass button and the Adoration / Confession rows all start from the same place: the one chosen, or where you are
