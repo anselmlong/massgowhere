@@ -279,7 +279,7 @@ html.sheet-lock { overflow: hidden; }
 .row .d { text-align: right; font-size: 14px; color: var(--ink-2); white-space: nowrap; }
 .tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: var(--field); color: var(--ink-2); margin-left: 6px; vertical-align: 1px; }
 
-.source { margin-top: 36px; font-size: 13px; color: var(--ink-3); line-height: 1.5; }
+.source { margin-top: 36px; font-size: 13px; color: var(--ink-3); line-height: 1.5; text-wrap: pretty; }
 @media (prefers-reduced-motion: no-preference) {
   .go-now { animation: nudge 2.4s var(--ease) 3; }
   @keyframes nudge { 0%, 100% { box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 6px 18px -8px var(--accent); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent), 0 6px 18px -8px var(--accent); } }
@@ -316,6 +316,7 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .services h2 { margin: 22px 0 6px; font-size: 15px; color: var(--ink); }
 .services p.x { margin: 6px 0 0; color: var(--ink-3); font-size: 14px; }
 .services li > span:last-child { color: var(--ink-2); }
+.services li strong { color: var(--ink); font-weight: 600; } /* an event's name leads its row, like a church name */
 .notes { margin: 24px 0 0; padding: 0 0 0 18px; color: var(--ink-2); font-size: 15px; }
 
 /* ---------- churches ---------- */
@@ -361,7 +362,7 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .way-map { height: 46dvh; margin-top: 18px; }
 .way-on { margin-top: 10px; }
 .way-steps span + span { margin-top: 2px; }
-.settings .v.empty { color: var(--accent); }
+.settings .v.empty { color: var(--accent); white-space: normal; line-height: 1.3; padding-block: 8px; } /* a prompt reads in full rather than cut off */
 .way-form { padding-top: 12px; display: flex; flex-direction: column; gap: 22px; }
 .way-form .muted { margin: 0; }
 .church-pin path:first-child { fill: var(--pin); stroke: #fff; stroke-width: 2.5; }
@@ -436,7 +437,7 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .more-ways a, .more-ways button { display: grid; grid-template-columns: 22px 1fr 18px; align-items: center; gap: 16px; width: 100%; min-height: 60px; padding: 12px 2px; border: 0; background: none; color: var(--ink); font-size: 16px; font-weight: 500; text-align: left; text-decoration: none; cursor: pointer; }
 .more-ways svg { width: 22px; height: 22px; color: var(--accent); }
 .more-ways .go { width: 18px; height: 18px; color: var(--ink-3); }
-.more-ways small { display: block; margin-top: 2px; font-size: 14px; font-weight: 400; color: var(--ink-3); }
+.more-ways small { display: block; margin-top: 2px; font-size: 14px; font-weight: 400; color: var(--ink-3); text-wrap: pretty; }
 @media (hover: hover) { .more-ways a:hover span, .more-ways button:hover span { text-decoration: underline; text-underline-offset: 3px; } }
 .btn-find { min-height: 60px; font-size: 18px; }
 
@@ -564,7 +565,7 @@ html.previewing .shell { padding-bottom: 96px; }
 .late-switch input:checked { background: var(--accent); }
 .late-switch input:checked::after { translate: 16px 0; }
 .late-switch input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.late-switch small { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: var(--ink-3); }
+.late-switch small { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: var(--ink-3); text-wrap: pretty; }
 .late, .leave .late, .row .late { color: var(--warn); font-weight: 600; }
 
 /* church page: what the parish's own website says */
