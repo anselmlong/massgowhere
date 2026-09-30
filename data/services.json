@@ -1,0 +1,495 @@
+{
+  "_about": "Adoration and Confession times the finder uses, hand-checked from each parish's website/bulletin text (public/parish/<id>.json, Sept 2026 read) and myCatholicSG. Only hours a source states. Days: 0=Sun..6=Sat. Weeks: 1..5, -1=last. ph: 'skip' = not on public holidays, 'only' = public holidays only. 'to': 'mass' = until the next Mass that day begins. 'source' on an entry overrides the kind's 'from' (where the times came from). An entry with 't' and no 'from/to' is a start time only (Holy Hour, 'after Mass'). beforeMass.masses: 'weekend' = Saturday from 2pm and all Sunday, 'all', or [{days, from?}]. 'unconfirmed': the parish mentions it but doesn't clearly give the times; the finder leaves it out and tells people to check with the parish. See scripts/build_data.py and public/services.js.",
+  "checked": "2026-10-01",
+  "parishes": {
+    "1": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "09:00", "to": "21:00" },
+          { "days": [ 5 ], "weeks": [ 1 ], "from": "22:00", "to": "07:00", "loc": "Damien Hall", "note": "First Friday night vigil", "source": "myCatholicSG" },
+          { "days": [ 6 ], "weeks": [ 1 ], "from": "21:00", "to": "05:00", "loc": "Main Church", "note": "First Saturday night vigil (Tamil)", "source": "myCatholicSG" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "loc": "Main Church",
+        "slots": [
+          { "days": [ 1, 2, 3, 4, 5, 6 ], "t": "09:00", "note": "After the morning Mass" },
+          { "days": [ 1, 2, 3, 4, 5 ], "from": "12:15", "to": "mass" },
+          { "days": [ 1, 2, 3, 4, 5 ], "from": "18:15", "to": "mass" },
+          { "days": [ 6 ], "from": "17:45", "to": "mass" },
+          { "days": [ 0 ], "from": "07:15", "to": "mass" },
+          { "days": [ 0 ], "from": "08:45", "to": "mass" },
+          { "days": [ 0 ], "from": "10:45", "to": "mass" },
+          { "days": [ 0 ], "from": "17:15", "to": "mass" }
+        ]
+      }
+    },
+    "2": {
+      "confession": {
+        "from": "myCatholicSG",
+        "loc": "Main Church",
+        "note": "Subject to availability of priest",
+        "slots": [
+          { "days": [ 6 ], "from": "17:45", "to": "mass" },
+          { "days": [ 0 ], "from": "08:15", "to": "mass" },
+          { "days": [ 0 ], "from": "10:15", "to": "mass" },
+          { "days": [ 0 ], "from": "17:45", "to": "mass" }
+        ]
+      }
+    },
+    "3": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "unconfirmed": "The Adoration Room's closing time differs between the bulletin (9:30pm) and the website (7pm)."
+      },
+      "confession": {
+        "from": "parish website",
+        "loc": "Main Church confession booth",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
+        ]
+      }
+    },
+    "4": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room, Basement 1",
+        "hours": [
+          { "days": [ 1, 2, 3, 4, 5 ], "from": "07:00", "to": "21:00", "ph": "skip" },
+          { "days": [ 0, 6 ], "from": "07:00", "to": "18:00", "ph": "skip" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "loc": "Confessional",
+        "beforeMass": [
+          { "min": 20, "masses": "weekend" }
+        ]
+      }
+    },
+    "5": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Main Church",
+        "sessions": [
+          { "days": [ 5 ], "weeks": [ 1 ], "t": "20:00", "name": "First Friday Holy Hour" }
+        ],
+        "unconfirmed": "The Adoration Room is open until 10pm; the parish doesn't say when it opens."
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 15, "masses": "weekend" }
+        ]
+      }
+    },
+    "6": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "06:00", "to": "22:30" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
+        ]
+      }
+    },
+    "7": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "08:00", "to": "21:30" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
+        ]
+      }
+    },
+    "8": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Chapel",
+        "unconfirmed": "The parish lists a chapel open 6am–6pm, but doesn't say it's an Adoration room."
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
+        ]
+      }
+    },
+    "9": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Main Church",
+        "unconfirmed": "The parish has an Adoration Room but doesn't give its hours. First Friday Holy Hour follows the 6:15pm Mass."
+      },
+      "confession": {
+        "from": "parish website",
+        "note": "Subject to availability of priest",
+        "beforeMass": [
+          { "min": 30, "masses": "all" }
+        ],
+        "slots": [
+          { "days": [ 1, 2 ], "from": "09:00", "to": "11:00", "loc": "Priest’s Office", "ph": "skip", "note": "Walk-in" }
+        ]
+      }
+    },
+    "10": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "08:00", "to": "20:00", "ph": "skip" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 15, "masses": "weekend", "until": "2026-10-02" },
+          { "min": 30, "masses": "all", "since": "2026-10-03" }
+        ]
+      }
+    },
+    "11": {
+      "adoration": {
+        "from": "myCatholicSG",
+        "loc": "Main Church",
+        "hours": [
+          { "days": [ 5 ], "from": "19:30", "to": "20:30", "note": "Exposition of the Blessed Sacrament" }
+        ]
+      },
+      "confession": {
+        "from": "myCatholicSG",
+        "slots": [
+          { "days": [ 5 ], "from": "19:30", "to": "20:30" }
+        ]
+      }
+    },
+    "12": {
+      "adoration": {
+        "from": "myCatholicSG",
+        "loc": "Main Church",
+        "sessions": [
+          { "days": [ 5 ], "weeks": [ 1 ], "t": "18:30", "name": "First Friday Holy Hour" }
+        ]
+      }
+    },
+    "13": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "unconfirmed": "The Adoration Room is open 10am–9pm; the parish doesn't say on which days."
+      }
+    },
+    "14": {
+      "adoration": {
+        "from": "myCatholicSG",
+        "loc": "Main Church",
+        "unconfirmed": "First Friday Holy Hour begins right after the 6:30pm Mass."
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 20, "masses": "weekend" }
+        ]
+      }
+    },
+    "15": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 1 ], "from": "12:00", "to": "22:00", "ph": "skip" },
+          { "days": [ 2, 3, 4, 5, 6 ], "from": "07:00", "to": "22:00", "ph": "skip" },
+          { "days": [ 0 ], "from": "07:00", "to": "18:00", "ph": "skip" },
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "08:00", "to": "18:00", "ph": "only" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "loc": "Confessionals, left rear of the church",
+        "beforeMass": [
+          { "min": 15, "masses": "weekend" }
+        ]
+      }
+    },
+    "16": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Main Church",
+        "unconfirmed": "First Thursday Holy Hour follows the 7pm Mass."
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
+        ]
+      }
+    },
+    "17": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Main Church",
+        "dated": [
+          { "date": "2026-10-02", "t": "19:30", "name": "Eucharistic Adoration for families", "note": "Let the Little Ones Come to Me: children welcome" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": [ { "days": [ 0, 1, 2, 3, 4, 5 ] }
+            ]
+          }
+        ],
+        "slots": [
+          { "days": [ 6 ], "from": "08:30", "to": "10:00" },
+          { "days": [ 6 ], "from": "16:30", "to": "17:30" },
+          { "days": [ 6 ], "from": "18:00", "to": "18:30" }
+        ]
+      }
+    },
+    "18": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room, Level 3",
+        "hours": [
+          { "days": [ 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "22:00", "ph": "skip" },
+          { "days": [ 0 ], "from": "07:00", "to": "18:00", "ph": "skip" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "loc": "Confession box, back of the Main Church",
+        "beforeMass": [
+          { "min": 20, "masses": "weekend", "lang": "English" }
+        ]
+      }
+    },
+    "19": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Mount Tabor Adoration Room",
+        "hours": [
+          { "days": [ 1, 2, 3, 4, 5, 6 ], "from": "08:00", "to": "21:30", "ph": "skip" },
+          { "days": [ 0 ], "from": "06:00", "to": "21:30" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 15, "masses": "weekend" }
+        ]
+      }
+    },
+    "20": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "unconfirmed": "The Adoration Room is open from after the first Mass of the day until 10pm (closed Saturdays 9:45–11:45am)."
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
+        ]
+      }
+    },
+    "21": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "09:00", "to": "21:30", "ph": "skip" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 15, "masses": "weekend" }
+        ]
+      }
+    },
+    "22": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Mount Tabor Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "23:00", "ph": "skip" }
+        ]
+      }
+    },
+    "23": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Sacred Heart Hall",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "23:00", "ph": "skip" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "loc": "Place of Reconciliation",
+        "note": "Walk-in, no booking",
+        "beforeMass": [
+          { "min": 30, "end": 5, "masses": [ { "days": [ 6 ], "from": "14:00" },
+              { "days": [ 0 ] },
+              { "days": [ 5 ], "from": "16:00" }
+            ]
+          }
+        ]
+      }
+    },
+    "24": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 1, 2, 3, 4, 5 ], "from": "08:00", "to": "21:00", "ph": "skip" },
+          { "days": [ 6 ], "from": "09:30", "to": "19:00", "ph": "skip" },
+          { "days": [ 0 ], "from": "08:00", "to": "19:00", "ph": "skip" },
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "08:00", "to": "16:00", "ph": "only" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "loc": "Reconciliation Rooms in the church",
+        "beforeMass": [
+          { "min": 15, "masses": "weekend" }
+        ]
+      }
+    },
+    "25": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Main Church",
+        "sessions": [
+          { "days": [ 5 ], "t": "17:30", "name": "Eucharistic Adoration and Sacred Heart devotion" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 45, "masses": "all" }
+        ],
+        "slots": [
+          { "days": [ 5 ], "from": "11:00", "to": "13:00" }
+        ]
+      }
+    },
+    "26": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Chapel, next to the Main Church",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "21:30" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "loc": "Main Church confessionals",
+        "note": "May be unavailable when the friars are away",
+        "beforeMass": [
+          { "min": 30, "end": 10, "masses": "weekend", "lang": "English" }
+        ]
+      }
+    },
+    "27": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "22:30" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend", "lang": "English" }
+        ]
+      }
+    },
+    "28": {
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
+        ]
+      }
+    },
+    "29": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Main Church",
+        "unconfirmed": "The parish lists the Chapel of Mount Carmel, 7am–9pm, without saying it's an Adoration room or on which days.",
+        "sessions": [
+          { "days": [ 5 ], "weeks": [ 1 ], "t": "20:00", "name": "First Friday Holy Hour" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 15, "masses": "weekend" }
+        ]
+      }
+    },
+    "30": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "18:00", "ph": "skip" }
+        ]
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "end": 10, "masses": "weekend" }
+        ]
+      }
+    },
+    "31": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Chapel of the Incarnation",
+        "unconfirmed": "The parish lists the Chapel of the Incarnation (weekdays 8am–9pm, weekends 8am–6pm), without saying it's an Adoration room."
+      },
+      "confession": {
+        "from": "parish website",
+        "beforeMass": [
+          { "min": 30, "masses": [ { "days": [ 1, 2, 3, 5 ], "from": "16:00" },
+              { "days": [ 6 ], "from": "14:00" },
+              { "days": [ 0 ] }
+            ],
+            "except": [
+              { "d": 0, "t": "08:30" }
+            ]
+          }
+        ]
+      }
+    },
+    "32": {
+      "confession": {
+        "from": "myCatholicSG",
+        "slots": [
+          { "days": [ 6 ], "from": "15:30", "to": "16:00" },
+          { "days": [ 0 ], "from": "08:00", "to": "08:30" },
+          { "days": [ 0 ], "from": "10:30", "to": "11:00" },
+          { "days": [ 0 ], "from": "16:30", "to": "17:00" }
+        ]
+      }
+    }
+  }
+}

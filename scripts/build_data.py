@@ -87,6 +87,9 @@ def main():
     parishes = load("scripts/parishes_geo.json")
     mc = load("data/mycatholic.json")
     holidays = load("data/holidays.json", {"dates": {}})
+    # Adoration and Confession hours for the finder, hand-checked (see data/services.json and public/services.js)
+    services = load("data/services.json", {"parishes": {}})
+    services = {"checked": services.get("checked", ""), "parishes": services.get("parishes", {})}
     out_parishes, infos = [], {}
     for p in sorted(parishes, key=lambda p: p["name"]):
         pid = str(p["id"])
@@ -101,7 +104,7 @@ def main():
         if info:
             infos[pid] = info
     out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),
-           "parishes": out_parishes, "rules": mc["rules"], "dated": {k: v for k, v in mc["dated"].items() if v}}
+           "parishes": out_parishes, "rules": mc["rules"], "dated": {k: v for k, v in mc["dated"].items() if v}, "services": services}
     path = os.path.join(ROOT, "public", "data.json")
     tmp = path + ".tmp"
     json.dump(out, open(tmp, "w"), ensure_ascii=False, separators=(",", ":"))

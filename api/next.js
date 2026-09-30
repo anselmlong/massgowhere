@@ -1,8 +1,11 @@
 // GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&part=morning|lunch|evening][&at=<epoch ms or ISO time>][&late=15]
 // The one answer every client (website, Telegram bots) shows: which Mass you can make, and when to leave.
+// &kind=adoration|confession instead finds an Adoration room open or Confession you can get to (see public/services.js);
+// part, lang and late don't apply there.
 const S = require("../public/schedule.js");
 const data = require("../public/data.json");
 const { rank } = require("../public/rank.js");
+const { rankOpen, expandAllServices, unconfirmed, KINDS } = require("../public/services.js");
 const { tripMinutes } = require("../lib/onemap.js");
 
 const HORIZON_DAYS = 2;
@@ -68,6 +71,9 @@ async function answer(req, res) {
   if (at === undefined) return send(res, 400, { error: `at must be within the next ${PLAN_DAYS} days` });
   const now = at ?? Date.now();
   const origin = { lat, lng };
+  const kind = u.searchParams.get("kind") || "";
+  if (kind && !KINDS.includes(kind)) return send(res, 400, { error: `kind must be one of ${KINDS.join(", ")}` });
+  if (kind) return answerOpen(res, { kind, origin, now, at, mode, fast });
   // late=N (max 15): Masses that have just started still count if you'd walk in at most N minutes late
   const lateMin = Math.max(0, Math.min(15, Number(u.searchParams.get("late")) || 0));
   const events = S.expandAll(data, now - lateMin * 60000, HORIZON_DAYS)
@@ -100,5 +106,54 @@ async function answer(req, res) {
     },
     specialDay: r.best ? S.specialDay(r.best.start, data) : null,
     dataAsOf: data.asOf,
+  });
+}
+
+// Adoration or Confession: the window you can get to, when you'd arrive and when to leave
+function summarizeOpen(e, byId) {
+  if (!e) return null;
+  const p = byId.get(e.pid);
+  const t = (ms) => (ms == null ? null : new Date(ms).toISOString());
+  return {
+    parish: { id: p.id, name: p.name, address: p.address, postal: p.postal, lat: p.lat, lng: p.lng, website: p.website, link: p.link },
+    kind: e.kind,
+    type: e.type, // "open": walk in any time before it closes; "session": starts at a set time (a Holy Hour)
+    start: t(e.start),
+    end: t(e.end),
+    lastIn: t(e.lastIn), // the latest useful arrival
+    arrive: t(e.arrive),
+    openOnArrival: e.openOnArrival,
+    leaveAt: t(e.leaveAt), // to arrive as it opens (or now, if it's already open)
+    leaveBy: t(e.leaveBy), // the latest you can set off
+    mass: t(e.mass), // Confession before this Mass
+    travelMin: e.travelMin,
+    travelSource: e.travelSource,
+    walk: !!e.travelWalk,
+    distanceKm: Math.round(e.distanceKm * 10) / 10,
+    name: e.name || "",
+    location: e.loc || "",
+    note: e.note || "",
+    source: e.from || "",
+  };
+}
+
+async function answerOpen(res, { kind, origin, now, at, mode, fast }) {
+  const travel = async (p, departMs) => {
+    const t = await tripMinutes(origin, p, mode, departMs);
+    return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
+  };
+  const r = await rankOpen({ origin, now, mode, parishes: data.parishes, windows: expandAllServices(data, kind, now), travel: fast ? null : travel, fast });
+  const byId = new Map(data.parishes.map((p) => [p.id, p]));
+  send(res, 200, {
+    now: new Date(now).toISOString(),
+    at: at ? new Date(at).toISOString() : null,
+    mode,
+    kind,
+    best: summarizeOpen(r.best, byId),
+    alternatives: r.alternatives.map((e) => summarizeOpen(e, byId)),
+    specialDay: r.best ? S.specialDay(r.best.start, data) : null,
+    checked: (data.services && data.services.checked) || null,
+    // parishes left out because their times aren't clear: say so, and send people to the parish
+    unconfirmed: unconfirmed(data, kind).map((x) => ({ parish: { id: x.pid, name: byId.get(x.pid).name }, text: x.text })),
   });
 }
