@@ -8,9 +8,9 @@
 //      the earlier start breaks ties. Travel efficiency first, while still "a Mass that starts soon".
 //   4. "Leave by" = start - travel - buffer.
 
-const BUFFER_MIN = 0;
+const BUFFER_MIN = 5;       // leave-by gets you there 5 minutes early, to settle in and prepare for Mass
 const MAX_LATE_MIN = 15;    // "I don't mind being a bit late": at most this late
-const LATE_WINDOW_MIN = 30; // ...and then only Masses starting within 30 min of the earliest one count // leave-by gets you there as Mass starts: an honest time, not a padded one
+const LATE_WINDOW_MIN = 30; // ...and then only Masses starting within 30 min of the earliest one count
 const WINDOW_MIN = 90;
 const MAX_ROUTED = 8;
 const MAX_TRIP_MIN = 75; // never suggest a trip longer than this
@@ -54,6 +54,9 @@ function walksFaster(km, mode) { return mode === "transit" && preferWalk(walkMin
  */
 async function rank({ origin, now, mode = "transit", parishes, events, travel, fast = false, lateMin = 0 }) {
   const grace = Math.max(0, Math.min(MAX_LATE_MIN, lateMin)) * 60000;
+  // Normally you arrive BUFFER_MIN early. When a little lateness is allowed, what counts is arriving no later than
+  // start + grace (the early-arrival buffer is waived), and "late" is measured from the start.
+  const slack = grace ? grace + BUFFER_MIN * 60000 : 0;
   const byId = new Map(parishes.map((p) => [p.id, p]));
   const est = new Map(parishes.map((p) => [p.id, estimateMinutes(haversineKm(origin, p), mode)]));
   const estWalk = (id) => walksFaster(haversineKm(origin, byId.get(id)), mode);
@@ -76,7 +79,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
   const firstReachable = new Map(); // strict: reachable on the estimate
   for (const e of sorted) {
     if (firstReachable.has(e.pid)) continue;
-    if (e.start - (est.get(e.pid) + BUFFER_MIN) * 60000 + grace >= now) firstReachable.set(e.pid, e);
+    if (e.start - (est.get(e.pid) + BUFFER_MIN) * 60000 + slack >= now) firstReachable.set(e.pid, e);
   }
   async function route(ids) {
     await Promise.all(ids.filter((id) => !trip.has(id)).map(async (id) => {
@@ -99,7 +102,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
 
   const reachableNow = () => events
     .filter((e) => trip.has(e.pid) && trip.get(e.pid).minutes <= MAX_TRIP_MIN)
-    .filter((e) => e.start - (trip.get(e.pid).minutes + BUFFER_MIN) * 60000 + grace >= now)
+    .filter((e) => e.start - (trip.get(e.pid).minutes + BUFFER_MIN) * 60000 + slack >= now)
     .sort((a, b) => a.start - b.start);
   const first = reachableNow()[0] || firstReachable.get(bySoon[0]);
   const winMs = (grace ? LATE_WINDOW_MIN : WINDOW_MIN) * 60000;
@@ -108,7 +111,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
     const inWindow = new Map();
     for (const e of sorted) {
       if (e.start < first.start || e.start > end || trip.has(e.pid) || inWindow.has(e.pid)) continue;
-      if (e.start - (est.get(e.pid) + BUFFER_MIN) * 60000 + grace >= now) inWindow.set(e.pid, e);
+      if (e.start - (est.get(e.pid) + BUFFER_MIN) * 60000 + slack >= now) inWindow.set(e.pid, e);
     }
     const extra = [...inWindow.keys()].sort((a, b) => est.get(a) - est.get(b)).slice(0, MAX_ROUTED - 3);
     for (const pid of extra) departAt.set(pid, departFor(pid, inWindow.get(pid)));
@@ -121,10 +124,10 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
       const t = trip.get(e.pid);
       const leaveBy = e.start - (t.minutes + BUFFER_MIN) * 60000;
       // leaving now, how many minutes after the start you'd walk in (0 = on time)
-      const lateBy = Math.max(0, Math.ceil((now - leaveBy) / 60000));
+      const lateBy = Math.max(0, Math.ceil((now - leaveBy) / 60000) - BUFFER_MIN);
       return { ...e, travelMin: t.minutes, travelSource: t.source, travelWalk: !!t.walk, leaveBy, lateMin: lateBy, distanceKm: haversineKm(origin, byId.get(e.pid)) };
     })
-    .filter((e) => e.leaveBy + grace >= now && e.travelMin <= MAX_TRIP_MIN)
+    .filter((e) => e.leaveBy + slack >= now && e.travelMin <= MAX_TRIP_MIN)
     .sort((a, b) => a.start - b.start || a.travelMin - b.travelMin);
 
   const byTrip = (a, b) => (grace ? a.lateMin - b.lateMin : 0) || a.travelMin - b.travelMin || a.start - b.start;

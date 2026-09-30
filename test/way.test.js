@@ -20,7 +20,7 @@ test("picks the Mass that adds least to the trip, and says how much", async () =
   const r = await planWay({ from: A, to: B, depart: T0, parishes, events, travel });
   assert.equal(r.best.pid, 1);
   assert.equal(r.best.detourMin, 2); // 15 + 17 - 30
-  assert.equal(r.best.leaveBy, min(45));
+  assert.equal(r.best.leaveBy, min(40)); // 5 minutes early at the church
   assert.equal(r.best.end, min(60 + 40)); // weekday Mass: about 40 min
   assert.equal(r.best.arrive, min(60 + 40 + 17));
   assert.deepEqual(r.alternatives.map((s) => s.pid), [2, 3]);

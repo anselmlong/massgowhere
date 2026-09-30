@@ -319,7 +319,7 @@
       <ol class="how-steps">
         <li><strong>Mass times for all 32 parishes.</strong> Gathered from myCatholicSG, and checked each month against every parish’s own website.</li>
         <li><strong>Where you are.</strong> Your location, or a postal code or place you search for, tells us which churches are around you.</li>
-        <li><strong>Real travel times.</strong> For the nearby churches we ask OneMap, Singapore’s official map, how long the trip takes by bus &amp; MRT, car or on foot, and check that you can arrive before Mass begins.</li>
+        <li><strong>Real travel times.</strong> For the nearby churches we ask OneMap, Singapore’s official map, how long the trip takes by bus &amp; MRT, car or on foot, and time it so you arrive 5 minutes before Mass begins, with a moment to settle in and prepare.</li>
         <li><strong>One answer.</strong> The Mass you can make and when to leave, with the other churches you can reach listed below. Navigate opens Google Maps.</li>
       </ol>
       <p class="muted">Times can change on feast days and public holidays, so check with the parish. MassGoWhere is an independent project, not run by the Archdiocese.</p>`;
@@ -382,7 +382,7 @@
       <div class="why">
         <p>We looked for the earliest ${adj}Mass you can still reach, leaving ${esc(at ? whenText(at) : "now")} ${mode.phrase} from ${esc(from)}.</p>
         <p>If another church has a Mass starting within ${R.WINDOW_MIN} minutes of that one, we pick the shortest trip, so you aren’t sent across the island to arrive a few minutes sooner.</p>
-        <p>Travel times come from OneMap, Singapore’s official map. A quick estimate shows first while live routes load, and “Leave by” gets you there as Mass begins.</p>
+        <p>Travel times come from OneMap, Singapore’s official map. “Leave by” gets you there 5 minutes early, so you have time to settle in and prepare for Mass.</p>
         <p>The other churches you can make it to are listed below the answer.</p>
       </div>`, ".sheet-close");
   }
@@ -860,12 +860,13 @@
     const leave = new Date(b.leaveBy).getTime();
     const trip = `${about}${mins(b.travelMin)} ${mode.phrase}`;
     if (b.lateMin > 0) return `<strong>${at ? `Leave at ${clock(at)}` : "Leave now"}</strong><span class="late">You’ll be about ${mins(b.lateMin)} late</span><span>${trip}</span>`;
-    if (!at) return `<strong>${leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}${onDay(leave, Date.now())}`}</strong><span>${trip}</span>`;
+    const early = `<span class="early">Timed so you arrive 5 minutes early, to settle in and prepare for Mass.</span>`;
+    if (!at) return `<strong>${leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}${onDay(leave, Date.now())}`}</strong><span>${trip}</span>${early}`;
     // the first Mass after your time may be hours away (late at night: tomorrow morning); then the useful
     // answer is when to set off for it, not "arrive at 10:31pm" for a 7am Mass
     if (leave - at > LONG_WAIT) return `<strong>Leave by ${clock(leave)}${onDay(leave, at)}</strong><span>${trip}</span><span>First Mass after ${esc(whenText(at))}</span>`;
     return `<strong>Leave at ${clock(at)}</strong><span>Arrive ${about}${clock(at + b.travelMin * 60000)} · ${trip}</span>` +
-      (leave - at >= 5 * 60000 ? `<span>You could leave as late as <em>${clock(leave)}</em></span>` : "");
+      (leave - at >= 5 * 60000 ? `<span>You could leave as late as <em>${clock(leave)}</em>, still 5 minutes early</span>` : early);
   }
   // changing the leave time on the answer screen rewrites the link in place (no history entry per tap) and re-ranks
   let softNext = false, nudgeDir = 0;
@@ -906,10 +907,10 @@
         box.innerHTML = `<strong>You may have missed this one</strong><span><button class="link" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Find the next Mass</button></span>`;
         document.querySelector(".answer .btn-primary")?.classList.remove("go-now");
       } else if (m <= 0) {
-        box.innerHTML = `<strong>Time to leave</strong><span>${trip}</span>`;
+        box.innerHTML = `<strong>Time to leave</strong><span>${trip}</span><span class="early">Timed so you arrive 5 minutes early, to settle in and prepare for Mass.</span>`;
         document.querySelector(".answer .btn-primary")?.classList.add("go-now");
       } else if (m <= 60) {
-        box.innerHTML = `<strong>Leave by ${clock(leave)}</strong><span>in ${mins(m)} · ${trip}</span>`;
+        box.innerHTML = `<strong>Leave by ${clock(leave)}</strong><span>in ${mins(m)} · ${trip}</span><span class="early">Timed so you arrive 5 minutes early, to settle in and prepare for Mass.</span>`;
       }
     };
     draw();
@@ -1242,7 +1243,7 @@
           <p class="meta">Mass until about ${clock(end)}${b.language && b.language !== "English" ? ` · ${esc(b.language)}` : ""}</p>
           <div class="leave way-steps">
             ${b.lateMin > 0 ? `<strong>Leave now</strong><span class="late">You’ll be about ${mins(b.lateMin)} late for Mass</span>` : `<strong>Leave by ${clock(leave)}${onDay(leave, at ?? Date.now())}</strong>`}
-            <span>${about}${mins(b.toMin)} ${phrase(b.toWalk)} to the church</span>
+            <span>${about}${mins(b.toMin)} ${phrase(b.toWalk)} to the church${b.lateMin > 0 ? "" : ", arriving 5 minutes early to settle in"}</span>
             <span>Then ${about}${mins(b.onwardMin)} ${phrase(b.onwardWalk)} to ${esc(to.label)}, arriving ${about}<em>${clock(arrive)}</em></span>
           </div>
           <a class="btn btn-primary" href="${gdir(from, p, b.toWalk ? "walk" : mode.id)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate to the church</span></a>

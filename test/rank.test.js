@@ -18,7 +18,7 @@ test("skips a Mass you can no longer make; a nearer Mass later in the window bea
   // 08:10 at Near needs 13 min: too late. Earliest reachable is Mid 08:40; Near 09:30 is within 90 min and 7 min closer.
   assert.equal(r.best.pid, 1);
   assert.equal(r.best.start, min(90));
-  assert.equal(r.best.leaveBy, min(77)); // leave by = start - travel: you arrive as Mass starts, no padding
+  assert.equal(r.best.leaveBy, min(72)); // leave by = start - travel - 5: you arrive 5 minutes early
   assert.deepEqual(r.alternatives.map((e) => e.pid), [2]);
 });
 
