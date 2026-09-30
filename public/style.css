@@ -589,6 +589,7 @@ html.previewing .shell { padding-bottom: 96px; }
 .also .more-ways { margin: 0; }
 .answer .time .pre { margin: 0 .12em 0 0; }
 .late-switch { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; margin-top: 10px; padding: 4px 2px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--ink); }
+.late-switch + .late-switch { margin-top: 0; } /* Sunday and late sit together as one group */
 .late-switch input { appearance: none; -webkit-appearance: none; width: 42px; height: 26px; margin: 0; border-radius: 999px; background: var(--field-line); position: relative; cursor: pointer; transition: background-color .2s; flex: none; }
 .late-switch input::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .3); transition: translate .2s var(--ease); }
 .late-switch input:checked { background: var(--accent); }

@@ -12,7 +12,8 @@
 //   1. A window is reachable if you'd get there before its last useful moment: MIN_STAY before an Adoration room
 //      closes, CONFESSION_MARGIN before Confession ends (there may be a queue), or 5 minutes before a session starts.
 //   2. You arrive when it opens, or now + travel if it's already open.
-//   3. Take the earliest arrival; among arrivals within WINDOW_MIN of it, the shortest trip wins.
+//   3. Take the earliest arrival; among arrivals within WINDOW_MIN of it, the shortest trip wins. For Confession the
+//      window is CONFESSION_WINDOW_MIN: a Confession nearby later the same morning beats crossing the island for an early one.
 const S = typeof module !== "undefined" ? require("./schedule.js") : root.MassSchedule;
 const R = typeof module !== "undefined" ? require("./rank.js") : root.MassRank;
 
@@ -21,6 +22,7 @@ const HORIZON_DAYS = { adoration: 2, confession: 7 }; // most Confession is only
 const MIN_STAY = 20;          // an Adoration room closing sooner than this after you arrive isn't worth the trip
 const CONFESSION_MARGIN = 10; // arrive at least this long before Confession ends
 const WINDOW_MIN = 60;
+const CONFESSION_WINDOW_MIN = 6 * 60;
 const MAX_ROUTED = 8;
 const MAX_TRIP_MIN = 75;
 const MIN = 60000, DAY = 864e5;
@@ -151,13 +153,14 @@ async function rankOpen({ origin, now, mode = "transit", parishes, windows, trav
     return { ...w, ...plan(w, t.minutes, now), travelMin: t.minutes, travelSource: t.source, travelWalk: !!t.walk, distanceKm: km(id) };
   }).sort((a, b) => a.arrive - b.arrive || a.travelMin - b.travelMin);
   const byTrip = (a, b) => a.travelMin - b.travelMin || a.arrive - b.arrive;
-  const soon = reach.length ? reach.filter((e) => e.arrive <= reach[0].arrive + WINDOW_MIN * MIN).sort(byTrip) : [];
+  const win = (reach[0] && reach[0].kind === "confession" ? CONFESSION_WINDOW_MIN : WINDOW_MIN) * MIN;
+  const soon = reach.length ? reach.filter((e) => e.arrive <= reach[0].arrive + win).sort(byTrip) : [];
   const best = soon[0] || null;
   const alternatives = [...soon.slice(1), ...reach.filter((e) => !soon.includes(e))].slice(0, 3);
   return { best, alternatives, considered: trip.size };
 }
 
-const api = { expandServices, expandAllServices, unconfirmed, rankOpen, plan, KINDS, HORIZON_DAYS, MIN_STAY, CONFESSION_MARGIN, WINDOW_MIN };
+const api = { expandServices, expandAllServices, unconfirmed, rankOpen, plan, KINDS, HORIZON_DAYS, MIN_STAY, CONFESSION_MARGIN, WINDOW_MIN, CONFESSION_WINDOW_MIN };
 if (typeof module !== "undefined") module.exports = api;
 else root.MassServices = api;
 })(this);

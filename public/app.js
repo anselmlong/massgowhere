@@ -317,6 +317,17 @@
     sheet.querySelectorAll("[data-part]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.part); }));
   }
 
+  // Mass languages, English first; the list comes from the timetable, so a new language appears by itself
+  function openLangSheet(current, pick) {
+    data().then((d) => {
+      const langs = [...new Set(Object.values(d.rules).flat().filter((r) => r.type === "Mass").map((r) => S.langName(r.lang)))]
+        .sort((a, b) => (a === "English" ? -1 : b === "English" ? 1 : a.localeCompare(b)));
+      openSheet("Mass in which language?", `<div class="opts">${[["", "Any language"], ...langs.map((l) => [l, l])].map(([v, l]) => `
+        <button class="opt" type="button" data-lang="${esc(v)}" aria-pressed="${v === current}">${svg(ICON.globe)}<span>${esc(l)}</span></button>`).join("")}</div>`, "[aria-pressed='true']");
+      sheet.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.lang); }));
+    }).catch(() => {});
+  }
+
   // the two explainers, for anyone unsure what the site does or why it picked a Mass
   const HOW_STEPS = () => `
       <ol class="how-steps">
@@ -379,13 +390,14 @@
   }
   document.getElementById("season").addEventListener("click", openSeasonSheet);
 
-  function openWhySheet({ from, mode, at, part }) {
-    const adj = partAdj(part);
+  function openWhySheet({ from, mode, at, part, sunday, lang }) {
+    const adj = `${sunday ? "Sunday " : ""}${partAdj(part)}`;
     openSheet("Why this Mass?", `
       <div class="why">
-        <p>We looked for the earliest ${adj}Mass you can still reach, leaving ${esc(at ? whenText(at) : "now")} ${mode.phrase} from ${esc(from)}.</p>
+        <p>We looked for the earliest ${adj}Mass${lang ? ` in ${esc(lang)}` : ""} you can still reach, leaving ${esc(at ? whenText(at) : "now")} ${mode.phrase} from ${esc(from)}.</p>
         <p>If another church has a Mass starting within ${R.WINDOW_MIN} minutes of that one, we pick the shortest trip, so you aren’t sent across the island to arrive a few minutes sooner.</p>
         <p>Travel times come from OneMap, Singapore’s official map. “Leave by” gets you there 5 minutes early, so you have time to settle in and prepare for Mass.</p>
+        ${sunday ? `<p>For your Sunday obligation we count Sunday Masses and Saturday Masses from 4pm.</p>` : ""}
         <p>The other churches you can make it to are listed below the answer.</p>
       </div>`, ".sheet-close");
   }
@@ -523,7 +535,8 @@
 
   // ---------- home ----------
   // the plan being written on the home screen; kept while you look at answers, reset on reload
-  const plan = { place: null, at: null, part: "" };
+  // sunday: only Masses for the Sunday obligation (not remembered: it's for this weekend); lang is remembered
+  const plan = { place: null, at: null, part: "", sunday: false, lang: store.get("mgw-lang") || "" };
   function renderHome() {
     const mode = store.get("mgw-mode") || "transit";
     if (plan.at != null && plan.at <= Date.now()) plan.at = null;
@@ -533,7 +546,9 @@
     // can't avoid being late? a Mass that has just started still counts, up to 15 minutes in
     const lateSwitch = `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
           <span>Can’t avoid being late?<small>We’ll show you the Masses you can still make, arriving up to 15 min after they start</small></span></label>`;
-    const findBtn = `${lateSwitch}<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
+    const sundaySwitch = `<label class="late-switch"><input type="checkbox" id="sunday" ${plan.sunday ? "checked" : ""}>
+          <span>Sunday Mass only<small>For your Sunday obligation: Sunday Masses, and Saturday Masses from 4pm</small></span></label>`;
+    const findBtn = `${sundaySwitch}${lateSwitch}<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
           <p class="msg" id="msg" role="status" hidden></p>
           <details class="also">
             <summary>Adoration or Confession</summary>
@@ -550,7 +565,7 @@
       </ul>`;
     const promise = `<div class="intro">${headline()}
         <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>${howPop()}</div>`;
-    const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass"].filter(Boolean).join(" · ");
+    const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass", plan.lang ? `in ${plan.lang}` : ""].filter(Boolean).join(" · ");
     let body;
     if (layout === "simple") {
       body = `${promise}
@@ -565,6 +580,7 @@
           ${row("t-time", "Leaving", plan.at == null ? "Now" : whenText(plan.at))}
           ${row("t-mode", "Travel by", modeOf(mode).label)}
           ${row("t-part", "Mass", plan.part ? `${PARTS[plan.part].label} (${PARTS[plan.part].range})` : "Any time")}
+          ${row("t-lang", "Language", plan.lang || "Any language")}
         </ul>
         <div class="actions">${findBtn}</div>${more}`;
     } else if (layout === "quick") {
@@ -576,7 +592,7 @@
           ${seg("Travel", MODES.map((m) => [m.id, m.label, m.icon]), mode)}
           <p class="qlabel">Which Mass?</p>
           ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, x.label, partIcon(k)])], plan.part)}
-          <p class="from-line">${esc(plan.place ? `From ${place}` : "From where you are")}, ${esc(plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`)}. <button class="link" type="button" id="opts">Change</button></p>
+          <p class="from-line">${esc(plan.place ? `From ${place}` : "From where you are")}, ${esc(plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`)}${plan.lang ? `, Mass in ${esc(plan.lang)}` : ""}. <button class="link" type="button" id="opts">Change</button></p>
         </div>
         <div class="actions">${findBtn}</div>${more}`;
     } else {
@@ -605,18 +621,20 @@
     const pickTime = () => openTimeSheet(plan.at, (at) => { plan.at = at; changed("#t-time"); });
     const pickMode = () => openModeSheet(mode, (m) => { store.set("mgw-mode", m); changed("#t-mode"); });
     const pickPart = () => openPartSheet(plan.part, (x) => { plan.part = x; changed("#t-part"); });
+    const pickLang = () => openLangSheet(plan.lang, (x) => { plan.lang = x; store.set("mgw-lang", x); changed("#t-lang"); });
     wireHow(view);
-    on("#t-place", pickPlace); on("#t-time", pickTime); on("#t-mode", pickMode); on("#t-part", pickPart);
+    on("#t-place", pickPlace); on("#t-time", pickTime); on("#t-mode", pickMode); on("#t-part", pickPart); on("#t-lang", pickLang);
     // "Change": every option in one sheet, each opening its own picker
     on("#opts", () => {
       const all = layout === "quick"
-        ? [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)]]
+        ? [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)], ["lang", ICON.globe, "Language", plan.lang || "Any language"]]
         : [["place", ICON.pin, "Leaving from", place], ["time", ICON.clock, "Leaving at", whenText(plan.at)],
-           ["mode", modeOf(mode).icon, "Travelling by", modeOf(mode).label], ["part", partIcon(plan.part), "Which Mass", plan.part ? PARTS[plan.part].label : "Any time"]];
+           ["mode", modeOf(mode).icon, "Travelling by", modeOf(mode).label], ["part", partIcon(plan.part), "Which Mass", plan.part ? PARTS[plan.part].label : "Any time"],
+           ["lang", ICON.globe, "Language", plan.lang || "Any language"]];
       openSheet("Your trip", `<div class="opts">${all.map(([k, icon, l, v]) => `<button class="opt" type="button" data-o="${k}">${svg(icon)}<span>${l}<small>${esc(v)}</small></span></button>`).join("")}</div>`);
       sheet.querySelectorAll("[data-o]").forEach((b) => b.addEventListener("click", () => {
         closeSheet();
-        setTimeout({ place: pickPlace, time: pickTime, mode: pickMode, part: pickPart }[b.dataset.o], 200);
+        setTimeout({ place: pickPlace, time: pickTime, mode: pickMode, part: pickPart, lang: pickLang }[b.dataset.o], 200);
       }));
     });
     // a tap moves the highlight to the new choice (see .qseg::before); nothing else on the screen depends on it
@@ -632,8 +650,9 @@
     const say = (t) => { msg.textContent = t; msg.hidden = false; };
     const btn = view.querySelector("#find");
     view.querySelector("#late")?.addEventListener("change", (e) => store.set("mgw-late", e.target.checked));
+    view.querySelector("#sunday")?.addEventListener("change", (e) => { plan.sunday = e.target.checked; });
     const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "");
-    const massOpts = () => at() + (plan.part ? `&part=${plan.part}` : "") + (store.get("mgw-late") ? "&late=15" : "");
+    const massOpts = () => at() + (plan.part ? `&part=${plan.part}` : "") + (plan.sunday ? "&sunday=1" : "") + (plan.lang ? `&lang=${encodeURIComponent(plan.lang)}` : "") + (store.get("mgw-late") ? "&late=15" : "");
     // the Mass button and the Adoration / Confession rows all start from the same place: the one chosen, or where you are
     const findFrom = (b, path, extra) => {
       const mode = store.get("mgw-mode") || "transit"; // the quick picks change it without redrawing
@@ -672,6 +691,9 @@
     if (part) params.set("part", part);
     const late = Math.min(15, Number(q.get("late")) || 0);
     if (late) params.set("late", late);
+    const sunday = q.get("sunday") === "1", lang = q.get("lang") || "";
+    if (sunday) params.set("sunday", "1");
+    if (lang) params.set("lang", lang);
     if (fast) params.set("fast", "1");
     try {
       const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 4000 : 12000) });
@@ -683,7 +705,7 @@
       const d = await data();
       const origin = { lat: Number(q.get("lat")), lng: Number(q.get("lng")) };
       const now = at ?? Date.now();
-      const out = await R.rank({ origin, now, mode: params.get("mode"), parishes: d.parishes, events: S.expandAll(d, now - late * 60000, 2).filter(S.inPart(part)), lateMin: late });
+      const out = await R.rank({ origin, now, mode: params.get("mode"), parishes: d.parishes, events: S.expandAll(d, now - late * 60000, sunday || lang ? 7 : 2).filter(S.inPart(part)).filter(S.inLang(lang)).filter((e) => !sunday || S.forSunday(e)), lateMin: late });
       const byId = new Map(d.parishes.map((p) => [p.id, p]));
       const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, lateMin: e.lateMin || 0, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
       return { mode: params.get("mode"), best: pack(out.best), alternatives: out.alternatives.map(pack),
@@ -697,14 +719,16 @@
     const from = q.get("from") || "your location";
     const at = parseAt(q.get("at"));
     const part = partOf(q.get("part"));
-    const adj = partAdj(part);
+    const sunday = q.get("sunday") === "1", lang = q.get("lang") || "";
+    const adj = `${sunday ? "Sunday " : ""}${partAdj(part)}`;
+    const inLang = lang ? ` in ${lang}` : "";
     const myHash = location.hash;
     const stale = () => location.hash !== myHash;
     store.set("mgw-origin", { ...origin, label: from, at: Date.now() });
     rememberPlace({ ...origin, label: from });
     // only the leave time changes here; where from and how are set on the home screen
     const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
-        <span class="from">From ${esc(from)} · ${mode.label}${part ? ` · ${PARTS[part].label} Masses` : ""}</span></div>
+        <span class="from">From ${esc(from)} · ${mode.label}${sunday ? " · Sunday Mass" : ""}${part ? ` · ${PARTS[part].label} Masses` : ""}${lang ? ` · ${esc(lang)}` : ""}</span></div>
       <div class="when${at ? " set" : ""}"><button class="nudge" type="button" data-nudge="-1" aria-label="Leave 15 minutes earlier" ${at ? "" : "disabled"}>${svg(ICON.left)}</button>
         <button class="when-chip" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time">${svg(ICON.clock)}<span>${at ? `Leaving ${esc(whenText(at))}` : "Leaving now"}</span></button>
         <button class="nudge" type="button" data-nudge="1" aria-label="Leave 15 minutes later">${svg(ICON.right)}</button></div>`;
@@ -752,8 +776,8 @@
       }
       const b = res.best;
       if (!b) {
-        view.innerHTML = `${bar}<section class="answer reveal"><h1>No ${adj}Mass you can reach ${at ? `within two days of ${esc(whenText(at))}` : "in the next two days"}.</h1>
-          <p class="lede">Try another time${part ? ", time of day" : ""} or way of travelling, or browse the churches and their times.</p>
+        view.innerHTML = `${bar}<section class="answer reveal"><h1>No ${adj}Mass${esc(inLang)} you can reach ${sunday || lang ? (at ? `within a week of ${esc(whenText(at))}` : "this week") : at ? `within two days of ${esc(whenText(at))}` : "in the next two days"}.</h1>
+          <p class="lede">Try another time${part ? ", time of day" : ""}${lang ? ", language" : ""} or way of travelling, or browse the churches and their times.</p>
           <p style="margin-top:28px"><a class="btn btn-quiet" href="#/churches">Browse all churches</a></p></section>`;
         painted = true;
         return;
@@ -905,7 +929,7 @@
     if (e.target.closest("#when")) openTimeSheet(cur, setLeaveAt);
     if (e.target.closest("#why")) {
       const q = new URLSearchParams(location.hash.split("?")[1] || "");
-      openWhySheet({ from: q.get("from") || "your location", mode: modeOf(q.get("mode")), at: cur, part: partOf(q.get("part")) });
+      openWhySheet({ from: q.get("from") || "your location", mode: modeOf(q.get("mode")), at: cur, part: partOf(q.get("part")), sunday: q.get("sunday") === "1", lang: q.get("lang") || "" });
     }
   });
   // the leave-by line counts down while the page is open; at zero it says so and the Navigate button draws the eye
@@ -1172,10 +1196,13 @@
     // better than myCatholicSG's single start times, so it replaces those lists once a parish has been read.
     const lines = (v) => [].concat(v || []).map((x) => esc(x.text)).join("<br>");
     const dl = (rows) => { const r = rows.filter(([, v]) => v); return r.length ? `<dl class="info">${r.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>` : ""; };
-    const infoRows = info ? [["Adoration", info.adoration], ["Confession", info.confession], ["Devotions", info.devotions],
-      ["Church open", info.church_hours], ["Parish office", info.office_hours], ["Public holidays", info.public_holidays],
-      ["Languages", info.languages], ["Good to know", info.good_to_know]].map(([k, v]) => [k, lines(v)]).filter(([, v]) => v) : [];
-    const infoHTML = infoRows.length ? `<h2>At this parish</h2>${dl(infoRows)}` : "";
+    // what a visitor comes for stays open (Adoration, Confession, holiday Masses); the rest is folded, so the page stays short
+    const rowsOf = (list) => (info ? list.map(([k, v]) => [k, lines(v)]).filter(([, v]) => v) : []);
+    const infoRows = rowsOf([["Adoration", info?.adoration], ["Confession", info?.confession], ["Public holidays", info?.public_holidays]]);
+    const moreRows = rowsOf([["Devotions", info?.devotions], ["Church open", info?.church_hours], ["Parish office", info?.office_hours],
+      ["Languages", info?.languages], ["Good to know", info?.good_to_know]]);
+    const infoHTML = (infoRows.length ? `<h2>At this parish</h2>${dl(infoRows)}` : "") +
+      (moreRows.length ? `<details class="rest"><summary>More about this parish</summary>${dl(moreRows)}</details>` : "");
     const covered = new Set([info?.adoration && "Adoration", info?.confession && "Confession", info?.devotions?.length && "Devotion"].filter(Boolean));
     // dated items from the parish's bulletin and posters, from today on (the read ages; the page shouldn't)
     const today = dayKey(now);
@@ -1190,8 +1217,8 @@
     const events = ahead(info?.events);
     const eventLi = (x) => `<li><span class="t">${esc(dnum(at(x)))}</span><span><strong>${esc(x.title)}</strong>
       <span class="x">${[x.time ? `${wk(at(x))} ${clock(at(x))}` : wk(at(x)), x.text].filter(Boolean).map(esc).join(" · ")}${x.url ? ` <a href="${esc(x.url)}" target="_blank" rel="noopener">More</a>` : ""}</span></span></li>`;
-    const eventsHTML = events.length ? `<h2>Coming up</h2><ul class="events">${events.slice(0, 4).map(eventLi).join("")}</ul>
-      ${events.length > 4 ? `<details class="rest"><summary>${events.length - 4} more</summary><ul class="events">${events.slice(4).map(eventLi).join("")}</ul></details>` : ""}` : "";
+    const eventsHTML = events.length ? `<h2>Coming up</h2><ul class="events">${events.slice(0, 2).map(eventLi).join("")}</ul>
+      ${events.length > 2 ? `<details class="rest"><summary>${events.length - 2} more</summary><ul class="events">${events.slice(2).map(eventLi).join("")}</ul></details>` : ""}` : "";
     // everything else, folded so the times stay near the top
     const c = info?.contacts || {};
     const tel = (n) => `<a href="tel:${esc(n.replace(/[^\d+]/g, ""))}">${esc(n)}</a>`;
@@ -1545,7 +1572,7 @@
   const SORTS = [["near", "Nearest"], ["soon", "Earliest Mass"], ["az", "A to Z"]];
   const RADII = [2, 5, 10];
   // myCatholicSG spells a few languages two ways ("English.", "Mandarin (中文)")
-  const langName = (l) => String(l || "English").replace(/\s*\(.*\)$/, "").replace(/\.$/, "").trim();
+  const langName = S.langName;
   async function renderChurches(q) {
     const d = await loadData();
     if (!d) return;

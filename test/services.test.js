@@ -133,3 +133,20 @@ test("every curated time and day is well formed, so no entry can silently drop o
     assert.ok(["parish website", "myCatholicSG"].includes(spec.from), `${where}: from ${spec.from}`);
   }
 });
+
+test("Confession: a nearby one later that morning beats a long trip to an early one", async () => {
+  const now = at("2026-10-01", "01:00");
+  const C = (pid, from, to) => ({ ...W(pid, at("2026-10-01", from), at("2026-10-01", to)), kind: "confession", lastIn: at("2026-10-01", to) - 10 * MIN });
+  const windows = [C(1, "07:00", "07:30"), C(2, "11:45", "12:15")];
+  const r = await rankOpen({ origin, now, parishes: data({}).parishes, windows, travel: fixed({ 1: 59, 2: 17 }) });
+  assert.equal(r.best.pid, 2);
+  // but not one the next evening: past six hours, the earliest stays
+  const far = [C(1, "07:00", "07:30"), { ...C(2, "17:45", "18:15") }];
+  assert.equal((await rankOpen({ origin, now, parishes: data({}).parishes, windows: far, travel: fixed({ 1: 59, 2: 17 }) })).best.pid, 1);
+});
+
+test("Sunday obligation: Sunday, or Saturday from 4pm; language names match however they're spelt", () => {
+  const is = (d, t) => S.forSunday({ start: at(d, t) });
+  assert.deepEqual([is("2026-10-03", "08:00"), is("2026-10-03", "15:59"), is("2026-10-03", "16:00"), is("2026-10-04", "07:00"), is("2026-10-05", "18:00")], [false, false, true, true, false]);
+  assert.ok(S.inLang("Mandarin")({ lang: "Mandarin (中文)" }) && S.inLang("english")({ lang: "English." }) && !S.inLang("Tamil")({ lang: "English" }));
+});

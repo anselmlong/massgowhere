@@ -1,4 +1,5 @@
-// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&part=morning|lunch|evening][&at=<epoch ms or ISO time>][&late=15]
+// GET /api/next?lat=1.30&lng=103.8&mode=transit|drive|walk[&lang=English][&part=morning|lunch|evening][&sunday=1][&at=<epoch ms or ISO time>][&late=15]
+// sunday=1: only Masses for the Sunday obligation (Sunday, or Saturday from 4pm).
 // The one answer every client (website, Telegram bots) shows: which Mass you can make, and when to leave.
 // &kind=adoration|confession instead finds an Adoration room open or Confession you can get to (see public/services.js);
 // part, lang and late don't apply there.
@@ -9,6 +10,7 @@ const { rankOpen, expandAllServices, unconfirmed, KINDS } = require("../public/s
 const { tripMinutes } = require("../lib/onemap.js");
 
 const HORIZON_DAYS = 2;
+const LONG_HORIZON_DAYS = 7; // a Sunday Mass or a language with few Masses can be most of a week away
 const MODES = new Set(["transit", "drive", "walk"]);
 const PLAN_DAYS = 7;
 
@@ -76,9 +78,11 @@ async function answer(req, res) {
   if (kind) return answerOpen(res, { kind, origin, now, at, mode, fast });
   // late=N (max 15): Masses that have just started still count if you'd walk in at most N minutes late
   const lateMin = Math.max(0, Math.min(15, Number(u.searchParams.get("late")) || 0));
-  const events = S.expandAll(data, now - lateMin * 60000, HORIZON_DAYS)
-    .filter((e) => !lang || e.lang.toLowerCase() === lang.toLowerCase())
-    .filter(S.inPart(part));
+  const sunday = u.searchParams.get("sunday") === "1";
+  const events = S.expandAll(data, now - lateMin * 60000, sunday || lang ? LONG_HORIZON_DAYS : HORIZON_DAYS)
+    .filter(S.inLang(lang))
+    .filter(S.inPart(part))
+    .filter((e) => !sunday || S.forSunday(e));
   const travel = async (p, departMs) => {
     const t = await tripMinutes(origin, p, mode, departMs);
     return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
@@ -94,6 +98,8 @@ async function answer(req, res) {
     at: at ? new Date(at).toISOString() : null,
     mode,
     part: part || null,
+    sunday,
+    lang: lang || null,
     best: summarize(r.best, byId),
     alternatives: r.alternatives.map((e) => summarize(e, byId)),
     nearest: r.nearest && {

@@ -115,7 +115,18 @@
   }
   const inPart = (part) => (e) => !PARTS[part] || partOf(e.start) === part;
 
-  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, specialDay, easterUTC, SGT_OFFSET_MS, PARTS, partOf, inPart };
+  // A Mass for your Sunday obligation: any Sunday Mass, or Saturday evening's (the earliest in Singapore start at 4pm).
+  // Holy days of obligation are not modelled.
+  const SUNDAY_EVE_MIN = 16 * 60;
+  function forSunday(e) {
+    const d = new Date(e.start + SGT_OFFSET_MS), wd = d.getUTCDay();
+    return wd === 0 || (wd === 6 && d.getUTCHours() * 60 + d.getUTCMinutes() >= SUNDAY_EVE_MIN);
+  }
+  // myCatholicSG spells a few languages two ways ("English.", "Mandarin (中文)")
+  const langName = (l) => String(l || "English").replace(/\s*\(.*\)$/, "").replace(/\.$/, "").trim();
+  const inLang = (lang) => (e) => !lang || langName(e.lang).toLowerCase() === String(lang).toLowerCase();
+
+  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, specialDay, easterUTC, SGT_OFFSET_MS, PARTS, partOf, inPart, forSunday, langName, inLang };
   if (typeof module !== "undefined") module.exports = api;
   else root.MassSchedule = api;
 })(this);

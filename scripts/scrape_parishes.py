@@ -304,6 +304,7 @@ Rules:
 - info: what else a visitor would want, in short plain sentences, only as the page states it. An Adoration room or chapel that is open for hours is described in info.adoration with its opening hours; a "Holy Hour" is a set time of prayer, so say "Holy Hour" and its time, not "Adoration at" that time. Leave a field '' (or []) when the page doesn't say.
 - The text may end with the parish's latest weekly bulletin (marked [bulletin ...]). It is the most current source: use it for "dated" (one-off Masses, changed or cancelled Masses) and "events". Regular Mass times come from the website pages unless the bulletin states a new regular schedule.
 - events: talks, retreats, courses, feasts, gatherings open to parishioners, dated today or later; not Masses (those go in "dated"), not appeals, not prayers.
+- info and events are shown to visitors word for word: write to the visitor about the parish, never about your sources or your reading of them. Don't mention the homepage, footer, poster, image, article or excerpt, and don't write "explicitly", "verify", "appears to" or "conflict". When the bulletin and the website give different times, give both briefly and end with "check with the parish", e.g. "The bulletin says 07:30, the website 07:00; check with the parish."
 - notes: at most 3 short caveats a visitor needs, e.g. "No weekday Mass on public holidays". Never describe the page itself, never restate times or languages already in the entries, never say what is missing. Empty is fine.
 
 Page text:
