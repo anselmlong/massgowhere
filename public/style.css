@@ -122,7 +122,7 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--ink-2); }
 .or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .search { position: relative; }
 .search input {
-  width: 100%; min-height: var(--tap); border: 1px solid var(--field-line); background: var(--bg); border-radius: var(--radius);
+  width: 100%; min-height: var(--tap); border: 0; background: var(--field); border-radius: var(--radius);
   padding: 0 52px 0 44px; font-size: 16px;
 }
 .search input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
@@ -130,13 +130,13 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--ink-2); }
 .clear svg { position: static; translate: none; width: 18px; height: 18px; }
 .search input::placeholder { color: var(--ink-3); }
 .search svg { position: absolute; left: 14px; top: 50%; translate: 0 -50%; width: 20px; height: 20px; color: var(--ink-3); }
-.suggest { list-style: none; margin: 6px 0 0; padding: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.suggest { list-style: none; margin: 6px 0 0; padding: 0; background: var(--field); border-radius: var(--radius); overflow: hidden; }
 .suggest button { display: block; width: 100%; text-align: left; background: none; border: 0; padding: 12px 16px; cursor: pointer; min-height: 48px; }
 .suggest li + li button { border-top: 1px solid var(--line); }
-.suggest button:focus-visible { background: var(--field); }
-@media (hover: hover) { .suggest button:hover { background: var(--field); } .row:hover .n { text-decoration: underline; text-underline-offset: 3px; } }
+.suggest button:focus-visible { background: var(--accent-soft); }
+@media (hover: hover) { .suggest button:hover { background: var(--accent-soft); } .row:hover .n { text-decoration: underline; text-underline-offset: 3px; } }
 .suggest small { display: block; color: var(--ink-3); font-size: 13px; }
-.browse { border: 1px solid var(--field-line); background: var(--bg); color: var(--ink); }
+.browse { border: 0; background: var(--field); color: var(--ink); }
 .browse svg { color: var(--accent); }
 @media (hover: hover) { .browse:hover { background: var(--field); } }
 .browse-wrap { margin: 28px 0 0; display: flex; justify-content: center; }
@@ -207,9 +207,11 @@ html.sheet-lock { overflow: hidden; }
 .opt { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 8px 14px; border: 0; background: color-mix(in srgb, var(--ink) 6%, transparent); border-radius: 12px; cursor: pointer; text-align: left; }
 .opt svg { width: 20px; height: 20px; color: var(--accent); flex: none; }
 .opt small { display: block; color: var(--ink-3); font-size: 13px; }
-.opt[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--accent); background: var(--accent-soft); }
+.opt[aria-pressed="true"] { background: var(--accent-soft); font-weight: 600; }
+.opt[aria-pressed="true"]::after { content: ""; flex: none; margin: 0 4px 4px auto; width: 7px; height: 13px; border: solid var(--accent); border-width: 0 2.5px 2.5px 0; rotate: 45deg; } /* a check mark */
+.opt[aria-pressed="true"] small { font-weight: 400; }
 .recent { display: flex; flex-wrap: wrap; gap: 6px; }
-.recent button { min-height: 44px; padding: 0 14px; border: 1px solid var(--line); background: var(--bg); border-radius: 999px; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.recent button { min-height: 44px; padding: 0 14px; border: 0; background: var(--field); border-radius: 999px; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 .recent svg { width: 15px; height: 15px; color: var(--ink-3); }
 .quick { display: flex; gap: 6px; overflow-x: auto; margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter) 2px; scrollbar-width: none; }
 .quick::-webkit-scrollbar { display: none; }
@@ -353,15 +355,15 @@ details.unsure .muted { margin: 0 0 4px; }
 .pick > span, .sort > span { font-size: 13px; font-weight: 500; color: var(--ink-2); }
 .pick select, .sort select {
   -webkit-appearance: none; appearance: none; width: 100%; min-height: var(--tap); padding: 0 38px 0 14px;
-  border: 1px solid var(--field-line); border-radius: var(--radius); background: var(--bg); color: var(--ink);
+  border: 0; border-radius: var(--radius); background: var(--field); color: var(--ink);
   font-size: 16px; font-weight: 500; text-overflow: ellipsis; cursor: pointer; transition: border-color .15s, background-color .15s;
 }
 .pick svg, .sort svg { position: absolute; right: 12px; bottom: 17px; width: 18px; height: 18px; color: var(--accent); stroke-width: 2.2; pointer-events: none; }
 .pick select:focus-visible, .sort select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-@media (hover: hover) { .pick select:not(:disabled):hover, .sort select:hover { background: var(--field); } }
+@media (hover: hover) { .pick select:not(:disabled):hover, .sort select:hover { background: color-mix(in srgb, var(--ink) 9%, transparent); } }
 /* a filter that has been set wears the season's tint, so you can see at a glance what is narrowing the list */
-.pick select[data-key]:not([data-key="day"]):has(option:checked:not([value=""]):not([value="0"])) { border-color: var(--accent); background: var(--accent-soft); } /* a day is always chosen, so it never tints */
-.pick select:disabled { color: var(--ink-3); background: var(--field); border-color: var(--line); cursor: not-allowed; }
+.pick select[data-key]:not([data-key="day"]):has(option:checked:not([value=""]):not([value="0"])) { background: var(--accent-soft); } /* a day is always chosen, so it never tints */
+.pick select:disabled { color: var(--ink-3); background: var(--field); cursor: not-allowed; }
 .pick[aria-disabled="true"] svg { color: var(--ink-3); }
 .results { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin: 14px 0 2px; padding-top: 14px; border-top: 1px solid var(--line); }
 .count { margin: 0 0 8px; font-size: 14px; color: var(--ink-2); text-wrap: pretty; }
@@ -373,7 +375,7 @@ details.unsure .muted { margin: 0 0 4px; }
 .row-church .times .tag { margin-left: 4px; font-size: 11px; }
 .row-church .sep { color: var(--ink-3); }
 
-#map { height: 60dvh; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--field); margin-top: 8px; }
+#map { height: 60dvh; border-radius: var(--radius); overflow: hidden; background: var(--field); margin-top: 8px; }
 /* pins: saturated fill with a white keyline and a dark halo, so they stand off both the pale and the dark basemap */
 .church-pin { --pin: var(--accent-deep); width: 44px; height: 44px; padding: 4px 9px 0; display: flex; align-items: flex-end; justify-content: center; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 0 1px rgb(0 0 0 / .55)) drop-shadow(0 3px 4px rgb(0 0 0 / .35)); transition: transform .15s var(--ease); }
 .church-pin svg { width: 26px; height: 33px; display: block; flex: none; } /* small pin, 44px tap area */
@@ -396,7 +398,7 @@ details.unsure .muted { margin: 0 0 4px; }
 .me { width: 22px; height: 22px; border-radius: 50%; background: #1a73e8; border: 3px solid #fff; box-shadow: 0 0 0 8px rgb(26 115 232 / .25), 0 1px 4px rgb(0 0 0 / .4); }
 .legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 10px 0 0; font-size: 13px; color: var(--ink-2); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
-.legend i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px rgb(0 0 0 / .35); }
+.legend i { width: 10px; height: 10px; border-radius: 50%; }
 .legend .l-church { background: var(--accent-deep); }
 
 .legend .l-you { background: #1a73e8; }
@@ -514,7 +516,7 @@ details.unsure .muted { margin: 0 0 4px; }
 html.previewing .shell { padding-bottom: 96px; }
 .qseg button { white-space: nowrap; font-size: 14px; gap: 5px; }
 /* the chosen option carries the accent ring, so it reads in light and dark alike */
-.qseg button[aria-checked="true"] { box-shadow: inset 0 0 0 2px var(--accent); }
+.qseg button[aria-checked="true"] { background: var(--accent-soft); font-weight: 600; }
 
 /* ---------- polish & delight ---------- */
 /* the cross mark beside the name, in the theme's deep accent */
@@ -569,7 +571,7 @@ html.previewing .shell { padding-bottom: 96px; }
 .feedback form { display: grid; gap: 8px; margin: 4px 0 12px; max-width: 60ch; }
 .feedback label { font-size: 14px; color: var(--ink-2); }
 .feedback label span { color: var(--ink-3); }
-.feedback textarea, .feedback input { width: 100%; padding: 10px 12px; border: 1px solid var(--field-line); border-radius: 10px; background: var(--bg); color: var(--ink); font: 16px/1.4 var(--font-body); resize: vertical; }
+.feedback textarea, .feedback input { width: 100%; padding: 10px 12px; border: 0; border-radius: 10px; background: var(--field); color: var(--ink); font: 16px/1.4 var(--font-body); resize: vertical; }
 .feedback .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .feedback .btn { width: auto; justify-self: start; min-height: 44px; padding: 0 18px; font-size: 15px; }
 .feedback .fb-status { margin: 0; font-size: 14px; color: var(--ink-2); min-height: 1.4em; }
@@ -616,10 +618,10 @@ html.previewing .shell { padding-bottom: 96px; }
 .info dd a { display: inline-block; padding-block: 12px; margin-block: -12px; }
 @media (max-width: 420px) { .info { grid-template-columns: 1fr; gap: 2px; } .info dd { margin-bottom: 10px; } }
 .week li.off .t { text-decoration: line-through; color: var(--ink-3); }
-.week button.src { font: inherit; font-size: 12px; font-weight: 600; padding: 1px 8px; margin-left: 6px; border: 1px dashed var(--ink-3); border-radius: 999px; background: none; color: var(--ink-2); cursor: pointer; vertical-align: 1px; min-height: 24px; }
+.week button.src { font: inherit; font-size: 12px; font-weight: 600; padding: 1px 8px; margin-left: 6px; border: 0; border-radius: 999px; background: var(--field); color: var(--ink-2); cursor: pointer; vertical-align: 1px; min-height: 24px; }
 .week button.src { position: relative; }
 .week button.src::after { content: ""; position: absolute; inset: -10px -4px; } /* 44px tap target around the small marker */
-.week button.src[aria-expanded="true"] { background: var(--field); border-style: solid; }
+.week button.src[aria-expanded="true"] { background: var(--accent-soft); }
 .week .src-note { display: block; }
 
 /* "Today's colour": the Church's year as one band of colour, today marked */
@@ -698,7 +700,7 @@ html.previewing .shell { padding-bottom: 96px; }
 .near-map .legend span:last-child { flex-basis: 100%; color: var(--ink-3); }
 .legend .l-church.dim { background: color-mix(in srgb, var(--accent-deep) 55%, #6b7280); }
 .pin-time { position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); padding: 1px 6px; border-radius: 6px; background: var(--accent-deep); color: #fff; font: 600 12px/1.4 var(--font-body); white-space: nowrap; pointer-events: none; }
-.church-pin.dim .pin-time { bottom: 34px; background: var(--bg); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+.church-pin.dim .pin-time { bottom: 34px; background: var(--bg); color: var(--ink); box-shadow: 0 1px 4px rgb(0 0 0 / .25); }
 .answer-map .maplibregl-ctrl-top-right { display: none; } /* pinch zooms; the buttons would cover a time label */
 
 /* church page: a day per row, its Mass times in an even grid */
@@ -715,7 +717,7 @@ html.previewing .shell { padding-bottom: 96px; }
 
 /* the answer: a small photo of the church beside the time */
 .answer .time-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.church-thumb { flex: none; display: block; padding: 0; border: 0; cursor: zoom-in; width: 72px; height: 72px; border-radius: 14px; overflow: hidden; background: var(--field); box-shadow: 0 0 0 1px var(--line); }
+.church-thumb { flex: none; display: block; padding: 0; border: 0; cursor: zoom-in; width: 72px; height: 72px; border-radius: 14px; overflow: hidden; background: var(--field); }
 .church-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 @media (prefers-reduced-motion: no-preference) { .church-thumb img { animation: rise .3s var(--ease) both; } }
 .answer .time-row .church-thumb { margin: 4px 0 14px; }
