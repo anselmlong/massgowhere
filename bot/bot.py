@@ -461,22 +461,21 @@ def way_answer(chat_id, by_ms=None):
                     [[{"text": "Try it on the website", "url": site}]])
         p = b["parish"]
         about = "about " if b.get("travelSource") == "estimate" else ""
-        adds = "right on your way" if b["detourMin"] <= 3 else f"adds {mins(b['detourMin'])} to your trip"
         to_how = MODES["walk" if b.get("toWalk") else mode][1]
         on_how = MODES["walk" if b.get("onwardWalk") else mode][1]
+        # three plain steps, each a time: leave, Mass, arrive
         lines = [
-            f"<b>{clock(b['start'])} {day_label(b['start'])}</b> · {adds}",
+            f"<b>{clock(b['start'])} {day_label(b['start'])}</b>",
             f"<b>{esc(p['name'])}</b>",
-            f"Mass until about {clock(b['end'])}",
             "",
-            f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['toMin'])} {to_how} from {esc(flabel)}",
-            f"Then {about}{mins(b['onwardMin'])} {on_how} to {esc(tlabel)}, arriving about <b>{clock(b['arrive'])}</b>",
+            f"1. Leave {esc(flabel)} by <b>{clock(b['leaveBy'])}</b> ({about}{mins(b['toMin'])} {to_how})",
+            f"2. Mass {clock(b['start'])} to about {clock(b['end'])}",
+            f"3. Reach {esc(tlabel)} {about}<b>{clock(b['arrive'])}</b> ({about}{mins(b['onwardMin'])} {on_how})",
         ]
         alts = [a for a in res.get("alternatives") or [] if a]
         if alts:
             lines += ["", "<i>Also on the way:</i>"] + [
-                f"{clock(a['start'])} {day_label(a['start'])} · {esc(a['parish']['name'])} "
-                f"({'on the way' if a['detourMin'] <= 3 else '+' + mins(a['detourMin'])})" for a in alts]
+                f"{clock(a['start'])} {day_label(a['start'])} · {esc(a['parish']['name'])} (reach {esc(tlabel)} {clock(a['arrive'])})" for a in alts]
         if fast:
             lines += ["", "<i>Refining live travel times…</i>"]
         lines += ["", "Peace be with you!"]

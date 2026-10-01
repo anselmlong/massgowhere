@@ -872,7 +872,7 @@
             <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
             <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : `No reachable ${adj}Mass in the next two days`}</small></span><span class="d">${mins(near.travelMin)}${near.walk ? " walk" : ""}</span></a></li></ul>` : ""}
         </section>` : ""}
-        <p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches${part ? `?part=${part}` : ""}">${svg(ICON.map)}<span>Browse churches and Mass times</span></a></p>
+        <p class="browse-wrap"><a class="link" href="#/churches${part ? `?part=${part}` : ""}">Browse all churches and Mass times</a></p>
         <p class="source">${sourceLine(d.parishes.find((x) => x.id === p.id))} Please confirm feast days with the parish.</p>`;
       rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
       view.focus({ preventScroll: true });
@@ -962,7 +962,7 @@
     const leave = new Date(b.leaveBy).getTime();
     const trip = `${about}${mins(b.travelMin)} ${mode.phrase}`;
     if (b.lateMin > 0) return `<strong>${at ? `Leave at ${clock(at)}` : "Leave now"}</strong><span class="late">You’ll be about ${mins(b.lateMin)} late</span><span>${trip}</span>`;
-    const early = `<span class="early">Timed so you arrive 5 minutes early, to settle in and prepare for Mass.</span>`;
+    const early = `<span class="early">You’ll arrive 5 min early, to prepare for Mass.</span>`;
     if (!at) return `<strong>${leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}${onDay(leave, Date.now())}`}</strong><span>${trip}</span>${early}`;
     // the first Mass after your time may be hours away (late at night: tomorrow morning); then the useful
     // answer is when to set off for it, not "arrive at 10:31pm" for a 7am Mass
@@ -1009,10 +1009,10 @@
         box.innerHTML = `<strong>You may have missed this one</strong><span><button class="link" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Find the next Mass</button></span>`;
         document.querySelector(".answer .btn-primary")?.classList.remove("go-now");
       } else if (m <= 0) {
-        box.innerHTML = `<strong>Time to leave</strong><span>${trip}</span><span class="early">Timed so you arrive 5 minutes early, to settle in and prepare for Mass.</span>`;
+        box.innerHTML = `<strong>Time to leave</strong><span>${trip}</span><span class="early">You’ll arrive 5 min early, to prepare for Mass.</span>`;
         document.querySelector(".answer .btn-primary")?.classList.add("go-now");
       } else if (m <= 60) {
-        box.innerHTML = `<strong>Leave by ${clock(leave)}</strong><span>in ${mins(m)} · ${trip}</span><span class="early">Timed so you arrive 5 minutes early, to settle in and prepare for Mass.</span>`;
+        box.innerHTML = `<strong>Leave by ${clock(leave)}</strong><span>in ${mins(m)} · ${trip}</span><span class="early">You’ll arrive 5 min early, to prepare for Mass.</span>`;
       }
     };
     draw();
@@ -1107,7 +1107,7 @@
       const leaveAt = ms(b.leaveAt), leaveBy = ms(b.leaveBy), start = ms(b.start), lastIn = ms(b.lastIn);
       const now = t0(), day = (x) => onDay(x, now);
       const soonNow = leaveAt - now < 2 * 60000;
-      if (b.type === "session") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveBy)}${day(leaveBy)}`}</strong><span>${trip}</span><span class="early">Timed so you arrive 5 minutes before it starts.</span>`;
+      if (b.type === "session") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveBy)}${day(leaveBy)}`}</strong><span>${trip}</span><span class="early">You’ll arrive 5 min before it starts.</span>`;
       if (start <= now + b.travelMin * 60000) {
         const stay = kind === "adoration" ? `Get there by ${clock(lastIn)} to have at least 20 minutes before it closes.` : `Get there by ${clock(lastIn)}: Confession ends at ${clock(ms(b.end))}, and there may be a queue.`;
         return `<strong>${soonNow ? goNow : `Leave at ${clock(leaveAt)}`}</strong><span>${trip}, arriving ${about}${clock(ms(b.arrive))}</span><span class="early">${stay}</span>`;
@@ -1369,20 +1369,21 @@
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button></div>
       <section class="way-form">
         <div class="intro"><h1>Catch a Mass on the way</h1>
-          <p class="lede">Heading somewhere with time to spare? We’ll find a Mass along your route and how much time it adds.</p></div>
+          <p class="lede">Going somewhere? We’ll find a Mass you can stop at along the way.</p></div>
         <ul class="settings" aria-label="Your trip">
           ${row("w-from", "From", trip.from ? trip.from.label : "My location")}
           ${row("w-to", "To", trip.to ? trip.to.label : "Choose where you’re going", !trip.to)}
           ${row("w-at", "Leaving", trip.at == null ? "Now" : whenText(trip.at))}
           ${row("w-by", "Be there by", trip.by == null ? "No rush" : whenText(trip.by))}
           ${row("w-mode", "Travel by", modeOf(mode).label)}
-          ${row("w-late", "Can’t avoid being late", store.get("mgw-late") ? "Up to 15 min" : "Off")}
+          ${row("w-late", "OK to be a bit late?", store.get("mgw-late") ? "Yes, up to 15 min" : "No")}
         </ul>
         <div class="actions">
           <button class="btn btn-primary btn-find" id="w-find" type="button">${svg(ICON.route)}<span>Find a Mass on the way</span></button>
           <p class="msg" id="msg" role="status" hidden></p>
         </div>
-        <p class="muted">We assume Mass takes about an hour on Sundays and Saturday evenings, and about 40 minutes on weekdays.</p>
+        <details class="why-built"><summary>How we pick</summary>
+          <p>We choose the Mass that makes your journey the least longer, and that still gets you there in time if you set “Be there by”. We assume Mass takes about an hour on Sundays and Saturday evenings, and about 40 minutes on weekdays.</p></details>
       </section>`;
     const redraw = (id) => { renderWay(new URLSearchParams()); const t = view.querySelector(id); t?.focus({ preventScroll: true }); t?.classList.add("just"); };
     const on = (id, fn) => view.querySelector(id).addEventListener("click", fn);
@@ -1485,20 +1486,21 @@
       }
       const start = new Date(b.start).getTime(), end = new Date(b.end).getTime(), leave = new Date(b.leaveBy).getTime(), arrive = new Date(b.arrive).getTime();
       const t = clockParts(start), p = b.parish, about = b.travelSource === "estimate" ? "about " : "";
-      const adds = b.detourMin <= 3 ? "Right on your way" : `Adds ${mins(b.detourMin)} to your trip`;
+      // the trip as three plain steps, each a time: leave, Mass, arrive. No arithmetic for the reader to do.
       answerEl.innerHTML = `
         <section class="answer">
-          <p class="day">${dayLabel(start)} · ${adds}</p>
+          <p class="day">${dayLabel(start)}${b.language && b.language !== "English" ? ` · ${esc(b.language)} Mass` : ""}</p>
           <p class="time">${t.hm}<small>${t.ap}</small></p>
           <h1 class="church">${esc(p.name)}</h1>
-          <p class="meta">Mass until about ${clock(end)}${b.language && b.language !== "English" ? ` · ${esc(b.language)}` : ""}</p>
-          <div class="leave way-steps">
-            ${b.lateMin > 0 ? `<strong>Leave now</strong><span class="late">You’ll be about ${mins(b.lateMin)} late for Mass</span>` : `<strong>Leave by ${clock(leave)}${onDay(leave, at ?? Date.now())}</strong>`}
-            <span>${about}${mins(b.toMin)} ${phrase(b.toWalk)} to the church${b.lateMin > 0 ? "" : ", arriving 5 minutes early to settle in"}</span>
-            <span>Then ${about}${mins(b.onwardMin)} ${phrase(b.onwardWalk)} to ${esc(to.label)}, arriving ${about}<em>${clock(arrive)}</em></span>
-          </div>
+          <ol class="trip-steps way-steps">
+            <li><strong>${b.lateMin > 0 ? "Leave now" : `Leave by ${clock(leave)}${onDay(leave, at ?? Date.now())}`}</strong>
+              <span>${b.lateMin > 0 ? `<span class="late">You’ll be about ${mins(b.lateMin)} late</span> · ` : ""}${about}${mins(b.toMin)} ${phrase(b.toWalk)}</span></li>
+            <li><strong>Mass ${clock(start)} to about ${clock(end)}</strong></li>
+            <li><strong>Reach ${esc(to.label)} ${about}${clock(arrive)}</strong>
+              <span>${about}${mins(b.onwardMin)} ${phrase(b.onwardWalk)}</span></li>
+          </ol>
           <a class="btn btn-primary" href="${gdir(from, p, b.toWalk ? "walk" : mode.id)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate to the church</span></a>
-          <a class="btn btn-quiet way-on" href="${gdir(p, to, b.onwardWalk ? "walk" : mode.id)}" target="_blank" rel="noopener">${svg(ICON.flag)}<span>Then on to ${esc(to.label)}</span></a>
+          <a class="link way-on" href="${gdir(p, to, b.onwardWalk ? "walk" : mode.id)}" target="_blank" rel="noopener">After Mass: directions to ${esc(to.label)}</a>
           ${refining ? `<p class="est" style="text-align:center">Travel times are estimates; checking live routes…</p>` : ""}
         </section>`;
       const alt = (res.alternatives || []).filter(Boolean);
@@ -1506,7 +1508,7 @@
         const s0 = new Date(a.start).getTime();
         return `<li><a class="row" href="#/church/${a.parish.id}"><span class="t">${clock(s0)}<small>${dayLabel(s0)}</small></span>
           <span class="n">${esc(a.parish.name)}<small>${a.lateMin > 0 ? `<span class="late">${mins(a.lateMin)} late</span>` : `Leave by ${clock(new Date(a.leaveBy).getTime())}`}</small></span>
-          <span class="d">${a.detourMin <= 3 ? "on the way" : `+${mins(a.detourMin)}`}</span></a></li>`;
+          <span class="d">reach ${clock(new Date(a.arrive).getTime())}</span></a></li>`;
       }).join("")}</ul></section>` : "";
       drawMap(res);
     };
@@ -1533,7 +1535,7 @@
         map.addSource("trip", { type: "geojson", data: line });
         map.addLayer({ id: "trip", type: "line", source: "trip", paint: { "line-color": getComputedStyle(document.documentElement).getPropertyValue("--accent-deep").trim() || "#2e6b4f", "line-width": 3, "line-dasharray": [1.5, 1.5] } });
       });
-      stops.slice(1).forEach((s0) => addPin(ml, map, s0.parish, `<strong>${esc(s0.parish.name)}</strong><span>${clock(new Date(s0.start).getTime())} ${dayLabel(new Date(s0.start).getTime()).toLowerCase()} · ${s0.detourMin <= 3 ? "on the way" : `adds ${mins(s0.detourMin)}`}</span><a href="#/church/${s0.parish.id}">Mass times</a>`, { dim: true }));
+      stops.slice(1).forEach((s0) => addPin(ml, map, s0.parish, `<strong>${esc(s0.parish.name)}</strong><span>Mass ${clock(new Date(s0.start).getTime())} ${dayLabel(new Date(s0.start).getTime()).toLowerCase()} · reach ${esc(to.label)} ${clock(new Date(s0.arrive).getTime())}</span><a href="#/church/${s0.parish.id}">Mass times</a>`, { dim: true }));
       addPin(ml, map, res.best.parish, `<strong>${esc(res.best.parish.name)}</strong><span>${clock(new Date(res.best.start).getTime())} · your stop</span><a href="#/church/${res.best.parish.id}">Mass times</a>`);
       addDot(ml, map, from, "me", "Start");
       addDot(ml, map, to, "dest", to.label);
