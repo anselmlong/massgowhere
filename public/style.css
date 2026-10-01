@@ -715,7 +715,7 @@ html.previewing .shell { padding-bottom: 96px; }
 
 /* the answer: a small photo of the church beside the time */
 .answer .time-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.church-thumb { flex: none; display: block; width: 72px; height: 72px; border-radius: 14px; overflow: hidden; background: var(--field); box-shadow: 0 0 0 1px var(--line); }
+.church-thumb { flex: none; display: block; padding: 0; border: 0; cursor: zoom-in; width: 72px; height: 72px; border-radius: 14px; overflow: hidden; background: var(--field); box-shadow: 0 0 0 1px var(--line); }
 .church-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 @media (prefers-reduced-motion: no-preference) { .church-thumb img { animation: rise .3s var(--ease) both; } }
 .answer .time-row .church-thumb { margin: 4px 0 14px; }
@@ -724,3 +724,16 @@ html.previewing .shell { padding-bottom: 96px; }
 .answer .time-row:has(.church-thumb) .time { font-size: clamp(56px, 18vw, 96px); }
 .answer .time-row .time { min-width: 0; }
 .church-thumb { width: clamp(56px, 17vw, 72px); height: clamp(56px, 17vw, 72px); }
+
+/* the answer's photo, enlarged */
+.photo-view { width: 100%; max-width: 720px; max-height: 100dvh; margin: auto; padding: 16px; border: 0; background: none; overflow: visible; }
+.photo-view::backdrop { background: rgb(0 0 0 / .94); }
+.photo-view figure { margin: 0; }
+.photo-view img { display: block; width: 100%; max-height: 72dvh; object-fit: contain; border-radius: 14px; cursor: zoom-out; }
+.photo-view figcaption { display: grid; gap: 4px; margin-top: 12px; color: #fff; font-size: 13px; }
+.photo-view figcaption strong { font-size: 17px; }
+.photo-view figcaption span { color: rgb(255 255 255 / .75); }
+.photo-view figcaption a { color: inherit; }
+.photo-close { position: fixed; top: 12px; right: 12px; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgb(255 255 255 / .16); color: #fff; cursor: pointer; }
+.photo-close svg { width: 22px; height: 22px; }
+@media (prefers-reduced-motion: no-preference) { .photo-view[open] img { animation: rise .25s var(--ease) both; } }

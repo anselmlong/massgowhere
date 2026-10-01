@@ -831,7 +831,7 @@
       const c = photos?.[p.id];
       if (!c) return "";
       const src = c.src && /^https?:/.test(c.src) ? c.src : `photos/thumb/${p.id}.jpg`;
-      return `<a class="church-thumb" href="#/church/${p.id}" tabindex="-1" aria-hidden="true"><img src="${esc(src)}" alt="" width="72" height="72" decoding="async" referrerpolicy="no-referrer"></a>`;
+      return `<button class="church-thumb" type="button" data-photo="${esc(p.id)}" aria-label="See a bigger photo of the church"><img src="${esc(src)}" alt="" width="72" height="72" decoding="async" referrerpolicy="no-referrer"></button>`;
     };
     photoCredits().then((c) => {
       photos = c;
@@ -1005,6 +1005,8 @@
     if (!location.hash.startsWith("#/next")) return;
     const cur = parseAt(new URLSearchParams(location.hash.split("?")[1] || "").get("at"));
     if (e.target.closest("#when")) openTimeSheet(cur, setLeaveAt);
+    const ph = e.target.closest("[data-photo]");
+    if (ph) openPhoto(ph.dataset.photo, view.querySelector(".answer .church span")?.textContent || "The church");
     if (e.target.closest("#why")) {
       const q = new URLSearchParams(location.hash.split("?")[1] || "");
       openWhySheet({ from: q.get("from") || "your location", mode: modeOf(q.get("mode")), at: cur, part: partOf(q.get("part")), sunday: q.get("sunday") === "1", lang: q.get("lang") || "" });
@@ -1220,6 +1222,26 @@
   // who took each church photo (public/photos/credits.json, written by scripts/fetch_photos.py); a church without one shows none
   let photosP = null;
   const photoCredits = () => (photosP ||= fetch("photos/credits.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
+  // the credit line, as on the church page: the parish's own photo, or a licensed one from Flickr or Wikimedia Commons
+  const photoCaption = (c) => (c.src
+    ? `Photo: <a href="${esc(c.page)}" target="_blank" rel="noopener">${esc(c.author)}</a> (parish website)`
+    : `Photo: ${esc(c.author)}, <a href="${esc(c.licenseUrl || c.page)}" target="_blank" rel="noopener">${esc(c.license)}</a> · <a href="${esc(c.page)}" target="_blank" rel="noopener">${/flickr/.test(c.page) ? "Flickr" : "Wikimedia Commons"}</a>`);
+  // the answer's small photo, full size over the page; a tap anywhere but the credit link (or Esc) closes it
+  function openPhoto(id, name) {
+    photoCredits().then((all) => {
+      const c = all[id];
+      if (!c) return;
+      const dlg = document.createElement("dialog");
+      dlg.className = "photo-view";
+      dlg.innerHTML = `<figure><img src="${esc(c.src || `photos/${id}.jpg`)}" alt="${esc(name)}" referrerpolicy="no-referrer">
+        <figcaption><strong>${esc(name)}</strong><span>${photoCaption(c)}</span></figcaption></figure>
+        <button class="photo-close" type="button" aria-label="Close">${svg(ICON.x)}</button>`;
+      document.body.appendChild(dlg);
+      dlg.addEventListener("click", (e) => { if (!e.target.closest("a")) dlg.close(); });
+      dlg.addEventListener("close", () => dlg.remove());
+      dlg.showModal();
+    });
+  }
   async function renderChurch(id) {
     const h = location.hash;
     const [d, info, photos] = await Promise.all([loadData(), parishInfo(id), photoCredits()]);
