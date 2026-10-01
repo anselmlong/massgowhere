@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.holyspirit.sg/"
  ],
- "fetched_at": "2026-09-29T18:25+08:00",
+ "fetched_at": "2026-10-01T03:00+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -170,19 +170,23 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset"
+   "note": ""
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "09:00"
- ],
- "notes": [
-  "Parking is for worshippers and participants of church activities only.",
-  "Gates will be closed at 10:00 PM daily."
- ],
- "info": {},
+ "public_holiday_masses": [],
+ "notes": [],
+ "info": {
+  "good_to_know": [
+   "Address: 248 Upper Thomson Road, Singapore 574371.",
+   "Nearest MRT: Upper Thomson (Thomson-East Coast Line) and Marymount (Circle Line).",
+   "Buses: 52, 132, 162, 163, 165, 166, 167, 410, 855, 980.",
+   "Parish office: Tel 6453-6340; email chs.secretariat@catholic.org.sg."
+  ]
+ },
+ "events": [],
+ "bulletin": null,
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],
