@@ -712,3 +712,15 @@ html.previewing .shell { padding-bottom: 96px; }
 .mass-day .t { font-size: 16px; white-space: nowrap; }
 .week .mass-day .x { display: block; margin-top: 1px; font-size: 13px; }
 .mass-day li.wide .tag, .mass-day li.wide button.src { margin: 0 0 0 6px; }
+
+/* the answer: a small photo of the church beside the time */
+.answer .time-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.church-thumb { flex: none; display: block; width: 72px; height: 72px; border-radius: 14px; overflow: hidden; background: var(--field); box-shadow: 0 0 0 1px var(--line); }
+.church-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (prefers-reduced-motion: no-preference) { .church-thumb img { animation: rise .3s var(--ease) both; } }
+.answer .time-row .church-thumb { margin: 4px 0 14px; }
+.season span { white-space: nowrap; }
+/* with a photo beside it, the time gives up a little size so "12:30pm" and the photo fit on a small phone */
+.answer .time-row:has(.church-thumb) .time { font-size: clamp(56px, 18vw, 96px); }
+.answer .time-row .time { min-width: 0; }
+.church-thumb { width: clamp(56px, 17vw, 72px); height: clamp(56px, 17vw, 72px); }
