@@ -1776,14 +1776,16 @@
     const status = fb.querySelector(".fb-status"), btn = fb.querySelector("button");
     const message = fb.message.value.trim();
     if (message.length < 2) { status.textContent = "Write a few words first."; fb.message.focus(); return; }
-    btn.disabled = true; status.textContent = "Sending…";
+    btn.disabled = true; status.classList.remove("sent"); status.textContent = "Sending…";
     try {
       const r = await fetch("api/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, signal: AbortSignal.timeout(10000),
         body: JSON.stringify({ message, contact: fb.contact.value.trim(), website: fb.website.value, page: location.hash.split("?")[0] || "#/" }) });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(j.error || r.status);
       fb.reset();
-      status.textContent = "Thank you! Anselm will read it.";
+      // received: a tick draws itself in the season's colour beside the thanks
+      status.innerHTML = `${svg('<path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/>', "tick")}<span>Thank you! Anselm will read it.</span>`;
+      status.classList.add("sent");
     } catch (err) {
       status.textContent = `${err.message && !/^\d+$/.test(err.message) ? err.message + " " : ""}You can also message @massgowherebot and send /feedback.`;
     } finally { btn.disabled = false; }
