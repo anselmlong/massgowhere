@@ -770,7 +770,8 @@
       const byId = new Map(d.parishes.map((p) => [p.id, p]));
       const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, lateMin: e.lateMin || 0, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
       return { mode: params.get("mode"), best: pack(out.best), alternatives: out.alternatives.map(pack),
-        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) } };
+        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) },
+        around: out.around.map((a) => ({ parish: byId.get(a.pid), travelMin: a.travelMin, travelSource: a.travelSource, walk: a.travelWalk, next: pack(a.next) })) };
     }
   }
 
@@ -860,9 +861,9 @@
           ${special ? `<p class="notice">${esc(special)}: Mass times often change ${dayKey(start) === dayKey(Date.now()) ? "today" : "that day"}. Please check with the parish.</p>` : ""}
           <button class="see-more" type="button" onclick="document.getElementById('near-map').scrollIntoView({ behavior: 'smooth' })">${svg(ICON.down)}<span>${alt.length ? "More churches you can make it to" : "See it on a map"}</span></button>
         </section>
-        <section class="near-map" id="near-map" aria-label="Map of the churches you can make it to">
+        <section class="near-map" id="near-map" aria-label="Map of the churches near you">
           <div id="map" class="answer-map"></div>
-          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span>${alt.length || near ? `<span><i class="l-church dim"></i>Other churches</span>` : ""}<span>Times are the next Mass you can make</span></p>
+          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span><span><i class="l-church dim"></i>Nearest churches</span><span>Times are the next Mass you can make</span></p>
         </section>
         ${alt.length || near ? `<section class="more" id="more" aria-label="Other options">
           ${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
@@ -1645,20 +1646,21 @@
     return new ml.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map);
   }
 
-  // the answer's map: you in the middle, the churches you could go to around you, each pin labelled with the Mass you
+  // the answer's map: you in the middle, the five closest churches (and our pick) around you, each pin labelled with the Mass you
   // can make there, so the choice can be checked at a glance. It loads only when scrolled near, and takes two
   // fingers to move, so a thumb scrolling the page doesn't get caught in it.
+  // the closest churches with the next Mass you can make at each (older API answers: the list's churches instead)
+  const aroundOf = (res) => res.around ? res.around.filter((a) => a.parish)
+    : [...(res.alternatives || []).filter(Boolean).map((a) => ({ parish: a.parish, next: a })), ...(res.nearest ? [res.nearest] : [])];
   function answerMap(el, origin, youLabel, stale) {
     let res = null, map = null, ml = null, marks = [];
     const t = (ms) => clock(new Date(ms).getTime());
     const draw = () => {
       marks.forEach((m) => m.remove());
       const b = res.best, seen = new Set([b.parish.id]);
-      const others = [...(res.alternatives || []).filter(Boolean).map((a) => ({ parish: a.parish, next: a })),
-        ...(res.nearest ? [{ parish: res.nearest.parish, next: res.nearest.next, nearest: true }] : [])]
-        .filter((o) => !seen.has(o.parish.id) && seen.add(o.parish.id));
-      const card = (p, e, extra) => `<strong>${esc(p.name)}</strong><span>${e ? `Mass ${t(e.start)} ${esc(dayLabel(new Date(e.start).getTime()).toLowerCase())} · leave by ${t(e.leaveBy)}` : "No Mass you can reach in the next two days"}</span>${extra || ""}<a href="#/church/${p.id}">Mass times</a>`;
-      marks = others.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.nearest ? "<span>Nearest church</span>" : ""), { dim: true, time: o.next ? t(o.next.start) : "" }));
+      const others = aroundOf(res).filter((o) => !seen.has(o.parish.id) && seen.add(o.parish.id));
+      const card = (p, e, extra) => `<strong>${esc(p.name)}</strong><span>${e ? `Mass ${t(e.start)} ${esc(dayLabel(new Date(e.start).getTime()).toLowerCase())} · leave by ${t(e.leaveBy)}` : "No Mass you can reach soon"}</span>${extra || ""}<a href="#/church/${p.id}">Mass times</a>`;
+      marks = others.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.parish.id === res.nearest?.parish.id ? "<span>Nearest church</span>" : ""), { dim: true, time: o.next ? t(o.next.start) : "" }));
       marks.push(addPin(ml, map, b.parish, card(b.parish, b, "<span>Our pick for you</span>"), { time: t(b.start) }));
     };
     const start = async () => {
@@ -1666,7 +1668,7 @@
       if (stale() || !el.isConnected || !res) return;
       if (currentMap) currentMap.remove();
       // frame every pin with you in the middle: each church, and its mirror image across you
-      const ps = [res.best, ...(res.alternatives || []), res.nearest].filter(Boolean).map((x) => x.parish);
+      const ps = [res.best, ...aroundOf(res)].map((x) => x.parish);
       const pts = [origin, ...ps.flatMap((p) => [p, { lat: 2 * origin.lat - p.lat, lng: 2 * origin.lng - p.lng }])];
       map = currentMap = newMap(ml, el, pts, 30, { cooperativeGestures: true });
       addDot(ml, map, origin, "me", youLabel);
