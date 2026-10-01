@@ -313,7 +313,7 @@
 
   function openPartSheet(current, pick) {
     const opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)]),
-      ["sunday", "Sunday Mass", "Sunday, or Saturday from 4pm"]];
+      ["sunday", "Weekend Mass", "Sunday, or Saturday from 4pm"]];
     openSheet("Which Mass?", `<div class="opts">${opts.map(([id, l, sub]) => `
       <button class="opt" type="button" data-part="${id}" aria-pressed="${id === current}">${svg(id === "sunday" ? ICON.sunday : partIcon(id))}<span>${l}<small>${sub}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
     sheet.querySelectorAll("[data-part]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.part); }));
@@ -592,7 +592,7 @@
           <p class="qlabel">How are you travelling?</p>
           ${seg("Travel", MODES.map((m) => [m.id, m.label, m.icon]), mode)}
           <p class="qlabel">Which Mass?</p>
-          ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, k === "lunch" ? "Lunch" : x.label, partIcon(k)]), ["sunday", "Sunday", ICON.sunday]], plan.sunday ? "sunday" : plan.part)}
+          ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, k === "lunch" ? "Lunch" : x.label, partIcon(k)]), ["sunday", "Weekend", ICON.sunday]], plan.sunday ? "sunday" : plan.part)}
           <p class="from-line">${esc(plan.place ? `From ${place}` : "From where you are")}, ${esc(plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`)}${plan.lang ? `, Mass in ${esc(plan.lang)}` : ""}. <button class="link" type="button" id="opts">Change</button></p>
         </div>
         <div class="actions">${findBtn}</div>${more}`;
@@ -1611,7 +1611,7 @@
     };
     const dist = (p) => (origin ? R.haversineKm(origin, p) : null);
     const head = (asMap) => `
-      <div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button></div>
+      <div class="bar"><button class="back" type="button" aria-label="Back" onclick="history.length > 1 ? history.back() : (location.hash='#/')">${svg(ICON.back)}</button></div>
       <section class="list-head">
         <h1>All churches</h1>
         <div class="seg" role="group" aria-label="View">
