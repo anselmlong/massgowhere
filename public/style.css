@@ -739,3 +739,8 @@ html.previewing .shell { padding-bottom: 96px; }
 .photo-close { position: fixed; top: 12px; right: 12px; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgb(255 255 255 / .16); color: #fff; cursor: pointer; }
 .photo-close svg { width: 22px; height: 22px; }
 @media (prefers-reduced-motion: no-preference) { .photo-view[open] img { animation: rise .25s var(--ease) both; } }
+
+/* close by but not in the list (its next Mass is later): grey, so it reads as "also here", not a suggestion */
+.church-pin.faint { --pin: #8b9099; }
+.church-pin.faint .pin-time { color: var(--ink-2); font-weight: 500; }
+.legend .l-church.faint { background: #8b9099; }
