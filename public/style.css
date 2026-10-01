@@ -700,3 +700,15 @@ html.previewing .shell { padding-bottom: 96px; }
 .pin-time { position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); padding: 1px 6px; border-radius: 6px; background: var(--accent-deep); color: #fff; font: 600 12px/1.4 var(--font-body); white-space: nowrap; pointer-events: none; }
 .church-pin.dim .pin-time { bottom: 34px; background: var(--bg); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
 .answer-map .maplibregl-ctrl-top-right { display: none; } /* pinch zooms; the buttons would cover a time label */
+
+/* church page: a day per row, its Mass times in an even grid */
+.mass-day { display: grid; grid-template-columns: 80px 1fr; gap: 8px; padding: 12px 0; border-top: 1px solid var(--line); }
+.mass-day:first-of-type { border-top: 0; }
+.week .mass-day h3 { margin: 1px 0 0; font-size: 14px; line-height: 1.3; color: var(--ink); }
+.mass-day h3 small { display: block; font-size: 13px; font-weight: 500; color: var(--ink-3); }
+.mass-day ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 8px; }
+.week .mass-day li { display: block; padding: 0; border: 0; line-height: 1.35; }
+.mass-day li.wide { grid-column: 1 / -1; }
+.mass-day .t { font-size: 16px; white-space: nowrap; }
+.week .mass-day .x { display: block; margin-top: 1px; font-size: 13px; }
+.mass-day li.wide .tag, .mass-day li.wide button.src { margin: 0 0 0 6px; }
