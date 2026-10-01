@@ -176,13 +176,10 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--ink-2); }
 /* the info icon sits right after the headline's last word */
 .intro-head { font-size: clamp(30px, 8vw, 38px); line-height: 1.1; text-wrap: balance; }
 .intro-head h1 { display: inline; }
-.how { display: inline-grid; place-items: center; width: 44px; height: 44px; margin: -12px -10px -12px -6px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--accent); cursor: pointer; vertical-align: middle; }
-.how svg { width: 20px; height: 20px; }
-@media (hover: hover) { .how:hover { background: var(--field); } }
+.intro-head .how { display: block; min-height: 0; margin: 10px 0 0; padding: 6px 0; font-size: 16px; font-weight: 500; line-height: 1.4; color: var(--ink-2); }
 .how-pop { margin: 12px 0 0; padding: 16px 18px; border-radius: var(--radius); background: var(--field); display: grid; gap: 12px; }
 .how-pop .muted { margin: 0; font-size: 14px; }
 @media (prefers-reduced-motion: no-preference) { .how-pop:not([hidden]) { animation: rise .3s var(--ease) both; } }
-.how[aria-expanded="true"] { background: var(--field); }
 .how-steps { margin: 0; padding: 0 0 0 22px; display: grid; gap: 12px; color: var(--ink-2); font-size: 16px; line-height: 1.45; }
 .how-steps li::marker { color: var(--accent); font-weight: 700; }
 .how-steps strong { color: var(--ink); font-weight: 600; }
@@ -242,9 +239,6 @@ html.sheet-lock { overflow: hidden; }
 .when-chip { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; background: none; font-size: 16px; font-weight: 600; cursor: pointer; min-width: 0; padding: 0 4px; border-inline: 1px solid color-mix(in srgb, var(--ink) 8%, transparent); }
 .when-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .when-chip svg { width: 17px; height: 17px; color: var(--accent); flex: none; }
-.nudge { min-height: 48px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; color: var(--accent); border-radius: var(--radius); }
-.nudge svg { width: 18px; height: 18px; stroke-width: 2.4; }
-.nudge:disabled { color: var(--ink-3); opacity: .45; cursor: default; }
 .busy { opacity: .45; transition: opacity .2s; pointer-events: none; }
 .answer { padding-top: 6vh; }
 .when + .answer { padding-top: 22px; }
@@ -690,3 +684,19 @@ html.previewing .shell { padding-bottom: 96px; }
 .trip-steps strong { font-size: 17px; font-weight: 650; }
 .trip-steps span { color: var(--ink-2); font-size: 15px; }
 .way-on { display: flex; justify-content: center; margin-top: 6px; }
+
+/* the leave time: one plain button, no arrows */
+.when.one { grid-template-columns: 1fr; }
+.when.one .when-chip { border-inline: 0; justify-content: center; }
+.when-chip .chg { font-style: normal; font-weight: 600; font-size: 14px; color: var(--accent); margin-left: 6px; text-decoration: underline; text-underline-offset: 3px; }
+
+.row .d small { display: block; max-width: 110px; overflow: hidden; text-overflow: ellipsis; font-size: 12px; color: var(--ink-3); }
+
+/* the answer's map: compact, you in the middle, each pin labelled with its Mass time */
+#map.answer-map { height: 300px; margin-top: 0; }
+.near-map { margin-top: 30px; }
+.near-map .legend span:last-child { flex-basis: 100%; color: var(--ink-3); }
+.legend .l-church.dim { background: color-mix(in srgb, var(--accent-deep) 55%, #6b7280); }
+.pin-time { position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); padding: 1px 6px; border-radius: 6px; background: var(--accent-deep); color: #fff; font: 600 12px/1.4 var(--font-body); white-space: nowrap; pointer-events: none; }
+.church-pin.dim .pin-time { bottom: 34px; background: var(--bg); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+.answer-map .maplibregl-ctrl-top-right { display: none; } /* pinch zooms; the buttons would cover a time label */
