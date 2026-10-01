@@ -55,3 +55,9 @@ test("time of day: contiguous buckets in Singapore time", () => {
   assert.equal(S.partOf(at("15:00")), "evening");
   assert.equal(S.partOf(at("23:30")), "evening");
 });
+
+test("isSunset: a Saturday Mass from 4pm counts as a Sunset Mass", () => {
+  assert.equal(S.isSunset(Date.UTC(2026, 9, 3, 8, 0)), true);   // Sat 16:00 SGT
+  assert.equal(S.isSunset(Date.UTC(2026, 9, 3, 7, 59)), false); // Sat 15:59 SGT
+  assert.equal(S.isSunset(Date.UTC(2026, 9, 4, 10, 0)), false); // Sun 18:00 SGT
+});

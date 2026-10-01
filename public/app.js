@@ -317,7 +317,7 @@
 
   function openPartSheet(current, pick) {
     const opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)]),
-      ["sunday", "Weekend Mass", "Sunday, or Saturday from 4pm"]];
+      ["sunday", "Sunday or Sunset Mass", "Sunday, or Saturday from 4pm"]];
     openSheet("Which Mass?", `<div class="opts">${opts.map(([id, l, sub]) => `
       <button class="opt" type="button" data-part="${id}" aria-pressed="${id === current}">${svg(id === "sunday" ? ICON.sunday : partIcon(id))}<span>${l}<small>${sub}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
     sheet.querySelectorAll("[data-part]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.part); }));
@@ -398,7 +398,7 @@
         <p>We looked for the earliest ${adj}Mass${lang ? ` in ${esc(lang)}` : ""} you can still reach, leaving ${esc(at ? whenText(at) : "now")} ${mode.phrase} from ${esc(from)}.</p>
         <p>If another church has a Mass starting within ${R.WINDOW_MIN} minutes of that one, we pick the shortest trip, so you aren’t sent across the island to arrive a few minutes sooner.</p>
         <p>Travel times come from OneMap, Singapore’s official map. “Leave by” gets you there 5 minutes early, so you have time to settle in and prepare for Mass.</p>
-        ${sunday ? `<p>For your Sunday obligation we count Sunday Masses and Saturday Masses from 4pm.</p>` : ""}
+        ${sunday ? `<p>For your Sunday obligation we count Sunday Masses and Saturday Sunset Masses (from 4pm).</p>` : ""}
         <p>The other churches you can make it to are listed below the answer.</p>
       </div>`, ".sheet-close");
   }
@@ -568,7 +568,7 @@
       </ul>`;
     const promise = `<div class="intro">${headline()}
         <blockquote class="lede quote"><p>“It would be easier for the world to survive without the sun than to do without Holy Mass.”</p><footer>St Padre Pio</footer></blockquote>${howPop()}</div>`;
-    const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass", plan.lang ? `in ${plan.lang}` : ""].filter(Boolean).join(" · ");
+    const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.sunday ? "Sunday or Sunset Mass" : plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass", plan.lang ? `in ${plan.lang}` : ""].filter(Boolean).join(" · ");
     let body;
     const wiz = layout === "wizard";
     const KINDS_W = [["mass", "A Mass", "The one you can still make, and when to leave", ICON.clock], ["adoration", "An Adoration room", "One that’s open, or opens soon", ICON.adoration], ["confession", "Confession", "Near you, with times", ICON.confession]];
@@ -585,9 +585,12 @@
       else if (step === "how") opts = MODES.map((m) => opt("w-mode", m.id, m.icon, m.label, { transit: "Trains and buses", drive: "Driving or a ride", walk: "On foot" }[m.id], m.id === mode)).join("");
       else {
         // "Any" is the default; the rest are dropdowns so a tap never redraws the screen
-        const partOpts = [["", "Any time"], ...Object.entries(PARTS).map(([id, x]) => [id, `${x.label} (${x.range})`]), ["sunday", "Weekend Mass (Sunday, or Saturday from 4pm)"]];
-        const cur = plan.sunday ? "sunday" : plan.part;
-        opts = `<label class="pick wiz-pick"><span>Time of day</span><select id="w-part">${partOpts.map(([v, l]) => `<option value="${v}"${v === cur ? " selected" : ""}>${esc(l)}</option>`).join("")}</select>${svg(ICON.chev)}</label>
+        // Sunday (or a Saturday Sunset Mass) is its own switch, where people look for it, not inside "Time of day"
+        const partOpts = [["", "Any time"], ...Object.entries(PARTS).map(([id, x]) => [id, `${x.label} (${x.range})`])];
+        const cur = plan.part;
+        opts = `<label class="late-switch sun-switch"><input type="checkbox" id="w-sun"${plan.sunday ? " checked" : ""}>
+          <span>Sunday or Sunset Mass<small>For your Sunday obligation: a Sunday Mass, or Saturday from 4pm.</small></span></label>
+          <label class="pick wiz-pick"><span>Time of day</span><select id="w-part">${partOpts.map(([v, l]) => `<option value="${v}"${v === cur ? " selected" : ""}>${esc(l)}</option>`).join("")}</select>${svg(ICON.chev)}</label>
           <label class="pick wiz-pick"><span>Language</span><select id="w-lang"><option value="">Any language</option>${plan.lang ? `<option value="${esc(plan.lang)}" selected>${esc(plan.lang)}</option>` : ""}</select>${svg(ICON.chev)}</label>`;
       }
       const kindWord = { mass: "Mass", adoration: "Adoration", confession: "Confession" }[plan.kind];
@@ -619,19 +622,19 @@
           ${row("t-place", "From", plan.place ? place : "My location")}
           ${row("t-time", "Leaving", plan.at == null ? "Now" : whenText(plan.at))}
           ${row("t-mode", "Travel by", modeOf(mode).label)}
-          ${row("t-part", "Mass", plan.part ? `${PARTS[plan.part].label} (${PARTS[plan.part].range})` : "Any time")}
+          ${row("t-part", "Mass", plan.sunday ? "Sunday or Sunset" : plan.part ? `${PARTS[plan.part].label} (${PARTS[plan.part].range})` : "Any time")}
           ${row("t-lang", "Language", plan.lang || "Any language")}
         </ul>
         <div class="actions">${findBtn}</div>${more}`;
     } else if (layout === "quick") {
       const seg = (name, opts, cur) => `<div class="qseg" role="radiogroup" aria-label="${name}" style="--n:${opts.length};--i:${Math.max(0, opts.findIndex(([v]) => v === cur))}">${opts.map(([v, l, icon]) =>
-        `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}"${name === "Mass" && v ? ` title="${esc(v === "sunday" ? "Sunday, or Saturday from 4pm: for your Sunday obligation" : PARTS[v].range)}"` : ""}>${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
+        `<button type="button" role="radio" aria-checked="${v === cur}" data-${name === "Travel" ? "qmode" : "qpart"}="${v}"${name === "Mass" && v ? ` title="${esc(v === "sunday" ? "Sunday, or a Sunset Mass on Saturday from 4pm: for your Sunday obligation" : PARTS[v].range)}"` : ""}>${icon ? svg(icon) : ""}<span>${l}</span></button>`).join("")}</div>`;
       body = `${promise}
         <div class="quick-form">
           <p class="qlabel">How are you travelling?</p>
           ${seg("Travel", MODES.map((m) => [m.id, m.label, m.icon]), mode)}
           <p class="qlabel">Which Mass?</p>
-          ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, k === "lunch" ? "Lunch" : x.label, partIcon(k)]), ["sunday", "Weekend", ICON.sunday]], plan.sunday ? "sunday" : plan.part)}
+          ${seg("Mass", [["", "Any", ICON.clock], ...Object.entries(PARTS).map(([k, x]) => [k, k === "lunch" ? "Lunch" : x.label, partIcon(k)]), ["sunday", "Sunday", ICON.sunday]], plan.sunday ? "sunday" : plan.part)}
           <p class="from-line">${esc(plan.place ? `From ${place}` : "From where you are")}, ${esc(plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`)}${plan.lang ? `, Mass in ${esc(plan.lang)}` : ""}. <button class="link" type="button" id="opts">Change</button></p>
         </div>
         <div class="actions">${findBtn}</div>${more}`;
@@ -674,7 +677,8 @@
       each("[data-w-from]", (d, b) => (d.wFrom === "here" ? answer(() => { plan.place = null; }, b) : openPlaceSheet((p) => { plan.place = p; next(); }, { here: false })));
       each("[data-w-when]", (d, b) => (d.wWhen === "now" ? answer(() => { plan.at = null; }, b) : openTimeSheet(plan.at, (at) => { plan.at = at; next(); })));
       each("[data-w-mode]", (d, b) => answer(() => store.set("mgw-mode", d.wMode), b));
-      view.querySelector("#w-part")?.addEventListener("change", (e) => setPart(e.target.value));
+      view.querySelector("#w-part")?.addEventListener("change", (e) => { setPart(e.target.value); const sun = view.querySelector("#w-sun"); if (sun && e.target.value) sun.checked = false; });
+      view.querySelector("#w-sun")?.addEventListener("change", (e) => { setPart(e.target.checked ? "sunday" : ""); if (e.target.checked) view.querySelector("#w-part").value = ""; });
       const lang = view.querySelector("#w-lang");
       if (lang) {
         lang.addEventListener("change", () => { plan.lang = lang.value; store.set("mgw-lang", lang.value); });
@@ -782,7 +786,7 @@
     const at = parseAt(q.get("at"));
     const part = partOf(q.get("part"));
     const sunday = q.get("sunday") === "1", lang = q.get("lang") || "";
-    const adj = `${sunday ? "Sunday " : ""}${partAdj(part)}`;
+    const adj = `${sunday ? "Sunday or Sunset " : ""}${partAdj(part)}`;
     const inLang = lang ? ` in ${lang}` : "";
     const myHash = location.hash;
     const stale = () => location.hash !== myHash;
@@ -790,7 +794,7 @@
     rememberPlace({ ...origin, label: from });
     // only the leave time changes here; where from and how are set on the home screen
     const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
-        <span class="from">From ${esc(from)} · ${mode.label}${sunday ? " · Sunday Mass" : ""}${part ? ` · ${PARTS[part].label} Masses` : ""}${lang ? ` · ${esc(lang)}` : ""}</span></div>
+        <span class="from">From ${esc(from)} · ${mode.label}${sunday ? " · Sunday or Sunset" : ""}${part ? ` · ${PARTS[part].label} Masses` : ""}${lang ? ` · ${esc(lang)}` : ""}</span></div>
       <div class="when one${at ? " set" : ""}"><button class="when-chip" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time">${svg(ICON.clock)}<span>${at ? `Leaving ${esc(whenText(at))}` : "Leaving now"}</span><em class="chg">Change</em></button></div>`;
     // a time change keeps the answer on screen, dimmed, until the new one arrives
     const soft = softNext && view.querySelector(".answer");
@@ -844,7 +848,7 @@
       const t = clockParts(start);
       const p = b.parish;
       const est = b.travelSource === "estimate";
-      const meta = [b.language !== "English" ? `${b.language} Mass` : "", b.note].filter(Boolean).join(" · ");
+      const meta = [S.isSunset(start) ? "Sunset Mass: counts for Sunday" : "", b.language !== "English" ? `${b.language} Mass` : "", b.note].filter(Boolean).join(" · ");
       const special = S.specialDay(start, d);
       const alt = (res.alternatives || []).filter(Boolean);
       const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
@@ -1056,7 +1060,7 @@
     const s = new Date(a.start).getTime();
     return `<li><a class="row" href="#/church/${a.parish.id}">
       <span class="t">${clock(s)}<small>${dayLabel(s)}</small></span>
-      <span class="n">${esc(a.parish.name)}${a.language !== "English" ? `<span class="tag">${esc(a.language)}</span>` : ""}<small>${a.lateMin > 0 ? `<span class="late">Leave now · ${mins(a.lateMin)} late</span>` : `Leave by ${clock(new Date(a.leaveBy).getTime())}`}</small></span>
+      <span class="n">${esc(a.parish.name)}${S.isSunset(s) ? `<span class="tag">Sunset</span>` : ""}${a.language !== "English" ? `<span class="tag">${esc(a.language)}</span>` : ""}<small>${a.lateMin > 0 ? `<span class="late">Leave now · ${mins(a.lateMin)} late</span>` : `Leave by ${clock(new Date(a.leaveBy).getTime())}`}</small></span>
       <span class="d">${mins(a.travelMin)} ${a.walk ? "walk" : "away"}</span></a></li>`;
   }
 
@@ -1272,9 +1276,10 @@
         const place = e.loc && !/^main church$/i.test(e.loc) ? quiet(e.loc) : "";
         const sub = [e.lang && e.lang !== "English" ? e.lang : "", place].filter(Boolean).map(esc).join(" · ");
         const wide = isOff(e) || srcTag(e) || e.siteLang || e.note || sub.length > 14;
-        if (!wide) return `<li><span class="t">${clock(e.start)}</span>${sub ? `<span class="x">${sub}</span>` : ""}</li>`;
+        const sunset = S.isSunset(e.start);
+        if (!wide) return `<li><span class="t">${clock(e.start)}</span>${sub || sunset ? `<span class="x">${[sub, sunset && "Sunset"].filter(Boolean).join(" · ")}</span>` : ""}</li>`;
         const bits = [place && esc(place), e.note && esc(e.note)].filter(Boolean).join(" · ");
-        return `<li class="wide${isOff(e) ? " off" : ""}"><span class="t">${clock(e.start)}</span>${langTag(e)}${isOff(e) ? `<span class="tag">Cancelled by the parish</span>` : ""}${srcTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}${e.siteLang ? `<span class="x">Parish website says ${esc(e.siteLang)}</span>` : ""}</li>`;
+        return `<li class="wide${isOff(e) ? " off" : ""}"><span class="t">${clock(e.start)}</span>${S.isSunset(e.start) ? `<span class="tag">Sunset</span>` : ""}${langTag(e)}${isOff(e) ? `<span class="tag">Cancelled by the parish</span>` : ""}${srcTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}${e.siteLang ? `<span class="x">Parish website says ${esc(e.siteLang)}</span>` : ""}</li>`;
       }).join("")}</ul></div>`;
     };
     const all = [...days];

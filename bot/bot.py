@@ -182,6 +182,16 @@ def day_label(iso):
     return d.strftime("%A %-d %b")
 
 
+def sunset(iso):
+    """A Saturday Mass from 4pm: a Sunset Mass, which counts for Sunday (same rule as public/schedule.js)."""
+    t = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(SGT)
+    return t.weekday() == 5 and t.hour >= 16
+
+
+def sunset_note(iso):
+    return " (Sunset Mass)" if sunset(iso) else ""
+
+
 def mins(m):
     return f"{m} min" if m < 60 else f"{m // 60} h {m % 60} min".replace(" 0 min", "")
 
@@ -207,6 +217,7 @@ WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can attend, and tel
            "Tap <b>Share my location</b> below, or send a postal code or place name.\n"
            "Travelling by: <b>{mode}</b> (change it with the buttons).\n\n"
            "Leave-by times get you there 5 minutes early, so you can settle in and prepare for Mass.\n\n"
+           "Need a Mass for Sunday? Tap <b>Sunday or Sunset Mass</b> under any answer.\n\n"
            f"Going somewhere? Tap <b>{WAY_BUTTON}</b> to fit in a Mass along your route.\n\n"
            "Something not right, or an idea? Send /feedback. Anselm, who built this, reads every message.\n\n"
            f"To plan ahead or browse every church on a map, open <a href=\"{SITE}\">{SITE_NAME}</a>.")
@@ -254,8 +265,10 @@ def placeholder(chat_id, text):
         return None
 
 
-def answer(chat_id, lat, lng, place=None, msg_id=None):
+def answer(chat_id, lat, lng, place=None, msg_id=None, sunday=False):
+    """sunday: only Masses for the Sunday obligation (Sunday, or a Saturday Sunset Mass from 4pm)."""
     mode = mode_for(chat_id)
+    LAST_SUNDAY[chat_id] = sunday  # changing the travel mode re-asks the same question
 
     def show(text, kb=None, html=True):
         extra = {"parse_mode": "HTML", "link_preview_options": {"is_disabled": True}} if html else {}
@@ -272,23 +285,28 @@ def answer(chat_id, lat, lng, place=None, msg_id=None):
         return show("That location isn't in Singapore. MassGoWhere only covers Singapore's parishes; "
                     "send a Singapore postal code or place name instead.", html=False)
     if not msg_id:
-        msg_id = placeholder(chat_id, f"Looking for a Mass near {place}…" if place else "Looking for a Mass near you…")
-    build = urllib.parse.urlencode({"lat": f"{lat:.5f}", "lng": f"{lng:.5f}", "mode": mode})
+        what = "a Sunday or Sunset Mass" if sunday else "a Mass"
+        msg_id = placeholder(chat_id, f"Looking for {what} near {place}…" if place else f"Looking for {what} near you…")
+    build = urllib.parse.urlencode({"lat": f"{lat:.5f}", "lng": f"{lng:.5f}", "mode": mode, **({"sunday": "1"} if sunday else {})})
+    # under every answer: switch between the next Mass and one that counts for Sunday
+    switch = [[{"text": "Any Mass instead", "callback_data": "sun:0"} if sunday else
+               {"text": "Sunday or Sunset Mass", "callback_data": "sun:1"}]]
 
     def paint(res, fast):
         """(text, keyboard) for an /api/next payload. fast -> "about" flagged on estimates."""
         b = res.get("best")
         where = f" from {esc(place)}" if place else ""
         if not b:
-            return ("I couldn't find a Mass you can reach in the next two days{where} {mode}. Try another way of travelling.".format(
+            return ("I couldn't find {what} you can reach {when}{where} {mode}. Try another way of travelling.".format(
+                        what="a Sunday or Sunset Mass" if sunday else "a Mass", when="this week" if sunday else "in the next two days",
                         where=where, mode=MODES[mode][1]),
-                    mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]])
+                    switch + mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]])
         p = b["parish"]
         about = "about " if b.get("travelSource") == "estimate" else ""
         how = "walk" if b.get("walk") else mode  # bus & MRT mode, but it's quicker on foot
         extra = " · ".join(x for x in [f"{b['language']} Mass" if b.get("language") and b["language"] != "English" else "", b.get("note") or ""] if x)
         lines = [
-            f"<b>{clock(b['start'])} {day_label(b['start'])}</b>",
+            f"<b>{clock(b['start'])} {day_label(b['start'])}</b>" + ("\nSunset Mass: counts for Sunday" if sunset(b["start"]) else ""),
             f"<b>{esc(p['name'])}</b>" + (f"\n{esc(extra)}" if extra else ""),
             "",
             f"Leave by <b>{clock(b['leaveBy'])}</b> · {about}{mins(b['travelMin'])} {MODES[how][1]}{where}",
@@ -297,7 +315,7 @@ def answer(chat_id, lat, lng, place=None, msg_id=None):
         alts = [a for a in res.get("alternatives") or [] if a]
         if alts:
             lines += ["", "<i>Also reachable:</i>"] + [
-                f"{clock(a['start'])} {day_label(a['start'])} · {esc(a['parish']['name'])} ({mins(a['travelMin'])})" for a in alts]
+                f"{clock(a['start'])} {day_label(a['start'])}{sunset_note(a['start'])} · {esc(a['parish']['name'])} ({mins(a['travelMin'])})" for a in alts]
         near = res.get("nearest")
         if near and near["parish"]["id"] != p["id"]:
             nn = near.get("next")
@@ -311,7 +329,7 @@ def answer(chat_id, lat, lng, place=None, msg_id=None):
         kb = [[{"text": "Navigate", "url": gmaps(p, how, lat, lng)}],
               [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}],
               # the same answer on the website, where you can also pick a later leave time
-              [{"text": f"Open on {SITE_NAME}", "url": f"{SITE}/#/next?{build}&" + urllib.parse.urlencode({"from": place or "your location"})}]] + mode_keyboard(mode)
+              [{"text": f"Open on {SITE_NAME}", "url": f"{SITE}/#/next?{build}&" + urllib.parse.urlencode({"from": place or "your location"})}]] + switch + mode_keyboard(mode)
         return ("\n".join(lines), kb)
 
     # placeholder (already on screen) -> the live answer, or the estimate first when live is slow; each an edit
@@ -332,6 +350,7 @@ def search_place(text):
     return float(x["LATITUDE"]), float(x["LONGITUDE"]), re.sub(r"\b(Mrt|Lrt|Nus|Ntu|Smu|Cbd|Hdb|[A-Za-z]{1,3}\d+)\b", lambda m: m.group(0).upper(), name.title())
 
 
+LAST_SUNDAY = {}  # chat id -> whether the last answer was for Sunday (a Sunday or Sunset Mass)
 LAST = {}  # chat id -> (lat, lng, place) of the last query, in memory only, to redo it after a mode change
 LAST_AT = {}  # chat id -> when LAST was set, so "on the way" can start from where you just were
 
@@ -465,7 +484,7 @@ def way_answer(chat_id, by_ms=None):
         on_how = MODES["walk" if b.get("onwardWalk") else mode][1]
         # three plain steps, each a time: leave, Mass, arrive
         lines = [
-            f"<b>{clock(b['start'])} {day_label(b['start'])}</b>",
+            f"<b>{clock(b['start'])} {day_label(b['start'])}</b>" + ("\nSunset Mass: counts for Sunday" if sunset(b["start"]) else ""),
             f"<b>{esc(p['name'])}</b>",
             "",
             f"1. Leave {esc(flabel)} by <b>{clock(b['leaveBy'])}</b> ({about}{mins(b['toMin'])} {to_how})",
@@ -520,6 +539,12 @@ def handle(update):
                 return tg("sendMessage", chat_id=chat_id, text=f"Tap {WAY_BUTTON} to start again.", reply_markup=LOCATION_KB)
             hours = int(data.rsplit(":", 1)[1] or 0)
             return way_answer(chat_id, int((time.time() + hours * 3600) * 1000) if hours else None)
+        if data in ("sun:0", "sun:1"):
+            if chat_id not in LAST:
+                return ack(cq, "Share your location or send a postal code first.")
+            ack(cq, "Sunday or Sunset Mass" if data == "sun:1" else "Any Mass")
+            record(chat_id, "sunday")
+            return answer(chat_id, *LAST[chat_id], sunday=data == "sun:1")
         if data == "fb:cancel":
             AWAITING_FEEDBACK.discard(chat_id)
             return ack(cq, "No problem")
@@ -528,7 +553,7 @@ def handle(update):
             ack(cq, f"Travelling by {MODES[data[5:]][0]}")
             if chat_id in LAST:
                 record(chat_id, "mode")
-                answer(chat_id, *LAST[chat_id])
+                answer(chat_id, *LAST[chat_id], sunday=LAST_SUNDAY.get(chat_id, False))
                 maybe_nudge(chat_id)
             else:
                 tg("sendMessage", chat_id=chat_id, text=f"Got it: {MODES[data[5:]][0]}. Now share your location or send a postal code.")

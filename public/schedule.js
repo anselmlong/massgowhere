@@ -122,11 +122,13 @@
     const d = new Date(e.start + SGT_OFFSET_MS), wd = d.getUTCDay();
     return wd === 0 || (wd === 6 && d.getUTCHours() * 60 + d.getUTCMinutes() >= SUNDAY_EVE_MIN);
   }
+  // a Saturday Mass from 4pm: a Sunset Mass, which counts for Sunday
+  const isSunset = (ms) => { const d = new Date(ms + SGT_OFFSET_MS); return d.getUTCDay() === 6 && d.getUTCHours() * 60 + d.getUTCMinutes() >= SUNDAY_EVE_MIN; };
   // myCatholicSG spells a few languages two ways ("English.", "Mandarin (中文)")
   const langName = (l) => String(l || "English").replace(/\s*\(.*\)$/, "").replace(/\.$/, "").trim();
   const inLang = (lang) => (e) => !lang || langName(e.lang).toLowerCase() === String(lang).toLowerCase();
 
-  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, specialDay, easterUTC, SGT_OFFSET_MS, PARTS, partOf, inPart, forSunday, langName, inLang };
+  const api = { expandParish, expandAll, toInstant, sgtDay, ruleOn, specialDay, easterUTC, SGT_OFFSET_MS, PARTS, partOf, inPart, forSunday, isSunset, langName, inLang };
   if (typeof module !== "undefined") module.exports = api;
   else root.MassSchedule = api;
 })(this);
