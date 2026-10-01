@@ -1308,7 +1308,7 @@
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="history.length > 1 ? history.back() : (location.hash='#/')">${svg(ICON.back)}</button></div>
       <section class="church-page">
         ${photos[id] ? `<figure class="church-photo"><img src="${esc(photos[id].src || `photos/${id}.jpg`)}" referrerpolicy="no-referrer" alt="${esc(p.name)}" width="960" height="600" decoding="async">
-          <figcaption>${photos[id].src ? `Photo: <a href="${esc(photos[id].page)}" target="_blank" rel="noopener">${esc(photos[id].author)}</a> (parish website)` : `Photo: ${esc(photos[id].author)}, <a href="${esc(photos[id].licenseUrl || photos[id].page)}" target="_blank" rel="noopener">${esc(photos[id].license)}</a> · <a href="${esc(photos[id].page)}" target="_blank" rel="noopener">Wikimedia Commons</a>`}</figcaption></figure>` : ""}
+          <figcaption>${photos[id].src ? `Photo: <a href="${esc(photos[id].page)}" target="_blank" rel="noopener">${esc(photos[id].author)}</a> (parish website)` : `Photo: ${esc(photos[id].author)}, <a href="${esc(photos[id].licenseUrl || photos[id].page)}" target="_blank" rel="noopener">${esc(photos[id].license)}</a> · <a href="${esc(photos[id].page)}" target="_blank" rel="noopener">${/flickr/.test(photos[id].page) ? "Flickr" : "Wikimedia Commons"}</a>`}</figcaption></figure>` : ""}
         <h1>${esc(p.name)}</h1>
         <p class="addr">${esc(p.address)}, Singapore ${esc(p.postal || "")}</p>
         ${lead}
