@@ -206,7 +206,7 @@
     const h = Math.round(m / 60);
     return h < 24 ? `in about ${h} hour${h === 1 ? "" : "s"}` : dayLabel(ms);
   }
-  const mins = (m) => (m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${m % 60 ? `${m % 60} min` : ""}`.trim());
+  const mins = (m) => (m < 60 ? `${Math.max(1, m)} min` : `${Math.floor(m / 60)} h ${m % 60 ? `${m % 60} min` : ""}`.trim()); // never "0 min"
   // ---------- leave-at planning: 15-minute steps, up to a week ahead ----------
   const Q = 15 * 60000, DAY = 864e5, ROW = 44;
   const sgMidnight = (ms) => S.sgtDay(ms).getTime() - S.SGT_OFFSET_MS;
@@ -571,7 +571,7 @@
     const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.sunday ? "Sunday or Sunset Mass" : plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass", plan.lang ? `in ${plan.lang}` : ""].filter(Boolean).join(" · ");
     let body;
     const wiz = layout === "wizard";
-    const KINDS_W = [["mass", "A Mass", "The one you can still make, and when to leave", ICON.clock], ["adoration", "An Adoration room", "One that’s open, or opens soon", ICON.adoration], ["confession", "Confession", "Near you, with times", ICON.confession]];
+    const KINDS_W = [["mass", "A Mass", "", ICON.clock], ["adoration", "An Adoration room", "", ICON.adoration], ["confession", "Confession", "", ICON.confession]];
     const steps = plan.kind === "mass" ? ["what", "from", "when", "how", "which"] : ["what", "from", "when", "how"];
     const si = Math.min(plan.step, steps.length - 1), step = steps[si], last = si === steps.length - 1;
     if (wiz) {
@@ -580,9 +580,9 @@
       const Q = { what: "What are you looking for?", from: "Where are you leaving from?", when: "When are you leaving?", how: "How are you getting there?", which: "Which Mass?" };
       let opts = "";
       if (step === "what") opts = KINDS_W.map(([k, l, s, i]) => opt("w-kind", k, i, l, s, plan.kind === k)).join("");
-      else if (step === "from") opts = opt("w-from", "here", ICON.locate, "My location", "Where you are when you tap Find", !plan.place) + opt("w-from", "place", ICON.pin, plan.place ? esc(place) : "Somewhere else", plan.place ? "Tap to change" : "A postal code, MRT station or street", !!plan.place);
+      else if (step === "from") opts = opt("w-from", "here", ICON.locate, "My location", "", !plan.place) + opt("w-from", "place", ICON.pin, plan.place ? esc(place) : "Somewhere else", plan.place ? "Tap to change" : "A postal code, MRT station or street", !!plan.place);
       else if (step === "when") opts = opt("w-when", "now", ICON.clock, "Now", "", plan.at == null) + opt("w-when", "later", ICON.recent, plan.at == null ? "Later" : esc(whenText(plan.at)), plan.at == null ? "Tonight, tomorrow, this weekend…" : "Tap to change", plan.at != null);
-      else if (step === "how") opts = MODES.map((m) => opt("w-mode", m.id, m.icon, m.label, { transit: "Trains and buses", drive: "Driving or a ride", walk: "On foot" }[m.id], m.id === mode)).join("");
+      else if (step === "how") opts = MODES.map((m) => opt("w-mode", m.id, m.icon, m.label, "", m.id === mode)).join("");
       else {
         // "Any" is the default; the rest are dropdowns so a tap never redraws the screen
         // Sunday (or a Saturday Sunset Mass) is its own switch, where people look for it, not inside "Time of day"
@@ -595,7 +595,6 @@
       }
       const kindWord = { mass: "Mass", adoration: "Adoration", confession: "Confession" }[plan.kind];
       const finish = si === 0 ? "" : `
-        ${last ? `<p class="wiz-sum">${esc([plan.place ? `From ${place}` : "From where you are", plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`, modeOf(mode).label.toLowerCase()].join(", "))}.</p>` : ""}
         ${LATE_UI && last && plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
           <span>Might be a few minutes late?<small>Also count a Mass that has just started, up to 15 minutes in.</small></span></label>` : ""}
         <button class="btn ${last ? "btn-primary btn-find" : "btn-quiet wiz-skip"}" id="find" type="button" style="--i:${n}">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}${last ? "" : " now"}</span></button>
@@ -825,6 +824,21 @@
       }
     };
 
+    // a small photo of the church beside the time, so you know it when you see it; the credits list is tiny and
+    // usually lands before the answer, and if not the photo slots into empty space without moving anything
+    let photos = null;
+    const thumbHTML = (p) => {
+      const c = photos?.[p.id];
+      if (!c) return "";
+      const src = c.src && /^https?:/.test(c.src) ? c.src : `photos/thumb/${p.id}.jpg`;
+      return `<a class="church-thumb" href="#/church/${p.id}" tabindex="-1" aria-hidden="true"><img src="${esc(src)}" alt="" width="72" height="72" decoding="async" referrerpolicy="no-referrer"></a>`;
+    };
+    photoCredits().then((c) => {
+      photos = c;
+      const row = view.querySelector(".answer .time-row"), id = view.querySelector(".answer .church")?.getAttribute("data-id");
+      if (row && id && !row.querySelector(".church-thumb")) row.insertAdjacentHTML("beforeend", thumbHTML({ id }));
+    });
+
     // Fast first frame: estimate-only answer in a few ms, then auto-refine with exact OneMap times.
     let painted = false, amap = null;
     const paint = (res) => {
@@ -856,7 +870,7 @@
         <section class="answer ${soft ? "retimed" : "reveal"}">
           <div class="day-row"><p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) && new Date(b.leaveBy).getTime() - at <= LONG_WAIT ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
             <button class="why-btn" type="button" id="why" aria-label="Why this Mass?" title="Why this Mass?">${svg(ICON.info)}</button></div>
-          <p class="time">${t.hm}<small>${t.ap}</small></p>
+          <div class="time-row"><p class="time">${t.hm}<small>${t.ap}</small></p>${thumbHTML(p)}</div>
           <h1 class="church" data-id="${p.id}" data-start="${start}"><a href="#/church/${p.id}" aria-label="${esc(p.name)}: Mass times and details"><span>${esc(p.name)}</span>${svg(ICON.right)}</a></h1>
           ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
           <div class="leave${at ? " plan" : ""}" id="leave">${leaveHTML(b, at, mode)}</div>
@@ -1262,7 +1276,7 @@
       const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
       const n = evs.find((e) => !isOff(e) && e.start - (t.minutes + R.BUFFER_MIN) * 60000 >= now);
       if (n) lead = `<div class="next-here"><strong>Next Mass you can attend: ${clock(n.start)} ${dayLabel(n.start).toLowerCase()}</strong>
-        <span>Leave by ${about}${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${tripMode(t, modeOf(mode)).phrase}</span></div>`;
+        <span>Leave by ${clock(n.start - (t.minutes + R.BUFFER_MIN) * 60000)} · ${about}${mins(t.minutes)} ${tripMode(t, modeOf(mode)).phrase}</span></div>`;
     }
     // the parish's own website (31 of 32 list one); the one without keeps the call button
     const site = p.website || (p.siteCheck && p.siteCheck.url) || "";
@@ -1332,7 +1346,7 @@
         ["Also", lines(info.other)]])),
     ].join("") : "";
     const readAt = info && Object.values(info.readAt || {}).filter(Boolean).sort().pop();
-    const infoSource = info ? `<p class="x">From the <a href="${esc(info.url || p.website || "")}" target="_blank" rel="noopener">parish website</a>${info.bulletin ? " and bulletin" : ""}${readAt ? `, read ${fmtDate(readAt)}` : ""}. Parishes change things; check with them before you go.</p>` : "";
+    const infoSource = info ? `<p class="x">From the <a href="${esc(info.url || p.website || "")}" target="_blank" rel="noopener">parish website</a>${info.bulletin ? " and bulletin" : ""}${readAt ? `, read ${fmtDate(readAt)}` : ""}.</p>` : "";
     const services = infoHTML + SERVICES.filter(([type]) => !covered.has(type)).map(([type, title]) => {
       const es = S.expandParish(String(id), d, now, 7, [type]);
       if (!es.length) return "";
