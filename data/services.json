@@ -44,7 +44,10 @@
       "adoration": {
         "from": "parish website",
         "loc": "Adoration Room",
-        "unconfirmed": "The Adoration Room's closing time differs between the bulletin (9:30pm) and the website (7pm)."
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "21:30", "ph": "skip", "source": "parish bulletin" },
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "12:00", "ph": "only", "source": "parish bulletin" }
+        ]
       },
       "confession": {
         "from": "parish website",
