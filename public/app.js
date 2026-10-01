@@ -543,6 +543,8 @@
   const plan = { place: null, at: null, part: "", sunday: false, lang: store.get("mgw-lang") || "", kind: "mass", step: 0 };
   // "Sunday" is a Which Mass choice but its own filter (sunday=1): any Sunday Mass, or Saturday's from 4pm
   const setPart = (x) => { plan.sunday = x === "sunday"; plan.part = plan.sunday ? "" : x; };
+  // the "I might be up to 15 min late" switch is hidden (and ignored) until there's demand for it
+  const LATE_UI = false;
   function renderHome() {
     const mode = store.get("mgw-mode") || "transit";
     if (plan.at != null && plan.at <= Date.now()) plan.at = null;
@@ -552,7 +554,7 @@
     // can't avoid being late? a Mass that has just started still counts, up to 15 minutes in
     const lateSwitch = `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
           <span>I might be up to 15 min late</span></label>`;
-    const findBtn = `${lateSwitch}<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
+    const findBtn = `${LATE_UI ? lateSwitch : ""}<button class="btn btn-primary btn-find" id="find" type="button">${svg(here ? ICON.locate : ICON.search)}<span>${here ? "Find a Mass near me" : "Find a Mass"}</span></button>
           <p class="msg" id="msg" role="status" hidden></p>
           <details class="also">
             <summary>Adoration or Confession</summary>
@@ -588,7 +590,7 @@
       const kindWord = { mass: "Mass", adoration: "Adoration", confession: "Confession" }[plan.kind];
       const finish = last ? `
         <p class="wiz-sum">${esc([plan.place ? `From ${place}` : "From where you are", plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`, modeOf(mode).label.toLowerCase()].join(", "))}${plan.kind === "mass" && (plan.part || plan.sunday) ? `, ${plan.sunday ? "weekend" : PARTS[plan.part].label.toLowerCase()} Mass` : ""}.</p>
-        ${plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
+        ${LATE_UI && plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
           <span>Might be a few minutes late?<small>Also count a Mass that has just started, up to 15 minutes in.</small></span></label>` : ""}
         <button class="btn btn-primary btn-find" id="find" type="button">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}</span></button>
         <p class="msg" id="msg" role="status" hidden></p>` : "";
@@ -697,7 +699,7 @@
     const btn = view.querySelector("#find");
     view.querySelector("#late")?.addEventListener("change", (e) => store.set("mgw-late", e.target.checked));
     const at = () => (plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "");
-    const massOpts = () => at() + (plan.part ? `&part=${plan.part}` : "") + (plan.sunday ? "&sunday=1" : "") + (plan.lang ? `&lang=${encodeURIComponent(plan.lang)}` : "") + (store.get("mgw-late") ? "&late=15" : "");
+    const massOpts = () => at() + (plan.part ? `&part=${plan.part}` : "") + (plan.sunday ? "&sunday=1" : "") + (plan.lang ? `&lang=${encodeURIComponent(plan.lang)}` : "") + (LATE_UI && store.get("mgw-late") ? "&late=15" : "");
     // the Mass button and the Adoration / Confession rows all start from the same place: the one chosen, or where you are
     const findFrom = (b, path, extra) => {
       const mode = store.get("mgw-mode") || "transit"; // the quick picks change it without redrawing
