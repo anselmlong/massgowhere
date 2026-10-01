@@ -10,7 +10,8 @@ git fetch --quiet origin main
 git reset --quiet --hard origin/main
 P=mycatholicsg-prod01
 K=AIzaSyC6lHqLReCtzoh8LdHLJfPD9-b_ZLKi3h0
-U="https://firestore.googleapis.com/v1/projects/$P/databases/(default)/documents/settings/schedule/config"
+# the live site reads the prod-sg database; (default) is an old copy that stopped updating in July 2026
+U="https://firestore.googleapis.com/v1/projects/$P/databases/prod-sg/documents/settings/schedule/config"
 curl -sf "$U?pageSize=100&key=$K" -o data/allsched.raw.json
 python3 scripts/import_mycatholic.py data/allsched.raw.json
 rm -f data/allsched.raw.json
