@@ -679,3 +679,7 @@ html.previewing .shell { padding-bottom: 96px; }
 .church-photo figcaption a { color: inherit; }
 
 .wiz-pick { display: grid; gap: 6px; }
+
+.quote { margin: 0; padding: 0; }
+.quote p { margin: 0; font-style: italic; text-wrap: balance; }
+.quote footer { margin-top: 6px; font-size: 14px; font-style: normal; font-weight: 600; color: var(--ink-3); }

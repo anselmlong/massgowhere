@@ -569,7 +569,7 @@
         <li><a href="#/churches">${svg(ICON.map)}<span>Browse churches and Mass times</span>${svg(ICON.right, "go")}</a></li>
       </ul>`;
     const promise = `<div class="intro">${headline()}
-        <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>${howPop()}</div>`;
+        <blockquote class="lede quote"><p>“It would be easier for the world to survive without the sun than to do without Holy Mass.”</p><footer>St Padre Pio</footer></blockquote>${howPop()}</div>`;
     const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass", plan.lang ? `in ${plan.lang}` : ""].filter(Boolean).join(" · ");
     let body;
     const wiz = layout === "wizard";
@@ -639,7 +639,7 @@
         <div class="actions">${findBtn}</div>${more}`;
     } else {
       body = `<div class="intro">${headline()}
-          <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>
+          <blockquote class="lede quote"><p>“It would be easier for the world to survive without the sun than to do without Holy Mass.”</p><footer>St Padre Pio</footer></blockquote>
           ${howPop()}
         </div>
         <p class="sentence">I’m leaving from
