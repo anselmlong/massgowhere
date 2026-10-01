@@ -109,13 +109,13 @@
     ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons"],
     ["sentence", "Sentence", "The earlier “I’m leaving from…” sentence"],
   ];
-  const MODES_UI = [["auto", "Match my phone", "Follows the phone’s light or dark setting (default)"], ["dark", "Dark", "Always dark"], ["light", "Light", "Always light"]];
+  const MODES_UI = [["light", "Light", "Always light (default)"], ["dark", "Dark", "Always dark"], ["auto", "Match my phone", "Follows the phone’s light or dark setting"]];
   const pickFrom = (list, v, dflt) => (list.some(([k]) => k === v) ? v : dflt);
   const design = () => ({
     look: pickFrom(LOOKS, store.get("mgw-palette"), "season"),
     font: pickFrom(FONTS, store.get("mgw-font"), "atkinson"),
     layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "wizard"),
-    scheme: pickFrom(MODES_UI, store.get("mgw-scheme"), "auto"),
+    scheme: pickFrom(MODES_UI, store.get("mgw-scheme"), "light"),
   });
   function applyPalette() {
     const qs = new URLSearchParams(location.search);
@@ -577,7 +577,8 @@
     const steps = plan.kind === "mass" ? ["what", "from", "when", "how", "which"] : ["what", "from", "when", "how"];
     const si = Math.min(plan.step, steps.length - 1), step = steps[si], last = si === steps.length - 1;
     if (wiz) {
-      const opt = (attr, val, icon, label, sub, on) => `<button class="opt" type="button" data-${attr}="${esc(val)}" aria-pressed="${!!on}">${svg(icon)}<span>${label}${sub ? `<small>${esc(sub)}</small>` : ""}</span></button>`;
+      let n = 0;
+      const opt = (attr, val, icon, label, sub, on) => `<button class="opt" type="button" style="--i:${n++}" data-${attr}="${esc(val)}" aria-pressed="${!!on}">${svg(icon)}<span>${label}${sub ? `<small>${esc(sub)}</small>` : ""}</span></button>`;
       const Q = { what: "What are you looking for?", from: "Where are you leaving from?", when: "When are you leaving?", how: "How are you getting there?", which: "Which Mass?" };
       let opts = "";
       if (step === "what") opts = KINDS_W.map(([k, l, s, i]) => opt("w-kind", k, i, l, s, plan.kind === k)).join("");
@@ -588,17 +589,19 @@
         .map(([id, l, s]) => opt("w-part", id, id === "sunday" ? ICON.sunday : partIcon(id), l, s, (plan.sunday ? "sunday" : plan.part) === id)).join("")
         + opt("w-lang", "", ICON.globe, plan.lang ? `${esc(plan.lang)} Mass` : "Any language", "Tap to change language", false);
       const kindWord = { mass: "Mass", adoration: "Adoration", confession: "Confession" }[plan.kind];
-      const finish = last ? `
-        <p class="wiz-sum">${esc([plan.place ? `From ${place}` : "From where you are", plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`, modeOf(mode).label.toLowerCase()].join(", "))}${plan.kind === "mass" && (plan.part || plan.sunday) ? `, ${plan.sunday ? "weekend" : PARTS[plan.part].label.toLowerCase()} Mass` : ""}.</p>
-        ${LATE_UI && plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
+      const finish = si === 0 ? "" : `
+        ${last ? `<p class="wiz-sum">${esc([plan.place ? `From ${place}` : "From where you are", plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`, modeOf(mode).label.toLowerCase()].join(", "))}${plan.kind === "mass" && (plan.part || plan.sunday) ? `, ${plan.sunday ? "weekend" : PARTS[plan.part].label.toLowerCase()} Mass` : ""}.</p>` : ""}
+        ${LATE_UI && last && plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
           <span>Might be a few minutes late?<small>Also count a Mass that has just started, up to 15 minutes in.</small></span></label>` : ""}
-        <button class="btn btn-primary btn-find" id="find" type="button">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}</span></button>
-        <p class="msg" id="msg" role="status" hidden></p>` : "";
+        <button class="btn ${last ? "btn-primary btn-find" : "btn-quiet wiz-skip"}" id="find" type="button" style="--i:${n}">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}${last ? "" : " now"}</span></button>
+        <p class="msg" id="msg" role="status" hidden></p>`;
+      // what you've answered so far sits above as chips; tap one to change it
+      const said = { what: KINDS_W.find(([k]) => k === plan.kind)[1], from: plan.place ? place : "My location", when: plan.at == null ? "Now" : whenText(plan.at), how: modeOf(mode).label, which: "" };
+      const chips = steps.slice(0, si).map((k, i) => `<button class="wiz-chip" type="button" data-w-goto="${i}" style="--i:${i}">${esc(said[k])}<span aria-hidden="true">${svg(ICON.chev)}</span></button>`).join("");
       body = `${si === 0 ? promise : ""}
-        <div class="wiz" role="group" aria-label="Step ${si + 1} of ${steps.length}">
-          <div class="wiz-top">${si ? `<button class="link" type="button" id="w-back">${svg(ICON.back)}<span>Back</span></button>` : "<span></span>"}<span class="wiz-n">Step ${si + 1} of ${steps.length}</span></div>
-          <div class="wiz-bar" aria-hidden="true"><i style="width:${((si + 1) / steps.length) * 100}%"></i></div>
-          <h2 class="wiz-q" id="wiz-q" tabindex="-1">${Q[step]}</h2>
+        <div class="wiz" role="group" aria-label="${Q[step]}">
+          ${chips ? `<div class="wiz-chips">${chips}</div>` : ""}
+          <h2 class="wiz-q" id="wiz-q" tabindex="-1" key="${step}">${Q[step]}</h2>
           <div class="opts">${opts}</div>
           ${finish}
         </div>${si === 0 ? more : ""}`;
@@ -663,7 +666,7 @@
       const next = () => { plan.step++; renderHome(); view.querySelector("#wiz-q")?.focus({ preventScroll: true }); };
       const answer = (set) => { set(); last ? changed(".opt[aria-pressed='true']") : next(); };
       const each = (sel, fn) => view.querySelectorAll(sel).forEach((b) => b.addEventListener("click", () => fn(b.dataset)));
-      on("#w-back", () => { plan.step = Math.max(0, plan.step - 1); renderHome(); view.querySelector("#wiz-q")?.focus({ preventScroll: true }); });
+      each("[data-w-goto]", (d) => { plan.step = Number(d.wGoto); renderHome(); view.querySelector("#wiz-q")?.focus({ preventScroll: true }); });
       each("[data-w-kind]", (d) => { plan.kind = d.wKind; next(); });
       each("[data-w-from]", (d) => (d.wFrom === "here" ? answer(() => { plan.place = null; }) : openPlaceSheet((p) => { plan.place = p; p ? next() : answer(() => {}); }, { here: false })));
       each("[data-w-when]", (d) => (d.wWhen === "now" ? answer(() => { plan.at = null; }) : openTimeSheet(plan.at, (at) => { plan.at = at; next(); })));
@@ -1171,9 +1174,12 @@
     }
   }
 
+  // who took each church photo (public/photos/credits.json, written by scripts/fetch_photos.py); a church without one shows none
+  let photosP = null;
+  const photoCredits = () => (photosP ||= fetch("photos/credits.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
   async function renderChurch(id) {
     const h = location.hash;
-    const [d, info] = await Promise.all([loadData(), parishInfo(id)]);
+    const [d, info, photos] = await Promise.all([loadData(), parishInfo(id), photoCredits()]);
     if (!d || location.hash !== h) return;
     const p = d.parishes.find((x) => x.id === id);
     if (!p) return go("/churches");
@@ -1301,6 +1307,8 @@
     view.innerHTML = `
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="history.length > 1 ? history.back() : (location.hash='#/')">${svg(ICON.back)}</button></div>
       <section class="church-page">
+        ${photos[id] ? `<figure class="church-photo"><img src="photos/${id}.jpg" alt="${esc(p.name)}" width="960" height="600" decoding="async">
+          <figcaption>Photo: ${esc(photos[id].author)}, <a href="${esc(photos[id].licenseUrl || photos[id].page)}" target="_blank" rel="noopener">${esc(photos[id].license)}</a> · <a href="${esc(photos[id].page)}" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>` : ""}
         <h1>${esc(p.name)}</h1>
         <p class="addr">${esc(p.address)}, Singapore ${esc(p.postal || "")}</p>
         ${lead}
@@ -1843,6 +1851,18 @@
   document.addEventListener("click", (e) => {
     if (e.target.closest(".btn-primary[href^='https://www.google.com/maps']") && navigator.vibrate) navigator.vibrate(12);
   });
+  // light unless chosen otherwise; the header button flips between light and dark
+  const themeBtn = document.getElementById("theme-toggle");
+  const isDark = () => { const c = design().scheme; return c === "dark" || (c === "auto" && matchMedia("(prefers-color-scheme: dark)").matches); };
+  const paintToggle = () => {
+    const dark = isDark();
+    themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    themeBtn.innerHTML = dark
+      ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></svg>'
+      : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></svg>';
+  };
+  themeBtn.addEventListener("click", () => { store.set("mgw-scheme", isDark() ? "light" : "dark"); applyPalette(); paintToggle(); });
+  paintToggle();
   applyPalette();
   // the browser bar colour follows the phone switching between light and dark
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyPalette);
