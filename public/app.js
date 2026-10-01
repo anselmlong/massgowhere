@@ -585,12 +585,11 @@
       else if (step === "how") opts = MODES.map((m) => opt("w-mode", m.id, m.icon, m.label, "", m.id === mode)).join("");
       else {
         // "Any" is the default; the rest are dropdowns so a tap never redraws the screen
-        // Sunday (or a Saturday Sunset Mass) is its own switch, where people look for it, not inside "Time of day"
-        const partOpts = [["", "Any time"], ...Object.entries(PARTS).map(([id, x]) => [id, `${x.label} (${x.range})`])];
-        const cur = plan.part;
-        opts = `<label class="late-switch sun-switch"><input type="checkbox" id="w-sun"${plan.sunday ? " checked" : ""}>
-          <span>Sunday or Sunset Mass<small>For your Sunday obligation: a Sunday Mass, or Saturday from 4pm.</small></span></label>
-          <label class="pick wiz-pick"><span>Time of day</span><select id="w-part">${partOpts.map(([v, l]) => `<option value="${v}"${v === cur ? " selected" : ""}>${esc(l)}</option>`).join("")}</select>${svg(ICON.chev)}</label>
+        // the same big choices as every other step: tap one, then Find. Sunday sits by the times of day, where people look
+        const cur = plan.sunday ? "sunday" : plan.part;
+        opts = [["", "Any Mass", "", ICON.clock], ["sunday", "Sunday or Sunset Mass", "Saturday from 4pm counts for Sunday", ICON.sunday],
+          ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1), partIcon(id)])]
+          .map(([v, l, sub, icon]) => opt("w-part", v, icon, l, sub, v === cur)).join("") + `
           <label class="pick wiz-pick"><span>Language</span><select id="w-lang"><option value="">Any language</option>${plan.lang ? `<option value="${esc(plan.lang)}" selected>${esc(plan.lang)}</option>` : ""}</select>${svg(ICON.chev)}</label>`;
       }
       const kindWord = { mass: "Mass", adoration: "Adoration", confession: "Confession" }[plan.kind];
@@ -676,8 +675,8 @@
       each("[data-w-from]", (d, b) => (d.wFrom === "here" ? answer(() => { plan.place = null; }, b) : openPlaceSheet((p) => { plan.place = p; next(); }, { here: false })));
       each("[data-w-when]", (d, b) => (d.wWhen === "now" ? answer(() => { plan.at = null; }, b) : openTimeSheet(plan.at, (at) => { plan.at = at; next(); })));
       each("[data-w-mode]", (d, b) => answer(() => store.set("mgw-mode", d.wMode), b));
-      view.querySelector("#w-part")?.addEventListener("change", (e) => { setPart(e.target.value); const sun = view.querySelector("#w-sun"); if (sun && e.target.value) sun.checked = false; });
-      view.querySelector("#w-sun")?.addEventListener("change", (e) => { setPart(e.target.checked ? "sunday" : ""); if (e.target.checked) view.querySelector("#w-part").value = ""; });
+      // the last step: a choice just marks itself (no redraw); Find goes
+      each("[data-w-part]", (d, b) => { setPart(d.wPart); view.querySelectorAll("[data-w-part]").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); });
       const lang = view.querySelector("#w-lang");
       if (lang) {
         lang.addEventListener("change", () => { plan.lang = lang.value; store.set("mgw-lang", lang.value); });
@@ -773,8 +772,7 @@
       const byId = new Map(d.parishes.map((p) => [p.id, p]));
       const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, lateMin: e.lateMin || 0, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
       return { mode: params.get("mode"), best: pack(out.best), alternatives: out.alternatives.map(pack),
-        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) },
-        around: out.around.map((a) => ({ parish: byId.get(a.pid), travelMin: a.travelMin, travelSource: a.travelSource, walk: a.travelWalk, next: pack(a.next) })) };
+        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) } };
     }
   }
 
@@ -881,7 +879,7 @@
         </section>
         <section class="near-map" id="near-map" aria-label="Map of the churches near you">
           <div id="map" class="answer-map"></div>
-          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span><span><i class="l-church dim"></i>Nearest churches</span><span>Times are the next Mass you can make</span></p>
+          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span>${alt.length || near ? `<span><i class="l-church dim"></i>Other churches</span>` : ""}<span>Times are the next Mass you can make</span></p>
         </section>
         ${alt.length || near ? `<section class="more" id="more" aria-label="Other options">
           ${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
@@ -1697,19 +1695,18 @@
     return new ml.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map);
   }
 
-  // the answer's map: you in the middle, the five closest churches (and our pick) around you, each pin labelled with the Mass you
+  // the answer's map: you in the middle, and exactly the churches the answer lists (our pick, the others you can make,
+  // the nearest church) so the pins and the list always agree; each pin labelled with the Mass you
   // can make there, so the choice can be checked at a glance. It loads only when scrolled near, and takes two
   // fingers to move, so a thumb scrolling the page doesn't get caught in it.
-  // the closest churches with the next Mass you can make at each (older API answers: the list's churches instead)
-  const aroundOf = (res) => res.around ? res.around.filter((a) => a.parish)
-    : [...(res.alternatives || []).filter(Boolean).map((a) => ({ parish: a.parish, next: a })), ...(res.nearest ? [res.nearest] : [])];
+  const listed = (res) => [...(res.alternatives || []).filter(Boolean).map((a) => ({ parish: a.parish, next: a })), ...(res.nearest ? [res.nearest] : [])];
   function answerMap(el, origin, youLabel, stale) {
     let res = null, map = null, ml = null, marks = [];
     const t = (ms) => clock(new Date(ms).getTime());
     const draw = () => {
       marks.forEach((m) => m.remove());
       const b = res.best, seen = new Set([b.parish.id]);
-      const others = aroundOf(res).filter((o) => !seen.has(o.parish.id) && seen.add(o.parish.id));
+      const others = listed(res).filter((o) => !seen.has(o.parish.id) && seen.add(o.parish.id));
       const card = (p, e, extra) => `<strong>${esc(p.name)}</strong><span>${e ? `Mass ${t(e.start)} ${esc(dayLabel(new Date(e.start).getTime()).toLowerCase())} · leave by ${t(e.leaveBy)}` : "No Mass you can reach soon"}</span>${extra || ""}<a href="#/church/${p.id}">Mass times</a>`;
       marks = others.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.parish.id === res.nearest?.parish.id ? "<span>Nearest church</span>" : ""), { dim: true, time: o.next ? t(o.next.start) : "" }));
       marks.push(addPin(ml, map, b.parish, card(b.parish, b, "<span>Our pick for you</span>"), { time: t(b.start) }));
@@ -1719,7 +1716,7 @@
       if (stale() || !el.isConnected || !res) return;
       if (currentMap) currentMap.remove();
       // frame every pin with you in the middle: each church, and its mirror image across you
-      const ps = [res.best, ...aroundOf(res)].map((x) => x.parish);
+      const ps = [res.best, ...listed(res)].map((x) => x.parish);
       const pts = [origin, ...ps.flatMap((p) => [p, { lat: 2 * origin.lat - p.lat, lng: 2 * origin.lng - p.lng }])];
       map = currentMap = newMap(ml, el, pts, 30, { cooperativeGestures: true });
       addDot(ml, map, origin, "me", youLabel);

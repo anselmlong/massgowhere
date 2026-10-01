@@ -14,7 +14,6 @@ const LATE_WINDOW_MIN = 30; // ...and then only Masses starting within 30 min of
 const WINDOW_MIN = 90;
 const MAX_ROUTED = 8;
 const MAX_TRIP_MIN = 75; // never suggest a trip longer than this
-const AROUND = 5; // the answer's map shows this many of the closest churches
 
 function haversineKm(a, b) {
   const R = 6371, rad = Math.PI / 180;
@@ -98,8 +97,7 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
   const withMass = [...firstReachable.keys()];
   const byNear = [...withMass].sort((a, b) => est.get(a) - est.get(b)).slice(0, 5);
   const bySoon = [...withMass].sort((a, b) => firstReachable.get(a).start - firstReachable.get(b).start).slice(0, 3);
-  // the AROUND closest churches by distance, Mass or not: the answer's map shows them
-  const nearestIds = [...parishes].sort((a, b) => haversineKm(origin, a) - haversineKm(origin, b)).slice(0, AROUND).map((p) => p.id);
+  const nearestIds = [...est.entries()].sort((a, b) => a[1] - b[1]).slice(0, 2).map(([id]) => id);
   await route([...new Set([...byNear, ...bySoon, ...nearestIds])]);
 
   const reachableNow = () => events
@@ -160,15 +158,10 @@ async function rank({ origin, now, mode = "transit", parishes, events, travel, f
     distanceKm: haversineKm(origin, byId.get(nearestId)),
     next: reachable.find((e) => e.pid === nearestId) || null,
   };
-  // the closest churches with the next Mass you can make at each (null when there's none you can reach)
-  const around = nearestIds.filter((id) => trip.get(id)?.minutes <= MAX_TRIP_MIN).map((id) => ({
-    pid: id, travelMin: trip.get(id).minutes, travelSource: trip.get(id).source, travelWalk: !!trip.get(id).walk,
-    next: reachable.find((e) => e.pid === id) || null,
-  }));
-  return { best, alternatives, nearest, around, considered: trip.size };
+  return { best, alternatives, nearest, considered: trip.size };
 }
 
-const api = { rank, AROUND, estimateMinutes, walksFaster, preferWalk, haversineKm, BUFFER_MIN, WINDOW_MIN, MAX_LATE_MIN };
+const api = { rank, estimateMinutes, walksFaster, preferWalk, haversineKm, BUFFER_MIN, WINDOW_MIN, MAX_LATE_MIN };
 if (typeof module !== "undefined") module.exports = api;
 else root.MassRank = api;
 })(this);

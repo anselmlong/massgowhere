@@ -110,12 +110,6 @@ async function answer(req, res) {
       distanceKm: Math.round(r.nearest.distanceKm * 10) / 10,
       next: summarize(r.nearest.next, byId),
     },
-    // the closest churches and the next Mass you can make at each, for the map under the answer
-    around: r.around.map((a) => ({
-      parish: summarize({ ...a, start: now, leaveBy: null, lang: "", loc: "" }, byId).parish,
-      travelMin: a.travelMin, travelSource: a.travelSource, walk: !!a.travelWalk,
-      next: summarize(a.next, byId),
-    })),
     specialDay: r.best ? S.specialDay(r.best.start, data) : null,
     dataAsOf: data.asOf,
   });
