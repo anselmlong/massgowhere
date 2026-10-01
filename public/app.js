@@ -585,12 +585,16 @@
       else if (step === "from") opts = opt("w-from", "here", ICON.locate, "My location", "Where you are when you tap Find", !plan.place) + opt("w-from", "place", ICON.pin, plan.place ? esc(place) : "Somewhere else", plan.place ? "Tap to change" : "A postal code, MRT station or street", !!plan.place);
       else if (step === "when") opts = opt("w-when", "now", ICON.clock, "Now", "", plan.at == null) + opt("w-when", "later", ICON.recent, plan.at == null ? "Later" : esc(whenText(plan.at)), plan.at == null ? "Tonight, tomorrow, this weekend…" : "Tap to change", plan.at != null);
       else if (step === "how") opts = MODES.map((m) => opt("w-mode", m.id, m.icon, m.label, { transit: "Trains and buses", drive: "Driving or a ride", walk: "On foot" }[m.id], m.id === mode)).join("");
-      else opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)]), ["sunday", "Weekend Mass", "Sunday, or Saturday from 4pm"]]
-        .map(([id, l, s]) => opt("w-part", id, id === "sunday" ? ICON.sunday : partIcon(id), l, s, (plan.sunday ? "sunday" : plan.part) === id)).join("")
-        + opt("w-lang", "", ICON.globe, plan.lang ? `${esc(plan.lang)} Mass` : "Any language", "Tap to change language", false);
+      else {
+        // "Any" is the default; the rest are dropdowns so a tap never redraws the screen
+        const partOpts = [["", "Any time"], ...Object.entries(PARTS).map(([id, x]) => [id, `${x.label} (${x.range})`]), ["sunday", "Weekend Mass (Sunday, or Saturday from 4pm)"]];
+        const cur = plan.sunday ? "sunday" : plan.part;
+        opts = `<label class="pick wiz-pick"><span>Time of day</span><select id="w-part">${partOpts.map(([v, l]) => `<option value="${v}"${v === cur ? " selected" : ""}>${esc(l)}</option>`).join("")}</select>${svg(ICON.chev)}</label>
+          <label class="pick wiz-pick"><span>Language</span><select id="w-lang"><option value="">Any language</option>${plan.lang ? `<option value="${esc(plan.lang)}" selected>${esc(plan.lang)}</option>` : ""}</select>${svg(ICON.chev)}</label>`;
+      }
       const kindWord = { mass: "Mass", adoration: "Adoration", confession: "Confession" }[plan.kind];
       const finish = si === 0 ? "" : `
-        ${last ? `<p class="wiz-sum">${esc([plan.place ? `From ${place}` : "From where you are", plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`, modeOf(mode).label.toLowerCase()].join(", "))}${plan.kind === "mass" && (plan.part || plan.sunday) ? `, ${plan.sunday ? "weekend" : PARTS[plan.part].label.toLowerCase()} Mass` : ""}.</p>` : ""}
+        ${last ? `<p class="wiz-sum">${esc([plan.place ? `From ${place}` : "From where you are", plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`, modeOf(mode).label.toLowerCase()].join(", "))}.</p>` : ""}
         ${LATE_UI && last && plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
           <span>Might be a few minutes late?<small>Also count a Mass that has just started, up to 15 minutes in.</small></span></label>` : ""}
         <button class="btn ${last ? "btn-primary btn-find" : "btn-quiet wiz-skip"}" id="find" type="button" style="--i:${n}">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}${last ? "" : " now"}</span></button>
@@ -664,15 +668,24 @@
     if (wiz) {
       // each answer moves to the next question; the last one stays put and shows the Find button
       const next = () => { plan.step++; renderHome(); view.querySelector("#wiz-q")?.focus({ preventScroll: true }); };
-      const answer = (set) => { set(); last ? changed(".opt[aria-pressed='true']") : next(); };
-      const each = (sel, fn) => view.querySelectorAll(sel).forEach((b) => b.addEventListener("click", () => fn(b.dataset)));
+      // on the last step an answer only moves the highlight; nothing is redrawn
+      const answer = (set, b) => { set(); if (!last) return next(); b.parentElement.querySelectorAll(".opt").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); };
+      const each = (sel, fn) => view.querySelectorAll(sel).forEach((b) => b.addEventListener("click", () => fn(b.dataset, b)));
       each("[data-w-goto]", (d) => { plan.step = Number(d.wGoto); renderHome(); view.querySelector("#wiz-q")?.focus({ preventScroll: true }); });
       each("[data-w-kind]", (d) => { plan.kind = d.wKind; next(); });
-      each("[data-w-from]", (d) => (d.wFrom === "here" ? answer(() => { plan.place = null; }) : openPlaceSheet((p) => { plan.place = p; p ? next() : answer(() => {}); }, { here: false })));
-      each("[data-w-when]", (d) => (d.wWhen === "now" ? answer(() => { plan.at = null; }) : openTimeSheet(plan.at, (at) => { plan.at = at; next(); })));
-      each("[data-w-mode]", (d) => answer(() => store.set("mgw-mode", d.wMode)));
-      each("[data-w-part]", (d) => { setPart(d.wPart); changed(".opt[aria-pressed='true']"); });
-      each("[data-w-lang]", () => pickLang());
+      each("[data-w-from]", (d, b) => (d.wFrom === "here" ? answer(() => { plan.place = null; }, b) : openPlaceSheet((p) => { plan.place = p; next(); }, { here: false })));
+      each("[data-w-when]", (d, b) => (d.wWhen === "now" ? answer(() => { plan.at = null; }, b) : openTimeSheet(plan.at, (at) => { plan.at = at; next(); })));
+      each("[data-w-mode]", (d, b) => answer(() => store.set("mgw-mode", d.wMode), b));
+      view.querySelector("#w-part")?.addEventListener("change", (e) => setPart(e.target.value));
+      const lang = view.querySelector("#w-lang");
+      if (lang) {
+        lang.addEventListener("change", () => { plan.lang = lang.value; store.set("mgw-lang", lang.value); });
+        // the languages come from the timetable, so a new one shows up by itself
+        data().then((d) => {
+          const langs = [...new Set(Object.values(d.rules).flat().filter((r) => r.type === "Mass").map((r) => S.langName(r.lang)))].sort((x, y) => (x === "English" ? -1 : y === "English" ? 1 : x.localeCompare(y)));
+          lang.innerHTML = [["", "Any language"], ...langs.map((l) => [l, l])].map(([v, l]) => `<option value="${esc(v)}"${v === plan.lang ? " selected" : ""}>${esc(l)}</option>`).join("");
+        }).catch(() => {});
+      }
     }
     on("#t-place", pickPlace); on("#t-time", pickTime); on("#t-mode", pickMode); on("#t-part", pickPart); on("#t-lang", pickLang);
     // "Change": every option in one sheet, each opening its own picker
