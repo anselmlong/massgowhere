@@ -772,7 +772,8 @@
       const byId = new Map(d.parishes.map((p) => [p.id, p]));
       const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, lateMin: e.lateMin || 0, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
       return { mode: params.get("mode"), best: pack(out.best), alternatives: out.alternatives.map(pack),
-        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) } };
+        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) },
+        around: out.around.map((a) => ({ parish: byId.get(a.pid), travelMin: a.travelMin, travelSource: a.travelSource, walk: a.travelWalk, next: pack(a.next) })) };
     }
   }
 
@@ -879,7 +880,7 @@
         </section>
         <section class="near-map" id="near-map" aria-label="Map of the churches near you">
           <div id="map" class="answer-map"></div>
-          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span>${alt.length || near ? `<span><i class="l-church dim"></i>Other churches</span>` : ""}<span>Times are the next Mass you can make</span></p>
+          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span>${alt.length || near ? `<span><i class="l-church dim"></i>In the list below</span>` : ""}${(res.around || []).some((a) => a.parish && ![p, ...alt.map((x) => x.parish), near?.parish].some((q) => q && q.id === a.parish.id)) ? `<span><i class="l-church faint"></i>Also nearby</span>` : ""}<span>Each time is the next Mass you can make there</span></p>
         </section>
         ${alt.length || near ? `<section class="more" id="more" aria-label="Other options">
           ${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
@@ -1672,13 +1673,13 @@
     return map;
   }
   // a pin whose popup always fits: tapping it first slides the map so the pin sits low, with room above for the card
-  function addPin(ml, map, p, html, { dim = false, label = p.name, time = "" } = {}) {
+  function addPin(ml, map, p, html, { dim = false, faint = false, label = p.name, time = "" } = {}) {
     const el = document.createElement("button");
     el.type = "button";
-    el.className = `church-pin${dim ? " dim" : ""}`;
+    el.className = `church-pin${dim ? " dim" : ""}${faint ? " faint" : ""}`;
     el.setAttribute("aria-label", time ? `${label}, ${time}` : label);
     el.innerHTML = PIN + (time ? `<span class="pin-time" aria-hidden="true">${esc(time)}</span>` : "");
-    const popup = new ml.Popup({ offset: 30, closeButton: false, maxWidth: "240px", anchor: "bottom" }).setHTML(html);
+    const popup = new ml.Popup({ offset: 30, closeButton: false, maxWidth: "240px", anchor: "bottom", focusAfterOpen: false }).setHTML(html);
     popup.on("open", () => el.setAttribute("aria-expanded", "true"));
     popup.on("close", () => el.setAttribute("aria-expanded", "false"));
     el.addEventListener("click", () => {
@@ -1695,9 +1696,10 @@
     return new ml.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map);
   }
 
-  // the answer's map: you in the middle, and exactly the churches the answer lists (our pick, the others you can make,
-  // the nearest church) so the pins and the list always agree; each pin labelled with the Mass you
-  // can make there, so the choice can be checked at a glance. It loads only when scrolled near, and takes two
+  // the answer's map: you in the middle; our pick, the churches the answer lists, and the five closest churches, each
+  // pin labelled with the Mass you can make there, so the choice can be checked at a glance. Three looks: our pick
+  // (dark), in the list below (lighter), and also nearby but not listed (grey; its card says why: a later Mass, or a
+  // longer trip than the ones listed). It loads only when scrolled near, and takes two
   // fingers to move, so a thumb scrolling the page doesn't get caught in it.
   const listed = (res) => [...(res.alternatives || []).filter(Boolean).map((a) => ({ parish: a.parish, next: a })), ...(res.nearest ? [res.nearest] : [])];
   function answerMap(el, origin, youLabel, stale) {
@@ -1706,9 +1708,13 @@
     const draw = () => {
       marks.forEach((m) => m.remove());
       const b = res.best, seen = new Set([b.parish.id]);
-      const others = listed(res).filter((o) => !seen.has(o.parish.id) && seen.add(o.parish.id));
+      const fresh = (o) => !seen.has(o.parish.id) && seen.add(o.parish.id);
+      const inList = listed(res).filter(fresh);
+      const nearby = (res.around || []).filter((a) => a.parish).filter(fresh);
       const card = (p, e, extra) => `<strong>${esc(p.name)}</strong><span>${e ? `Mass ${t(e.start)} ${esc(dayLabel(new Date(e.start).getTime()).toLowerCase())} · leave by ${t(e.leaveBy)}` : "No Mass you can reach soon"}</span>${extra || ""}<a href="#/church/${p.id}">Mass times</a>`;
-      marks = others.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.parish.id === res.nearest?.parish.id ? "<span>Nearest church</span>" : ""), { dim: true, time: o.next ? t(o.next.start) : "" }));
+      // drawn first, so the pins in the list sit on top where they overlap
+      marks = nearby.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, `<span>Not in the list: ${!o.next ? "no Mass you can reach soon" : new Date(o.next.start) > new Date(b.start) ? "its next Mass is later" : "a longer trip than the ones listed"}</span>`), { dim: true, faint: true, time: o.next ? t(o.next.start) : "" }));
+      marks.push(...inList.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.parish.id === res.nearest?.parish.id ? "<span>Nearest church</span>" : "<span>In the list below</span>"), { dim: true, time: o.next ? t(o.next.start) : "" })));
       marks.push(addPin(ml, map, b.parish, card(b.parish, b, "<span>Our pick for you</span>"), { time: t(b.start) }));
     };
     const start = async () => {
@@ -1716,7 +1722,7 @@
       if (stale() || !el.isConnected || !res) return;
       if (currentMap) currentMap.remove();
       // frame every pin with you in the middle: each church, and its mirror image across you
-      const ps = [res.best, ...listed(res)].map((x) => x.parish);
+      const ps = [res.best, ...listed(res), ...(res.around || [])].map((x) => x.parish).filter(Boolean);
       const pts = [origin, ...ps.flatMap((p) => [p, { lat: 2 * origin.lat - p.lat, lng: 2 * origin.lng - p.lng }])];
       map = currentMap = newMap(ml, el, pts, 30, { cooperativeGestures: true });
       addDot(ml, map, origin, "me", youLabel);

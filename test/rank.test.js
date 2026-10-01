@@ -156,3 +156,12 @@ test("never more than 15 minutes late", async () => {
   const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 8, 2: 20, 3: 50 }), lateMin: 60 });
   assert.equal(r.best, null); // 18 min late: clamped to 15
 });
+
+test("around: the closest churches by distance, each with the next Mass you can make there", async () => {
+  const events = [{ pid: 1, start: min(5) }, { pid: 1, start: min(120) }, { pid: 2, start: min(40) }];
+  const r = await rank({ origin, now: T0, parishes, events, travel: fixedTravel({ 1: 13, 2: 20, 3: 50 }) });
+  assert.deepEqual(r.around.map((a) => a.pid), [1, 2, 3]);
+  assert.equal(r.around[0].next.start, min(120)); // 08:05 is too soon to reach
+  assert.equal(r.around[1].next.start, min(40));
+  assert.equal(r.around[2].next, null); // no Mass listed there
+});
