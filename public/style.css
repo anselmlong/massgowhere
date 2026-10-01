@@ -580,6 +580,15 @@ html.previewing .shell { padding-bottom: 96px; }
 .feedback .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .feedback .btn { width: auto; justify-self: start; min-height: 44px; padding: 0 18px; font-size: 15px; }
 .feedback .fb-status { margin: 0; font-size: 14px; color: var(--ink-2); min-height: 1.4em; }
+/* sent: a tick in the season colour, drawn once, so the note feels received */
+.feedback .fb-status.sent { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 600; }
+.feedback .fb-status .tick { width: 22px; height: 22px; flex: none; padding: 3px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); stroke-width: 2.6; }
+@media (prefers-reduced-motion: no-preference) {
+  .feedback .fb-status.sent .tick { animation: fade .25s var(--ease) both; }
+  .feedback .fb-status.sent .tick path { stroke-dasharray: 1; animation: tick-draw .5s var(--ease) .12s both; }
+  .feedback .fb-status.sent span { animation: rise .4s var(--ease) .2s both; }
+  @keyframes tick-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+}
 
 /* live travel times replaced the estimate: a brief tint, no jump */
 @media (prefers-reduced-motion: no-preference) {
