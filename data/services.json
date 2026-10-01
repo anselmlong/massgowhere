@@ -74,11 +74,13 @@
     "5": {
       "adoration": {
         "from": "parish website",
-        "loc": "Main Church",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "22:00", "source": "parish (opens 7am, told to us)" }
+        ],
         "sessions": [
           { "days": [ 5 ], "weeks": [ 1 ], "t": "20:00", "name": "First Friday Holy Hour" }
-        ],
-        "unconfirmed": "The Adoration Room is open until 10pm; the parish doesn't say when it opens."
+        ]
       },
       "confession": {
         "from": "parish website",

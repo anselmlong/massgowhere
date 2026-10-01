@@ -105,7 +105,8 @@
   const LAYOUTS = [
     ["simple", "Simple", "One big button; options tucked behind “Change”"],
     ["list", "Settings list", "Labelled rows: From, Leaving, Travel, Mass"],
-    ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons (default)"],
+    ["wizard", "Step by step", "One question at a time: what, where from, when, how, which Mass (default)"],
+    ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons"],
     ["sentence", "Sentence", "The earlier “I’m leaving from…” sentence"],
   ];
   const MODES_UI = [["auto", "Match my phone", "Follows the phone’s light or dark setting (default)"], ["dark", "Dark", "Always dark"], ["light", "Light", "Always light"]];
@@ -113,7 +114,7 @@
   const design = () => ({
     look: pickFrom(LOOKS, store.get("mgw-palette"), "season"),
     font: pickFrom(FONTS, store.get("mgw-font"), "atkinson"),
-    layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "quick"),
+    layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "wizard"),
     scheme: pickFrom(MODES_UI, store.get("mgw-scheme"), "auto"),
   });
   function applyPalette() {
@@ -538,7 +539,8 @@
   // ---------- home ----------
   // the plan being written on the home screen; kept while you look at answers, reset on reload
   // sunday: only Masses for the Sunday obligation (not remembered: it's for this weekend); lang is remembered
-  const plan = { place: null, at: null, part: "", sunday: false, lang: store.get("mgw-lang") || "" };
+  // kind and step belong to the step-by-step layout: what you're looking for, and which question you're on
+  const plan = { place: null, at: null, part: "", sunday: false, lang: store.get("mgw-lang") || "", kind: "mass", step: 0 };
   // "Sunday" is a Which Mass choice but its own filter (sunday=1): any Sunday Mass, or Saturday's from 4pm
   const setPart = (x) => { plan.sunday = x === "sunday"; plan.part = plan.sunday ? "" : x; };
   function renderHome() {
@@ -568,7 +570,37 @@
         <p class="lede">Somewhere unfamiliar? See the Mass you can still get to, and when to leave.</p>${howPop()}</div>`;
     const summary = [plan.place ? `From ${place}` : "", plan.at == null ? "Leaving now" : `Leaving ${whenText(plan.at)}`, modeOf(mode).label, plan.part ? `${PARTS[plan.part].label} Mass` : "Any Mass", plan.lang ? `in ${plan.lang}` : ""].filter(Boolean).join(" · ");
     let body;
-    if (layout === "simple") {
+    const wiz = layout === "wizard";
+    const KINDS_W = [["mass", "A Mass", "The one you can still make, and when to leave", ICON.clock], ["adoration", "An Adoration room", "One that’s open, or opens soon", ICON.adoration], ["confession", "Confession", "Near you, with times", ICON.confession]];
+    const steps = plan.kind === "mass" ? ["what", "from", "when", "how", "which"] : ["what", "from", "when", "how"];
+    const si = Math.min(plan.step, steps.length - 1), step = steps[si], last = si === steps.length - 1;
+    if (wiz) {
+      const opt = (attr, val, icon, label, sub, on) => `<button class="opt" type="button" data-${attr}="${esc(val)}" aria-pressed="${!!on}">${svg(icon)}<span>${label}${sub ? `<small>${esc(sub)}</small>` : ""}</span></button>`;
+      const Q = { what: "What are you looking for?", from: "Where are you leaving from?", when: "When are you leaving?", how: "How are you getting there?", which: "Which Mass?" };
+      let opts = "";
+      if (step === "what") opts = KINDS_W.map(([k, l, s, i]) => opt("w-kind", k, i, l, s, plan.kind === k)).join("");
+      else if (step === "from") opts = opt("w-from", "here", ICON.locate, "My location", "Where you are when you tap Find", !plan.place) + opt("w-from", "place", ICON.pin, plan.place ? esc(place) : "Somewhere else", plan.place ? "Tap to change" : "A postal code, MRT station or street", !!plan.place);
+      else if (step === "when") opts = opt("w-when", "now", ICON.clock, "Now", "", plan.at == null) + opt("w-when", "later", ICON.recent, plan.at == null ? "Later" : esc(whenText(plan.at)), plan.at == null ? "Tonight, tomorrow, this weekend…" : "Tap to change", plan.at != null);
+      else if (step === "how") opts = MODES.map((m) => opt("w-mode", m.id, m.icon, m.label, { transit: "Trains and buses", drive: "Driving or a ride", walk: "On foot" }[m.id], m.id === mode)).join("");
+      else opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)]), ["sunday", "Weekend Mass", "Sunday, or Saturday from 4pm"]]
+        .map(([id, l, s]) => opt("w-part", id, id === "sunday" ? ICON.sunday : partIcon(id), l, s, (plan.sunday ? "sunday" : plan.part) === id)).join("")
+        + opt("w-lang", "", ICON.globe, plan.lang ? `${esc(plan.lang)} Mass` : "Any language", "Tap to change language", false);
+      const kindWord = { mass: "Mass", adoration: "Adoration", confession: "Confession" }[plan.kind];
+      const finish = last ? `
+        <p class="wiz-sum">${esc([plan.place ? `From ${place}` : "From where you are", plan.at == null ? "leaving now" : `leaving ${whenText(plan.at)}`, modeOf(mode).label.toLowerCase()].join(", "))}${plan.kind === "mass" && (plan.part || plan.sunday) ? `, ${plan.sunday ? "weekend" : PARTS[plan.part].label.toLowerCase()} Mass` : ""}.</p>
+        ${plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
+          <span>Might be a few minutes late?<small>Also count a Mass that has just started, up to 15 minutes in.</small></span></label>` : ""}
+        <button class="btn btn-primary btn-find" id="find" type="button">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}</span></button>
+        <p class="msg" id="msg" role="status" hidden></p>` : "";
+      body = `${si === 0 ? promise : ""}
+        <div class="wiz" role="group" aria-label="Step ${si + 1} of ${steps.length}">
+          <div class="wiz-top">${si ? `<button class="link" type="button" id="w-back">${svg(ICON.back)}<span>Back</span></button>` : "<span></span>"}<span class="wiz-n">Step ${si + 1} of ${steps.length}</span></div>
+          <div class="wiz-bar" aria-hidden="true"><i style="width:${((si + 1) / steps.length) * 100}%"></i></div>
+          <h2 class="wiz-q" id="wiz-q" tabindex="-1">${Q[step]}</h2>
+          <div class="opts">${opts}</div>
+          ${finish}
+        </div>${si === 0 ? more : ""}`;
+    } else if (layout === "simple") {
       body = `${promise}
         <div class="actions">${findBtn}
           <div class="summary"><span>${esc(summary)}</span><button class="link" type="button" id="opts">Change</button></div>
@@ -624,6 +656,19 @@
     const pickPart = () => openPartSheet(plan.sunday ? "sunday" : plan.part, (x) => { setPart(x); changed("#t-part"); });
     const pickLang = () => openLangSheet(plan.lang, (x) => { plan.lang = x; store.set("mgw-lang", x); changed("#t-lang"); });
     wireHow(view);
+    if (wiz) {
+      // each answer moves to the next question; the last one stays put and shows the Find button
+      const next = () => { plan.step++; renderHome(); view.querySelector("#wiz-q")?.focus({ preventScroll: true }); };
+      const answer = (set) => { set(); last ? changed(".opt[aria-pressed='true']") : next(); };
+      const each = (sel, fn) => view.querySelectorAll(sel).forEach((b) => b.addEventListener("click", () => fn(b.dataset)));
+      on("#w-back", () => { plan.step = Math.max(0, plan.step - 1); renderHome(); view.querySelector("#wiz-q")?.focus({ preventScroll: true }); });
+      each("[data-w-kind]", (d) => { plan.kind = d.wKind; next(); });
+      each("[data-w-from]", (d) => (d.wFrom === "here" ? answer(() => { plan.place = null; }) : openPlaceSheet((p) => { plan.place = p; p ? next() : answer(() => {}); }, { here: false })));
+      each("[data-w-when]", (d) => (d.wWhen === "now" ? answer(() => { plan.at = null; }) : openTimeSheet(plan.at, (at) => { plan.at = at; next(); })));
+      each("[data-w-mode]", (d) => answer(() => store.set("mgw-mode", d.wMode)));
+      each("[data-w-part]", (d) => { setPart(d.wPart); changed(".opt[aria-pressed='true']"); });
+      each("[data-w-lang]", () => pickLang());
+    }
     on("#t-place", pickPlace); on("#t-time", pickTime); on("#t-mode", pickMode); on("#t-part", pickPart); on("#t-lang", pickLang);
     // "Change": every option in one sheet, each opening its own picker
     on("#opts", () => {
@@ -671,7 +716,7 @@
         { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 }
       );
     };
-    btn.addEventListener("click", () => findFrom(btn, "/next?", massOpts()));
+    btn?.addEventListener("click", () => (wiz && plan.kind !== "mass" ? findFrom(btn, `/open?kind=${plan.kind}&`, at()) : findFrom(btn, "/next?", massOpts())));
     view.querySelectorAll("[data-kind]").forEach((b) => b.addEventListener("click", () => findFrom(b, `/open?kind=${b.dataset.kind}&`, at())));
   }
 
@@ -1068,9 +1113,11 @@
         return;
       }
       const b = res.best;
-      const unsure = (res.unconfirmed || []).length ? `<details class="rest unsure"><summary>${res.unconfirmed.length} more ${res.unconfirmed.length === 1 ? "parish mentions" : "parishes mention"} ${K.title} without clear times</summary>
-          <p class="muted">These parishes mention ${kind === "adoration" ? "Adoration" : "Confession"} but don’t clearly say when. Check with the parish before you go.</p>
-          <ul class="rows">${res.unconfirmed.map((x) => `<li><a class="row row-church" href="#/church/${x.parish.id}"><span class="n">${esc(x.parish.name)}<small class="times">${esc(x.text)}</small></span></a></li>`).join("")}</ul></details>` : "";
+      // churches that mention it without clear times are still possible places to go: listed, open, nearest first
+      const near = (x) => (x.parish.lat != null ? R.haversineKm(origin, x.parish) : 1e9);
+      const unsure = (res.unconfirmed || []).length ? `<section class="rest unsure"><h2>Also possible: check the parish website</h2>
+          <p class="muted">These parishes have ${kind === "adoration" ? "an Adoration room" : "Confession"} but don’t clearly say when it’s open. Check their website before you go.</p>
+          <ul class="rows">${[...res.unconfirmed].sort((a, b) => near(a) - near(b)).map((x) => `<li><a class="row row-church" href="#/church/${x.parish.id}"><span class="n">${esc(x.parish.name)}<small class="times">${esc(x.text)}</small></span></a>${x.parish.website ? `<a class="btn btn-quiet" href="${esc(x.parish.website)}" target="_blank" rel="noopener"><span>Website</span></a>` : ""}</li>`).join("")}</ul></section>` : "";
       const browse = `<p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches?view=list&filters=1&what=${kind}">${svg(ICON.map)}<span>${K.title} times at every church</span></a></p>`;
       if (!b) {
         view.innerHTML = `${bar}<section class="answer reveal"><h1>No ${K.none} you can reach ${K.days}.</h1>
