@@ -1263,10 +1263,20 @@
     // the parish's own website (31 of 32 list one); the one without keeps the call button
     const site = p.website || (p.siteCheck && p.siteCheck.url) || "";
     const langTag = (e) => (e.lang && e.lang !== "English" ? `<span class="tag">${esc(e.lang)}</span>` : "");
-    const dayList = ([k, es]) => `<h3>${esc(k)}</h3><ul>${es.map((e) => {
-      const bits = [e.loc && !/^main church$/i.test(e.loc) ? esc(e.loc) : "", e.note ? esc(e.note) : ""].filter(Boolean).join(" · ");
-      return `<li${isOff(e) ? ` class="off"` : ""}><span class="t">${clock(e.start)}</span><span>${langTag(e)}${isOff(e) ? `<span class="tag">Cancelled by the parish</span>` : ""}${srcTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}${e.siteLang ? `<span class="x">Parish website says ${esc(e.siteLang)}</span>` : ""}</span></li>`;
-    }).join("")}</ul>`;
+    // one row a day: the day on the left, its times in an even grid beside it, each with its language or place in
+    // small type underneath. A time with more to say (a note, a cancellation, a source marker) takes a line of its own.
+    const quiet = (x) => (/[a-z]/.test(x) ? x : x.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())); // "CHAPEL" -> "Chapel"
+    const dayList = ([k, es]) => {
+      const [d1, d2] = k.split(", ");
+      return `<div class="mass-day"><h3 title="${esc(k)}">${esc(d2 ? d1.slice(0, 3) : d1)}${d2 ? `<small>${esc(d2)}</small>` : ""}</h3><ul>${es.map((e) => {
+        const place = e.loc && !/^main church$/i.test(e.loc) ? quiet(e.loc) : "";
+        const sub = [e.lang && e.lang !== "English" ? e.lang : "", place].filter(Boolean).map(esc).join(" · ");
+        const wide = isOff(e) || srcTag(e) || e.siteLang || e.note || sub.length > 14;
+        if (!wide) return `<li><span class="t">${clock(e.start)}</span>${sub ? `<span class="x">${sub}</span>` : ""}</li>`;
+        const bits = [place && esc(place), e.note && esc(e.note)].filter(Boolean).join(" · ");
+        return `<li class="wide${isOff(e) ? " off" : ""}"><span class="t">${clock(e.start)}</span>${langTag(e)}${isOff(e) ? `<span class="tag">Cancelled by the parish</span>` : ""}${srcTag(e)}${bits ? `<span class="x">${bits}</span>` : ""}${e.siteLang ? `<span class="x">Parish website says ${esc(e.siteLang)}</span>` : ""}</li>`;
+      }).join("")}</ul></div>`;
+    };
     const all = [...days];
     const soon = all.slice(0, 2), rest = all.slice(2);
     // notes that only restate a language already tagged on the rows add nothing
