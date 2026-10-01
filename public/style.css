@@ -90,11 +90,11 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--ink-2); }
   border: 0; border-radius: var(--radius); font-weight: 600; font-size: 17px; cursor: pointer; text-decoration: none;
   transition: transform .2s var(--ease), box-shadow .2s var(--ease), background-color .2s;
 }
-.btn-primary { background: var(--accent); color: var(--accent-ink); box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 6px 18px -8px var(--accent); }
+.btn-primary { --lift: 0 1px 2px rgb(0 0 0 / .08), 0 6px 18px -8px var(--accent); background: var(--accent); color: var(--accent-ink); box-shadow: var(--lift); }
 .btn-primary:active { transform: scale(.985); }
 /* on a dark ground a shadow tinted with the (light) accent reads as a glow; keep elevation neutral there */
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-primary { box-shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 20px -10px rgb(0 0 0 / .8); } }
-:root[data-theme="dark"] .btn-primary { box-shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 20px -10px rgb(0 0 0 / .8); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-primary { --lift: 0 1px 2px rgb(0 0 0 / .4), 0 8px 20px -10px rgb(0 0 0 / .8); } }
+:root[data-theme="dark"] .btn-primary { --lift: 0 1px 2px rgb(0 0 0 / .4), 0 8px 20px -10px rgb(0 0 0 / .8); }
 .btn-primary[aria-busy="true"] { opacity: .75; cursor: progress; }
 .btn-quiet { background: var(--field); color: var(--ink); }
 .btn svg { width: 20px; height: 20px; flex: none; }
@@ -288,7 +288,7 @@ html.sheet-lock { overflow: hidden; }
 .source { margin-top: 36px; font-size: 13px; color: var(--ink-3); line-height: 1.5; text-wrap: pretty; }
 @media (prefers-reduced-motion: no-preference) {
   .go-now { animation: nudge 2.4s var(--ease) 3; }
-  @keyframes nudge { 0%, 100% { box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 6px 18px -8px var(--accent); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent), 0 6px 18px -8px var(--accent); } }
+  @keyframes nudge { 0%, 100% { box-shadow: 0 0 0 0 transparent, var(--lift); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent), var(--lift); } }
 }
 
 /* loading */
@@ -328,7 +328,8 @@ details.rest[open] summary::after { rotate: 225deg; translate: 0 2px; }
 .glance li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; font-size: 15px; color: var(--ink-2); }
 .glance svg { width: 20px; height: 20px; color: var(--accent); margin-top: 1px; }
 .report { margin: 28px 0 0; font-size: 14px; color: var(--ink-2); }
-.report .link { min-height: 0; font-size: 14px; font-weight: 600; }
+.report .link { position: relative; min-height: 0; font-size: 14px; font-weight: 600; }
+.report .link::after { content: ""; position: absolute; inset: -12px -8px; } /* 44px target without moving the line */
 .notes { margin: 24px 0 0; padding: 0 0 0 18px; color: var(--ink-2); font-size: 15px; }
 
 /* ---------- churches ---------- */
