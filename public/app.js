@@ -585,18 +585,18 @@
       else if (step === "how") opts = MODES.map((m) => opt("w-mode", m.id, m.icon, m.label, "", m.id === mode)).join("");
       else {
         // "Any" is the default; the rest are dropdowns so a tap never redraws the screen
-        // the same big choices as every other step: tap one, then Find. Sunday sits by the times of day, where people look
-        const cur = plan.sunday ? "sunday" : plan.part;
-        opts = [["", "Any Mass", "", ICON.clock], ["sunday", "Sunday or Sunset Mass", "Saturday from 4pm counts for Sunday", ICON.sunday],
-          ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1), partIcon(id)])]
-          .map(([v, l, sub, icon]) => opt("w-part", v, icon, l, sub, v === cur)).join("") + `
-          <label class="pick wiz-pick"><span>Language</span><select id="w-lang"><option value="">Any language</option>${plan.lang ? `<option value="${esc(plan.lang)}" selected>${esc(plan.lang)}</option>` : ""}</select>${svg(ICON.chev)}</label>`;
+        // the same big choices as every other step, and like them a tap moves on: here it finds the Mass. Language
+        // comes first, as it has to be set before that tap
+        opts = `<label class="pick wiz-pick wiz-lang"><span>Language</span><select id="w-lang"><option value="">Any language</option>${plan.lang ? `<option value="${esc(plan.lang)}" selected>${esc(plan.lang)}</option>` : ""}</select>${svg(ICON.chev)}</label>` +
+          [["", "Any Mass", "The soonest one you can make", ICON.clock], ["sunday", "Sunday or Sunset Mass", "Saturday from 4pm counts for Sunday", ICON.sunday],
+            ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1), partIcon(id)])]
+            .map(([v, l, sub, icon]) => opt("w-part", v, icon, l, sub, false)).join("");
       }
       const kindWord = { mass: "Mass", adoration: "Adoration", confession: "Confession" }[plan.kind];
       const finish = si === 0 ? "" : `
         ${LATE_UI && last && plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
           <span>Might be a few minutes late?<small>Also count a Mass that has just started, up to 15 minutes in.</small></span></label>` : ""}
-        <button class="btn ${last ? "btn-primary btn-find" : "btn-quiet wiz-skip"}" id="find" type="button" style="--i:${n}">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}${last ? "" : " now"}</span></button>
+        ${last && step === "which" ? "" : `<button class="btn ${last ? "btn-primary btn-find" : "btn-quiet wiz-skip"}" id="find" type="button" style="--i:${n}">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}${last ? "" : " now"}</span></button>`}
         <p class="msg" id="msg" role="status" hidden></p>`;
       // what you've answered so far sits above as chips; tap one to change it
       const said = { what: KINDS_W.find(([k]) => k === plan.kind)[1], from: plan.place ? place : "My location", when: plan.at == null ? "Now" : whenText(plan.at), how: modeOf(mode).label, which: "" };
@@ -676,7 +676,8 @@
       each("[data-w-when]", (d, b) => (d.wWhen === "now" ? answer(() => { plan.at = null; }, b) : openTimeSheet(plan.at, (at) => { plan.at = at; next(); })));
       each("[data-w-mode]", (d, b) => answer(() => store.set("mgw-mode", d.wMode), b));
       // the last step: a choice just marks itself (no redraw); Find goes
-      each("[data-w-part]", (d, b) => { setPart(d.wPart); view.querySelectorAll("[data-w-part]").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); });
+      // the last step: tapping a kind of Mass finds it, as every other step's tap moves on
+      each("[data-w-part]", (d, b) => { setPart(d.wPart); findFrom(b, "/next?", massOpts()); });
       const lang = view.querySelector("#w-lang");
       if (lang) {
         lang.addEventListener("change", () => { plan.lang = lang.value; store.set("mgw-lang", lang.value); });

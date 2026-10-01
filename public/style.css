@@ -208,7 +208,6 @@ html.sheet-lock { overflow: hidden; }
 .opt svg { width: 20px; height: 20px; color: var(--accent); flex: none; }
 .opt small { display: block; color: var(--ink-3); font-size: 13px; }
 .opt[aria-pressed="true"] { background: var(--accent-soft); font-weight: 600; }
-.opt[aria-pressed="true"]::after { content: ""; flex: none; margin: 0 4px 4px auto; width: 7px; height: 13px; border: solid var(--accent); border-width: 0 2.5px 2.5px 0; rotate: 45deg; } /* a check mark */
 .opt[aria-pressed="true"] small { font-weight: 400; }
 .recent { display: flex; flex-wrap: wrap; gap: 6px; }
 .recent button { min-height: 44px; padding: 0 14px; border: 0; background: var(--field); border-radius: 999px; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
@@ -744,3 +743,6 @@ html.previewing .shell { padding-bottom: 96px; }
 .church-pin.faint { --pin: #8b9099; }
 .church-pin.faint .pin-time { color: var(--ink-2); font-weight: 500; }
 .legend .l-church.faint { background: #8b9099; }
+.wiz-lang { grid-template-columns: auto 1fr; align-items: center; gap: 10px; margin-bottom: 6px; }
+.wiz-lang select { min-height: 44px; font-size: 15px; }
+.wiz-lang svg { bottom: 13px; }
