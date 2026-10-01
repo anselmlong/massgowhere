@@ -4,7 +4,7 @@
  "source_urls": [
   "https://bsc.org.sg/"
  ],
- "fetched_at": "2026-09-29T18:26+08:00",
+ "fetched_at": "2026-10-01T03:00+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -472,7 +472,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "1st Friday Vigil"
   },
   {
    "d": 6,
@@ -484,7 +484,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "1st Friday Vigil"
   },
   {
    "d": 6,
@@ -570,19 +570,20 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": ""
+   "note": "1st Saturday Vigil"
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "On public holidays, only the 8:30 AM Mass is held.",
-  "The 1st Friday vigil continues into Saturday morning."
+  "On public holidays, only one morning Mass is held."
  ],
  "info": {
-  "adoration": "Daily: 9 AM to 9 PM; Saturday: 5:00 PM to 7:30 PM; Sunday: 8:30 AM to 12:30 PM and 5:00 PM to 7:00 PM."
+  "adoration": "Adoration Room: Daily 9 AM to 9 PM."
  },
+ "events": [],
+ "bulletin": null,
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [

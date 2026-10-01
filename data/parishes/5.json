@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.holycross.org.sg/services/mass-schedule"
  ],
- "fetched_at": "2026-09-29T18:24+08:00",
+ "fetched_at": "2026-10-01T03:01+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -54,6 +54,16 @@
   },
   {
    "d": 1,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Lauds"
+  },
+  {
+   "d": 1,
    "t": "06:30",
    "weeks": [],
    "except": [],
@@ -83,6 +93,26 @@
    "note": ""
   },
   {
+   "d": 1,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
+  },
+  {
+   "d": 2,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Lauds"
+  },
+  {
    "d": 2,
    "t": "06:30",
    "weeks": [],
@@ -111,6 +141,26 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
+  },
+  {
+   "d": 3,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Lauds"
   },
   {
    "d": 3,
@@ -143,6 +193,26 @@
    "note": ""
   },
   {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
+  },
+  {
+   "d": 4,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Lauds"
+  },
+  {
    "d": 4,
    "t": "06:30",
    "weeks": [],
@@ -156,7 +226,10 @@
    "d": 4,
    "t": "12:15",
    "weeks": [],
-   "except": [],
+   "except": [
+    1,
+    2
+   ],
    "type": "Mass",
    "lang": "English",
    "loc": "",
@@ -173,6 +246,26 @@
    "note": ""
   },
   {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
+  },
+  {
+   "d": 5,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Lauds"
+  },
+  {
    "d": 5,
    "t": "06:30",
    "weeks": [],
@@ -201,6 +294,28 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Hour"
   },
   {
    "d": 6,
@@ -243,17 +358,122 @@
    "note": ""
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-02",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Parish Holy Hour",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "12:45",
+   "language": "English",
+   "location": "",
+   "title": "Infant Baptism",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
-  "07:00",
-  "08:30"
+  "07:30"
  ],
- "notes": [],
- "info": {},
+ "notes": [
+  "No lunchtime Mass on the 1st and 2nd Thursday of the month.",
+  "Public holiday Mass times differ between the website and bulletin; check with the parish."
+ ],
+ "info": {
+  "adoration": "Adoration Room open daily until 10pm.",
+  "confession": "Weekend Confessions end before the Gloria during weekend Masses.",
+  "devotions": [
+   "Holy Hour: Every 1st Friday at 8pm.",
+   "Novena Devotion: Every Saturday at 3.30pm."
+  ],
+  "good_to_know": [
+   "No lunchtime Mass on the 1st and 2nd Thursday of the month due to priests' meeting and recollection.",
+   "Public holiday Mass: 7.30am (bulletin). Website lists 7am and 8.30am; check with the parish."
+  ]
+ },
+ "events": [
+  {
+   "date": "2026-10-01",
+   "time": "19:30",
+   "title": "Devotions and Sacramentals",
+   "text": "Thursdays 7.30-9.30pm, All Saints Hall. Dates: 1, 8, 15, 22 October 2026."
+  },
+  {
+   "date": "2026-10-03",
+   "time": "10:00",
+   "title": "Faith Enrichment - RCIA",
+   "text": "Saturdays 10am-12pm, All Saints Hall, effective 1 October 2026. Pre-registration is not required. All are welcome."
+  },
+  {
+   "date": "2026-10-13",
+   "time": "19:30",
+   "title": "Human Dignity and Development in the Era of AI by Fr David Garcia, OP",
+   "text": "7.30pm-10.00pm, Catholic Ctr. $15. Register at bit.ly/dignityoct."
+  },
+  {
+   "date": "2026-10-16",
+   "time": "",
+   "title": "A Journey of Discipleship Retreat #2",
+   "text": "16-18 Oct 2026, Friday-Sunday. 3-day stay-in retreat, $280, Catholic Spirituality Centre. Register at bit.ly/cscjdr2."
+  },
+  {
+   "date": "2026-10-23",
+   "time": "",
+   "title": "CHOICE Weekend Programme",
+   "text": "23-25 Oct, for unmarried young adults 18-40, single or dating. Venue: ME House, 201B Punggol 17th Ave S829651. Register at bit.ly/ChoiceSG26."
+  },
+  {
+   "date": "2026-10-30",
+   "time": "19:00",
+   "title": "These Catholic Men - A Fireside Chat on Masculinity by Catholic Family Life",
+   "text": "Friday 30 Oct 2026, 7.00pm-9.30pm, dinner provided, PICO Event Hall. Register via familylife.sg/TCMM."
+  },
+  {
+   "date": "2026-11-06",
+   "time": "",
+   "title": "Treasure #18 Retreat for Young Working Adults",
+   "text": "6-9 Nov 2026, Fri-Mon. Stay-in retreat, $163.50, St Francis Xavier Retreat Centre. For ages 21-35. Register at tinyurl.com/oyp-treasure18."
+  },
+  {
+   "date": "2026-11-21",
+   "time": "10:00",
+   "title": "OYP Outreach for Sec 4 & 5 Students",
+   "text": "Saturday 21 Nov 2026, 10am-1pm, Catholic Centre. Free. Register at tinyurl.com/SecOutreach26Nov."
+  }
+ ],
+ "bulletin": {
+  "url": "https://www.holycross.org.sg/images/bulletin/archive/bulletin-english-2026-09-27.pdf",
+  "date": "2026-09-27"
+ },
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [],
-  "only_on_mycatholic": []
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Thursday",
+    "12:15",
+    [],
+    [
+     1,
+     2
+    ]
+   ]
+  ],
+  "only_on_mycatholic": [
+   [
+    "Mass",
+    "Thursday",
+    "12:15",
+    [],
+    []
+   ]
+  ]
  }
 }

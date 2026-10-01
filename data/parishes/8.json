@@ -4,7 +4,7 @@
  "source_urls": [
   "https://holytrinity.org.sg/"
  ],
- "fetched_at": "2026-09-29T22:09+08:00",
+ "fetched_at": "2026-10-01T03:01+08:00",
  "fetch_mode": [
   "rendered"
  ],
@@ -94,6 +94,16 @@
   },
   {
    "d": 0,
+   "t": "16:55",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary"
+  },
+  {
+   "d": 0,
    "t": "17:00",
    "weeks": [],
    "except": [],
@@ -124,6 +134,16 @@
   },
   {
    "d": 1,
+   "t": "17:25",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": "Rosary"
+  },
+  {
+   "d": 1,
    "t": "18:00",
    "weeks": [],
    "except": [],
@@ -141,6 +161,26 @@
    "lang": "English",
    "loc": "Chapel",
    "note": ""
+  },
+  {
+   "d": 2,
+   "t": "16:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": "Prayer for Priests"
+  },
+  {
+   "d": 2,
+   "t": "17:25",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -161,6 +201,16 @@
    "lang": "English",
    "loc": "Chapel",
    "note": ""
+  },
+  {
+   "d": 3,
+   "t": "17:25",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -181,6 +231,16 @@
    "lang": "English",
    "loc": "Chapel",
    "note": ""
+  },
+  {
+   "d": 4,
+   "t": "17:25",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -201,6 +261,16 @@
    "lang": "English",
    "loc": "Chapel",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "17:25",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Chapel",
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -221,6 +291,16 @@
    "lang": "English",
    "loc": "Chapel",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:55",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -245,16 +325,43 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
- "notes": [],
+ "public_holiday_masses": [
+  "09:00"
+ ],
+ "notes": [
+  "On public holidays, the usual weekday Mass schedule is replaced by the public holiday Mass."
+ ],
  "info": {
-  "adoration": "Chapel is open every day 06:00-18:00.",
-  "confession": "Confessions are available 30 minutes before Saturday 5:30pm Mass and all Sunday Masses.",
-  "office_hours": "Parish Office: Monday to Friday 9am-6pm, closed for lunch 12pm-1pm; Saturday and Sunday 9am-1pm; closed on Public Holidays.",
+  "adoration": "Chapel is open daily 06:00–18:00.",
+  "confession": "Confessions are available 30 minutes before Saturday 17:30 Mass and all Sunday Masses.",
+  "devotions": [
+   "Rosary Prayer before Mass: Weekdays 17:25 at Chapel; Weekends 16:55 at Main Church.",
+   "Prayer for Priests: Tuesdays 16:50 at Chapel."
+  ],
+  "office_hours": "Parish Office: Monday–Friday 09:00–18:00 (closed 12:00–13:00 for lunch), Saturday and Sunday 09:00–13:00; closed on public holidays.",
   "good_to_know": [
-   "Weekday and Saturday morning Masses are in the Chapel.",
-   "Saturday evening and Sunday Masses are in the Main Church."
+   "All Masses are in English unless stated otherwise.",
+   "Church Wedding bookings are to be made 1 year in advance; enquire at the Parish Office.",
+   "Infant Baptism registration for December is open; documents are due by 30 November 2026."
   ]
+ },
+ "events": [
+  {
+   "date": "2026-10-02",
+   "time": "",
+   "title": "RCIA Mandarin",
+   "text": "RCIA Mandarin"
+  },
+  {
+   "date": "2026-10-24",
+   "time": "09:00",
+   "title": "At the Feet of the Good Shepherd Retreat",
+   "text": "At the Feet of the Good Shepherd Retreat, 24–25 October, from 09:00 Saturday to 17:00 Sunday, St Francis Xavier Retreat Centre. A specially commissioned retreat for those carrying inner wounds from broken family relationships. Mass is celebrated by Fr Eugene Vaz. Register at https://tinyurl.com/6aee"
+  }
+ ],
+ "bulletin": {
+  "url": "https://holytrinity.org.sg/uploads/2/file-1790302971343-231497874.pdf",
+  "date": "2026-09-27"
  },
  "disputes": [],
  "vs_mycatholic": {
