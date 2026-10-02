@@ -3,7 +3,7 @@
 const S = require("../public/schedule.js");
 const data = require("../public/data.json");
 const { planWay } = require("../public/way.js");
-const { tripMinutes } = require("../lib/onemap.js");
+const { tripMinutesWithin } = require("../lib/onemap.js");
 
 const MODES = new Set(["transit", "drive", "walk"]);
 const PLAN_DAYS = 7;
@@ -53,7 +53,7 @@ async function answer(req, res) {
   const lateMin = Math.max(0, Math.min(15, Number(u.searchParams.get("late")) || 0));
   const events = S.expandAll(data, depart - lateMin * 60000, 2).filter((e) => e.start >= depart - lateMin * 60000 && (by == null || e.start < by));
   const travel = async (a, b, departMs) => {
-    const t = await tripMinutes(a, b, mode, departMs);
+    const t = await tripMinutesWithin(a, b, mode, departMs);
     return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
   };
   const r = await planWay({ from, to, depart, arriveBy: by, mode, parishes: data.parishes, events, travel: fast ? null : travel, fast, lateMin });

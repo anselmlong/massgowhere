@@ -4,14 +4,24 @@
  "source_urls": [
   "https://transfiguration.sg/masstimings/"
  ],
- "fetched_at": "2026-09-28T02:23+08:00",
+ "fetched_at": "2026-10-02T12:41+08:00",
  "fetch_mode": [
-  "static"
+  "rendered"
  ],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "L2 Confessionals",
+   "note": "30 minutes before all weekend Masses when a priest is available"
+  },
   {
    "d": 0,
    "t": "08:30",
@@ -20,7 +30,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary 40 minutes before Mass"
+  },
+  {
+   "d": 0,
+   "t": "10:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "L2 Confessionals",
+   "note": "30 minutes before all weekend Masses when a priest is available"
   },
   {
    "d": 0,
@@ -30,7 +50,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary 40 minutes before Mass"
+  },
+  {
+   "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "L2 Confessionals",
+   "note": "30 minutes before all weekend Masses when a priest is available"
   },
   {
    "d": 0,
@@ -40,7 +70,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary 40 minutes before Mass"
   },
   {
    "d": 1,
@@ -54,23 +84,13 @@
   },
   {
    "d": 1,
-   "t": "07:00",
+   "t": "15:00",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
-  },
-  {
-   "d": 1,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
+   "loc": "St Thérèse, L3 Room 3.4",
+   "note": "Intercessory prayer"
   },
   {
    "d": 1,
@@ -80,7 +100,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary 40 minutes before Mass"
   },
   {
    "d": 2,
@@ -94,32 +114,22 @@
   },
   {
    "d": 2,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
-  },
-  {
-   "d": 2,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
-  },
-  {
-   "d": 2,
    "t": "18:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
+   "note": "Rosary 40 minutes before Mass"
+  },
+  {
+   "d": 2,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Adoration Room",
    "note": ""
   },
   {
@@ -134,23 +144,13 @@
   },
   {
    "d": 3,
-   "t": "07:00",
+   "t": "15:00",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
-  },
-  {
-   "d": 3,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
+   "loc": "St Thérèse, L3 Room 3.4",
+   "note": "Intercessory prayer"
   },
   {
    "d": 3,
@@ -160,7 +160,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary 40 minutes before Mass"
   },
   {
    "d": 4,
@@ -174,33 +174,13 @@
   },
   {
    "d": 4,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
-  },
-  {
-   "d": 4,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
-  },
-  {
-   "d": 4,
    "t": "18:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary 40 minutes before Mass"
   },
   {
    "d": 4,
@@ -209,10 +189,20 @@
     1
    ],
    "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "Church Hall",
+   "note": "Holy Hour with Reparation"
+  },
+  {
+   "d": 4,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Eucharistic Healing; moved to following Thursday if it falls on a Public Holiday"
+   "loc": "L3 Auditorium",
+   "note": "Charismatic Prayer Community"
   },
   {
    "d": 5,
@@ -226,23 +216,13 @@
   },
   {
    "d": 5,
-   "t": "07:00",
+   "t": "15:00",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
-  },
-  {
-   "d": 5,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
+   "loc": "St Thérèse, L3 Room 3.4",
+   "note": "Intercessory prayer"
   },
   {
    "d": 5,
@@ -252,7 +232,29 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary 40 minutes before Mass"
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "Church Hall",
+   "note": "Holy Hour with Reparation"
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "Chinese",
+   "loc": "L4 Room 4.2",
+   "note": "Chinese Prayer Group"
   },
   {
    "d": 6,
@@ -266,23 +268,13 @@
   },
   {
    "d": 6,
-   "t": "07:00",
+   "t": "15:30",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary"
-  },
-  {
-   "d": 6,
-   "t": "15:20",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Daily Rosary before 4pm Sunset Mass"
+   "loc": "L2 Confessionals",
+   "note": "30 minutes before all weekend Masses when a priest is available"
   },
   {
    "d": 6,
@@ -292,7 +284,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Saturday Sunset Mass"
+   "note": "Rosary 40 minutes before Mass"
   }
  ],
  "dated": [],
@@ -301,9 +293,28 @@
   "08:30"
  ],
  "notes": [
-  "Days of Obligation (weekdays): 6.30am & 8.00pm.",
-  "Eucharistic Healing: first Thursdays, 8.00pm; if it falls on a public holiday, held on the following Thursday."
+  "Weekday Masses are at 6.30am and 6.30pm; on public holidays there is a single Mass at 8.30am."
  ],
+ "info": {
+  "adoration": "Adoration Room: weekdays 7am-10pm, weekends 7am-8pm, public holidays 9am-5pm. Closed on Mondays, 9am-2pm (cleaning); on 1st Mondays 9am-4pm. Holy Hour with Reparation: 1st Thursday 8pm and 1st Friday 8pm, Church Hall.",
+  "confession": "L2 Confessionals, 30 minutes before all weekend Masses when a priest is available.",
+  "devotions": [
+   "Intercessory prayer: Mondays, Wednesdays and Fridays 3pm, St Thérèse, L3 Room 3.4",
+   "Prayer meeting: Tuesdays 8pm, Adoration Room",
+   "Charismatic Prayer Community: Thursdays 8pm, L3 Auditorium",
+   "Chinese Prayer Group: Fridays 8pm, L4 Room 4.2"
+  ],
+  "office_hours": "Weekdays 9am-8pm (lunch break 12pm-1pm); Saturday 9am-6pm (lunch break 12pm-1pm); Sunday 9am-6pm (lunch break 1pm-2pm).",
+  "good_to_know": [
+   "51 Punggol Central, Singapore 828725",
+   "Parish office: 6341 9718, secretary@transfiguration.sg"
+  ]
+ },
+ "events": [],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2609281047_04_Oct%202026.pdf?alt=media&token=97dadb3f-1d57-44f1-96d9-071975ed3b33",
+  "date": "2026-09-28"
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

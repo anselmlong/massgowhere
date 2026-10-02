@@ -4,7 +4,7 @@
  "source_urls": [
   "https://sjcvs.org.sg/"
  ],
- "fetched_at": "2026-09-29T18:29+08:00",
+ "fetched_at": "2026-10-02T12:37+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -90,7 +90,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Eucharistic Adoration & The Sacred Heart Devotion"
+   "note": ""
   },
   {
    "d": 5,
@@ -120,10 +120,15 @@
  ],
  "notes": [],
  "info": {
-  "confession": "Daily 45 mins before Mass. Fridays between 11am and 1pm. 30 mins before Spanish Mass on Sundays.",
-  "devotions": [
-   "Eucharistic Adoration & The Sacred Heart Devotion on Fridays at 5:30pm"
+  "confession": "Confession is available daily 45 minutes before Mass and Fridays between 11am and 1pm. Confessions are available 30 minutes before the Spanish Mass.",
+  "good_to_know": [
+   "Opening hours: Mon–Fri 10.00am–7.30pm; Sat 9.00am–7.00pm; Sun 9.00am–7.00pm; Public Holidays 9.00am–11.00am."
   ]
+ },
+ "events": [],
+ "bulletin": {
+  "url": "https://drive.google.com/file/d/1dwk6DerWcMvJz614-ePobgFR7rGmmPBt/view?usp=sharing",
+  "date": "2026-09-27"
  },
  "disputes": [],
  "vs_mycatholic": {

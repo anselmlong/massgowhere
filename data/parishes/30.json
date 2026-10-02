@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.svdp.sg/"
  ],
- "fetched_at": "2026-09-29T18:30+08:00",
+ "fetched_at": "2026-10-02T12:39+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -52,7 +52,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "5th Sunday of the month"
+   "note": "Indonesian Mass"
   },
   {
    "d": 0,
@@ -368,23 +368,34 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "No 6pm Mass on 23-25 Sep 2026 (Feast Day Masses at 8pm)."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room open 7am-6pm daily; closed on public holidays.",
-  "confession": "30 minutes to 10 minutes before all weekend Masses.",
-  "devotions": [
-   "Rosary: Mon-Sat 6:15am and 5:30pm; Sundays 30 minutes before Mass",
-   "Divine Mercy: Wednesdays 5pm, St Faustina Room",
-   "Liturgy of the Hours (Divine Office): Mon-Fri 7:45am, St Faustina Room"
-  ],
-  "office_hours": "Mon-Fri 9am-12pm and 1pm-6pm; Sat 9am-12pm and 5pm-6pm; Sun 8am-12pm and 5pm-6pm; closed on public holidays.",
-  "good_to_know": [
-   "Parking on church grounds: Mon-Fri 6am-8am and 5pm-7pm; Sat 6am-7.30pm; Sun 6am-1pm and 5pm-7.30pm.",
-   "Bus services 50, 70, 70A, 70B, 70M, 103, 104 and 854; closest MRT Buangkok/Thanggam (not nearby).",
-   "Address: 301 Yio Chu Kang Road, Singapore 805910."
-  ]
+  "adoration": "Adoration Room is open every day from 07:00 to 18:00; closed on Public Holidays.",
+  "confession": "Confession is available 30 minutes to 10 minutes before all weekend Masses."
+ },
+ "events": [
+  {
+   "date": "2026-10-10",
+   "time": "",
+   "title": "BRAVE: Work Well, Live Well",
+   "text": "Organised by Catholic Business Network & Clarity Singapore to commemorate World Mental Health Day. Open to all aged 18 and above. Food and refreshments will be provided. Converse and reflect on how faith can shape the way we work, lead and care for one another. Venue: Metro Y Hotel. Fee: $50. Regist"
+  },
+  {
+   "date": "2026-10-17",
+   "time": "",
+   "title": "Young Missionaries of Hope: One in Christ, United in Mission",
+   "text": "Virtual ZOOM event. As the Church celebrates 100 years of World Mission Sunday, reflect on how we can be young missionary disciples in our own context. Keynote speech by Cardinal \"Ambo\", Vice-President of The Federation of Asian Bishops' Conferences, with Catholics from Myanmar, Cambodia, the Philip"
+  },
+  {
+   "date": "2026-11-08",
+   "time": "",
+   "title": "Seniors Ministry Pilgrimage Tour",
+   "text": "EmmausElders@SVDP is organising a special pilgrimage tour for seniors to Church of St Mary of the Angels in conjunction with the Jubilee Year of St Francis of Assisi. Scan the QR code or pick up and submit a completed form to the Parish office."
+  }
+ ],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2609281016_FEAST_OF%20ST%20VINCENT%20DE%20PAUL%20-%2027%20Sept%202026.pdf?alt=media&token=9b13037e-6e9a-416d-9a19-8c7b27296485",
+  "date": "2026-09-28"
  },
  "disputes": [],
  "vs_mycatholic": {

@@ -4,7 +4,7 @@
  "source_urls": [
   "https://saint-anthony.org/mass-schedules-devotion-timings-singapore-mass-timing-schedule/"
  ],
- "fetched_at": "2026-09-29T18:27+08:00",
+ "fetched_at": "2026-10-02T12:36+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -186,20 +186,51 @@
    "note": ""
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-07",
+   "time": "18:30",
+   "language": "English",
+   "location": "",
+   "title": "Feast of Our Lady of the Rosary",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-17",
+   "time": "19:30",
+   "language": "English",
+   "location": "Church Hall",
+   "title": "Living Rosary",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "07:30"
  ],
  "notes": [
-  "No usual weekday evening Mass on public holidays."
+  "On weekday public holidays, the church closes after morning Mass and vehicles should be removed from church premises after Mass.",
+  "No devotions on public holidays that fall on weekdays except Days of Obligation."
  ],
  "info": {
+  "confession": "Confessions are 15 minutes before Mass.",
+  "devotions": [
+   "Devotion to St Anthony of Padua after the 6.30 PM Mass on Tuesdays.",
+   "Devotion to the Sacred Heart on the 1st Friday of the month after the 6.30 PM Mass."
+  ],
+  "office_hours": "Monday to Saturday: 9am to 5pm; Sunday: 9am to 1pm; Public Holidays: Closed.",
   "good_to_know": [
-   "Special Mass timings for days of obligation, feast days, liturgical seasons and major solemnities are in the Parish Bulletin or mycatholic.sg.",
-   "No devotions on public holidays that fall on weekdays except Days of Obligation.",
-   "Church is closed after the public holiday morning Mass; vehicles should be removed from church premises after Mass."
+   "On weekday public holidays, Mass is at 07:30 and there is no 18:30 Mass.",
+   "The church closes after morning Mass on public holidays and all vehicles should be removed from church premises after Mass.",
+   "No devotions on public holidays that fall on weekdays except for Days of Obligation."
   ]
+ },
+ "events": [],
+ "bulletin": {
+  "url": "https://saint-anthony.org/wp-content/uploads/2026/09/Voice-2026_09_27.pdf",
+  "date": "2026-09-27"
  },
  "disputes": [],
  "vs_mycatholic": {

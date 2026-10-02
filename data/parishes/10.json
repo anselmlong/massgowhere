@@ -4,7 +4,7 @@
  "source_urls": [
   "https://ourladyoflourdes.sg/"
  ],
- "fetched_at": "2026-10-01T03:01+08:00",
+ "fetched_at": "2026-10-02T12:34+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -62,7 +62,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "",
-   "note": "1st Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -74,7 +74,7 @@
    "type": "Mass",
    "lang": "Bahasa Indonesia",
    "loc": "",
-   "note": "2nd Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -94,7 +94,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 1,
@@ -124,7 +124,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": ""
   },
   {
    "d": 2,
@@ -154,7 +154,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 3,
@@ -184,7 +184,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 4,
@@ -214,7 +214,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 5,
@@ -244,7 +244,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Devotion to Our Lady of Good Health (Vailankkani)"
+   "note": ""
   },
   {
    "d": 6,
@@ -278,33 +278,32 @@
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Public holiday Masses replace regular weekday Masses.",
-  "Parish Office and Bookshop are closed on public holidays.",
-  "Confession is before Mass, not at fixed times."
+  "Public holiday Masses are for Mon-Fri public holidays.",
+  "On public holidays, the Parish Office is closed and the Main Church entrance gates close at 17:00.",
+  "The website lists Saturday English Masses at 16:00 and 18:30, Sunday English Masses at 07:30 and 11:30, and the Saturday Vailankkani Devotion at 17:30; the bulletin lists Saturday English Masses at 17:00, 18:15 and 19:30, Sunday English Masses at 08:00, 11:00 and 12:30, and the Vailankkani Devotion at 16:00; check with the parish."
  ],
  "info": {
-  "adoration": "Adoration Room: Monday–Sunday 8am–8pm.",
-  "confession": "Sacrament of Reconciliation is available 30 minutes before Mass; the bulletin says 15 minutes before weekend Masses; check with the parish.",
+  "adoration": "Adoration Room: Monday-Sunday 08:00-20:00.",
+  "confession": "Confessions: 15 minutes before weekend Masses (bulletin) and 30 minutes before Mass (website); check with the parish.",
   "devotions": [
-   "Rosary: Mon, Wed, Thu & Fri at 11:45am.",
-   "Divine Mercy Devotion: Tue at 11:45am.",
-   "Devotion to Our Lady of Good Health (Vailankkani): Saturday at 4:00pm in English."
+   "Rosary: Monday, Wednesday, Thursday and Friday at 11:45.",
+   "Divine Mercy Devotion: Tuesday at 11:45.",
+   "Devotion to Our Lady of Good Health (Vailankkani): Saturday at 16:00 in English."
   ],
-  "office_hours": "Parish Office: Mon–Fri 10am–6pm, Sat 2pm–8pm, Sun 9am–2pm. Closed on public holidays.",
+  "office_hours": "Parish Office: Monday-Friday 10:00-18:00, Saturday 14:00-20:00, Sunday 09:00-14:00. Closed on public holidays.",
   "good_to_know": [
-   "Main entrance gates of the Church close at 5pm on public holidays.",
-   "Bookshop: Sat 4pm–7:30pm, Sun 8:30am–2pm. Closed on public holidays.",
-   "Dress code: knees and shoulders covered; no shorts, skirts, dresses, ripped jeans, see-through clothing, offensive tattoos, or hats/caps in the Main Church.",
-   "No food or drinks, no laser pointers; phones must be silent. Smoking only in designated areas."
+   "Dress code: shoulders and knees must be covered; no shorts, skirts, ripped jeans, see-through clothing, offensive tattoos, or hats inside the Main Church.",
+   "No food or drinks are allowed in the Main Church.",
+   "Mobile phones must be kept on silent mode inside the Main Church."
   ]
  },
  "events": [],
  "bulletin": {
-  "url": "https://img1.wsimg.com/blobby/go/55e0d736-f8b4-41e9-9f10-503718f68607/20260927_26th%20OT.pdf",
-  "date": "2026-09-27"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2609261243_20260927_26th_OT.pdf?alt=media&token=adb88e97-6773-40bd-87e0-e296ece60f73",
+  "date": "2026-09-26"
  },
  "disputes": [],
  "vs_mycatholic": {

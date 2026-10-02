@@ -1,5 +1,5 @@
 {
-"asOf": "2026-09-29",
+"asOf": "2026-10-02",
 "rules": {
 "1": [
 {
@@ -7974,6 +7974,24 @@
 {
 "k": "r",
 "date": "2026-11-09",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls Day"
+},
+{
+"k": "r",
+"date": "2026-11-02",
 "type": "Mass",
 "t": "18:30",
 "lang": "English",

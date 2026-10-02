@@ -11,6 +11,7 @@ import json
 import logging
 import os
 import re
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -54,7 +55,14 @@ def http_json(url, data=None, timeout=40):
 
 
 def tg(method, **params):
-    return http_json(f"{TG}/{method}", params)
+    try:
+        return http_json(f"{TG}/{method}", params)
+    except urllib.error.HTTPError as e:  # say what Telegram said ("message is not modified", "query is too old")
+        try:
+            desc = json.load(e).get("description", "")
+        except Exception:  # noqa: BLE001
+            desc = ""
+        raise RuntimeError(f"telegram {method} {e.code}: {desc}") from None
 
 
 # ---------- state ----------
@@ -205,8 +213,14 @@ def gmaps(parish, mode, lat, lng):
     return f"https://www.google.com/maps/dir/?api=1&destination={dest}&travelmode={MODES[mode][2]}&origin={lat},{lng}"
 
 
-def mode_keyboard(current):
-    return [[{"text": ("• " if k == current else "") + v[0], "callback_data": f"mode:{k}"} for k, v in MODES.items()]]
+def at_code(lat, lng):
+    return f"{lat:.5f},{lng:.5f}"
+
+
+def mode_keyboard(current, at=None):
+    """at: (lat, lng) of the answer the buttons sit under; a tap redoes that answer by the new mode"""
+    suffix = f":{at_code(*at)}" if at else ""
+    return [[{"text": ("• " if k == current else "") + v[0], "callback_data": f"mode:{k}{suffix}"} for k, v in MODES.items()]]
 
 
 WAY_BUTTON = "Catch a Mass on the way"
@@ -226,34 +240,87 @@ WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can attend, and tel
 # ---------- answers ----------
 
 LIVE_WAIT_S = 3  # wait this long for live travel times before showing the estimate, so most answers appear once
-LIVE_POOL = cf.ThreadPoolExecutor(max_workers=4)
+LIVE_POOL = cf.ThreadPoolExecutor(max_workers=16)  # two requests per answer; room for several chats at once
+
+# Newest request wins. Each update that asks for an answer (a location, a place, a mode or Sunday tap, an "on the
+# way" time) bumps its chat's number; work started for an older number stops waiting and never edits the chat, so a
+# quick second tap is answered at once instead of queueing behind the first answer.
+GEN = {}
+_here = threading.local()
+
+
+class Superseded(Exception):
+    pass
+
+
+def superseded():
+    chat = getattr(_here, "chat", None)
+    return chat is not None and GEN.get(chat, 0) != getattr(_here, "gen", 0)
+
+
+def wait_for(fut, secs):
+    """fut.result(), checking every quarter second whether a newer request has replaced this one"""
+    end = time.time() + secs
+    while True:
+        if superseded():
+            raise Superseded()
+        try:
+            return fut.result(timeout=max(0.01, min(0.25, end - time.time())))
+        except cf.TimeoutError:
+            if fut.done() or time.time() >= end:
+                raise
 
 
 def live_then_estimate(live_url, fast_url, show_live, show_estimate, on_fail):
-    """Start the live request; if it lands within LIVE_WAIT_S show only that. Otherwise show the estimate, then
-    the live answer as an edit when it comes; if live fails, keep the estimate (show_estimate(res, final=True))."""
+    """Ask for the live answer and the estimate together. If live lands within LIVE_WAIT_S, show only that;
+    otherwise show the estimate (usually ready by then), then the live answer as an edit when it comes. If live
+    fails, keep the estimate (show_estimate(res, final=True))."""
     live = LIVE_POOL.submit(http_json, live_url, timeout=20)
+    fast = LIVE_POOL.submit(http_json, fast_url, timeout=8)
     try:
-        return show_live(live.result(timeout=LIVE_WAIT_S))
-    except cf.TimeoutError:
-        pass
-    except Exception as e:  # noqa: BLE001 - live failed quickly; fall through to the estimate
-        log.warning("live api error: %s", e)
-    estimate = None
-    try:
-        estimate = http_json(fast_url, timeout=8)
-        show_estimate(estimate, False)
-    except Exception as e:  # noqa: BLE001
-        log.warning("fast api error: %s", e)
-    try:
-        return show_live(live.result(timeout=20))
-    except Exception as e:  # noqa: BLE001
-        log.warning("api error: %s", e)
-        return show_estimate(estimate, True) if estimate else on_fail()
+        try:
+            res = wait_for(live, LIVE_WAIT_S)
+        except cf.TimeoutError:
+            res = None
+        except Superseded:
+            raise
+        except Exception as e:  # noqa: BLE001 - live failed quickly; fall through to the estimate
+            log.warning("live api error: %s", e)
+            res = None
+        if res is not None:
+            return show_live(res)  # outside the waits: a Telegram error here is not "live was slow"
+        estimate = None
+        try:
+            estimate = wait_for(fast, 8)
+        except Superseded:
+            raise
+        except Exception as e:  # noqa: BLE001
+            log.warning("fast api error: %s", e)
+        if estimate is not None:
+            show_estimate(estimate, False)
+        try:
+            res = wait_for(live, 20)
+        except Superseded:
+            raise
+        except Exception as e:  # noqa: BLE001
+            log.warning("api error: %s", e)
+            return show_estimate(estimate, True) if estimate else on_fail()
+        return show_live(res)
+    except Superseded:
+        return None
 
 def in_singapore(lat, lng):
     # same rough box as api/next.js; a box cannot fully separate Woodlands from Johor Bahru, the API is the last word
     return 1.15 < lat < 1.475 and 103.59 < lng < 104.1
+
+
+def drop_placeholder(chat_id, msg_id):
+    """a newer request took over before this one showed anything: don't leave "Looking for…" behind"""
+    if msg_id:
+        try:
+            tg("deleteMessage", chat_id=chat_id, message_id=msg_id)
+        except Exception as e:  # noqa: BLE001 - e.g. it already shows an answer, which can stay
+            log.warning("delete failed: %s", e)
 
 
 def placeholder(chat_id, text):
@@ -265,8 +332,9 @@ def placeholder(chat_id, text):
         return None
 
 
-def answer(chat_id, lat, lng, place=None, msg_id=None, sunday=False):
-    """sunday: only Masses for the Sunday obligation (Sunday, or a Saturday Sunset Mass from 4pm)."""
+def answer(chat_id, lat, lng, place=None, msg_id=None, sunday=False, update_tapped=None):
+    """sunday: only Masses for the Sunday obligation (Sunday, or a Saturday Sunset Mass from 4pm).
+    update_tapped: the message id of the answer whose button was tapped; it is replaced in place, not repeated."""
     mode = mode_for(chat_id)
     LAST_SUNDAY[chat_id] = sunday  # changing the travel mode re-asks the same question
 
@@ -274,23 +342,32 @@ def answer(chat_id, lat, lng, place=None, msg_id=None, sunday=False):
         extra = {"parse_mode": "HTML", "link_preview_options": {"is_disabled": True}} if html else {}
         if kb is not None:
             extra["reply_markup"] = {"inline_keyboard": kb}
+        if superseded():
+            return None  # a newer request from this chat has taken over
         if msg_id:
             try:
                 return tg("editMessageText", chat_id=chat_id, message_id=msg_id, text=text, **extra)
-            except Exception as e:  # noqa: BLE001 - e.g. "message is not modified"; fall through to a new message
+            except Exception as e:  # noqa: BLE001 - fall through to a new message, unless nothing changed
+                if "not modified" in str(e):
+                    return None
                 log.warning("edit failed: %s", e)
         return tg("sendMessage", chat_id=chat_id, text=text, **extra)
 
+    what = "a Sunday or Sunset Mass" if sunday else "a Mass"
+    if update_tapped and not msg_id:
+        msg_id = update_tapped
+        show(f"Looking for {what} {MODES[mode][1]}…", html=False)
     if not in_singapore(lat, lng):
         return show("That location isn't in Singapore. MassGoWhere only covers Singapore's parishes; "
                     "send a Singapore postal code or place name instead.", html=False)
+    own = None  # the "Looking for…" message this answer made, removed if a newer request takes over
     if not msg_id:
-        what = "a Sunday or Sunset Mass" if sunday else "a Mass"
-        msg_id = placeholder(chat_id, f"Looking for {what} near {place}…" if place else f"Looking for {what} near you…")
+        msg_id = own = placeholder(chat_id, f"Looking for {what} near {place}…" if place else f"Looking for {what} near you…")
     build = urllib.parse.urlencode({"lat": f"{lat:.5f}", "lng": f"{lng:.5f}", "mode": mode, **({"sunday": "1"} if sunday else {})})
     # under every answer: switch between the next Mass and one that counts for Sunday
-    switch = [[{"text": "Any Mass instead", "callback_data": "sun:0"} if sunday else
-               {"text": "Sunday or Sunset Mass", "callback_data": "sun:1"}]]
+    here = at_code(lat, lng)
+    switch = [[{"text": "Any Mass instead", "callback_data": f"sun:0:{here}"} if sunday else
+               {"text": "Sunday or Sunset Mass", "callback_data": f"sun:1:{here}"}]]
 
     def paint(res, fast):
         """(text, keyboard) for an /api/next payload. fast -> "about" flagged on estimates."""
@@ -300,7 +377,7 @@ def answer(chat_id, lat, lng, place=None, msg_id=None, sunday=False):
             return ("I couldn't find {what} you can reach {when}{where} {mode}. Try another way of travelling.".format(
                         what="a Sunday or Sunset Mass" if sunday else "a Mass", when="this week" if sunday else "in the next two days",
                         where=where, mode=MODES[mode][1]),
-                    switch + mode_keyboard(mode) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]])
+                    switch + mode_keyboard(mode, (lat, lng)) + [[{"text": "Browse all churches", "url": f"{SITE}/#/churches"}]])
         p = b["parish"]
         about = "about " if b.get("travelSource") == "estimate" else ""
         how = "walk" if b.get("walk") else mode  # bus & MRT mode, but it's quicker on foot
@@ -329,20 +406,23 @@ def answer(chat_id, lat, lng, place=None, msg_id=None, sunday=False):
         kb = [[{"text": "Navigate", "url": gmaps(p, how, lat, lng)}],
               [{"text": "Mass times at this church", "url": f"{SITE}/#/church/{p['id']}"}],
               # the same answer on the website, where you can also pick a later leave time
-              [{"text": f"Open on {SITE_NAME}", "url": f"{SITE}/#/next?{build}&" + urllib.parse.urlencode({"from": place or "your location"})}]] + switch + mode_keyboard(mode)
+              [{"text": f"Open on {SITE_NAME}", "url": f"{SITE}/#/next?{build}&" + urllib.parse.urlencode({"from": place or "your location"})}]] + switch + mode_keyboard(mode, (lat, lng))
         return ("\n".join(lines), kb)
 
     # placeholder (already on screen) -> the live answer, or the estimate first when live is slow; each an edit
-    live_then_estimate(
+    shown = live_then_estimate(
         f"{SITE}/api/next?{build}", f"{SITE}/api/next?{build}&fast=1",
         lambda res: show(*paint(res, fast=False)),
         lambda res, final: show(*paint(res, fast=not final)),
-        lambda: show("Sorry, I couldn't check Mass times just now. Please try again in a minute.", mode_keyboard(mode)))
+        lambda: show("Sorry, I couldn't check Mass times just now. Please try again in a minute.", mode_keyboard(mode, (lat, lng))))
+    if superseded():
+        drop_placeholder(chat_id, own)
+    return shown
 
 
 def search_place(text):
     q = urllib.parse.urlencode({"searchVal": text, "returnGeom": "Y", "getAddrDetails": "Y", "pageNum": 1})
-    res = http_json(f"https://www.onemap.gov.sg/api/common/elastic/search?{q}", timeout=15).get("results") or []
+    res = http_json(f"https://www.onemap.gov.sg/api/common/elastic/search?{q}", timeout=6).get("results") or []
     if not res:
         return None
     x = res[0]
@@ -376,6 +456,15 @@ def send_feedback(msg, text):
         log.warning("feedback not logged: %s", e)
 
 
+def thank_for_feedback(msg, chat_id, text):
+    try:
+        send_feedback(msg, text)
+    except Exception as e:  # noqa: BLE001 - say so rather than thank them for a message that went nowhere
+        log.warning("feedback not sent: %s", e)
+        return tg("sendMessage", chat_id=chat_id, text="Sorry, that didn't go through. Please try /feedback again in a moment.")
+    return tg("sendMessage", chat_id=chat_id, text="Thank you! Anselm will read it.", reply_markup=LOCATION_KB)
+
+
 def maybe_nudge(chat_id):
     """Now and then (after the 3rd and 15th answer), ask how it's going. Never more than that."""
     try:
@@ -402,7 +491,8 @@ def maybe_nudge(chat_id):
 # ---------- a Mass on the way ----------
 # Tap the button, say where you're going (and optionally by when); the bot finds the Mass that adds least to the trip.
 # From is where you last shared or searched (if within 30 minutes), otherwise it asks.
-WAY = {}  # chat id -> {"step": "from"|"to"|"by", "from": (lat, lng, label), "to": (lat, lng, label)}
+WAY = {}  # chat id -> {"step": "from"|"to"|"by", "from": (lat, lng, label), "to": (lat, lng, label), "at": started}
+WAY_TTL_S = 10 * 60  # an "on the way" left half done is forgotten after this, so a later location is just a search
 BY_KB = [[{"text": "No rush", "callback_data": "way:by:0"}, {"text": "In 1 hour", "callback_data": "way:by:1"}],
          [{"text": "In 2 hours", "callback_data": "way:by:2"}, {"text": "In 3 hours", "callback_data": "way:by:3"}]]
 
@@ -418,27 +508,41 @@ def parse_clock(text):
     if ap:
         h = h % 12 + (12 if ap == "pm" else 0)
     now = datetime.now(SGT)
-    t = now.replace(hour=h, minute=mi, second=0, microsecond=0)
-    if t <= now:
-        t += timedelta(days=1)
+
+    def next_at(hh):
+        t = now.replace(hour=hh, minute=mi, second=0, microsecond=0)
+        return t + timedelta(days=1) if t <= now else t
+    # "7" at 3pm means 7pm today, not 7am tomorrow: a bare 1-11 is whichever of am and pm comes sooner
+    t = min(next_at(h), next_at(h + 12)) if not ap and 1 <= h <= 11 else next_at(h)
     return int(t.timestamp() * 1000)
+
+
+def haversine_km(a, b):
+    import math
+    (la1, ln1), (la2, ln2) = (math.radians(a[0]), math.radians(a[1])), (math.radians(b[0]), math.radians(b[1]))
+    h = math.sin((la2 - la1) / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin((ln2 - ln1) / 2) ** 2
+    return 12742 * math.asin(math.sqrt(h))
 
 
 def way_start(chat_id):
     fresh = chat_id in LAST and time.time() - LAST_AT.get(chat_id, 0) < 30 * 60
     if fresh:
-        WAY[chat_id] = {"step": "to", "from": LAST[chat_id]}
+        WAY[chat_id] = {"step": "to", "from": LAST[chat_id], "at": time.time()}
         where = LAST[chat_id][2] or "where you shared"
         return tg("sendMessage", chat_id=chat_id, parse_mode="HTML",
                   text=f"Starting from <b>{esc(where)}</b>. Where are you heading? Send a postal code or place name.",
                   reply_markup={"inline_keyboard": [[{"text": "Start somewhere else", "callback_data": "way:from"}]]})
-    WAY[chat_id] = {"step": "from"}
+    WAY[chat_id] = {"step": "from", "at": time.time()}
     return tg("sendMessage", chat_id=chat_id,
               text="Where are you now? Tap Share my location, or send a postal code or place name.", reply_markup=LOCATION_KB)
 
 
 def way_got_place(chat_id, place):
     w = WAY[chat_id]
+    w["at"] = time.time()
+    if w["step"] == "to" and w.get("from") and haversine_km(w["from"], place) < 0.3:
+        return tg("sendMessage", chat_id=chat_id, text="That's where you're starting from. Where are you heading? Send a postal code or place name.",
+                  reply_markup={"inline_keyboard": [[{"text": "Start somewhere else", "callback_data": "way:from"}]]})
     if w["step"] == "from":
         w.update(step="to", **{"from": place})
         return tg("sendMessage", chat_id=chat_id, text="Where are you heading? Send a postal code or place name.")
@@ -463,13 +567,16 @@ def way_answer(chat_id, by_ms=None):
     site = f"{SITE}/#/way?" + urllib.parse.urlencode({**q, "fromName": flabel, "toName": tlabel})
 
     def show(text, kb):
+        if superseded():
+            return None
         extra = {"parse_mode": "HTML", "link_preview_options": {"is_disabled": True}, "reply_markup": {"inline_keyboard": kb}}
         if msg_id:
             try:
                 return tg("editMessageText", chat_id=chat_id, message_id=msg_id, text=text, **extra)
-            except Exception as e:  # noqa: BLE001 - e.g. "message is not modified"
+            except Exception as e:  # noqa: BLE001 - "not modified" is fine; anything else: send it fresh
+                if "not modified" in str(e):
+                    return None
                 log.warning("edit failed: %s", e)
-                return None
         return tg("sendMessage", chat_id=chat_id, text=text, **extra)
 
     def paint(res, fast):
@@ -509,12 +616,16 @@ def way_answer(chat_id, by_ms=None):
         lambda res: show(*paint(res, fast=False)),
         lambda res, final: show(*paint(res, fast=not final)),
         lambda: show("Sorry, I couldn't plan that just now. Please try again in a minute.", [[{"text": "Try it on the website", "url": site}]]))
+    if superseded():
+        return drop_placeholder(chat_id, msg_id)
     maybe_nudge(chat_id)
 
 
 def ack(cq, text=None):
     """Stop the button's spinner. Best effort: Telegram refuses (400 "query is too old") once a tap has
     waited too long, e.g. across a restart, and the tap must still change the answer."""
+    if cq["id"] in ACKED and not cq.get("_force"):
+        return  # the poll loop already answered this tap
     try:
         tg("answerCallbackQuery", callback_query_id=cq["id"], **({"text": text} if text else {}))
     except Exception as e:  # noqa: BLE001
@@ -526,11 +637,26 @@ def handle(update):
         cq = update["callback_query"]
         data = cq.get("data", "")
         chat_id = (cq.get("message") or {}).get("chat", {}).get("id")
+        tapped = (cq.get("message") or {}).get("message_id")
         if not chat_id:
             return ack(cq, "Please send /start again.")
+        AWAITING_FEEDBACK.discard(chat_id) if data != "fb:cancel" else None
+        # mode and Sunday buttons carry the place of the answer they sit under ("mode:walk:1.35130,103.84920");
+        # older buttons don't, and fall back to the chat's last search
+        kind, _, rest = data.partition(":")
+        val, _, where = rest.partition(":")
+        spot = None
+        if where:
+            try:
+                la, ln = (float(x) for x in where.split(","))
+                last = LAST.get(chat_id)
+                spot = (la, ln, last[2] if last and at_code(*last[:2]) == at_code(la, ln) else None)
+            except ValueError:
+                spot = None
+        spot = spot or LAST.get(chat_id)
         if data == "way:from":
             ack(cq)
-            WAY[chat_id] = {"step": "from"}
+            WAY[chat_id] = {"step": "from", "at": time.time()}
             return tg("sendMessage", chat_id=chat_id, text="Where are you starting from? Tap Share my location, or send a postal code or place name.",
                       reply_markup=LOCATION_KB)
         if data.startswith("way:by:"):
@@ -539,24 +665,26 @@ def handle(update):
                 return tg("sendMessage", chat_id=chat_id, text=f"Tap {WAY_BUTTON} to start again.", reply_markup=LOCATION_KB)
             hours = int(data.rsplit(":", 1)[1] or 0)
             return way_answer(chat_id, int((time.time() + hours * 3600) * 1000) if hours else None)
-        if data in ("sun:0", "sun:1"):
-            if chat_id not in LAST:
-                return ack(cq, "Share your location or send a postal code first.")
-            ack(cq, "Sunday or Sunset Mass" if data == "sun:1" else "Any Mass")
+        if kind == "sun" and val in ("0", "1"):
+            if not spot:
+                return tg("sendMessage", chat_id=chat_id, text="Share your location or send a postal code first.", reply_markup=LOCATION_KB)
+            ack(cq, "Sunday or Sunset Mass" if val == "1" else "Any Mass")
             record(chat_id, "sunday")
-            return answer(chat_id, *LAST[chat_id], sunday=data == "sun:1")
+            LAST[chat_id] = spot
+            return answer(chat_id, *spot, sunday=val == "1", update_tapped=tapped)
         if data == "fb:cancel":
             AWAITING_FEEDBACK.discard(chat_id)
             return ack(cq, "No problem")
-        if data.startswith("mode:") and data[5:] in MODES:
-            set_mode(chat_id, data[5:])
-            ack(cq, f"Travelling by {MODES[data[5:]][0]}")
-            if chat_id in LAST:
+        if kind == "mode" and val in MODES:
+            set_mode(chat_id, val)
+            ack(cq, f"Travelling by {MODES[val][0]}")
+            if spot:
                 record(chat_id, "mode")
-                answer(chat_id, *LAST[chat_id], sunday=LAST_SUNDAY.get(chat_id, False))
+                LAST[chat_id] = spot
+                answer(chat_id, *spot, sunday=LAST_SUNDAY.get(chat_id, False), update_tapped=tapped if where else None)
                 maybe_nudge(chat_id)
             else:
-                tg("sendMessage", chat_id=chat_id, text=f"Got it: {MODES[data[5:]][0]}. Now share your location or send a postal code.")
+                tg("sendMessage", chat_id=chat_id, text=f"Got it: {MODES[val][0]}. Now share your location or send a postal code.")
         else:
             ack(cq)
         return
@@ -564,7 +692,10 @@ def handle(update):
     chat_id = msg.get("chat", {}).get("id")
     if not chat_id:
         return
+    if WAY.get(chat_id) and time.time() - WAY[chat_id].get("at", 0) > WAY_TTL_S:
+        WAY.pop(chat_id, None)  # an "on the way" left half done: start afresh
     if "location" in msg:
+        AWAITING_FEEDBACK.discard(chat_id)
         loc = msg["location"]
         if chat_id in WAY and WAY[chat_id]["step"] in ("from", "to"):
             return way_got_place(chat_id, (loc["latitude"], loc["longitude"], "where you shared" if WAY[chat_id]["step"] == "from" else "the place you shared"))
@@ -580,8 +711,7 @@ def handle(update):
         WAY.pop(chat_id, None)
         said = text[len("/feedback"):].strip()
         if said:
-            send_feedback(msg, said)
-            return tg("sendMessage", chat_id=chat_id, text="Thank you! Anselm will read it.")
+            return thank_for_feedback(msg, chat_id, said)
         AWAITING_FEEDBACK.add(chat_id)
         return tg("sendMessage", chat_id=chat_id,
                   text="What's on your mind? Send it as one message and I'll pass it straight to Anselm, who built MassGoWhere. "
@@ -589,8 +719,7 @@ def handle(update):
                   reply_markup={"inline_keyboard": [[{"text": "Cancel", "callback_data": "fb:cancel"}]]})
     if chat_id in AWAITING_FEEDBACK and not text.startswith("/") and text != WAY_BUTTON:
         AWAITING_FEEDBACK.discard(chat_id)
-        send_feedback(msg, text)
-        return tg("sendMessage", chat_id=chat_id, text="Thank you! Anselm will read it.", reply_markup=LOCATION_KB)
+        return thank_for_feedback(msg, chat_id, text)
     AWAITING_FEEDBACK.discard(chat_id)
     if text == WAY_BUTTON:
         return way_start(chat_id)
@@ -609,19 +738,26 @@ def handle(update):
     w = WAY.get(chat_id)
     if w and w["step"] == "by":
         by = parse_clock(text)
-        if by is None:
-            return tg("sendMessage", chat_id=chat_id, text="Pick one of the buttons, or type a time like 7pm or 19:30.",
-                      reply_markup={"inline_keyboard": BY_KB})
-        return way_answer(chat_id, by)
+        if by is not None:
+            return way_answer(chat_id, by)
+        WAY.pop(chat_id, None)  # not a time: they've moved on, so treat it as a new search
+        w = None
     msg_id = placeholder(chat_id, f"Looking up “{text[:60]}”…")
     try:
-        hit = search_place(text)
-    except Exception:  # noqa: BLE001 - search trouble reads the same as "not found"
-        hit = None
+        hit, trouble = search_place(text), False
+    except Exception as e:  # noqa: BLE001
+        log.warning("place search failed: %s", e)
+        hit, trouble = None, True
+    if superseded():
+        return drop_placeholder(chat_id, msg_id)
     if not hit:
-        not_found = f"I couldn't find “{text[:60]}”. Try a postal code, MRT station or street name."
+        not_found = ("I couldn't search for places just now. Please try again in a moment, or share your location." if trouble
+                     else f"I couldn't find “{text[:60]}”. Try a postal code, MRT station or street name.")
         if msg_id:
-            return tg("editMessageText", chat_id=chat_id, message_id=msg_id, text=not_found)
+            try:
+                return tg("editMessageText", chat_id=chat_id, message_id=msg_id, text=not_found)
+            except Exception as e:  # noqa: BLE001
+                log.warning("edit failed: %s", e)
         return tg("sendMessage", chat_id=chat_id, text=not_found)
     if w and w["step"] in ("from", "to"):
         if msg_id:
@@ -643,14 +779,49 @@ def chat_of(u):
     return ((u.get("message") or {}).get("chat") or {}).get("id")
 
 
+ACKED = set()  # callback ids already answered (the poll loop acks every tap at once)
+
+
+def asks_for_answer(u):
+    """does this update start a new answer (so an older one still loading for the chat can stop)?"""
+    if "callback_query" in u:
+        return (u["callback_query"].get("data") or "").split(":")[0] in ("mode", "sun", "way")
+    m = u.get("message") or {}
+    t = (m.get("text") or "").strip()
+    return "location" in m or (bool(t) and not t.startswith("/"))
+
+
+def ack_at_once(u):
+    """Telegram shows a spinner on a tapped button until it's answered: answer straight away, with the same
+    short note handle() would give, so a tap never looks ignored while an earlier answer is still loading."""
+    cq = u.get("callback_query")
+    if not cq:
+        return
+    data = cq.get("data") or ""
+    kind, _, rest = data.partition(":")
+    val = rest.split(":")[0]
+    text = (f"Travelling by {MODES[val][0]}" if kind == "mode" and val in MODES
+            else "Sunday or Sunset Mass" if kind == "sun" and val == "1" else "Any Mass" if kind == "sun"
+            else "No problem" if data == "fb:cancel" else None)
+    ACKED.add(cq["id"])
+    LIVE_POOL.submit(lambda: ack({"id": cq["id"], "_force": True}, text))
+
+
 def safe_handle(u):
-    # one chat's updates run in order (tapping Car then Walk must end on Walk); different chats run in parallel
-    lock = CHAT_LOCKS.setdefault(chat_of(u), __import__("threading").Lock())
+    # one chat's updates run in order (tapping Car then Walk must end on Walk); different chats run in parallel.
+    # An update that starts a new answer has already bumped GEN, so an older answer holding the lock lets go fast.
+    chat = chat_of(u)
+    lock = CHAT_LOCKS.setdefault(chat, threading.Lock())
     try:
         with lock:
+            _here.chat, _here.gen = chat, u.get("_gen", GEN.get(chat, 0))
+            if superseded():
+                return  # a newer answer for this chat is already on its way
             handle(u)
     except Exception:  # noqa: BLE001 - one bad update must not stop the bot
         log.exception("failed to handle update %s", u.get("update_id"))
+    finally:
+        _here.chat = None
 
 
 def main():
@@ -660,7 +831,7 @@ def main():
                                       {"command": "feedback", "description": "Tell Anselm what's working or not"}])
     except Exception as e:  # noqa: BLE001 - not needed to serve users
         log.warning("setMyCommands failed: %s", e)
-    pool = cf.ThreadPoolExecutor(max_workers=6)  # one slow answer must not hold up other chats
+    pool = cf.ThreadPoolExecutor(max_workers=12)  # one slow answer must not hold up other chats
     offset = None
     log.info("bot started, api=%s", SITE)
     while True:
@@ -670,6 +841,11 @@ def main():
                 params["offset"] = offset
             for u in http_json(f"{TG}/getUpdates", params, timeout=45).get("result", []):
                 offset = u["update_id"] + 1
+                ack_at_once(u)
+                chat = chat_of(u)
+                if asks_for_answer(u):
+                    GEN[chat] = GEN.get(chat, 0) + 1
+                u["_gen"] = GEN.get(chat, 0)
                 pool.submit(safe_handle, u)
         except Exception as e:  # noqa: BLE001 - dropped connections, SSL errors, bad JSON: back off and keep polling
             log.warning("polling error: %s: %s", type(e).__name__, e)

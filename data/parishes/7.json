@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.holyspirit.sg/"
  ],
- "fetched_at": "2026-10-01T03:00+08:00",
+ "fetched_at": "2026-10-02T12:33+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,6 +14,26 @@
  "rules": [
   {
    "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before Mass; ceases when Mass begins"
+  },
+  {
+   "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
+  },
+  {
+   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
@@ -21,6 +41,26 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before Mass; ceases when Mass begins"
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
   },
   {
    "d": 0,
@@ -34,6 +74,26 @@
   },
   {
    "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before Mass; ceases when Mass begins"
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
+  },
+  {
+   "d": 0,
    "t": "11:30",
    "weeks": [],
    "except": [],
@@ -41,6 +101,26 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before Mass; ceases when Mass begins"
+  },
+  {
+   "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
   },
   {
    "d": 0,
@@ -64,6 +144,16 @@
   },
   {
    "d": 1,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
+  },
+  {
+   "d": 1,
    "t": "18:00",
    "weeks": [],
    "except": [],
@@ -81,6 +171,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 2,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
   },
   {
    "d": 2,
@@ -121,6 +221,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 4,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
   },
   {
    "d": 4,
@@ -141,6 +251,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
   },
   {
    "d": 5,
@@ -161,6 +281,26 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before Sunset Mass; ceases when Mass begins"
+  },
+  {
+   "d": 6,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Rosary"
   },
   {
    "d": 6,
@@ -170,23 +310,42 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
- "notes": [],
+ "public_holiday_masses": [
+  "09:00"
+ ],
+ "notes": [
+  "No Parish Holy Hour in October.",
+  "No Rosary before Wednesday evening Mass."
+ ],
  "info": {
+  "adoration": "Adoration Room: Daily 08:00–21:30. Chapel: Mon–Fri 08:00–18:30, Sat 08:00–12:00; closed Sundays and public holidays. Oratory: Mon–Fri 10:00–22:00, Sat & Sun 13:00–22:00.",
+  "confession": "Confessions cease when Mass begins.",
+  "devotions": [
+   "Holy Rosary is recited 30 minutes before all weekend Masses and weekday evening Masses except Wednesdays."
+  ],
+  "office_hours": "Parish Office: Mon–Fri 08:00–16:00, Sat 08:00–12:00, Sun 08:00–13:00; closed on public holidays.",
   "good_to_know": [
-   "Address: 248 Upper Thomson Road, Singapore 574371.",
-   "Nearest MRT: Upper Thomson (Thomson-East Coast Line) and Marymount (Circle Line).",
-   "Buses: 52, 132, 162, 163, 165, 166, 167, 410, 855, 980.",
-   "Parish office: Tel 6453-6340; email chs.secretariat@catholic.org.sg."
+   "Gates close at 10:00 PM daily.",
+   "Parking is for worshippers and participants of church activities only."
   ]
  },
- "events": [],
- "bulletin": null,
+ "events": [
+  {
+   "date": "2026-11-07",
+   "time": "09:00",
+   "title": "Infant Baptism 2026",
+   "text": "Infant Baptism will be held in the main church. Compulsory preparation session on 31 October 2026, Saturday at 09:00 for both parents and godparents. Registration deadline is 17 October 2026."
+  }
+ ],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2609251342_CHS_Bulletin%2026%20-%2027%20September%202026.pdf?alt=media&token=fb135cc6-0edc-402c-b79d-6253a758d0b1",
+  "date": "2026-09-25"
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],

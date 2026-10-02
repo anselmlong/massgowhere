@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.risenchrist.org.sg/"
  ],
- "fetched_at": "2026-09-29T18:28+08:00",
+ "fetched_at": "2026-10-02T12:34+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -169,6 +169,16 @@
   {
    "d": 4,
    "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Parish Hall",
+   "note": "Breaking of the Word"
+  },
+  {
+   "d": 4,
+   "t": "20:00",
    "weeks": [
     2,
     4
@@ -188,6 +198,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Parish Hall",
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 5,
@@ -233,11 +253,35 @@
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "Public holiday Mass times differ from regular weekday Mass times.",
+  "Adoration Room hours differ on public holidays."
+ ],
  "info": {
-  "adoration": "Adoration Room opening hours: Mon 12:00-22:00; Tue-Sat 07:00-22:00; Sun 07:00-18:00; Public Holidays 08:00-18:00."
+  "adoration": "Adoration Room opening hours: Monday 12:00-22:00; Tuesday to Saturday 07:00-22:00; Sunday 07:00-18:00; Public Holidays 08:00-18:00.",
+  "devotions": [
+   "Intercessory Prayer: 20:00-21:30 every 2nd & 4th Thursday of the month.",
+   "Divine Mercy Devotion: Friday 15:00 in the Parish Hall.",
+   "Breaking of the Word: Thursday 20:00 in the Parish Hall."
+  ],
+  "good_to_know": [
+   "Public holiday Mass times differ from regular weekday Mass times.",
+   "Adoration Room hours differ on public holidays."
+  ]
+ },
+ "events": [
+  {
+   "date": "2026-10-06",
+   "time": "",
+   "title": "Poly/ITE Get Together",
+   "text": "The Youth Ministry is inviting Poly/ITE students to come together to pray for one another and attend Mass. Bring your friends along. Location: St Francis Room."
+  }
+ ],
+ "bulletin": {
+  "url": "https://drive.google.com/file/d/1juE-fSksJj1mXygC05sA7aJf8lUL1eyA/view",
+  "date": "2026-09-27"
  },
  "disputes": [],
  "vs_mycatholic": {

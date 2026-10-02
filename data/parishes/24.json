@@ -4,7 +4,7 @@
  "source_urls": [
   "https://stjoseph-bt.org.sg/"
  ],
- "fetched_at": "2026-09-29T18:30+08:00",
+ "fetched_at": "2026-10-02T12:40+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -19,7 +19,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -39,7 +39,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -49,7 +49,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -236,7 +236,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel of St Joseph",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy"
   },
   {
    "d": 6,
@@ -255,36 +255,72 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": "Sunset Mass; 2nd Saturday of the month: Children's Mass (during school term)"
+   "loc": "Main Church",
+   "note": "Sunset Mass"
   }
  ],
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-10-04",
-   "time": "18:00",
+   "date": "2026-10-02",
+   "time": "19:30",
    "language": "English",
-   "location": "",
-   "title": "Feast of Our Lady of the Rosary",
+   "location": "Main Church",
+   "title": "First Friday Mass & Holy Hour",
+   "action": "add"
+  },
+  {
+   "type": "Adoration",
+   "date": "2026-10-02",
+   "time": "20:00",
+   "language": "",
+   "location": "Main Church",
+   "title": "Holy Hour",
    "action": "add"
   },
   {
    "type": "Mass",
    "date": "2026-10-04",
-   "time": "17:30",
+   "time": "18:00",
    "language": "English",
-   "location": "",
-   "title": "Feast of Our Lady of the Rosary - evening Mass moved to 6pm",
-   "action": "cancel"
+   "location": "Main Church",
+   "title": "Feast of Our Lady of the Rosary",
+   "action": "add"
   },
   {
    "type": "Devotion",
    "date": "2026-10-04",
    "time": "19:00",
+   "language": "",
+   "location": "Main Church",
+   "title": "Candlelight Procession",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-07",
+   "time": "19:30",
+   "language": "",
+   "location": "Main Church",
+   "title": "St Joseph Rosary",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-07",
+   "time": "20:00",
    "language": "English",
-   "location": "",
-   "title": "Candlelight Procession after the Feast of Our Lady of the Rosary Mass",
+   "location": "Main Church",
+   "title": "Mass in Honour of St Joseph",
+   "action": "add"
+  },
+  {
+   "type": "Adoration",
+   "date": "2026-10-15",
+   "time": "20:00",
+   "language": "",
+   "location": "Chapel of St Joseph",
+   "title": "Holy Hour for Vocations",
    "action": "add"
   }
  ],
@@ -292,17 +328,99 @@
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Holy Hour: 1st Fridays 8pm, Main Church (after the 7.30pm Mass). Holy Hour for Vocations: 3rd Thursdays 8pm, Chapel of St Joseph.",
-  "confession": "15 minutes before all weekend Masses, in the open foyer of the main Church.",
+  "adoration": "Adoration Room: Mon–Fri 08:00–21:00; Sat 09:30–19:00; Sun 08:00–19:00; Public Holidays 08:00–16:00.",
+  "confession": "Confessions: 15 mins before all weekend Masses in the Reconciliation Rooms in Church.",
   "devotions": [
-   "St Joseph Rosary: 1st Wednesdays 7.30pm, Main Church",
-   "Divine Mercy Devotion: Fridays except 1st Friday, 8pm, Chapel of St Joseph",
-   "Meditation: Tuesdays 8pm, Adoration Room"
+   "Holy Hour: First Friday 20:00 in Main Church unless otherwise stated.",
+   "Mass in Honour of St Joseph: First Wednesday 20:00 in Main Church.",
+   "Divine Mercy: Every Friday 20:00 except First Friday in the Chapel of St Joseph.",
+   "Garden Rosary: First Saturday after the 17:30 Mass.",
+   "Grotto Rosary: Every 13th of the month after the 18:30 Mass on weekdays.",
+   "Holy Hour for Vocations: Every Third Thursday 20:00 in the Chapel of St Joseph."
   ],
+  "office_hours": "Gate opening hours: 06:00–22:00.",
   "good_to_know": [
-   "Address: 620 Upper Bukit Timah Road, Singapore 678116.",
-   "Nearest MRT: Cashew. Buses: 67, 75, 170, 176, 178, 184, 961, 963, 970."
+   "2nd Saturday 17:30 Mass is the Children's Mass during school term.",
+   "No 18:30 Mass in the Chapel of St Joseph on First Wednesday and First Friday."
   ]
+ },
+ "events": [
+  {
+   "date": "2026-10-02",
+   "time": "20:00",
+   "title": "Getting Married: In Church or As Church?",
+   "text": "20:00–22:00, The Catholic Centre (Level 2), with Fr Ambrose Vaz. $20 per pax or $35 per couple."
+  },
+  {
+   "date": "2026-10-02",
+   "time": "20:00",
+   "title": "Marriage Encounter Weekend",
+   "text": "2–4 Oct. Stay-in weekend begins Fri 20:00 and ends Sun evening with Mass. For married couples. Register at wwmesg.org."
+  },
+  {
+   "date": "2026-10-03",
+   "time": "10:00",
+   "title": "SHE Women's Fellowship",
+   "text": "Every Saturday 10:00–11:30, Sep 26; Oct 3, 10, 17, 24, 31; Nov 7, 14, 21 2026, #02-03 Parish Community Hall. Season 3: Love Unveiled. Register at https://tinyurl.com/SJCBTSHE3."
+  },
+  {
+   "date": "2026-10-04",
+   "time": "09:30",
+   "title": "Life Essentials",
+   "text": "Sundays 09:30–11:00, Room #01-08, Parish Community Hall. Alpha Youth sessions for unbaptised youth 13–18. Register at tinyurl.com/YAlpha2026."
+  },
+  {
+   "date": "2026-10-04",
+   "time": "12:40",
+   "title": "An Encounter with Jesus",
+   "text": "Every Sunday 12:40pm (12:45–15:30), St Mary AVA Room. Youth Faith and Bible Reflections Community. Fellowship lunch, Bible sharing and reflection."
+  },
+  {
+   "date": "2026-10-05",
+   "time": "20:00",
+   "title": "What the Catholic Church Actually Teaches About Divorce, Separation, and Annulment",
+   "text": "Via Zoom on Mondays. Part 1: 5 Oct, Part 2: 19 Oct, 20:00–22:00. Love offering. Register at bit.ly/DSAOct26."
+  },
+  {
+   "date": "2026-10-06",
+   "time": "11:05",
+   "title": "Tuesday Morning Manna",
+   "text": "Tuesdays 11:05–12:35, 29 Sep–3 Nov, St Joseph AVA Room. Video series Lectio: Prayer: Finding Intimacy with God. Register via QR code."
+  },
+  {
+   "date": "2026-10-08",
+   "time": "09:00",
+   "title": "Scripture Series: The Gospel of Matthew",
+   "text": "Thursdays 09:00–10:45, 27 Aug–29 Oct, St Joseph AVA Room, with Fr Ambrose Vaz. Bring your Bible."
+  },
+  {
+   "date": "2026-10-09",
+   "time": "",
+   "title": "A Catholic Hackathon!",
+   "text": "9–11 Oct, CTIS, 618 Upper Bukit Timah. Individual $15, group of 3 $30. Organised by Digital Church Office."
+  },
+  {
+   "date": "2026-10-10",
+   "time": "",
+   "title": "World Mental Health Day: BRAVE – Work Well, Live Well",
+   "text": "Sat 10 Oct. Clarity partnering with Catholic Business Network. Explores workplace wellbeing, purpose and compassion through a Catholic lens."
+  },
+  {
+   "date": "2026-10-13",
+   "time": "19:30",
+   "title": "Human Dignity and Development in the Era of AI",
+   "text": "19:30–22:00, Catholic Centre, by Friar David Garcia, OP. Register at bit.ly/dignityoct."
+  },
+  {
+   "date": "2026-10-15",
+   "time": "",
+   "title": "Rest, Relish and Recharge",
+   "text": "15–18 Oct. Days of reflection and prayer with rest and simple leisure activities."
+  }
+ ],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610021033_20261004_SJCBT%20Bulletin%20v2.pdf?alt=media&token=70cfa440-5cc3-448d-ab86-c989cedf5387",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {

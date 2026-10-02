@@ -1,80 +1,303 @@
 # MassGoWhere
 
-Find a Catholic Mass in Singapore you can actually make: from where you are, by bus/MRT, car or on foot, and when to leave.
+Find a Catholic Mass in Singapore you can actually make: from where you are, by bus & MRT, car or on foot, and when to leave.
 
-- Website: https://massgowhere.com (Vercel project `massgowhere`, auto-deploys on every push to `main`). The old `mass.anselmlong.com` stays attached as an alias, not a redirect, because the bots POST to `/api/next` and urllib does not follow redirects on POST
-- Telegram bot: runs on the VPS (`systemctl --user status massgowhere-bot`)
-- Product brief: [PRODUCT.md](PRODUCT.md)
+- **Website:** https://massgowhere.com (Vercel project `massgowhere`, auto-deploys on every push to `main`). The old `mass.anselmlong.com` stays attached as an alias, not a redirect, because the bots call `/api/next` and urllib doesn't follow redirects.
+- **Telegram bot:** [@massgowherebot](https://t.me/massgowherebot), on the VPS (`systemctl --user status massgowhere-bot`).
+- **Gospel bot:** the daily-gospel bot (`anselmlong/catholic-bot`) has a **Nearest Mass** button that calls `/api/next`.
+- **Product brief:** [PRODUCT.md](PRODUCT.md). **Changes:** [CHANGELOG.md](CHANGELOG.md). **For testers:** [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
-## How it works
+---
+
+## 1. What it does
+
+| Surface | What you get |
+|---|---|
+| **Find a Mass** (home → answer) | The Mass you can still make, when to leave, and how long the trip takes. Below it: a map with the churches around you, each labelled with its next reachable Mass, then the other churches you can make it to, and the nearest church. Navigate hands off to Google Maps. |
+| **Plan ahead** | "Leaving later": any departure time up to 7 days ahead. Narrow to Sunday or Sunset Mass, morning, lunchtime or evening, or a language. |
+| **Catch a Mass on the way** (`#/way`) | Going from A to B, maybe needing to be at B by a set time: which Mass adds the least to the trip. The answer is three times: leave by, Mass, reach B. |
+| **Adoration / Confession** (`#/open`) | An Adoration room that's open (or opens soon), or Confession you can get to. |
+| **Church page** (`#/church/:id`) | Photo, next Mass you can attend, this week's Masses by day, changes to the usual Masses, Adoration, Confession, this week's bulletin, parish details, and sources. |
+| **All churches** (`#/churches`) | Map of all 32 parishes, or a list with filters (day, time, language, distance, sort). |
+| **Telegram bot** | The same answer as the site: share your location or send a postal code. Travel-mode buttons, a "Sunday or Sunset Mass" button, "Catch a Mass on the way", `/feedback`. |
+
+---
+
+## 2. Architecture
 
 ```
-myCatholicSG schedules ──(scripts/update_mycatholic.sh)──> data/mycatholic.json ─┐   source of truth
-parish websites ──(monthly, DeepSeek via OpenRouter)──> data/parishes/<id>.json ─┼─> scripts/build_data.py ─> public/data.json
-rich parish read, Sept 2026 ──(scripts/import_rich.py)──> data/rich/<id>.json ───┤   (build also writes public/parish/<id>.json)
-MOM public holidays ──> data/holidays.json ──────────────────────────────────────┘
-public/data.json + OneMap routing ──> api/next.js (public/rank.js) ──> website + Telegram bot
+                         ┌──────────────────────── data pipeline (VPS, cron) ─────────────────────────┐
+myCatholicSG Firestore ──┤ update_mycatholic.sh → import_mycatholic.py → data/mycatholic.json          │
+  (prod-sg, daily)       │                                                                            │
+bulletins ───────────────┤ update_bulletins.sh → fetch_bulletins.py → scrape_parishes.py               │
+  (weekly, Sat 9pm SGT)  │   --bulletin-only (LLM) → data/parishes/<id>.json                          ├─→ build_data.py ─→ public/data.json
+hand-curated ────────────┤ data/rich/<id>.json (reviewed read + hand checks) · data/services.json      │                    public/parish/<id>.json
+  (by hand)              │                                                                            │
+MOM public holidays ─────┘ data/holidays.json                                                         ┘
+                                                     │ git commit + push to main
+                                                     ▼
+                                   Vercel (static public/ + serverless api/)
+                         ┌──────────────────────────────────────────────────────────────┐
+  browser (SPA) ─────────┤ public/index.html, app.js, style.css                          │
+     │  shares the same  │ public/schedule.js · rank.js · services.js · way.js  ◄────────┼── also required by api/*
+     │  ranking code     │ api/next.js  api/way.js  api/feedback.js                      │
+     ▼                   └───────────────┬──────────────────────────────┬───────────────┘
+  MapLibre + OpenFreeMap tiles           │ lib/onemap.js                │ Telegram sendMessage
+                                         ▼                              ▼
+                               OneMap routing (SLA)            owner's Telegram (feedback)
+  Telegram bot (bot/bot.py, VPS) ──── GET /api/next, /api/way ────┘
+  Gospel bot (catholic-bot)     ──── GET /api/next
 ```
 
-- **Times come from myCatholicSG.** `scripts/update_mycatholic.sh` reads its Firestore database `prod-sg`, the one mycatholic.sg itself reads (the project's `(default)` database is an old copy that stopped updating in July 2026). `scripts/import_mycatholic.py` turns its export into weekly / nth-week / last-week rules plus dated additions and cancellations.
-- **Monthly parish-website check.** `scripts/scrape_parishes.py` reads each parish's own page (`data/sources.json`) with an LLM and compares it with myCatholicSG. It never changes times. The build marks each parish "parish website agrees" or "lists different times", and `data/site-check.md` lists every difference for review.
-- **Ranking** (`public/rank.js`, shared by browser and API): a Mass is reachable if now + travel + 5 min ≤ start (trip ≤ 75 min; leave-by gets you there 5 minutes early, to settle in and prepare for Mass; the site and bot say so). In bus & MRT mode a church within a 10-minute walk, or a 15-minute walk that is no slower than the bus, is a walk. Take the earliest reachable start S. Among Masses starting within 90 minutes of S, pick the **shortest trip**; the earlier start breaks ties. Travel comes from OneMap routing at the time you would leave, in two passes (nearest + soonest, then anything else inside the window), falling back to a distance estimate. OneMap's driving route ignores traffic, so car trips are stretched ×1.4 on weekdays 7:30–9:30am and 5:30–8pm (`lib/onemap.js`); bus & MRT already follow the timetable for that time.
-- **API**: `GET /api/next?lat=1.3151&lng=103.7652&mode=transit|drive|walk[&part=morning|lunch|evening][&at=<epoch ms>]` (`part` keeps to Masses before noon, noon to 3pm, or from 3pm, as defined in `public/schedule.js`; `at` plans a departure up to 7 days ahead; omitted means now) returns `best`, `alternatives`, `nearest`, `specialDay`, `dataAsOf`. Bots call this so every surface gives the same answer.
-- **A bit late**: `late=15` on `/api/next` and `/api/way` counts a Mass that has just started if you'd arrive at most 15 min late. `/api/next` then looks only 30 min past the earliest such Mass and picks the least late (then the shortest trip); `/api/way` counts each late minute double against the detour. Answers carry `lateMin`.
-- **Parish details** (church page): a one-off hand-reviewed read of every parish's website, bulletins and posters (29 Sept 2026, kept on the VPS in `~/massgowhere-rich`, with its evidence) was imported with `python3 scripts/import_rich.py ~/massgowhere-rich` into `data/rich/<id>.json`: Adoration, Confession, devotions, church and office hours, public-holiday Masses, dated Mass changes, events, getting there, sacraments, ministries, contacts, livestream, bulletin. Reviewer notes are left out. `build_data.py` merges it field by field with the monthly read below into `public/parish/<id>.json`, which only the church page fetches: the rich read wins while it is under 45 days old (`RICH_FRESH_DAYS`), then the monthly read wins and the rich read only fills gaps. Dated changes and events show from today on.
-- **Both sources on the church page**: the week list shows myCatholicSG's Masses and the parish website's regular Masses together. A time on both shows once; a time only one lists carries a tappable "Parish website" / "myCatholicSG" marker that says where it comes from and when it was read. Answers, "Next Mass you can attend", `/api/next` and the bot still use myCatholicSG only. Only a reviewed (rich) cancellation strikes a Mass off the week; the automatic bulletin read only lists changes under "Changes to the usual Masses".
-- **This week's bulletin** (daily, `scripts/update_bulletins.sh`): `scripts/fetch_bulletins.py` takes each parish's newest bulletin from myCatholicSG (`prod-sg`, collection `bulletin`; a PDF) into `data/bulletins_latest.json`. When a parish has none from the last 3 weeks it finds the bulletin itself on the page `data/bulletins.json` names: the newest dated link, a PDF under a "bulletin" heading, a Drive file shown inside an embedded app, or an emailed newsletter (St Michael's). St Mary of the Angels posts its news as announcements instead of a bulletin: a Squarespace page, read as JSON (`?format=json`), whose last 3 weeks of posts are its bulletin text and whose card says "parish announcements". An undated one takes its date from its first page. Each bulletin not read yet is then read once by `scrape_parishes.py --only <ids>` with the parish's website, for one-off Mass changes (`dated`), `events` and parish info. A dated change is kept only when the text states its date and time near each other within 45 days, a cancellation also hits a myCatholicSG slot with "no/cancelled/moved" nearby, and a "public holiday" Mass falls on one. Dated changes and events from this read and the rich read are both shown. The church page's bulletin card opens it ("This week" up to 9 days old, "Latest" up to 21; a title naming an older Sunday than the upload date counts from that Sunday), and says "No current bulletin online" with the parish website otherwise. Image-only bulletins are linked but give no text.
-- **Parish info**: the monthly parish-website read (`scripts/scrape_parishes.py`) also extracts `info` (Adoration hours incl. an Adoration room's opening hours and Holy Hour, Confession, devotions, office hours, good to know); `build_data.py` fills whatever the rich read lacks and the church page shows it in place of myCatholicSG's service times. Run `python3 scripts/scrape_parishes.py && python3 scripts/build_data.py` on the VPS to fill it now.
-- **On the way** (`public/way.js`, `GET /api/way?from=lat,lng&to=lat,lng&mode=…[&at=…][&by=…]`): the Mass that adds least to a trip from A to B (and still gets you to B by `by`, if given). Mass length is assumed: about 60 min on Sundays and Saturday evenings, 40 min otherwise. Straight-line detour shortlists 8 churches; OneMap routes both legs of each.
-- **Feedback**: the site's footer form posts to `/api/feedback`, which sends it to Anselm on Telegram. Needs `TELEGRAM_BOT_TOKEN` in the Vercel project (`FEEDBACK_CHAT_ID` overrides where it goes). The bot's `/feedback` does the same, and asks for feedback once after a person's 3rd and 15th answer.
-- Public holidays, Christmas and the Triduum are not modelled as schedule changes. The site and bot show a "times may differ that day, check with the parish" notice instead.
+**Design principles**
+- **One answer everywhere.** The ranking lives in `public/rank.js` (plain JS, no build step). The browser loads it, and the API `require`s it. The bots never rank; they call the API. So the site, the bot and the gospel bot always agree.
+- **Static data, live routing.** Mass times are a static JSON snapshot rebuilt by cron and deployed by git push. Only travel time is live, from OneMap.
+- **Never block on the slow part.** The browser asks for an estimate-only answer (`fast=1`, a few ms) and the live answer together. It waits up to 2.5 s (3 s for "on the way") for live, so most answers appear once. If live is slow, the estimate shows first and the live times settle in place without a repaint.
+- **Works offline-ish.** If the API fails, the browser ranks with `data.json` and distance estimates.
 
-## Run locally
+---
+
+## 3. Components
+
+### 3.1 Front end (`public/`)
+
+- **Stack:** vanilla JS single-page app, no framework and no build step. Hash routes: `#/`, `#/next`, `#/church/:id`, `#/churches`, `#/way`, `#/open`. One stylesheet. Font: Atkinson Hyperlegible Next (Google Fonts). Vercel Web Analytics records hash-route pageviews.
+- **Maps:** MapLibre GL 5.24, loaded from jsdelivr on demand. The home screen prefetches it in idle time. OpenFreeMap "liberty" style. The answer's map loads when scrolled near (IntersectionObserver) and needs two fingers to move (`cooperativeGestures`).
+- **Home:** a step-by-step wizard: what (Mass / Adoration room / Confession) → from where → when → how → which Mass. Each tap moves on; on the last step, tapping a Mass card searches. Other layouts (simple, list, quick picks) are available behind `?preview=1`.
+- **Answer (`#/next`):**
+  - The time, with the church's photo beside it (tap to enlarge) and the church name.
+  - "Leave by …", with the trip time and "You'll arrive 5 min early, to prepare for Mass". A planned trip adds "Leaving at X gets you there by Y".
+  - Navigate.
+  - The map:
+    - Our pick: dark pin.
+    - Churches in the list below: lighter pins.
+    - Also nearby, not listed: grey pins. The card says why (a later Mass, or a longer trip).
+  - Other churches you can make it to, and the nearest church.
+  - Source line: times from myCatholicSG, checked daily.
+  - Saturday Masses from 4pm are marked **Sunset Mass**.
+- **Church page:**
+  - Mass times: one row per day, times in a three-column grid.
+  - Mass times from myCatholicSG; this week's bulletin adds one-off changes.
+  - Changes to the usual Masses, and Adoration / Confession / public holidays.
+  - Bulletin card, and folded extras: events, getting there, sacraments, groups, contact.
+- **Look:** light by default, with a header switch (dark follows the phone otherwise). The accent colour follows the liturgical season (`season()` in `app.js`); the header shows the season, e.g. "Ordinary Time". Fills, not outlines. 44px tap targets. Reduced-motion respected.
+- **Files:** `app.js` (UI, ~2,000 lines), `schedule.js` (`MassSchedule`), `rank.js` (`MassRank`), `services.js` (`MassServices`), `way.js` (`MassWay`), `data.json` (schedule snapshot), `parish/<id>.json` (church-page details, fetched per page), `photos/<id>.jpg` + `photos/thumb/<id>.jpg` (144px squares) + `photos/credits.json`.
+
+### 3.2 API (`api/`, Vercel Node functions)
+
+All endpoints return JSON with `Cache-Control: no-store`.
+
+**`GET /api/next`**: the Mass you can make.
+
+| Param | Values | Default |
+|---|---|---|
+| `lat`, `lng` | a point in Singapore (rough box: 1.15–1.475, 103.59–104.1) | required; `400` outside |
+| `mode` | `transit` \| `drive` \| `walk` | `transit` |
+| `at` | epoch ms or ISO time, up to 7 days ahead | now |
+| `part` | `morning` (before noon) \| `lunch` (noon–3pm) \| `evening` (from 3pm) | any |
+| `sunday` | `1`: Sunday, or Saturday from 4pm (Sunset Mass) | off |
+| `lang` | e.g. `Mandarin`, `Tagalog` | any |
+| `late` | up to `15`: count a Mass you'd walk into at most this many minutes late | 0 |
+| `fast` | `1`: distance estimates only, no OneMap (instant first frame) | off |
+| `kind` | `adoration` \| `confession`: an open Adoration room or Confession instead | Mass |
+
+Response:
+- `best`, `alternatives[≤3]`, and each of those has:
+  - `parish{id,name,address,postal,lat,lng}`, `start`, `leaveBy`, `language`, `location`, `note`
+  - `travelMin`, `travelSource` (`onemap` or `estimate`), `walk`, `lateMin`, `distanceKm`
+- `nearest{parish,travelMin,walk,next}`
+- `around[≤5]`: the closest churches by distance, each with its next reachable Mass, for the map.
+- `specialDay`, `dataAsOf`, and the inputs echoed back.
+- With `kind`: `best`, `alternatives`, `checked`, and `unconfirmed` (parishes whose times aren't clear).
+
+**`GET /api/way?from=lat,lng&to=lat,lng&mode=…[&at=…][&by=…][&late=15][&fast=1]`**: a Mass on the way.
+- Response: `best`, `alternatives`, `direct`. Each stop has `start`, `end`, `leaveBy`, `arrive`, `toMin`, `onwardMin`, `detourMin`, `lateMin`.
+
+**`POST /api/feedback {message, contact?, page?}`**: forwards the message to the owner on Telegram.
+- Limits: honeypot field, at most 5 messages per 10 min per IP, 2,000 characters.
+
+### 3.3 Ranking rules (`public/rank.js`, `services.js`, `way.js`)
+
+**Next Mass (`rank`)**
+1. **Reachable:** leave now (or at `at`), travel, and arrive `BUFFER_MIN` (5) minutes before the start. Trips over `MAX_TRIP_MIN` (75) are never suggested.
+2. **Window:** take the earliest reachable start S. Among Masses starting within `WINDOW_MIN` (90) of S, the **shortest trip** wins; the earlier start breaks ties.
+3. **Alternatives:** other churches in the window by trip length, then later Masses by start. At most 3, one per church.
+4. **Nearest:** the church with the shortest routed trip, whatever its Mass time.
+5. **Around:** the 5 closest by distance, with their next reachable Mass.
+6. **A bit late (`late=15`):** the window shrinks to `LATE_WINDOW_MIN` (30), and the least-late Mass wins, then the shortest trip. This is hidden in the UI for now (`LATE_UI = false`).
+
+**Routing**
+- Every church first gets a distance estimate.
+- OneMap then routes a shortlist, timed for when you'd actually set off:
+  - pass 1: the 5 nearest churches with a reachable Mass, the 3 with the soonest Mass, and the 2 nearest overall;
+  - pass 2: anything else inside the window, up to `MAX_ROUTED`.
+- Each OneMap call has 3.5 s (`tripMinutesWithin`, `lib/onemap.js`); a slower one falls back to the estimate for that church, so one slow route can't hold up the answer.
+- In bus & MRT mode, a church within a 10-minute walk, or a 15-minute walk that's no slower than the bus, becomes a walk (`preferWalk`).
+- Bus & MRT routes follow the timetable for the departure time, so very early trips (before about 6:30am) come out slower.
+- Car trips are stretched ×1.4 on weekdays 7:30–9:30am and 5:30–8pm, because OneMap's driving route ignores traffic.
+
+**Adoration / Confession (`services.js`)**
+- **Windows:** an Adoration room's hours, Confession slots, and "N minutes before Mass" worked out from the Mass times.
+- **Reachable:** arrive at least 20 min before a room closes, or 15 min before Confession ends (a queue, and it stops when Mass begins).
+- **Window:** earliest arrival, then the shortest trip within 60 min (6 h for Confession).
+- **Data:** `data/services.json` (hand-checked).
+
+**On the way (`way.js`)**
+- **Detour:** (A→church) + (church→B) − (A→B).
+- **Mass length:** assumed to be 60 min on Sundays and Saturday evenings, 40 min otherwise.
+- **Shortlist:** straight-line detour picks 8 churches; OneMap routes both legs of each.
+- **Fits** if you arrive 5 min early and, with `by`, still reach B in time.
+- **Order:** the smallest detour wins (with `late`, each late minute counts double). Without a deadline, only Masses within 120 min of the earliest one that fits count.
+
+**Schedule expansion (`schedule.js`)**
+- Recurring rules: weekly, nth week of the month, last week.
+- Dated additions and cancellations.
+- Liturgical helpers: Easter, Epiphany and Baptism dating for Singapore, special days (public holidays, Christmas, Triduum). Special days get a "times may differ" notice; they aren't modelled as schedule changes.
+- `isSunset`, `forSunday`, and the time-of-day `PARTS`.
+
+### 3.4 Data pipeline (`scripts/`, VPS)
+
+- **Mass times: myCatholicSG is the source of truth.**
+  - `update_mycatholic.sh` reads the Firestore database `prod-sg`, the one mycatholic.sg itself reads. The `(default)` database is an old copy that stopped updating on 3 July 2026.
+  - `import_mycatholic.py` turns the export into weekly, nth-week and last-week rules plus dated additions and cancellations.
+- **Sources of truth, in order:**
+  1. myCatholicSG for Mass times.
+  2. Hand-curated data: `data/rich/<id>.json`, the reviewed read plus what Anselm checks by hand, and `data/services.json` for the Adoration/Confession finder.
+  3. This week's bulletin, read automatically.
+  - Parish websites are no longer read automatically: they were too unreliable to scrape. A parish with no bulletin uses myCatholicSG plus the hand-curated data.
+- **This week's bulletin** (weekly, Saturday 9pm SGT, after most parishes upload):
+  - **Finding it:** `fetch_bulletins.py` takes each parish's newest bulletin from myCatholicSG (`prod-sg`, collection `bulletin`; a PDF). Failing that, it finds the bulletin on the page `data/bulletins.json` names: the newest dated link, a PDF under a "bulletin" heading, a Drive file in an embedded app, or an emailed newsletter (St Michael's). St Mary of the Angels publishes no bulletin: its website announcements (a Squarespace page, read as JSON with `?format=json`) stand in, the last 3 weeks of posts as the text, and its card says "parish announcements".
+  - **Reading it:** each new bulletin is read once, on its own (`scrape_parishes.py --bulletin-only --only <ids>`), for one-off Mass changes (`dated`), events and parish info. Its regular Mass list isn't used.
+  - **What's kept:**
+    - A dated change only when its date and time are stated near each other, within 45 days.
+    - A cancellation only when it also matches a myCatholicSG slot with "no / cancelled / moved" nearby.
+    - A "public holiday" Mass only when it falls on one.
+  - **Freshness:** the card says "This week" up to 9 days old and "Latest" up to 21.
+- **Hand-curated parish data** (`data/rich/<id>.json`; first imported with `import_rich.py` from the reviewed 29 Sept 2026 read, then edited by hand):
+  - It always wins over the bulletin read, field by field; the bulletin read only fills gaps. Dated changes and events come from both.
+  - Its copy of each parish website's regular Mass times isn't used: regular times come from myCatholicSG alone.
+  - Only a reviewed cancellation strikes a Mass off the church page's week.
+- **Build:** `build_data.py` writes `public/data.json` (all parishes, rules, dated changes, services, holidays, bulletin per parish) and `public/parish/<id>.json`. It warns:
+  - when fewer than 60 days of public holidays remain;
+  - with a `FINDER GAP` line for each church whose page mentions Adoration or Confession that `data/services.json` doesn't cover (or marks unconfirmed), so it can be added by hand.
+- **Safety in the jobs:**
+  - Each job re-runs itself after updating to `origin/main`, so a changed script never runs its old code once.
+  - The myCatholicSG job refuses to publish data older than what's live, and warns when no parish has changed in 30 days.
+- **Photos:**
+  - All 32 parishes have a photo, from Wikimedia Commons, Flickr, the parish's own website or myCatholicSG.
+  - Credits are in `public/photos/credits.json`; each photo is self-hosted with a 144px thumbnail.
+  - Scripts: `fetch_photos.py`, `fetch_mycatholic_photos.py` (macOS `sips`), `find_*`.
+
+### 3.5 Telegram bot (`bot/bot.py`)
+
+- **Runtime:** Python 3 standard library only. It long-polls the Bot API and calls `MASSGOWHERE_API` (default `https://massgowhere.com`) for every answer.
+- **Answering:** replies instantly with a placeholder, and asks for the live answer and the estimate together. If the live answer lands within 3 s it shows that; otherwise it shows the estimate (usually ready by then) and edits it when the live answer arrives.
+- **Newest request wins:** taps are acknowledged as soon as they arrive. A newer location, place, or mode or Sunday tap makes an answer still loading for that chat stop at once (it never edits the chat, and its "Looking for…" message is removed). Mode and Sunday buttons carry their answer's location and update that message in place.
+- **Buttons:** Navigate, Mass times, Open on the website, travel mode (remembered per chat), Sunday or Sunset Mass ↔ Any Mass.
+- **On the way:** a three-step flow (from → to → be there by), with a numbered three-step answer.
+- **`/feedback`:** forwards to the owner. It also asks for feedback once after a person's 3rd and 15th answer.
+- **`/stats`** (admins only): daily counts, with people as salted hashes.
+- **Privacy:** no locations are stored, only each chat's travel mode.
+- **Files:** `bot/state.json`, `nudges.json`, `stats.json`, `feedback.log` (all git-ignored on the VPS).
+
+---
+
+## 4. Technical specs
+
+| | |
+|---|---|
+| Runtime | Vercel static hosting (`public/`) + Node serverless functions (`api/`); no build step (`vercel.json`: `outputDirectory: public`, no framework) |
+| Client | Vanilla ES2020+, no dependencies. MapLibre GL 5.24 loaded on demand. Uses `:has()`, `<dialog>`, `IntersectionObserver`, `color-mix()`; current Safari / Chrome / Firefox |
+| Routing provider | OneMap (Singapore Land Authority): `/api/public/routingsvc/route`. Token from email + password, cached ~72 h; one shared in-flight login; retried on 401. Route cache in memory, keyed by origin (3 dp), destination, mode and 15-minute departure slot |
+| Map tiles | OpenFreeMap "liberty" (no key) |
+| Data size | `data.json` holds 32 parishes with rules, dated changes, services, holidays and bulletins; `parish/<id>.json` is fetched only by the church page; thumbnails ~8 KB each |
+| Timezone | All times are epoch ms / ISO UTC; Singapore time is UTC+8 with no DST (`SGT_OFFSET_MS`) |
+| Analytics | Vercel Web Analytics (cookieless) on the site; `/stats` in the bot |
+| Privacy | No accounts. Location is used in the browser and sent to `/api/next` per request, never stored. Recent places live in the browser's `localStorage` only |
+| Bot runtime | Python 3, standard library only; systemd user service on the VPS |
+| Data scripts | Python 3, standard library (urllib); LLM reads via OpenRouter (default `deepseek/deepseek-v4.1-flash`); Playwright for JS sites; `flock` locking; scripts reset to `origin/main` and commit only regenerated files |
+| Tests | `node --test test/*.test.js`: schedule expansion, ranking, services, on-the-way, OneMap parsing, API, parish text |
+
+### Key constants
+
+| Constant | Value | Where |
+|---|---|---|
+| Arrive early | 5 min | `rank.js` `BUFFER_MIN` |
+| Answer window | 90 min (30 when "a bit late") | `rank.js` `WINDOW_MIN`, `LATE_WINDOW_MIN` |
+| Longest trip suggested | 75 min | `rank.js` `MAX_TRIP_MIN` |
+| Walk instead of bus | ≤10 min, or ≤15 min if no slower | `rank.js` `SHORT_WALK_MIN`, `MAX_WALK_MIN` |
+| A bit late | ≤15 min | `rank.js` `MAX_LATE_MIN` |
+| Search horizon | 2 days (7 for Sunday or a language; 7 for Confession) | `api/next.js`, `services.js` |
+| Plan ahead | up to 7 days | `api/next.js` `PLAN_DAYS` |
+| Sunset Mass | Saturday from 4pm | `schedule.js` `SUNDAY_EVE_MIN` |
+| Rush-hour driving | ×1.4, weekdays 7:30–9:30am, 5:30–8pm | `lib/onemap.js` |
+| Wait for live answer | 2.5 s site, 3 s bot and "on the way" | `app.js`, `bot.py` |
+
+---
+
+## 5. Run locally
 
 ```sh
 cp -n .env.example .env         # -n: never overwrite an existing .env
-node scripts/dev.js             # http://localhost:8787 (site + /api/next; reads .env literally)
-node --test test/*.test.js      # schedule + ranking tests
+node scripts/dev.js             # http://localhost:8787 (site + /api/*; reads .env literally)
+node --test test/*.test.js      # all tests
 python3 bot/bot.py              # Telegram bot (uses the live API; MASSGOWHERE_API overrides)
 ```
 
-Add `?preview=1` to the site URL to get the colour palette switcher (Seasonal / Green / Marian blue / Violet / Red). The choice is remembered per browser.
+Without OneMap credentials, the API answers with distance estimates. Add `?preview=1` for the design options (home layouts, colours, fonts); the choice is remembered per browser.
 
-## Refreshing data
+## 6. Environment
 
-| What | How | Where |
+| Variable | Where | For |
 |---|---|---|
-| myCatholicSG times (source of truth) | `sh scripts/update_mycatholic.sh`: fetch, import, build, commit, push | VPS crontab, daily 04:00 server time (UTC, so 12:00 SGT); log in `~/mgw.log`. Or run it by hand. |
-| Parish website check | `sh scripts/check_sites.sh`, monthly | VPS timer `massgowhere-check.timer`, 1st of each month, 03:00 SGT |
-| This week's bulletins | `sh scripts/update_bulletins.sh`: fetch, read the new ones, build, commit, push | VPS crontab, daily 04:30 server time (UTC, so 12:30 SGT), and Fri + Sat 13:00 UTC (9pm SGT, after most parishes upload); log in `~/mgw-bulletins.log` |
-| Church photos | `python3 scripts/fetch_photos.py` (Wikimedia Commons picks in `data/photo_picks.json`); `python3 scripts/fetch_mycatholic_photos.py` fills the rest with myCatholicSG's own photo (macOS) | By hand; both merge into `public/photos/credits.json` |
-| Public holidays | edit `data/holidays.json` when MOM publishes next year's list | The build warns when fewer than 60 days remain |
+| `ONEMAP_EMAIL`, `ONEMAP_PASSWORD` | Vercel (production + preview), `.env` | routing |
+| `TELEGRAM_BOT_TOKEN` | Vercel (for `/api/feedback`), VPS `.env` (bot) | feedback, bot |
+| `FEEDBACK_CHAT_ID` | optional, Vercel / VPS | where feedback goes (default: the owner) |
+| `ADMIN_CHAT_IDS` | optional, VPS | who can use `/stats` |
+| `MASSGOWHERE_API` | optional, VPS | the site the bot calls |
+| `OPENROUTER_API_KEY`, `OPENROUTER_MODELS` | VPS / Mac `.env` | bulletin reads |
 
-Both scripts start from `origin/main` (`git reset --hard`), take a lock (`flock`, Linux), and only commit regenerated files.
+## 7. Operations
 
-Daily myCatholicSG and bulletin refreshes, installed on the VPS (`crontab -l`). To set it up again on a new machine:
+| What | How | Schedule |
+|---|---|---|
+| myCatholicSG times | `sh scripts/update_mycatholic.sh` (fetch, import, build, commit, push) | VPS cron, daily 04:00 UTC (12:00 SGT); `~/mgw.log` |
+| This week's bulletins | `sh scripts/update_bulletins.sh` | VPS cron, weekly, Saturday 13:00 UTC (9pm SGT); `~/mgw-bulletins.log` |
+| Church photos | `scripts/fetch_photos.py`, `scripts/fetch_mycatholic_photos.py` | by hand |
+| Public holidays | edit `data/holidays.json` when MOM publishes next year's list | build warns at < 60 days |
+| Bot changes | `git pull` on the VPS, then `systemctl --user restart massgowhere-bot` | after any change to `bot/bot.py` |
 
 ```sh
+# cron, to set up again on a new machine
 (crontab -l 2>/dev/null; echo '0 4 * * * sh $HOME/massgowhere/scripts/update_mycatholic.sh >>$HOME/mgw.log 2>&1') | crontab -
-(crontab -l 2>/dev/null; echo '30 4 * * * sh $HOME/massgowhere/scripts/update_bulletins.sh >>$HOME/mgw-bulletins.log 2>&1') | crontab -
-(crontab -l 2>/dev/null; echo '0 13 * * 5,6 sh $HOME/massgowhere/scripts/update_bulletins.sh >>$HOME/mgw-bulletins.log 2>&1') | crontab -
-```
+(crontab -l 2>/dev/null; echo '0 13 * * 6 sh $HOME/massgowhere/scripts/update_bulletins.sh >>$HOME/mgw-bulletins.log 2>&1') | crontab -
 
-## Environment
-
-`.env` on the Mac (`~/src/massgowhere/.env`) and the VPS (`~/massgowhere/.env`) holds `OPENROUTER_API_KEY`, `ONEMAP_EMAIL`, `ONEMAP_PASSWORD` and `TELEGRAM_BOT_TOKEN`; `OPENROUTER_MODELS` is optional. Vercel needs `ONEMAP_EMAIL` and `ONEMAP_PASSWORD`, which are set for production and preview.
-
-## VPS services
-
-```sh
+# health
 systemctl --user status massgowhere-bot
-systemctl --user list-timers massgowhere-check.timer
-journalctl --user -u massgowhere-check -n 50
-tail ~/mgw.log                                  # daily myCatholicSG refresh (cron)
+tail ~/mgw.log ~/mgw-bulletins.log
 ```
 
-## Open items
+## 8. Repository layout
 
-- Gospel bot (catholic-bot): a **⛪ Nearest Mass** button calls `/api/next` (bus & MRT, leaving now) and points to @massgowherebot for more.
-- Events board (vigils, feasts, devotions): the data model already keeps Confession, Adoration and Devotion entries.
-- Parish website check: Playwright is installed on the VPS for JS-built sites (Holy Trinity now works). Cathedral (Cloudflare), OLPS and Transfiguration show a bot check to headless browsers and stay unchecked. Star of the Sea's schedule is only an image and Nativity has no public website; both use myCatholicSG alone.
+```
+api/           next.js · way.js · feedback.js          Vercel functions
+lib/           onemap.js                               OneMap auth, routing, cache, walk-vs-bus
+public/        index.html · app.js · style.css         the site
+               schedule.js · rank.js · services.js · way.js   shared logic (browser + API)
+               data.json · parish/<id>.json · photos/          generated data and photos
+bot/           bot.py                                  Telegram bot
+scripts/       update_mycatholic.sh · update_bulletins.sh   cron entry points
+               import_*.py · scrape_parishes.py · fetch_*.py · build_data.py · dev.js
+data/          mycatholic.json · services.json · holidays.json · sources.json · bulletins*.json
+               parishes/<id>.json (bulletin reads) · rich/<id>.json (hand-curated)
+test/          node:test suites
+```
+
+## 9. Known limits and open items
+
+- **Public holidays, Christmas and the Triduum** aren't modelled as schedule changes. The site and bot show a "times may differ, check with the parish" notice instead.
+- **Early-morning bus & MRT trips** are routed for when you'd set off, so a 6:30am Mass can look like a longer trip than the same church later in the day.
+- **Adoration and Confession coverage:** about 12 parishes have unclear or missing times. Those parishes are listed as unconfirmed rather than guessed.
+- **Automatic bulletin reads** can miss or misread a change. Only a reviewed cancellation strikes a Mass off.
+- **"A bit late"** is built but hidden (`LATE_UI = false`).
+- **Not built yet:** an events board (vigils, feasts, devotions); the data model already keeps those entries.

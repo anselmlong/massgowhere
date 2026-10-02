@@ -20,7 +20,7 @@ const R = typeof module !== "undefined" ? require("./rank.js") : root.MassRank;
 const KINDS = ["adoration", "confession"];
 const HORIZON_DAYS = { adoration: 2, confession: 7 }; // most Confession is only at weekends
 const MIN_STAY = 20;          // an Adoration room closing sooner than this after you arrive isn't worth the trip
-const CONFESSION_MARGIN = 10; // arrive at least this long before Confession ends
+const CONFESSION_MARGIN = 15; // arrive at least this long before Confession ends: there may be a queue, and it stops when Mass begins
 const WINDOW_MIN = 60;
 const CONFESSION_WINDOW_MIN = 6 * 60;
 const MAX_ROUTED = 8;
