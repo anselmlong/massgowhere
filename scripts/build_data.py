@@ -74,6 +74,19 @@ def site_info(pid, website, today):
     fresh = r_at and (today - datetime.fromisoformat(r_at).date()).days <= RICH_FRESH_DAYS
     first, second = (rich, monthly) if fresh else (monthly, rich)
     out = {**second, **first}
+    # dated changes and events come from both reads: a new bulletin's must show even while the rich read is fresh.
+    # The same date and time once (the preferred read's wording).
+    for k in ("dated", "events"):
+        seen, both = set(), []
+        for x in (first.get(k) or []) + (second.get(k) or []):
+            if (x["date"], x.get("time", "")) not in seen:
+                seen.add((x["date"], x.get("time", "")))
+                both.append(x)
+        if both:
+            out[k] = sorted(both, key=lambda x: (x["date"], x.get("time", "")))
+    # the bulletin the last automatic read used (the weekly one), else the one the rich read saw
+    if monthly.get("bulletin") or rich.get("bulletin"):
+        out["bulletin"] = monthly.get("bulletin") or rich["bulletin"]
     if not out:
         return None
     # where each part came from, for the page's source notes
@@ -90,6 +103,9 @@ def main():
     # Adoration and Confession hours for the finder, hand-checked (see data/services.json and public/services.js)
     services = load("data/services.json", {"parishes": {}})
     services = {"checked": services.get("checked", ""), "parishes": services.get("parishes", {})}
+    # each parish's newest bulletin, from myCatholicSG or its website (scripts/fetch_bulletins.py); the page decides
+    # from its date whether it is this week's
+    bulletins = load("data/bulletins_latest.json", {}).get("parishes", {})
     out_parishes, infos = [], {}
     for p in sorted(parishes, key=lambda p: p["name"]):
         pid = str(p["id"])
@@ -99,6 +115,7 @@ def main():
             "website": p.get("website", ""), "link": p.get("link", ""),
             "source": {"kind": "myCatholicSG", "url": f"https://mycatholic.sg/parish/{p.get('link', '')}", "fetchedAt": mc["asOf"]},
             "siteCheck": site_check(pid, mc["rules"].get(pid, [])),
+            "bulletin": {k: v for k, v in bulletins[pid].items() if v} if pid in bulletins else None,
         })
         info = site_info(pid, p.get("website", ""), datetime.now(SGT).date())
         if info:

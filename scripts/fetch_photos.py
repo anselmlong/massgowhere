@@ -10,7 +10,7 @@ strip = lambda s: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", s or "")).strip()
 
 picks = json.load(open("data/photo_picks.json"))
 os.makedirs("public/photos", exist_ok=True)
-credits = {}
+credits = json.load(open("public/photos/credits.json")) if os.path.exists("public/photos/credits.json") else {}  # keep the others (fetch_mycatholic_photos.py)
 for pid, title in picks.items():
     q = {"action": "query", "format": "json", "titles": "File:" + title, "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 960}
     page = next(iter(json.loads(fetch(API + "?" + urllib.parse.urlencode(q)))["query"]["pages"].values()))
@@ -19,4 +19,4 @@ for pid, title in picks.items():
     credits[pid] = {"title": title, "author": strip(m.get("Artist", {}).get("value")) or "Unknown", "license": strip(m.get("LicenseShortName", {}).get("value")),
                     "licenseUrl": m.get("LicenseUrl", {}).get("value", ""), "page": ii["descriptionurl"]}
     print(pid, credits[pid]["license"], "|", credits[pid]["author"][:40])
-json.dump(credits, open("public/photos/credits.json", "w"), indent=1, ensure_ascii=False)
+json.dump({k: credits[k] for k in sorted(credits, key=int)}, open("public/photos/credits.json", "w"), indent=1, ensure_ascii=False)

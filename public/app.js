@@ -1223,8 +1223,8 @@
   let photosP = null;
   const photoCredits = () => (photosP ||= fetch("photos/credits.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
   // the credit line, as on the church page: the parish's own photo, or a licensed one from Flickr or Wikimedia Commons
-  const photoCaption = (c) => (c.src
-    ? `Photo: <a href="${esc(c.page)}" target="_blank" rel="noopener">${esc(c.author)}</a> (parish website)`
+  const photoCaption = (c) => (!c.license
+    ? `Photo: <a href="${esc(c.page)}" target="_blank" rel="noopener">${esc(c.author)}</a> (${esc(c.via || "parish website")})`
     : `Photo: ${esc(c.author)}, <a href="${esc(c.licenseUrl || c.page)}" target="_blank" rel="noopener">${esc(c.license)}</a> · <a href="${esc(c.page)}" target="_blank" rel="noopener">${/flickr/.test(c.page) ? "Flickr" : "Wikimedia Commons"}</a>`);
   // the answer's small photo, full size over the page; a tap anywhere but the credit link (or Esc) closes it
   function openPhoto(id, name) {
@@ -1345,6 +1345,22 @@
       return `<li><span class="t">${x.time ? clock(at(x)) : ""}</span><span>${esc(dayLabel(at(x)))}${x.action === "cancel" ? `<span class="tag">Cancelled</span>` : ""}
         <span class="x">${esc(x.title)}${bits ? ` · ${bits}` : ""}</span></span></li>`;
     }).join("")}</ul><p class="x">${changes.every((x) => x.reviewed) ? "From the parish’s bulletin and website." : `Read automatically from the parish’s ${info.bulletin ? `<a href="${esc(info.bulletin.url)}" target="_blank" rel="noopener">latest bulletin</a>` : "bulletin"} and website.`} Check with the parish before you go.</p></div>` : "";
+    // this week's bulletin: myCatholicSG's, else the one on the parish website (scripts/fetch_bulletins.py, daily). Its
+    // age is judged here, so an old one is never called current; none from the last three weeks says so plainly.
+    // aged by the Sunday its title names when that is older than the upload ("September 20", posted 27 Sep)
+    const b = p.bulletin, bAge = b?.date ? Math.round((Date.parse(today) - Date.parse(b.for || b.date)) / 864e5) : Infinity;
+    const bWhere = b?.from === "website" ? "the parish website" : "myCatholicSG";
+    const bDate = (v) => `${fmtDate(`${v}T12:00:00+08:00`)}${v.slice(0, 4) !== today.slice(0, 4) ? ` ${v.slice(0, 4)}` : ""}`;
+    const bTitle = b?.title && !/_|\.pdf$/i.test(b.title) ? b.title : ""; // a file name says nothing new
+    const ext = (url, label, cls = "btn btn-primary") => `<a class="${cls}" href="${esc(url)}" target="_blank" rel="noopener">${label}</a>`;
+    const bulletinHTML = b && bAge <= 21
+      ? `<div class="bulletin"><div><strong>${bAge <= 9 ? "This week’s bulletin" : "Latest bulletin"}</strong>
+          <span>${[bTitle && esc(bTitle), `${b.from === "website" ? "Dated" : "Posted"} ${bDate(b.date)} on ${bWhere}`].filter(Boolean).join(" · ")}</span>
+          ${b.page && b.from !== "website" ? ext(b.page, "Earlier bulletins", "earlier") : ""}</div>
+          ${ext(b.url, bAge <= 9 ? "This week" : "Open")}</div>`
+      : `<div class="bulletin none"><div><strong>No current bulletin online</strong>
+          <span>${b ? `The last one, on ${bWhere}, is from ${bDate(b.date)}. ` : ""}Check the parish’s own website for this week’s news.</span></div>
+          ${ext(site || p.source.url, site ? "Website" : "myCatholicSG", "btn btn-quiet")}</div>`;
     const events = ahead(info?.events);
     const eventLi = (x) => `<li><span class="t">${esc(dnum(at(x)))}</span><span><strong>${esc(x.title)}</strong>
       <span class="x">${[x.time ? `${wk(at(x))} ${clock(at(x))}` : wk(at(x)), x.text].filter(Boolean).map(esc).join(" · ")}${x.url ? ` <a href="${esc(x.url)}" target="_blank" rel="noopener">More</a>` : ""}</span></span></li>`;
@@ -1363,7 +1379,6 @@
       fold("Groups and ministries", info.ministries ? dl(info.ministries.map((x) => [esc(x.name || ""), x.text !== x.name ? esc(x.text) : ""]).filter(([k]) => k)) : ""),
       fold("Contact the parish", contactHTML + dl([
         ["Livestream", info.livestream && `${esc(info.livestream.text)}${info.livestream.url ? ` ${linkOut(info.livestream, "Watch")}` : ""}`],
-        ["Bulletin", info.bulletin && linkOut(info.bulletin, info.bulletin.date ? `Latest bulletin (${fmtDate(info.bulletin.date)})` : "Latest bulletin")],
         ["Online", info.social && info.social.map((x) => linkOut(x, x.platform)).join(" · ")],
         ["Also", lines(info.other)]])),
     ].join("") : "";
@@ -1384,7 +1399,7 @@
       <div class="bar"><button class="back" type="button" aria-label="Back" onclick="history.length > 1 ? history.back() : (location.hash='#/')">${svg(ICON.back)}</button></div>
       <section class="church-page">
         ${photos[id] ? `<figure class="church-photo"><img src="${esc(photos[id].src || `photos/${id}.jpg`)}" referrerpolicy="no-referrer" alt="${esc(p.name)}" width="960" height="600" decoding="async">
-          <figcaption>${photos[id].src ? `Photo: <a href="${esc(photos[id].page)}" target="_blank" rel="noopener">${esc(photos[id].author)}</a> (parish website)` : `Photo: ${esc(photos[id].author)}, <a href="${esc(photos[id].licenseUrl || photos[id].page)}" target="_blank" rel="noopener">${esc(photos[id].license)}</a> · <a href="${esc(photos[id].page)}" target="_blank" rel="noopener">${/flickr/.test(photos[id].page) ? "Flickr" : "Wikimedia Commons"}</a>`}</figcaption></figure>` : ""}
+          <figcaption>${photoCaption(photos[id])}</figcaption></figure>` : ""}
         <h1>${esc(p.name)}</h1>
         <p class="addr">${esc(p.address)}, Singapore ${esc(p.postal || "")}</p>
         ${lead}
@@ -1399,6 +1414,7 @@
           ${soon.map(dayList).join("") || `<p class="lede">No Masses listed for the coming week. Please check with the parish.</p>`}
           ${rest.length ? `<details class="rest"><summary>Rest of the week</summary>${rest.map(dayList).join("")}</details>` : ""}
         </div>
+        ${bulletinHTML}
         ${changesHTML}
         ${services ? `<div class="week services">${services}</div>` : ""}
         ${notes.length ? `<ul class="notes">${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}

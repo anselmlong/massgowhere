@@ -101,6 +101,9 @@ def link_date(s):
         found.append((y, m, d))
     latest = dt.datetime.now(SGT).date() + dt.timedelta(days=10)
     out = []
+    for ms in re.findall(r"[?&]t=(1[6-9]\d{11})(?!\d)", s):  # a newsletter link's send time (St Michael's), epoch ms
+        d = dt.datetime.fromtimestamp(int(ms) / 1000, SGT).date()
+        found.append((d.year, d.month, d.day))
     for y, m, d in found:
         try:
             day = dt.date(int(y), int(m), int(d))
@@ -129,9 +132,26 @@ def fetch_html(url, rendered=False):
             pg = b.new_page(user_agent=UA["User-Agent"])
             pg.goto(url, wait_until="domcontentloaded", timeout=30000)
             pg.wait_for_timeout(3000)
-            return pg.content()
+            # a Drive file shown in a frame inside an embedded app (Risen Christ's bulletin page) counts as a link,
+            # named by its frame's title ("20260927_Bulletin.pdf - Google Drive")
+            if any("script.google.com" in f.url or "drive.google.com" in f.url for f in pg.frames):
+                pg.wait_for_timeout(5000)
+            framed = ""
+            for f in pg.frames:
+                m = re.search(r"drive\.google\.com/file/d/([\w-]+)", f.url)
+                if m:
+                    try:
+                        title = f.title()
+                    except Exception:  # noqa: BLE001 - a frame that went away has no title
+                        title = ""
+                    framed += f'<a href="https://drive.google.com/file/d/{m.group(1)}/view">{htmllib.escape(title)}</a>'
+            return pg.content() + framed
         finally:
             b.close()
+
+
+# an emailed newsletter's web copy (St Michael's bulletin is one)
+NEWSLETTER = re.compile(r"sendinblue\.com|brevo\.com|mailchi\.mp|campaign-archive\.com", re.I)
 
 
 def is_pdf(u):
@@ -152,9 +172,15 @@ def pick_bulletin(url, html):
 
     links = [(quote(urljoin(url, htmllib.unescape(h)), safe=":/?&=%#+,;@~"), page_text(t)) for h, t in re.findall(r"""(?is)<a\b[^>]*href=["']([^"'#]+)["'][^>]*>(.*?)</a>""", html)]
     cands = [(h, t) for h, t in links if h.startswith("http") and h.rstrip("/") != url.rstrip("/")
-             and (is_pdf(h) or re.search(r"bulletin|newsletter|leaven|voice", h + " " + t, re.I))
+             and (is_pdf(h) or NEWSLETTER.search(h) or re.search(r"bulletin|newsletter|leaven|voice", h + " " + t, re.I))
              and not re.search(r"/(category|tag|page)/|facebook|instagram|youtube|mailto", h, re.I)]
-    named = [(h, t) for h, t in cands if re.search(r"bulletin|newsletter|leaven|voice", h + " " + t, re.I)]
+    named = [(h, t) for h, t in cands if NEWSLETTER.search(h) or re.search(r"bulletin|newsletter|leaven|voice", h + " " + t, re.I)]
+    if not named:  # a PDF behind an image or a bare "Download" button, under a heading that says bulletin
+        for m in re.finditer(r"""(?is)<a\b[^>]*href=["']([^"'#]+)["']""", html):
+            h = quote(urljoin(url, htmllib.unescape(m.group(1))), safe=":/?&=%#+,;@~")
+            if is_pdf(h) and re.search(r"bulletin", page_text(html[max(0, m.start() - 800):m.end() + 200]), re.I):
+                named = [(h, "")]
+                break
     # a dated link wins (newest first); else an undated PDF that calls itself a bulletin. Never guess from other PDFs
     # (privacy policies, reflections, forms).
     dated = sorted(((link_date(h + " " + t) or dt.date.min, -i, h) for i, (h, t) in enumerate(named or cands)), reverse=True)
@@ -201,7 +227,17 @@ def latest_bulletin(url):
     text = pdf_text(link)
     if len(text.strip()) < 200:
         raise ValueError("bulletin has no text (an image?)")
+    # an undated link (a Drive file): the bulletin's own first page says which Sunday it is for
+    date = date or link_date(text[:1500])
     return {"url": link, "date": (date or "") and date.isoformat(), "text": text}
+
+
+def bulletin_text(u):
+    """The text of a bulletin found earlier (data/bulletins_latest.json): a PDF, or a newsletter web page."""
+    text = pdf_text(u) if is_pdf(u) or "firebasestorage.googleapis.com" in u else page_text(fetch_html(u))
+    if len(text.strip()) < 200:
+        raise ValueError("bulletin has no text (an image?)")
+    return text
 
 
 # ---------- extraction ----------
@@ -548,7 +584,14 @@ def run_one(pid, urls, parish, mc, args):
         rec["status"] = "kept-previous" if prev else "failed"
         return rec
     bulletin = None
-    if args.bulletins.get(pid):
+    found = args.latest.get(pid)  # this week's, from myCatholicSG or the parish website (scripts/fetch_bulletins.py)
+    if found and found.get("date") and found["date"] >= (dt.datetime.now(SGT).date() - dt.timedelta(days=21)).isoformat():
+        try:
+            bulletin = {"url": found["url"], "date": found["date"], "text": bulletin_text(found["url"])}
+            texts.append(f"[bulletin {bulletin['url']} dated {bulletin['date']}]\n{bulletin['text'][:20000]}")
+        except Exception as e:  # noqa: BLE001 - the website alone still gives the schedule
+            rec["warnings"].append(f"bulletin: {type(e).__name__} {str(e)[:80]}")
+    elif args.bulletins.get(pid):
         try:
             bulletin = latest_bulletin(args.bulletins[pid])
             texts.append(f"[bulletin {bulletin['url']} dated {bulletin['date'] or 'unknown'}]\n{bulletin['text'][:20000]}")
@@ -631,6 +674,8 @@ def main():
     args.holidays = set(json.load(open(hpath)).get("dates", {})) if os.path.exists(hpath) else set()
     bpath = os.path.join(ROOT, "data", "bulletins.json")
     args.bulletins = {k: v for k, v in json.load(open(bpath)).items() if not k.startswith("_")} if os.path.exists(bpath) else {}
+    lpath = os.path.join(ROOT, "data", "bulletins_latest.json")
+    args.latest = json.load(open(lpath)).get("parishes", {}) if os.path.exists(lpath) else {}
     sources = {k: v for k, v in json.load(open(os.path.join(ROOT, "data", "sources.json"))).items() if not k.startswith("_")}
     parishes = {str(p["id"]): p for p in json.load(open(os.path.join(ROOT, "scripts", "parishes_geo.json")))}
     ids = [i for i in (args.only.split(",") if args.only else sorted(sources, key=int)) if i in parishes and i in sources]

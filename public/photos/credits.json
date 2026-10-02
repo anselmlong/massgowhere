@@ -13,12 +13,49 @@
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Cathedral_of_the_Good_Shepherd,_Singapore_(2023)_-_img_01.jpg"
  },
+ "3": {
+  "author": "Church of Christ the King",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/christtheking"
+ },
+ "4": {
+  "author": "Church of Divine Mercy",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/divinemercy"
+ },
+ "5": {
+  "author": "Church of the Holy Cross",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/holycross"
+ },
  "6": {
   "title": "Church of the Holy Family, Singapore (2025) - img 01.jpg",
   "author": "Chainwit.",
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Church_of_the_Holy_Family,_Singapore_(2025)_-_img_01.jpg"
+ },
+ "7": {
+  "author": "Church of the Holy Spirit",
+  "page": "http://www.holyspirit.sg",
+  "src": "photos/7.jpg"
+ },
+ "8": {
+  "title": "Church of the Holy Trinity, Singapore",
+  "author": "alantankenghoe",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+  "page": "https://www.flickr.com/photos/57785759@N06/5444834158"
+ },
+ "9": {
+  "src": "https://ihm.sg/ihm/media/110823.jpg",
+  "author": "Church of the Immaculate Heart of Mary",
+  "page": "https://ihm.sg"
+ },
+ "10": {
+  "src": "https://img1.wsimg.com/isteam/ip/55e0d736-f8b4-41e9-9f10-503718f68607/_L8A1917A.jpg",
+  "author": "Church of Our Lady of Lourdes",
+  "page": "https://ourladyoflourdes.sg/"
  },
  "11": {
   "title": "Church of the Nativity of the Blessed Virgin Mary, October 2025.jpg",
@@ -34,6 +71,21 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Church_of_Our_Lady_of_Perpetual_Succour,_Siglap,_Singapore.jpg"
  },
+ "13": {
+  "author": "Church of Our Lady Queen of Peace",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/queenofpeace"
+ },
+ "14": {
+  "author": "Church of Our Lady Star of the Sea",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/starofthesea"
+ },
+ "15": {
+  "author": "Church of the Risen Christ",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/risenchrist"
+ },
  "16": {
   "title": "Church of the Sacred Heart, Singapore, 2023 (01).jpg",
   "author": "Bahnfrend",
@@ -48,12 +100,37 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Church_of_St._Alphonsus_Singapore_2011.jpg"
  },
+ "18": {
+  "author": "St Anne's Church",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/stanne"
+ },
+ "19": {
+  "author": "Church of St Anthony",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/stanthony"
+ },
  "20": {
   "title": "Church of St. Bernadette, Zion Road. 2013-09-30 03-44-16.jpg",
   "author": "Shesmax",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Church_of_St._Bernadette,_Zion_Road._2013-09-30_03-44-16.jpg"
+ },
+ "21": {
+  "author": "Church of St Francis of Assisi",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/stfrancisassisi"
+ },
+ "22": {
+  "author": "Church of St Francis Xavier",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/stfrancisxavier"
+ },
+ "23": {
+  "author": "Church of St Ignatius",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/stignatius"
  },
  "24": {
   "title": "Saint Joseph's Church, Bukit Timah.jpg",
@@ -83,12 +160,22 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Church_of_St_Michael,_Singapore_-_20231209_-_RSKY.jpg"
  },
+ "28": {
+  "author": "Church of St Stephen",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/ststephen"
+ },
  "29": {
   "title": "Church of St Teresa, Singapore, 02.jpg",
   "author": "Johan Jönsson (Julle)",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Church_of_St_Teresa,_Singapore,_02.jpg"
+ },
+ "30": {
+  "author": "Church of St Vincent de Paul",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/stvincentdepaul"
  },
  "31": {
   "title": "Sts Peter and Paul Church, Singapore.JPG",
@@ -97,26 +184,9 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Sts_Peter_and_Paul_Church,_Singapore.JPG"
  },
- "10": {
-  "src": "https://img1.wsimg.com/isteam/ip/55e0d736-f8b4-41e9-9f10-503718f68607/_L8A1917A.jpg",
-  "author": "Church of Our Lady of Lourdes",
-  "page": "https://ourladyoflourdes.sg/"
- },
- "9": {
-  "src": "https://ihm.sg/ihm/media/110823.jpg",
-  "author": "Church of the Immaculate Heart of Mary",
-  "page": "https://ihm.sg"
- },
- "8": {
-  "title": "Church of the Holy Trinity, Singapore",
-  "author": "alantankenghoe",
-  "license": "CC BY 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-  "page": "https://www.flickr.com/photos/57785759@N06/5444834158"
- },
- "7": {
-  "author": "Church of the Holy Spirit",
-  "page": "http://www.holyspirit.sg",
-  "src": "photos/7.jpg"
+ "32": {
+  "author": "Church of the Transfiguration",
+  "via": "myCatholicSG",
+  "page": "https://mycatholic.sg/parish/transfiguration"
  }
 }
