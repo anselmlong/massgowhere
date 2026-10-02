@@ -1177,6 +1177,7 @@
       const p = b.parish, w = when(b), alt = (res.alternatives || []).filter(Boolean);
       const special = res.specialDay ?? S.specialDay(ms(b.start), null);
       const src = b.source === "myCatholicSG" ? `<a href="https://mycatholic.sg/parish/${esc(p.link || "")}" target="_blank" rel="noopener">myCatholicSG</a>`
+        : b.source === "reported" ? "a report to MassGoWhere, not yet on the parish website"
         : `the <a href="${esc(p.website || `#/church/${p.id}`)}" target="_blank" rel="noopener">parish website</a>`;
       view.innerHTML = `${bar}
         <section class="answer reveal">

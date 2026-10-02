@@ -132,6 +132,7 @@ Response:
 - OneMap then routes a shortlist, timed for when you'd actually set off:
   - pass 1: the 5 nearest churches with a reachable Mass, the 3 with the soonest Mass, and the 2 nearest overall;
   - pass 2: anything else inside the window, up to `MAX_ROUTED`.
+- Each OneMap call has 3.5 s (`tripMinutesWithin`, `lib/onemap.js`); a slower one falls back to the estimate for that church, so one slow route can't hold up the answer.
 - In bus & MRT mode, a church within a 10-minute walk, or a 15-minute walk that's no slower than the bus, becomes a walk (`preferWalk`).
 - Bus & MRT routes follow the timetable for the departure time, so very early trips (before about 6:30am) come out slower.
 - Car trips are stretched ×1.4 on weekdays 7:30–9:30am and 5:30–8pm, because OneMap's driving route ignores traffic.
@@ -186,7 +187,8 @@ Response:
 ### 3.5 Telegram bot (`bot/bot.py`)
 
 - **Runtime:** Python 3 standard library only. It long-polls the Bot API and calls `MASSGOWHERE_API` (default `https://massgowhere.com`) for every answer.
-- **Answering:** replies instantly with a placeholder. If the live answer lands within 3 s it shows that; otherwise it shows the estimate first and edits it when the live answer arrives.
+- **Answering:** replies instantly with a placeholder, and asks for the live answer and the estimate together. If the live answer lands within 3 s it shows that; otherwise it shows the estimate (usually ready by then) and edits it when the live answer arrives.
+- **Newest request wins:** taps are acknowledged as soon as they arrive. A newer location, place, or mode or Sunday tap makes an answer still loading for that chat stop at once (it never edits the chat, and its "Looking for…" message is removed). Mode and Sunday buttons carry their answer's location and update that message in place.
 - **Buttons:** Navigate, Mass times, Open on the website, travel mode (remembered per chat), Sunday or Sunset Mass ↔ Any Mass.
 - **On the way:** a three-step flow (from → to → be there by), with a numbered three-step answer.
 - **`/feedback`:** forwards to the owner. It also asks for feedback once after a person's 3rd and 15th answer.

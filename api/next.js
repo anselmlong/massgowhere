@@ -7,7 +7,7 @@ const S = require("../public/schedule.js");
 const data = require("../public/data.json");
 const { rank } = require("../public/rank.js");
 const { rankOpen, expandAllServices, unconfirmed, KINDS } = require("../public/services.js");
-const { tripMinutes } = require("../lib/onemap.js");
+const { tripMinutesWithin } = require("../lib/onemap.js");
 
 const HORIZON_DAYS = 2;
 const LONG_HORIZON_DAYS = 7; // a Sunday Mass or a language with few Masses can be most of a week away
@@ -84,7 +84,7 @@ async function answer(req, res) {
     .filter(S.inPart(part))
     .filter((e) => !sunday || S.forSunday(e));
   const travel = async (p, departMs) => {
-    const t = await tripMinutes(origin, p, mode, departMs);
+    const t = await tripMinutesWithin(origin, p, mode, departMs);
     return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
   };
   // fast=1: estimate-only ranking (no OneMap routing) for an instant first frame;
@@ -151,7 +151,7 @@ function summarizeOpen(e, byId) {
 
 async function answerOpen(res, { kind, origin, now, at, mode, fast }) {
   const travel = async (p, departMs) => {
-    const t = await tripMinutes(origin, p, mode, departMs);
+    const t = await tripMinutesWithin(origin, p, mode, departMs);
     return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
   };
   const r = await rankOpen({ origin, now, mode, parishes: data.parishes, windows: expandAllServices(data, kind, now), travel: fast ? null : travel, fast });

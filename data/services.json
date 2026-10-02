@@ -145,8 +145,13 @@
     "9": {
       "adoration": {
         "from": "parish website",
-        "loc": "Main Church",
-        "unconfirmed": "The parish has an Adoration Room but doesn't give its hours. First Friday Holy Hour follows the 6:15pm Mass."
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "09:00", "to": "21:00", "source": "reported", "note": "Hours reported to MassGoWhere, not yet on the parish website: check before you go" }
+        ],
+        "sessions": [
+          { "days": [ 5 ], "weeks": [ 1 ], "t": "19:00", "name": "First Friday Holy Hour", "loc": "Main Church" }
+        ]
       },
       "confession": {
         "from": "parish website",
@@ -210,7 +215,10 @@
       "adoration": {
         "from": "parish website",
         "loc": "Adoration Room",
-        "unconfirmed": "The Adoration Room is open 10am–9pm; the parish doesn't say on which days."
+        "note": "The parish gives these hours but not which days: check before you go",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "10:00", "to": "21:00" }
+        ]
       }
     },
     "14": {
