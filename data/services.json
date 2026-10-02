@@ -491,7 +491,13 @@
       "adoration": {
         "from": "parish website",
         "loc": "Chapel of the Incarnation",
-        "unconfirmed": "The parish lists the Chapel of the Incarnation (weekdays 8am–9pm, weekends 8am–6pm), without saying it's an Adoration room."
+        "hours": [
+          { "days": [ 1, 2, 3, 4, 5 ], "from": "08:00", "to": "21:00", "ph": "skip" },
+          { "days": [ 0, 6 ], "from": "08:00", "to": "18:00", "ph": "skip" }
+        ],
+        "sessions": [
+          { "days": [ 6 ], "t": "16:00", "name": "Sion Adorers Holy Hour", "ph": "skip" }
+        ]
       },
       "confession": {
         "from": "parish website",
