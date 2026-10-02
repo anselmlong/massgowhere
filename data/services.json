@@ -194,15 +194,19 @@
     },
     "12": {
       "adoration": {
-        "from": "myCatholicSG",
-        "loc": "Main Church",
+        "from": "parish website",
+        "loc": "Adoration Room",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "06:00", "to": "22:15" }
+        ],
         "sessions": [
-          { "days": [ 5 ], "weeks": [ 1 ], "t": "18:30", "name": "First Friday Holy Hour" }
+          { "days": [ 5 ], "weeks": [ 1 ], "t": "18:45", "name": "First Friday Holy Hour (Sacred Heart)", "loc": "Main Church" }
         ]
       },
       "confession": {
         "from": "parish website",
-        "loc": "Main Church",
+        "loc": "Main Church confessionals",
+        "note": "Or make an appointment with a priest",
         "beforeMass": [
           { "min": 30, "masses": "weekend" }
         ]
