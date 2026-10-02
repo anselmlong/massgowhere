@@ -1,6 +1,22 @@
 {
- "_about": "Hand-checked parish facts that change how the schedule is read. no_weekday_mass_on_ph: parish ids with no weekday (Monday-Friday) Mass on public holidays, from the parish's own notice.",
+ "_about": "Hand-checked parish facts that change how the schedule is read. no_weekday_mass_on_ph: parish ids with no weekday (Monday-Friday) Mass on public holidays. add_rules: weekly Mass rules myCatholicSG lacks or mislabels, by parish id, same shape as data/mycatholic.json rules (weeks 1..5, -1 = last); a myCatholicSG dated entry at the same date, time and place merges into it.",
  "no_weekday_mass_on_ph": [
   "2"
- ]
+ ],
+ "add_rules": {
+  "12": [
+   {
+    "d": 0,
+    "t": "14:30",
+    "weeks": [
+     5
+    ],
+    "except": [],
+    "type": "Mass",
+    "lang": "Tagalog",
+    "loc": "Main Church",
+    "note": "Rosary at 2pm"
+   }
+  ]
+ }
 }

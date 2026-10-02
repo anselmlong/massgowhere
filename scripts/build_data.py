@@ -86,8 +86,13 @@ def site_info(pid, website, today):
 NOISE_NOTE = re.compile(r"^\W*(new|updated|changed?)\s+(mass\s+)?(timings?|times?|schedule)\W*$", re.I)
 
 
-def clean_notes(entries):
-    return [{**e, "note": ""} if NOISE_NOTE.match(e.get("note") or "") else e for e in entries]
+# "Public holiday" on a weekly Mass can't be right (a weekly Mass isn't a holiday Mass): dropped too
+PH_NOTE = re.compile(r"^\W*public holidays?\W*$", re.I)
+
+
+def clean_notes(entries, weekly=False):
+    noisy = lambda n: NOISE_NOTE.match(n) or (weekly and PH_NOTE.match(n))
+    return [{**e, "note": ""} if noisy(e.get("note") or "") else e for e in entries]
 
 
 def main():
@@ -96,6 +101,8 @@ def main():
     holidays = load("data/holidays.json", {"dates": {}})
     # Adoration and Confession hours for the finder, hand-checked (see data/services.json and public/services.js)
     services = load("data/services.json", {"parishes": {}})
+    # hand-checked schedule facts myCatholicSG lacks or gets wrong (data/overrides.json)
+    overrides = load("data/overrides.json", {})
     services = {"checked": services.get("checked", ""), "parishes": services.get("parishes", {})}
     # each parish's newest bulletin, from myCatholicSG or its website (scripts/fetch_bulletins.py); the page decides
     # from its date whether it is this week's
@@ -115,10 +122,10 @@ def main():
         if info:
             infos[pid] = info
     out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),
-           "parishes": out_parishes, "rules": {k: clean_notes(v) for k, v in mc["rules"].items()},
+           "parishes": out_parishes, "rules": {k: clean_notes(v, weekly=True) + overrides.get("add_rules", {}).get(k, []) for k, v in mc["rules"].items()},
            "dated": {k: clean_notes(v) for k, v in mc["dated"].items() if v}, "services": services,
            # hand-checked: parishes with no weekday Mass on public holidays (data/overrides.json)
-           "noWeekdayMassOnPH": load("data/overrides.json", {}).get("no_weekday_mass_on_ph", [])}
+           "noWeekdayMassOnPH": overrides.get("no_weekday_mass_on_ph", [])}
     path = os.path.join(ROOT, "public", "data.json")
     tmp = path + ".tmp"
     json.dump(out, open(tmp, "w"), ensure_ascii=False, separators=(",", ":"))
