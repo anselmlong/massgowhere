@@ -2,12 +2,10 @@
  "id": 17,
  "name": "Church of St Alphonsus (Novena Church)",
  "source_urls": [
-  "https://novenachurch.com/novena-mass-schedule/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610021528_1._Novena%204%20October%20to%2010%20October%20OMPH.pdf?alt=media&token=e5ed4447-8e36-49dd-8e92-6dae162b8f33"
  ],
- "fetched_at": "2026-10-02T12:35+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-02T21:04+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -41,18 +39,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "14:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "Children's Mass"
   },
   {
    "d": 0,
@@ -123,16 +109,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Pastoral Block Bernard Heaney Room",
-   "note": "Divine Mercy Devotion"
   },
   {
    "d": 4,
@@ -220,7 +196,7 @@
    "weeks": [],
    "except": [],
    "type": "Devotion",
-   "lang": "Chinese",
+   "lang": "Mandarin",
    "loc": "",
    "note": "Novena"
   },
@@ -253,87 +229,74 @@
    "lang": "English",
    "loc": "",
    "note": "Sunset Mass"
-  },
-  {
-   "d": 6,
-   "t": "20:00",
-   "weeks": [
-    4
-   ],
-   "except": [],
-   "type": "Devotion",
-   "lang": "Tamil",
-   "loc": "",
-   "note": "Tamil Novena"
-  },
-  {
-   "d": 6,
-   "t": "20:30",
-   "weeks": [
-    4
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "Tamil",
-   "loc": "",
-   "note": "Tamil Mass"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Devotion",
+   "date": "2026-10-24",
+   "time": "20:00",
+   "language": "Tamil",
+   "location": "",
+   "title": "Tamil Novena",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-24",
+   "time": "20:30",
+   "language": "Tamil",
+   "location": "",
+   "title": "Tamil Mass",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00",
   "18:30"
  ],
  "notes": [
-  "Public holidays follow a separate Mass schedule."
+  "No booking is required.",
+  "There will not be standing room allowed in the main church."
  ],
  "info": {
-  "confession": "Confession available 30 minutes before Mass.",
+  "confession": "Confession will be 30 minutes before Mass.",
   "devotions": [
-   "Divine Mercy Devotion: Thursday 10:30am-12pm, Pastoral Block Bernard Heaney Room.",
-   "Novena Devotions on Saturday: English 8:00am, 10:00am, 12:00pm, 4:00pm, 5:30pm; Chinese 2:00pm.",
-   "Tamil Novena and Mass: every 4th Saturday at 8:00pm; Tamil Mass also listed at 8:30pm. Check with the parish."
+   "Saturday Novena Devotions: 08:00, 10:00, 12:00, 14:00 (Mandarin), 16:00, 17:30"
   ],
   "good_to_know": [
    "No booking is required.",
-   "No standing allowed in the main church hall due to fire regulation."
+   "There will not be standing room allowed in the main church."
   ]
  },
  "events": [
   {
-   "date": "2026-10-02",
+   "date": "2026-10-16",
    "time": "",
-   "title": "Blessing of Pets",
-   "text": "After 12:15pm and 6:30pm Mass, in front of the Old Church."
+   "title": "Marriage Encounter Weekend 2026 (Bahasa Indonesia)",
+   "text": "Stay-In Weekend: Bahasa Indonesia 16-18 Oct. Secure your Weekend at: https://www.wwmesg.org/Weekend_Reg"
+  },
+  {
+   "date": "2026-11-06",
+   "time": "",
+   "title": "Marriage Encounter Weekend 2026 (English)",
+   "text": "Stay-In Weekend: English Nov 6-8. Secure your Weekend at: https://www.wwmesg.org/Weekend_Reg"
+  },
+  {
+   "date": "2026-12-04",
+   "time": "",
+   "title": "Marriage Encounter Weekend 2026 (English)",
+   "text": "Stay-In Weekend: English Dec 4-6. Secure your Weekend at: https://www.wwmesg.org/Weekend_Reg"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2609251423_4._Novena%2027%20September%20to%203%20October%20HS.pdf?alt=media&token=0800a65c-8bad-40a5-9cb2-c80ebdd79a42",
-  "date": "2026-09-25"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610021528_1._Novena%204%20October%20to%2010%20October%20OMPH.pdf?alt=media&token=e5ed4447-8e36-49dd-8e92-6dae162b8f33",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [
-   [
-    "Mass",
-    "Saturday",
-    "20:30",
-    [
-     4
-    ],
-    []
-   ],
-   [
-    "Mass",
-    "Sunday",
-    "14:00",
-    [
-     1
-    ],
-    []
-   ]
-  ],
+  "only_on_parish_site": [],
   "only_on_mycatholic": []
  }
 }

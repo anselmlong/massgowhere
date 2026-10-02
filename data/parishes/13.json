@@ -2,12 +2,10 @@
  "id": 13,
  "name": "Church of Our Lady Queen of Peace",
  "source_urls": [
-  "https://www.queenofpeace.sg/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610021704_2026_10%2004%20%20-%2027th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=7f96eba4-bd27-4f40-980e-2771d5041a64"
  ],
- "fetched_at": "2026-10-02T12:35+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-02T21:04+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -18,7 +16,7 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "Chinese",
+   "lang": "Mandarin",
    "loc": "",
    "note": ""
   },
@@ -53,6 +51,16 @@
    "note": ""
   },
   {
+   "d": 0,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Assumption Garden",
+   "note": "Rosary"
+  },
+  {
    "d": 1,
    "t": "12:15",
    "weeks": [],
@@ -71,6 +79,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 1,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Assumption Garden",
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -93,6 +111,16 @@
    "note": ""
   },
   {
+   "d": 2,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Assumption Garden",
+   "note": "Rosary"
+  },
+  {
    "d": 3,
    "t": "12:15",
    "weeks": [],
@@ -113,6 +141,16 @@
    "note": ""
   },
   {
+   "d": 3,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Assumption Garden",
+   "note": "Rosary"
+  },
+  {
    "d": 4,
    "t": "12:15",
    "weeks": [],
@@ -131,6 +169,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 4,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Assumption Garden",
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -165,6 +213,16 @@
    "note": ""
   },
   {
+   "d": 5,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Assumption Garden",
+   "note": "Rosary"
+  },
+  {
    "d": 6,
    "t": "07:30",
    "weeks": [],
@@ -192,37 +250,77 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
+  },
+  {
+   "d": 6,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Assumption Garden",
+   "note": "Rosary"
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "09:00"
+ "no_weekday_mass_on_public_holidays": true,
+ "public_holiday_masses": [],
+ "notes": [
+  "Public Holiday Mass is at 9:00am.",
+  "Sacred Heart Devotion is also held after the evening Mass on the first Friday of the month.",
+  "Divine Mercy Chaplet is recited after the 6.30pm Mass on the last Friday of the month."
  ],
- "notes": [],
  "info": {
-  "adoration": "Adoration Room is open 10am to 9pm.",
+  "adoration": "Adoration Room: 10am to 9pm.",
   "devotions": [
-   "Sacred Heart Devotion is also held after the evening Mass on the first Friday of the month.",
-   "Divine Mercy Chaplet is recited after the 6.30pm Mass on the last Friday of the month."
-  ],
-  "office_hours": "Mon-Fri 10am-12nn & 1pm-7:30pm; Sat 10am-1pm; Sun 9am-12nn.",
-  "good_to_know": [
-   "For public holidays, the bulletin says 09:00, the website says Monday-Friday 09:00 and Saturday 07:30; check with the parish."
+   "Novena Devotion: Saturday at 4.15pm.",
+   "Sacred Heart Devotion: 1st Friday of the month at 12.00 noon & after evening Mass.",
+   "Divine Mercy Chaplet: recited after 6.30pm Mass every last Fri of the month.",
+   "Daily recitation of the Rosary after all evening Masses: 7pm on Weekdays and 6pm on Weekends at Assumption Garden."
   ]
  },
  "events": [
   {
+   "date": "2026-10-04",
+   "time": "",
+   "title": "2026 Chinese Marriage Preparation Course (4 & 11 Oct 2026)",
+   "text": "Chinese marriage preparation course on 4 Oct and 11 Oct 2026, 9am-5pm at CANA The Catholic Centre. Fee: S$220 per couple. Register via catechetical website. Contacts: 秀琼 98524047, 美琏 97315662."
+  },
+  {
    "date": "2026-10-10",
    "time": "",
-   "title": "Holy Family Spirituality Talk",
-   "text": "Speaker: Fr Zhang Liyong. Registration: Xu Renxin 94308817; Hong Jinhui 90918332. Fee: love offering."
+   "title": "Holy Family Spirituality Talk (by Fr Zhang Liyong)",
+   "text": "Talk on 10 Oct 2026, 9am-12pm at Holy Family Church, 4th floor prayer hall. Registration: 徐人心 94308817; 洪金惠 90918332. Love offering."
+  },
+  {
+   "date": "2026-11-06",
+   "time": "19:45",
+   "title": "Treasure #18 Retreat for Young Working Adults",
+   "text": "Stay-in Catholic Encounter Retreat from 6 Nov 2026, 7.45pm to 9 Nov 2026, 6pm at St. Francis Xavier Retreat Centre (199 Ponggol Seventeenth Avenue S829645). For ages 21-35. Fee: $163.50 (incl. 9% GST). Register: tinyurl.com/oyptreasure18. Email: treasure.oyp@catholic.org.sg."
+  },
+  {
+   "date": "2026-11-06",
+   "time": "20:00",
+   "title": "CTIS Information Night",
+   "text": "Information night on 6 Nov 2026, 8pm at CTIS Upper Bukit Timah. Applications open for CTIS Semester 1 2027 Certificate in Theology. Classes on weekday evenings, physical and online options. Closing date: 12 Dec 2026. Enquiries: 69028700."
+  },
+  {
+   "date": "2026-11-07",
+   "time": "",
+   "title": "Introduction to Accompaniment",
+   "text": "One-day retreat on 7 Nov 2026, 9am-5pm at Lifesprings Canossian Spirituality Centre. Fee: $140/pax. Register: https://bit.ly/acom-intro. A collaboration between the Catholic Leadership Centre and Archdiocesan Pastoral Council."
+  },
+  {
+   "date": "2026-12-10",
+   "time": "",
+   "title": "Four Dioceses Youth Rally 2026",
+   "text": "Youth rally from 10-16 Dec 2026, 10am-5pm at Singapore Catholic Spirituality Centre. Theme: '你们放心，我已战胜了世界！' (John 16:33). For youth 14 and above. Fee: S$175. Register: https://acams.org.sg/acams/2026-si-jiao-qu-youth-rally. Organised by Singapore Archdiocese Chinese Pastoral Commission."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2609251442_2026_09%2027%20%20-%2026th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=ba4f658e-6562-4289-80c2-bf1846d8106d",
-  "date": "2026-09-25"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610021704_2026_10%2004%20%20-%2027th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=7f96eba4-bd27-4f40-980e-2771d5041a64",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {

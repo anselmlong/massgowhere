@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-02T12:31+08:00",
+ "fetchedAt": "2026-10-02T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -11,16 +11,16 @@
   },
   "2": {
    "from": "myCatholicSG",
-   "title": "27 September 2026",
-   "date": "2026-09-26",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2609252144_Bulletin_20260927.pdf?alt=media&token=65e815e6-b53b-463c-99b1-60570bf1177c",
+   "title": "4 October 2026",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610020846_Bulletin_20261004.pdf?alt=media&token=a28a9bf0-7119-4f95-8c1f-acc0dc4b4821",
    "page": "https://mycatholic.sg/bulletin/cathedral"
   },
   "3": {
    "from": "myCatholicSG",
-   "title": "CTK LEAVEN  27 SEPTEMBER 2026",
-   "date": "2026-09-25",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2609251531_The_Leaven%2027%20Sep%202026%20Final.pdf?alt=media&token=9c6d71cc-1443-472b-a051-2840c19c3d99",
+   "title": "CTK LEAVEN 4 OCTOBER 2026",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2610021230_CTK_LEAVEN%204%20Oct%20Final.pdf?alt=media&token=f29fa668-d29e-4e09-bd99-497299785851",
    "page": "https://mycatholic.sg/bulletin/christtheking"
   },
   "4": {
@@ -46,9 +46,9 @@
   },
   "7": {
    "from": "myCatholicSG",
-   "title": "Twenty-sixth Sunday in Ordinary Time (World Day of Migrants & Refugees)",
-   "date": "2026-09-25",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2609251342_CHS_Bulletin%2026%20-%2027%20September%202026.pdf?alt=media&token=fb135cc6-0edc-402c-b79d-6253a758d0b1",
+   "title": "Twenty-Seventh Sunday in Ordinary Time",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610021421_CHS_Bulletin%203%20-%204%20October%202026.pdf?alt=media&token=48c4f495-1cf5-44f7-a591-2cc94fa895e5",
    "page": "https://mycatholic.sg/bulletin/holyspirit"
   },
   "8": {
@@ -60,9 +60,9 @@
   },
   "9": {
    "from": "myCatholicSG",
-   "title": "39. 26nd Sunday in Ord. Time - 27 Sep 2026",
-   "date": "2026-09-25",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2609251434_39_26th%20Sun%20in%20Ord%20Time%2027Sep26.pdf?alt=media&token=3fa9c3be-7627-4678-826b-035960d497b2",
+   "title": "40. 27th Sunday in Ord. Time - 04 Oct 2026",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610021421_40_27%20Sun%20in%20Ord%20Time%204Oct26.pdf?alt=media&token=515b1af7-bc46-4e44-9f5d-fd2b23d70d59",
    "page": "https://mycatholic.sg/bulletin/immaculateheartofmary"
   },
   "10": {
@@ -88,9 +88,9 @@
   },
   "13": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 26th Sunday in Ordinary Time",
-   "date": "2026-09-25",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2609251442_2026_09%2027%20%20-%2026th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=ba4f658e-6562-4289-80c2-bf1846d8106d",
+   "title": "Bulletin - 27th Sunday in Ordinary Time",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610021704_2026_10%2004%20%20-%2027th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=7f96eba4-bd27-4f40-980e-2771d5041a64",
    "page": "https://mycatholic.sg/bulletin/queenofpeace"
   },
   "14": {
@@ -103,22 +103,22 @@
   "15": {
    "from": "website",
    "title": "",
-   "date": "2026-09-27",
-   "url": "https://drive.google.com/file/d/1juE-fSksJj1mXygC05sA7aJf8lUL1eyA/view",
+   "date": "2026-10-04",
+   "url": "https://drive.google.com/file/d/1opVm-nNiIdVzLBVVZOGgoinnME3HK0WK/view",
    "page": "https://www.risenchrist.org.sg/bulletin"
   },
   "16": {
    "from": "website",
    "title": "",
-   "date": "2026-09-27",
-   "url": "https://drive.google.com/file/d/12cj5-V6SwnEtsfbU7fdSndVnMVpAsPfO/view?usp=drive_web",
+   "date": "2026-10-04",
+   "url": "https://drive.google.com/file/d/1mEOe1I9SCFtm7-cGBvVROHb67moC2JMU/view?usp=drive_web",
    "page": "https://www.churchofthesacredheart.sg/bulletin"
   },
   "17": {
    "from": "myCatholicSG",
-   "title": "Bulletin 27th September till 3rd October 2026",
-   "date": "2026-09-25",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2609251423_4._Novena%2027%20September%20to%203%20October%20HS.pdf?alt=media&token=0800a65c-8bad-40a5-9cb2-c80ebdd79a42",
+   "title": "Bulletin 4th October till 10th October 2026",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610021528_1._Novena%204%20October%20to%2010%20October%20OMPH.pdf?alt=media&token=e5ed4447-8e36-49dd-8e92-6dae162b8f33",
    "page": "https://mycatholic.sg/bulletin/novena"
   },
   "18": {
@@ -144,16 +144,16 @@
   },
   "21": {
    "from": "myCatholicSG",
-   "title": "27 Sep - 26th Sunday in Ord. Time",
-   "date": "2026-09-29",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2609291626_Sep_27%202026%20-%2026th%20Sun%20in%20Ord.%20Time.pdf?alt=media&token=e7f80137-eedd-4baf-937e-eb9cded4ea4f",
+   "title": "4 Oct - 27th Sunday in Ord. Time",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2610021326_Oct_4%202026%20-%2027th%20Sun%20in%20Ord.%20Time.pdf?alt=media&token=3d58256a-caae-443b-a7b4-a72c45a48d87",
    "page": "https://mycatholic.sg/bulletin/stfrancisassisi"
   },
   "22": {
    "from": "myCatholicSG",
-   "title": "SFXBulletin_2026_09_27",
-   "date": "2026-09-26",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2609260910_Bulletin_2026_09_27_2.pdf?alt=media&token=f71876db-9441-460c-989a-ce0199237f3e",
+   "title": "SFXBulletin_2026_10_04",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610021652_Bulletin_2026_10_04_2.pdf?alt=media&token=c18abde0-18c1-47ec-916e-3e1bfc84e48f",
    "page": "https://mycatholic.sg/bulletin/stfrancisxavier"
   },
   "23": {
@@ -174,14 +174,14 @@
   "25": {
    "from": "website",
    "title": "",
-   "date": "2026-09-27",
-   "url": "https://drive.google.com/file/d/1dwk6DerWcMvJz614-ePobgFR7rGmmPBt/view?usp=sharing",
+   "date": "2026-10-04",
+   "url": "https://drive.google.com/file/d/16q6pgjr767T_ZB5yIGKS3AyeNrJowbWd/view?usp=sharing",
    "page": "https://sjcvs.org.sg/"
   },
   "26": {
    "from": "website",
    "title": "",
-   "date": "2026-10-01",
+   "date": "2026-10-02",
    "url": "https://www.stmary.sg/announcements",
    "page": "https://www.stmary.sg/announcements",
    "kind": "announcements"

@@ -2,12 +2,10 @@
  "id": 22,
  "name": "Church of St Francis Xavier",
  "source_urls": [
-  "https://www.sfxchurch.sg/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610021652_Bulletin_2026_10_04_2.pdf?alt=media&token=c18abde0-18c1-47ec-916e-3e1bfc84e48f"
  ],
- "fetched_at": "2026-10-02T12:37+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-02T21:05+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -53,6 +51,26 @@
    "note": ""
   },
   {
+   "d": 0,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Online",
+   "note": "Rosary by Lectors"
+  },
+  {
+   "d": 1,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Online",
+   "note": "Divine Mercy & Rosary"
+  },
+  {
    "d": 1,
    "t": "18:30",
    "weeks": [],
@@ -74,6 +92,16 @@
   },
   {
    "d": 2,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Online",
+   "note": "Divine Mercy & Rosary"
+  },
+  {
+   "d": 2,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -91,6 +119,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 3,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Online",
+   "note": "Divine Mercy & Rosary"
   },
   {
    "d": 3,
@@ -111,6 +149,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 4,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Online",
+   "note": "Divine Mercy & Rosary"
   },
   {
    "d": 4,
@@ -131,6 +179,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Online",
+   "note": "Divine Mercy & Rosary"
   },
   {
    "d": 5,
@@ -183,7 +241,35 @@
    "note": ""
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Devotion",
+   "date": "2026-10-05",
+   "time": "20:00",
+   "language": "",
+   "location": "Mount Tabor Adoration Room",
+   "title": "Intercessory",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-11-09",
+   "time": "10:00",
+   "language": "",
+   "location": "Main Church",
+   "title": "Sacrament of Reconciliation",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "11:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Mass and Anointing of the Sick & Elderly",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00"
@@ -192,38 +278,63 @@
   "There is currently no Confession before Mass."
  ],
  "info": {
-  "adoration": "Adoration Room: Monday–Sunday 07:00–23:00; closed on public holidays.",
-  "confession": "By appointment only; contact the Parish Office."
+  "adoration": "Adoration Room: Mon-Sun 7am-11pm; closed on public holidays.",
+  "confession": "Confession is by appointment only. Fridays 4pm-6pm; Saturdays 10am-12pm. Contact Parish Office to make an appointment. Closed on public holidays after 9am Mass.",
+  "devotions": [
+   "In October, the Holy Rosary is prayed in person 30 minutes before weekday Masses, and online (Mon-Fri 3pm; Sundays 8.30pm)."
+  ],
+  "office_hours": "Parish Office: Mon-Fri 9.30am-6.30pm; Sat-Sun 8.30am-1pm. Closed on public holidays.",
+  "good_to_know": [
+   "There is currently no Confession before Mass."
+  ]
  },
  "events": [
   {
-   "date": "2026-10-02",
-   "time": "",
-   "title": "Mysteries of the Rosary - The Glorious Mysteries",
-   "text": "Last session on the Glorious Mysteries by LiFE Ministry. Enquiries: Raymond (9752 9723) or Ignatius (9664 2127)."
-  },
-  {
    "date": "2026-10-04",
    "time": "",
-   "title": "Children's Day Celebration",
-   "text": "Games, arts and crafts, and light snacks at Mount Horeb."
+   "title": "Sunday Fellowship",
+   "text": "The LiFE will be serving breakfast this Sunday at JPII Hall. Love offerings are welcome."
+  },
+  {
+   "date": "2026-10-05",
+   "time": "20:00",
+   "title": "Charismatic: Life in the Spirit – Growth Series",
+   "text": "8pm – 9.45pm at Hosea Room (Parish Centre, L2). Continue the journey of growing in faith and discovering the gifts of the Holy Spirit."
   },
   {
    "date": "2026-10-10",
-   "time": "",
+   "time": "09:30",
    "title": "BRAVE – Work Well, Live Well",
-   "text": "World Mental Health Day event by Clarity and Catholic Business Network. Online via Zoom. Free admission. Register: tinyurl.com/BRAVE1010."
+   "text": "9.30am - 1pm at Metro Y Hotel, The Vine Ballroom. World Mental Health Day event by Clarity and Catholic Business Network. Register: tinyurl.com/BRAVE1010"
   },
   {
-   "date": "2026-10-31",
-   "time": "",
-   "title": "Day for Life 2026",
-   "text": "Keynote speakers on hope and healing after abortion, the role of men in protecting life, and Jesus as the source of all hope. At Church of the Immaculate Heart of Mary, St Gregory’s Hall. Cost: $13 per ticket. Register: tinyurl.com/dayforlife26."
+   "date": "2026-10-16",
+   "time": "20:00",
+   "title": "Faith That Lives with Fr Edward Lim: Encountering Christ in the Sacraments",
+   "text": "8pm – 10pm at JPII Hall. Part of LiFE series."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "15:00",
+   "title": "Caritas Singapore: Young Missionaries of Hope – One in Christ, United in Mission",
+   "text": "3pm – 5.30pm (Virtual zoom). Register: bit.ly/unitedinmission"
+  },
+  {
+   "date": "2026-10-23",
+   "time": "19:15",
+   "title": "Caritas Singapore: Legacy Talk – Ageing Gracefully, Leaving Meaningfully",
+   "text": "7.15pm – 9.30pm at Church of the Immaculate Heart of Mary. Register: www.bit.ly/legacyoct2026"
+  },
+  {
+   "date": "2026-10-23",
+   "time": "20:00",
+   "title": "Faith That Lives with Fr Edward Lim: Encountering Christ in the Sacraments",
+   "text": "8pm – 10pm at JPII Hall. Part of LiFE series."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2609260910_Bulletin_2026_09_27_2.pdf?alt=media&token=f71876db-9441-460c-989a-ce0199237f3e",
-  "date": "2026-09-26"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610021652_Bulletin_2026_10_04_2.pdf?alt=media&token=c18abde0-18c1-47ec-916e-3e1bfc84e48f",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {

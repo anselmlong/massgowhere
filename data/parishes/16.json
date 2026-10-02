@@ -2,12 +2,10 @@
  "id": 16,
  "name": "Church of the Sacred Heart",
  "source_urls": [
-  "https://www.churchofthesacredheart.sg/services"
+  "https://drive.google.com/file/d/1mEOe1I9SCFtm7-cGBvVROHb67moC2JMU/view?usp=drive_web"
  ],
- "fetched_at": "2026-10-02T12:35+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-02T21:03+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -16,25 +14,11 @@
    "d": 0,
    "t": "08:00",
    "weeks": [],
-   "except": [
-    2
-   ],
-   "type": "Mass",
-   "lang": "Mandarin",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "08:00",
-   "weeks": [
-    2
-   ],
    "except": [],
    "type": "Mass",
-   "lang": "Bilingual (English & Mandarin)",
+   "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Bilingual (English & Mandarin) on the 2nd and 4th Sunday"
   },
   {
    "d": 0,
@@ -66,17 +50,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": "1st Sunday of the month"
-  },
-  {
-   "d": 0,
-   "t": "19:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Mary's Shrine",
-   "note": "Rosary with Mary, on every 13th of the month"
+   "note": ""
   },
   {
    "d": 1,
@@ -97,6 +71,16 @@
    "lang": "English",
    "loc": "Chapel",
    "note": ""
+  },
+  {
+   "d": 2,
+   "t": "19:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Mary's Shrine",
+   "note": "Rosary with Mary, every 13th of the month"
   },
   {
    "d": 3,
@@ -125,10 +109,10 @@
     1
    ],
    "except": [],
-   "type": "Devotion",
+   "type": "Adoration",
    "lang": "English",
-   "loc": "Church",
-   "note": "Mass followed by Holy Hour"
+   "loc": "Main Church",
+   "note": "Holy Hour after the 7.00pm Mass"
   },
   {
    "d": 5,
@@ -147,7 +131,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -157,7 +141,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -168,7 +152,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Church",
-   "note": "Sacred Heart Devotion; also live on YouTube & Facebook"
+   "note": "Devotion to the Sacred Heart; livestreamed on YouTube & Facebook"
   },
   {
    "d": 6,
@@ -187,98 +171,85 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church",
+   "loc": "",
    "note": "Sunset Mass"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-25",
+   "time": "08:00",
+   "language": "English & Mandarin",
+   "location": "",
+   "title": "Bilingual Mass",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "08:00"
  ],
  "notes": [
-  "No weekday Mass on public holidays; on public holidays there is one Mass at 8am in the Chapel."
+  "No weekday Mass on public holidays; public holiday Mass is at 8.00am in the Chapel.",
+  "The 8.00am Sunday Mass is bilingual (English & Mandarin) on 11 and 25 October 2026.",
+  "Mass intentions for All Souls' Day (2 November) must be submitted by Sunday, 25 October 2026."
  ],
  "info": {
-  "confession": "30 minutes before Saturday Sunset Mass and Sunday Masses; also by appointment with a priest.",
+  "adoration": "Holy Hour: 1st Thursday of each month, after the 7.00pm Mass, in the Main Church.",
+  "confession": "30 minutes before weekend Masses, or make an appointment directly with the priests.",
   "devotions": [
-   "Sacred Heart Devotion: Fridays 7.45pm in the Church",
-   "Holy Hour: 1st Thursday of the month, after the 7pm Mass in the Church",
-   "Rosary with Mary: every 13th of the month, 7.30pm at Mary's Shrine"
+   "Devotion to the Sacred Heart: Fridays 7.45pm in Church and livestreamed on YouTube & Facebook",
+   "Rosary with Mary: every 13th of the month at 7.30pm at Mary's Shrine"
   ],
-  "office_hours": "Mon-Fri 9am-5pm; closed on public holidays.",
+  "office_hours": "Parish Secretariat (Parish Building, Level 3): Monday to Friday 9am to 5pm; closed on public holidays.",
   "good_to_know": [
-   "Church and columbarium are open daily 7.30am-6.30pm, except public holidays.",
-   "Parking: Level 1 car park via Tank Road; Levels 4 and 5 car parks via Jalan Rumbia.",
-   "Sacraments such as Baptism, Marriage, Anointing of the Sick and columbarium matters: contact the Parish Office for an appointment."
+   "Church opening hours: 7.30am to 6.30pm (closed on public holidays).",
+   "Parking: Level 1 enter by Tank Road; Levels 4 & 5 enter by Jalan Rumbia (from Oxley Rise, behind the Church).",
+   "Columbarium visits: 7.30am to 6.30pm (closed on public holidays).",
+   "Infant Baptism: 1st Sunday of Jan, Mar, May, Jul, Sep, Nov at 2pm."
   ]
  },
  "events": [
   {
-   "date": "2026-10-04",
-   "time": "13:30",
-   "title": "Mass for the Feast of St Faustina",
-   "text": "Theme \"Jesus, I Trust in You!\", 1.30-4pm at the Church of the Divine Mercy. Main celebrant Fr Yang De Cheng, speaker Fr Zhang Li Yong."
+   "date": "2026-10-13",
+   "time": "19:30",
+   "title": "Rosary with Mary",
+   "text": "At Mary's Shrine outside the church, marking the anniversary of the last apparition of Our Lady of Fatima. All are welcome to pray the Rosary together."
   },
   {
-   "date": "2026-10-10",
-   "time": "09:00",
-   "title": "Half-day talk-retreat \"Holy Family Spirituality\"",
-   "text": "9am-12pm at the Holy Family Church, Level 4 prayer hall. Speaker Fr Zhang Li Yong. Register with Jin Hui 90918332."
+   "date": "2026-10-16",
+   "time": "08:30",
+   "title": "Journey of Discipleship Retreat #2",
+   "text": "Stay-in retreat 16-18 Oct 2026 at the Catholic Spirituality Centre, conducted by Msgr Peter Zhang and the CSC Retreat Team. Fee $280; register at https://bit.ly/cscjdr2."
+  },
+  {
+   "date": "2026-11-06",
+   "time": "",
+   "title": "Treasure #18 Retreat for Young Working Adults (21-35)",
+   "text": "Stay-in Catholic Encounter Retreat, 6-9 Nov 2026 at St. Francis Xavier Retreat Centre. Fee $163.50; register at tinyurl.com/oyp-treasure18 or email treasure.oyp@catholic.org.sg."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "20:00",
+   "title": "Pieta Memorial Mass 2026",
+   "text": "At the Church of St Alphonsus (Novena Church), for families who have lost a child. Register by 30 October at https://tinyurl.com/MM2026Pieta."
+  },
+  {
+   "date": "2026-11-21",
+   "time": "10:00",
+   "title": "OYP Outreach for Secondary 4 & 5 Students",
+   "text": "Morning of prayer and fellowship at Catholic Centre, 55 Waterloo Street, #08-01, 10am-1pm (registration 9.45am). Free; register at tinyurl.com/SecOutreach26Nov."
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/12cj5-V6SwnEtsfbU7fdSndVnMVpAsPfO/view?usp=drive_web",
-  "date": "2026-09-27"
+  "url": "https://drive.google.com/file/d/1mEOe1I9SCFtm7-cGBvVROHb67moC2JMU/view?usp=drive_web",
+  "date": "2026-10-04"
  },
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [
-   [
-    "Mass",
-    "Sunday",
-    "08:00",
-    [],
-    [
-     2
-    ]
-   ],
-   [
-    "Mass",
-    "Sunday",
-    "08:00",
-    [
-     2
-    ],
-    []
-   ]
-  ],
+  "only_on_parish_site": [],
   "only_on_mycatholic": [
-   [
-    "Mass",
-    "Sunday",
-    "08:00",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Sunday",
-    "15:00",
-    [
-     2
-    ],
-    []
-   ],
-   [
-    "Mass",
-    "Sunday",
-    "15:00",
-    [
-     4
-    ],
-    []
-   ],
    [
     "Mass",
     "Thursday",

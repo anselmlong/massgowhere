@@ -2,26 +2,14 @@
  "id": 21,
  "name": "Church of St Francis of Assisi",
  "source_urls": [
-  "https://www.csfa.sg/pastoral-services"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2610021326_Oct_4%202026%20-%2027th%20Sun%20in%20Ord.%20Time.pdf?alt=media&token=3d58256a-caae-443b-a7b4-a72c45a48d87"
  ],
- "fetched_at": "2026-10-02T12:36+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-02T21:05+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "15 minutes before Mass"
-  },
   {
    "d": 0,
    "t": "07:30",
@@ -34,16 +22,6 @@
   },
   {
    "d": 0,
-   "t": "09:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "15 minutes before Mass"
-  },
-  {
-   "d": 0,
    "t": "09:30",
    "weeks": [],
    "except": [],
@@ -51,16 +29,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "11:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "15 minutes before Mass"
   },
   {
    "d": 0,
@@ -136,7 +104,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before evening Mass"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 1,
@@ -166,7 +134,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before evening Mass"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 2,
@@ -196,7 +164,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before evening Mass"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 3,
@@ -226,7 +194,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before evening Mass"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 4,
@@ -250,23 +218,13 @@
   },
   {
    "d": 5,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Divine Mercy devotion; paused 25 Sep and 2 Oct, resumes 9 Oct"
-  },
-  {
-   "d": 5,
    "t": "17:50",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before evening Mass"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 5,
@@ -285,7 +243,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -297,16 +255,6 @@
    "lang": "English",
    "loc": "",
    "note": "Rosary before Sunset Mass"
-  },
-  {
-   "d": 6,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "15 minutes before Sunset Mass"
   },
   {
    "d": 6,
@@ -334,61 +282,57 @@
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-10-02",
-   "time": "20:00",
+   "date": "2026-10-03",
+   "time": "17:30",
    "language": "English",
    "location": "",
-   "title": "Golden Jubilee 9-Day Novena Mass, Day 9: Building God's Kingdom on Earth",
+   "title": "Sunset Mass",
    "action": "add"
   },
   {
    "type": "Mass",
    "date": "2026-10-03",
-   "time": "17:30",
+   "time": "18:00",
    "language": "English",
    "location": "",
-   "title": "Sunset Mass moved earlier (Golden Jubilee)",
-   "action": "add"
+   "title": "Sunset Mass",
+   "action": "cancel"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "No evening Mass on public holidays.",
-  "Weekday Confession is by appointment only."
+  "Weekday Masses are at St Francis Chapel.",
+  "Saturday Tamil Mass is on the 4th Saturday only.",
+  "Sunday 2pm Tagalog Mass is on the 3rd Sunday only; Sunday 7.30pm Tamil Mass is except the 4th Sunday, when Malayalam Mass is at 7.30pm."
  ],
  "info": {
-  "adoration": "Adoration Room & Columbarium: daily 9am-9.30pm; closed on public holidays.",
-  "confession": "15 minutes before every weekend Mass; on weekdays by appointment only.",
+  "adoration": "Adoration Room & Columbarium: Daily 9:00am to 9:30pm; closed on Public Holidays.",
+  "confession": "15 minutes before Weekend Masses; weekdays by appointment only.",
   "devotions": [
-   "Rosary: 5.50pm before daily evening Mass",
-   "Rosary: 5.20pm before Sunset Mass",
-   "Divine Mercy devotion: Fridays (paused 25 Sep and 2 Oct, resumes 9 Oct)",
-   "Daily rosary over Zoom: 8.15pm, Family Rosary Group"
+   "Rosary at 5:50pm before daily evening Mass.",
+   "Rosary at 5:20pm before Sunset Mass.",
+   "Friday Divine Mercy devotion will stop on 25 Sep & 2 Oct and resume on 9 Oct."
   ],
+  "office_hours": "Parish Office: 62640078. Secretariat: Marites | secretariat@csfa.sg. Administrator: Elizabeth Lee | administrator@csfa.sg. ICT & Facility Manager Laurence Ramos | ict@csfa.sg.",
   "good_to_know": [
-   "Church gate open daily 6am-10pm; on Sundays it closes after the 7.30pm Mass; closed on public holidays.",
-   "Religious Article Shop: Sat 5-6pm; Sun 8.30-11.30am and 5-7.30pm.",
-   "Weekday Masses are held in St Francis Chapel."
+   "Church gate: Daily 6am to 10pm, Sundays closed after 7.30pm Mass. Closed on Public Holidays.",
+   "Religious Article Shop: Sat 5.00–6.00pm; Sun 8.30am–11.30am, 5–7.30pm.",
+   "Infant Baptism next schedule on 8 Nov 2026. Email application with required supporting documents 2 weeks before the baptism date to secretariat@csfa.sg.",
+   "Wedding Booking: Check with the Secretariat for availability at least 12 months before booking the church with Parish Office."
   ]
  },
  "events": [
   {
-   "date": "2026-10-02",
-   "time": "20:00",
-   "title": "Golden Jubilee 9-Day Novena Mass, Day 9: Building God's Kingdom on Earth",
-   "text": "Final night of the parish's 9-day novena in preparation for the Feast Day. All parishioners welcome."
-  },
-  {
-   "date": "2026-10-03",
-   "time": "",
-   "title": "Golden Jubilee Feast Day",
-   "text": "Parish Feast Day celebration with a Food and Fun Fair; Feast Day coupons are needed for food and games."
+   "date": "2026-10-17",
+   "time": "14:00",
+   "title": "World Youth Day 2027 info session",
+   "text": "World Youth Day 2027 will be held in Seoul, South Korea in August 2027. You may scan the QR code to register for the info session on Oct 17, 2026 at 2pm in St Mary Hall at level 3 for those who are interested to learn more about the World Youth Day 2027."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2609291626_Sep_27%202026%20-%2026th%20Sun%20in%20Ord.%20Time.pdf?alt=media&token=e7f80137-eedd-4baf-937e-eb9cded4ea4f",
-  "date": "2026-09-29"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2610021326_Oct_4%202026%20-%2027th%20Sun%20in%20Ord.%20Time.pdf?alt=media&token=3d58256a-caae-443b-a7b4-a72c45a48d87",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {

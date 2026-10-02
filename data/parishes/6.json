@@ -2,26 +2,14 @@
  "id": 6,
  "name": "Church of the Holy Family",
  "source_urls": [
-  "https://w.holyfamily.org.sg/mass-times"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610012037_27th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=ea6b18b9-3be6-4e56-a9dc-cbff0aada7e8"
  ],
- "fetched_at": "2026-09-29T18:25+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-02T21:05+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
   {
    "d": 0,
    "t": "07:30",
@@ -29,17 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "09:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -49,17 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "11:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -69,17 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -89,7 +47,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "19:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "Mandarin",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -99,17 +67,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 1,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -119,7 +77,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -129,17 +87,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -149,7 +97,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -159,8 +107,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Church of the Holy Family",
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 3,
@@ -169,17 +117,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -189,7 +127,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -199,17 +137,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -219,7 +147,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -229,17 +157,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -249,7 +167,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -261,8 +179,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Church of the Holy Family",
+   "note": "First Friday Adoration"
   },
   {
    "d": 6,
@@ -271,7 +189,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -281,18 +199,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Church of the Holy Family",
+   "note": "Saturday Novena Devotion"
   },
   {
    "d": 6,
@@ -301,66 +209,109 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "19:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "Mandarin",
-   "loc": "",
-   "note": ""
+   "loc": "Church of the Holy Family",
+   "note": "English Sunset Mass"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Devotion",
+   "date": "2026-10-03",
+   "time": "15:45",
+   "language": "English",
+   "location": "Grotto",
+   "title": "Monthly Prayer at the Grotto",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-23",
+   "time": "20:00",
+   "language": "English",
+   "location": "Adoration Room",
+   "title": "Intercessory Prayer Session",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:30"
  ],
- "notes": [
-  "Adoration Room opens daily from 06:00 to 22:30, including Public Holidays, unless specified.",
-  "Mass and services are held in the Main Church unless otherwise indicated.",
-  "Confessions are heard 30 minutes before each weekend Mass."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room opens daily from 06:00 to 22:30, including Public Holidays, unless specified.",
-  "confession": "Confessions are heard 30 minutes before each weekend Mass.",
+  "adoration": "Adoration Room: Daily, 6am–10.30pm.",
+  "confession": "Confession: 30 minutes before all weekend Masses.",
   "devotions": [
-   "Saturday Novena at 16:30",
-   "Weekday Rosary at 17:45",
-   "Tuesday Divine Mercy at 19:00",
-   "First Fridays Adoration at 19:00"
-  ],
-  "good_to_know": [
-   "Mass and services are held in the Main Church unless otherwise indicated.",
-   "Mass is in English unless otherwise indicated.",
-   "For other Mass timings, refer to https://mycatholic.sg/schedules."
+   "Tuesday Divine Mercy Devotion: 7pm.",
+   "First Friday Adoration: 7pm.",
+   "Saturday Novena Devotion: 4.30pm."
   ]
+ },
+ "events": [
+  {
+   "date": "2026-10-05",
+   "time": "09:30",
+   "title": "CaFE Video Program on Mother Mary (Morning Session)",
+   "text": "“Let It Be Done To Me” 5-part video series. 5 Oct, 12 Oct, 19 Oct, 26 Oct, 2 Nov from 9.30am to 10.45am at Church Level 4 Function Hall Dome."
+  },
+  {
+   "date": "2026-10-05",
+   "time": "19:30",
+   "title": "Cancer Support Group",
+   "text": "Every 1st Monday of the month. Next session: Monday, 5 October 2026 at 7.30pm. Venue: Holy Family Adoration Room."
+  },
+  {
+   "date": "2026-10-06",
+   "time": "19:45",
+   "title": "The Wild Goose",
+   "text": "14-part series over 7 weeks. Tuesdays 6 Oct–17 Nov, 7.45pm–9.30pm. Potluck fellowship from 7pm. Pastoral Centre Level 3 St. Ephrem Room."
+  },
+  {
+   "date": "2026-10-07",
+   "time": "20:00",
+   "title": "Opening the Word of Life",
+   "text": "Readings for 28th Sunday in Ordinary Time Year A. Wed 7 Oct 2026, 8.00pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. No registration required."
+  },
+  {
+   "date": "2026-10-08",
+   "time": "20:00",
+   "title": "CaFE Video Program on Mother Mary (Evening Session)",
+   "text": "“Let It Be Done To Me” 5-part video series. 8 Oct, 15 Oct, 22 Oct, 29 Oct, 5 Nov from 8.00pm to 9.30pm at Church Level 4 Function Hall Big Room."
+  },
+  {
+   "date": "2026-10-16",
+   "time": "19:45",
+   "title": "Talk on Mother Mary in the Marian Month of October",
+   "text": "Talk by Friar Derrick Yap (OFM). Theme: “St Francis of Assisi’s Love and Devotion to Our Lady”. Fri 16 October 2026, 7.45pm–9.30pm at Main Church. Includes Marian Hymns, Recitation of the Most Holy Rosary & the Talk."
+  },
+  {
+   "date": "2026-10-28",
+   "time": "20:00",
+   "title": "Opening the Word of Life",
+   "text": "Readings for All Saints Day. Wed 28 Oct 2026, 8.00pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. No registration required."
+  }
+ ],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610012037_27th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=ea6b18b9-3be6-4e56-a9dc-cbff0aada7e8",
+  "date": "2026-10-01"
  },
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [],
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Sunday",
+    "19:30",
+    [],
+    []
+   ]
+  ],
   "only_on_mycatholic": [
    [
     "Mass",
-    "Friday",
+    "Saturday",
     "19:30",
-    [
-     1
-    ],
+    [],
     []
    ]
   ]

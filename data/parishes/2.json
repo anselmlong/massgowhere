@@ -2,12 +2,10 @@
  "id": 2,
  "name": "Cathedral of the Good Shepherd",
  "source_urls": [
-  "https://cathedral.catholic.sg/sacraments/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610020846_Bulletin_20261004.pdf?alt=media&token=a28a9bf0-7119-4f95-8c1f-acc0dc4b4821"
  ],
- "fetched_at": "2026-10-02T12:32+08:00",
- "fetch_mode": [
-  "rendered"
- ],
+ "fetched_at": "2026-10-02T21:02+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -20,7 +18,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "Main Church",
-   "note": "when priests are available"
+   "note": "15 minutes before weekend Mass; when priests are available"
   },
   {
    "d": 0,
@@ -40,7 +38,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "Main Church",
-   "note": "when priests are available"
+   "note": "15 minutes before weekend Mass; when priests are available"
   },
   {
    "d": 0,
@@ -60,7 +58,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "Main Church",
-   "note": "when priests are available"
+   "note": "15 minutes before weekend Mass; when priests are available"
   },
   {
    "d": 0,
@@ -90,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary; tinyurl.com/cgsprayrosary, password: cgs"
+   "note": "Rosary; password cgs"
   },
   {
    "d": 2,
@@ -110,7 +108,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary; tinyurl.com/cgsprayrosary, password: cgs"
+   "note": "Rosary; password cgs"
   },
   {
    "d": 3,
@@ -119,8 +117,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Breaking of the Word; before Intercessory Prayers at 11:45am"
+   "loc": "Annex, Level 2 Room 4",
+   "note": "Breaking of the Word"
   },
   {
    "d": 3,
@@ -130,7 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Annex, Level 2 Room 4",
-   "note": "Intercessory Prayers; Breaking of the Word begins at 11am"
+   "note": "Intercessory Prayers"
   },
   {
    "d": 3,
@@ -150,7 +148,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary; tinyurl.com/cgsprayrosary, password: cgs"
+   "note": "Rosary; password cgs"
   },
   {
    "d": 4,
@@ -180,7 +178,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Breaking of the Word; ends 9.30pm"
+   "note": "Breaking of the Word, 8pm-9.30pm"
   },
   {
    "d": 5,
@@ -192,7 +190,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Temporary Chapel",
-   "note": "Rosary; 4th Friday of the month"
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -212,7 +210,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "Main Church",
-   "note": "when priests are available"
+   "note": "15 minutes before weekend Mass; when priests are available"
   },
   {
    "d": 6,
@@ -225,74 +223,35 @@
    "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-10-18",
-   "time": "08:30",
-   "language": "English",
-   "location": "Temporary Chapel",
-   "title": "Mass",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Divine Mercy is not held on public holidays.",
-  "Confession is subject to priest availability.",
-  "Main Church is closed on 10-11 and 17-18 Oct; all Masses are at the Temporary Chapel. Seating is limited; a live feed is available in spillover rooms."
+  "Main Church is closed on weekends 10-11 Oct and 17-18 Oct; all Masses during these weekends will be at the Temporary Chapel.",
+  "Seating at the Temporary Chapel is limited; a live feed is available in designated spillover rooms.",
+  "Confession is subject to priest availability."
  ],
  "info": {
-  "adoration": "Adoration Chapel is open daily 7am-12mn.",
-  "confession": "Confession is at the Main Church 15 minutes before Weekend Masses when priests are available.",
-  "devotions": [
-   "Rosary on Zoom: tinyurl.com/cgsprayrosary, password: cgs.",
-   "Divine Mercy is not held on public holidays."
-  ],
-  "office_hours": "Cathedral Office is open Monday-Friday 9am-6pm, closed on public holidays.",
-  "good_to_know": [
-   "Main Church is closed Monday-Friday; open Saturday at 4pm and full day on Sundays.",
-   "Temporary Chapel is at JM Beurel Centre (Annex Building) Level 1, open Monday-Friday 10am-7pm.",
-   "Heritage Gallery is open 10am-10pm. Book a Heritage Tour at cathedral.catholic.sg/heritage.",
-   "Weddings and infant baptisms: see cathedral.catholic.sg/marriage and cathedral.catholic.sg/baptism-and-confirmation/. Infant baptisms are on weekends by appointment."
-  ]
+  "adoration": "Adoration Chapel open daily 7am-12mn.",
+  "confession": "Main Church 15 minutes before weekend Mass when priests are available."
  },
  "events": [
-  {
-   "date": "2026-10-13",
-   "time": "",
-   "title": "Human Dignity and Development in the Era of AI",
-   "text": "Talk on AI, Pope Leo XIV's encyclical Magnifica Humanitas, safeguarding human dignity. Location: Catholic Centre, 55 Waterloo St (Level 3). Fee: $15. Register: bit.ly/dignityoct"
-  },
   {
    "date": "2026-10-30",
    "time": "",
    "title": "These Catholic Men: A Fireside Chat on Masculinity",
-   "text": "An honest conversation about who we are, what our strength is for, and the men God is calling us to become. Featuring John Hui, Bernard Thio, Nicholas Gabriel Lim, Jerome Chong, and special guest Sam Guzman (online). Location: PICO Event Hall, 20 Kallang Avenue. Fee: Love offering. Register: familyl"
-  },
-  {
-   "date": "2026-11-06",
-   "time": "20:00",
-   "title": "CTIS 1st Semester 2027 - Certificate in Theology Information Night",
-   "text": "Information night for Certificate in Theology. Application closing date 12 December 2026. Forms available from CTIS office or www.ctis.sg. Enquiries call 69028700. Location: CTIS Upper Bukit Timah."
+   "text": "Dinner provided. Location: PICO Event Hall, 20 Kallang Avenue. Register: familylife.sg/TCMM"
   },
   {
    "date": "2026-11-13",
    "time": "",
    "title": "Emmanuel: Walking with God in Our Golden Years",
-   "text": "A meaningful time of reflection on navigating retirement and golden years with confidence and clarity, managing fears of growing old, rediscovering purpose and redefining priorities. Location: St Joseph Church (Bukit Timah), St Joseph AVA Room, L1. Fee: $20 per pax | $35 for 2 pax. Register: familyl"
-  },
-  {
-   "date": "2026-11-21",
-   "time": "",
-   "title": "Secondary 4 & 5 Students Outreach",
-   "text": "OYP welcomes all who are graduating to join us for a time of prayer with the Lord and getting to know fellow Sec 4 & 5 students. Location: Catholic Centre, 55 Waterloo Street, #08-01, Singapore 187954. Register: tinyurl.com/SecOutreach26Nov"
+   "text": "Location: St. Joseph Church (Bukit Timah), St Joseph AVA Room, L1. Fee: $20 per pax | $35 for 2 pax. Register: familylife.sg/EWWG"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2609252144_Bulletin_20260927.pdf?alt=media&token=65e815e6-b53b-463c-99b1-60570bf1177c",
-  "date": "2026-09-26"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610020846_Bulletin_20261004.pdf?alt=media&token=a28a9bf0-7119-4f95-8c1f-acc0dc4b4821",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {
