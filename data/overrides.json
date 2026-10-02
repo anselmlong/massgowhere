@@ -1,0 +1,6 @@
+{
+ "_about": "Hand-checked parish facts that change how the schedule is read. no_weekday_mass_on_ph: parish ids with no weekday (Monday-Friday) Mass on public holidays, from the parish's own notice.",
+ "no_weekday_mass_on_ph": [
+  "2"
+ ]
+}

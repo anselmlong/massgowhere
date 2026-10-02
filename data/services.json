@@ -30,20 +30,17 @@
     "2": {
       "adoration": {
         "from": "parish website",
-        "loc": "Adoration Chapel",
+        "loc": "Basement Adoration Chapel",
         "hours": [
           { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "00:00" }
         ]
       },
       "confession": {
-        "from": "myCatholicSG",
+        "from": "parish website",
         "loc": "Main Church",
-        "note": "Subject to availability of priest",
-        "slots": [
-          { "days": [ 6 ], "from": "17:45", "to": "mass" },
-          { "days": [ 0 ], "from": "08:15", "to": "mass" },
-          { "days": [ 0 ], "from": "10:15", "to": "mass" },
-          { "days": [ 0 ], "from": "17:45", "to": "mass" }
+        "note": "When priests are available",
+        "beforeMass": [
+          { "min": 15, "masses": "weekend" }
         ]
       }
     },

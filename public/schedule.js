@@ -45,10 +45,15 @@
     const start = sgtDay(fromMs);
     const byKey = new Map();
 
+    // parishes with no weekday Mass on public holidays (hand-checked): their regular Monday-Friday Masses drop out
+    // that day; a dated Mass the parish lists for the holiday still shows
+    const phOff = (data.noWeekdayMassOnPH || []).includes(String(pid));
     for (let i = 0; i <= days; i++) {
       const day = new Date(start.getTime() + i * 86400000);
       const date = iso(day);
+      const skipWeekday = phOff && data.holidays && data.holidays[date] && day.getUTCDay() >= 1 && day.getUTCDay() <= 5;
       for (const r of rules) {
+        if (skipWeekday && (r.type || "Mass") === "Mass") continue;
         if (ruleOn(r, day)) byKey.set(slotKey(date, r), { ...r, date });
       }
     }

@@ -116,7 +116,9 @@ def main():
             infos[pid] = info
     out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),
            "parishes": out_parishes, "rules": {k: clean_notes(v) for k, v in mc["rules"].items()},
-           "dated": {k: clean_notes(v) for k, v in mc["dated"].items() if v}, "services": services}
+           "dated": {k: clean_notes(v) for k, v in mc["dated"].items() if v}, "services": services,
+           # hand-checked: parishes with no weekday Mass on public holidays (data/overrides.json)
+           "noWeekdayMassOnPH": load("data/overrides.json", {}).get("no_weekday_mass_on_ph", [])}
     path = os.path.join(ROOT, "public", "data.json")
     tmp = path + ".tmp"
     json.dump(out, open(tmp, "w"), ensure_ascii=False, separators=(",", ":"))
