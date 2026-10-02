@@ -4,6 +4,7 @@ Usage:
   python3 scripts/scrape_parishes.py                 # all parishes -> data/parishes/<id>.json
   python3 scripts/scrape_parishes.py --only 5,6 --models a/x,b/y --out /tmp/x
   python3 scripts/scrape_parishes.py --force         # accept big changes without the safety check
+  python3 scripts/scrape_parishes.py --bulletin-only --only 5,6   # read this week's bulletin alone (the weekly job)
 
 One cheap model reads each page (several may be given with --models; they then vote, and a slot they
 disagree on is kept only if myCatholicSG lists it). Every result is also compared with myCatholicSG and the
@@ -569,18 +570,26 @@ def run_one(pid, urls, parish, mc, args):
     except ValueError:
         prev = None
     rec = {"id": int(pid), "name": parish["name"], "warnings": [], "usage": {}}
-    if not urls:
+    if args.bulletin_only:
+        # the weekly job: this week's bulletin (or what the parish publishes in its place) is the only text read;
+        # parish websites are too unreliable to scrape. No bulletin: keep what we had (myCatholicSG + hand-curated)
+        found = args.latest.get(pid)
+        if not found or not found.get("url"):
+            rec["status"] = "no-bulletin"
+            return rec
+        urls = [found["url"]]
+    elif not urls:
         rec["status"] = "no-source"
         return rec
     texts, how = [], []
-    for u in urls:
+    for u in ([] if args.bulletin_only else urls):
         try:
             t, mode = fetch(u)
             texts.append(f"[{u}]\n{t[:30000 // len(urls)]}")
             how.append(mode)
         except Exception as e:  # noqa: BLE001 - any fetch failure just means "keep previous"
             rec["warnings"].append(f"fetch failed {u}: {type(e).__name__} {str(e)[:80]}")
-    if not texts:
+    if not texts and not args.bulletin_only:
         rec["status"] = "kept-previous" if prev else "failed"
         return rec
     bulletin = None
@@ -591,13 +600,16 @@ def run_one(pid, urls, parish, mc, args):
             texts.append(f"[bulletin {bulletin['url']} dated {bulletin['date']}]\n{bulletin['text'][:20000]}")
         except Exception as e:  # noqa: BLE001 - the website alone still gives the schedule
             rec["warnings"].append(f"bulletin: {type(e).__name__} {str(e)[:80]}")
-    elif args.bulletins.get(pid):
+    elif args.bulletins.get(pid) and not args.bulletin_only:
         try:
             bulletin = latest_bulletin(args.bulletins[pid])
             texts.append(f"[bulletin {bulletin['url']} dated {bulletin['date'] or 'unknown'}]\n{bulletin['text'][:20000]}")
         except Exception as e:  # noqa: BLE001 - the website alone still gives the schedule
             rec["warnings"].append(f"bulletin: {type(e).__name__} {str(e)[:80]}")
 
+    if not texts:  # bulletin-only, and the bulletin couldn't be read (an image, say): keep what we had
+        rec["status"] = "kept-previous" if prev else "no-bulletin"
+        return rec
     results = {}
     with cf.ThreadPoolExecutor(len(args.models)) as ex:
         futs = {m: ex.submit(extract, parish["name"], urls[0], "\n\n".join(texts), m) for m in args.models}
@@ -642,7 +654,7 @@ def run_one(pid, urls, parish, mc, args):
            "vs_mycatholic": diff}
     rec["disputes"] = len(disputes)
     rec["vs_mycatholic"] = f"+{len(diff['only_on_parish_site'])}/-{len(diff['only_on_mycatholic'])}"
-    if prev and not args.force:
+    if prev and not args.force and not args.bulletin_only:  # a bulletin's Mass list isn't compared with a website's
         a, b = mass_slots(prev), mass_slots(doc)
         changed = len(a ^ b) / max(len(a | b), 1)
         if changed > 0.5:
@@ -664,6 +676,7 @@ def main():
     ap.add_argument("--out", default=os.path.join(ROOT, "data", "parishes"))
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--bulletin-only", action="store_true", help="read this week's bulletin alone, no parish website")
     args = ap.parse_args()
     args.models = [m.strip() for m in args.models.split(",") if m.strip()]
     os.makedirs(args.out, exist_ok=True)
@@ -678,10 +691,11 @@ def main():
     args.latest = json.load(open(lpath)).get("parishes", {}) if os.path.exists(lpath) else {}
     sources = {k: v for k, v in json.load(open(os.path.join(ROOT, "data", "sources.json"))).items() if not k.startswith("_")}
     parishes = {str(p["id"]): p for p in json.load(open(os.path.join(ROOT, "scripts", "parishes_geo.json")))}
-    ids = [i for i in (args.only.split(",") if args.only else sorted(sources, key=int)) if i in parishes and i in sources]
+    ids = [i for i in (args.only.split(",") if args.only else sorted(sources, key=int))
+           if i in parishes and (i in sources or args.bulletin_only)]
 
     with cf.ThreadPoolExecutor(args.workers) as ex:
-        recs = list(ex.map(lambda pid: run_one(pid, sources[pid], parishes[pid], mc, args), ids))
+        recs = list(ex.map(lambda pid: run_one(pid, sources.get(pid, []), parishes[pid], mc, args), ids))
     report_path = os.path.join(args.out, "_report.json")
     if args.only and os.path.exists(report_path):  # a partial rerun keeps the other parishes' last results
         rerun = {r["id"] for r in recs}
@@ -701,7 +715,7 @@ def main():
         print(f"{m}: {i} prompt + {o} completion tokens")
     write_json(report_path,
                {"ran_at": dt.datetime.now(SGT).isoformat(timespec="minutes"), "models": args.models, "results": recs})
-    if args.out == os.path.join(ROOT, "data", "parishes"):
+    if args.out == os.path.join(ROOT, "data", "parishes") and not args.bulletin_only:
         write_site_check(recs, args.out)
     # a few failures are normal (sites down); they fall back to myCatholicSG. Many failures means something is broken.
     bad = sum(r["status"] in ("failed", "kept-previous") for r in recs)
