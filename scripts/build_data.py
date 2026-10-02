@@ -12,6 +12,7 @@ No network access.
 """
 import json
 import os
+import re
 from datetime import datetime, timedelta, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -81,6 +82,14 @@ def site_info(pid, website, today):
     return out
 
 
+# myCatholicSG notes that only announce a change ("New Timing!") tell a visitor nothing: the time is simply the time
+NOISE_NOTE = re.compile(r"^\W*(new|updated|changed?)\s+(mass\s+)?(timings?|times?|schedule)\W*$", re.I)
+
+
+def clean_notes(entries):
+    return [{**e, "note": ""} if NOISE_NOTE.match(e.get("note") or "") else e for e in entries]
+
+
 def main():
     parishes = load("scripts/parishes_geo.json")
     mc = load("data/mycatholic.json")
@@ -106,7 +115,8 @@ def main():
         if info:
             infos[pid] = info
     out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),
-           "parishes": out_parishes, "rules": mc["rules"], "dated": {k: v for k, v in mc["dated"].items() if v}, "services": services}
+           "parishes": out_parishes, "rules": {k: clean_notes(v) for k, v in mc["rules"].items()},
+           "dated": {k: clean_notes(v) for k, v in mc["dated"].items() if v}, "services": services}
     path = os.path.join(ROOT, "public", "data.json")
     tmp = path + ".tmp"
     json.dump(out, open(tmp, "w"), ensure_ascii=False, separators=(",", ":"))
