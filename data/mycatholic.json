@@ -1,5 +1,5 @@
 {
-"asOf": "2026-09-29",
+"asOf": "2026-07-03",
 "rules": {
 "1": [
 {
@@ -609,6 +609,26 @@
 ],
 "4": [
 {
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -659,11 +679,81 @@
 "note": ""
 },
 {
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
 "d": 6,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
 "lang": "English",
 "loc": "Chapel",
 "note": ""
@@ -676,96 +766,6 @@
 "t": "18:15",
 "lang": "English",
 "loc": "Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
 "note": ""
 },
 {
@@ -1225,6 +1225,16 @@
 "note": ""
 },
 {
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 6,
 "weeks": [],
 "except": [],
@@ -1245,16 +1255,6 @@
 "note": ""
 },
 {
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 3,
 "weeks": [],
 "except": [],
@@ -1265,11 +1265,11 @@
 "note": ""
 },
 {
-"d": 4,
+"d": 1,
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "18:30",
+"t": "06:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -1282,6 +1282,18 @@
 "except": [],
 "type": "Adoration",
 "t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [
+1
+],
+"except": [],
+"type": "Mass",
+"t": "19:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -1337,6 +1349,16 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Rosary 30 minutes before Mass"
 },
 {
 "d": 0,
@@ -1437,16 +1459,6 @@
 "lang": "English",
 "loc": "Chapel",
 "note": ""
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "8": [
@@ -1455,9 +1467,39 @@
 "weeks": [],
 "except": [],
 "type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
 "t": "18:00",
 "lang": "English",
 "loc": "Chapel",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "08:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "10:15",
+"lang": "English",
+"loc": "Main Church",
 "note": ""
 },
 {
@@ -1491,6 +1533,26 @@
 "note": ""
 },
 {
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
 "d": 6,
 "weeks": [],
 "except": [],
@@ -1501,61 +1563,21 @@
 "note": "Daily Mass"
 },
 {
-"d": 1,
+"d": 6,
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "06:30",
+"t": "17:30",
 "lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
+"loc": "Main Church",
+"note": "Sunset Mass for Sunday"
 },
 {
 "d": 1,
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "18:00",
+"t": "06:30",
 "lang": "English",
 "loc": "Chapel",
 "note": ""
@@ -1571,26 +1593,6 @@
 "note": ""
 },
 {
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Sunset Mass for Sunday"
-},
-{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -1601,27 +1603,47 @@
 "note": ""
 },
 {
-"d": 0,
+"d": 5,
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "08:30",
-"lang": "Mandarin",
-"loc": "Main Church",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
 "note": ""
 },
 {
-"d": 0,
+"d": 4,
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "10:15",
+"t": "06:30",
 "lang": "English",
-"loc": "Main Church",
+"loc": "Chapel",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
 "note": ""
 }
 ],
 "9": [
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
 {
 "d": 6,
 "weeks": [],
@@ -1643,11 +1665,71 @@
 "note": ""
 },
 {
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 0,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -1661,6 +1743,16 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Followed by Novena Devotion."
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 },
 {
 "d": 0,
@@ -1693,106 +1785,6 @@
 "note": "Changed since 28 Mar 2026"
 },
 {
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 0,
 "weeks": [
 2
@@ -1818,6 +1810,26 @@
 },
 {
 "d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
 "weeks": [
 1
 ],
@@ -1826,7 +1838,7 @@
 "t": "19:00",
 "lang": "English",
 "loc": "Main Church",
-"note": ""
+"note": "Holy Hour starts after the evening mass. (Estimate at 7.00pm)"
 }
 ],
 "10": [
@@ -1876,6 +1888,16 @@
 "except": [],
 "type": "Mass",
 "t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "17:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -1999,16 +2021,6 @@
 "lang": "Tamil",
 "loc": "Main Church",
 "note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "11": [
@@ -2083,6 +2095,16 @@
 "note": ""
 },
 {
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 5,
 "weeks": [],
 "except": [],
@@ -2131,16 +2153,6 @@
 "lang": "Mandarin (中文)",
 "loc": "Main Church",
 "note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "17": [
@@ -2159,7 +2171,27 @@
 "weeks": [],
 "except": [],
 "type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
 "t": "08:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "12:15",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -2196,6 +2228,26 @@
 },
 {
 "d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -2255,51 +2307,11 @@
 "note": ""
 },
 {
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 3,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "17:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -2537,16 +2549,6 @@
 "note": ""
 },
 {
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 1,
 "weeks": [],
 "except": [],
@@ -2554,7 +2556,7 @@
 "t": "06:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "Public holiday"
+"note": ""
 },
 {
 "d": 0,
@@ -2723,16 +2725,6 @@
 "note": ""
 },
 {
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 2,
 "weeks": [],
 "except": [],
@@ -2741,9 +2733,29 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "15": [
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
 {
 "d": 1,
 "weeks": [],
@@ -2855,36 +2867,6 @@
 "note": ""
 },
 {
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 5,
 "weeks": [
 1
@@ -2897,6 +2879,16 @@
 "note": ""
 },
 {
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 2,
 "weeks": [],
 "except": [],
@@ -2907,34 +2899,8 @@
 "note": ""
 },
 {
-"d": 1,
-"weeks": [
-3
-],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [
-5
-],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [
-4
-],
+"d": 2,
+"weeks": [],
 "except": [],
 "type": "Mass",
 "t": "06:30",
@@ -2951,6 +2917,16 @@
 "type": "Mass",
 "t": "15:00",
 "lang": "Tagalog",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
 "loc": "Main Church",
 "note": ""
 },
@@ -2978,6 +2954,16 @@
 }
 ],
 "16": [
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
 {
 "d": 2,
 "weeks": [],
@@ -3039,6 +3025,16 @@
 "note": ""
 },
 {
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 3,
 "weeks": [],
 "except": [],
@@ -3046,6 +3042,36 @@
 "t": "07:00",
 "lang": "English",
 "loc": "Chapel",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "16:45",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "09:45",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "11:45",
+"lang": "English",
+"loc": "Main Church",
 "note": ""
 },
 {
@@ -3089,52 +3115,26 @@
 "note": "Lunchtime Mass"
 },
 {
-"d": 1,
-"weeks": [],
+"d": 0,
+"weeks": [
+2
+],
 "except": [],
 "type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "19:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Confession",
-"t": "16:30",
-"lang": "English",
+"t": "15:00",
+"lang": "Vietnamese",
 "loc": "Main Church",
 "note": ""
 },
 {
 "d": 0,
-"weeks": [],
+"weeks": [
+4
+],
 "except": [],
-"type": "Confession",
-"t": "09:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Confession",
-"t": "11:30",
-"lang": "English",
+"type": "Mass",
+"t": "15:00",
+"lang": "Vietnamese",
 "loc": "Main Church",
 "note": ""
 },
@@ -3285,6 +3285,26 @@
 "note": ""
 },
 {
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "16:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 3,
 "weeks": [],
 "except": [],
@@ -3300,26 +3320,6 @@
 "except": [],
 "type": "Mass",
 "t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "16:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -3627,6 +3627,16 @@
 "note": ""
 },
 {
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 3,
 "weeks": [],
 "except": [],
@@ -3712,16 +3722,6 @@
 "except": [],
 "type": "Mass",
 "t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "17:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -4281,6 +4281,16 @@
 "note": ""
 },
 {
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -4396,16 +4406,6 @@
 "except": [],
 "type": "Mass",
 "t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -5421,6 +5421,16 @@
 "note": ""
 },
 {
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -5447,16 +5457,6 @@
 "type": "Mass",
 "t": "07:45",
 "lang": "Mandarin",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
 "loc": "Main Church",
 "note": ""
 },
@@ -5633,11 +5633,31 @@
 "note": ""
 },
 {
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "16:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 6,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -5654,26 +5674,6 @@
 },
 {
 "d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Morning lauds followed by Mass"
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -5705,46 +5705,6 @@
 "note": ""
 },
 {
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -5765,6 +5725,46 @@
 "note": ""
 },
 {
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -5775,7 +5775,7 @@
 "note": ""
 },
 {
-"d": 1,
+"d": 4,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -5901,6 +5901,16 @@
 ],
 "30": [
 {
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 6,
 "weeks": [],
 "except": [],
@@ -5941,11 +5951,41 @@
 "note": ""
 },
 {
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 0,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -6022,46 +6062,6 @@
 },
 {
 "d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 2,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -6153,47 +6153,47 @@
 "note": ""
 },
 {
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -6261,146 +6261,24 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"d": 6,
+"weeks": [
+2
+],
+"except": [],
+"type": "Mass",
+"t": "19:00",
+"lang": "Malayalam",
+"loc": "Main Church",
+"note": "Malayalam Mass"
 }
 ]
 },
 "dated": {
-"1": [
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "15:15",
-"lang": "Tagalog",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-03",
-"type": "Adoration",
-"t": "21:00",
-"lang": "Tamil",
-"loc": "Main Church",
-"note": "Vigil from 9pm to 5am - Mass at 9.30pm"
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "13:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "19:30",
-"lang": "Tamil",
-"loc": "Main Church",
-"note": ""
-}
-],
-"5": [
-{
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-08",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"6": [
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"7": [
-{
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "CHAPEL",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "CHAPEL",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Rosary starts at 7pm in the Main Church followed by Mass. No 6pm Mass on this day."
-}
-],
 "8": [
 {
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -6408,2085 +6286,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-12-09",
-"type": "Confession",
-"t": "10:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-12-09",
-"type": "Confession",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"9": [
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "ALL SOULS' DAY"
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"10": [
-{
-"k": "r",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-10",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-17",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-10",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-10",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-17",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-17",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-01",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-01",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-01",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-29",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-29",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-29",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-14",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-14",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-14",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-28",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-28",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-28",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-10",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-17",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-10",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-17",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-03",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-10",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-10",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-17",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-17",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-24",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-24",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Confession",
-"t": "09:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Confession",
-"t": "09:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Confession",
-"t": "09:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Confession",
-"t": "09:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Confession",
-"t": "18:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Confession",
-"t": "18:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Confession",
-"t": "18:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Confession",
-"t": "18:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-01",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-01",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-29",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-29",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-14",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-28",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-14",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-28",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-07",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-07",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-14",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-14",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-21",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-21",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-28",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-28",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-01",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-01",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-29",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-29",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-01",
-"type": "Confession",
-"t": "09:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-01",
-"type": "Mass",
-"t": "18:30",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-01",
-"type": "Confession",
-"t": "18:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Confession",
-"t": "09:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Confession",
-"t": "18:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Confession",
-"t": "09:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Confession",
-"t": "18:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Confession",
-"t": "09:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Confession",
-"t": "18:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-29",
-"type": "Confession",
-"t": "09:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-29",
-"type": "Confession",
-"t": "18:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-03",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-08",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"11": [
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Adoration",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
-},
-{
-"k": "r",
-"date": "2026-11-06",
-"type": "Adoration",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"12": [
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Adoration",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Holy Hour with Devotion to the Sacred Heart of Jesus"
-},
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Devotion",
-"t": "17:15",
-"lang": "English",
-"loc": "Main Church",
-"note": "Rosary"
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Public holiday"
-},
-{
-"k": "a",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "OLPS 65th Feast Day Votive Mass - For Our Parish. Please note there is no 6pm Mass."
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Public holiday"
-},
-{
-"k": "a",
-"date": "2026-11-29",
-"type": "Mass",
-"t": "14:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Tagalog Mass"
-}
-],
-"15": [
-{
-"k": "r",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-05",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-12",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"16": [
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Adoration",
-"t": "19:45",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls"
-},
-{
-"k": "a",
-"date": "2026-11-05",
-"type": "Adoration",
-"t": "19:45",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-12-03",
-"type": "Adoration",
-"t": "19:45",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"19": [
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "No 6:30pm Mass"
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"14": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:45",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Deepavali PH Mass, Lauds@7.40am"
-}
-],
-"20": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "14:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Mass for the Sick & Elderly with Anointing. Registration is required for all Baptised Catholics those who wish to receive the Sacrament of Anointing. Visit our Website for the Registration Link"
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "09:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "1 Mass only on Public Holidays (Weekdays)"
-}
-],
-"21": [
-{
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-03",
-"type": "Confession",
-"t": "17:45",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Novena Mass"
-},
-{
-"k": "a",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Novena Mass"
-},
-{
-"k": "a",
-"date": "2026-10-03",
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "FEAST DAY"
-}
-],
-"24": [
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Feast of Our Lady of the Rosary followed by Procession"
-},
-{
-"k": "r",
-"date": "2026-10-07",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel Of St Joseph",
-"note": ""
-}
-],
-"25": [
-{
-"k": "o",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "10:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"26": [
-{
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"27": [
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day with blessing of niches"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:30",
-"lang": "Mandarin",
-"loc": "Main Church",
-"note": "All Souls Day EC with blessing of niches"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day EC + blessing of niches"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day EC + blessing of niches"
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Public Holiday"
-}
-],
-"31": [
-{
-"k": "r",
-"date": "2026-10-21",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-18",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"29": [
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Adoration",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "First Friday Devotion and Holy Hour"
-},
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Feast Day Triduum Mass"
-},
-{
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Feast Day Triduum Mass"
-},
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "12:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Mass"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Mass"
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "PH Mass"
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"30": [
-{
-"k": "a",
-"date": "2026-10-06",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-29",
-"type": "Mass",
-"t": "15:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Indonesian Mass"
-}
-],
-"32": [
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-12-25",
-"type": "Mass",
-"t": "08:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Christmas"
-},
-{
-"k": "o",
-"date": "2026-12-25",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Christmas"
-},
-{
-"k": "o",
-"date": "2026-12-24",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-12-24",
-"type": "Mass",
-"t": "23:59",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "08:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-12-24",
-"type": "Mass",
-"t": "23:59",
-"lang": "English",
-"loc": "Main Church",
-"note": "Christmas · Midnight Mass"
 }
 ]
 }
