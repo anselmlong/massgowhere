@@ -32,7 +32,7 @@
         "from": "parish website",
         "loc": "Adoration Chapel",
         "hours": [
-          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "00:00", "source": "parish website (read 2 Oct 2026)" }
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "00:00" }
         ]
       },
       "confession": {
@@ -199,7 +199,7 @@
         ]
       },
       "confession": {
-        "from": "parish website (read 2 Oct 2026)",
+        "from": "parish website",
         "loc": "Main Church",
         "beforeMass": [
           { "min": 30, "masses": "weekend" }
@@ -501,7 +501,7 @@
     },
     "32": {
       "adoration": {
-        "from": "parish website (read 2 Oct 2026)",
+        "from": "parish website",
         "loc": "Adoration Room",
         "note": "Closed for cleaning on Monday mornings",
         "hours": [
