@@ -28,6 +28,13 @@
       }
     },
     "2": {
+      "adoration": {
+        "from": "parish website",
+        "loc": "Adoration Chapel",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "00:00", "source": "parish website (read 2 Oct 2026)" }
+        ]
+      },
       "confession": {
         "from": "myCatholicSG",
         "loc": "Main Church",
@@ -189,6 +196,13 @@
         "loc": "Main Church",
         "sessions": [
           { "days": [ 5 ], "weeks": [ 1 ], "t": "18:30", "name": "First Friday Holy Hour" }
+        ]
+      },
+      "confession": {
+        "from": "parish website (read 2 Oct 2026)",
+        "loc": "Main Church",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
         ]
       }
     },
@@ -486,6 +500,20 @@
       }
     },
     "32": {
+      "adoration": {
+        "from": "parish website (read 2 Oct 2026)",
+        "loc": "Adoration Room",
+        "note": "Closed for cleaning on Monday mornings",
+        "hours": [
+          { "days": [ 1 ], "weeks": [ 2, 3, 4, 5 ], "from": "07:00", "to": "09:00", "ph": "skip" },
+          { "days": [ 1 ], "weeks": [ 2, 3, 4, 5 ], "from": "14:00", "to": "22:00", "ph": "skip" },
+          { "days": [ 1 ], "weeks": [ 1 ], "from": "07:00", "to": "09:00", "ph": "skip" },
+          { "days": [ 1 ], "weeks": [ 1 ], "from": "16:00", "to": "22:00", "ph": "skip" },
+          { "days": [ 2, 3, 4, 5 ], "from": "07:00", "to": "22:00", "ph": "skip" },
+          { "days": [ 0, 6 ], "from": "07:00", "to": "20:00", "ph": "skip" },
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "09:00", "to": "17:00", "ph": "only" }
+        ]
+      },
       "confession": {
         "from": "myCatholicSG",
         "slots": [

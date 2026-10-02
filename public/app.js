@@ -1190,9 +1190,21 @@
           ${special ? `<p class="notice">${esc(special)}: times often change that day. Please check with the parish.</p>` : ""}
           ${kind === "confession" ? `<p class="muted">Confession depends on a priest being free, so it can start late or end early.</p>` : ""}
         </section>
+        <section class="near-map" id="near-map" aria-label="Map of the churches you can get to">
+          <div id="map" class="answer-map"></div>
+          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span>${alt.length ? `<span><i class="l-church dim"></i>In the list below</span>` : ""}<span>${kind === "adoration" ? "“Open”, or the time it opens" : "When Confession starts, or “Open” if it already has"}</span></p>
+        </section>
         ${alt.length ? `<section class="more" aria-label="Other options"><h2>Other churches you can get to</h2><ul class="rows">${alt.map(altRow).join("")}</ul></section>` : ""}
         ${unsure}${browse}
         <p class="source">Times from ${src}${res.checked ? `, checked ${fmtDate(res.checked)}` : ""}. Parishes change them; check with the parish before you go.</p>`;
+      // the same map as a Mass answer: "Open" where it's open when you'd arrive, else when it opens or starts
+      const openOn = (e) => e.type === "open" && ms(e.start) <= t0(); // as the list says it: open now
+      answerMap(view.querySelector("#map"), origin, from === "your location" ? "You" : from, stale, {
+        pin: (e) => (openOn(e) ? "Open" : clock(ms(e.start))),
+        line: (e) => `${e.type === "session" ? `${esc(e.name || K.title)} ${clock(ms(e.start))} ${esc(rel(ms(e.start)).toLowerCase())}`
+          : openOn(e) ? `Open until ${clock(ms(e.end))}` : `${rel(ms(e.start))} ${clock(ms(e.start))} to ${clock(ms(e.end))}`} · leave ${openOn(e) ? "at" : "by"} ${clock(ms(openOn(e) ? e.leaveAt : e.leaveBy))}`,
+        link: "Times and details",
+      }).update(res);
       view.focus({ preventScroll: true });
     };
     // as on the Mass answer: wait briefly for live routes, else show the estimate and repaint once live arrives
@@ -1719,29 +1731,37 @@
   // longer trip than the ones listed). It loads only when scrolled near, and takes two
   // fingers to move, so a thumb scrolling the page doesn't get caught in it.
   const listed = (res) => [...(res.alternatives || []).filter(Boolean).map((a) => ({ parish: a.parish, next: a })), ...(res.nearest ? [res.nearest] : [])];
-  function answerMap(el, origin, youLabel, stale) {
+  // fmt (optional): how a pin and its card describe an option; Adoration and Confession pass their own
+  function answerMap(el, origin, youLabel, stale, fmt = {}) {
     let res = null, map = null, ml = null, marks = [];
     const t = (ms) => clock(new Date(ms).getTime());
+    const pinTime = fmt.pin || ((e) => t(e.start));
+    const line = fmt.line || ((e) => `Mass ${t(e.start)} ${esc(dayLabel(new Date(e.start).getTime()).toLowerCase())} · leave by ${t(e.leaveBy)}`);
     const draw = () => {
       marks.forEach((m) => m.remove());
       const b = res.best, seen = new Set([b.parish.id]);
       const fresh = (o) => !seen.has(o.parish.id) && seen.add(o.parish.id);
       const inList = listed(res).filter(fresh);
       const nearby = (res.around || []).filter((a) => a.parish).filter(fresh);
-      const card = (p, e, extra) => `<strong>${esc(p.name)}</strong><span>${e ? `Mass ${t(e.start)} ${esc(dayLabel(new Date(e.start).getTime()).toLowerCase())} · leave by ${t(e.leaveBy)}` : "No Mass you can reach soon"}</span>${extra || ""}<a href="#/church/${p.id}">Mass times</a>`;
+      const card = (p, e, extra) => `<strong>${esc(p.name)}</strong><span>${e ? line(e) : "No Mass you can reach soon"}</span>${extra || ""}<a href="#/church/${p.id}">${fmt.link || "Mass times"}</a>`;
       // drawn first, so the pins in the list sit on top where they overlap
-      marks = nearby.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, `<span>Not in the list: ${!o.next ? "no Mass you can reach soon" : new Date(o.next.start) > new Date(b.start) ? "its next Mass is later" : "a longer trip than the ones listed"}</span>`), { dim: true, faint: true, time: o.next ? t(o.next.start) : "" }));
-      marks.push(...inList.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.parish.id === res.nearest?.parish.id ? "<span>Nearest church</span>" : "<span>In the list below</span>"), { dim: true, time: o.next ? t(o.next.start) : "" })));
-      marks.push(addPin(ml, map, b.parish, card(b.parish, b, "<span>Our pick for you</span>"), { time: t(b.start) }));
+      marks = nearby.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, `<span>Not in the list: ${!o.next ? "no Mass you can reach soon" : new Date(o.next.start) > new Date(b.start) ? "its next Mass is later" : "a longer trip than the ones listed"}</span>`), { dim: true, faint: true, time: o.next ? pinTime(o.next) : "" }));
+      marks.push(...inList.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.parish.id === res.nearest?.parish.id ? "<span>Nearest church</span>" : "<span>In the list below</span>"), { dim: true, time: o.next ? pinTime(o.next) : "" })));
+      marks.push(addPin(ml, map, b.parish, card(b.parish, b, "<span>Our pick for you</span>"), { time: pinTime(b) }));
     };
     const start = async () => {
       try { ml = await maplibre(); } catch { el.innerHTML = '<p class="lede" style="padding:20px">The map could not load.</p>'; return; }
       if (stale() || !el.isConnected || !res) return;
       if (currentMap) currentMap.remove();
-      // frame every pin with you in the middle: each church, and its mirror image across you
-      const ps = [res.best, ...listed(res), ...(res.around || [])].map((x) => x.parish).filter(Boolean);
+      // frame you in the middle (each pin with its mirror image across you) with our pick and every other pin within
+      // 3x the closest other one's distance: in a dense area (Bras Basah) a church across town doesn't squash the
+      // near ones together; in the suburbs everything fits. Pinch out for the rest
+      const km = (p) => R.haversineKm(origin, p);
+      const all = [...listed(res), ...(res.around || [])].map((x) => x.parish).filter(Boolean).sort((a, b) => km(a) - km(b));
+      const reach = 3 * Math.max(km(all[0] || res.best.parish), km(res.best.parish));
+      const ps = [res.best.parish, ...all.filter((p) => km(p) <= reach)];
       const pts = [origin, ...ps.flatMap((p) => [p, { lat: 2 * origin.lat - p.lat, lng: 2 * origin.lng - p.lng }])];
-      map = currentMap = newMap(ml, el, pts, 30, { cooperativeGestures: true });
+      map = currentMap = newMap(ml, el, pts, 40, { cooperativeGestures: true }); // room above pins for their time labels
       addDot(ml, map, origin, "me", youLabel);
       draw();
     };
