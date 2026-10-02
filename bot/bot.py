@@ -241,6 +241,7 @@ WELCOME = ("<b>MassGoWhere</b> finds a Mass in Singapore you can attend, and tel
 
 LIVE_WAIT_S = 3  # wait this long for live travel times before showing the estimate, so most answers appear once
 LIVE_POOL = cf.ThreadPoolExecutor(max_workers=16)  # two requests per answer; room for several chats at once
+RECOMPUTE_POOL = cf.ThreadPoolExecutor(max_workers=12)  # filter taps re-run answer() here, never on the shared handler pool
 
 # Newest request wins. Each update that asks for an answer (a location, a place, a mode or Sunday tap, an "on the
 # way" time) bumps its chat's number; work started for an older number stops waiting and never edits the chat, so a
@@ -465,6 +466,29 @@ def thank_for_feedback(msg, chat_id, text):
     return tg("sendMessage", chat_id=chat_id, text="Thank you! Anselm will read it.", reply_markup=LOCATION_KB)
 
 
+def recompute_answer(chat_id, *spot, sunday=False, update_tapped=None):
+    """Re-run answer() in the background so a filter tap never blocks the shared handler pool.
+
+    The recompute inherits this update's chat/gen thread-locals, so a newer tap still supersedes
+    the older one (and the newer one's answer is not overwritten). Returns immediately; the
+    "Looking for..." loading edit is drawn inside answer() via update_tapped."""
+    got = getattr(_here, "chat", None), getattr(_here, "gen", 0)
+    RECOMPUTE_POOL.submit(
+        lambda: _run_recompute(chat_id, spot, sunday=sunday, update_tapped=update_tapped, ctx=got))
+
+
+def _run_recompute(chat_id, spot, sunday, update_tapped, ctx):
+    _here.chat, _here.gen = ctx
+    try:
+        answer(chat_id, *spot, sunday=sunday, update_tapped=update_tapped)
+    except Superseded:
+        pass  # a newer tap took over; its answer will be drawn instead
+    except Exception as e:  # noqa: BLE001
+        log.exception("recompute failed: %s", e)
+    finally:
+        _here.chat = None
+
+
 def maybe_nudge(chat_id):
     """Now and then (after the 3rd and 15th answer), ask how it's going. Never more than that."""
     try:
@@ -671,7 +695,7 @@ def handle(update):
             ack(cq, "Sunday or Sunset Mass" if val == "1" else "Any Mass")
             record(chat_id, "sunday")
             LAST[chat_id] = spot
-            return answer(chat_id, *spot, sunday=val == "1", update_tapped=tapped)
+            return recompute_answer(chat_id, *spot, sunday=val == "1", update_tapped=tapped)
         if data == "fb:cancel":
             AWAITING_FEEDBACK.discard(chat_id)
             return ack(cq, "No problem")
@@ -681,7 +705,7 @@ def handle(update):
             if spot:
                 record(chat_id, "mode")
                 LAST[chat_id] = spot
-                answer(chat_id, *spot, sunday=LAST_SUNDAY.get(chat_id, False), update_tapped=tapped if where else None)
+                recompute_answer(chat_id, *spot, sunday=LAST_SUNDAY.get(chat_id, False), update_tapped=tapped if where else None)
                 maybe_nudge(chat_id)
             else:
                 tg("sendMessage", chat_id=chat_id, text=f"Got it: {MODES[val][0]}. Now share your location or send a postal code.")
