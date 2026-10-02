@@ -4,7 +4,7 @@
  "source_urls": [
   "https://ststephen.sg/masses-devotions/"
  ],
- "fetched_at": "2026-09-29T18:32+08:00",
+ "fetched_at": "2026-10-02T12:38+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -52,7 +52,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "",
-   "note": ""
+   "note": "2nd Sunday of the month"
   },
   {
    "d": 0,
@@ -64,7 +64,17 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": ""
+   "note": "1st Sunday of the month"
+  },
+  {
+   "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Scripture Rosary in October"
   },
   {
    "d": 0,
@@ -138,13 +148,13 @@
   },
   {
    "d": 6,
-   "t": "16:40",
+   "t": "16:45",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Rosary. The bulletin says 16:45, the website 16:40; check with the parish."
   },
   {
    "d": 6,
@@ -154,25 +164,127 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Saturday Sunset Mass"
   }
  ],
- "dated": [],
- "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
- "notes": [
-  "All Masses are in English except the 1st Sunday Tagalog Mass and the 2nd Sunday Malayalam Mass."
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-04",
+   "time": "09:00",
+   "language": "English",
+   "location": "",
+   "title": "Family Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-31",
+   "time": "17:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "09:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "11:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "17:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "06:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "All Souls Day",
+   "action": "add"
+  }
  ],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "07:30"
+ ],
+ "notes": [],
  "info": {
+  "confession": "Confession is available half an hour before Mass.",
   "devotions": [
-   "Saturday Rosary: 16:40",
-   "Sunday Divine Mercy: 10:15"
+   "Rosary: Saturday 16:45 (bulletin) / 16:40 (website); check with the parish.",
+   "Divine Mercy: Sunday 10:15.",
+   "Scripture Rosary: Sundays in October at 16:30."
   ],
+  "office_hours": "Monday to Friday 9:00am - 5:00pm",
   "good_to_know": [
-   "Weekday Mass Monday to Saturday is at 06:30.",
-   "On Public Holidays, weekday Mass is at 07:30.",
-   "Eve / Day of Obligation if it is a weekday: 06:30 and 19:00."
+   "All Masses are in English unless stated otherwise.",
+   "Holy Day of Obligation schedules are announced separately."
   ]
+ },
+ "events": [
+  {
+   "date": "2026-10-17",
+   "time": "",
+   "title": "Cenacle Programme: Praying Our Crossroads: A Life Direction Retreat",
+   "text": "17-18 October 2026 at La Salle House. A transformative Life Direction Retreat to reconnect with spiritual purpose and chart a meaningful path forward."
+  },
+  {
+   "date": "2026-10-23",
+   "time": "",
+   "title": "Choice Weekend Program",
+   "text": "23-25 October at ME House (Punggol). For unmarried young adults 18-40. Register: https://bit.ly/ChoiceSG26"
+  },
+  {
+   "date": "2026-11-06",
+   "time": "19:45",
+   "title": "Treasure #18 Retreat for Young Working Adults",
+   "text": "6 Nov 7.45pm - 9 Nov 6pm (stay-in) at St. Francis Xavier Retreat Centre. Ages 21-35. Fee: $163.50. Registration: tinyurl.com/oyp-treasure18"
+  },
+  {
+   "date": "2026-11-21",
+   "time": "10:00",
+   "title": "OYP Outreach for Secondary 4 & 5 Students",
+   "text": "Sat 21 Nov 2026, 10AM - 1PM at 55 Waterloo Street, Catholic Centre, #08-01. Free. Registration: tinyurl.com/SecOutreach26Nov"
+  },
+  {
+   "date": "2026-12-16",
+   "time": "",
+   "title": "BREATHE Youth Retreat",
+   "text": "16-20 Dec stay-in retreat for 16-30yos. Organised by Catholic Spirituality Centre. Early bird $160 till 11 Oct. Registration: bit.ly/breathe4 closes 30 Nov."
+  }
+ ],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610021000_St_StephenBulletin_04102026.pdf?alt=media&token=e372b551-bb35-41bb-8962-8ed91a09524e",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {

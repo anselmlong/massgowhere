@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.stignatius.org.sg/mass-schedule"
  ],
- "fetched_at": "2026-09-29T18:28+08:00",
+ "fetched_at": "2026-10-02T12:38+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,10 +14,30 @@
  "rules": [
   {
    "d": 0,
+   "t": "07:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "08:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -34,10 +54,42 @@
   },
   {
    "d": 0,
+   "t": "11:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "12:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "14:15",
+   "weeks": [
+    2
+   ],
+   "except": [],
+   "type": "Other",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Infant Baptism."
+  },
+  {
+   "d": 0,
+   "t": "15:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -54,6 +106,16 @@
   },
   {
    "d": 0,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "18:00",
    "weeks": [],
    "except": [],
@@ -80,7 +142,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before the 6pm Mass"
+   "note": "Rosary before the 6pm Mass."
   },
   {
    "d": 1,
@@ -110,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before the 6pm Mass"
+   "note": "Rosary before the 6pm Mass."
   },
   {
    "d": 2,
@@ -140,7 +202,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before the 6pm Mass"
+   "note": "Rosary before the 6pm Mass."
   },
   {
    "d": 3,
@@ -170,7 +232,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before the 6pm Mass"
+   "note": "Rosary before the 6pm Mass."
   },
   {
    "d": 4,
@@ -196,11 +258,25 @@
    "d": 5,
    "t": "17:15",
    "weeks": [],
-   "except": [],
+   "except": [
+    1
+   ],
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary before the 6pm Mass"
+   "note": "Rosary before the 6pm Mass."
+  },
+  {
+   "d": 5,
+   "t": "17:30",
+   "weeks": [],
+   "except": [
+    1
+   ],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -212,19 +288,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "18:00",
-   "weeks": [
-    4
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "Memorial Mass; followed by prayers at the Columbarium"
+   "note": "Every 4th Friday, followed by prayers at the Columbarium."
   },
   {
    "d": 5,
@@ -236,7 +300,19 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Eucharistic Adoration for Children"
+   "note": "Eucharistic Adoration for Children."
+  },
+  {
+   "d": 5,
+   "t": "19:30",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -248,7 +324,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "First Friday Mass to the Sacred Heart of Jesus; followed by Eucharistic Adoration"
+   "note": "First Friday Mass to the Sacred Heart of Jesus. Followed by Eucharistic Adoration."
   },
   {
    "d": 6,
@@ -256,6 +332,16 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -271,20 +357,112 @@
    "note": ""
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-02",
+   "time": "20:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "First Friday Mass to the Sacred Heart of Jesus",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Eucharistic Adoration follows the First Friday 8pm Mass to the Sacred Heart of Jesus.",
-  "confession": "30 minutes before Friday evening Mass and before every weekend Mass; confessions end 5 minutes before the Mass starts. For urgent matters, call the Parish office at 6466 0625 to schedule an appointment.",
+  "adoration": "Sacred Heart & Adoration Room: Daily 07:00-23:00; closed on public holidays.",
+  "confession": "Confessions end 5 minutes before Mass starts. For urgent matters, call the Parish office at 6466 0625 to schedule an appointment.",
   "devotions": [
-   "Weekday Rosary: Monday-Saturday after the 7.30am Mass",
-   "Divine Mercy Devotion: Wednesdays after the 6pm Mass"
+   "Weekday Rosary: Monday-Saturday after the 7.30am Mass; Monday-Friday 5.15pm before the 6pm Mass.",
+   "Divine Mercy Devotion: Every Wednesday after the 6pm Mass.",
+   "Eucharistic Adoration for Children: Every 3rd Friday, 7pm."
   ],
+  "office_hours": "Parish Office: Mon-Fri 9am-6pm; Sat & Sun 9am-1pm; closed on public holidays.",
   "good_to_know": [
-   "120 King's Road, Singapore 268172"
+   "All Masses are in English.",
+   "First Friday Mass is at 8pm, followed by Eucharistic Adoration.",
+   "Memorial Mass is every 4th Friday at 6pm, followed by prayers at the Columbarium."
   ]
+ },
+ "events": [
+  {
+   "date": "2026-10-02",
+   "time": "",
+   "title": "BE+LOVED Ministry",
+   "text": "Come spend time with the Lord in prayer and adoration. Followed by Activating Body & Soul — a time to refresh, move and connect. All are welcome, especially seniors. Bring a friend."
+  },
+  {
+   "date": "2026-10-02",
+   "time": "",
+   "title": "Getting Married in Church or as Church",
+   "text": "By Fr Ambrose Vaz. Catholic Centre."
+  },
+  {
+   "date": "2026-10-02",
+   "time": "",
+   "title": "Open Studio",
+   "text": "Fridays, 25 Sep - 23 Oct. Reflect. Create. Encounter."
+  },
+  {
+   "date": "2026-10-05",
+   "time": "",
+   "title": "What the Catholic Church Actually Teaches About Divorce, Separation and Annulment",
+   "text": "Via Zoom. Gain insight into the Church’s teachings and how Catholics can navigate divorce, separation and annulment while remaining in full communion with the Church. Register: bit.ly/DSAOct26 or scan the QR code."
+  },
+  {
+   "date": "2026-10-09",
+   "time": "",
+   "title": "A Catholic Hackathon",
+   "text": "Join us from 9-11 October and use your talents to build the church. Whether you're a seasoned engineer or just starting out, your skills can make a difference. All are welcome!"
+  },
+  {
+   "date": "2026-10-10",
+   "time": "",
+   "title": "Rosary Making Workshop",
+   "text": "Registration is required. Contact Angela (9126 2629)."
+  },
+  {
+   "date": "2026-10-15",
+   "time": "",
+   "title": "Rest, Relish and Recharge",
+   "text": "15-18 October | Bintan. 4D3N Beach Retreat. https://tinyurl.com/Cenacle2026RRR"
+  },
+  {
+   "date": "2026-10-17",
+   "time": "",
+   "title": "Praying Our Crossroads: A Life Direction Retreat",
+   "text": "17-18 October | La Salle House. https://tinyurl.com/Cenacle2026POC"
+  },
+  {
+   "date": "2026-10-19",
+   "time": "",
+   "title": "What the Catholic Church Actually Teaches About Divorce, Separation and Annulment",
+   "text": "Via Zoom. Gain insight into the Church’s teachings and how Catholics can navigate divorce, separation and annulment while remaining in full communion with the Church. Register: bit.ly/DSAOct26 or scan the QR code."
+  },
+  {
+   "date": "2026-10-31",
+   "time": "",
+   "title": "Life Everlasting: Heaven, Hell, Death and Judgement",
+   "text": "Sat Rockers invites all to a 5-session Bible study. Join in person or via Zoom. Register at: https://bit.ly/Life_Everlasting"
+  },
+  {
+   "date": "2026-11-08",
+   "time": "",
+   "title": "Social Mission Trip to Cambodia",
+   "text": "8-11 Nov 2026. Join Fr Colin Tan, SJ. Highlights include mangrove planting, engagement with at-risk communities, dolphin sightings, Mass, and spiritual reflections. Scan for details or register: https://tinyurl.com/JRSMissionNov2026"
+  },
+  {
+   "date": "2026-11-28",
+   "time": "",
+   "title": "Homemakers Jumble Sale",
+   "text": "28 & 29 Nov. Clean and usable pre-loved items are most welcome. Please DO NOT donate bulky / soiled / damaged items, food, CDs/DVDs, magazines or books. Pre-loved designer items can be dropped off in classroom #01-09 on 7 & 8 Nov, 9.15 - 12.00pm. All proceeds go towards the Kingsmead Project."
+  }
+ ],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F23%2Fpublic%2Fpdf%2F2609271225_Stigs_Bulletin_20260920.pdf?alt=media&token=97c91c89-1407-452b-bf0a-8c2031aa073d",
+  "date": "2026-09-27"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -315,6 +493,15 @@
     "18:00",
     [
      3
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Friday",
+    "18:00",
+    [
+     4
     ],
     []
    ],

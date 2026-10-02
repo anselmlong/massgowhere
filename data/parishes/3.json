@@ -4,7 +4,7 @@
  "source_urls": [
   "https://christtheking.com.sg/"
  ],
- "fetched_at": "2026-10-01T03:00+08:00",
+ "fetched_at": "2026-10-02T12:32+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -14,33 +14,13 @@
  "rules": [
   {
    "d": 0,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confession booth (Main Church)",
-   "note": "Half hour before 07:00 Mass"
-  },
-  {
-   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "08:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confession booth (Main Church)",
-   "note": "Half hour before 08:30 Mass"
+   "loc": "Main Church",
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -49,18 +29,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "09:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confession booth (Main Church)",
-   "note": "Half hour before 10:00 Mass"
+   "loc": "Main Church",
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -69,18 +39,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "11:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confession booth (Main Church)",
-   "note": "Half hour before 11:30 Mass"
+   "loc": "Main Church",
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -89,18 +49,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confession booth (Main Church)",
-   "note": "Half hour before 17:00 Mass"
+   "loc": "Main Church",
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -109,20 +59,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "18:00",
-   "weeks": [
-    4
-   ],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confession booth (Main Church)",
-   "note": "Half hour before Tamil Mass on fourth Sunday"
+   "loc": "Main Church",
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -133,8 +71,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "",
-   "note": "Fourth Sunday of the month"
+   "loc": "Main Church",
+   "note": "Tamil Mass"
   },
   {
    "d": 0,
@@ -144,7 +82,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Nightly Zoom Rosary"
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -153,8 +91,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 1,
@@ -163,8 +101,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 1,
@@ -174,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Nightly Zoom Rosary"
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -183,8 +121,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 2,
@@ -193,8 +131,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 2,
@@ -204,7 +142,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy"
   },
   {
    "d": 3,
@@ -213,8 +151,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 3,
@@ -223,8 +161,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 3,
@@ -234,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Nightly Zoom Rosary"
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -243,8 +181,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 4,
@@ -253,8 +191,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 4,
@@ -264,7 +202,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Nightly Zoom Rosary"
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -273,8 +211,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 5,
@@ -283,8 +221,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 5,
@@ -294,7 +232,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Nightly Zoom Rosary"
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -303,18 +241,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confession booth (Main Church)",
-   "note": "Half hour before Sunset Mass"
+   "loc": "Main Church",
+   "note": "Weekday Mass"
   },
   {
    "d": 6,
@@ -323,7 +251,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": "Sunset Mass"
   },
   {
@@ -334,91 +262,63 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Nightly Zoom Rosary"
+   "note": "Rosary"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-04",
+   "time": "11:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Children's Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-04",
+   "time": "15:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Infant Baptism",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30",
   "09:00"
  ],
  "notes": [
-  "On public holidays, church gates close at 12:00 noon."
+  "Church gates close at 12:00 noon."
  ],
  "info": {
   "adoration": "Adoration Room: Monday-Sunday 07:00-21:30; Public Holidays 07:00-12:00. Remove shoes before entering; maintain silence and reverence.",
   "confession": "Confessions are available half an hour before all weekend Masses in the Confession booth (Main Church).",
   "devotions": [
-   "Sacred Heart Devotion: every Friday after evening Mass in the Main Church.",
-   "Divine Mercy Devotion: every Tuesday at 20:00 in the Main Church.",
-   "Nightly Zoom Rosary: 20:30 except Tuesdays."
+   "Sacred Heart Devotion every Friday after evening Mass in the Main Church.",
+   "Divine Mercy Devotion every Tuesday at 20:00 in the Main Church.",
+   "CTK Nightly Zoom Rosary at 20:30 except Tuesdays."
   ],
-  "office_hours": "Parish Office: Mondays-Fridays 09:00-18:00; Saturdays & Sundays 09:00-13:00; closed on Public Holidays.",
+  "office_hours": "Parish Office: Mon-Fri 09:00-18:00; Sat-Sun 09:00-13:00; closed on Public Holidays.",
   "good_to_know": [
-   "Church gates close at 12:00 noon on public holidays.",
-   "Tamil Mass is on the fourth Sunday of the month at 18:30."
+   "Church gates close at 12:00 noon.",
+   "Tamil Mass is on the fourth Sunday of the month at 18:30.",
+   "Public Holiday Masses are at 07:30 and 09:00."
   ]
  },
  "events": [
   {
-   "date": "2026-10-01",
-   "time": "",
-   "title": "Principles of Relating to Children",
-   "text": "Facilitated by Fr Joachim Chang. Sessions on 1st, 8th, 15th, 22nd, 29th October and 5th November. Venue: St Peter's Room. Open to all Parents and Catechists."
-  },
-  {
-   "date": "2026-10-08",
-   "time": "",
-   "title": "Principles of Relating to Children",
-   "text": "Facilitated by Fr Joachim Chang. Sessions on 1st, 8th, 15th, 22nd, 29th October and 5th November. Venue: St Peter's Room. Open to all Parents and Catechists."
-  },
-  {
-   "date": "2026-10-15",
-   "time": "",
-   "title": "Principles of Relating to Children",
-   "text": "Facilitated by Fr Joachim Chang. Sessions on 1st, 8th, 15th, 22nd, 29th October and 5th November. Venue: St Peter's Room. Open to all Parents and Catechists."
-  },
-  {
-   "date": "2026-10-22",
-   "time": "",
-   "title": "Principles of Relating to Children",
-   "text": "Facilitated by Fr Joachim Chang. Sessions on 1st, 8th, 15th, 22nd, 29th October and 5th November. Venue: St Peter's Room. Open to all Parents and Catechists."
-  },
-  {
-   "date": "2026-10-29",
-   "time": "",
-   "title": "Principles of Relating to Children",
-   "text": "Facilitated by Fr Joachim Chang. Sessions on 1st, 8th, 15th, 22nd, 29th October and 5th November. Venue: St Peter's Room. Open to all Parents and Catechists."
-  },
-  {
-   "date": "2026-11-05",
-   "time": "",
-   "title": "Principles of Relating to Children",
-   "text": "Facilitated by Fr Joachim Chang. Sessions on 1st, 8th, 15th, 22nd, 29th October and 5th November. Venue: St Peter's Room. Open to all Parents and Catechists."
-  },
-  {
    "date": "2026-11-24",
-   "time": "",
+   "time": "08:30",
    "title": "KidZ Bible Camp - Come to the Table",
-   "text": "Ages 4 to 6. 24th to 26th November 2026. 08:30-13:00 (Tue & Wed), 08:30-14:30 (Thursday)."
-  },
-  {
-   "date": "2026-11-25",
-   "time": "",
-   "title": "KidZ Bible Camp - Come to the Table",
-   "text": "Ages 4 to 6. 24th to 26th November 2026. 08:30-13:00 (Tue & Wed), 08:30-14:30 (Thursday)."
-  },
-  {
-   "date": "2026-11-26",
-   "time": "",
-   "title": "KidZ Bible Camp - Come to the Table",
-   "text": "Ages 4 to 6. 24th to 26th November 2026. 08:30-13:00 (Tue & Wed), 08:30-14:30 (Thursday)."
+   "text": "Ages 4 to 6. 24-26 November 2026. 08:30-13:00 (Tue & Wed), 08:30-14:30 (Thu)."
   }
  ],
  "bulletin": {
-  "url": "https://www.dropbox.com/scl/fi/8g42lx9qx2i04247lw55a/The-Leaven-6-July-2025.pdf?rlkey=43imevtba5mohs37vhkfriyd4&st=8lsg1i8p&dl=0",
-  "date": "2025-07-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2609251531_The_Leaven%2027%20Sep%202026%20Final.pdf?alt=media&token=9c6d71cc-1443-472b-a051-2840c19c3d99",
+  "date": "2026-09-25"
  },
  "disputes": [],
  "vs_mycatholic": {

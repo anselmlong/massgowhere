@@ -4,7 +4,7 @@
  "source_urls": [
   "https://sppchurch.org.sg/schedules/"
  ],
- "fetched_at": "2026-09-29T22:09+08:00",
+ "fetched_at": "2026-10-02T12:39+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -38,9 +38,9 @@
    "weeks": [],
    "except": [],
    "type": "Devotion",
-   "lang": "Chinese",
+   "lang": "Mandarin",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy, 11.00am - 12.30pm"
   },
   {
    "d": 0,
@@ -90,7 +90,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy, 3.00pm - 4.00pm"
   },
   {
    "d": 1,
@@ -130,7 +130,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy, 3.00pm - 4.00pm"
   },
   {
    "d": 2,
@@ -170,17 +170,19 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy, 3.00pm - 4.00pm"
   },
   {
    "d": 3,
    "t": "18:00",
    "weeks": [],
-   "except": [],
+   "except": [
+    3
+   ],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "No evening Mass every 3rd Wednesday of the month"
   },
   {
    "d": 4,
@@ -210,7 +212,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy, 3.00pm - 4.00pm"
   },
   {
    "d": 4,
@@ -220,7 +222,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Infant Jesus of Prague Devotion; followed by Mass"
+   "note": "Infant Jesus of Prague Devotion, followed by Mass"
   },
   {
    "d": 4,
@@ -260,7 +262,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy, 3.00pm - 4.00pm"
   },
   {
    "d": 5,
@@ -300,7 +302,17 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Sion Adorers Holy Hour with Jesus"
+   "note": "Sion Adorers - Holy Hour, 4.00pm - 5.00pm"
+  },
+  {
+   "d": 6,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -315,28 +327,32 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "08:00"
- ],
+ "public_holiday_masses": [],
  "notes": [
-  "No Evening Mass on a public holiday if it falls on a weekday.",
-  "No Devotions/Prayers on public holidays.",
-  "Reconciliation is not available on Thursday evenings."
+  "No evening Mass every 3rd Wednesday of the month.",
+  "No evening Mass on a public holiday that falls on a weekday.",
+  "No Devotions/Prayers on public holidays."
  ],
  "info": {
-  "adoration": "Chapel of The Incarnation: Monday to Friday 08:00-21:00; Saturday/Sunday 08:00-18:00; closed on public holidays.",
-  "confession": "Confessions are heard 30 minutes before Mass (weekday evening and weekends).",
+  "adoration": "Chapel of The Incarnation: Monday to Friday 8.00am - 9.00pm; Saturday/Sunday 8.00am - 6.00pm; closed on Public Holidays.",
+  "confession": "Confessions are heard 30 minutes before weekday evening and weekend Masses. Not available on Thursday evenings or before the Sunday 8.30am Mandarin Mass.",
   "devotions": [
-   "Divine Mercy: Monday to Friday 15:00-16:00 (English); Sunday 11:00-12:30 (Chinese).",
-   "Infant Jesus of Prague Devotion: Thursday 17:30, followed by Mass.",
-   "Sion Adorers Holy Hour with Jesus: Saturday 16:00-17:00."
+   "Divine Mercy: Monday to Friday 3.00pm - 4.00pm (English); Sunday 11.00am - 12.30pm (Mandarin).",
+   "Infant Jesus of Prague Devotion: Thursday 5.30pm followed by Mass.",
+   "Sion Adorers - Holy Hour: Saturday 4.00pm - 5.00pm.",
+   "Rosary: Saturday 4.30pm."
   ],
-  "office_hours": "Parish Office: Monday-Friday 09:30-19:30; Saturday 09:00-17:00; Sunday 09:00-12:00; closed on public holidays.",
+  "office_hours": "Parish Office: Monday - Friday 9.30am - 7.30pm; Saturday 9.00am - 5.00pm; Sunday 9.00am - 12nn; closed on Public Holidays.",
   "good_to_know": [
-   "No Evening Mass on a public holiday if it falls on a weekday.",
-   "No Devotions/Prayers on public holidays.",
-   "Reconciliation is not available on Thursday evenings."
+   "No Devotions/Prayers if they fall on a Public Holiday.",
+   "There will be no Evening Mass on a public holiday if it falls on a weekday.",
+   "There will be no evening Mass every 3rd Wednesday of the month."
   ]
+ },
+ "events": [],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2609251633_0927_2026.pdf?alt=media&token=263e2598-424c-440d-a090-986f107724d8",
+  "date": "2026-09-25"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -382,6 +398,15 @@
     "07:20",
     [],
     []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "18:00",
+    [],
+    [
+     3
+    ]
    ]
   ],
   "only_on_mycatholic": [
@@ -424,6 +449,13 @@
     "Mass",
     "Wednesday",
     "07:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "18:00",
     [],
     []
    ]

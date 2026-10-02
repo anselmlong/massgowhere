@@ -4,7 +4,7 @@
  "source_urls": [
   "https://novenachurch.com/novena-mass-schedule/"
  ],
- "fetched_at": "2026-09-29T18:26+08:00",
+ "fetched_at": "2026-10-02T12:35+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -123,6 +123,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 4,
+   "t": "10:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Pastoral Block Bernard Heaney Room",
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 4,
@@ -254,7 +264,7 @@
    "type": "Devotion",
    "lang": "Tamil",
    "loc": "",
-   "note": "Tamil Novena, 4th Saturday of the month"
+   "note": "Tamil Novena"
   },
   {
    "d": 6,
@@ -266,7 +276,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": "4th Saturday of the month"
+   "note": "Tamil Mass"
   }
  ],
  "dated": [],
@@ -275,17 +285,32 @@
   "09:00",
   "18:30"
  ],
- "notes": [],
+ "notes": [
+  "Public holidays follow a separate Mass schedule."
+ ],
  "info": {
-  "confession": "Confession is available 30 minutes before every Mass.",
+  "confession": "Confession available 30 minutes before Mass.",
   "devotions": [
-   "Novena to Our Mother of Perpetual Help: Saturdays 8am, 10am, 12pm, 4pm and 5:30pm in English; 2pm in Chinese",
-   "Tamil Novena: 4th Saturday of the month at 8pm"
+   "Divine Mercy Devotion: Thursday 10:30am-12pm, Pastoral Block Bernard Heaney Room.",
+   "Novena Devotions on Saturday: English 8:00am, 10:00am, 12:00pm, 4:00pm, 5:30pm; Chinese 2:00pm.",
+   "Tamil Novena and Mass: every 4th Saturday at 8:00pm; Tamil Mass also listed at 8:30pm. Check with the parish."
   ],
   "good_to_know": [
-   "No booking is required for Masses.",
-   "No standing is allowed in the main church hall due to fire regulations."
+   "No booking is required.",
+   "No standing allowed in the main church hall due to fire regulation."
   ]
+ },
+ "events": [
+  {
+   "date": "2026-10-02",
+   "time": "",
+   "title": "Blessing of Pets",
+   "text": "After 12:15pm and 6:30pm Mass, in front of the Old Church."
+  }
+ ],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2609251423_4._Novena%2027%20September%20to%203%20October%20HS.pdf?alt=media&token=0800a65c-8bad-40a5-9cb2-c80ebdd79a42",
+  "date": "2026-09-25"
  },
  "disputes": [],
  "vs_mycatholic": {

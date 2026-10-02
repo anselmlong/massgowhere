@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.churchofthesacredheart.sg/services"
  ],
- "fetched_at": "2026-09-29T18:26+08:00",
+ "fetched_at": "2026-10-02T12:35+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -12,16 +12,6 @@
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before Sunday Mass"
-  },
   {
    "d": 0,
    "t": "08:00",
@@ -44,17 +34,7 @@
    "type": "Mass",
    "lang": "Bilingual (English & Mandarin)",
    "loc": "",
-   "note": "2nd Sunday of the month"
-  },
-  {
-   "d": 0,
-   "t": "09:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before Sunday Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -68,16 +48,6 @@
   },
   {
    "d": 0,
-   "t": "11:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before Sunday Mass"
-  },
-  {
-   "d": 0,
    "t": "12:00",
    "weeks": [],
    "except": [],
@@ -85,18 +55,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "15:30",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before 1st Sunday 4pm Mass"
   },
   {
    "d": 0,
@@ -109,6 +67,16 @@
    "lang": "Tagalog",
    "loc": "",
    "note": "1st Sunday of the month"
+  },
+  {
+   "d": 0,
+   "t": "19:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Mary's Shrine",
+   "note": "Rosary with Mary, on every 13th of the month"
   },
   {
    "d": 1,
@@ -157,10 +125,10 @@
     1
    ],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "Church",
-   "note": "1st Thursday of the month"
+   "note": "Mass followed by Holy Hour"
   },
   {
    "d": 5,
@@ -200,7 +168,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Church",
-   "note": "Sacred Heart Devotion"
+   "note": "Sacred Heart Devotion; also live on YouTube & Facebook"
   },
   {
    "d": 6,
@@ -211,16 +179,6 @@
    "lang": "English",
    "loc": "Chapel",
    "note": ""
-  },
-  {
-   "d": 6,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before Sunset Mass"
   },
   {
    "d": 6,
@@ -238,18 +196,40 @@
  "public_holiday_masses": [
   "08:00"
  ],
- "notes": [],
+ "notes": [
+  "No weekday Mass on public holidays; on public holidays there is one Mass at 8am in the Chapel."
+ ],
  "info": {
+  "confession": "30 minutes before Saturday Sunset Mass and Sunday Masses; also by appointment with a priest.",
   "devotions": [
-   "Holy Hour follows 7pm Mass on 1st Thursday in the Church.",
-   "Rosary with Mary 7:30pm at Mary's Shrine on every 13th of the month.",
-   "Sacred Heart Devotion is also live on YouTube & Facebook."
+   "Sacred Heart Devotion: Fridays 7.45pm in the Church",
+   "Holy Hour: 1st Thursday of the month, after the 7pm Mass in the Church",
+   "Rosary with Mary: every 13th of the month, 7.30pm at Mary's Shrine"
   ],
+  "office_hours": "Mon-Fri 9am-5pm; closed on public holidays.",
   "good_to_know": [
-   "Masses are in English unless otherwise stated.",
-   "Sunday 8am is Mandarin, bilingual on every 2nd Sunday.",
-   "1st Sunday 4pm is Tagalog."
+   "Church and columbarium are open daily 7.30am-6.30pm, except public holidays.",
+   "Parking: Level 1 car park via Tank Road; Levels 4 and 5 car parks via Jalan Rumbia.",
+   "Sacraments such as Baptism, Marriage, Anointing of the Sick and columbarium matters: contact the Parish Office for an appointment."
   ]
+ },
+ "events": [
+  {
+   "date": "2026-10-04",
+   "time": "13:30",
+   "title": "Mass for the Feast of St Faustina",
+   "text": "Theme \"Jesus, I Trust in You!\", 1.30-4pm at the Church of the Divine Mercy. Main celebrant Fr Yang De Cheng, speaker Fr Zhang Li Yong."
+  },
+  {
+   "date": "2026-10-10",
+   "time": "09:00",
+   "title": "Half-day talk-retreat \"Holy Family Spirituality\"",
+   "text": "9am-12pm at the Holy Family Church, Level 4 prayer hall. Speaker Fr Zhang Li Yong. Register with Jin Hui 90918332."
+  }
+ ],
+ "bulletin": {
+  "url": "https://drive.google.com/file/d/12cj5-V6SwnEtsfbU7fdSndVnMVpAsPfO/view?usp=drive_web",
+  "date": "2026-09-27"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -296,6 +276,15 @@
     "15:00",
     [
      4
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "19:00",
+    [
+     1
     ],
     []
    ]

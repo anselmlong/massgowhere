@@ -4,7 +4,7 @@
  "source_urls": [
   "https://www.sfxchurch.sg/"
  ],
- "fetched_at": "2026-09-29T18:29+08:00",
+ "fetched_at": "2026-10-02T12:37+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -140,7 +140,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "By appointment only"
   },
   {
    "d": 5,
@@ -170,7 +170,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "By appointment only"
   },
   {
    "d": 6,
@@ -183,98 +183,47 @@
    "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-10-31",
-   "time": "18:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints Eve",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "06:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "18:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "20:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-12-24",
-   "time": "18:30",
-   "language": "English",
-   "location": "",
-   "title": "Christmas Eve",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-12-24",
-   "time": "21:00",
-   "language": "English",
-   "location": "",
-   "title": "Christmas Eve",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-12-24",
-   "time": "23:59",
-   "language": "English",
-   "location": "",
-   "title": "Christmas Eve midnight Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-12-25",
-   "time": "09:00",
-   "language": "English",
-   "location": "",
-   "title": "Christmas Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-12-25",
-   "time": "11:00",
-   "language": "English",
-   "location": "",
-   "title": "Christmas Day",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "09:00"
+ ],
  "notes": [
-  "Reconciliation is strictly by appointment only.",
-  "Adoration is closed on public holidays."
+  "There is currently no Confession before Mass."
  ],
  "info": {
-  "adoration": "Monday-Sunday 07:00-23:00; closed on public holidays.",
-  "confession": "Strictly by appointment only."
+  "adoration": "Adoration Room: Monday–Sunday 07:00–23:00; closed on public holidays.",
+  "confession": "By appointment only; contact the Parish Office."
+ },
+ "events": [
+  {
+   "date": "2026-10-02",
+   "time": "",
+   "title": "Mysteries of the Rosary - The Glorious Mysteries",
+   "text": "Last session on the Glorious Mysteries by LiFE Ministry. Enquiries: Raymond (9752 9723) or Ignatius (9664 2127)."
+  },
+  {
+   "date": "2026-10-04",
+   "time": "",
+   "title": "Children's Day Celebration",
+   "text": "Games, arts and crafts, and light snacks at Mount Horeb."
+  },
+  {
+   "date": "2026-10-10",
+   "time": "",
+   "title": "BRAVE – Work Well, Live Well",
+   "text": "World Mental Health Day event by Clarity and Catholic Business Network. Online via Zoom. Free admission. Register: tinyurl.com/BRAVE1010."
+  },
+  {
+   "date": "2026-10-31",
+   "time": "",
+   "title": "Day for Life 2026",
+   "text": "Keynote speakers on hope and healing after abortion, the role of men in protecting life, and Jesus as the source of all hope. At Church of the Immaculate Heart of Mary, St Gregory’s Hall. Cost: $13 per ticket. Register: tinyurl.com/dayforlife26."
+  }
+ ],
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2609260910_Bulletin_2026_09_27_2.pdf?alt=media&token=f71876db-9441-460c-989a-ce0199237f3e",
+  "date": "2026-09-26"
  },
  "disputes": [],
  "vs_mycatholic": {

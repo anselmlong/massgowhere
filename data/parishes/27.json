@@ -4,7 +4,7 @@
  "source_urls": [
   "https://stmichael.catholic.sg/mass-devotions/"
  ],
- "fetched_at": "2026-09-29T18:29+08:00",
+ "fetched_at": "2026-10-02T12:38+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -29,7 +29,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Lauds Prayer"
   },
   {
@@ -109,7 +109,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Lauds Prayer"
   },
   {
@@ -119,7 +119,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Mid-day Prayer"
   },
   {
@@ -149,7 +149,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Lauds Prayer"
   },
   {
@@ -159,7 +159,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Mid-day Prayer"
   },
   {
@@ -189,7 +189,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Lauds Prayer"
   },
   {
@@ -199,7 +199,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Mid-day Prayer"
   },
   {
@@ -229,7 +229,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Lauds Prayer"
   },
   {
@@ -239,7 +239,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Mid-day Prayer"
   },
   {
@@ -269,7 +269,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Lauds Prayer"
   },
   {
@@ -279,7 +279,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Mid-day Prayer"
   },
   {
@@ -309,7 +309,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Lauds Prayer"
   },
   {
@@ -319,7 +319,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Zoom",
    "note": "Mid-day Prayer"
   },
   {
@@ -343,21 +343,121 @@
    "note": ""
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Adoration",
+   "date": "2026-10-02",
+   "time": "19:00",
+   "language": "English",
+   "location": "",
+   "title": "Holy Hour",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-30",
+   "time": "19:00",
+   "language": "English",
+   "location": "",
+   "title": "Rosary",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [],
  "notes": [
-  "When a public holiday falls on Sunday, it is observed on the following Monday.",
-  "Public holiday weekday Masses replace the usual weekday schedule.",
-  "Liturgy of the Hours is conducted on Zoom; registration is required."
+  "No 6.30am and 6pm Mass on public holidays.",
+  "On public holidays on Sundays, Mass timings follow the weekend schedule; the public holiday is celebrated on the following Monday."
  ],
  "info": {
-  "adoration": "Adoration Room open 7am to 10.30pm.",
-  "confession": "30 minutes before weekend Eucharistic Celebrations.",
+  "adoration": "Adoration Room: Open 7am to 10.30pm.",
+  "confession": "Sacrament of Reconciliation is 30 minutes before the Eucharistic Celebrations on weekends.",
   "devotions": [
-   "Liturgy of the Hours on Zoom; register with csm.secretariat@catholic.org.sg for Zoom details."
+   "Liturgy of the Hours on Zoom: Mon-Sat 8.00am Lauds Prayer, 12.30pm Mid-day Prayer; Sun 8.00am Lauds Prayer. Register with csm.secretariat@catholic.org.sg for Zoom details."
   ],
-  "office_hours": "Parish Office: Mon-Fri 8.30am-5pm; Sat 8.30am-11.30am and 2pm-4.30pm."
+  "office_hours": "Parish Office: Mondays to Fridays 8.30am-5.00pm; Saturdays 8.30am-11.30am, 2.00pm-4.30pm.",
+  "good_to_know": [
+   "No 6.30am and 6pm Mass on public holidays.",
+   "On public holidays on Sundays, Mass timings follow the weekend schedule; the public holiday is celebrated on the following Monday."
+  ]
+ },
+ "events": [
+  {
+   "date": "2026-10-02",
+   "time": "",
+   "title": "Marriage Encounter 2026",
+   "text": "ME Weekend is for married couples who wish to experience marriage in a new light. October Weekend (2 - 4 October) is filling up. Secure your Weekend at wwmesg.org today!"
+  },
+  {
+   "date": "2026-10-05",
+   "time": "20:00",
+   "title": "Talk on the Creed",
+   "text": "What do Catholics believe in? What is this thing that Catholics recite every week during the Eucharistic Celebration? Join us to discover what these words actually mean for our lives. Register: https://tinyurl.com/CSMTalkonCreed"
+  },
+  {
+   "date": "2026-10-07",
+   "time": "09:00",
+   "title": "CSM in collaboration with KWSC",
+   "text": "Open to older adults above 60 years old staying in St. George’s & St. Michael’s estate."
+  },
+  {
+   "date": "2026-10-12",
+   "time": "20:00",
+   "title": "Talk on the Creed",
+   "text": "What do Catholics believe in? What is this thing that Catholics recite every week during the Eucharistic Celebration? Join us to discover what these words actually mean for our lives. Register: https://tinyurl.com/CSMTalkonCreed"
+  },
+  {
+   "date": "2026-10-19",
+   "time": "20:00",
+   "title": "Talk on the Creed",
+   "text": "What do Catholics believe in? What is this thing that Catholics recite every week during the Eucharistic Celebration? Join us to discover what these words actually mean for our lives. Register: https://tinyurl.com/CSMTalkonCreed"
+  },
+  {
+   "date": "2026-10-21",
+   "time": "09:00",
+   "title": "CSM in collaboration with KWSC",
+   "text": "Open to older adults above 60 years old staying in St. George’s & St. Michael’s estate."
+  },
+  {
+   "date": "2026-10-26",
+   "time": "20:00",
+   "title": "Talk on the Creed",
+   "text": "What do Catholics believe in? What is this thing that Catholics recite every week during the Eucharistic Celebration? Join us to discover what these words actually mean for our lives. Register: https://tinyurl.com/CSMTalkonCreed"
+  },
+  {
+   "date": "2026-11-04",
+   "time": "09:00",
+   "title": "CSM in collaboration with KWSC",
+   "text": "Open to older adults above 60 years old staying in St. George’s & St. Michael’s estate."
+  },
+  {
+   "date": "2026-11-18",
+   "time": "09:00",
+   "title": "CSM in collaboration with KWSC",
+   "text": "Open to older adults above 60 years old staying in St. George’s & St. Michael’s estate."
+  },
+  {
+   "date": "2026-12-02",
+   "time": "09:00",
+   "title": "CSM in collaboration with KWSC",
+   "text": "Open to older adults above 60 years old staying in St. George’s & St. Michael’s estate."
+  },
+  {
+   "date": "2026-12-16",
+   "time": "09:00",
+   "title": "CSM in collaboration with KWSC",
+   "text": "Open to older adults above 60 years old staying in St. George’s & St. Michael’s estate."
+  },
+  {
+   "date": "2026-12-30",
+   "time": "09:00",
+   "title": "CSM in collaboration with KWSC",
+   "text": "Open to older adults above 60 years old staying in St. George’s & St. Michael’s estate."
+  }
+ ],
+ "bulletin": {
+  "url": "https://sh1.sendinblue.com/mk/sc/OdmIHBbX9s5QkebOo1pfZCeaaDzW8jQTp8VSIymQyjTHRxHhGl87bU_TzUHNx_-jA-mPYs8-bS6zcpvW64lNm-_IRt0Haug?t=1790505506276",
+  "date": "2026-09-27"
  },
  "disputes": [],
  "vs_mycatholic": {

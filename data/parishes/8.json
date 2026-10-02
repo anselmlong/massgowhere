@@ -4,7 +4,7 @@
  "source_urls": [
   "https://holytrinity.org.sg/"
  ],
- "fetched_at": "2026-10-01T03:01+08:00",
+ "fetched_at": "2026-10-02T12:33+08:00",
  "fetch_mode": [
   "rendered"
  ],
@@ -20,7 +20,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before 6.45am Mass"
   },
   {
    "d": 0,
@@ -40,7 +40,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before 8.30am Mass"
   },
   {
    "d": 0,
@@ -60,7 +60,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before 10.15am Mass"
   },
   {
    "d": 0,
@@ -80,7 +80,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before 12.00pm Mass"
   },
   {
    "d": 0,
@@ -100,7 +100,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 0,
@@ -110,7 +110,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before 5.30pm Mass"
   },
   {
    "d": 0,
@@ -140,7 +140,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 1,
@@ -180,7 +180,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 2,
@@ -210,7 +210,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 3,
@@ -240,7 +240,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 4,
@@ -270,7 +270,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 5,
@@ -300,7 +300,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 6,
@@ -310,7 +310,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "30 minutes before 5.30pm Mass"
   },
   {
    "d": 6,
@@ -323,45 +323,139 @@
    "note": ""
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Devotion",
+   "date": "2026-10-06",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Divine Mercy Devotion",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-08",
+   "time": "19:30",
+   "language": "English",
+   "location": "",
+   "title": "Eucharist",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-09",
+   "time": "20:00",
+   "language": "Mandarin",
+   "location": "",
+   "title": "Hour of Prayer",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-10",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Christian Meditation",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00"
  ],
- "notes": [
-  "On public holidays, the usual weekday Mass schedule is replaced by the public holiday Mass."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Chapel is open daily 06:00–18:00.",
-  "confession": "Confessions are available 30 minutes before Saturday 17:30 Mass and all Sunday Masses.",
+  "adoration": "Chapel is open every day 06:00-18:00.",
+  "confession": "Confessions are available 30 minutes before Saturday 5.30pm Mass and all Sunday Masses.",
   "devotions": [
-   "Rosary Prayer before Mass: Weekdays 17:25 at Chapel; Weekends 16:55 at Main Church.",
-   "Prayer for Priests: Tuesdays 16:50 at Chapel."
+   "Rosary Prayer before Mass: Weekdays 5.25pm at Chapel; Weekends 4.55pm at Main Church.",
+   "Prayer for Priests: Tuesdays 4.50pm at Chapel."
   ],
-  "office_hours": "Parish Office: Monday–Friday 09:00–18:00 (closed 12:00–13:00 for lunch), Saturday and Sunday 09:00–13:00; closed on public holidays.",
+  "office_hours": "Parish Office: Monday to Friday 9am-6pm (closed for lunch 12pm-1pm); Saturday and Sunday 9am-1pm; closed on Public Holidays.",
   "good_to_know": [
    "All Masses are in English unless stated otherwise.",
-   "Church Wedding bookings are to be made 1 year in advance; enquire at the Parish Office.",
-   "Infant Baptism registration for December is open; documents are due by 30 November 2026."
+   "Columbarium is open daily 6.30am-6pm."
   ]
  },
  "events": [
   {
-   "date": "2026-10-02",
-   "time": "",
-   "title": "RCIA Mandarin",
-   "text": "RCIA Mandarin"
+   "date": "2026-10-06",
+   "time": "19:30",
+   "title": "Legion of Mary",
+   "text": "Legion of Mary (Mandarin)"
   },
   {
-   "date": "2026-10-24",
-   "time": "09:00",
-   "title": "At the Feet of the Good Shepherd Retreat",
-   "text": "At the Feet of the Good Shepherd Retreat, 24–25 October, from 09:00 Saturday to 17:00 Sunday, St Francis Xavier Retreat Centre. A specially commissioned retreat for those carrying inner wounds from broken family relationships. Mass is celebrated by Fr Eugene Vaz. Register at https://tinyurl.com/6aee"
+   "date": "2026-10-07",
+   "time": "10:00",
+   "title": "JOY Ministry, for the Elderly",
+   "text": "JOY Ministry, for the Elderly"
+  },
+  {
+   "date": "2026-10-07",
+   "time": "10:30",
+   "title": "Holy Trinity Youth",
+   "text": "Holy Trinity Youth"
+  },
+  {
+   "date": "2026-10-07",
+   "time": "11:00",
+   "title": "Legion of Mary",
+   "text": "Legion of Mary"
+  },
+  {
+   "date": "2026-10-07",
+   "time": "14:00",
+   "title": "Legion of Mary",
+   "text": "Legion of Mary"
+  },
+  {
+   "date": "2026-10-08",
+   "time": "09:30",
+   "title": "Bible Study",
+   "text": "Bible Study (Mandarin)"
+  },
+  {
+   "date": "2026-10-08",
+   "time": "10:00",
+   "title": "Legion of Mary",
+   "text": "Legion of Mary"
+  },
+  {
+   "date": "2026-10-08",
+   "time": "15:00",
+   "title": "Legion of Mary",
+   "text": "Legion of Mary"
+  },
+  {
+   "date": "2026-10-08",
+   "time": "19:30",
+   "title": "Neocatechumenal Way",
+   "text": "Neocatechumenal Way"
+  },
+  {
+   "date": "2026-10-08",
+   "time": "19:30",
+   "title": "Bible Study",
+   "text": "Bible Study (Mandarin)"
+  },
+  {
+   "date": "2026-10-08",
+   "time": "19:45",
+   "title": "RCIA",
+   "text": "RCIA"
+  },
+  {
+   "date": "2026-10-08",
+   "time": "20:00",
+   "title": "Legion of Mary",
+   "text": "Legion of Mary"
   }
  ],
  "bulletin": {
-  "url": "https://holytrinity.org.sg/uploads/2/file-1790302971343-231497874.pdf",
-  "date": "2026-09-27"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610021045_04.10.26_27th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=0559dfa9-1350-42a8-b3a1-75ec1fc68bbd",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {

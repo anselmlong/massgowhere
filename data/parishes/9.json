@@ -4,7 +4,7 @@
  "source_urls": [
   "https://ihm.sg/"
  ],
- "fetched_at": "2026-10-01T03:01+08:00",
+ "fetched_at": "2026-10-02T12:34+08:00",
  "fetch_mode": [
   "static"
  ],
@@ -93,7 +93,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "Priest's Office",
-   "note": "Walk-in Confession"
+   "note": "Walk-in Confession; until 11:00; except public holidays"
   },
   {
    "d": 1,
@@ -143,7 +143,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "Priest's Office",
-   "note": "Walk-in Confession"
+   "note": "Walk-in Confession; until 11:00; except public holidays"
   },
   {
    "d": 2,
@@ -360,22 +360,20 @@
  "public_holiday_masses": [],
  "notes": [
   "Walk-in Confession is not available on public holidays.",
-  "The 2nd Friday evening Mass is dedicated to the faithful departed whose ashes are in the Columbarium.",
-  "Vietnamese Masses at IHM ended on 17 Nov 2024; contact the Church of the Sacred Heart for timings."
+  "Vietnamese Masses at IHM ended on 17 Nov 2024; contact the Church of the Sacred Heart for Vietnamese Mass timings."
  ],
  "info": {
-  "confession": "Reconciliation in the Main Church is 30 minutes before Mass. Walk-in Confession at the Priest's Office on Monday and Tuesday 09:00-11:00, except public holidays.",
+  "confession": "Reconciliation is available in the Main Church 30 minutes before Mass.",
   "devotions": [
-   "The Saturday morning Mass is followed by Novena Devotion."
-  ],
-  "office_hours": "Mon-Fri 09:30-17:30; Saturday 09:00-12:00 (Columbarium matters only); lunch 12:00-13:00; closed on public holidays.",
-  "good_to_know": [
-   "The 2nd Friday evening Mass is dedicated to the souls of the faithful departed whose ashes are interred in the Columbarium.",
-   "Vietnamese Masses at IHM ended on 17 Nov 2024; contact the Church of the Sacred Heart for Vietnamese Mass timings."
+   "Saturday 07:00 Mass is followed by Novena Devotion.",
+   "The 2nd Friday 18:15 Mass is dedicated to the souls of the faithful departed whose ashes are interred in the parish columbarium."
   ]
  },
  "events": [],
- "bulletin": null,
+ "bulletin": {
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2609251434_39_26th%20Sun%20in%20Ord%20Time%2027Sep26.pdf?alt=media&token=3fa9c3be-7627-4678-826b-035960d497b2",
+  "date": "2026-09-25"
+ },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
