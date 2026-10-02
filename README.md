@@ -29,11 +29,10 @@ Find a Catholic Mass in Singapore you can actually make: from where you are, by 
                          ┌──────────────────────── data pipeline (VPS, cron) ─────────────────────────┐
 myCatholicSG Firestore ──┤ update_mycatholic.sh → import_mycatholic.py → data/mycatholic.json          │
   (prod-sg, daily)       │                                                                            │
-parish websites ─────────┤ check_sites.sh → scrape_parishes.py (LLM) → data/parishes/<id>.json         │
-  (monthly)              │                                                                            ├─→ build_data.py ─→ public/data.json
-bulletins ───────────────┤ update_bulletins.sh → fetch_bulletins.py → scrape_parishes.py --only …      │                    public/parish/<id>.json
-  (daily + Fri/Sat 9pm)  │                                                                            │
-hand-reviewed read ──────┤ import_rich.py → data/rich/<id>.json  ·  data/services.json (hand-checked)  │
+bulletins ───────────────┤ update_bulletins.sh → fetch_bulletins.py → scrape_parishes.py               │
+  (weekly, Sat 9pm SGT)  │   --bulletin-only (LLM) → data/parishes/<id>.json                          ├─→ build_data.py ─→ public/data.json
+hand-curated ────────────┤ data/rich/<id>.json (reviewed read + hand checks) · data/services.json      │                    public/parish/<id>.json
+  (by hand)              │                                                                            │
 MOM public holidays ─────┘ data/holidays.json                                                         ┘
                                                      │ git commit + push to main
                                                      ▼
@@ -74,11 +73,11 @@ MOM public holidays ─────┘ data/holidays.json                       
     - Churches in the list below: lighter pins.
     - Also nearby, not listed: grey pins. The card says why (a later Mass, or a longer trip).
   - Other churches you can make it to, and the nearest church.
-  - Source line: warns when this Mass isn't on the parish website.
+  - Source line: times from myCatholicSG, checked daily.
   - Saturday Masses from 4pm are marked **Sunset Mass**.
 - **Church page:**
   - Mass times: one row per day, times in a three-column grid.
-  - Times from myCatholicSG and the parish website are merged. A time only one source lists carries a tappable source marker.
+  - Mass times from myCatholicSG; this week's bulletin adds one-off changes.
   - Changes to the usual Masses, and Adoration / Confession / public holidays.
   - Bulletin card, and folded extras: events, getting there, sacraments, groups, contact.
 - **Look:** light by default, with a header switch (dark follows the phone otherwise). The accent colour follows the liturgical season (`season()` in `app.js`); the header shows the season, e.g. "Ordinary Time". Fills, not outlines. 44px tap targets. Reduced-motion respected.
@@ -161,24 +160,29 @@ Response:
 - **Mass times: myCatholicSG is the source of truth.**
   - `update_mycatholic.sh` reads the Firestore database `prod-sg`, the one mycatholic.sg itself reads. The `(default)` database is an old copy that stopped updating on 3 July 2026.
   - `import_mycatholic.py` turns the export into weekly, nth-week and last-week rules plus dated additions and cancellations.
-- **Monthly parish-website check** (`scrape_parishes.py`, LLM via OpenRouter):
-  - It reads each parish's own page (`data/sources.json`) and compares it with myCatholicSG. It **never changes times.**
-  - The build marks each parish "parish website agrees" or "lists different times", and `data/site-check.md` lists every difference for review.
-  - The same read extracts `info`: Adoration and Adoration-room hours, Confession, devotions, office hours, good to know.
-  - Playwright handles JS-built sites. The Cathedral, OLPS and Transfiguration block headless browsers. Star of the Sea's schedule is an image only, and Nativity has no website; both use myCatholicSG alone.
-- **This week's bulletin** (daily, plus Friday and Saturday at 9pm SGT):
+- **Sources of truth, in order:**
+  1. myCatholicSG for Mass times.
+  2. Hand-curated data: `data/rich/<id>.json`, the reviewed read plus what Anselm checks by hand, and `data/services.json` for the Adoration/Confession finder.
+  3. This week's bulletin, read automatically.
+  - Parish websites are no longer read automatically: they were too unreliable to scrape. A parish with no bulletin uses myCatholicSG plus the hand-curated data.
+- **This week's bulletin** (weekly, Saturday 9pm SGT, after most parishes upload):
   - **Finding it:** `fetch_bulletins.py` takes each parish's newest bulletin from myCatholicSG (`prod-sg`, collection `bulletin`; a PDF). Failing that, it finds the bulletin on the page `data/bulletins.json` names: the newest dated link, a PDF under a "bulletin" heading, a Drive file in an embedded app, or an emailed newsletter (St Michael's).
-  - **Reading it:** each new bulletin is read once (`scrape_parishes.py --only <ids>`) for one-off Mass changes (`dated`), events and parish info.
+  - **Reading it:** each new bulletin is read once, on its own (`scrape_parishes.py --bulletin-only --only <ids>`), for one-off Mass changes (`dated`), events and parish info. Its regular Mass list isn't used.
   - **What's kept:**
     - A dated change only when its date and time are stated near each other, within 45 days.
     - A cancellation only when it also matches a myCatholicSG slot with "no / cancelled / moved" nearby.
     - A "public holiday" Mass only when it falls on one.
   - **Freshness:** the card says "This week" up to 9 days old and "Latest" up to 21. St Mary of the Angels publishes none.
-- **Hand-reviewed parish read** (29 Sept 2026):
-  - Imported with `import_rich.py` into `data/rich/<id>.json`.
-  - It wins over the monthly read while under 45 days old (`RICH_FRESH_DAYS`); after that it only fills gaps.
+- **Hand-curated parish data** (`data/rich/<id>.json`; first imported with `import_rich.py` from the reviewed 29 Sept 2026 read, then edited by hand):
+  - It always wins over the bulletin read, field by field; the bulletin read only fills gaps. Dated changes and events come from both.
+  - Its copy of each parish website's regular Mass times isn't used: regular times come from myCatholicSG alone.
   - Only a reviewed cancellation strikes a Mass off the church page's week.
-- **Build:** `build_data.py` writes `public/data.json` (all parishes, rules, dated changes, services, holidays, bulletin per parish) and `public/parish/<id>.json`. It warns when fewer than 60 days of public holidays remain.
+- **Build:** `build_data.py` writes `public/data.json` (all parishes, rules, dated changes, services, holidays, bulletin per parish) and `public/parish/<id>.json`. It warns:
+  - when fewer than 60 days of public holidays remain;
+  - with a `FINDER GAP` line for each church whose page mentions Adoration or Confession that `data/services.json` doesn't cover (or marks unconfirmed), so it can be added by hand.
+- **Safety in the jobs:**
+  - Each job re-runs itself after updating to `origin/main`, so a changed script never runs its old code once.
+  - The myCatholicSG job refuses to publish data older than what's live, and warns when no parish has changed in 30 days.
 - **Photos:**
   - All 32 parishes have a photo, from Wikimedia Commons, Flickr, the parish's own website or myCatholicSG.
   - Credits are in `public/photos/credits.json`; each photo is self-hosted with a 144px thumbnail.
@@ -251,15 +255,14 @@ Without OneMap credentials, the API answers with distance estimates. Add `?previ
 | `FEEDBACK_CHAT_ID` | optional, Vercel / VPS | where feedback goes (default: the owner) |
 | `ADMIN_CHAT_IDS` | optional, VPS | who can use `/stats` |
 | `MASSGOWHERE_API` | optional, VPS | the site the bot calls |
-| `OPENROUTER_API_KEY`, `OPENROUTER_MODELS` | VPS / Mac `.env` | parish-website and bulletin reads |
+| `OPENROUTER_API_KEY`, `OPENROUTER_MODELS` | VPS / Mac `.env` | bulletin reads |
 
 ## 7. Operations
 
 | What | How | Schedule |
 |---|---|---|
 | myCatholicSG times | `sh scripts/update_mycatholic.sh` (fetch, import, build, commit, push) | VPS cron, daily 04:00 UTC (12:00 SGT); `~/mgw.log` |
-| This week's bulletins | `sh scripts/update_bulletins.sh` | VPS cron, daily 04:30 UTC, and Fri + Sat 13:00 UTC (9pm SGT); `~/mgw-bulletins.log` |
-| Parish website check | `sh scripts/check_sites.sh` | VPS timer `massgowhere-check.timer`, 1st of each month, 03:00 SGT |
+| This week's bulletins | `sh scripts/update_bulletins.sh` | VPS cron, weekly, Saturday 13:00 UTC (9pm SGT); `~/mgw-bulletins.log` |
 | Church photos | `scripts/fetch_photos.py`, `scripts/fetch_mycatholic_photos.py` | by hand |
 | Public holidays | edit `data/holidays.json` when MOM publishes next year's list | build warns at < 60 days |
 | Bot changes | `git pull` on the VPS, then `systemctl --user restart massgowhere-bot` | after any change to `bot/bot.py` |
@@ -267,13 +270,10 @@ Without OneMap credentials, the API answers with distance estimates. Add `?previ
 ```sh
 # cron, to set up again on a new machine
 (crontab -l 2>/dev/null; echo '0 4 * * * sh $HOME/massgowhere/scripts/update_mycatholic.sh >>$HOME/mgw.log 2>&1') | crontab -
-(crontab -l 2>/dev/null; echo '30 4 * * * sh $HOME/massgowhere/scripts/update_bulletins.sh >>$HOME/mgw-bulletins.log 2>&1') | crontab -
-(crontab -l 2>/dev/null; echo '0 13 * * 5,6 sh $HOME/massgowhere/scripts/update_bulletins.sh >>$HOME/mgw-bulletins.log 2>&1') | crontab -
+(crontab -l 2>/dev/null; echo '0 13 * * 6 sh $HOME/massgowhere/scripts/update_bulletins.sh >>$HOME/mgw-bulletins.log 2>&1') | crontab -
 
 # health
 systemctl --user status massgowhere-bot
-systemctl --user list-timers massgowhere-check.timer
-journalctl --user -u massgowhere-check -n 50
 tail ~/mgw.log ~/mgw-bulletins.log
 ```
 
@@ -286,10 +286,10 @@ public/        index.html · app.js · style.css         the site
                schedule.js · rank.js · services.js · way.js   shared logic (browser + API)
                data.json · parish/<id>.json · photos/          generated data and photos
 bot/           bot.py                                  Telegram bot
-scripts/       update_*.sh · check_sites.sh            cron entry points
+scripts/       update_mycatholic.sh · update_bulletins.sh   cron entry points
                import_*.py · scrape_parishes.py · fetch_*.py · build_data.py · dev.js
 data/          mycatholic.json · services.json · holidays.json · sources.json · bulletins*.json
-               parishes/<id>.json · rich/<id>.json · site-check.md
+               parishes/<id>.json (bulletin reads) · rich/<id>.json (hand-curated)
 test/          node:test suites
 ```
 

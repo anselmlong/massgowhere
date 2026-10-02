@@ -1,10 +1,11 @@
 """Build public/data.json. Source of truth: myCatholicSG (data/mycatholic.json).
 
-The monthly parish-website check (data/parishes/<id>.json, see scripts/scrape_parishes.py) never changes times;
-it only adds a per-parish "siteCheck" so the site can say whether the parish's own website agrees.
+Sources, in order: myCatholicSG for Mass times; hand-curated data (data/rich/<id>.json, the reviewed read plus what
+Anselm has checked by hand, and data/services.json for the Adoration/Confession finder); this week's bulletin, read
+automatically each week (data/parishes/<id>.json, see scripts/update_bulletins.sh). Parish websites aren't read any more.
 
-What each parish's website says beyond Mass times goes to public/parish/<id>.json, which only the church page loads:
-the Sept 2026 rich read (data/rich/<id>.json, see scripts/import_rich.py) field by field, gaps filled from the monthly read.
+What goes beyond Mass times is in public/parish/<id>.json, which only the church page loads: the hand-curated read
+field by field, gaps filled from the bulletin read; dated changes and events from both.
 
 Usage: python3 scripts/build_data.py
 No network access.
@@ -27,27 +28,12 @@ def load(path, default=None):
         return default
 
 
-def mass_keys(rules):
-    return {(r["d"], r["t"], tuple(r.get("weeks") or []), tuple(r.get("except") or [])) for r in rules if r.get("type", "Mass") == "Mass"}
-
-
-def site_check(pid, mc_rules):
-    """Compare the parish website's Mass slots (last monthly check) with today's myCatholicSG data."""
-    site = load(f"data/parishes/{pid}.json")
-    urls = (site or {}).get("source_urls") or []
-    if not site or not urls or "rules" not in site:
-        return None
-    return {"url": urls[0], "checkedAt": site["fetched_at"], "agrees": mass_keys(site["rules"]) == mass_keys(mc_rules)}
-
-
 INFO_FIELDS = ("adoration", "confession", "devotions", "office_hours", "good_to_know")
-RICH_FRESH_DAYS = 45  # after this the monthly read (website + latest bulletin) wins over the Sept 2026 rich read
 
 
 def site_info(pid, website, today):
-    """Everything the parish's own website says beyond myCatholicSG, for the church page: the rich read (hand-reviewed)
-    and the monthly LLM read (website + latest bulletin), field by field. While the rich read is under RICH_FRESH_DAYS
-    old it wins; after that the monthly read wins and the rich read only fills gaps. None when neither has anything.
+    """What the church page shows beyond myCatholicSG: the hand-curated read (data/rich) field by field, which always
+    wins, with gaps filled from the automatic bulletin read. None when neither has anything.
 
     Dated Mass changes carry "reviewed": only reviewed cancellations may strike a Mass off the week list."""
     rich = load(f"data/rich/{pid}.json") or {}
@@ -57,8 +43,7 @@ def site_info(pid, website, today):
     r_at = rich.get("readAt", "")
     wrap = lambda v: [{"text": x} for x in v] if isinstance(v, list) else {"text": v}
     monthly = {k: wrap(v) for k, v in ((site.get("info") or {}) if urls else {}).items() if k in INFO_FIELDS and v}
-    if urls and site.get("rules"):
-        monthly["rules"] = [r for r in site["rules"] if r.get("type") == "Mass"]
+    # no regular Mass times from automatic reads: those come from myCatholicSG alone
     if urls and site.get("dated"):
         monthly["dated"] = [{"date": d["date"], "time": d["time"], "title": d["title"], "action": d["action"],
                              "language": d.get("language", ""), "location": d.get("location", "")}
@@ -67,12 +52,12 @@ def site_info(pid, website, today):
         monthly["events"] = site["events"]
     if urls and site.get("bulletin"):
         monthly["bulletin"] = site["bulletin"]
-    rich = {k: v for k, v in rich.items() if k not in ("id", "readAt") and v}
+    # regular Mass times come from myCatholicSG alone, not from the reviewed read's copy of the parish website
+    rich = {k: v for k, v in rich.items() if k not in ("id", "readAt", "rules") and v}
     rich["dated"] = [{**d, "reviewed": True} for d in rich.get("dated", [])] or None
     monthly = {k: v for k, v in monthly.items() if v}
     rich = {k: v for k, v in rich.items() if v}
-    fresh = r_at and (today - datetime.fromisoformat(r_at).date()).days <= RICH_FRESH_DAYS
-    first, second = (rich, monthly) if fresh else (monthly, rich)
+    first, second = rich, monthly  # hand-curated wins; the automatic read only fills gaps
     out = {**second, **first}
     # dated changes and events come from both reads: a new bulletin's must show even while the rich read is fresh.
     # The same date and time once (the preferred read's wording).
@@ -114,7 +99,7 @@ def main():
             "lat": round(p["lat"], 6), "lng": round(p["lng"], 6), "phone": p.get("phone", ""),
             "website": p.get("website", ""), "link": p.get("link", ""),
             "source": {"kind": "myCatholicSG", "url": f"https://mycatholic.sg/parish/{p.get('link', '')}", "fetchedAt": mc["asOf"]},
-            "siteCheck": site_check(pid, mc["rules"].get(pid, [])),
+            "siteCheck": None,  # parish websites aren't checked any more
             "bulletin": {k: v for k, v in bulletins[pid].items() if v} if pid in bulletins else None,
         })
         info = site_info(pid, p.get("website", ""), datetime.now(SGT).date())
@@ -137,11 +122,18 @@ def main():
     last_holiday = max(holidays.get("dates", {}) or ["0000"])
     if last_holiday < (datetime.now(SGT) + timedelta(days=60)).date().isoformat():
         print(f"WARNING: public holidays end {last_holiday}; add next year's MOM list to data/holidays.json")
+    # the finder only uses hand-checked hours (data/services.json): name every church whose page mentions Adoration
+    # or Confession that the finder doesn't cover, so new times from a bulletin or a parish get added by hand
+    names = {str(p["id"]): p["name"] for p in out_parishes}
+    for pid, info in sorted(infos.items(), key=lambda x: int(x[0])):
+        for kind in ("adoration", "confession"):
+            spec = services["parishes"].get(pid, {}).get(kind)
+            text = " ".join(x.get("text", "") for x in ([info[kind]] if isinstance(info.get(kind), dict) else info.get(kind) or []))
+            if text and (not spec or spec.get("unconfirmed")):
+                print(f"FINDER GAP: {names[pid]} {kind}{' (unconfirmed)' if spec else ''}: {text[:160]}")
     n = sum(1 for v in mc["rules"].values() for r in v if r["type"] == "Mass")
-    agree = sum(1 for p in out_parishes if p["siteCheck"] and p["siteCheck"]["agrees"])
-    checked = sum(1 for p in out_parishes if p["siteCheck"])
     print(f"wrote {path}: {len(out_parishes)} parishes, {n} weekly Mass slots (myCatholicSG as of {mc['asOf']}); "
-          f"parish websites agree for {agree}/{checked} checked; {os.path.getsize(path) // 1024} KB; parish details for {len(infos)}")
+          f"{os.path.getsize(path) // 1024} KB; parish details for {len(infos)}")
 
 
 if __name__ == "__main__":
