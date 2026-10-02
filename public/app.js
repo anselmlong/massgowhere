@@ -1147,7 +1147,10 @@
       if (start <= now + b.travelMin * 60000) {
         return `<strong>${soonNow ? goNow : `Leave at ${clock(leaveAt)}`}</strong><span>${trip}, arriving ${about}${clock(ms(b.arrive))}</span><span class="early">${stay}</span>`;
       }
-      return `<strong>Leave at ${clock(leaveAt)}${day(leaveAt)}</strong><span>${trip}, arriving as it ${kind === "adoration" ? "opens" : "starts"}</span><span class="early">${stay}</span>`;
+      // Confession not started yet: the latest you can leave is set by when it opens (be there at the start: the queue
+      // forms early and it stops when Mass begins); an Adoration room you can come to any time before it closes
+      if (kind === "confession") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveAt)}${day(leaveAt)}`}</strong><span>${trip}, arriving as it starts at ${clock(start)}</span><span class="early">Confession ends at ${clock(ms(b.end))}, and there may be a queue.</span>`;
+      return `<strong>Leave at ${clock(leaveAt)}${day(leaveAt)}</strong><span>${trip}, arriving as it opens</span><span class="early">${stay}</span>`;
     };
     const meta = (b) => [kind === "confession" && b.mass ? `Before the ${clock(ms(b.mass))} Mass` : "", b.location, b.type === "session" ? "" : b.name, b.note].filter(Boolean);
     const altRow = (a) => {
@@ -1205,7 +1208,7 @@
       answerMap(view.querySelector("#map"), origin, from === "your location" ? "You" : from, stale, {
         pin: (e) => (openOn(e) ? "Open" : clock(ms(e.start))),
         line: (e) => `${e.type === "session" ? `${esc(e.name || K.title)} ${clock(ms(e.start))} ${esc(rel(ms(e.start)).toLowerCase())}`
-          : openOn(e) ? `Open until ${clock(ms(e.end))}` : `${rel(ms(e.start))} ${clock(ms(e.start))} to ${clock(ms(e.end))}`} · leave at ${clock(ms(e.leaveAt))}`,
+          : openOn(e) ? `Open until ${clock(ms(e.end))}` : `${rel(ms(e.start))} ${clock(ms(e.start))} to ${clock(ms(e.end))}`} · leave ${kind === "confession" && !openOn(e) ? "by" : "at"} ${clock(ms(e.leaveAt))}`,
         link: "Times and details",
       }).update(res);
       view.focus({ preventScroll: true });
