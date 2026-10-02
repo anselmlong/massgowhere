@@ -1353,11 +1353,13 @@
     const bDate = (v) => `${fmtDate(`${v}T12:00:00+08:00`)}${v.slice(0, 4) !== today.slice(0, 4) ? ` ${v.slice(0, 4)}` : ""}`;
     const bTitle = b?.title && !/_|\.pdf$/i.test(b.title) ? b.title : ""; // a file name says nothing new
     const ext = (url, label, cls = "btn btn-primary") => `<a class="${cls}" href="${esc(url)}" target="_blank" rel="noopener">${label}</a>`;
+    // a parish that posts announcements on its website instead of a bulletin (St Mary of the Angels) gets those
+    const posts = b?.kind === "announcements";
     const bulletinHTML = b && bAge <= 21
-      ? `<div class="bulletin"><div><strong>${bAge <= 9 ? "This week’s bulletin" : "Latest bulletin"}</strong>
-          <span>${[bTitle && esc(bTitle), `${b.from === "website" ? "Dated" : "Posted"} ${bDate(b.date)} on ${bWhere}`].filter(Boolean).join(" · ")}</span>
+      ? `<div class="bulletin"><div><strong>${posts ? (bAge <= 9 ? "This week’s parish announcements" : "Parish announcements") : bAge <= 9 ? "This week’s bulletin" : "Latest bulletin"}</strong>
+          <span>${[bTitle && esc(bTitle), `${posts ? "Latest posted" : b.from === "website" ? "Dated" : "Posted"} ${bDate(b.date)} on ${bWhere}`].filter(Boolean).join(" · ")}</span>
           ${b.page && b.from !== "website" ? ext(b.page, "Earlier bulletins", "earlier") : ""}</div>
-          ${ext(b.url, bAge <= 9 ? "This week" : "Open")}</div>`
+          ${ext(b.url, posts ? "Read" : bAge <= 9 ? "This week" : "Open")}</div>`
       : `<div class="bulletin none"><div><strong>No current bulletin online</strong>
           <span>${b ? `The last one, on ${bWhere}, is from ${bDate(b.date)}. ` : ""}Check the parish’s own website for this week’s news.</span></div>
           ${ext(site || p.source.url, site ? "Website" : "myCatholicSG", "btn btn-quiet")}</div>`;
