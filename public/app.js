@@ -1347,7 +1347,8 @@
     }).join("")}</ul><p class="x">${changes.every((x) => x.reviewed) ? "From the parish’s bulletin and website." : `Read automatically from the parish’s ${info.bulletin ? `<a href="${esc(info.bulletin.url)}" target="_blank" rel="noopener">latest bulletin</a>` : "bulletin"} and website.`} Check with the parish before you go.</p></div>` : "";
     // this week's bulletin: myCatholicSG's, else the one on the parish website (scripts/fetch_bulletins.py, daily). Its
     // age is judged here, so an old one is never called current; none from the last three weeks says so plainly.
-    const b = p.bulletin, bAge = b?.date ? Math.round((Date.parse(today) - Date.parse(b.date)) / 864e5) : Infinity;
+    // aged by the Sunday its title names when that is older than the upload ("September 20", posted 27 Sep)
+    const b = p.bulletin, bAge = b?.date ? Math.round((Date.parse(today) - Date.parse(b.for || b.date)) / 864e5) : Infinity;
     const bWhere = b?.from === "website" ? "the parish website" : "myCatholicSG";
     const bDate = (v) => `${fmtDate(`${v}T12:00:00+08:00`)}${v.slice(0, 4) !== today.slice(0, 4) ? ` ${v.slice(0, 4)}` : ""}`;
     const bTitle = b?.title && !/_|\.pdf$/i.test(b.title) ? b.title : ""; // a file name says nothing new

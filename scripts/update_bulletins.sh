@@ -1,7 +1,7 @@
 #!/bin/sh
-# Daily (VPS crontab, after the myCatholicSG refresh): find each parish's newest bulletin (myCatholicSG, else the parish
-# website), read each one not read yet with the parish's website (one-off Mass changes, events, parish info), rebuild,
-# commit + push. A parish's bulletin is read once, the day after it is posted. Never changes Mass times.
+# Daily, plus Fri and Sat 9pm SGT when most bulletins have just gone up (VPS crontab): find each parish's newest
+# bulletin (myCatholicSG, else the parish website), read each one not read yet with the parish's website (one-off Mass
+# changes, events, parish info), rebuild, commit + push. Each bulletin is read once. Never changes Mass times.
 set -eu
 cd "$(dirname "$0")/.."
 # one job at a time, and always start from the published state (outputs are fully regenerated, so nothing is lost)

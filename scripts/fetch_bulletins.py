@@ -16,6 +16,7 @@ import os
 import sys
 import urllib.request
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SGT = dt.timezone(dt.timedelta(hours=8))
 OUT = os.path.join(ROOT, "data", "bulletins_latest.json")
@@ -44,7 +45,15 @@ def newest(pid):
     f = doc["fields"]
     # only what a visitor needs; the uploader's name and id are left out
     day = dt.datetime.fromtimestamp(int(val(f["created"])) / 1000, SGT).date()
-    return {"from": "myCatholicSG", "title": val(f.get("title", {"s": ""})).strip(), "date": day.isoformat(), "url": val(f["filelink"])}
+    title = val(f.get("title", {"s": ""})).strip()
+    out = {"from": "myCatholicSG", "title": title, "date": day.isoformat(), "url": val(f["filelink"])}
+    # a title naming an older Sunday than the upload ("September 20, 2026", posted 27 Sep) is last week's bulletin
+    from scrape_parishes import link_date
+
+    named = link_date(title)
+    if named and named < day - dt.timedelta(days=3):
+        out["for"] = named.isoformat()
+    return out
 
 
 def on_website(page):
@@ -85,7 +94,6 @@ def main():
     if "--unread" in sys.argv:
         print(",".join(unread()))
         return
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from import_mycatholic import CODE_TO_ID
 
     slug = {str(i): code for code, i in CODE_TO_ID.items()}
@@ -107,7 +115,9 @@ def main():
                     b = w
             except Exception as e:  # noqa: BLE001 - keep what myCatholicSG has, however old
                 failed.append(f"{pid} website: {type(e).__name__} {str(e)[:60]}")
-                b = b or (prev.get(pid) if (prev.get(pid) or {}).get("from") == "website" else None)
+                last = prev.get(pid) or {}
+                if last.get("from") == "website" and (fresh(last) or not b):  # one failed lookup doesn't undo a good find
+                    b = last
         if b:
             out[pid] = b
     if len(failed) == len(slug):

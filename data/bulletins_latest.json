@@ -161,7 +161,8 @@
    "title": "September 20, 2026",
    "date": "2026-09-27",
    "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F23%2Fpublic%2Fpdf%2F2609271225_Stigs_Bulletin_20260920.pdf?alt=media&token=97c91c89-1407-452b-bf0a-8c2031aa073d",
-   "page": "https://mycatholic.sg/bulletin/stignatius"
+   "page": "https://mycatholic.sg/bulletin/stignatius",
+   "for": "2026-09-20"
   },
   "24": {
    "from": "myCatholicSG",
