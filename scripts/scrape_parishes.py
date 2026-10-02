@@ -208,9 +208,34 @@ def pdf_text(u):
         return subprocess.run(["pdftotext", f.name, "-"], capture_output=True, text=True, timeout=60, check=True).stdout
 
 
+def announcements(url, days=21):
+    """{url, date, text, kind} from a Squarespace announcements page (St Mary of the Angels posts its news there instead
+    of a bulletin): the posts of the last `days` days, newest first, as one text. None when the page is not one."""
+    try:
+        r = urllib.request.urlopen(urllib.request.Request(url.split("?")[0] + "?format=json", headers=UA), timeout=25,
+                                   context=ssl.create_default_context())
+        items = json.load(r).get("items") or []
+    except (urllib.error.URLError, ValueError):
+        return None
+    posts = [i for i in items if i.get("publishOn") and i.get("title")]
+    if not posts:
+        return None
+    day = lambda i: dt.datetime.fromtimestamp(i["publishOn"] / 1000, SGT).date()
+    newest = max(day(i) for i in posts)
+    recent = [i for i in posts if day(i) >= newest - dt.timedelta(days=days)]
+    text = "\n\n".join(f"{htmllib.unescape(i['title'])} (posted {day(i).isoformat()})\n{page_text(i.get('excerpt') or '')}\n{page_text(i.get('body') or '')}"
+                       for i in recent)
+    return {"url": url, "date": newest.isoformat(), "text": text, "kind": "announcements"}
+
+
 def latest_bulletin(url):
-    """{url, date, text} of the newest bulletin linked from url. A bulletin that is a web page with a PDF on it reads the PDF."""
+    """{url, date, text} of the newest bulletin linked from url. A bulletin that is a web page with a PDF on it reads the PDF.
+    A parish that posts announcements instead (a Squarespace collection) gets those."""
     link, date = pick_bulletin(url, fetch_html(url))
+    if not link:  # a page of posts in place of a bulletin (one quick request, before a browser is started)
+        posts = announcements(url)
+        if posts:
+            return posts
     if not link:  # links added by the page's scripts
         link, date = pick_bulletin(url, fetch_html(url, rendered=True))
     if not link:
@@ -235,7 +260,10 @@ def latest_bulletin(url):
 
 def bulletin_text(u):
     """The text of a bulletin found earlier (data/bulletins_latest.json): a PDF, or a newsletter web page."""
-    text = pdf_text(u) if is_pdf(u) or "firebasestorage.googleapis.com" in u else page_text(fetch_html(u))
+    if is_pdf(u) or "firebasestorage.googleapis.com" in u:
+        text = pdf_text(u)
+    else:
+        text = (announcements(u) or {}).get("text") or page_text(fetch_html(u))
     if len(text.strip()) < 200:
         raise ValueError("bulletin has no text (an image?)")
     return text

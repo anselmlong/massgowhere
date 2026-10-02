@@ -166,13 +166,13 @@ Response:
   3. This week's bulletin, read automatically.
   - Parish websites are no longer read automatically: they were too unreliable to scrape. A parish with no bulletin uses myCatholicSG plus the hand-curated data.
 - **This week's bulletin** (weekly, Saturday 9pm SGT, after most parishes upload):
-  - **Finding it:** `fetch_bulletins.py` takes each parish's newest bulletin from myCatholicSG (`prod-sg`, collection `bulletin`; a PDF). Failing that, it finds the bulletin on the page `data/bulletins.json` names: the newest dated link, a PDF under a "bulletin" heading, a Drive file in an embedded app, or an emailed newsletter (St Michael's).
+  - **Finding it:** `fetch_bulletins.py` takes each parish's newest bulletin from myCatholicSG (`prod-sg`, collection `bulletin`; a PDF). Failing that, it finds the bulletin on the page `data/bulletins.json` names: the newest dated link, a PDF under a "bulletin" heading, a Drive file in an embedded app, or an emailed newsletter (St Michael's). St Mary of the Angels publishes no bulletin: its website announcements (a Squarespace page, read as JSON with `?format=json`) stand in, the last 3 weeks of posts as the text, and its card says "parish announcements".
   - **Reading it:** each new bulletin is read once, on its own (`scrape_parishes.py --bulletin-only --only <ids>`), for one-off Mass changes (`dated`), events and parish info. Its regular Mass list isn't used.
   - **What's kept:**
     - A dated change only when its date and time are stated near each other, within 45 days.
     - A cancellation only when it also matches a myCatholicSG slot with "no / cancelled / moved" nearby.
     - A "public holiday" Mass only when it falls on one.
-  - **Freshness:** the card says "This week" up to 9 days old and "Latest" up to 21. St Mary of the Angels publishes none.
+  - **Freshness:** the card says "This week" up to 9 days old and "Latest" up to 21.
 - **Hand-curated parish data** (`data/rich/<id>.json`; first imported with `import_rich.py` from the reviewed 29 Sept 2026 read, then edited by hand):
   - It always wins over the bulletin read, field by field; the bulletin read only fills gaps. Dated changes and events come from both.
   - Its copy of each parish website's regular Mass times isn't used: regular times come from myCatholicSG alone.

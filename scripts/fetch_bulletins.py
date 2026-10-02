@@ -61,7 +61,8 @@ def on_website(page):
     from scrape_parishes import latest_bulletin
 
     b = latest_bulletin(page)
-    return {"from": "website", "title": "", "date": b["date"], "url": b["url"], "page": page}
+    out = {"from": "website", "title": "", "date": b["date"], "url": b["url"], "page": page}
+    return {**out, "kind": b["kind"]} if b.get("kind") else out
 
 
 def load(path, default):

@@ -1,5 +1,5 @@
 {
- "_comment": "Each parish's page that links its latest weekly bulletin. scripts/fetch_bulletins.py uses it when myCatholicSG has no bulletin from the last 3 weeks, and links and reads the bulletin itself (a PDF, a Drive file or a newsletter). Missing = none found, or the bulletin is only an image.",
+ "_comment": "Each parish's page that links its latest weekly bulletin. scripts/fetch_bulletins.py uses it when myCatholicSG has no bulletin from the last 3 weeks, and links and reads the bulletin itself (a PDF, a Drive file or a newsletter), or a Squarespace announcements page (St Mary of the Angels). Missing = none found, or the bulletin is only an image.",
  "3": "https://christtheking.com.sg/the-leaven",
  "5": "https://www.holycross.org.sg/",
  "8": "https://holytrinity.org.sg/page/bulletin",
@@ -16,6 +16,7 @@
  "23": "https://www.stignatius.org.sg/weekly-bulletin",
  "24": "https://stjoseph-bt.org.sg/news-events",
  "25": "https://sjcvs.org.sg/",
+ "26": "https://www.stmary.sg/announcements",
  "27": "https://stmichael.catholic.sg/bulletins/",
  "30": "https://www.svdp.sg/",
  "31": "https://sppchurch.org.sg/bulletin/"
