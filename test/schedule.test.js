@@ -61,3 +61,16 @@ test("isSunset: a Saturday Mass from 4pm counts as a Sunset Mass", () => {
   assert.equal(S.isSunset(Date.UTC(2026, 9, 3, 7, 59)), false); // Sat 15:59 SGT
   assert.equal(S.isSunset(Date.UTC(2026, 9, 4, 10, 0)), false); // Sun 18:00 SGT
 });
+
+test("a parish with no weekday Mass on public holidays: its Monday-Friday Masses drop out that day only", () => {
+  const data = {
+    rules: { 9: [{ d: 1, t: "13:15", weeks: [], except: [], type: "Mass", lang: "English", loc: "" },
+                 { d: 0, t: "08:30", weeks: [], except: [], type: "Mass", lang: "English", loc: "" }] },
+    dated: {}, holidays: { "2026-11-09": "Deepavali (Observed)", "2026-11-08": "Deepavali" }, noWeekdayMassOnPH: ["9"],
+  };
+  const day = (iso) => Date.parse(`${iso}T00:00:00+08:00`);
+  assert.equal(S.expandParish("9", data, day("2026-11-09"), 0).length, 0);   // Monday holiday: none
+  assert.equal(S.expandParish("9", data, day("2026-11-16"), 0).length, 1);   // next Monday: as usual
+  assert.equal(S.expandParish("9", data, day("2026-11-08"), 0).length, 1);   // Sunday holiday: Sunday Mass stays
+  assert.equal(S.expandParish("9", { ...data, noWeekdayMassOnPH: [] }, day("2026-11-09"), 0).length, 1); // other parishes unchanged
+});
