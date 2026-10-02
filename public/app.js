@@ -1469,7 +1469,7 @@
           <p class="lede">Going somewhere? We’ll find a Mass you can stop at along the way.</p></div>
         <ul class="settings" aria-label="Your trip">
           ${row("w-from", "From", trip.from ? trip.from.label : "My location")}
-          ${row("w-to", "To", trip.to ? trip.to.label : "Choose where you’re going", !trip.to)}
+          ${row("w-to", "To", trip.to ? trip.to.label : "Choose a place", !trip.to)}
           ${row("w-at", "Leaving", trip.at == null ? "Now" : whenText(trip.at))}
           ${row("w-by", "Be there by", trip.by == null ? "No rush" : whenText(trip.by))}
           ${row("w-mode", "Travel by", modeOf(mode).label)}
