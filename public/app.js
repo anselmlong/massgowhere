@@ -1140,12 +1140,14 @@
       const now = t0(), day = (x) => onDay(x, now);
       const soonNow = leaveAt - now < 2 * 60000;
       if (b.type === "session") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveBy)}${day(leaveBy)}`}</strong><span>${trip}</span><span class="early">You’ll arrive 5 min before it starts.</span>`;
+      // the latest you could arrive, said the same way whether it has opened or not; no "leave as late as": for
+      // Confession that only sets you up to miss it (a queue, and it stops when Mass begins)
+      const stay = kind === "adoration" ? `Get there by ${clock(lastIn)}${day(lastIn)} to have at least 20 minutes before it closes.`
+        : `Get there by ${clock(lastIn)}: Confession ends at ${clock(ms(b.end))}, and there may be a queue.`;
       if (start <= now + b.travelMin * 60000) {
-        const stay = kind === "adoration" ? `Get there by ${clock(lastIn)} to have at least 20 minutes before it closes.` : `Get there by ${clock(lastIn)}: Confession ends at ${clock(ms(b.end))}, and there may be a queue.`;
         return `<strong>${soonNow ? goNow : `Leave at ${clock(leaveAt)}`}</strong><span>${trip}, arriving ${about}${clock(ms(b.arrive))}</span><span class="early">${stay}</span>`;
       }
-      return `<strong>Leave at ${clock(leaveAt)}${day(leaveAt)}</strong><span>${trip}, arriving as it ${kind === "adoration" ? "opens" : "starts"}</span>` +
-        (leaveBy - leaveAt >= 5 * 60000 ? `<span>You could leave as late as <em>${clock(leaveBy)}</em></span>` : "");
+      return `<strong>Leave at ${clock(leaveAt)}${day(leaveAt)}</strong><span>${trip}, arriving as it ${kind === "adoration" ? "opens" : "starts"}</span><span class="early">${stay}</span>`;
     };
     const meta = (b) => [kind === "confession" && b.mass ? `Before the ${clock(ms(b.mass))} Mass` : "", b.location, b.type === "session" ? "" : b.name, b.note].filter(Boolean);
     const altRow = (a) => {
@@ -1203,7 +1205,7 @@
       answerMap(view.querySelector("#map"), origin, from === "your location" ? "You" : from, stale, {
         pin: (e) => (openOn(e) ? "Open" : clock(ms(e.start))),
         line: (e) => `${e.type === "session" ? `${esc(e.name || K.title)} ${clock(ms(e.start))} ${esc(rel(ms(e.start)).toLowerCase())}`
-          : openOn(e) ? `Open until ${clock(ms(e.end))}` : `${rel(ms(e.start))} ${clock(ms(e.start))} to ${clock(ms(e.end))}`} · leave ${openOn(e) ? "at" : "by"} ${clock(ms(openOn(e) ? e.leaveAt : e.leaveBy))}`,
+          : openOn(e) ? `Open until ${clock(ms(e.end))}` : `${rel(ms(e.start))} ${clock(ms(e.start))} to ${clock(ms(e.end))}`} · leave at ${clock(ms(e.leaveAt))}`,
         link: "Times and details",
       }).update(res);
       view.focus({ preventScroll: true });

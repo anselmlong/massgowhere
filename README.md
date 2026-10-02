@@ -138,7 +138,7 @@ Response:
 
 **Adoration / Confession (`services.js`)**
 - **Windows:** an Adoration room's hours, Confession slots, and "N minutes before Mass" worked out from the Mass times.
-- **Reachable:** arrive at least 20 min before a room closes, or 10 min before Confession ends.
+- **Reachable:** arrive at least 20 min before a room closes, or 15 min before Confession ends (a queue, and it stops when Mass begins).
 - **Window:** earliest arrival, then the shortest trip within 60 min (6 h for Confession).
 - **Data:** `data/services.json` (hand-checked).
 
