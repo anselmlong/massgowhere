@@ -530,12 +530,10 @@
         ]
       },
       "confession": {
-        "from": "myCatholicSG",
-        "slots": [
-          { "days": [ 6 ], "from": "15:30", "to": "16:00" },
-          { "days": [ 0 ], "from": "08:00", "to": "08:30" },
-          { "days": [ 0 ], "from": "10:30", "to": "11:00" },
-          { "days": [ 0 ], "from": "16:30", "to": "17:00" }
+        "from": "parish website",
+        "loc": "Main Church",
+        "beforeMass": [
+          { "min": 30, "masses": "weekend" }
         ]
       }
     }
