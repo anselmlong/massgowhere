@@ -422,13 +422,39 @@ def answer(chat_id, lat, lng, place=None, msg_id=None, sunday=False, update_tapp
 
 
 def search_place(text):
+    """(lat, lng, name) of the best match for a postal code, MRT station, building or street; None if nothing matches.
+    Asks our own site first (/api/search: OneMap from our servers, with our token), then OneMap directly. Raises
+    only when both fail, so "search is down" and "not found" get different replies. Each failure is logged with why."""
+    try:
+        res = http_json(f"{SITE}/api/search?" + urllib.parse.urlencode({"q": text}), timeout=8).get("results") or []
+        return (res[0]["lat"], res[0]["lng"], res[0]["name"]) if res else None
+    except Exception as e:  # noqa: BLE001 - fall back to OneMap directly
+        log.warning("site search failed for %r: %s", text, describe(e))
     q = urllib.parse.urlencode({"searchVal": text, "returnGeom": "Y", "getAddrDetails": "Y", "pageNum": 1})
-    res = http_json(f"https://www.onemap.gov.sg/api/common/elastic/search?{q}", timeout=6).get("results") or []
+    req = urllib.request.Request(f"https://www.onemap.gov.sg/api/common/elastic/search?{q}",
+                                 headers={"User-Agent": "Mozilla/5.0 (compatible; MassGoWhere bot; +https://massgowhere.com)"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as r:
+            res = json.load(r).get("results") or []
+    except Exception as e:
+        log.warning("OneMap search failed for %r: %s", text, describe(e))
+        raise
     if not res:
         return None
     x = res[0]
     name = x["BUILDING"] if x.get("BUILDING") not in (None, "", "NIL") else x["SEARCHVAL"]
     return float(x["LATITUDE"]), float(x["LONGITUDE"]), re.sub(r"\b(Mrt|Lrt|Nus|Ntu|Smu|Cbd|Hdb|[A-Za-z]{1,3}\d+)\b", lambda m: m.group(0).upper(), name.title())
+
+
+def describe(e):
+    """an error as the log should say it: an HTTP status with what the server answered"""
+    if isinstance(e, urllib.error.HTTPError):
+        try:
+            body = e.read()[:200].decode("utf-8", "replace")
+        except Exception:  # noqa: BLE001
+            body = ""
+        return f"HTTP {e.code} {e.reason} {body}".strip()
+    return f"{type(e).__name__}: {e}"
 
 
 LAST_SUNDAY = {}  # chat id -> whether the last answer was for Sunday (a Sunday or Sunset Mass)
@@ -769,8 +795,7 @@ def handle(update):
     msg_id = placeholder(chat_id, f"Looking up “{text[:60]}”…")
     try:
         hit, trouble = search_place(text), False
-    except Exception as e:  # noqa: BLE001
-        log.warning("place search failed: %s", e)
+    except Exception:  # noqa: BLE001 - search_place logged why
         hit, trouble = None, True
     if superseded():
         return drop_placeholder(chat_id, msg_id)
