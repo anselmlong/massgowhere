@@ -1835,16 +1835,6 @@
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
 "t": "09:30",
 "lang": "Tamil",
 "loc": "Main Church",
@@ -1861,16 +1851,6 @@
 "note": ""
 },
 {
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 4,
 "weeks": [],
 "except": [],
@@ -1897,16 +1877,6 @@
 "type": "Mass",
 "t": "19:00",
 "lang": "Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
 "loc": "Main Church",
 "note": ""
 },
@@ -1961,31 +1931,11 @@
 "note": ""
 },
 {
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 1,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "11:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -2004,8 +1954,98 @@
 "d": 6,
 "weeks": [],
 "except": [],
+"type": "Confession",
+"t": "15:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "09:00",
+"lang": "Tamil/English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "18:00",
+"lang": "Tamil/English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
 "type": "Mass",
-"t": "17:00",
+"t": "16:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "11:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -6306,15 +6346,6 @@
 "5": [
 {
 "k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-08",
 "type": "Mass",
 "t": "12:15",
@@ -6346,15 +6377,6 @@
 "7": [
 {
 "k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-02",
 "type": "Mass",
 "t": "18:00",
@@ -6370,15 +6392,6 @@
 "lang": "English",
 "loc": "CHAPEL",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Rosary starts at 7pm in the Main Church followed by Mass. No 6pm Mass on this day."
 }
 ],
 "8": [
@@ -6401,13 +6414,49 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
 "t": "09:00",
 "lang": "English",
 "loc": "Main Church",
-"note": ""
+"note": "Dedication of the Lateran Basilica"
 },
 {
 "k": "a",
@@ -6426,6 +6475,78 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day Mass with Columbarium Blessing"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day Mass"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:45",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
 }
 ],
 "9": [
@@ -7735,24 +7856,6 @@
 "lang": "Tamil/English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-10-03",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-08",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "11": [
@@ -7878,24 +7981,6 @@
 "note": ""
 },
 {
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "a",
 "date": "2026-10-03",
 "type": "Mass",
@@ -7924,15 +8009,6 @@
 }
 ],
 "16": [
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Adoration",
-"t": "19:45",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "a",
 "date": "2026-11-02",
@@ -8069,15 +8145,6 @@
 "21": [
 {
 "k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-02",
 "type": "Mass",
 "t": "18:30",
@@ -8102,15 +8169,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Novena Mass"
 },
 {
 "k": "a",
@@ -8189,17 +8247,6 @@
 "note": ""
 }
 ],
-"26": [
-{
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
 "27": [
 {
 "k": "r",
@@ -8231,6 +8278,33 @@
 {
 "k": "r",
 "date": "2026-11-09",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
 "type": "Mass",
 "t": "18:00",
 "lang": "English",
@@ -8281,6 +8355,51 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Public Holiday"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:45",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
 }
 ],
 "31": [
@@ -8312,24 +8431,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "First Friday Devotion and Holy Hour"
-},
-{
-"k": "a",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Feast Day Triduum Mass"
-},
-{
-"k": "r",
-"date": "2026-10-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 },
 {
 "k": "a",
