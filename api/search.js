@@ -14,7 +14,8 @@ module.exports = async function handler(req, res) {
   const q = (new URL(req.url, "http://x").searchParams.get("q") || "").trim().slice(0, 100);
   if (q.length < 2) return send(res, 400, { error: "q: a postal code, MRT station, building or street" });
   try {
-    send(res, 200, { results: await searchPlaces(q) }, true); // places don't move: cache a day at the edge
+    const results = await searchPlaces(q);
+    send(res, 200, { results }, results.length > 0); // places don't move: cache a found place a day; never cache "none"
   } catch (e) {
     console.error("search failed:", q, e.message);
     send(res, 502, { error: "Place search is unavailable just now." });

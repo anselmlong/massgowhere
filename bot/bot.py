@@ -426,7 +426,7 @@ def search_place(text):
     Asks our own site first (/api/search: OneMap from our servers, with our token), then OneMap directly. Raises
     only when both fail, so "search is down" and "not found" get different replies. Each failure is logged with why."""
     try:
-        res = http_json(f"{SITE}/api/search?" + urllib.parse.urlencode({"q": text}), timeout=8).get("results") or []
+        res = http_json(f"{SITE}/api/search?" + urllib.parse.urlencode({"v": 2, "q": text}), timeout=8).get("results") or []
         return (res[0]["lat"], res[0]["lng"], res[0]["name"]) if res else None
     except Exception as e:  # noqa: BLE001 - fall back to OneMap directly
         log.warning("site search failed for %r: %s", text, describe(e))
@@ -435,7 +435,10 @@ def search_place(text):
                                  headers={"User-Agent": "Mozilla/5.0 (compatible; MassGoWhere bot; +https://massgowhere.com)"})
     try:
         with urllib.request.urlopen(req, timeout=10) as r:
-            res = json.load(r).get("results") or []
+            j = json.load(r)
+        res = j.get("results") or []  # OneMap may add "Authentication token missing" beside real results
+        if not res and j.get("error"):
+            raise RuntimeError(f"OneMap search: {j['error']}")
     except Exception as e:
         log.warning("OneMap search failed for %r: %s", text, describe(e))
         raise
