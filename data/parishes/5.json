@@ -2,12 +2,10 @@
  "id": 5,
  "name": "Church of the Holy Cross",
  "source_urls": [
-  "https://www.holycross.org.sg/services/mass-schedule"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610022109_English_Bulletin%204%20Oct.pdf?alt=media&token=a82194c7-9ca5-4357-95f2-16f213e711ca"
  ],
- "fetched_at": "2026-10-02T12:33+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-03T12:33+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -20,7 +18,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -30,7 +28,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -40,7 +38,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Mass"
   },
   {
    "d": 0,
@@ -50,7 +48,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Mass"
   },
   {
    "d": 1,
@@ -90,17 +88,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass"
-  },
-  {
-   "d": 1,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Vespers"
+   "note": "Evening Mass & Vespers"
   },
   {
    "d": 2,
@@ -140,17 +128,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass"
-  },
-  {
-   "d": 2,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Vespers"
+   "note": "Evening Mass & Vespers"
   },
   {
    "d": 3,
@@ -190,17 +168,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass"
-  },
-  {
-   "d": 3,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Vespers"
+   "note": "Evening Mass & Vespers"
   },
   {
    "d": 4,
@@ -243,17 +211,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass"
-  },
-  {
-   "d": 4,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Vespers"
+   "note": "Evening Mass & Vespers"
   },
   {
    "d": 5,
@@ -293,17 +251,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass"
-  },
-  {
-   "d": 5,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Vespers"
+   "note": "Evening Mass & Vespers"
   },
   {
    "d": 5,
@@ -335,7 +283,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -345,7 +293,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": "Saturday Sunset Mass"
   },
   {
    "d": 6,
@@ -355,7 +303,7 @@
    "type": "Mass",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": "Saturday Sunset Mass"
   }
  ],
  "dated": [
@@ -373,36 +321,77 @@
  "public_holiday_masses": [
   "07:30"
  ],
- "notes": [],
+ "notes": [
+  "No lunchtime Mass on the 1st and 2nd Thursday of the month."
+ ],
  "info": {
-  "adoration": "Adoration Room: Daily until 22:00.",
-  "confession": "Weekend Confession: Confessions end before the Gloria during weekend Masses.",
+  "adoration": "Adoration Room open daily until 22:00.",
   "devotions": [
-   "Holy Hour: Every 1st Friday at 20:00.",
-   "Novena Devotion: Every Saturday at 15:30."
-  ],
-  "good_to_know": [
-   "The website lists public holiday Masses at 07:00 and 08:30; the bulletin says 07:30; check with the parish."
+   "Holy Hour: every 1st Friday at 20:00",
+   "Novena Devotion: every Saturday at 15:30",
+   "Lauds: weekdays at 06:15"
   ]
  },
  "events": [
   {
-   "date": "2026-10-13",
+   "date": "2026-10-08",
    "time": "",
-   "title": "Human Dignity and Development in the Era of AI",
-   "text": "By Fr David Garcia, OP. Catholic Ctr. $15. Register at bit.ly/dignityoct."
+   "title": "Faith Enrichment RCIA: Jesus and the Greatest Commandments",
+   "text": "All Saints Hall. All welcome, no pre-registration required."
+  },
+  {
+   "date": "2026-10-15",
+   "time": "",
+   "title": "Faith Enrichment RCIA: Jesus and the Greater Righteousness",
+   "text": "All Saints Hall. All welcome, no pre-registration required."
+  },
+  {
+   "date": "2026-10-16",
+   "time": "",
+   "title": "A Journey of Discipleship Retreat #2",
+   "text": "3-day stay-in retreat, $280. Catholic Spirituality Centre. Register at bit.ly/cscjdr2."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "",
+   "title": "Faith Enrichment RCIA: Four Last Things",
+   "text": "All Saints Hall. All welcome, no pre-registration required."
+  },
+  {
+   "date": "2026-10-22",
+   "time": "",
+   "title": "Faith Enrichment RCIA: Jesus and the Kingdom of God",
+   "text": "All Saints Hall. All welcome, no pre-registration required."
+  },
+  {
+   "date": "2026-10-23",
+   "time": "",
+   "title": "CHOICE Weekend Programme",
+   "text": "For unmarried young adults aged 18-40, single or dating. ME House, 201B Punggol 17th Ave S829651. Register at bit.ly/ChoiceSG26."
   },
   {
    "date": "2026-10-24",
    "time": "13:00",
-   "title": "Infant Baptism Preparatory Session",
-   "text": "Compulsory preparatory session for parents and God-parents. St Michael’s Room."
+   "title": "Infant Baptism preparatory session",
+   "text": "St Michael's Room. Compulsory for parents and godparents. Closing date for registration: 18 Oct 2026."
+  },
+  {
+   "date": "2026-10-29",
+   "time": "",
+   "title": "Faith Enrichment RCIA: The Death and Resurrection of Christ",
+   "text": "All Saints Hall. All welcome, no pre-registration required."
   },
   {
    "date": "2026-10-30",
    "time": "",
-   "title": "These Catholic Men - A Fireside Chat on Masculinity",
-   "text": "By Catholic Family Life. Dinner provided. PICO Event Hall. Register via familylife.sg/TCMM."
+   "title": "These Catholic Men - Fireside Chat on Masculinity",
+   "text": "PICO Event Hall. Dinner provided. Register at familylife.sg/TCMM."
+  },
+  {
+   "date": "2026-11-06",
+   "time": "",
+   "title": "Treasure #18 Retreat for Young Working Adults",
+   "text": "Stay-in retreat, $163.50, ages 21-35. St Francis Xavier Retreat Centre. Register at tinyurl.com/oyp-treasure18."
   },
   {
    "date": "2026-11-21",
@@ -412,8 +401,8 @@
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2609251645_English_Bulletin%2027%20Sep.pdf?alt=media&token=f0cb32b4-2095-4dfe-aa44-688d7f72fd8e",
-  "date": "2026-09-25"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610022109_English_Bulletin%204%20Oct.pdf?alt=media&token=a82194c7-9ca5-4357-95f2-16f213e711ca",
+  "date": "2026-10-02"
  },
  "disputes": [],
  "vs_mycatholic": {

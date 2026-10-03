@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-02T21:01+08:00",
+ "fetchedAt": "2026-10-03T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -25,16 +25,16 @@
   },
   "4": {
    "from": "myCatholicSG",
-   "title": "26/27 September 2026 - Vol 39 - 26th Sunday in Ordinary Time",
-   "date": "2026-09-26",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2609260911_CDM_Parish%20Bulletin%20Vol202639%2027-28%20Sep%20v11_260925_171425.pdf?alt=media&token=e92804f4-02f3-46e6-9e7b-b4d465d4a0d2",
+   "title": "03/04 October 2026 - Vol 40 - 27th Sunday in Ordinary Time",
+   "date": "2026-10-03",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610030921_CDM_Parish%20Bulletin%20Vol2026.40%20%E2%80%93%2003-04%20Oct_v1.4.pdf?alt=media&token=ca873abb-9e6a-41c1-a245-858c99a97e90",
    "page": "https://mycatholic.sg/bulletin/divinemercy"
   },
   "5": {
    "from": "myCatholicSG",
-   "title": "Twenty-sixth Sunday in Ordinary Time",
-   "date": "2026-09-25",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2609251645_English_Bulletin%2027%20Sep.pdf?alt=media&token=f0cb32b4-2095-4dfe-aa44-688d7f72fd8e",
+   "title": "Twenty-seventh Sunday in Ordinary Time",
+   "date": "2026-10-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610022109_English_Bulletin%204%20Oct.pdf?alt=media&token=a82194c7-9ca5-4357-95f2-16f213e711ca",
    "page": "https://mycatholic.sg/bulletin/holycross"
   },
   "6": {
@@ -131,8 +131,8 @@
   "19": {
    "from": "website",
    "title": "",
-   "date": "2026-09-27",
-   "url": "https://saint-anthony.org/wp-content/uploads/2026/09/Voice-2026_09_27.pdf",
+   "date": "2026-10-04",
+   "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_03.pdf",
    "page": "https://saint-anthony.org/bulletin/"
   },
   "20": {
@@ -189,8 +189,8 @@
   "27": {
    "from": "website",
    "title": "",
-   "date": "2026-09-27",
-   "url": "https://sh1.sendinblue.com/mk/sc/OdmIHBbX9s5QkebOo1pfZCeaaDzW8jQTp8VSIymQyjTHRxHhGl87bU_TzUHNx_-jA-mPYs8-bS6zcpvW64lNm-_IRt0Haug?t=1790505506276",
+   "date": "2026-10-04",
+   "url": "https://sh1.sendinblue.com/mk/sc/CPolWvcUvAgLG2QpF3V60tuwWenBlS4xG7UJUu2PQt6v6Qx3ir4rg6sBRGRB2SY67Y-CvNlRCL9jrZ8yk5cB-2K7cR6Xavk?t=1790958473593",
    "page": "https://stmichael.catholic.sg/bulletins/"
   },
   "28": {
@@ -216,9 +216,9 @@
   },
   "31": {
    "from": "myCatholicSG",
-   "title": "Twenty-Sixth Sunday in Ordinary Time",
-   "date": "2026-09-25",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2609251633_0927_2026.pdf?alt=media&token=263e2598-424c-440d-a090-986f107724d8",
+   "title": "Twenty-Seventh Sunday in Ordinary Time",
+   "date": "2026-10-03",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610030929_1004_2026.pdf?alt=media&token=60e46206-8b2c-42ef-ae1a-f3cb7bf63347",
    "page": "https://mycatholic.sg/bulletin/stspeterandpaul"
   },
   "32": {

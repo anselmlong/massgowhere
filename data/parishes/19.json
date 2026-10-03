@@ -2,29 +2,14 @@
  "id": 19,
  "name": "Church of St Anthony",
  "source_urls": [
-  "https://saint-anthony.org/mass-schedules-devotion-timings-singapore-mass-timing-schedule/"
+  "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_03.pdf"
  ],
- "fetched_at": "2026-10-02T12:36+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-03T12:32+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:30",
-   "weeks": [
-    1,
-    2
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "Mandarin",
-   "loc": "",
-   "note": ""
-  },
   {
    "d": 0,
    "t": "09:15",
@@ -53,7 +38,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 0,
@@ -95,7 +80,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Agnes Room",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 3,
@@ -127,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 5,
@@ -148,45 +133,18 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 6,
-   "t": "19:30",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "Malayalam",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "19:30",
-   "weeks": [
-    2
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "Tamil",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "19:30",
-   "weeks": [
-    4
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "Tagalog",
-   "loc": "",
-   "note": ""
   }
  ],
  "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-03",
+   "time": "19:30",
+   "language": "Malayalam",
+   "location": "",
+   "title": "Malayalam Mass",
+   "action": "add"
+  },
   {
    "type": "Mass",
    "date": "2026-10-07",
@@ -197,6 +155,24 @@
    "action": "add"
   },
   {
+   "type": "Mass",
+   "date": "2026-10-10",
+   "time": "19:30",
+   "language": "Tamil",
+   "location": "",
+   "title": "Tamil Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-11",
+   "time": "07:30",
+   "language": "Mandarin",
+   "location": "",
+   "title": "Mandarin Mass",
+   "action": "add"
+  },
+  {
    "type": "Devotion",
    "date": "2026-10-17",
    "time": "19:30",
@@ -204,49 +180,79 @@
    "location": "Church Hall",
    "title": "Living Rosary",
    "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-24",
+   "time": "19:30",
+   "language": "Tagalog",
+   "location": "",
+   "title": "Tagalog Mass",
+   "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [
-  "07:30"
- ],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [],
  "notes": [
-  "On weekday public holidays, the church closes after morning Mass and vehicles should be removed from church premises after Mass.",
-  "No devotions on public holidays that fall on weekdays except Days of Obligation."
+  "No weekday Mass on public holidays is not stated.",
+  "Confessions are 15 minutes before Mass.",
+  "Divine Mercy Devotion on Friday is except first Friday."
  ],
  "info": {
-  "confession": "Confessions are 15 minutes before Mass.",
+  "confession": "Confessions: 15 mins before Mass.",
   "devotions": [
-   "Devotion to St Anthony of Padua after the 6.30 PM Mass on Tuesdays.",
-   "Devotion to the Sacred Heart on the 1st Friday of the month after the 6.30 PM Mass."
+   "Devotion to St Anthony: Tuesday after 6.30pm Mass.",
+   "Devotion to the Sacred Heart of Jesus: First Friday, after the 6.30pm Mass."
   ],
   "office_hours": "Monday to Saturday: 9am to 5pm; Sunday: 9am to 1pm; Public Holidays: Closed.",
   "good_to_know": [
-   "On weekday public holidays, Mass is at 07:30 and there is no 18:30 Mass.",
-   "The church closes after morning Mass on public holidays and all vehicles should be removed from church premises after Mass.",
-   "No devotions on public holidays that fall on weekdays except for Days of Obligation."
+   "Mass stipend: $10 per name, per Mass.",
+   "Email Mass intentions to massintentions@saint-anthony.org at least 1 week before the Mass date."
   ]
  },
- "events": [],
+ "events": [
+  {
+   "date": "2026-10-17",
+   "time": "19:30",
+   "title": "The Living Rosary",
+   "text": "A joint collaboration of our language communities and the Legion of Mary, this meaningful gathering welcomes everyone to share in faith, devotion, and fellowship on 17 Oct, 7:30pm at the Church Hall."
+  }
+ ],
  "bulletin": {
-  "url": "https://saint-anthony.org/wp-content/uploads/2026/09/Voice-2026_09_27.pdf",
-  "date": "2026-09-27"
+  "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_03.pdf",
+  "date": "2026-10-04"
  },
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [
+  "only_on_parish_site": [],
+  "only_on_mycatholic": [
    [
     "Mass",
-    "Sunday",
-    "07:30",
+    "Saturday",
+    "19:30",
     [
-     1,
+     1
+    ],
+    []
+   ],
+   [
+    "Mass",
+    "Saturday",
+    "19:30",
+    [
      2
     ],
     []
-   ]
-  ],
-  "only_on_mycatholic": [
+   ],
+   [
+    "Mass",
+    "Saturday",
+    "19:30",
+    [
+     4
+    ],
+    []
+   ],
    [
     "Mass",
     "Sunday",
