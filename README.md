@@ -113,6 +113,11 @@ Response:
 **`GET /api/way?from=lat,lng&to=lat,lng&mode=…[&at=…][&by=…][&late=15][&fast=1]`**: a Mass on the way.
 - Response: `best`, `alternatives`, `direct`. Each stop has `start`, `end`, `leaveBy`, `arrive`, `toMin`, `onwardMin`, `detourMin`, `lateMin`.
 
+**`GET /api/search?q=…`**: place search (postal code, MRT station, building, street) through OneMap from our servers, with our OneMap token.
+- Response: `results[≤5]` of `{name, address, postal, lat, lng}`, cached at the edge for a day.
+- A `502` means OneMap couldn't be reached, which is different from an empty result.
+- The bot uses it first and falls back to calling OneMap directly.
+
 **`POST /api/feedback {message, contact?, page?}`**: forwards the message to the owner on Telegram.
 - Limits: honeypot field, at most 5 messages per 10 min per IP, 2,000 characters.
 
