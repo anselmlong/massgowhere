@@ -455,7 +455,7 @@
   // "no match" is never shown for "search is down".
   async function searchPlaces(q) {
     try {
-      const r = await fetch(`api/search?q=${encodeURIComponent(q)}`, { signal: AbortSignal.timeout(8000) });
+      const r = await fetch(`api/search?v=2&q=${encodeURIComponent(q)}`, { signal: AbortSignal.timeout(8000) });
       if (r.ok) return (await r.json()).results || [];
     } catch { /* fall through to OneMap directly */ }
     const r = await fetch(`https://www.onemap.gov.sg/api/common/elastic/search?searchVal=${encodeURIComponent(q)}&returnGeom=Y&getAddrDetails=Y&pageNum=1`);
