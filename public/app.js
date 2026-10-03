@@ -440,16 +440,28 @@
       timer = setTimeout(async () => {
         const my = ++seq;
         try {
-          const r = await fetch(`https://www.onemap.gov.sg/api/common/elastic/search?searchVal=${encodeURIComponent(v)}&returnGeom=Y&getAddrDetails=Y&pageNum=1`);
-          const j = await r.json();
+          const hits = await searchPlaces(v);
           if (my !== seq) return;
-          const hits = (j.results || []).slice(0, 5);
           res.innerHTML = hits.length
-            ? hits.map((x) => `<button class="opt" type="button" data-found="${esc(JSON.stringify({ lat: Number(Number(x.LATITUDE).toFixed(5)), lng: Number(Number(x.LONGITUDE).toFixed(5)), label: placeTitle(x) }))}">${svg(ICON.pin)}<span>${esc(placeTitle(x))}<small>${esc(x.ADDRESS)}</small></span></button>`).join("")
+            ? hits.map((x) => `<button class="opt" type="button" data-found="${esc(JSON.stringify({ lat: Number(x.lat.toFixed(5)), lng: Number(x.lng.toFixed(5)), label: x.name }))}">${svg(ICON.pin)}<span>${esc(x.name)}<small>${esc(x.address)}</small></span></button>`).join("")
             : `<p class="muted">No match for “${esc(v)}”. Try a postal code, MRT station or street.</p>`;
-        } catch { res.innerHTML = `<p class="muted">Search is unavailable right now. Use your location instead.</p>`; }
+        } catch { if (my === seq) res.innerHTML = `<p class="muted">Search is unavailable right now. Use your location instead.</p>`; }
       }, 250);
     });
+  }
+
+  // Place search: our /api/search (OneMap from our servers, with our OneMap token: OneMap may refuse a search without
+  // one), else OneMap straight from the browser. [{name, address, lat, lng}]; throws only when neither answers, so
+  // "no match" is never shown for "search is down".
+  async function searchPlaces(q) {
+    try {
+      const r = await fetch(`api/search?q=${encodeURIComponent(q)}`, { signal: AbortSignal.timeout(8000) });
+      if (r.ok) return (await r.json()).results || [];
+    } catch { /* fall through to OneMap directly */ }
+    const r = await fetch(`https://www.onemap.gov.sg/api/common/elastic/search?searchVal=${encodeURIComponent(q)}&returnGeom=Y&getAddrDetails=Y&pageNum=1`);
+    const j = await r.json();
+    if (!r.ok || !Array.isArray(j.results)) throw new Error(`OneMap search ${r.status}`);
+    return j.results.slice(0, 5).map((x) => ({ name: placeTitle(x), address: x.ADDRESS, lat: Number(x.LATITUDE), lng: Number(x.LONGITUDE) }));
   }
 
   // one column of an alarm-clock picker: scroll-snap does the physics, we read where it came to rest
