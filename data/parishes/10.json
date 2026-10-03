@@ -2,19 +2,17 @@
  "id": 10,
  "name": "Church of Our Lady of Lourdes",
  "source_urls": [
-  "https://ourladyoflourdes.sg/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610031430_20261004_27th_OT.pdf?alt=media&token=23d7ae05-fba3-4c1b-b957-f0960d491e69"
  ],
- "fetched_at": "2026-10-02T12:34+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-03T21:01+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
   {
    "d": 0,
-   "t": "08:00",
+   "t": "07:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
@@ -34,17 +32,7 @@
   },
   {
    "d": 0,
-   "t": "11:00",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "12:30",
+   "t": "11:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
@@ -62,7 +50,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "",
-   "note": ""
+   "note": "1st Sunday of the month"
   },
   {
    "d": 0,
@@ -72,9 +60,9 @@
    ],
    "except": [],
    "type": "Mass",
-   "lang": "Bahasa Indonesia",
+   "lang": "Indonesian",
    "loc": "",
-   "note": ""
+   "note": "2nd Sunday of the month"
   },
   {
    "d": 0,
@@ -94,7 +82,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -124,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 2,
@@ -154,7 +142,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -184,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -214,7 +202,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -241,34 +229,24 @@
    "t": "16:00",
    "weeks": [],
    "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Our Lady of Good Health, Vailankanni"
   },
   {
    "d": 6,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "18:15",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "19:30",
+   "t": "18:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
@@ -279,31 +257,28 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
- "notes": [
-  "Public holiday Masses are for Mon-Fri public holidays.",
-  "On public holidays, the Parish Office is closed and the Main Church entrance gates close at 17:00.",
-  "The website lists Saturday English Masses at 16:00 and 18:30, Sunday English Masses at 07:30 and 11:30, and the Saturday Vailankkani Devotion at 17:30; the bulletin lists Saturday English Masses at 17:00, 18:15 and 19:30, Sunday English Masses at 08:00, 11:00 and 12:30, and the Vailankkani Devotion at 16:00; check with the parish."
+ "public_holiday_masses": [
+  "09:00",
+  "10:00"
  ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room: Monday-Sunday 08:00-20:00.",
-  "confession": "Confessions: 15 minutes before weekend Masses (bulletin) and 30 minutes before Mass (website); check with the parish.",
+  "adoration": "Adoration Room is open daily 8:00am to 8:00pm.",
+  "confession": "The Sacrament of Reconciliation is available 30 minutes before every Mass.",
   "devotions": [
-   "Rosary: Monday, Wednesday, Thursday and Friday at 11:45.",
-   "Divine Mercy Devotion: Tuesday at 11:45.",
-   "Devotion to Our Lady of Good Health (Vailankkani): Saturday at 16:00 in English."
+   "Rosary: Monday, Wednesday, Thursday and Friday 11:45am (not on Tuesdays)",
+   "Divine Mercy: Tuesdays 11:45am",
+   "Our Lady of Good Health, Vailankanni: Saturdays 5:30pm"
   ],
-  "office_hours": "Parish Office: Monday-Friday 10:00-18:00, Saturday 14:00-20:00, Sunday 09:00-14:00. Closed on public holidays.",
+  "office_hours": "Parish Office: Mon-Fri 10:00am-6:00pm; Sat 2:00pm-8:00pm; Sun 9:00am-2:00pm.",
   "good_to_know": [
-   "Dress code: shoulders and knees must be covered; no shorts, skirts, ripped jeans, see-through clothing, offensive tattoos, or hats inside the Main Church.",
-   "No food or drinks are allowed in the Main Church.",
-   "Mobile phones must be kept on silent mode inside the Main Church."
+   "Bookshop: Saturdays 5:00pm-8:00pm and Sundays 8:30am-1:00pm; closed on public holidays."
   ]
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2609261243_20260927_26th_OT.pdf?alt=media&token=adb88e97-6773-40bd-87e0-e296ece60f73",
-  "date": "2026-09-26"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610031430_20261004_27th_OT.pdf?alt=media&token=23d7ae05-fba3-4c1b-b957-f0960d491e69",
+  "date": "2026-10-03"
  },
  "disputes": [],
  "vs_mycatholic": {

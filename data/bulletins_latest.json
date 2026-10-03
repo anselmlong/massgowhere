@@ -1,12 +1,12 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-03T12:31+08:00",
+ "fetchedAt": "2026-10-03T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
-   "title": "27th Sep - 3rd Oct 2026",
-   "date": "2026-09-26",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2609261750_CHURCH_BULLETIN%20%2027%20Sep%20-%204%20Oct%202026.pdf?alt=media&token=b98828c8-9768-451f-a904-c3365e169bc1",
+   "title": "4th - 10th Oct 2026",
+   "date": "2026-10-03",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610031237_Spotlight_oct%2026%20PA%20edited%20(ST).pdf?alt=media&token=88fbaf72-5f92-470c-ab54-9fe51edee5c7",
    "page": "https://mycatholic.sg/bulletin/blessedsacrament"
   },
   "2": {
@@ -67,9 +67,9 @@
   },
   "10": {
    "from": "myCatholicSG",
-   "title": "26th Sunday in Ordinary Time",
-   "date": "2026-09-26",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2609261243_20260927_26th_OT.pdf?alt=media&token=adb88e97-6773-40bd-87e0-e296ece60f73",
+   "title": "27th Sunday in Ordinary Time",
+   "date": "2026-10-03",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610031430_20261004_27th_OT.pdf?alt=media&token=23d7ae05-fba3-4c1b-b957-f0960d491e69",
    "page": "https://mycatholic.sg/bulletin/ladyoflourdes"
   },
   "11": {

@@ -2,26 +2,14 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://bsc.org.sg/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610031237_Spotlight_oct%2026%20PA%20edited%20(ST).pdf?alt=media&token=88fbaf72-5f92-470c-ab54-9fe51edee5c7"
  ],
- "fetched_at": "2026-10-02T12:32+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-03T21:03+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
   {
    "d": 0,
    "t": "07:30",
@@ -34,30 +22,10 @@
   },
   {
    "d": 0,
-   "t": "08:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "09:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "10:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -80,7 +48,7 @@
    ],
    "except": [],
    "type": "Mass",
-   "lang": "Indonesian",
+   "lang": "Bahasa Indonesia",
    "loc": "",
    "note": ""
   },
@@ -110,16 +78,6 @@
   },
   {
    "d": 0,
-   "t": "17:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "17:30",
    "weeks": [],
    "except": [],
@@ -140,26 +98,6 @@
   },
   {
    "d": 1,
-   "t": "09:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 1,
-   "t": "12:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 1,
    "t": "12:30",
    "weeks": [],
    "except": [],
@@ -170,324 +108,36 @@
   },
   {
    "d": 1,
-   "t": "18:15",
+   "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Confession",
+   "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "During October only; at the main church, before the 6.30pm Mass."
   },
   {
    "d": 1,
-   "t": "18:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "08:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "09:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "12:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "12:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "18:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "18:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "08:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "09:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "12:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "12:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "18:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "18:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "08:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "09:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "12:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "12:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "18:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "18:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "08:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "09:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "12:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "12:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "18:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "18:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "19:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Eucharistic Adoration and Devotion to the Sacred Heart of Jesus, after the 18:30 Mass."
-  },
-  {
-   "d": 5,
-   "t": "19:45",
-   "weeks": [
-    2
-   ],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Intercessory prayers."
-  },
-  {
-   "d": 5,
-   "t": "20:00",
+   "t": "18:00",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Divine Mercy prayers."
+   "loc": "Main Church",
+   "note": "Rosary during October, before the 6.30pm Mass."
   },
   {
-   "d": 5,
-   "t": "22:00",
-   "weeks": [
-    1
-   ],
+   "d": 1,
+   "t": "18:30",
+   "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "1st Friday vigil Mass."
+   "note": ""
   },
   {
-   "d": 6,
-   "t": "04:30",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "Part of the 1st Friday vigil."
-  },
-  {
-   "d": 6,
+   "d": 2,
    "t": "08:30",
    "weeks": [],
    "except": [],
@@ -497,43 +147,201 @@
    "note": ""
   },
   {
-   "d": 6,
-   "t": "09:00",
+   "d": 2,
+   "t": "12:30",
    "weeks": [],
    "except": [],
-   "type": "Confession",
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "During October only; at the main church, before the 6.30pm Mass."
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary during October, before the 6.30pm Mass."
+  },
+  {
+   "d": 2,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "During October only; at the main church, before the 6.30pm Mass."
+  },
+  {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary during October, before the 6.30pm Mass."
+  },
+  {
+   "d": 3,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "During October only; at the main church, before the 6.30pm Mass."
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary during October, before the 6.30pm Mass."
+  },
+  {
+   "d": 4,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "08:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "12:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "During October only; at the main church, before the 6.30pm Mass."
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Rosary during October, before the 6.30pm Mass."
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
    "lang": "English",
    "loc": "",
    "note": ""
   },
   {
    "d": 6,
-   "t": "09:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Eucharistic Adoration and Devotion to the Immaculate Heart of Mary, after the 08:30 Mass."
-  },
-  {
-   "d": 6,
-   "t": "17:00",
+   "t": "08:30",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Novena to Our Lady."
-  },
-  {
-   "d": 6,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
+   "type": "Mass",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -559,28 +367,16 @@
    "lang": "Tamil",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 6,
-   "t": "21:30",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "Tamil",
-   "loc": "",
-   "note": "1st Saturday vigil Mass."
   }
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-10-04",
-   "time": "13:00",
+   "type": "Devotion",
+   "date": "2026-10-07",
+   "time": "20:00",
    "language": "English",
-   "location": "Main church, Blessed Sacrament Church",
-   "title": "35th Thanksgiving Anniversary Holy Mass",
+   "location": "Blk 94, #03-758 Commonwealth Drive",
+   "title": "Block Rosary",
    "action": "add"
   },
   {
@@ -588,84 +384,53 @@
    "date": "2026-10-13",
    "time": "18:30",
    "language": "English",
-   "location": "Blessed Sacrament Church",
+   "location": "",
    "title": "Our Lady of Fatima Holy Mass & Procession",
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "08:30"
  ],
  "notes": [
-  "On public holidays, only the 08:30 Mass is celebrated.",
-  "The 04:30 Saturday Mass is part of the 1st Friday vigil.",
-  "The 1st Friday vigil runs from 22:00 to 05:00; the 1st Saturday vigil runs from 21:00 to 05:00."
+  "Public holidays observe a different Mass schedule."
  ],
  "info": {
-  "adoration": "Adoration Room: Daily 09:00-21:00; Saturday 17:00-19:30; Sunday 08:30-12:30 and 17:00-19:00.",
-  "confession": "Confession available 15 minutes before Masses.",
   "devotions": [
-   "Divine Mercy prayers: Friday 20:00.",
-   "Novena to Our Lady: Saturday 17:00.",
-   "Eucharistic Adoration and Devotion to the Sacred Heart of Jesus: 1st Friday 19:00, after the 18:30 Mass.",
-   "Eucharistic Adoration and Devotion to the Immaculate Heart of Mary: 1st Saturday 09:00, after the 08:30 Mass.",
-   "Intercessory prayers: 2nd Friday 19:45."
+   "Block Rosary: 5-7 Oct at 8.00pm at Blk 94, #03-758 Commonwealth Drive. Host: Amelia Paulete. There will be no Block Rosary on 12-14 Oct.",
+   "During October, the Rosary is prayed at 6.00pm from Monday to Friday, right before the 6.30pm Mass at the main church. All are welcome to join."
   ],
-  "office_hours": "10am-6pm",
   "good_to_know": [
-   "On public holidays, there will only be 08:30 Mass.",
-   "1st Friday vigil: 22:00 to 05:00, with Masses at 22:00 and 04:30 (English).",
-   "1st Saturday vigil: 21:00 to 05:00, with Mass at 21:30 (Tamil)."
+   "Infant Baptism: every 2nd Sunday of the month at the 5.30pm Mass. For the next baptism schedule for children, contact the Parish Office.",
+   "Anointing of the Sick: please make an appointment with the Secretariat for a priest to minister.",
+   "Holy Matrimony: couples must inform the Priest at least 6 months before booking the Church for the Wedding Mass/Service.",
+   "Adult Baptism or Confirmation: contact rcia.bsc@gmail.com for more information."
   ]
  },
  "events": [
   {
-   "date": "2026-10-02",
-   "time": "",
-   "title": "Marriage Encounter Weekend 2026",
-   "text": "October Weekend on 2-4 Oct 2026 is filling up. Register at wwmesg.org today."
-  },
-  {
-   "date": "2026-10-04",
-   "time": "",
-   "title": "35th Thanksgiving Anniversary",
-   "text": "El Shaddai DWXI Prayer Partners Foundation International, Singapore Chapter warmly invites you to its 35th Thanksgiving Celebration of Faith, Love and Unity. Theme: “Faithful in God’s Vineyard”. Held at Damien Hall, from 9am to 6:30pm, and includes Holy Mass at 1pm in the main church. Admission is F"
-  },
-  {
-   "date": "2026-10-04",
-   "time": "",
-   "title": "2026 婚前预备课程",
-   "text": "日期：10 月 4 日及 11 日（主日）。时间：9 am – 5 pm。地点：天主教中心 (CANA), 55 Waterloo Street S 187954。报名费：每对 S$220。联络：秀琼 98524047 美琏 97315662。"
-  },
-  {
    "date": "2026-10-08",
    "time": "",
-   "title": "Catholic Identity Growth Series: Jesus in Our Sacraments",
-   "text": "Starting from 8 Oct, the 7-session programme will take place every Thursday from 7.30 to 9.30pm at Damien Hall. Register your interest at https://tinyurl.com/growthseriesregistration."
-  },
-  {
-   "date": "2026-10-10",
-   "time": "",
-   "title": "华语讲座：圣家灵修·静动结合",
-   "text": "主讲：张利勇神父。日期：10 月 10 日周六 9am–12nn。地点：圣家堂 4 楼祈祷大厅, 6 Chapel Road S429509。报名：人心 94308817 金惠 90918332。费用：爱心奉献。"
-  },
-  {
-   "date": "2026-10-11",
-   "time": "",
-   "title": "圣体堂 10 月交流坊",
-   "text": "主题：同心协力。9 月 6 日的退省日之后，堂区希望通过一些有连贯性的活动，让教友携手建立友好关系，增进参与感及归属感。详情且待下回公布。"
+   "title": "Catholic Identity Growth Series: Jesus in our Sacraments",
+   "text": "7-session faith formation journey every Thursday from 7.30 to 9.30pm at Damien Hall. Register at https://tinyurl.com/growthseriesregistration."
   },
   {
    "date": "2026-10-13",
    "time": "",
    "title": "Human Dignity and Development in the Era of AI",
-   "text": "Join Fr David Garcia OP at the Catholic Centre as he explores the impact of AI in light of Pope Leo XIV’s encyclical Magnifica Humanitas and what it means for us as people of faith. Register at bit.ly/dignityoct."
+   "text": "Fr David Garcia OP explores the impact of AI in light of Pope Leo XIV's encyclical Magnifica Humanitas at the Catholic Centre. Register at bit.ly/dignityoct."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "",
+   "title": "CARE Outreach Weekend",
+   "text": "Catholic AIDS Response Effort (CARE) will be at our parish on 17 & 18 October to raise awareness. Visit their booth to learn more about their cause and browse handcrafted items made by CARE's beneficiaries, including rosaries, crucifixes, candles, and 3D-printed items."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2609261750_CHURCH_BULLETIN%20%2027%20Sep%20-%204%20Oct%202026.pdf?alt=media&token=b98828c8-9768-451f-a904-c3365e169bc1",
-  "date": "2026-09-26"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610031237_Spotlight_oct%2026%20PA%20edited%20(ST).pdf?alt=media&token=88fbaf72-5f92-470c-ab54-9fe51edee5c7",
+  "date": "2026-10-03"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -673,28 +438,15 @@
    [
     "Mass",
     "Friday",
-    "22:00",
-    [
-     1
-    ],
+    "18:00",
+    [],
     []
    ],
    [
     "Mass",
-    "Saturday",
-    "04:30",
-    [
-     1
-    ],
-    []
-   ],
-   [
-    "Mass",
-    "Saturday",
-    "21:30",
-    [
-     1
-    ],
+    "Monday",
+    "18:00",
+    [],
     []
    ],
    [
@@ -713,6 +465,27 @@
     [
      3
     ],
+    []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "18:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "18:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "18:00",
+    [],
     []
    ]
   ],
