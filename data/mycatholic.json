@@ -6374,26 +6374,6 @@
 "note": ""
 }
 ],
-"7": [
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "CHAPEL",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "CHAPEL",
-"note": ""
-}
-],
 "8": [
 {
 "k": "r",
@@ -7861,15 +7841,6 @@
 "11": [
 {
 "k": "r",
-"date": "2026-10-02",
-"type": "Adoration",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
-},
-{
-"k": "r",
 "date": "2026-11-06",
 "type": "Adoration",
 "t": "19:30",
@@ -7899,24 +7870,6 @@
 "12": [
 {
 "k": "r",
-"date": "2026-10-02",
-"type": "Adoration",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Holy Hour with Devotion to the Sacred Heart of Jesus"
-},
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-09",
 "type": "Mass",
 "t": "18:00",
@@ -7941,15 +7894,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Public holiday"
-},
-{
-"k": "a",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "OLPS 65th Feast Day Votive Mass - For Our Parish. Please note there is no 6pm Mass."
 },
 {
 "k": "a",
@@ -8145,15 +8089,6 @@
 "21": [
 {
 "k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-03",
 "type": "Confession",
 "t": "17:45",
@@ -8172,15 +8107,6 @@
 },
 {
 "k": "a",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Novena Mass"
-},
-{
-"k": "a",
 "date": "2026-10-03",
 "type": "Mass",
 "t": "17:30",
@@ -8190,15 +8116,6 @@
 }
 ],
 "24": [
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-10-04",
@@ -8423,33 +8340,6 @@
 }
 ],
 "29": [
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Adoration",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "First Friday Devotion and Holy Hour"
-},
-{
-"k": "a",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Feast Day Triduum Mass"
-},
-{
-"k": "r",
-"date": "2026-10-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "a",
 "date": "2026-11-02",
