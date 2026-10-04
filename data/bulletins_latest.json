@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-03T21:01+08:00",
+ "fetchedAt": "2026-10-04T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -202,16 +202,16 @@
   },
   "29": {
    "from": "myCatholicSG",
-   "title": "20260927 Church Bulletin 27 September 2026",
-   "date": "2026-09-26",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2609262033_CST_BULLETIN%20-%2027%20Sep%2026.pdf?alt=media&token=cb4c789e-fcc1-4454-b776-a4425de6fd3d",
+   "title": "20261004 Church Bulletin 04 October 2026",
+   "date": "2026-10-03",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2610032159_CST_BULLETIN%20-%2004%20Oct%2026.pdf?alt=media&token=74a30644-1361-47e9-b500-de4f95e8dc42",
    "page": "https://mycatholic.sg/bulletin/stteresa"
   },
   "30": {
    "from": "myCatholicSG",
-   "title": "FEAST OF ST VINCENT DE PAUL - 27 Sept 2026",
-   "date": "2026-09-28",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2609281016_FEAST_OF%20ST%20VINCENT%20DE%20PAUL%20-%2027%20Sept%202026.pdf?alt=media&token=9b13037e-6e9a-416d-9a19-8c7b27296485",
+   "title": "28TH SUNDAY IN ORDINARY TIME - 4 October 2026",
+   "date": "2026-10-04",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610040723_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=cd15b631-9cb5-492f-8e8c-4359e22ca629",
    "page": "https://mycatholic.sg/bulletin/stvincentdepaul"
   },
   "31": {
