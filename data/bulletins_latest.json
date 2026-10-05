@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-04T12:31+08:00",
+ "fetchedAt": "2026-10-05T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -81,9 +81,9 @@
   },
   "12": {
    "from": "myCatholicSG",
-   "title": "OLPS Weekly Bulletin 27 Sep 2026",
-   "date": "2026-09-26",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2609260900_26th_Sunday%20in%20Ordinary%20Time%2027%20Sep%202026.pdf?alt=media&token=8e3ef3e8-f10a-4b11-ae00-5e6108abc1f1",
+   "title": "OLPS Weekly Bulletin 4 Oct 2026",
+   "date": "2026-10-04",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610041716_PARISH_FEAST%20DAY%204%20OCT%202026.pdf?alt=media&token=0f2883a0-ee2d-45ae-9b37-be11ff44ec98",
    "page": "https://mycatholic.sg/bulletin/perpertualsuccour"
   },
   "13": {
