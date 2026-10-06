@@ -2,12 +2,10 @@
  "id": 12,
  "name": "Church of Our Lady of Perpetual Succour",
  "source_urls": [
-  "https://www.olps.sg/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610041716_PARISH_FEAST%20DAY%204%20OCT%202026.pdf?alt=media&token=0f2883a0-ee2d-45ae-9b37-be11ff44ec98"
  ],
- "fetched_at": "2026-10-02T12:34+08:00",
- "fetch_mode": [
-  "rendered"
- ],
+ "fetched_at": "2026-10-06T12:33+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -299,88 +297,61 @@
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-10-02",
-   "time": "20:00",
+   "type": "Devotion",
+   "date": "2026-10-07",
+   "time": "09:30",
    "language": "English",
-   "location": "",
-   "title": "Votive Mass",
+   "location": "Sts Peter and Paul Room (Level 2)",
+   "title": "Intercessory Prayer Session for National Exams",
    "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-10-02",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "No 6pm Mass",
-   "action": "cancel"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "08:00"
- ],
+ "public_holiday_masses": [],
  "notes": [
-  "Church compound will be closed after the 12:30pm Mass on Sunday, 4 October 2026 in preparation for the Procession; parking is available at St Stephen’s School from 4:30pm to 8:30pm on 4 Oct.",
-  "OLPS Canteen will be closed on Sunday, 4 Oct 2026 due to Parish Feast Day."
+  "Adoration room is closed every Wednesday from 10:00 to 12:00 noon for cleaning.",
+  "On public holidays, weekday Mass is at 08:00 only.",
+  "Confession is 30 minutes before Weekend Mass in the Main Church."
  ],
  "info": {
-  "adoration": "Adoration room is open 6.00am to 10:15pm daily, closed every Wednesday from 10.00am to 12 noon for cleaning.",
-  "confession": "Sacrament of Reconciliation: 30 minutes before Weekend Mass in the Main Church.",
+  "adoration": "Adoration room is open 06:00 to 22:15 daily, closed every Wednesday from 10:00 to 12:00 noon for cleaning.",
+  "confession": "30 minutes before Weekend Mass in the Main Church.",
   "devotions": [
-   "Rosary Prayers: Mon to Fri at 5.15pm in the Main Church.",
-   "Divine Mercy Devotion: Every Tue at 6.45pm in the Main Church.",
-   "Christian Meditation: Every Wed at 8pm in St John/St Luke room.",
-   "Novena Service: Saturday at 3.30pm."
+   "Rosary Prayers: Mon to Fri at 17:15 in the Main Church.",
+   "Divine Mercy Devotion: Every Tue at 18:45 in the Main Church.",
+   "Christian Meditation: Every Wed at 20:00 in St John/St Luke room.",
+   "Liturgy of the Word for Children: Every 2nd & 4th Sunday of the month at the 10:30 Mass."
   ],
+  "office_hours": "Parish Office: Mon & Sat 09:00-18:00; Tue to Fri 09:00-20:00; Sun 09:00-13:00; closed on public holidays.",
   "good_to_know": [
-   "Weekday Mass on a Public holiday is at 8.00am only.",
-   "Bahasa Indonesia Mass on 2nd Sunday of the month at 3.00pm.",
-   "Tagalog Mass on 5th Sunday of the month at 2.30pm."
+   "No-standing rule during Mass and services; keep walkways and exits clear.",
+   "Mass Collection via Paynow: UEN T08CC4045F, Entity Name Church of Our Lady of Perpetual Succour, reference MC.",
+   "Parking at St Stephen's School: Saturdays 15:00-19:00, Sundays 08:00-14:00."
   ]
  },
  "events": [
   {
-   "date": "2026-10-03",
-   "time": "13:00",
-   "title": "World Youth Day 2027 Info Session",
-   "text": "At OLPS Verbist Hall. For young adults 21 and above; parish trip to Seoul, South Korea for World Youth Day 2027."
+   "date": "2026-10-09",
+   "time": "10:00",
+   "title": "Hopeful Hearts @CDM",
+   "text": "Every 2nd Friday (09:00-10:00? no, 10:00-12:00) at CDM Parish Hall, Level 2."
   },
   {
-   "date": "2026-10-13",
-   "time": "19:30",
-   "title": "Human Dignity and Development in the Era of AI",
-   "text": "Lecture by Fr David Garcia, OP at Catholic Centre. Register at bit.ly/dignityoct."
-  },
-  {
-   "date": "2026-10-23",
+   "date": "2026-11-21",
    "time": "",
-   "title": "Choice Weekend Program",
-   "text": "For unmarried young adults single or dating, 18 to 40. At ME House. Register at https://bit.ly/ChoiceSG26."
-  },
-  {
-   "date": "2026-11-14",
-   "time": "18:30",
-   "title": "Milestone Wedding Celebration",
-   "text": "At OLPS. Couples celebrating 5th, 10th, 15th and multiple-of-5 wedding anniversaries are invited to the 6:30pm Mass followed by a dinner celebration. Registration closed 30 Oct 2026."
-  },
-  {
-   "date": "2026-11-20",
-   "time": "19:00",
-   "title": "OLPS 2026 Parish Conversations",
-   "text": "At Verbist Hall (Level 4). Open to all OLPS parishioners. 7pm to 7:45pm light dinner and fellowship; 8:00pm synodal dialogue. Register by 6 Nov 2026."
+   "title": "OLPS Family Weekend 2026",
+   "text": "Open to families with children aged 7 to 21. 21 & 22 Nov 2026 at St Stephen's School. Registration fee: $50 per family. Registration closes 23 Oct 2026."
   },
   {
    "date": "2026-11-27",
    "time": "",
-   "title": "L9 Confirmation Retreat TREASURED",
-   "text": "At Catholic Spirituality Centre. Stay-in retreat. Calling for service team; contact Catechetical or Youth Office."
+   "title": "L9 Confirmation Retreat - TREASURED",
+   "text": "27-29 Nov 2026 at Catholic Spirituality Center. Stay-in retreat. Calling for service team."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2609260900_26th_Sunday%20in%20Ordinary%20Time%2027%20Sep%202026.pdf?alt=media&token=8e3ef3e8-f10a-4b11-ae00-5e6108abc1f1",
-  "date": "2026-09-26"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610041716_PARISH_FEAST%20DAY%204%20OCT%202026.pdf?alt=media&token=0f2883a0-ee2d-45ae-9b37-be11ff44ec98",
+  "date": "2026-10-04"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -392,13 +363,6 @@
     [
      5
     ],
-    []
-   ],
-   [
-    "Mass",
-    "Thursday",
-    "06:30",
-    [],
     []
    ]
   ],
