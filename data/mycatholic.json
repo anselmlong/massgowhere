@@ -6305,26 +6305,6 @@
 ]
 },
 "dated": {
-"1": [
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "15:15",
-"lang": "Tagalog",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "13:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
 "5": [
 {
 "k": "r",
@@ -6642,33 +6622,6 @@
 },
 {
 "k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-11",
 "type": "Mass",
 "t": "08:00",
@@ -7065,24 +7018,6 @@
 },
 {
 "k": "o",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
 "date": "2026-10-11",
 "type": "Mass",
 "t": "07:30",
@@ -7209,15 +7144,6 @@
 },
 {
 "k": "o",
-"date": "2026-10-04",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-10-11",
 "type": "Confession",
 "t": "07:00",
@@ -7240,15 +7166,6 @@
 "type": "Confession",
 "t": "07:00",
 "lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Confession",
-"t": "09:00",
-"lang": "English/Tamil",
 "loc": "Main Church",
 "note": ""
 },
@@ -7281,15 +7198,6 @@
 },
 {
 "k": "o",
-"date": "2026-10-04",
-"type": "Confession",
-"t": "18:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-10-11",
 "type": "Confession",
 "t": "18:00",
@@ -7312,15 +7220,6 @@
 "type": "Confession",
 "t": "18:00",
 "lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-04",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
 "loc": "Main Church",
 "note": ""
 },
@@ -7997,24 +7896,6 @@
 }
 ],
 "24": [
-{
-"k": "r",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-10-04",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Feast of Our Lady of the Rosary followed by Procession"
-},
 {
 "k": "r",
 "date": "2026-10-07",
