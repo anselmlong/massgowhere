@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-06T12:31+08:00",
+ "fetchedAt": "2026-10-07T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -209,9 +209,9 @@
   },
   "30": {
    "from": "myCatholicSG",
-   "title": "28TH SUNDAY IN ORDINARY TIME - 4 October 2026",
-   "date": "2026-10-04",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610040723_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=cd15b631-9cb5-492f-8e8c-4359e22ca629",
+   "title": "27TH SUNDAY IN ORDINARY TIME - 4 October 2026",
+   "date": "2026-10-06",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610061526_27TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=aee361b5-5226-4a6d-a96d-52b252ba512f",
    "page": "https://mycatholic.sg/bulletin/stvincentdepaul"
   },
   "31": {
@@ -223,9 +223,9 @@
   },
   "32": {
    "from": "myCatholicSG",
-   "title": "27th Ordinary Sunday - 4th Oct 2026",
-   "date": "2026-09-28",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2609281047_04_Oct%202026.pdf?alt=media&token=97dadb3f-1d57-44f1-96d9-071975ed3b33",
+   "title": "28th Ordinary Sunday - 11th Oct 2026",
+   "date": "2026-10-06",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610061457_11_Oct%202026.pdf?alt=media&token=3053ac7b-7fc4-44e5-aa8b-f249575ce124",
    "page": "https://mycatholic.sg/bulletin/transfiguration"
   }
  }
