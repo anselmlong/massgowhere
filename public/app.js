@@ -608,7 +608,10 @@
       const finish = si === 0 ? "" : `
         ${LATE_UI && last && plan.kind === "mass" ? `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
           <span>Might be a few minutes late?<small>Also count a Mass that has just started, up to 15 minutes in.</small></span></label>` : ""}
-        ${last && step === "which" ? "" : `<button class="btn ${last ? "btn-primary btn-find" : "btn-quiet wiz-skip"}" id="find" type="button" style="--i:${n}">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}${last ? "" : " now"}</span></button>`}
+        ${last && step === "which" ? "" : last
+          ? `<button class="btn btn-primary btn-find" id="find" type="button" style="--i:${n}">${svg(plan.place ? ICON.search : ICON.locate)}<span>${plan.kind === "mass" ? (plan.place ? "Find a Mass" : "Find a Mass near me") : `Find ${kindWord}${plan.place ? "" : " near me"}`}</span></button>`
+          // skips every question left, not just this one, so it says what it will look for with the answers so far
+          : `<button class="btn btn-quiet wiz-skip" id="find" type="button" style="--i:${n}">${svg(plan.place ? ICON.search : ICON.locate)}<span>Skip to results<small>${kindWord} ${plan.place ? `from ${esc(place)}` : "near me"}, ${plan.at == null ? "leaving now" : `leaving ${esc(whenText(plan.at))}`}</small></span></button>`}
         <p class="msg" id="msg" role="status" hidden></p>`;
       // what you've answered so far sits above as chips; tap one to change it
       const said = { what: KINDS_W.find(([k]) => k === plan.kind)[1], from: plan.place ? place : "My location", when: plan.at == null ? "Now" : whenText(plan.at), how: modeOf(mode).label, which: "" };
