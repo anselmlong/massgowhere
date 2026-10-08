@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-02",
+"asOf": "2026-10-08",
 "rules": {
 "1": [
 {
@@ -873,16 +873,6 @@
 "note": "Lauds before Mass"
 },
 {
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Lauds before Mass"
-},
-{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -1089,6 +1079,16 @@
 "type": "Mass",
 "t": "18:00",
 "lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
 "loc": "Main Church",
 "note": ""
 }
@@ -6314,6 +6314,69 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-05",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-12",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "19:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-06",
+"type": "Adoration",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Vespers followed by Mass"
 }
 ],
 "6": [
@@ -7692,6 +7755,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-10-31",
+"type": "Mass",
+"t": "16:00",
+"lang": "Teochew",
+"loc": "Main Church",
+"note": "Eve of All Saints' Day"
 }
 ],
 "12": [
@@ -7982,6 +8054,24 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-02",
 "type": "Mass",
@@ -8070,6 +8160,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "31": [
@@ -8131,15 +8230,6 @@
 }
 ],
 "30": [
-{
-"k": "a",
-"date": "2026-10-06",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "a",
 "date": "2026-11-29",
