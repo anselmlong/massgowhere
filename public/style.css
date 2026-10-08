@@ -657,7 +657,9 @@ html.previewing .shell { padding-bottom: 96px; }
 .wiz .opt, .wiz-skip, .wiz .btn-find { animation-delay: calc(.12s + var(--i, 0) * 80ms); }
 .wiz-chip { animation-duration: .3s; animation-delay: calc(var(--i, 0) * 40ms); }
 @media (prefers-reduced-motion: reduce) { .wiz-q, .wiz .opt, .wiz-chip, .wiz-skip, .wiz .btn-find, .wiz-sum { animation: none; } }
-.wiz-skip { justify-self: start; text-align: left; padding-block: 8px; }
+/* lines up with the answers above it: icon at the left edge, two lines of text beside it */
+.wiz-skip { justify-content: flex-start; gap: 12px; padding: 8px 14px; text-align: left; }
+.wiz-skip svg { width: 20px; height: 20px; flex: none; }
 .wiz-skip small { display: block; color: var(--ink-3); font-size: 13px; font-weight: 400; }
 
 /* theme switch in the header */
