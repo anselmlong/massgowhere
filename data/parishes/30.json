@@ -2,9 +2,9 @@
  "id": 30,
  "name": "Church of St Vincent de Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610040723_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=cd15b631-9cb5-492f-8e8c-4359e22ca629"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610061526_27TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=aee361b5-5226-4a6d-a96d-52b252ba512f"
  ],
- "fetched_at": "2026-10-04T12:32+08:00",
+ "fetched_at": "2026-10-08T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -44,7 +44,7 @@
    "d": 0,
    "t": "15:00",
    "weeks": [
-    5
+    -1
    ],
    "except": [],
    "type": "Mass",
@@ -87,10 +87,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours - Divine Office"
   },
   {
    "d": 1,
@@ -137,10 +137,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours - Divine Office"
   },
   {
    "d": 2,
@@ -187,10 +187,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours - Divine Office"
   },
   {
    "d": 3,
@@ -247,10 +247,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours - Divine Office"
   },
   {
    "d": 4,
@@ -297,10 +297,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours - Divine Office"
   },
   {
    "d": 5,
@@ -321,6 +321,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "19:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Sacred Heart of Jesus, after 6pm Mass"
   },
   {
    "d": 6,
@@ -363,26 +373,27 @@
    "note": "Sunset Mass"
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "title": "PIETA Singapore Annual Memorial Mass 2026",
-   "time": "20:00",
-   "location": "Church of St Alphonsus (Novena Church)",
-   "language": "English",
-   "date": "2026-11-13",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "No weekday Mass on public holidays."
+ ],
  "info": {
-  "adoration": "Adoration Room is open every day from 07:00 to 18:00; closed on public holidays.",
-  "confession": "Confession is available 30 minutes before to 10 minutes before weekend Masses.",
+  "adoration": "Adoration Room open every day from 7am to 6pm. Closed on Public Holidays.",
+  "confession": "30 mins before to 10 mins before Mass (weekend Masses only)",
   "devotions": [
-   "Rosary on Sunday is 30 minutes before Mass.",
-   "Sacred Heart of Jesus on Fridays after the 6pm Mass."
+   "Rosary: Monday-Saturday 6.15am and 5.30pm; Sunday 30 minutes before Mass",
+   "Divine Mercy: Wednesdays 5pm, St Faustina Room",
+   "Sacred Heart of Jesus: Fridays after 6pm Mass",
+   "Liturgy of the Hours - Divine Office: Mon-Fri 7.45am, St Faustina Room"
+  ],
+  "office_hours": "Parish Office: Weekdays 9am to 6pm; Saturday 9am to 12pm and 5pm to 6pm; Sunday 8am to 12pm and 5pm to 6pm. Closed on Public Holidays.",
+  "good_to_know": [
+   "The carpark gate at Jalan Resak is closed immediately after Mass; please exit via the autogate to Yio Chu Kang Road.",
+   "Do not park in front of the priests' parking lots.",
+   "Alternative parking: Yio Chu Kang Road between Lamppost No. 156 & 166 (Saturdays 6pm-7.15pm); Jalan Kelulut between Lamppost No. 4 & 9 (Sundays 9am-12.15pm); in front of Jalan Kelulut shophouses (coupon parking); HDB carparks at Blk 988 Bua",
+   "Strictly no parking along 1 to 19 Jalan Jarak."
   ]
  },
  "events": [
@@ -390,30 +401,30 @@
    "date": "2026-10-16",
    "time": "08:30",
    "title": "A Journey of Discipleship Stay-in Retreat #2",
-   "text": "Conducted by Msgr Peter Zhang and CSC Retreat Team. Fee: $280. Register at https://bit.ly/cscjdr2."
+   "text": "Stay-in retreat conducted by Msgr Peter Zhang and CSC Retreat Team, 16 Oct 8.30am to 18 Oct 6.30pm. Fee $280; register at https://bit.ly/cscjdr2."
   },
   {
    "date": "2026-10-17",
    "time": "15:00",
    "title": "Young Missionaries of Hope: One in Christ, United in Mission",
-   "text": "Virtual ZOOM event. Reflect on how we can be young missionary disciples in our own context. Keynote by Cardinal \"Ambo\", Vice-President of the Federation of Asian Bishops' Conferences; Catholics from Myanmar, Cambodia, the Philippines and Malaysia share. Sign up at bit.ly/unitedinmission. Enquiries: "
+   "text": "Virtual ZOOM event on Sat 17 Oct, 3pm-5pm, with keynote by Cardinal \"Ambo\" and sharing by Catholics from Myanmar, Cambodia, the Philippines and Malaysia. Sign up at bit.ly/unitedinmission."
   },
   {
    "date": "2026-11-08",
    "time": "12:30",
    "title": "Seniors Ministry Pilgrimage Tour",
-   "text": "EmmausElders@SVDP pilgrimage to Church of St Mary of the Angels in conjunction with the Jubilee Year of St Francis of Assisi. Scan the QR code or submit a completed form to the Parish Office."
+   "text": "EmmausElders@SVDP pilgrimage for seniors to Church of St Mary of the Angels, 8 Nov 12.30pm-6.30pm. Scan the QR code or submit a completed form to the Parish office."
   },
   {
    "date": "2026-11-09",
    "time": "08:30",
-   "title": "Bible in the City: Scripture for the Concrete Jungle Bible Symposium 2026",
-   "text": "Organised by the Verbum Dei Missionaries. Venue: Novena Church Auditorium. Cost: $30 single / $50 pair (with light refreshments). Closing date: 18 October 2026. Sign up at tinyurl.com/VdeiBibleSymposium. Enquiries: vdeisingapore@gmail.com."
+   "title": "Bible in the City: Scripture for the Concrete Jungle",
+   "text": "Bible Symposium 2026 by the Verbum Dei Missionaries, 9 Nov (PH) 8.30am-1pm at Novena Church Auditorium. Cost $30 single / $50 pair; sign up at tinyurl.com/VdeiBibleSymposium by 18 Oct."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610040723_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=cd15b631-9cb5-492f-8e8c-4359e22ca629",
-  "date": "2026-10-04"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610061526_27TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=aee361b5-5226-4a6d-a96d-52b252ba512f",
+  "date": "2026-10-06"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -423,7 +434,7 @@
     "Sunday",
     "15:00",
     [
-     5
+     -1
     ],
     []
    ]

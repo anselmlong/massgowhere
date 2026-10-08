@@ -2,26 +2,14 @@
  "id": 32,
  "name": "Church of the Transfiguration",
  "source_urls": [
-  "https://transfiguration.sg/masstimings/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610061457_11_Oct%202026.pdf?alt=media&token=3053ac7b-7fc4-44e5-aa8b-f249575ce124"
  ],
- "fetched_at": "2026-10-02T12:41+08:00",
- "fetch_mode": [
-  "rendered"
- ],
+ "fetched_at": "2026-10-08T12:32+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "08:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
-   "note": "30 minutes before all weekend Masses when a priest is available"
-  },
   {
    "d": 0,
    "t": "08:30",
@@ -30,17 +18,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
-  },
-  {
-   "d": 0,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
-   "note": "30 minutes before all weekend Masses when a priest is available"
+   "note": ""
   },
   {
    "d": 0,
@@ -50,17 +28,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
-  },
-  {
-   "d": 0,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
-   "note": "30 minutes before all weekend Masses when a priest is available"
+   "note": ""
   },
   {
    "d": 0,
@@ -70,7 +38,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -89,8 +57,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Thérèse, L3 Room 3.4",
-   "note": "Intercessory prayer"
+   "loc": "L3 Room 3.4",
+   "note": "Intercessory"
   },
   {
    "d": 1,
@@ -100,7 +68,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -120,7 +88,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -130,7 +98,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Adoration Room",
-   "note": ""
+   "note": "Eucharistic Healing Session"
   },
   {
    "d": 3,
@@ -149,8 +117,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Thérèse, L3 Room 3.4",
-   "note": "Intercessory prayer"
+   "loc": "L3 Room 3.4",
+   "note": "Intercessory"
   },
   {
    "d": 3,
@@ -160,7 +128,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -180,7 +148,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -221,8 +189,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Thérèse, L3 Room 3.4",
-   "note": "Intercessory prayer"
+   "loc": "L3 Room 3.4",
+   "note": "Intercessory"
   },
   {
    "d": 5,
@@ -232,7 +200,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -268,23 +236,13 @@
   },
   {
    "d": 6,
-   "t": "15:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
-   "note": "30 minutes before all weekend Masses when a priest is available"
-  },
-  {
-   "d": 6,
    "t": "16:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Rosary 40 minutes before Mass"
+   "note": ""
   }
  ],
  "dated": [],
@@ -292,42 +250,23 @@
  "public_holiday_masses": [
   "08:30"
  ],
- "notes": [
-  "Weekday Masses are at 6.30am and 6.30pm; on public holidays there is a single Mass at 8.30am."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room: weekdays 7am-10pm, weekends 7am-8pm, public holidays 9am-5pm. Closed on Mondays, 9am-2pm (cleaning); on 1st Mondays 9am-4pm. Holy Hour with Reparation: 1st Thursday 8pm and 1st Friday 8pm, Church Hall.",
-  "confession": "L2 Confessionals, 30 minutes before all weekend Masses when a priest is available.",
+  "adoration": "Adoration Room: Weekday 7 AM–10 PM; Weekend 7 AM–8 PM; Public Holiday 9 AM–5 PM. Closed on Mondays 9 AM–2 PM for cleaning; on 1st Mondays 9 AM–4 PM.",
+  "confession": "Confession at L2 Confessionals 30 minutes before all weekend Masses when a priest is available.",
   "devotions": [
-   "Intercessory prayer: Mondays, Wednesdays and Fridays 3pm, St Thérèse, L3 Room 3.4",
-   "Prayer meeting: Tuesdays 8pm, Adoration Room",
-   "Charismatic Prayer Community: Thursdays 8pm, L3 Auditorium",
-   "Chinese Prayer Group: Fridays 8pm, L4 Room 4.2"
+   "Rosary is after weekday morning Mass and 40 minutes before weekday evening and weekend Masses."
   ],
-  "office_hours": "Weekdays 9am-8pm (lunch break 12pm-1pm); Saturday 9am-6pm (lunch break 12pm-1pm); Sunday 9am-6pm (lunch break 1pm-2pm).",
-  "good_to_know": [
-   "51 Punggol Central, Singapore 828725",
-   "Parish office: 6341 9718, secretary@transfiguration.sg"
-  ]
+  "office_hours": "Weekday 9 AM–8 PM (lunch break 12 PM–1 PM); Saturday 9 AM–6 PM (lunch break 12 PM–1 PM); Sunday 9 AM–6 PM (lunch break 1 PM–2 PM)."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2609281047_04_Oct%202026.pdf?alt=media&token=97dadb3f-1d57-44f1-96d9-071975ed3b33",
-  "date": "2026-09-28"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610061457_11_Oct%202026.pdf?alt=media&token=3053ac7b-7fc4-44e5-aa8b-f249575ce124",
+  "date": "2026-10-06"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],
-  "only_on_mycatholic": [
-   [
-    "Mass",
-    "Saturday",
-    "19:00",
-    [
-     2
-    ],
-    []
-   ]
-  ]
+  "only_on_mycatholic": []
  }
 }
