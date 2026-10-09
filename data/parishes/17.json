@@ -2,9 +2,9 @@
  "id": 17,
  "name": "Church of St Alphonsus (Novena Church)",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610021528_1._Novena%204%20October%20to%2010%20October%20OMPH.pdf?alt=media&token=e5ed4447-8e36-49dd-8e92-6dae162b8f33"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610091116_2._Novena%2011%20October%20to%2017%20October%20%20EVAN.pdf?alt=media&token=5f6dec3e-ad3e-4e86-9d57-07e67b517f6d"
  ],
- "fetched_at": "2026-10-02T21:04+08:00",
+ "fetched_at": "2026-10-09T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -168,7 +168,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -178,7 +178,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -188,7 +188,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -198,7 +198,7 @@
    "type": "Devotion",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -208,7 +208,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -218,7 +218,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -231,68 +231,62 @@
    "note": "Sunset Mass"
   }
  ],
- "dated": [
-  {
-   "type": "Devotion",
-   "date": "2026-10-24",
-   "time": "20:00",
-   "language": "Tamil",
-   "location": "",
-   "title": "Tamil Novena",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-10-24",
-   "time": "20:30",
-   "language": "Tamil",
-   "location": "",
-   "title": "Tamil Mass",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00",
   "18:30"
  ],
  "notes": [
-  "No booking is required.",
-  "There will not be standing room allowed in the main church."
+  "No weekday Mass on public holidays; public holiday Masses are at 9.00am and 6.30pm."
  ],
  "info": {
-  "confession": "Confession will be 30 minutes before Mass.",
+  "confession": "30 minutes before every Mass.",
   "devotions": [
-   "Saturday Novena Devotions: 08:00, 10:00, 12:00, 14:00 (Mandarin), 16:00, 17:30"
+   "Novena Devotions: Saturdays 8.00am, 10.00am, 12.00pm, 2.00pm (Mandarin), 4.00pm, 5.30pm"
   ],
+  "office_hours": "Reception: Monday to Friday 9.00am to 8.00pm; Saturday 7.30am to 8.00pm; Sunday 8.30am to 1.30pm & 4.30pm to 7.00pm; closed on Public Holidays.",
   "good_to_know": [
-   "No booking is required.",
-   "There will not be standing room allowed in the main church."
+   "No booking is required for Masses.",
+   "There is no standing room allowed in the main church.",
+   "Gift shop: Monday, Tuesday, Wednesday & Friday 10.30am to 6.30pm; Saturday 8.30am to 6.30pm; Sunday 9.00am to 1.30pm; closed on Thursday and Public Holiday."
   ]
  },
  "events": [
   {
    "date": "2026-10-16",
    "time": "",
+   "title": "St Gerard Feastday",
+   "text": "Feastday Mass at 7.30pm. No Rosary and no 6.30pm Mass."
+  },
+  {
+   "date": "2026-10-16",
+   "time": "",
    "title": "Marriage Encounter Weekend 2026 (Bahasa Indonesia)",
-   "text": "Stay-In Weekend: Bahasa Indonesia 16-18 Oct. Secure your Weekend at: https://www.wwmesg.org/Weekend_Reg"
+   "text": "Stay-in weekend, 16-18 Oct. Register at https://www.wwmesg.org/Weekend_Reg."
   },
   {
    "date": "2026-11-06",
    "time": "",
    "title": "Marriage Encounter Weekend 2026 (English)",
-   "text": "Stay-In Weekend: English Nov 6-8. Secure your Weekend at: https://www.wwmesg.org/Weekend_Reg"
+   "text": "Stay-in weekend, 6-8 Nov. Register at https://www.wwmesg.org/Weekend_Reg."
+  },
+  {
+   "date": "2026-11-07",
+   "time": "20:30",
+   "title": "Choral Concert",
+   "text": "At Church of St Alphonsus. Part of proceeds goes to the Redemptorist Mission Fund. Tickets at $25 each; contact Faye 92457145 / Sherry 87137416."
   },
   {
    "date": "2026-12-04",
    "time": "",
    "title": "Marriage Encounter Weekend 2026 (English)",
-   "text": "Stay-In Weekend: English Dec 4-6. Secure your Weekend at: https://www.wwmesg.org/Weekend_Reg"
+   "text": "Stay-in weekend, 4-6 Dec. Register at https://www.wwmesg.org/Weekend_Reg."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610021528_1._Novena%204%20October%20to%2010%20October%20OMPH.pdf?alt=media&token=e5ed4447-8e36-49dd-8e92-6dae162b8f33",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610091116_2._Novena%2011%20October%20to%2017%20October%20%20EVAN.pdf?alt=media&token=5f6dec3e-ad3e-4e86-9d57-07e67b517f6d",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {

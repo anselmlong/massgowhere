@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-08T12:31+08:00",
+ "fetchedAt": "2026-10-09T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -81,9 +81,9 @@
   },
   "12": {
    "from": "myCatholicSG",
-   "title": "OLPS Weekly Bulletin 4 Oct 2026",
-   "date": "2026-10-04",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610041716_PARISH_FEAST%20DAY%204%20OCT%202026.pdf?alt=media&token=0f2883a0-ee2d-45ae-9b37-be11ff44ec98",
+   "title": "OLPS Weekly Bulletin 11 Oct 2026",
+   "date": "2026-10-08",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610081932_28th_Sunday%20in%20Ordinary%20Time%2011%20Oct%202026.pdf?alt=media&token=96cb9970-4826-494c-af09-11a049355152",
    "page": "https://mycatholic.sg/bulletin/perpertualsuccour"
   },
   "13": {
@@ -116,16 +116,16 @@
   },
   "17": {
    "from": "myCatholicSG",
-   "title": "Bulletin 4th October till 10th October 2026",
-   "date": "2026-10-02",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610021528_1._Novena%204%20October%20to%2010%20October%20OMPH.pdf?alt=media&token=e5ed4447-8e36-49dd-8e92-6dae162b8f33",
+   "title": "Bulletin 11th October till 17th October 2026",
+   "date": "2026-10-09",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610091116_2._Novena%2011%20October%20to%2017%20October%20%20EVAN.pdf?alt=media&token=5f6dec3e-ad3e-4e86-9d57-07e67b517f6d",
    "page": "https://mycatholic.sg/bulletin/novena"
   },
   "18": {
    "from": "myCatholicSG",
-   "title": "3 & 4 October 2026",
-   "date": "2026-10-01",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610011207_Oct_3%20%26%204%202026.pdf?alt=media&token=668310e0-4c89-4651-b243-a5da4159cd84",
+   "title": "10 & 11 October 2026",
+   "date": "2026-10-08",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610081738_Oct_10%20%26%2011%202026.pdf?alt=media&token=c045b797-9ae6-4ffe-b1b6-6123fc5c0037",
    "page": "https://mycatholic.sg/bulletin/stanne"
   },
   "19": {
@@ -137,9 +137,9 @@
   },
   "20": {
    "from": "myCatholicSG",
-   "title": "堂区周报 2026年10月4日 - 2026年10月10日",
-   "date": "2026-10-02",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610021053_45_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%884%E6%97%A5%EF%BC%89.pdf?alt=media&token=8ff8da42-9566-4237-bfcd-93bfe188f980",
+   "title": "堂区周报 2026年10月11日 - 2026年10月17日",
+   "date": "2026-10-09",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610091150_46_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%8811%E6%97%A5%EF%BC%89.pdf?alt=media&token=22545f53-b3d9-4636-bc31-ee7265afb58c",
    "page": "https://mycatholic.sg/bulletin/stbernadette"
   },
   "21": {
@@ -166,9 +166,9 @@
   },
   "24": {
    "from": "myCatholicSG",
-   "title": "04 October 2026 : 27th Sunday Ordinary Time",
-   "date": "2026-10-02",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610021033_20261004_SJCBT%20Bulletin%20v2.pdf?alt=media&token=70cfa440-5cc3-448d-ab86-c989cedf5387",
+   "title": "11 October 2026 : 28th Sunday Ordinary Time",
+   "date": "2026-10-09",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610091139_20261011_SJCBT%20Bulletin.pdf?alt=media&token=85f06731-eec1-4b7c-a832-062322e9535a",
    "page": "https://mycatholic.sg/bulletin/stjosephbukittimah"
   },
   "25": {
@@ -196,8 +196,8 @@
   "28": {
    "from": "myCatholicSG",
    "title": "St Stephen Bulletin",
-   "date": "2026-10-02",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610021000_St_StephenBulletin_04102026.pdf?alt=media&token=e372b551-bb35-41bb-8962-8ed91a09524e",
+   "date": "2026-10-09",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610091005_St_StephenBulletin_11102026.pdf?alt=media&token=c588fb7f-09cb-4982-97de-b6ce927b3789",
    "page": "https://mycatholic.sg/bulletin/ststephen"
   },
   "29": {

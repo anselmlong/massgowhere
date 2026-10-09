@@ -2,12 +2,10 @@
  "id": 20,
  "name": "Church of St Bernadette",
  "source_urls": [
-  "https://www.stbernadette.org.sg/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610091150_46_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%8811%E6%97%A5%EF%BC%89.pdf?alt=media&token=22545f53-b3d9-4636-bc31-ee7265afb58c"
  ],
- "fetched_at": "2026-10-02T12:36+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-09T12:33+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
@@ -195,7 +193,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Vigil"
+   "note": ""
   }
  ],
  "dated": [],
@@ -203,58 +201,37 @@
  "public_holiday_masses": [
   "09:00"
  ],
- "notes": [
-  "Mass times may change during feast days, solemnities or other special celebrations."
- ],
- "info": {
-  "adoration": "The Adoration Room is accessible for prayers and adoration after the first Mass of the day until 10pm. It is closed for cleaning every Saturday morning from 9.45am to 11.45am.",
-  "confession": "The Sacrament of Reconciliation is available 30 minutes before Weekend Masses, excluding the Saturday 7.00am Mass.",
-  "good_to_know": [
-   "Mass times may change during feast days, solemnities or other special celebrations.",
-   "The website says Filipino Mass is at 13:45 on the 4th and 5th Sundays; the bulletin says 14:00 on the 4th Sunday; check with the parish."
-  ]
- },
+ "notes": [],
+ "info": {},
  "events": [
   {
-   "date": "2026-10-02",
-   "time": "20:00",
-   "title": "Franciscan vision of God, Creation and human fraternity",
-   "text": "Join Fr Nathan at the Parish hall to discover the Franciscan vision of God, Creation and human fraternity."
-  },
-  {
-   "date": "2026-10-10",
-   "time": "",
-   "title": "Holy Family Spirituality: stillness and movement",
-   "text": "Half-day talk/retreat by Fr Zhang Liyong at Holy Family Church, 4th floor prayer hall. Register with 洪金惠 90918332 or 徐人心 94308817."
+   "date": "2026-10-15",
+   "time": "19:30",
+   "title": "2027 16-day Holy Land Pilgrimage briefing",
+   "text": "Briefing for the 2027 16-day Holy Land Pilgrimage (21 Feb–8 Mar 2027) with Fr Joe Nathan, OFM. Location: St Bernadette Hall, Level 2. Brochures available at the parish office and church entrance."
   },
   {
    "date": "2026-10-17",
-   "time": "",
-   "title": "圣爱相随 walking pilgrimage",
-   "text": "From St Joseph's Church Bukit Timah to Queen of Angels Church and back. Organized by 主徒会. No registration; start on time."
-  },
-  {
-   "date": "2026-10-17",
-   "time": "",
-   "title": "Marian devotion: 义德之径",
-   "text": "Speaker: Fr Peng Zhishun. Talk, Rosary, Marian devotion at Holy Trinity Church chapel, 20 Tampines Street 11. No registration."
-  },
-  {
-   "date": "2026-10-31",
-   "time": "",
-   "title": "All Saints celebration",
-   "text": "Dress as your favourite saint at Church of St Bernadette. 4.30pm photo, 6pm Mass, procession of saints, 7pm dinner and fellowship. Registration required for procession and dinner: https://tinyurl.com/stbernsallsaints"
+   "time": "08:00",
+   "title": "Walking Pilgrimage: 'Holy Love Accompanying'",
+   "text": "Walk from St Joseph's Church Bukit Timah to Queen of Angels Church and back. No registration needed; start on time."
   },
   {
    "date": "2026-11-09",
+   "time": "09:30",
+   "title": "2026 St Bernadette Chinese Retreat",
+   "text": "Theme: 'Encountering Christ in Creation, One Body Many Members'. Talks, group sharing, ending with Mass. Location: St Bernadette Hall. Fee: $10 including lunch and tea. Speaker: Fr Peter Koh."
+  },
+  {
+   "date": "2026-11-15",
    "time": "",
-   "title": "2026 Chinese retreat",
-   "text": "Theme: Encountering Christ in Creation, one body many members. Speaker: Fr Peter Koh. Talks, group sharing, ends with Mass at St Bernadette Hall. Fee $10 includes lunch and tea. Register with 立斌 91195952 or 永昌 96628873."
+   "title": "2027 Sunday School registration closes",
+   "text": "Registration for 2027 Sunday School for Primary 1 to Secondary 4 closes on 15 Nov. Details online at https://tinyurl.com/2027Catechism"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610021053_45_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%884%E6%97%A5%EF%BC%89.pdf?alt=media&token=8ff8da42-9566-4237-bfcd-93bfe188f980",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610091150_46_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%8811%E6%97%A5%EF%BC%89.pdf?alt=media&token=22545f53-b3d9-4636-bc31-ee7265afb58c",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {

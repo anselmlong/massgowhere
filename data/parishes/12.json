@@ -2,9 +2,9 @@
  "id": 12,
  "name": "Church of Our Lady of Perpetual Succour",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610041716_PARISH_FEAST%20DAY%204%20OCT%202026.pdf?alt=media&token=0f2883a0-ee2d-45ae-9b37-be11ff44ec98"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610081932_28th_Sunday%20in%20Ordinary%20Time%2011%20Oct%202026.pdf?alt=media&token=96cb9970-4826-494c-af09-11a049355152"
  ],
- "fetched_at": "2026-10-06T12:33+08:00",
+ "fetched_at": "2026-10-09T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -37,8 +37,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "Liturgy of the Word for Children on 2nd & 4th Sundays"
   },
   {
    "d": 0,
@@ -47,7 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -59,7 +59,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -71,7 +71,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Bahasa Indonesia",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -81,7 +81,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -91,7 +91,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -111,7 +111,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -121,7 +121,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -141,7 +141,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -161,7 +161,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -181,7 +181,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -201,7 +201,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -221,7 +221,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -231,7 +231,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -251,7 +251,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -261,7 +261,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -271,7 +271,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": "Novena Service"
   },
   {
@@ -281,7 +281,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -291,67 +291,89 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Devotion",
-   "date": "2026-10-07",
-   "time": "09:30",
-   "language": "English",
-   "location": "Sts Peter and Paul Room (Level 2)",
-   "title": "Intercessory Prayer Session for National Exams",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "08:00"
+ ],
  "notes": [
-  "Adoration room is closed every Wednesday from 10:00 to 12:00 noon for cleaning.",
-  "On public holidays, weekday Mass is at 08:00 only.",
-  "Confession is 30 minutes before Weekend Mass in the Main Church."
+  "Weekday Mass on a public holiday is at 8.00am only.",
+  "Adoration room is closed every Wednesday from 10.00am to 12 noon for cleaning."
  ],
  "info": {
-  "adoration": "Adoration room is open 06:00 to 22:15 daily, closed every Wednesday from 10:00 to 12:00 noon for cleaning.",
-  "confession": "30 minutes before Weekend Mass in the Main Church.",
+  "adoration": "Adoration room open 6.00am to 10:15pm daily, closed every Wednesday from 10.00am to 12 noon for cleaning.",
+  "confession": "30 minutes before every weekend Mass in the Main Church.",
   "devotions": [
-   "Rosary Prayers: Mon to Fri at 17:15 in the Main Church.",
-   "Divine Mercy Devotion: Every Tue at 18:45 in the Main Church.",
-   "Christian Meditation: Every Wed at 20:00 in St John/St Luke room.",
-   "Liturgy of the Word for Children: Every 2nd & 4th Sunday of the month at the 10:30 Mass."
+   "Divine Mercy Devotion: Tuesdays 6.45pm in the Main Church",
+   "Rosary Prayers: Mondays to Fridays 5.15pm in the Main Church",
+   "Christian Meditation: Wednesdays 8pm in St John/St Luke room",
+   "Novena Service: Saturdays 3.30pm"
   ],
-  "office_hours": "Parish Office: Mon & Sat 09:00-18:00; Tue to Fri 09:00-20:00; Sun 09:00-13:00; closed on public holidays.",
+  "office_hours": "Parish Office: Mon & Sat 9am-6pm; Tue-Fri 9am-8pm; Sun 9am-1pm; closed on public holidays.",
   "good_to_know": [
-   "No-standing rule during Mass and services; keep walkways and exits clear.",
-   "Mass Collection via Paynow: UEN T08CC4045F, Entity Name Church of Our Lady of Perpetual Succour, reference MC.",
-   "Parking at St Stephen's School: Saturdays 15:00-19:00, Sundays 08:00-14:00."
+   "OLPS Church carpark open 5.30am-10.30pm daily.",
+   "Parking at St Stephen's School: Sat 3.00pm-7.00pm, Sun 8.00am-2.00pm; no overnight parking.",
+   "Standing along the aisles during Mass and services is not permitted.",
+   "Columbarium open 7.00am to 7.00pm daily."
   ]
  },
  "events": [
   {
-   "date": "2026-10-09",
-   "time": "10:00",
-   "title": "Hopeful Hearts @CDM",
-   "text": "Every 2nd Friday (09:00-10:00? no, 10:00-12:00) at CDM Parish Hall, Level 2."
+   "date": "2026-10-10",
+   "time": "",
+   "title": "Level 1 Catechism Registration for 2027 (Phase 1)",
+   "text": "Children born in 2020 may register for Level 1 catechism in 2027. Phase 1 (10-16 Oct) is for siblings of students enrolled in catechism Levels 1-10 at OLPS in 2026. Register online via olps.sg/cats; registration closes 6 Nov 2026."
+  },
+  {
+   "date": "2026-10-15",
+   "time": "20:00",
+   "title": "Intercessory Prayer Session for L9 Confirmation Retreat",
+   "text": "Join the OLPS Intercessory Prayer Group and OLPS Children's Eucharistic Adoration to pray for all involved in the L9 Confirmation Retreat, 8.00pm-9.00pm at the OLPS Adoration Room."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "",
+   "title": "Book of Remembrance",
+   "text": "The parish Book of Remembrance will be placed in the Main Church from 17 Oct to 2 Nov 2026; parishioners are invited to inscribe the names of departed family members and friends."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "15:00",
+   "title": "Young Missionaries of Hope: One in Christ, United in Mission",
+   "text": "Virtual Zoom event on Sat 17 Oct, 3.00pm-5.30pm, reflecting on being young missionary disciples. Sign up at bit.ly/unitedinmission."
+  },
+  {
+   "date": "2026-10-30",
+   "time": "20:00",
+   "title": "Intercessory Prayer Session for L9 Confirmation Retreat",
+   "text": "Join the OLPS Intercessory Prayer Group and OLPS Children's Eucharistic Adoration to pray for all involved in the L9 Confirmation Retreat, 8.00pm-9.00pm at the OLPS Adoration Room."
+  },
+  {
+   "date": "2026-11-14",
+   "time": "18:30",
+   "title": "Milestone Wedding Celebration @ OLPS",
+   "text": "Couples celebrating milestone wedding anniversaries (5th, 10th, 15th and multiples of 5 years thereafter) are invited to the 6:30pm Mass followed by a dinner celebration. Enquiries: Patrick @ 91797723; register at olps.sg/milestone2026 by 30 Oct 2026."
   },
   {
    "date": "2026-11-21",
    "time": "",
    "title": "OLPS Family Weekend 2026",
-   "text": "Open to families with children aged 7 to 21. 21 & 22 Nov 2026 at St Stephen's School. Registration fee: $50 per family. Registration closes 23 Oct 2026."
+   "text": "Open to families with children aged 7 to 21, 21 & 22 Nov 2026 at St Stephen's School. Registration fee $50 per family; register by 23 Oct 2026. Enquiries: James @ 9880 2203 or familylife@olps.sg."
   },
   {
    "date": "2026-11-27",
    "time": "",
-   "title": "L9 Confirmation Retreat - TREASURED",
-   "text": "27-29 Nov 2026 at Catholic Spirituality Center. Stay-in retreat. Calling for service team."
+   "title": "L9 Confirmation Retreat - TREASURED (Service Team)",
+   "text": "The L9 Confirmation Retreat runs 27-29 Nov 2026 at Catholic Spirituality Centre (stay-in). Youth are invited to serve on the Service Team; scan the QR code or contact the Catechetical or Youth Office."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610041716_PARISH_FEAST%20DAY%204%20OCT%202026.pdf?alt=media&token=0f2883a0-ee2d-45ae-9b37-be11ff44ec98",
-  "date": "2026-10-04"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610081932_28th_Sunday%20in%20Ordinary%20Time%2011%20Oct%202026.pdf?alt=media&token=96cb9970-4826-494c-af09-11a049355152",
+  "date": "2026-10-08"
  },
  "disputes": [],
  "vs_mycatholic": {

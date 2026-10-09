@@ -2,16 +2,24 @@
  "id": 24,
  "name": "St Joseph's Church (Bukit Timah)",
  "source_urls": [
-  "https://stjoseph-bt.org.sg/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610091139_20261011_SJCBT%20Bulletin.pdf?alt=media&token=85f06731-eec1-4b7c-a832-062322e9535a"
  ],
- "fetched_at": "2026-10-02T12:40+08:00",
- "fetch_mode": [
-  "static"
- ],
+ "fetched_at": "2026-10-09T12:33+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
+  {
+   "d": 0,
+   "t": "07:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms",
+   "note": "15 minutes before the 7.30am Mass"
+  },
   {
    "d": 0,
    "t": "07:30",
@@ -19,8 +27,18 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms",
+   "note": "15 minutes before the 9.30am Mass"
   },
   {
    "d": 0,
@@ -29,8 +47,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms",
+   "note": "15 minutes before the 11.30am Mass"
   },
   {
    "d": 0,
@@ -39,8 +67,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms",
+   "note": "15 minutes before the 5.30pm Mass"
   },
   {
    "d": 0,
@@ -49,7 +87,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -93,16 +131,6 @@
    "note": ""
   },
   {
-   "d": 2,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Adoration Room",
-   "note": "Meditation"
-  },
-  {
    "d": 3,
    "t": "06:30",
    "weeks": [],
@@ -116,25 +144,11 @@
    "d": 3,
    "t": "18:30",
    "weeks": [],
-   "except": [
-    1
-   ],
+   "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel of St Joseph",
    "note": ""
-  },
-  {
-   "d": 3,
-   "t": "19:30",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Main Church",
-   "note": "St Joseph Rosary"
   },
   {
    "d": 3,
@@ -194,25 +208,11 @@
    "d": 5,
    "t": "18:30",
    "weeks": [],
-   "except": [
-    1
-   ],
+   "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "Chapel of St Joseph",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "19:30",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "Main Church",
-   "note": "First Friday Mass"
   },
   {
    "d": 5,
@@ -250,213 +250,144 @@
   },
   {
    "d": 6,
+   "t": "17:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms",
+   "note": "15 minutes before the 5.30pm Mass"
+  },
+  {
+   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": "Sunset Mass"
   }
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-10-02",
-   "time": "19:30",
-   "language": "English",
-   "location": "Main Church",
-   "title": "First Friday Mass & Holy Hour",
-   "action": "add"
-  },
-  {
-   "type": "Adoration",
-   "date": "2026-10-02",
-   "time": "20:00",
-   "language": "",
-   "location": "Main Church",
-   "title": "Holy Hour",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-10-04",
-   "time": "18:00",
-   "language": "English",
-   "location": "Main Church",
-   "title": "Feast of Our Lady of the Rosary",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-04",
-   "time": "19:00",
-   "language": "",
-   "location": "Main Church",
-   "title": "Candlelight Procession",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-07",
-   "time": "19:30",
-   "language": "",
-   "location": "Main Church",
-   "title": "St Joseph Rosary",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-10-07",
-   "time": "20:00",
-   "language": "English",
-   "location": "Main Church",
-   "title": "Mass in Honour of St Joseph",
-   "action": "add"
-  },
-  {
    "type": "Adoration",
    "date": "2026-10-15",
    "time": "20:00",
-   "language": "",
+   "language": "English",
    "location": "Chapel of St Joseph",
-   "title": "Holy Hour for Vocations",
+   "title": "Holy Hour for Vocations - last session for 2026",
    "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "Weekday Masses are held in the Chapel of St Joseph."
+ ],
  "info": {
-  "adoration": "Adoration Room: Mon–Fri 08:00–21:00; Sat 09:30–19:00; Sun 08:00–19:00; Public Holidays 08:00–16:00.",
-  "confession": "Confessions: 15 mins before all weekend Masses in the Reconciliation Rooms in Church.",
+  "adoration": "Adoration Room: Mon-Fri 7.00am-9.00pm, Sat 9.30am-7.00pm, Sun 8.00am-7.00pm, public holidays 8.00am-4.00pm. Holy Hour: first Friday 8.00pm in the Main Church.",
+  "confession": "15 minutes before all weekend Masses, in the Reconciliation Rooms in the church.",
   "devotions": [
-   "Holy Hour: First Friday 20:00 in Main Church unless otherwise stated.",
-   "Mass in Honour of St Joseph: First Wednesday 20:00 in Main Church.",
-   "Divine Mercy: Every Friday 20:00 except First Friday in the Chapel of St Joseph.",
-   "Garden Rosary: First Saturday after the 17:30 Mass.",
-   "Grotto Rosary: Every 13th of the month after the 18:30 Mass on weekdays.",
-   "Holy Hour for Vocations: Every Third Thursday 20:00 in the Chapel of St Joseph."
+   "Garden Rosary: first Saturday, after the 5.30pm Sunset Mass",
+   "Grotto Rosary: every 13th of the month after the 6.30pm weekday Mass (weekdays only)",
+   "Blessing of Expectant Mothers: fourth Sunday of the month"
   ],
-  "office_hours": "Gate opening hours: 06:00–22:00.",
   "good_to_know": [
-   "2nd Saturday 17:30 Mass is the Children's Mass during school term.",
-   "No 18:30 Mass in the Chapel of St Joseph on First Wednesday and First Friday."
+   "The church gate is open 6.00am to 10.00pm.",
+   "The columbarium, Rosary Garden and Stations of the Cross are open 8.00am to 8.00pm daily.",
+   "The Media Centre (bookshop) is open Saturdays 4.30pm-7.00pm and Sundays 8.30am-1.00pm, and on the 2nd Sunday also 5.30pm-7.00pm."
   ]
  },
  "events": [
   {
-   "date": "2026-10-02",
-   "time": "20:00",
-   "title": "Getting Married: In Church or As Church?",
-   "text": "20:00–22:00, The Catholic Centre (Level 2), with Fr Ambrose Vaz. $20 per pax or $35 per couple."
-  },
-  {
-   "date": "2026-10-02",
-   "time": "20:00",
-   "title": "Marriage Encounter Weekend",
-   "text": "2–4 Oct. Stay-in weekend begins Fri 20:00 and ends Sun evening with Mass. For married couples. Register at wwmesg.org."
-  },
-  {
-   "date": "2026-10-03",
-   "time": "10:00",
-   "title": "SHE Women's Fellowship",
-   "text": "Every Saturday 10:00–11:30, Sep 26; Oct 3, 10, 17, 24, 31; Nov 7, 14, 21 2026, #02-03 Parish Community Hall. Season 3: Love Unveiled. Register at https://tinyurl.com/SJCBTSHE3."
-  },
-  {
-   "date": "2026-10-04",
-   "time": "09:30",
-   "title": "Life Essentials",
-   "text": "Sundays 09:30–11:00, Room #01-08, Parish Community Hall. Alpha Youth sessions for unbaptised youth 13–18. Register at tinyurl.com/YAlpha2026."
-  },
-  {
-   "date": "2026-10-04",
-   "time": "12:40",
-   "title": "An Encounter with Jesus",
-   "text": "Every Sunday 12:40pm (12:45–15:30), St Mary AVA Room. Youth Faith and Bible Reflections Community. Fellowship lunch, Bible sharing and reflection."
-  },
-  {
-   "date": "2026-10-05",
-   "time": "20:00",
-   "title": "What the Catholic Church Actually Teaches About Divorce, Separation, and Annulment",
-   "text": "Via Zoom on Mondays. Part 1: 5 Oct, Part 2: 19 Oct, 20:00–22:00. Love offering. Register at bit.ly/DSAOct26."
-  },
-  {
-   "date": "2026-10-06",
-   "time": "11:05",
-   "title": "Tuesday Morning Manna",
-   "text": "Tuesdays 11:05–12:35, 29 Sep–3 Nov, St Joseph AVA Room. Video series Lectio: Prayer: Finding Intimacy with God. Register via QR code."
-  },
-  {
-   "date": "2026-10-08",
-   "time": "09:00",
-   "title": "Scripture Series: The Gospel of Matthew",
-   "text": "Thursdays 09:00–10:45, 27 Aug–29 Oct, St Joseph AVA Room, with Fr Ambrose Vaz. Bring your Bible."
-  },
-  {
-   "date": "2026-10-09",
+   "date": "2026-10-13",
    "time": "",
-   "title": "A Catholic Hackathon!",
-   "text": "9–11 Oct, CTIS, 618 Upper Bukit Timah. Individual $15, group of 3 $30. Organised by Digital Church Office."
-  },
-  {
-   "date": "2026-10-10",
-   "time": "",
-   "title": "World Mental Health Day: BRAVE – Work Well, Live Well",
-   "text": "Sat 10 Oct. Clarity partnering with Catholic Business Network. Explores workplace wellbeing, purpose and compassion through a Catholic lens."
+   "title": "Human Dignity & Development in the Era of AI",
+   "text": "Fr David speaks at Catholic Centre on Tuesday 13 October on discerning the impact of AI in light of Pope Leo XIV's encyclical. Register at bit.ly/dignityoct."
   },
   {
    "date": "2026-10-13",
-   "time": "19:30",
-   "title": "Human Dignity and Development in the Era of AI",
-   "text": "19:30–22:00, Catholic Centre, by Friar David Garcia, OP. Register at bit.ly/dignityoct."
+   "time": "11:05",
+   "title": "Tuesday Morning Manna",
+   "text": "Lectio: Prayer with Dr Tim Gray, Tuesday mornings at 11.05am in the St Joseph AVA Room. Join the WhatsApp community at tinyurl.com/TuesdayMorningManna."
   },
   {
    "date": "2026-10-15",
    "time": "",
    "title": "Rest, Relish and Recharge",
-   "text": "15–18 Oct. Days of reflection and prayer with rest and simple leisure activities."
+   "text": "Days of reflection and prayer from 15 to 18 October, with rest and simple leisure activities, for self-discovery and emotional growth."
+  },
+  {
+   "date": "2026-10-16",
+   "time": "",
+   "title": "A Journey of Discipleship Retreat",
+   "text": "A retreat from 16 to 18 October."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "",
+   "title": "My Hands, His Plans: The Musical - tickets on sale",
+   "text": "An original parish musical for the 180th anniversary, staged this November. Tickets ($10, or $50 premium view) go on sale from 17 October before and after weekend Masses at the St Joachim Room."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "",
+   "title": "Crossroads Life Direction Retreat",
+   "text": "A life direction retreat on 17-18 October to reconnect with your spiritual purpose and chart a meaningful path forward."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "18:45",
+   "title": "Small Catholic Communities dinner",
+   "text": "Fellowship dinner with the Parish Priests on Saturday 17 October after the sunset Mass, for parishioners in their neighbourhood groups. Register at https://tinyurl.com/SCCGM2026."
+  },
+  {
+   "date": "2026-10-20",
+   "time": "",
+   "title": "Mysteries of the Rosary: The Joyful Mysteries",
+   "text": "A video series on the Joyful Mysteries starting 20 October, every Tuesday night or Wednesday morning, in person and online via Zoom. Details via the Faith & Bible Reflections WhatsApp community: tinyurl.com/SJCBTFAB."
+  },
+  {
+   "date": "2026-10-30",
+   "time": "20:00",
+   "title": "Prayer thru Music",
+   "text": "An evening of prayer through music on Friday 30 October at 8pm."
+  },
+  {
+   "date": "2026-11-06",
+   "time": "",
+   "title": "Treasure #18 Retreat for Young Working Adults",
+   "text": "A stay-in Catholic encounter retreat from 6 to 9 November for young working adults aged 21-35."
+  },
+  {
+   "date": "2026-11-09",
+   "time": "",
+   "title": "Bible in the City",
+   "text": "A symposium on Monday 9 November organised by the Verbum Dei Missionaries, with keynote speakers and panelists, on rooting your life in the living Word of God."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "10:00",
+   "title": "Emmanuel",
+   "text": "A morning of reflection on Friday 13 November at 10am for those approaching retirement or in their later years."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610021033_20261004_SJCBT%20Bulletin%20v2.pdf?alt=media&token=70cfa440-5cc3-448d-ab86-c989cedf5387",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610091139_20261011_SJCBT%20Bulletin.pdf?alt=media&token=85f06731-eec1-4b7c-a832-062322e9535a",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [
-   [
-    "Mass",
-    "Friday",
-    "18:30",
-    [],
-    [
-     1
-    ]
-   ],
-   [
-    "Mass",
-    "Wednesday",
-    "18:30",
-    [],
-    [
-     1
-    ]
-   ]
-  ],
+  "only_on_parish_site": [],
   "only_on_mycatholic": [
    [
     "Mass",
     "Friday",
-    "18:30",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Wednesday",
-    "18:30",
-    [],
+    "19:30",
+    [
+     1
+    ],
     []
    ]
   ]
