@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-08",
+"asOf": "2026-10-09",
 "rules": {
 "1": [
 {
@@ -2053,16 +2053,6 @@
 ],
 "11": [
 {
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 6,
 "weeks": [],
 "except": [],
@@ -2071,26 +2061,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Weekday morning mass"
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "09:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "11:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 },
 {
 "d": 2,
@@ -2163,16 +2133,6 @@
 "note": ""
 },
 {
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "08:00",
-"lang": "Mandarin (中文)",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 6,
 "weeks": [],
 "except": [],
@@ -2180,7 +2140,47 @@
 "t": "18:00",
 "lang": "English",
 "loc": "Main Church",
-"note": ""
+"note": "Eve of All Saints' Day"
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "08:00",
+"lang": "Mandarin (中文)",
+"loc": "Main Church",
+"note": "All Saints' Day"
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "09:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day"
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "11:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day"
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day"
 }
 ],
 "17": [
@@ -7748,6 +7748,24 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-18",
+"type": "Confession",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday from 730pm to 830pm."
+},
+{
+"k": "r",
+"date": "2026-12-18",
+"type": "Adoration",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
+},
+{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -7764,6 +7782,78 @@
 "lang": "Teochew",
 "loc": "Main Church",
 "note": "Eve of All Saints' Day"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-18",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Advent Confession for Serangoon District"
+},
+{
+"k": "a",
+"date": "2026-10-11",
+"type": "Mass",
+"t": "15:00",
+"lang": "Vietnamese",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-10-25",
+"type": "Mass",
+"t": "15:00",
+"lang": "Vietnamese",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-08",
+"type": "Mass",
+"t": "15:00",
+"lang": "Vietnamese",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-22",
+"type": "Mass",
+"t": "15:00",
+"lang": "Vietnamese",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-13",
+"type": "Mass",
+"t": "15:00",
+"lang": "Vietnamese",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-27",
+"type": "Mass",
+"t": "15:00",
+"lang": "Vietnamese",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "12": [
@@ -7826,6 +7916,15 @@
 ],
 "16": [
 {
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-02",
 "type": "Mass",
@@ -7851,6 +7950,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "08:00",
+"lang": "English",
+"loc": "Chapel",
+"note": "Public Holiday"
 }
 ],
 "19": [
@@ -7956,17 +8064,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "1 Mass only on Public Holidays (Weekdays)"
-}
-],
-"24": [
-{
-"k": "r",
-"date": "2026-10-07",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel Of St Joseph",
-"note": ""
 }
 ],
 "25": [
