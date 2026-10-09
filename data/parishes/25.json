@@ -2,9 +2,9 @@
  "id": 25,
  "name": "St Joseph's Church (Victoria Street)",
  "source_urls": [
-  "https://drive.google.com/file/d/16q6pgjr767T_ZB5yIGKS3AyeNrJowbWd/view?usp=sharing"
+  "https://drive.google.com/file/d/1vmsrXp5gQejKZ9K-6-Rxtmd3651xjyO4/view?usp=sharing"
  ],
- "fetched_at": "2026-10-02T21:05+08:00",
+ "fetched_at": "2026-10-09T21:08+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -112,20 +112,18 @@
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "10:00"
  ],
- "notes": [
-  "No weekday Mass on public holidays."
- ],
+ "notes": [],
  "info": {
-  "confession": "Confession is 45 minutes before Mass. Confessions are available 30 minutes before the Spanish Mass."
+  "confession": "Confessions are available 45 minutes before Mass and 30 minutes before the Spanish Mass."
  },
  "events": [],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/16q6pgjr767T_ZB5yIGKS3AyeNrJowbWd/view?usp=sharing",
-  "date": "2026-10-04"
+  "url": "https://drive.google.com/file/d/1vmsrXp5gQejKZ9K-6-Rxtmd3651xjyO4/view?usp=sharing",
+  "date": "2026-10-11"
  },
  "disputes": [],
  "vs_mycatholic": {

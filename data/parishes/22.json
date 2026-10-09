@@ -2,9 +2,9 @@
  "id": 22,
  "name": "Church of St Francis Xavier",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610021652_Bulletin_2026_10_04_2.pdf?alt=media&token=c18abde0-18c1-47ec-916e-3e1bfc84e48f"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610091534_Bulletin_2026_10_11.pdf?alt=media&token=f8344516-6fad-4bb7-acd5-b16707e90769"
  ],
- "fetched_at": "2026-10-02T21:05+08:00",
+ "fetched_at": "2026-10-09T21:06+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -51,26 +51,6 @@
    "note": ""
   },
   {
-   "d": 0,
-   "t": "20:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Online",
-   "note": "Rosary by Lectors"
-  },
-  {
-   "d": 1,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Online",
-   "note": "Divine Mercy & Rosary"
-  },
-  {
    "d": 1,
    "t": "18:30",
    "weeks": [],
@@ -92,16 +72,6 @@
   },
   {
    "d": 2,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Online",
-   "note": "Divine Mercy & Rosary"
-  },
-  {
-   "d": 2,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -122,16 +92,6 @@
   },
   {
    "d": 3,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Online",
-   "note": "Divine Mercy & Rosary"
-  },
-  {
-   "d": 3,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -149,16 +109,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Online",
-   "note": "Divine Mercy & Rosary"
   },
   {
    "d": 4,
@@ -179,16 +129,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Online",
-   "note": "Divine Mercy & Rosary"
   },
   {
    "d": 5,
@@ -198,7 +138,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "By appointment only"
+   "note": "Until 18:00"
   },
   {
    "d": 5,
@@ -228,7 +168,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "By appointment only"
+   "note": "Until 12:00"
   },
   {
    "d": 6,
@@ -244,11 +184,20 @@
  "dated": [
   {
    "type": "Devotion",
-   "date": "2026-10-05",
+   "date": "2026-10-12",
    "time": "20:00",
    "language": "",
    "location": "Mount Tabor Adoration Room",
-   "title": "Intercessory",
+   "title": "Intercessory Prayer",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-13",
+   "time": "20:00",
+   "language": "",
+   "location": "Grotto",
+   "title": "Candlelight Rosary Procession",
    "action": "add"
   },
   {
@@ -275,66 +224,71 @@
   "09:00"
  ],
  "notes": [
-  "There is currently no Confession before Mass."
+  "No Confession before Mass."
  ],
  "info": {
   "adoration": "Adoration Room: Mon-Sun 7am-11pm; closed on public holidays.",
-  "confession": "Confession is by appointment only. Fridays 4pm-6pm; Saturdays 10am-12pm. Contact Parish Office to make an appointment. Closed on public holidays after 9am Mass.",
-  "devotions": [
-   "In October, the Holy Rosary is prayed in person 30 minutes before weekday Masses, and online (Mon-Fri 3pm; Sundays 8.30pm)."
-  ],
-  "office_hours": "Parish Office: Mon-Fri 9.30am-6.30pm; Sat-Sun 8.30am-1pm. Closed on public holidays.",
-  "good_to_know": [
-   "There is currently no Confession before Mass."
-  ]
+  "confession": "Confession: Fri 4pm-6pm, Sat 10am-12pm. Contact Parish Office to make an appointment. There is currently no Confession before Mass."
  },
  "events": [
   {
-   "date": "2026-10-04",
+   "date": "2026-10-11",
    "time": "",
    "title": "Sunday Fellowship",
-   "text": "The LiFE will be serving breakfast this Sunday at JPII Hall. Love offerings are welcome."
+   "text": "The RCIA Ministry will be serving breakfast this Sunday at JPII Hall. Do drop by for some food and fellowship. Love offerings are welcome!"
   },
   {
-   "date": "2026-10-05",
+   "date": "2026-10-12",
    "time": "20:00",
    "title": "Charismatic: Life in the Spirit – Growth Series",
-   "text": "8pm – 9.45pm at Hosea Room (Parish Centre, L2). Continue the journey of growing in faith and discovering the gifts of the Holy Spirit."
+   "text": "Part 3 of the Gifts of the Holy Spirit series with Gerard and Jessica Francisco, exploring Faith, Healing and Miracles. 8pm – 9.45pm at Hosea Room (Parish Centre, L2). All are welcome!"
   },
   {
-   "date": "2026-10-10",
-   "time": "09:30",
-   "title": "BRAVE – Work Well, Live Well",
-   "text": "9.30am - 1pm at Metro Y Hotel, The Vine Ballroom. World Mental Health Day event by Clarity and Catholic Business Network. Register: tinyurl.com/BRAVE1010"
+   "date": "2026-10-14",
+   "time": "20:00",
+   "title": "Biblical Apostolate Team: Fulfilled - Uncovering the Biblical Foundations of Catholicism (Part 2)",
+   "text": "Wednesdays, 14 Oct – 9 Dec (7 Sessions), 8pm - 10pm at JPII Hall. Enquiries: https://tinyurl.com/2026FulfilledPt2"
   },
   {
    "date": "2026-10-16",
    "time": "20:00",
    "title": "Faith That Lives with Fr Edward Lim: Encountering Christ in the Sacraments",
-   "text": "8pm – 10pm at JPII Hall. Part of LiFE series."
+   "text": "16 & 23 Oct (Fridays), 8pm – 10pm at JPII Hall. Come with your questions."
+  },
+  {
+   "date": "2026-10-16",
+   "time": "20:15",
+   "title": "TO GAZE: St Clare of Assisi",
+   "text": "Fri 16 & Sat 17 Oct, 8.15pm (60 minutes) at Main Church, St Mary of the Angels. Ticket: https://bookmyshow.sg/en/events/TOGAZE26"
   },
   {
    "date": "2026-10-17",
-   "time": "15:00",
-   "title": "Caritas Singapore: Young Missionaries of Hope – One in Christ, United in Mission",
-   "text": "3pm – 5.30pm (Virtual zoom). Register: bit.ly/unitedinmission"
+   "time": "20:15",
+   "title": "TO GAZE: St Clare of Assisi",
+   "text": "Fri 16 & Sat 17 Oct, 8.15pm (60 minutes) at Main Church, St Mary of the Angels. Ticket: https://bookmyshow.sg/en/events/TOGAZE26"
   },
   {
-   "date": "2026-10-23",
-   "time": "19:15",
-   "title": "Caritas Singapore: Legacy Talk – Ageing Gracefully, Leaving Meaningfully",
-   "text": "7.15pm – 9.30pm at Church of the Immaculate Heart of Mary. Register: www.bit.ly/legacyoct2026"
-  },
-  {
-   "date": "2026-10-23",
+   "date": "2026-10-22",
    "time": "20:00",
-   "title": "Faith That Lives with Fr Edward Lim: Encountering Christ in the Sacraments",
-   "text": "8pm – 10pm at JPII Hall. Part of LiFE series."
+   "title": "Safeguarding the Human Person During Digital Revolution: A Reading Group on Magnifica Humanitas with Fr Jerome Leon, SJ",
+   "text": "22 Oct - 19 Nov (Every Thursday), 8pm - 10pm at Catholic Centre, 55 Waterloo St (Lvl 3). Register: bit.ly/magnifica2026"
+  },
+  {
+   "date": "2026-10-24",
+   "time": "09:00",
+   "title": "At the Feet of the Good Shepherd Retreat",
+   "text": "Sat 24 Oct, 9am – Sun 25 Oct, 5pm at SFX Punggol Retreat Centre. Fee: $390 (inclusive of GST, ensuite accommodation and meals). Register: https://tinyurl.com/6aeesct9"
+  },
+  {
+   "date": "2026-11-01",
+   "time": "",
+   "title": "All Saints’ Day",
+   "text": "Come to Mass dressed as your favourite saint! Children and families are invited to celebrate the saints and learn from their example of faith and holiness."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610021652_Bulletin_2026_10_04_2.pdf?alt=media&token=c18abde0-18c1-47ec-916e-3e1bfc84e48f",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610091534_Bulletin_2026_10_11.pdf?alt=media&token=f8344516-6fad-4bb7-acd5-b16707e90769",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {

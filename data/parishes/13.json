@@ -2,9 +2,9 @@
  "id": 13,
  "name": "Church of Our Lady Queen of Peace",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610021704_2026_10%2004%20%20-%2027th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=7f96eba4-bd27-4f40-980e-2771d5041a64"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610091702_2026_10%2011%20%20-%2028th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=e0c49543-a4d8-4a6d-be5a-e9a063f895ec"
  ],
- "fetched_at": "2026-10-02T21:04+08:00",
+ "fetched_at": "2026-10-09T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -58,7 +58,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary"
+   "note": "Rosary, after the evening Mass"
   },
   {
    "d": 1,
@@ -88,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary"
+   "note": "Rosary, after the evening Mass"
   },
   {
    "d": 2,
@@ -118,7 +118,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary"
+   "note": "Rosary, after the evening Mass"
   },
   {
    "d": 3,
@@ -148,7 +148,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary"
+   "note": "Rosary, after the evening Mass"
   },
   {
    "d": 4,
@@ -178,7 +178,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary"
+   "note": "Rosary, after the evening Mass"
   },
   {
    "d": 5,
@@ -190,7 +190,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Sacred Heart Devotion"
+   "note": "Sacred Heart Devotion; also held after the evening Mass"
   },
   {
    "d": 5,
@@ -220,7 +220,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary"
+   "note": "Rosary, after the evening Mass"
   },
   {
    "d": 6,
@@ -260,67 +260,55 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary"
+   "note": "Rosary, after the evening Mass"
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [],
- "notes": [
-  "Public Holiday Mass is at 9:00am.",
-  "Sacred Heart Devotion is also held after the evening Mass on the first Friday of the month.",
-  "Divine Mercy Chaplet is recited after the 6.30pm Mass on the last Friday of the month."
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "09:00"
  ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room: 10am to 9pm.",
+  "adoration": "Adoration Room open 10am to 9pm.",
   "devotions": [
-   "Novena Devotion: Saturday at 4.15pm.",
-   "Sacred Heart Devotion: 1st Friday of the month at 12.00 noon & after evening Mass.",
-   "Divine Mercy Chaplet: recited after 6.30pm Mass every last Fri of the month.",
-   "Daily recitation of the Rosary after all evening Masses: 7pm on Weekdays and 6pm on Weekends at Assumption Garden."
+   "Divine Mercy Chaplet: last Friday of the month, after the 6.30pm Mass"
+  ],
+  "good_to_know": [
+   "Parish secretariat: 6744 2879, admin@queenofpeace.sg",
+   "Funeral Prayer Hall booking: WhatsApp 88493008 (text only, no calls)",
+   "Church weddings should be arranged at least 12 months in advance"
   ]
  },
  "events": [
   {
-   "date": "2026-10-04",
-   "time": "",
-   "title": "2026 Chinese Marriage Preparation Course (4 & 11 Oct 2026)",
-   "text": "Chinese marriage preparation course on 4 Oct and 11 Oct 2026, 9am-5pm at CANA The Catholic Centre. Fee: S$220 per couple. Register via catechetical website. Contacts: 秀琼 98524047, 美琏 97315662."
-  },
-  {
    "date": "2026-10-10",
-   "time": "",
-   "title": "Holy Family Spirituality Talk (by Fr Zhang Liyong)",
-   "text": "Talk on 10 Oct 2026, 9am-12pm at Holy Family Church, 4th floor prayer hall. Registration: 徐人心 94308817; 洪金惠 90918332. Love offering."
+   "time": "09:00",
+   "title": "Holy Family Spirituality Half-Day Talk-Retreat",
+   "text": "9am-12pm at Church of the Holy Family, Level 4 Prayer Hall. A half-day talk-retreat on praying and acting with the Holy Family; free-will offering. Register with 徐人心 94308817 or 洪金惠 90918332."
   },
   {
-   "date": "2026-11-06",
-   "time": "19:45",
-   "title": "Treasure #18 Retreat for Young Working Adults",
-   "text": "Stay-in Catholic Encounter Retreat from 6 Nov 2026, 7.45pm to 9 Nov 2026, 6pm at St. Francis Xavier Retreat Centre (199 Ponggol Seventeenth Avenue S829645). For ages 21-35. Fee: $163.50 (incl. 9% GST). Register: tinyurl.com/oyptreasure18. Email: treasure.oyp@catholic.org.sg."
-  },
-  {
-   "date": "2026-11-06",
-   "time": "20:00",
-   "title": "CTIS Information Night",
-   "text": "Information night on 6 Nov 2026, 8pm at CTIS Upper Bukit Timah. Applications open for CTIS Semester 1 2027 Certificate in Theology. Classes on weekday evenings, physical and online options. Closing date: 12 Dec 2026. Enquiries: 69028700."
+   "date": "2026-10-24",
+   "time": "09:00",
+   "title": "At the Feet of the Good Shepherd Retreat (FGS)",
+   "text": "In-person stay-in retreat, 24-25 October, starting 9am on day 1 and ending 5pm on day 2, at Punggol Retreat Centre, 199 Punggol Seventeenth Ave. For those carrying wounds from broken family relationships, separation, divorce or marriage difficulties. Fee $390; register at bit.ly/CDSG_FGS."
   },
   {
    "date": "2026-11-07",
    "time": "",
-   "title": "Introduction to Accompaniment",
-   "text": "One-day retreat on 7 Nov 2026, 9am-5pm at Lifesprings Canossian Spirituality Centre. Fee: $140/pax. Register: https://bit.ly/acom-intro. A collaboration between the Catholic Leadership Centre and Archdiocesan Pastoral Council."
+   "title": "Infant Baptism",
+   "text": "The next scheduled infant baptism is on Saturday 7 November 2026. Submit the application form with the pre-requisite documents to the Parish Office by 17 October 2026; contact the Parish Office for details."
   },
   {
    "date": "2026-12-10",
-   "time": "",
-   "title": "Four Dioceses Youth Rally 2026",
-   "text": "Youth rally from 10-16 Dec 2026, 10am-5pm at Singapore Catholic Spirituality Centre. Theme: '你们放心，我已战胜了世界！' (John 16:33). For youth 14 and above. Fee: S$175. Register: https://acams.org.sg/acams/2026-si-jiao-qu-youth-rally. Organised by Singapore Archdiocese Chinese Pastoral Commission."
+   "time": "10:00",
+   "title": "Four-Diocese Youth Rally 2026",
+   "text": "10-16 December, 10am-5pm at the Catholic Spirituality Centre, for young people aged 14 and above. Theme: 'Take courage, I have conquered the world' (Jn 16:33). Fee S$175; register at acams.org.sg/acams/2026-si-jiao-qu-youthrally."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610021704_2026_10%2004%20%20-%2027th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=7f96eba4-bd27-4f40-980e-2771d5041a64",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610091702_2026_10%2011%20%20-%2028th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=e0c49543-a4d8-4a6d-be5a-e9a063f895ec",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {

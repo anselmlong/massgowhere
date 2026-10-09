@@ -2,9 +2,9 @@
  "id": 5,
  "name": "Church of the Holy Cross",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610022109_English_Bulletin%204%20Oct.pdf?alt=media&token=a82194c7-9ca5-4357-95f2-16f213e711ca"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610091721_English_Bulletin%2011Oct.pdf?alt=media&token=dc7bcaac-6fb1-445e-98b0-edc20e89b091"
  ],
- "fetched_at": "2026-10-03T12:33+08:00",
+ "fetched_at": "2026-10-09T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -18,7 +18,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -28,7 +28,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -38,7 +38,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -48,7 +48,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -78,7 +78,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Lunchtime Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -118,7 +118,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Lunchtime Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -158,7 +158,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Lunchtime Mass"
+   "note": ""
   },
   {
    "d": 3,
@@ -194,14 +194,11 @@
    "d": 4,
    "t": "12:15",
    "weeks": [],
-   "except": [
-    1,
-    2
-   ],
+   "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Lunchtime Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -241,7 +238,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Lunchtime Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -293,7 +290,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Saturday Sunset Mass"
+   "note": "Sunset Mass"
   },
   {
    "d": 6,
@@ -303,17 +300,98 @@
    "type": "Mass",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Saturday Sunset Mass"
+   "note": "Sunset Mass"
   }
  ],
  "dated": [
   {
+   "type": "Devotion",
+   "date": "2026-10-30",
+   "time": "20:00",
+   "language": "English",
+   "location": "Zoom",
+   "title": "Parish Rosary",
+   "action": "add"
+  },
+  {
    "type": "Mass",
-   "date": "2026-11-01",
-   "time": "12:45",
+   "date": "2026-10-31",
+   "time": "16:10",
    "language": "English",
    "location": "",
-   "title": "Infant Baptism",
+   "title": "All Saints Day (Day of Obligation) Eve",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-31",
+   "time": "18:00",
+   "language": "Mandarin",
+   "location": "",
+   "title": "All Saints Day (Day of Obligation) Eve",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "07:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day (Day of Obligation)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "09:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day (Day of Obligation)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "11:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day (Day of Obligation)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "17:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day (Day of Obligation)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "06:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "All Souls Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "19:30",
+   "language": "Mandarin",
+   "location": "",
+   "title": "All Souls Day",
    "action": "add"
   }
  ],
@@ -321,108 +399,68 @@
  "public_holiday_masses": [
   "07:30"
  ],
- "notes": [
-  "No lunchtime Mass on the 1st and 2nd Thursday of the month."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room open daily until 22:00.",
-  "devotions": [
-   "Holy Hour: every 1st Friday at 20:00",
-   "Novena Devotion: every Saturday at 15:30",
-   "Lauds: weekdays at 06:15"
-  ]
+  "adoration": "Adoration Room is open daily until 10pm."
  },
  "events": [
   {
-   "date": "2026-10-08",
-   "time": "",
-   "title": "Faith Enrichment RCIA: Jesus and the Greatest Commandments",
-   "text": "All Saints Hall. All welcome, no pre-registration required."
-  },
-  {
    "date": "2026-10-15",
    "time": "",
-   "title": "Faith Enrichment RCIA: Jesus and the Greater Righteousness",
-   "text": "All Saints Hall. All welcome, no pre-registration required."
-  },
-  {
-   "date": "2026-10-16",
-   "time": "",
-   "title": "A Journey of Discipleship Retreat #2",
-   "text": "3-day stay-in retreat, $280. Catholic Spirituality Centre. Register at bit.ly/cscjdr2."
+   "title": "Faith Enrichment - RCIA",
+   "text": "Also 22 Oct, 29 Oct, 05 Nov. Topics: 15 Oct: Jesus and the Greater Righteousness; 22 Oct: Jesus and the Kingdom of God; 29 Oct: The Death and Resurrection of Christ; 05 Nov: The Holy Spirit and Birth of the Church. Pre-registration is not required. All are welcome."
   },
   {
    "date": "2026-10-17",
    "time": "",
-   "title": "Faith Enrichment RCIA: Four Last Things",
-   "text": "All Saints Hall. All welcome, no pre-registration required."
-  },
-  {
-   "date": "2026-10-22",
-   "time": "",
-   "title": "Faith Enrichment RCIA: Jesus and the Kingdom of God",
-   "text": "All Saints Hall. All welcome, no pre-registration required."
+   "title": "Young Missionaries of Hope: One in Christ, United in Mission (Virtual Zoom Event)",
+   "text": "Keynote speaker: Cardinal \"Ambo\", Vice-President of The Federation of Asian Bishops' Conferences. Sign up at bit.ly/unitedinmission. Enquiries: formation.cst@caritas-singapore.org."
   },
   {
    "date": "2026-10-23",
    "time": "",
-   "title": "CHOICE Weekend Programme",
-   "text": "For unmarried young adults aged 18-40, single or dating. ME House, 201B Punggol 17th Ave S829651. Register at bit.ly/ChoiceSG26."
+   "title": "Choice Weekend Programme",
+   "text": "For all unmarried young adults, single or dating, 18 to 40 years old. Venue: ME House, 201B Punggol 17th Ave S829651. Register at bit.ly/ChoiceSG26 or visit Choice Singapore."
   },
   {
    "date": "2026-10-24",
    "time": "13:00",
-   "title": "Infant Baptism preparatory session",
-   "text": "St Michael's Room. Compulsory for parents and godparents. Closing date for registration: 18 Oct 2026."
-  },
-  {
-   "date": "2026-10-29",
-   "time": "",
-   "title": "Faith Enrichment RCIA: The Death and Resurrection of Christ",
-   "text": "All Saints Hall. All welcome, no pre-registration required."
+   "title": "Infant Baptism Preparatory Session",
+   "text": "Compulsory for parents and God-parents. Closing date for registration: 18 Oct 2026. Venue: St Michael's Room."
   },
   {
    "date": "2026-10-30",
    "time": "",
-   "title": "These Catholic Men - Fireside Chat on Masculinity",
-   "text": "PICO Event Hall. Dinner provided. Register at familylife.sg/TCMM."
+   "title": "These Catholic Men - A Fireside Chat on Masculinity",
+   "text": "Dinner provided. Venue: PICO Event Hall. Register via familylife.sg/TCMM."
   },
   {
-   "date": "2026-11-06",
+   "date": "2026-11-13",
    "time": "",
-   "title": "Treasure #18 Retreat for Young Working Adults",
-   "text": "Stay-in retreat, $163.50, ages 21-35. St Francis Xavier Retreat Centre. Register at tinyurl.com/oyp-treasure18."
-  },
-  {
-   "date": "2026-11-21",
-   "time": "",
-   "title": "OYP Outreach for Sec 4 & 5 Students",
-   "text": "Catholic Centre. Free. Register at tinyurl.com/SecOutreach26Nov."
+   "title": "Emmanuel: Walking with God in Our Golden Years",
+   "text": "$20 for 1 pax | $35 for 2 pax. Venue: St Joseph Church (Bt Timah). Register at FAMILYLIFE.SG/EWWG."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610022109_English_Bulletin%204%20Oct.pdf?alt=media&token=a82194c7-9ca5-4357-95f2-16f213e711ca",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610091721_English_Bulletin%2011Oct.pdf?alt=media&token=dc7bcaac-6fb1-445e-98b0-edc20e89b091",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
    [
     "Mass",
-    "Thursday",
-    "12:15",
+    "Monday",
+    "06:30",
     [],
-    [
-     1,
-     2
-    ]
+    []
    ]
   ],
   "only_on_mycatholic": [
    [
     "Mass",
-    "Thursday",
-    "12:15",
+    "Monday",
+    "07:30",
     [],
     []
    ]

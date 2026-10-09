@@ -2,9 +2,9 @@
  "id": 10,
  "name": "Church of Our Lady of Lourdes",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610031430_20261004_27th_OT.pdf?alt=media&token=23d7ae05-fba3-4c1b-b957-f0960d491e69"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610091434_20261011_28th_OT.pdf?alt=media&token=3b04605d-70d5-4f70-900f-315ddb435cd0"
  ],
- "fetched_at": "2026-10-03T21:01+08:00",
+ "fetched_at": "2026-10-09T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "",
-   "note": "1st Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -62,7 +62,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "2nd Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -82,7 +82,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 1,
@@ -112,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": ""
   },
   {
    "d": 2,
@@ -142,7 +142,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 3,
@@ -172,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 4,
@@ -202,7 +202,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 5,
@@ -242,7 +242,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Our Lady of Good Health, Vailankanni"
+   "note": ""
   },
   {
    "d": 6,
@@ -257,28 +257,16 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "09:00",
-  "10:00"
- ],
+ "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room is open daily 8:00am to 8:00pm.",
-  "confession": "The Sacrament of Reconciliation is available 30 minutes before every Mass.",
-  "devotions": [
-   "Rosary: Monday, Wednesday, Thursday and Friday 11:45am (not on Tuesdays)",
-   "Divine Mercy: Tuesdays 11:45am",
-   "Our Lady of Good Health, Vailankanni: Saturdays 5:30pm"
-  ],
-  "office_hours": "Parish Office: Mon-Fri 10:00am-6:00pm; Sat 2:00pm-8:00pm; Sun 9:00am-2:00pm.",
-  "good_to_know": [
-   "Bookshop: Saturdays 5:00pm-8:00pm and Sundays 8:30am-1:00pm; closed on public holidays."
-  ]
+  "adoration": "Adoration Room: Daily 8:00am to 8:00pm.",
+  "confession": "Sacrament of Reconciliation is available 30 minutes before."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610031430_20261004_27th_OT.pdf?alt=media&token=23d7ae05-fba3-4c1b-b957-f0960d491e69",
-  "date": "2026-10-03"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610091434_20261011_28th_OT.pdf?alt=media&token=3b04605d-70d5-4f70-900f-315ddb435cd0",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {

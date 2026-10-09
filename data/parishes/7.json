@@ -2,9 +2,9 @@
  "id": 7,
  "name": "Church of the Holy Spirit",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610021421_CHS_Bulletin%203%20-%204%20October%202026.pdf?alt=media&token=48c4f495-1cf5-44f7-a591-2cc94fa895e5"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610091647_CHS_Bulletin%2010%20-%2011%20Oct%202026.pdf?alt=media&token=5da92e8a-ddef-440d-929f-e1c38f49bb48"
  ],
- "fetched_at": "2026-10-02T21:02+08:00",
+ "fetched_at": "2026-10-09T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -28,7 +28,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 0,
@@ -58,7 +58,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 0,
@@ -88,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 0,
@@ -118,7 +118,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 0,
@@ -148,7 +148,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 1,
@@ -178,7 +178,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 2,
@@ -228,7 +228,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 4,
@@ -258,7 +258,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 5,
@@ -298,7 +298,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Holy Rosary, October"
   },
   {
    "d": 6,
@@ -318,14 +318,68 @@
    "time": "17:00",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Vigil Mass",
+   "title": "All Saints Vigil Mass",
    "action": "add"
   },
   {
    "type": "Mass",
+   "date": "2026-11-01",
+   "time": "07:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "09:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "11:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "17:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "07:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "19:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls",
+   "action": "add"
+  },
+  {
+   "type": "Other",
    "date": "2026-11-07",
    "time": "09:00",
-   "language": "English",
+   "language": "",
    "location": "Main Church",
    "title": "Infant Baptism",
    "action": "add"
@@ -336,29 +390,28 @@
   "09:00"
  ],
  "notes": [
-  "Confessions cease when Mass begins.",
-  "The Chapel is closed on Sundays and public holidays.",
-  "No Rosary before Wednesday evening Mass."
+  "Rosary before Masses is for October.",
+  "All Saints' Day is a day of obligation."
  ],
  "info": {
-  "adoration": "Adoration Room: Daily 08:00–21:30. Chapel: Mon–Fri 08:00–18:30, Sat 08:00–12:00; closed Sundays and public holidays.",
-  "confession": "30 minutes before Sunset Mass on Saturday and all Masses on Sunday. Confessions cease when Mass begins.",
+  "adoration": "Adoration Room: Daily 08:00–21:30. Chapel: Mon–Fri 08:00–18:30, Sat 08:00–12:00; closed Sundays and public holidays. Oratory: Mon–Fri 10:00–22:00, Sat & Sun 13:00–22:00.",
+  "confession": "Confessions are 30 minutes before Sunset Mass on Saturday and all Masses on Sunday; they cease when Mass begins.",
   "devotions": [
-   "Recitation of the Holy Rosary 30 minutes before all weekend Masses and weekday evening Masses, except on Wednesdays."
+   "In October, the Holy Rosary is recited 30 minutes before all weekend Masses and weekday evening Masses (except Wednesdays)."
   ],
   "office_hours": "Parish Office: Mon–Fri 08:00–16:00, Sat 08:00–12:00, Sun 08:00–13:00; closed on public holidays.",
   "good_to_know": [
-   "Oratory: Mon–Fri 10:00–22:00, Sat & Sun 13:00–22:00.",
-   "Columbarium: Daily 08:00–21:30.",
-   "7Gifts: Tue & Thu 08:00–12:00, Sat 16:00–18:15, Sun 08:00–12:45 and 16:30–18:15."
+   "All Saints' Day is a day of obligation.",
+   "Blessing of niches after both All Souls Masses.",
+   "Infant Baptism preparation session is compulsory for both parents and godparents."
   ]
  },
  "events": [
   {
-   "date": "2026-10-09",
+   "date": "2026-10-16",
    "time": "19:45",
    "title": "CHS Youth Session",
-   "text": "Movie Night at Youth Room #02-01. All youths aged 13 & above are welcome."
+   "text": "Session Theme: Night of Games & Fellowship. All youths aged 13 & above are welcome! Venue: Canteen."
   },
   {
    "date": "2026-10-31",
@@ -370,12 +423,12 @@
    "date": "2026-10-31",
    "time": "18:30",
    "title": "NCC Potluck",
-   "text": "At CHS Canteen, 18:30–21:30. Bring food to share. Register by 25 October via the link. All Saints' Day vigil Mass is at 17:00, a day of obligation."
+   "text": "6:30 PM - 9:30 PM. Venue: CHS Canteen. Bring food to share. Register by 25 October. All Saints' Day vigil Mass is at 5:00 PM, a day of obligation."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610021421_CHS_Bulletin%203%20-%204%20October%202026.pdf?alt=media&token=48c4f495-1cf5-44f7-a591-2cc94fa895e5",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610091647_CHS_Bulletin%2010%20-%2011%20Oct%202026.pdf?alt=media&token=5da92e8a-ddef-440d-929f-e1c38f49bb48",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {

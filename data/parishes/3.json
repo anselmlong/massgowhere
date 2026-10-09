@@ -2,9 +2,9 @@
  "id": 3,
  "name": "Church of Christ the King",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2610021230_CTK_LEAVEN%204%20Oct%20Final.pdf?alt=media&token=f29fa668-d29e-4e09-bd99-497299785851"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2610091358_CTK_LEAVEN%2011%20Oct%20Final.pdf?alt=media&token=196a0992-89fe-4e22-abc7-934f5a8da424"
  ],
- "fetched_at": "2026-10-02T21:02+08:00",
+ "fetched_at": "2026-10-09T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -12,13 +12,33 @@
  "rules": [
   {
    "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Half an hour before 7am Mass"
+  },
+  {
+   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Half an hour before 8.30am Mass"
   },
   {
    "d": 0,
@@ -27,8 +47,18 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Half an hour before 10am Mass"
   },
   {
    "d": 0,
@@ -37,8 +67,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Half an hour before 11.30am Mass"
   },
   {
    "d": 0,
@@ -47,8 +87,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Half an hour before 5pm Mass"
   },
   {
    "d": 0,
@@ -57,8 +107,20 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "18:00",
+   "weeks": [
+    4
+   ],
+   "except": [],
+   "type": "Confession",
+   "lang": "Tamil",
+   "loc": "Main Church",
+   "note": "Half an hour before Tamil Mass on 4th Sunday"
   },
   {
    "d": 0,
@@ -79,7 +141,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -89,7 +151,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -98,29 +160,19 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Divine Mercy Devotion"
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": ""
   },
   {
    "d": 3,
@@ -129,7 +181,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -139,7 +191,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -149,7 +201,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -159,7 +211,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -169,7 +221,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -179,7 +231,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -189,8 +241,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "Half an hour before 5pm Mass"
   },
   {
    "d": 6,
@@ -199,72 +261,129 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": "Sunset Mass"
+   "loc": "Main Church",
+   "note": "Sunset"
   }
  ],
  "dated": [
   {
-   "type": "Devotion",
-   "date": "2026-10-07",
-   "time": "18:00",
+   "action": "add",
+   "date": "2026-10-20",
    "language": "English",
    "location": "Main Church",
-   "title": "Our Lady of the Rosary - Rosary Recitation",
-   "action": "add"
+   "time": "19:30",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
   },
   {
-   "type": "Mass",
-   "date": "2026-11-08",
-   "time": "15:00",
+   "action": "add",
+   "date": "2026-10-26",
    "language": "English",
-   "location": "",
-   "title": "Infant Baptism",
-   "action": "add"
+   "location": "Main Church",
+   "time": "19:30",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-10-26",
+   "language": "English",
+   "location": "Main Church",
+   "time": "20:45",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-10-27",
+   "language": "English",
+   "location": "Main Church",
+   "time": "19:30",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-10-27",
+   "language": "English",
+   "location": "Main Church",
+   "time": "20:45",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-10-28",
+   "language": "English",
+   "location": "Main Church",
+   "time": "19:30",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-10-28",
+   "language": "English",
+   "location": "Main Church",
+   "time": "20:45",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-10-31",
+   "language": "English",
+   "location": "Main Church",
+   "time": "19:30",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-11-01",
+   "language": "English",
+   "location": "Main Church",
+   "time": "19:30",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-11-02",
+   "language": "English",
+   "location": "Main Church",
+   "time": "19:30",
+   "title": "Prayer Meeting for the Feast of St. Jude",
+   "type": "Mass"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30",
   "09:00"
  ],
  "notes": [
-  "No weekday Mass on public holidays.",
-  "Public holiday Masses are at 7.30am and 9am.",
-  "Confession is available half an hour before all weekend Masses."
+  "Public holiday Masses are at 7.30am and 9am."
  ],
  "info": {
-  "adoration": "Adoration Room: Mon-Sun 7am to 9.30pm; public holidays 7am to 12 noon.",
+  "adoration": "Adoration Room is open Mon-Sun 7am to 9.30pm; public holidays 7am to 12 noon.",
   "confession": "Confession is available half an hour before all weekend Masses.",
   "devotions": [
    "Divine Mercy Devotion: every Tuesday at 8pm in the Main Church.",
-   "Sacred Heart Devotion: every Friday after the 6pm evening Mass in the Main Church.",
-   "Nightly Rosary via Zoom at 8.30pm except Tuesdays."
+   "Nightly Rosary via Zoom: 8.30pm except Tuesdays.",
+   "Sacred Heart Devotion: every Friday after 6pm evening Mass in the Main Church."
   ],
   "office_hours": "Parish Office: Mon-Fri 9am to 6pm; Sat & Sun 9am to 1pm; public holidays closed.",
   "good_to_know": [
-   "Tamil Mass is at the Main Church on the 4th Sunday of the month at 6.30pm.",
-   "Free legal consultation is held on every last Tuesday of the month at 7pm; registration required, strictly no walk-ins.",
-   "Pro-bono counselling is available face-to-face in CTK every Monday at 7.30pm and 8.45pm, or via Zoom from Monday to Saturday."
+   "Tamil Mass at the Main Church on the 4th Sunday of the month at 6.30pm.",
+   "All Saints Day (1 November) is a Holy Day of Obligation.",
+   "All Souls' Day is 2 November; blessing of niches in the columbarium after 6pm Mass."
   ]
  },
- "events": [
-  {
-   "date": "2026-10-10",
-   "time": "",
-   "title": "Parish Day of Recollection",
-   "text": "Featuring Triumph of the Heart, the inspiring true story of St. Maximilian Kolbe. Open to parishioners, families and friends aged 13 and above. Register early as seats are limited."
-  },
-  {
-   "date": "2026-11-24",
-   "time": "",
-   "title": "Kidz Bible Camp",
-   "text": "24 to 26 November 2026."
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2610021230_CTK_LEAVEN%204%20Oct%20Final.pdf?alt=media&token=f29fa668-d29e-4e09-bd99-497299785851",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2610091358_CTK_LEAVEN%2011%20Oct%20Final.pdf?alt=media&token=196a0992-89fe-4e22-abc7-934f5a8da424",
+  "date": "2026-10-09"
  },
  "disputes": [],
  "vs_mycatholic": {
