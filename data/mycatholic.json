@@ -6308,15 +6308,6 @@
 "5": [
 {
 "k": "r",
-"date": "2026-10-08",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-02",
 "type": "Mass",
 "t": "12:15",
@@ -8064,6 +8055,53 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "1 Mass only on Public Holidays (Weekdays)"
+}
+],
+"22": [
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day mass"
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' day mass"
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "1 Mass only. Public Holiday in lieu (Deepavali)"
 }
 ],
 "25": [
