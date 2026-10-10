@@ -2,14 +2,24 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610031237_Spotlight_oct%2026%20PA%20edited%20(ST).pdf?alt=media&token=88fbaf72-5f92-470c-ab54-9fe51edee5c7"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610101714_CHURCH_BULLETIN%20%2011-17%20Oct.pdf?alt=media&token=04608af7-dd1a-4f02-a374-83b8aab810fc"
  ],
- "fetched_at": "2026-10-03T21:03+08:00",
+ "fetched_at": "2026-10-10T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
+  {
+   "d": 0,
+   "t": "07:05",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "Mandarin",
+   "loc": "",
+   "note": "Rosary during October, before the 7.30am Mandarin Mass"
+  },
   {
    "d": 0,
    "t": "07:30",
@@ -50,7 +60,7 @@
    "type": "Mass",
    "lang": "Bahasa Indonesia",
    "loc": "",
-   "note": ""
+   "note": "Last Sunday of the month"
   },
   {
    "d": 0,
@@ -74,7 +84,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "3rd Sunday only"
   },
   {
    "d": 0,
@@ -111,20 +121,10 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "During October only; at the main church, before the 6.30pm Mass."
-  },
-  {
-   "d": 1,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass."
+   "note": "Rosary during October, before the 6.30pm Mass"
   },
   {
    "d": 1,
@@ -161,20 +161,10 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "During October only; at the main church, before the 6.30pm Mass."
-  },
-  {
-   "d": 2,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass."
+   "note": "Rosary during October, before the 6.30pm Mass"
   },
   {
    "d": 2,
@@ -211,20 +201,10 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "During October only; at the main church, before the 6.30pm Mass."
-  },
-  {
-   "d": 3,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass."
+   "note": "Rosary during October, before the 6.30pm Mass"
   },
   {
    "d": 3,
@@ -261,20 +241,10 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "During October only; at the main church, before the 6.30pm Mass."
-  },
-  {
-   "d": 4,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass."
+   "note": "Rosary during October, before the 6.30pm Mass"
   },
   {
    "d": 4,
@@ -311,20 +281,10 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "During October only; at the main church, before the 6.30pm Mass."
-  },
-  {
-   "d": 5,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass."
+   "note": "Rosary during October, before the 6.30pm Mass"
   },
   {
    "d": 5,
@@ -335,6 +295,40 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "19:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Eucharistic Adoration, Sacred Heart of Jesus"
+  },
+  {
+   "d": 5,
+   "t": "19:45",
+   "weeks": [
+    2
+   ],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Intercessory Prayers"
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Divine Mercy"
   },
   {
    "d": 6,
@@ -348,13 +342,35 @@
   },
   {
    "d": 6,
+   "t": "09:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": "Eucharistic Adoration, Immaculate Heart of Mary"
+  },
+  {
+   "d": 6,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Novena to our Blessed Mother"
+  },
+  {
+   "d": 6,
    "t": "18:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday vigil Mass"
   },
   {
    "d": 6,
@@ -366,19 +382,10 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": ""
+   "note": "3rd Saturday only"
   }
  ],
  "dated": [
-  {
-   "type": "Devotion",
-   "date": "2026-10-07",
-   "time": "20:00",
-   "language": "English",
-   "location": "Blk 94, #03-758 Commonwealth Drive",
-   "title": "Block Rosary",
-   "action": "add"
-  },
   {
    "type": "Mass",
    "date": "2026-10-13",
@@ -390,65 +397,65 @@
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "08:30"
- ],
- "notes": [
-  "Public holidays observe a different Mass schedule."
- ],
+ "public_holiday_masses": [],
+ "notes": [],
  "info": {
+  "adoration": "Eucharistic Adoration: 1st Friday 7pm (Sacred Heart of Jesus) and 1st Saturday 9am (Immaculate Heart of Mary).",
+  "confession": "Confession is available 15 minutes before every Mass.",
   "devotions": [
-   "Block Rosary: 5-7 Oct at 8.00pm at Blk 94, #03-758 Commonwealth Drive. Host: Amelia Paulete. There will be no Block Rosary on 12-14 Oct.",
-   "During October, the Rosary is prayed at 6.00pm from Monday to Friday, right before the 6.30pm Mass at the main church. All are welcome to join."
+   "Divine Mercy: Fridays 8pm",
+   "Intercessory Prayers: 2nd Friday 7.45pm",
+   "Novena to our Blessed Mother: Saturdays 5pm",
+   "Rosary: Mondays to Fridays 6pm during October, before the 6.30pm Mass at the main church",
+   "Rosary: Sundays 7.05am during October, before the 7.30am Mandarin Mass"
   ],
-  "good_to_know": [
-   "Infant Baptism: every 2nd Sunday of the month at the 5.30pm Mass. For the next baptism schedule for children, contact the Parish Office.",
-   "Anointing of the Sick: please make an appointment with the Secretariat for a priest to minister.",
-   "Holy Matrimony: couples must inform the Priest at least 6 months before booking the Church for the Wedding Mass/Service.",
-   "Adult Baptism or Confirmation: contact rcia.bsc@gmail.com for more information."
-  ]
+  "office_hours": "10am-6pm"
  },
  "events": [
   {
-   "date": "2026-10-08",
+   "date": "2026-10-11",
    "time": "",
-   "title": "Catholic Identity Growth Series: Jesus in our Sacraments",
-   "text": "7-session faith formation journey every Thursday from 7.30 to 9.30pm at Damien Hall. Register at https://tinyurl.com/growthseriesregistration."
+   "title": "圣体堂 10 月交流坊 (Parish Exchange Workshop)",
+   "text": "Theme: 同心携力. All parishioners are invited to come together, get to know one another and build friendships in the parish community."
   },
   {
-   "date": "2026-10-13",
+   "date": "2026-10-17",
    "time": "",
-   "title": "Human Dignity and Development in the Era of AI",
-   "text": "Fr David Garcia OP explores the impact of AI in light of Pope Leo XIV's encyclical Magnifica Humanitas at the Catholic Centre. Register at bit.ly/dignityoct."
+   "title": "Young Missionaries of Hope: One in Christ, United in Mission",
+   "text": "Sat 17 Oct via Zoom, with a keynote by Cardinal \"Ambo\" and sharings from Catholics in Myanmar, Cambodia, the Philippines and Malaysia. Sign up at bit.ly/unitedinmission."
   },
   {
    "date": "2026-10-17",
    "time": "",
    "title": "CARE Outreach Weekend",
-   "text": "Catholic AIDS Response Effort (CARE) will be at our parish on 17 & 18 October to raise awareness. Visit their booth to learn more about their cause and browse handcrafted items made by CARE's beneficiaries, including rosaries, crucifixes, candles, and 3D-printed items."
+   "text": "Catholic AIDS Response Effort visits Blessed Sacrament Church on 17 & 18 Oct with a booth to raise awareness; handcrafted items made by CARE's beneficiaries, including rosaries, crucifixes, candles and 3D-printed items, are available."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "08:00",
+   "title": "圣爱相随—徒步朝圣 (Walking Pilgrimage)",
+   "text": "8am gather at St Joseph's Church Bukit Timah, pray and walk to the Church of Our Lady of the Angels (about 1 hour); 9am gather at the Church of Our Lady of the Angels. No registration needed — just turn up. Bring rosary, water, hat, rain gear, towel, sunscreen and personal medication, and wear comfo"
+  },
+  {
+   "date": "2026-10-18",
+   "time": "08:30",
+   "title": "Ministry Open House 2026",
+   "text": "Mission Sunday, 18 Oct, 8.30am to 1pm in Damien Hall. Enjoy breakfast at The Tent, then discover the ministries that make BSC a home."
+  },
+  {
+   "date": "2026-10-19",
+   "time": "20:00",
+   "title": "Block Rosary",
+   "text": "19-21 Oct, 8pm, at Blk 43A #34-304 Margaret Drive, hosted by Freda Leon. All are welcome."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610031237_Spotlight_oct%2026%20PA%20edited%20(ST).pdf?alt=media&token=88fbaf72-5f92-470c-ab54-9fe51edee5c7",
-  "date": "2026-10-03"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610101714_CHURCH_BULLETIN%20%2011-17%20Oct.pdf?alt=media&token=04608af7-dd1a-4f02-a374-83b8aab810fc",
+  "date": "2026-10-10"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
-   [
-    "Mass",
-    "Friday",
-    "18:00",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Monday",
-    "18:00",
-    [],
-    []
-   ],
    [
     "Mass",
     "Sunday",
@@ -465,27 +472,6 @@
     [
      3
     ],
-    []
-   ],
-   [
-    "Mass",
-    "Thursday",
-    "18:00",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Tuesday",
-    "18:00",
-    [],
-    []
-   ],
-   [
-    "Mass",
-    "Wednesday",
-    "18:00",
-    [],
     []
    ]
   ],

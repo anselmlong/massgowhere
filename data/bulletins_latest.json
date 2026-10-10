@@ -1,12 +1,12 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-10T12:31+08:00",
+ "fetchedAt": "2026-10-10T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
-   "title": "4th - 10th Oct 2026",
-   "date": "2026-10-03",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610031237_Spotlight_oct%2026%20PA%20edited%20(ST).pdf?alt=media&token=88fbaf72-5f92-470c-ab54-9fe51edee5c7",
+   "title": "11th - 17th Oct 2026",
+   "date": "2026-10-10",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610101714_CHURCH_BULLETIN%20%2011-17%20Oct.pdf?alt=media&token=04608af7-dd1a-4f02-a374-83b8aab810fc",
    "page": "https://mycatholic.sg/bulletin/blessedsacrament"
   },
   "2": {
@@ -95,9 +95,9 @@
   },
   "14": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 4 Oct 2026",
-   "date": "2026-10-02",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610021215_Bulletin_-%204%20Oct%202026.pdf?alt=media&token=916bba37-51b7-4dec-b497-5ad943bd1ee4",
+   "title": "Bulletin - 11 Oct 2026",
+   "date": "2026-10-10",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610101233_Bulletin_-%2011Oct%202026.pdf?alt=media&token=a049d593-c3e3-493c-9218-e2ff544bb216",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {
@@ -202,9 +202,9 @@
   },
   "29": {
    "from": "myCatholicSG",
-   "title": "20261004 Church Bulletin 04 October 2026",
-   "date": "2026-10-03",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2610032159_CST_BULLETIN%20-%2004%20Oct%2026.pdf?alt=media&token=74a30644-1361-47e9-b500-de4f95e8dc42",
+   "title": "20261011 Church Bulletin 11 OCtober 2026",
+   "date": "2026-10-10",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2610101830_CST_BULLETIN%20-%2011%20Oct%2026.pdf?alt=media&token=953c7007-eaa7-4de2-adf4-ad5f8f05267e",
    "page": "https://mycatholic.sg/bulletin/stteresa"
   },
   "30": {
