@@ -460,10 +460,12 @@
     "29": {
       "adoration": {
         "from": "parish website",
-        "loc": "Main Church",
-        "unconfirmed": "The parish lists the Chapel of Mount Carmel, 7am–9pm, without saying it's an Adoration room or on which days.",
+        "loc": "Chapel of Mount Carmel",
+        "hours": [
+          { "days": [ 0, 1, 2, 3, 4, 5, 6 ], "from": "07:00", "to": "21:00", "source": "reported" }
+        ],
         "sessions": [
-          { "days": [ 5 ], "weeks": [ 1 ], "t": "20:00", "name": "First Friday Holy Hour" }
+          { "days": [ 5 ], "weeks": [ 1 ], "t": "20:00", "name": "First Friday Holy Hour", "loc": "Main Church" }
         ]
       },
       "confession": {
