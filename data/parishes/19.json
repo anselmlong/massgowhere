@@ -2,9 +2,9 @@
  "id": 19,
  "name": "Church of St Anthony",
  "source_urls": [
-  "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_03.pdf"
+  "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_11.pdf"
  ],
- "fetched_at": "2026-10-03T12:32+08:00",
+ "fetched_at": "2026-10-10T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -138,24 +138,6 @@
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-10-03",
-   "time": "19:30",
-   "language": "Malayalam",
-   "location": "",
-   "title": "Malayalam Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-10-07",
-   "time": "18:30",
-   "language": "English",
-   "location": "",
-   "title": "Feast of Our Lady of the Rosary",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
    "date": "2026-10-10",
    "time": "19:30",
    "language": "Tamil",
@@ -178,7 +160,7 @@
    "time": "19:30",
    "language": "English",
    "location": "Church Hall",
-   "title": "Living Rosary",
+   "title": "The Living Rosary",
    "action": "add"
   },
   {
@@ -189,38 +171,44 @@
    "location": "",
    "title": "Tagalog Mass",
    "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-31",
+   "time": "19:30",
+   "language": "Malayalam",
+   "location": "",
+   "title": "Malayalam Mass",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "No weekday Mass on public holidays is not stated.",
-  "Confessions are 15 minutes before Mass.",
-  "Divine Mercy Devotion on Friday is except first Friday."
- ],
+ "notes": [],
  "info": {
-  "confession": "Confessions: 15 mins before Mass.",
+  "confession": "Confessions are 15 minutes before Mass.",
   "devotions": [
-   "Devotion to St Anthony: Tuesday after 6.30pm Mass.",
-   "Devotion to the Sacred Heart of Jesus: First Friday, after the 6.30pm Mass."
-  ],
-  "office_hours": "Monday to Saturday: 9am to 5pm; Sunday: 9am to 1pm; Public Holidays: Closed.",
-  "good_to_know": [
-   "Mass stipend: $10 per name, per Mass.",
-   "Email Mass intentions to massintentions@saint-anthony.org at least 1 week before the Mass date."
+   "Devotion to St Anthony on Tuesday after the 6.30pm Mass.",
+   "Devotion to the Sacred Heart of Jesus on First Friday after the 6.30pm Mass."
   ]
  },
  "events": [
   {
-   "date": "2026-10-17",
-   "time": "19:30",
-   "title": "The Living Rosary",
-   "text": "A joint collaboration of our language communities and the Legion of Mary, this meaningful gathering welcomes everyone to share in faith, devotion, and fellowship on 17 Oct, 7:30pm at the Church Hall."
+   "date": "2026-10-25",
+   "time": "14:00",
+   "title": "CSA Funeral Workshop Part 1",
+   "text": "Find out more about the Church's funeral and wake rites. Register at bit.ly/CSAFuneralWS."
+  },
+  {
+   "date": "2026-11-01",
+   "time": "14:00",
+   "title": "CSA Funeral Workshop Part 2",
+   "text": "Find out more about the Church's funeral and wake rites. Register at bit.ly/CSAFuneralWS."
   }
  ],
  "bulletin": {
-  "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_03.pdf",
-  "date": "2026-10-04"
+  "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_11.pdf",
+  "date": "2026-10-11"
  },
  "disputes": [],
  "vs_mycatholic": {

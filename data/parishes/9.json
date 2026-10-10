@@ -2,9 +2,9 @@
  "id": 9,
  "name": "Church of the Immaculate Heart of Mary",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610021421_40_27%20Sun%20in%20Ord%20Time%204Oct26.pdf?alt=media&token=515b1af7-bc46-4e44-9f5d-fd2b23d70d59"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610100830_41_28th%20Sun%20in%20Ord%20Sun%2011Oct26.pdf?alt=media&token=3a7d5a79-6f42-451f-a767-0e7f6505465b"
  ],
- "fetched_at": "2026-10-02T21:02+08:00",
+ "fetched_at": "2026-10-10T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -181,7 +181,7 @@
    "type": "Mass",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Anticipatory Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -191,7 +191,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Anticipatory Mass"
+   "note": ""
   }
  ],
  "dated": [],
@@ -203,19 +203,19 @@
   {
    "date": "2026-10-31",
    "time": "",
-   "title": "Infant Baptism briefing",
-   "text": "Briefing Date for Infant Baptism."
+   "title": "Infant Baptism Briefing",
+   "text": "Briefing Date: 31 Oct 2026"
   },
   {
    "date": "2026-11-07",
    "time": "",
-   "title": "Infant Baptism",
-   "text": "Baptism Day."
+   "title": "Infant Baptism Day",
+   "text": "Baptism Day: 07 Nov 2026"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610021421_40_27%20Sun%20in%20Ord%20Time%204Oct26.pdf?alt=media&token=515b1af7-bc46-4e44-9f5d-fd2b23d70d59",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610100830_41_28th%20Sun%20in%20Ord%20Sun%2011Oct26.pdf?alt=media&token=3a7d5a79-6f42-451f-a767-0e7f6505465b",
+  "date": "2026-10-10"
  },
  "disputes": [],
  "vs_mycatholic": {

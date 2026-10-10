@@ -2,9 +2,9 @@
  "id": 15,
  "name": "Church of the Risen Christ",
  "source_urls": [
-  "https://drive.google.com/file/d/1opVm-nNiIdVzLBVVZOGgoinnME3HK0WK/view"
+  "https://drive.google.com/file/d/1Y6ZSDoTfx0b3_QtF5npdQ0vSXBGjDiep/view"
  ],
- "fetched_at": "2026-10-02T21:04+08:00",
+ "fetched_at": "2026-10-10T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -27,8 +27,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
-   "note": ""
+   "loc": "Church of the Risen Christ",
+   "note": "(M)"
   },
   {
    "d": 0,
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -47,7 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -59,8 +59,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "",
-   "note": ""
+   "loc": "Daughters of St Paul",
+   "note": "Monthly Mass"
   },
   {
    "d": 0,
@@ -69,7 +69,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -81,8 +81,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "",
-   "note": ""
+   "loc": "Daughters of St Paul",
+   "note": "Monthly Mass"
   },
   {
    "d": 1,
@@ -91,7 +91,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -101,7 +101,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -111,7 +111,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -121,7 +121,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -131,7 +131,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -141,7 +141,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -151,7 +151,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -161,8 +161,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
+  },
+  {
+   "d": 4,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Parish Hall",
+   "note": "Spiritual gathering for weekend liturgy with a gospel reflection."
   },
   {
    "d": 5,
@@ -171,7 +181,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -181,7 +191,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Parish Hall",
    "note": "Divine Mercy Devotion"
   },
   {
@@ -191,7 +201,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -203,8 +213,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Indonesian",
-   "loc": "",
-   "note": ""
+   "loc": "Daughters of St Paul",
+   "note": "Monthly Mass"
   },
   {
    "d": 6,
@@ -213,7 +223,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Risen Christ",
    "note": ""
   },
   {
@@ -223,46 +233,47 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Church of the Risen Christ",
+   "note": "Anticipated Mass"
   }
  ],
  "dated": [
   {
-   "type": "Devotion",
+   "action": "add",
    "date": "2026-10-24",
-   "time": "19:00",
    "language": "English",
-   "location": "",
+   "location": "Church of the Risen Christ",
+   "time": "19:00",
    "title": "Novena & Candle light Rosary Procession (Walk with Mary)",
-   "action": "add"
+   "type": "Devotion"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "Public Holiday Weekday Masses: Monday–Friday at 07:30 only; Saturday at 07:30 and 17:30."
+ ],
  "info": {
   "devotions": [
-   "Divine Mercy Devotion: Friday 15:00 in the Parish Hall."
+   "Breaking of the Word (BOW) Thursdays at 20:00 in the Parish Hall.",
+   "Divine Mercy Devotion Fridays at 15:00 in the Parish Hall."
+  ],
+  "office_hours": "Monday–Friday: 7.30am only (Public Holiday), Saturday: 7.30am & 5.30pm (Public Holiday)",
+  "good_to_know": [
+   "Car park will be closed from 16:00 to 20:00 on 24 October for the Walk with Mary event."
   ]
  },
  "events": [
   {
-   "date": "2026-10-15",
-   "time": "",
-   "title": "Hearts on Fire 3 Parish Retreat",
-   "text": "15–18 & 24 October 2026 at Church of the Risen Christ. Inspired by the Road to Emmaus. SGD 50 per person. Registration closes 10 October. Register at https://tiny.cc/HOF3RetreatRegn or scan."
-  },
-  {
-   "date": "2026-10-19",
-   "time": "19:30",
-   "title": "Briefing and rehearsal for Novena & Candle light Rosary Procession",
-   "text": "For parishioners helping to carry Mother Mary. Register at the Parish Office by 15 October."
+   "date": "2026-10-14",
+   "time": "13:00",
+   "title": "Advance Care Planning",
+   "text": "Vintage Group educational talk on Advance Care Planning by Fei Yue"
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1opVm-nNiIdVzLBVVZOGgoinnME3HK0WK/view",
-  "date": "2026-10-04"
+  "url": "https://drive.google.com/file/d/1Y6ZSDoTfx0b3_QtF5npdQ0vSXBGjDiep/view",
+  "date": "2026-10-11"
  },
  "disputes": [],
  "vs_mycatholic": {

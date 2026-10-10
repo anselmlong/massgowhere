@@ -2,9 +2,9 @@
  "id": 16,
  "name": "Church of the Sacred Heart",
  "source_urls": [
-  "https://drive.google.com/file/d/1mEOe1I9SCFtm7-cGBvVROHb67moC2JMU/view?usp=drive_web"
+  "https://drive.google.com/file/d/18qNAP_6-NjWcjYMsFN-riDmSu_kxWF6H/view?usp=drive_web"
  ],
- "fetched_at": "2026-10-02T21:03+08:00",
+ "fetched_at": "2026-10-10T12:34+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -14,11 +14,25 @@
    "d": 0,
    "t": "08:00",
    "weeks": [],
-   "except": [],
+   "except": [
+    2
+   ],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Bilingual (English & Mandarin) on the 2nd and 4th Sunday"
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [
+    2
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Bilingual",
+   "loc": "",
+   "note": "Bilingual Mass on the 2nd Sunday of the month"
   },
   {
    "d": 0,
@@ -50,7 +64,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": ""
+   "note": "1st Sunday of the month"
   },
   {
    "d": 1,
@@ -73,16 +87,6 @@
    "note": ""
   },
   {
-   "d": 2,
-   "t": "19:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Mary's Shrine",
-   "note": "Rosary with Mary, every 13th of the month"
-  },
-  {
    "d": 3,
    "t": "07:00",
    "weeks": [],
@@ -101,18 +105,6 @@
    "lang": "English",
    "loc": "Chapel",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "19:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Main Church",
-   "note": "Holy Hour after the 7.00pm Mass"
   },
   {
    "d": 5,
@@ -152,7 +144,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Church",
-   "note": "Devotion to the Sacred Heart; livestreamed on YouTube & Facebook"
+   "note": "Devotion to the Sacred Heart; livestreamed on YouTube and Facebook"
   },
   {
    "d": 6,
@@ -177,12 +169,21 @@
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-10-25",
-   "time": "08:00",
-   "language": "English & Mandarin",
+   "type": "Devotion",
+   "date": "2026-10-13",
+   "time": "19:30",
+   "language": "English",
+   "location": "Mary's Shrine",
+   "title": "Rosary with Mary",
+   "action": "add"
+  },
+  {
+   "type": "Other",
+   "date": "2026-11-01",
+   "time": "14:00",
+   "language": "English",
    "location": "",
-   "title": "Bilingual Mass",
+   "title": "Infant Baptism",
    "action": "add"
   }
  ],
@@ -191,65 +192,63 @@
   "08:00"
  ],
  "notes": [
-  "No weekday Mass on public holidays; public holiday Mass is at 8.00am in the Chapel.",
-  "The 8.00am Sunday Mass is bilingual (English & Mandarin) on 11 and 25 October 2026.",
-  "Mass intentions for All Souls' Day (2 November) must be submitted by Sunday, 25 October 2026."
+  "Church and columbarium are closed on public holidays."
  ],
  "info": {
   "adoration": "Holy Hour: 1st Thursday of each month, after the 7.00pm Mass, in the Main Church.",
   "confession": "30 minutes before weekend Masses, or make an appointment directly with the priests.",
   "devotions": [
-   "Devotion to the Sacred Heart: Fridays 7.45pm in Church and livestreamed on YouTube & Facebook",
+   "Devotion to the Sacred Heart: Fridays 7.45pm in Church, livestreamed on YouTube and Facebook",
    "Rosary with Mary: every 13th of the month at 7.30pm at Mary's Shrine"
   ],
-  "office_hours": "Parish Secretariat (Parish Building, Level 3): Monday to Friday 9am to 5pm; closed on public holidays.",
+  "office_hours": "Parish Secretariat, Parish Building Level 3: Monday to Friday 9am-5pm; closed on public holidays.",
   "good_to_know": [
-   "Church opening hours: 7.30am to 6.30pm (closed on public holidays).",
-   "Parking: Level 1 enter by Tank Road; Levels 4 & 5 enter by Jalan Rumbia (from Oxley Rise, behind the Church).",
-   "Columbarium visits: 7.30am to 6.30pm (closed on public holidays).",
-   "Infant Baptism: 1st Sunday of Jan, Mar, May, Jul, Sep, Nov at 2pm."
+   "Church opening hours: 7.30am to 6.30pm.",
+   "Parking: Level 1 enter by Tank Road; Levels 4 & 5 enter by Jalan Rumbia from Oxley Rise, behind the Church."
   ]
  },
  "events": [
   {
-   "date": "2026-10-13",
-   "time": "19:30",
-   "title": "Rosary with Mary",
-   "text": "At Mary's Shrine outside the church, marking the anniversary of the last apparition of Our Lady of Fatima. All are welcome to pray the Rosary together."
-  },
-  {
-   "date": "2026-10-16",
-   "time": "08:30",
-   "title": "Journey of Discipleship Retreat #2",
-   "text": "Stay-in retreat 16-18 Oct 2026 at the Catholic Spirituality Centre, conducted by Msgr Peter Zhang and the CSC Retreat Team. Fee $280; register at https://bit.ly/cscjdr2."
-  },
-  {
-   "date": "2026-11-06",
-   "time": "",
-   "title": "Treasure #18 Retreat for Young Working Adults (21-35)",
-   "text": "Stay-in Catholic Encounter Retreat, 6-9 Nov 2026 at St. Francis Xavier Retreat Centre. Fee $163.50; register at tinyurl.com/oyp-treasure18 or email treasure.oyp@catholic.org.sg."
-  },
-  {
-   "date": "2026-11-13",
-   "time": "20:00",
-   "title": "Pieta Memorial Mass 2026",
-   "text": "At the Church of St Alphonsus (Novena Church), for families who have lost a child. Register by 30 October at https://tinyurl.com/MM2026Pieta."
-  },
-  {
-   "date": "2026-11-21",
-   "time": "10:00",
-   "title": "OYP Outreach for Secondary 4 & 5 Students",
-   "text": "Morning of prayer and fellowship at Catholic Centre, 55 Waterloo Street, #08-01, 10am-1pm (registration 9.45am). Free; register at tinyurl.com/SecOutreach26Nov."
+   "date": "2026-10-24",
+   "time": "09:00",
+   "title": "At the Feet of the Good Shepherd Retreat (FGS)",
+   "text": "In-person stay-in retreat at Punggol Retreat Centre, 199 Punggol Seventeenth Ave, for those carrying wounds from broken family relationships, separation, divorce or difficulties in marriage. Runs 9am on 24 Oct to 5pm on 25 Oct; fee $390, register at bit.ly/CDSG_FGS."
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1mEOe1I9SCFtm7-cGBvVROHb67moC2JMU/view?usp=drive_web",
-  "date": "2026-10-04"
+  "url": "https://drive.google.com/file/d/18qNAP_6-NjWcjYMsFN-riDmSu_kxWF6H/view?usp=drive_web",
+  "date": "2026-10-11"
  },
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [],
+  "only_on_parish_site": [
+   [
+    "Mass",
+    "Sunday",
+    "08:00",
+    [],
+    [
+     2
+    ]
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "08:00",
+    [
+     2
+    ],
+    []
+   ]
+  ],
   "only_on_mycatholic": [
+   [
+    "Mass",
+    "Sunday",
+    "08:00",
+    [],
+    []
+   ],
    [
     "Mass",
     "Thursday",

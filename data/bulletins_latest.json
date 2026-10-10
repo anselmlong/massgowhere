@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-09T21:01+08:00",
+ "fetchedAt": "2026-10-10T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -11,9 +11,9 @@
   },
   "2": {
    "from": "myCatholicSG",
-   "title": "4 October 2026",
-   "date": "2026-10-02",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610020846_Bulletin_20261004.pdf?alt=media&token=a28a9bf0-7119-4f95-8c1f-acc0dc4b4821",
+   "title": "11 October 2026",
+   "date": "2026-10-10",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610101008_Bulletin_20261011.pdf?alt=media&token=9a39702d-8f3e-4005-b9b5-b8894239f40c",
    "page": "https://mycatholic.sg/bulletin/cathedral"
   },
   "3": {
@@ -25,9 +25,9 @@
   },
   "4": {
    "from": "myCatholicSG",
-   "title": "03/04 October 2026 - Vol 40 - 27th Sunday in Ordinary Time",
-   "date": "2026-10-03",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610030921_CDM_Parish%20Bulletin%20Vol2026.40%20%E2%80%93%2003-04%20Oct_v1.4.pdf?alt=media&token=ca873abb-9e6a-41c1-a245-858c99a97e90",
+   "title": "10/11 October 2026 - Vol 41 - 28th Sunday in Ordinary Time",
+   "date": "2026-10-10",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610100910_CDM_Parish%20Bulletin%20Vol2026.41%20%E2%80%93%2010-11%20Oct%20v2.pdf?alt=media&token=c068847c-80f9-4169-9fd3-7090dd0db3fb",
    "page": "https://mycatholic.sg/bulletin/divinemercy"
   },
   "5": {
@@ -60,9 +60,9 @@
   },
   "9": {
    "from": "myCatholicSG",
-   "title": "40. 27th Sunday in Ord. Time - 04 Oct 2026",
-   "date": "2026-10-02",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610021421_40_27%20Sun%20in%20Ord%20Time%204Oct26.pdf?alt=media&token=515b1af7-bc46-4e44-9f5d-fd2b23d70d59",
+   "title": "41. 28th Sunday in Ord. Time - 11 Oct 2026",
+   "date": "2026-10-10",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610100830_41_28th%20Sun%20in%20Ord%20Sun%2011Oct26.pdf?alt=media&token=3a7d5a79-6f42-451f-a767-0e7f6505465b",
    "page": "https://mycatholic.sg/bulletin/immaculateheartofmary"
   },
   "10": {
@@ -181,7 +181,7 @@
   "26": {
    "from": "website",
    "title": "",
-   "date": "2026-10-06",
+   "date": "2026-10-09",
    "url": "https://www.stmary.sg/announcements",
    "page": "https://www.stmary.sg/announcements",
    "kind": "announcements"
@@ -216,9 +216,9 @@
   },
   "31": {
    "from": "myCatholicSG",
-   "title": "Twenty-Seventh Sunday in Ordinary Time",
-   "date": "2026-10-03",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610030929_1004_2026.pdf?alt=media&token=60e46206-8b2c-42ef-ae1a-f3cb7bf63347",
+   "title": "Twenty-Eighth Sunday in Ordinary Time",
+   "date": "2026-10-10",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610101113_1011_2026.pdf?alt=media&token=719d6626-ddf2-4701-8058-7f0df2576523",
    "page": "https://mycatholic.sg/bulletin/stspeterandpaul"
   },
   "32": {
