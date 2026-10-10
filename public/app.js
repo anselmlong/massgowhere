@@ -316,7 +316,7 @@
   }
 
   function openPartSheet(current, pick) {
-    const opts = [["", "Any time", "The soonest Mass you can make"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)]),
+    const opts = [["", "Any time", "The closest Mass you can make in time"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1)]),
       ["sunday", "Sunday or Sunset Mass", "Sunday, or Saturday from 4pm"]];
     openSheet("Which Mass?", `<div class="opts">${opts.map(([id, l, sub]) => `
       <button class="opt" type="button" data-part="${id}" aria-pressed="${id === current}">${svg(id === "sunday" ? ICON.sunday : partIcon(id))}<span>${l}<small>${sub}</small></span></button>`).join("")}</div>`, "[aria-pressed='true']");
@@ -600,7 +600,7 @@
         // the same big choices as every other step, and like them a tap moves on: here it finds the Mass. Language
         // comes first, as it has to be set before that tap
         opts = `<label class="pick wiz-pick wiz-lang"><span>Language</span><select id="w-lang"><option value="">Any language</option>${plan.lang ? `<option value="${esc(plan.lang)}" selected>${esc(plan.lang)}</option>` : ""}</select>${svg(ICON.chev)}</label>` +
-          [["", "Any Mass", "The soonest one you can make", ICON.clock], ["sunday", "Sunday or Sunset Mass", "Saturday from 4pm counts for Sunday", ICON.sunday],
+          [["", "Any Mass", "The closest one you can make in time", ICON.clock], ["sunday", "Sunday or Sunset Mass", "Saturday from 4pm counts for Sunday", ICON.sunday],
             ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range[0].toUpperCase() + x.range.slice(1), partIcon(id)])]
             .map(([v, l, sub, icon]) => opt("w-part", v, icon, l, sub, false)).join("");
       }
