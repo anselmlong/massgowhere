@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-10T21:01+08:00",
+ "fetchedAt": "2026-10-11T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -124,8 +124,8 @@
   "18": {
    "from": "myCatholicSG",
    "title": "10 & 11 October 2026",
-   "date": "2026-10-08",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610081738_Oct_10%20%26%2011%202026.pdf?alt=media&token=c045b797-9ae6-4ffe-b1b6-6123fc5c0037",
+   "date": "2026-10-11",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610111007_Oct_10%20%26%2011%202026.pdf?alt=media&token=7ea309b1-c4fd-4984-82f7-9cbea95dbf86",
    "page": "https://mycatholic.sg/bulletin/stanne"
   },
   "19": {
