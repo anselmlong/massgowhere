@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-09",
+"asOf": "2026-10-10",
 "rules": {
 "1": [
 {
@@ -1623,16 +1623,6 @@
 ],
 "9": [
 {
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "16:00",
-"lang": "Mandarin",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -1673,6 +1663,106 @@
 "note": ""
 },
 {
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -1693,102 +1783,12 @@
 "note": "Changed since 28 Mar 2026"
 },
 {
-"d": 1,
+"d": 6,
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
+"t": "16:00",
+"lang": "Mandarin",
 "loc": "Main Church",
 "note": ""
 },
@@ -6547,15 +6547,6 @@
 ],
 "9": [
 {
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "ALL SOULS' DAY"
-},
-{
 "k": "r",
 "date": "2026-11-02",
 "type": "Mass",
@@ -6563,6 +6554,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "ALL SOULS' DAY"
 }
 ],
 "10": [
