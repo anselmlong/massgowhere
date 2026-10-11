@@ -1965,16 +1965,11 @@
       return;
     }
 
-    // the map: every church, tap for its next Mass (and when to leave for it, once we know where you are)
+    // the map: every church, tap for its next Mass (and when to leave for it, once we know where you are). Where you
+    // are: the place you last planned from, if that was in the last three hours (older, and you have likely moved),
+    // or the locate button on the map; "Clear" goes back to plain Mass times
     const mode = store.get("mgw-mode") || "transit";
-    const nextLine = (p) => {
-      const evs = S.expandParish(String(p.id), d, now, 7);
-      if (!origin) return evs[0] ? `Next Mass ${clock(evs[0].start)} ${dayLabel(evs[0].start).toLowerCase()}` : "No Mass listed this week";
-      const t = tripTo(p, origin, mode), about = t.source === "estimate" ? "about " : "";
-      const lead = (t.minutes + R.BUFFER_MIN) * 60000;
-      const m = evs.find((e) => e.start - lead >= now);
-      return m ? `Next Mass ${clock(m.start)} ${dayLabel(m.start).toLowerCase()} · leave by ${about}${clock(m.start - lead)}` : "No Mass you can make this week";
-    };
+    let here = origin && origin.at && now - origin.at < 3 * 3600e3 ? origin : null;
     // the time slider: from now to 10pm today in 15-minute steps. Each church shows the first Mass after the chosen
     // time (with a location: the first you can make leaving then), labelled when it starts within two hours, faint
     // when not. Scrubbing only relabels the pins already on the map: no network, no new markers
@@ -1984,21 +1979,26 @@
     const atQ = st.at ? today + (Number(st.at.slice(0, 2)) * 60 + Number(st.at.slice(2))) * 60000 : 0;
     let at = slides ? Math.min(slideTo, Math.max(slideFrom, atQ)) : now;
     const evsOf = new Map(d.parishes.map((p) => [p.id, S.expandParish(String(p.id), d, now, 7)]));
-    const leadOf = new Map(origin ? d.parishes.map((p) => {
-      const t = tripTo(p, origin, mode);
-      return [p.id, { ms: (t.minutes + R.BUFFER_MIN) * 60000, about: t.source === "estimate" ? "about " : "" }];
-    }) : []);
+    let leadOf = new Map();
+    const setLeads = () => {
+      leadOf = new Map(here ? d.parishes.map((p) => {
+        const t = tripTo(p, here, mode);
+        return [p.id, { ms: (t.minutes + R.BUFFER_MIN) * 60000, about: t.source === "estimate" ? "about " : "" }];
+      }) : []);
+    };
+    setLeads();
     // a church's first Mass after `at` (with a location: the first you can still make leaving at `at`)
-    const nextAt = (p) => evsOf.get(p.id).find((e) => e.start - (origin ? leadOf.get(p.id).ms : 0) >= at);
-    const atWord = () => (origin ? "Leave at" : "From");
+    const nextAt = (p) => evsOf.get(p.id).find((e) => e.start - (here ? leadOf.get(p.id).ms : 0) >= at);
+    const intro = () => `${slides ? `Slide to see the Masses ${here ? "you can make, leaving" : "starting"} from that time. Tap a church for more.` : "Tap a church for its next Mass."} ${here ? "" : `Tap ${svg(ICON.locate)} on the map to add when to leave. `}For times by day, language or distance, use the list.`;
+    const legend = () => `<span><i class="l-church"></i>${slides ? "Mass in the next two hours" : "Church"}</span>${slides ? `<span><i class="l-church faint"></i>Later</span>` : ""}${here ? `<span><i class="l-you"></i>${esc(here.label === "your location" ? "You" : here.label)}<button class="link" type="button" id="forget">Clear</button></span>` : ""}`;
     view.innerHTML = `${head(true)}
-        <p class="muted" style="margin:0">${slides ? `Slide to see the Masses ${origin ? "you can make, leaving" : "starting"} from that time. Tap a church for more.` : "Tap a church for its next Mass."} For times by day, language or distance, use the list.</p>
-        ${slides ? `<label class="slide"><span><span id="at-word">${atWord()}</span> <strong id="at-time">${clock(at)}</strong></span>
-          <input id="at" type="range" min="${slideFrom}" max="${slideTo}" step="${STEP}" value="${at}" aria-valuetext="${clock(at)}"></label>
-        <p class="count" id="count"></p><p class="sr-only" id="count-said" aria-live="polite"></p>` : ""}
+        <p class="muted" id="intro" style="margin:0">${intro()}</p>
+        ${slides ? `<label class="slide"><span><span id="at-word">${here ? "Leave at" : "From"}</span> <strong id="at-time">${clock(at)}</strong></span>
+          <input id="at" type="range" min="${slideFrom}" max="${slideTo}" step="${STEP}" value="${at}" aria-valuetext="${clock(at)}"></label>` : ""}
+        <p class="count" id="count"></p><p class="sr-only" id="count-said" aria-live="polite"></p>
       </section>
       <div id="map" role="region" aria-label="Map of churches"></div>
-      <p class="legend"><span><i class="l-church"></i>${slides ? "Mass in the next two hours" : "Church"}</span>${slides ? `<span><i class="l-church faint"></i>Later</span>` : ""}${origin ? `<span><i class="l-you"></i>${esc(origin.label === "your location" ? "You" : origin.label)}</span>` : ""}</p>
+      <p class="legend" id="legend">${legend()}</p>
       <p class="source">${d.parishes.length} parishes. Times from myCatholicSG.</p>`;
     toggle();
     const mapEl = view.querySelector("#map");
@@ -2006,23 +2006,22 @@
     let ml;
     try { ml = await maplibre(); } catch { mapEl.innerHTML = '<p class="lede" style="padding:20px">The map could not load. Use the list instead.</p>'; return; }
     if (!mapEl.isConnected) return;
-    const near5 = origin ? [...d.parishes].sort((a, b) => dist(a) - dist(b)).slice(0, 5) : [];
     // frame you and your five nearest churches, or every church when we don't know where you are
-    const map = newMap(ml, mapEl, origin ? [origin, ...near5] : d.parishes);
+    const frame = () => (here ? [here, ...[...d.parishes].sort((a, b) => R.haversineKm(here, a) - R.haversineKm(here, b)).slice(0, 5)] : d.parishes);
+    const map = newMap(ml, mapEl, frame());
     currentMap = map;
-    const card = (p) => `<strong>${esc(p.name)}</strong><span>${slides ? atLine(p) : nextLine(p)}</span><a href="#/church/${p.id}">Mass times and directions</a>`;
     const atLine = (p) => {
       const m = nextAt(p);
-      if (!m) return origin ? "No Mass you can make this week" : "No Mass listed this week";
-      const lead = origin && leadOf.get(p.id);
-      return `Mass ${clock(m.start)} ${dayLabel(m.start).toLowerCase()}${lead ? ` · leave by ${lead.about}${clock(m.start - lead.ms)}` : ""}`;
+      if (!m) return here ? "No Mass you can make this week" : "No Mass listed this week";
+      const lead = here && leadOf.get(p.id);
+      return `${slides ? "Mass" : "Next Mass"} ${clock(m.start)} ${dayLabel(m.start).toLowerCase()}${lead ? ` · leave by ${lead.about}${clock(m.start - lead.ms)}` : ""}`;
     };
+    const card = (p) => `<strong>${esc(p.name)}</strong><span>${atLine(p)}</span><a href="#/church/${p.id}">Mass times and directions</a>`;
     const pins = d.parishes.map((p) => {
       const mk = addPin(ml, map, p, card(p), { time: slides ? " " : "" });
       return { p, mk, el: mk.getElement(), tag: mk.getElement().querySelector(".pin-time") };
     });
-    if (origin) addDot(ml, map, origin, "me", "You");
-    if (!slides) return;
+    let dot = here && addDot(ml, map, here, "me", "You");
     // where labels would overlap (the middle of town, zoomed out), the later Mass's pin keeps its colour but not its
     // label; zooming in brings it back
     let crowded = 0;
@@ -2040,6 +2039,7 @@
       }
     };
     const paint = () => {
+      if (!slides) { pins.forEach((x) => x.mk.getPopup().setHTML(card(x.p))); return; }
       let n = 0;
       for (const x of pins) {
         const m = nextAt(x.p), soon = !!m && m.start - at <= WINDOW;
@@ -2054,12 +2054,50 @@
       }
       declutter();
       const until = clock(at + WINDOW);
-      count.textContent = origin
+      count.textContent = here
         ? (n ? `Leaving at ${clock(at)}, you can make Mass at ${n} ${n === 1 ? "church" : "churches"} by ${until}` : `Leaving at ${clock(at)}, no Mass you can make by ${until}. Try a later time.`)
         : (n ? `${n} ${n === 1 ? "church has" : "churches have"} Mass between ${clock(at)} and ${until}` : `No Mass between ${clock(at)} and ${until}. Try a later time.`);
       count.textContent += crowded ? ". Zoom in to see every time." : "";
     };
+    // where you are changed (located, or cleared): new leave times, words and dot, without rebuilding the map
+    const moved = (p) => {
+      here = p;
+      setLeads();
+      if (dot) dot.remove();
+      dot = here && addDot(ml, map, here, "me", "You");
+      view.querySelector("#intro").innerHTML = intro();
+      view.querySelector("#legend").innerHTML = legend();
+      if (slider) view.querySelector("#at-word").textContent = here ? "Leave at" : "From";
+      paint();
+      const pts = frame(), lngs = pts.map((x) => x.lng), lats = pts.map((x) => x.lat);
+      map.fitBounds([[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]], { padding: 60, maxZoom: 15, duration: reduceMotion() ? 0 : 600 });
+      view.querySelector("#count-said").textContent = slides ? count.textContent : "";
+    };
+    view.querySelector("#legend").addEventListener("click", (e) => { if (e.target.closest("#forget")) moved(null); });
+    // the locate button, under zoom: one tap asks the phone where you are
+    const locate = document.createElement("button");
+    locate.type = "button";
+    locate.className = "locate-btn";
+    locate.setAttribute("aria-label", "Use my location");
+    locate.innerHTML = svg(ICON.locate);
+    locate.addEventListener("click", () => {
+      if (!navigator.geolocation) { count.textContent = "This browser can’t share your location."; return; }
+      locate.classList.add("busy");
+      navigator.geolocation.getCurrentPosition((pos) => {
+        locate.classList.remove("busy");
+        if (!mapEl.isConnected) return;
+        const p = { lat: Number(pos.coords.latitude.toFixed(5)), lng: Number(pos.coords.longitude.toFixed(5)), label: "your location", at: Date.now() };
+        store.set("mgw-origin", p);
+        moved(p);
+      }, () => {
+        locate.classList.remove("busy");
+        count.textContent = "We couldn’t get your location. Check that location is allowed for this site.";
+        view.querySelector("#count-said").textContent = count.textContent;
+      }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+    });
+    map.addControl({ onAdd: () => { const g = document.createElement("div"); g.className = "maplibregl-ctrl maplibregl-ctrl-group"; g.appendChild(locate); return g; }, onRemove: () => {} }, "top-right");
     paint();
+    if (!slides) return;
     map.on("moveend", paint);
     slider.addEventListener("input", () => {
       at = Number(slider.value);

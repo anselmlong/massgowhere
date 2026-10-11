@@ -769,3 +769,12 @@ html.previewing .shell { padding-bottom: 96px; }
 .church-pin .pin-time { transition: opacity .2s var(--ease); }
 .church-pin.quiet .pin-time { opacity: 0; }
 @media (prefers-reduced-motion: reduce) { .church-pin path:first-child, .church-pin .pin-time { transition: none; } }
+/* the all-churches map's locate button, under zoom */
+.locate-btn { display: grid; place-items: center; color: var(--ink); }
+.locate-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+.locate-btn.busy svg { animation: locating 1s linear infinite; }
+@keyframes locating { to { rotate: 360deg; } }
+@media (prefers-reduced-motion: reduce) { .locate-btn.busy svg { animation: none; opacity: .5; } }
+#intro svg { width: 1em; height: 1em; vertical-align: -.15em; fill: none; stroke: currentColor; stroke-width: 2; }
+#forget { position: relative; min-height: 0; margin-left: 6px; font-size: 13px; font-weight: 600; }
+#forget::after { content: ""; position: absolute; inset: -14px -10px; } /* 44px target without moving the line */
