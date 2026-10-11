@@ -1972,14 +1972,34 @@
       const m = evs.find((e) => e.start - lead >= now);
       return m ? `Next Mass ${clock(m.start)} ${dayLabel(m.start).toLowerCase()} · leave by ${about}${clock(m.start - lead)}` : "No Mass you can make this week";
     };
+    // the time slider: from now to 10pm today in 15-minute steps. Each church shows the first Mass after the chosen
+    // time (with a location: the first you can make leaving then), labelled when it starts within two hours, faint
+    // when not. Scrubbing only relabels the pins already on the map: no network, no new markers
+    const STEP = 15 * 60000, WINDOW = 2 * 3600e3;
+    const slideFrom = Math.floor(now / STEP) * STEP, slideTo = today + 22 * 3600e3;
+    const slides = slideTo - slideFrom >= 2 * STEP;
+    const atQ = /^\d{4}$/.test(q.get("at") || "") ? today + (Number(q.get("at").slice(0, 2)) * 60 + Number(q.get("at").slice(2))) * 60000 : 0;
+    let at = slides ? Math.min(slideTo, Math.max(slideFrom, atQ)) : now;
+    const evsOf = new Map(d.parishes.map((p) => [p.id, S.expandParish(String(p.id), d, now, 7)]));
+    const leadOf = new Map(origin ? d.parishes.map((p) => {
+      const t = tripTo(p, origin, mode);
+      return [p.id, { ms: (t.minutes + R.BUFFER_MIN) * 60000, about: t.source === "estimate" ? "about " : "" }];
+    }) : []);
+    // a church's first Mass after `at` (with a location: the first you can still make leaving at `at`)
+    const nextAt = (p) => evsOf.get(p.id).find((e) => e.start - (origin ? leadOf.get(p.id).ms : 0) >= at);
+    const atWord = () => (origin ? "Leave at" : "From");
     view.innerHTML = `${head(true)}
-        <p class="muted" style="margin:0">Tap a church for its next Mass. For times by day, language or distance, use the list.</p>
+        <p class="muted" style="margin:0">${slides ? `Slide to see the Masses ${origin ? "you can make, leaving" : "starting"} from that time. Tap a church for more.` : "Tap a church for its next Mass."} For times by day, language or distance, use the list.</p>
+        ${slides ? `<label class="slide"><span><span id="at-word">${atWord()}</span> <strong id="at-time">${clock(at)}</strong></span>
+          <input id="at" type="range" min="${slideFrom}" max="${slideTo}" step="${STEP}" value="${at}" aria-valuetext="${clock(at)}"></label>
+        <p class="count" id="count" aria-live="polite"></p>` : ""}
       </section>
       <div id="map" role="region" aria-label="Map of churches"></div>
-      <p class="legend"><span><i class="l-church"></i>Church</span>${origin ? `<span><i class="l-you"></i>${esc(origin.label === "your location" ? "You" : origin.label)}</span>` : ""}</p>
+      <p class="legend"><span><i class="l-church"></i>${slides ? "Mass in the next two hours" : "Church"}</span>${slides ? `<span><i class="l-church faint"></i>Later</span>` : ""}${origin ? `<span><i class="l-you"></i>${esc(origin.label === "your location" ? "You" : origin.label)}</span>` : ""}</p>
       <p class="source">${d.parishes.length} parishes. Times from myCatholicSG.</p>`;
     toggle();
     const mapEl = view.querySelector("#map");
+    const slider = view.querySelector("#at"), count = view.querySelector("#count");
     let ml;
     try { ml = await maplibre(); } catch { mapEl.innerHTML = '<p class="lede" style="padding:20px">The map could not load. Use the list instead.</p>'; return; }
     if (!mapEl.isConnected) return;
@@ -1987,8 +2007,50 @@
     // frame you and your five nearest churches, or every church when we don't know where you are
     const map = newMap(ml, mapEl, origin ? [origin, ...near5] : d.parishes);
     currentMap = map;
-    for (const p of d.parishes) addPin(ml, map, p, `<strong>${esc(p.name)}</strong><span>${nextLine(p)}</span><a href="#/church/${p.id}">Mass times and directions</a>`);
+    const card = (p) => `<strong>${esc(p.name)}</strong><span>${slides ? atLine(p) : nextLine(p)}</span><a href="#/church/${p.id}">Mass times and directions</a>`;
+    const atLine = (p) => {
+      const m = nextAt(p);
+      if (!m) return origin ? "No Mass you can make this week" : "No Mass listed this week";
+      const lead = origin && leadOf.get(p.id);
+      return `Mass ${clock(m.start)} ${dayLabel(m.start).toLowerCase()}${lead ? ` · leave by ${lead.about}${clock(m.start - lead.ms)}` : ""}`;
+    };
+    const pins = d.parishes.map((p) => {
+      const mk = addPin(ml, map, p, card(p), { time: slides ? " " : "" });
+      return { p, mk, el: mk.getElement(), tag: mk.getElement().querySelector(".pin-time") };
+    });
     if (origin) addDot(ml, map, origin, "me", "You");
+    if (!slides) return;
+    const paint = () => {
+      let n = 0;
+      for (const x of pins) {
+        const m = nextAt(x.p), soon = !!m && m.start - at <= WINDOW;
+        if (soon) n++;
+        x.el.classList.toggle("faint", !soon);
+        x.el.classList.toggle("quiet", !soon);
+        x.el.style.zIndex = soon ? 1 : 0;
+        x.tag.textContent = m ? clock(m.start) : "";
+        x.el.setAttribute("aria-label", soon ? `${x.p.name}, Mass ${clock(m.start)}` : x.p.name);
+        x.mk.getPopup().setHTML(card(x.p));
+      }
+      const until = clock(at + WINDOW);
+      count.textContent = origin
+        ? (n ? `Leaving at ${clock(at)}, you can make Mass at ${n} ${n === 1 ? "church" : "churches"} by ${until}` : `Leaving at ${clock(at)}, no Mass you can make by ${until}. Try a later time.`)
+        : (n ? `${n} ${n === 1 ? "church has" : "churches have"} Mass between ${clock(at)} and ${until}` : `No Mass between ${clock(at)} and ${until}. Try a later time.`);
+    };
+    paint();
+    slider.addEventListener("input", () => {
+      at = Number(slider.value);
+      view.querySelector("#at-time").textContent = clock(at);
+      slider.setAttribute("aria-valuetext", clock(at));
+      paint();
+    });
+    // the chosen time goes in the link once you let go, so Back and sharing keep it
+    slider.addEventListener("change", () => {
+      const qs = new URLSearchParams(link().split("?")[1] || "");
+      const hm = new Date(at).toLocaleTimeString("en-GB", { ...TZ, hour: "2-digit", minute: "2-digit" }).replace(":", "");
+      if (at > slideFrom) qs.set("at", hm); else qs.delete("at");
+      history.replaceState(null, "", `#/churches${String(qs) ? `?${qs}` : ""}`);
+    });
   }
 
   // feedback form in the footer: sent to Anselm on Telegram by /api/feedback
