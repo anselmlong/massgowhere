@@ -2,9 +2,9 @@
  "id": 27,
  "name": "Church of St Michael",
  "source_urls": [
-  "https://sh1.sendinblue.com/mk/sc/CPolWvcUvAgLG2QpF3V60tuwWenBlS4xG7UJUu2PQt6v6Qx3ir4rg6sBRGRB2SY67Y-CvNlRCL9jrZ8yk5cB-2K7cR6Xavk?t=1790958473593"
+  "https://sh1.sendinblue.com/mk/sc/Ff6tnSdRNFEXffBHqlvBMjzHWB53zzW6u5d838zZIvw1-dYpK4zRt127vBD5mCQmj965-H8lAvB4O5mzFoC6WJP9DQwb5pY?t=1791758037960"
  ],
- "fetched_at": "2026-10-03T12:33+08:00",
+ "fetched_at": "2026-10-12T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -28,7 +28,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "30 minutes before the Sunday 09:30 Mass."
+   "note": "30 minutes before the 9.30am Mass"
   },
   {
    "d": 0,
@@ -48,7 +48,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "30 minutes before the Sunday 11:30 Mass."
+   "note": "30 minutes before the 11.30am Mass"
   },
   {
    "d": 0,
@@ -68,7 +68,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "30 minutes before the Sunday 17:30 Mass."
+   "note": "30 minutes before the 5.30pm Mass"
   },
   {
    "d": 0,
@@ -198,7 +198,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "30 minutes before the Saturday 17:30 Mass."
+   "note": "30 minutes before the 5.30pm Mass"
   },
   {
    "d": 6,
@@ -208,20 +208,83 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Anticipatory Mass for Sunday's liturgy"
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "07:30"
  ],
- "notes": [],
- "info": {},
- "events": [],
+ "notes": [
+  "When a public holiday falls on a Sunday, the holiday is observed on the following Monday."
+ ],
+ "info": {
+  "confession": "30 minutes before the weekend Masses: Saturdays 5pm; Sundays 9am, 11am and 5pm.",
+  "good_to_know": [
+   "Church of St Michael, 17 St Michael's Road, Singapore 327976.",
+   "Parish contact: 6291 9272, csm.secretariat@catholic.org.sg."
+  ]
+ },
+ "events": [
+  {
+   "date": "2026-10-12",
+   "time": "20:00",
+   "title": "Talk on the Creed",
+   "text": "Discover what the words Catholics recite each week at Mass actually mean for our lives. Register at https://tinyurl.com/CSMTalkonCreed."
+  },
+  {
+   "date": "2026-10-16",
+   "time": "19:00",
+   "title": "Encounter: Rosary Evening",
+   "text": "October, the Month of the Rosary. Held in the Worship Hall; meditate on the life of Christ and find comfort in prayer."
+  },
+  {
+   "date": "2026-10-17",
+   "time": "20:00",
+   "title": "Worship & Healing Prayer Service",
+   "text": "Preacher: Rev Fr Henry Siew. All are welcome."
+  },
+  {
+   "date": "2026-10-19",
+   "time": "20:00",
+   "title": "Talk on the Creed",
+   "text": "Discover what the words Catholics recite each week at Mass actually mean for our lives. Register at https://tinyurl.com/CSMTalkonCreed."
+  },
+  {
+   "date": "2026-10-22",
+   "time": "",
+   "title": "Reading Group on Magnifica Humanitas",
+   "text": "Thursdays 22 Oct to 19 Nov, reading Pope Leo XIV's encyclical with Fr Jerome Leon, SJ. Register at bit.ly/magnifica2026."
+  },
+  {
+   "date": "2026-10-23",
+   "time": "19:30",
+   "title": "Family Rosary at Homes",
+   "text": "Pray the Holy Rosary with other families at homes in Balestier, McNair and Potong Pasir. Register by 18 Oct at https://tinyurl.com/CSMFamilyRosary."
+  },
+  {
+   "date": "2026-10-26",
+   "time": "20:00",
+   "title": "Talk on the Creed",
+   "text": "Discover what the words Catholics recite each week at Mass actually mean for our lives. Register at https://tinyurl.com/CSMTalkonCreed."
+  },
+  {
+   "date": "2026-10-30",
+   "time": "19:00",
+   "title": "Encounter: Rosary at Mother Mary's Grotto",
+   "text": "October, the Month of the Rosary. Gather at Mother Mary's Grotto to pray the Rosary together."
+  },
+  {
+   "date": "2026-11-14",
+   "time": "15:00",
+   "title": "Infant Baptism",
+   "text": "Baptism at 3pm; preparatory sessions on 17, 24 and 31 Oct and 7 Nov at 3.30pm. Email csm.secretariat@catholic.org.sg to register your child."
+  }
+ ],
  "bulletin": {
-  "url": "https://sh1.sendinblue.com/mk/sc/CPolWvcUvAgLG2QpF3V60tuwWenBlS4xG7UJUu2PQt6v6Qx3ir4rg6sBRGRB2SY67Y-CvNlRCL9jrZ8yk5cB-2K7cR6Xavk?t=1790958473593",
-  "date": "2026-10-04"
+  "url": "https://sh1.sendinblue.com/mk/sc/Ff6tnSdRNFEXffBHqlvBMjzHWB53zzW6u5d838zZIvw1-dYpK4zRt127vBD5mCQmj965-H8lAvB4O5mzFoC6WJP9DQwb5pY?t=1791758037960",
+  "date": "2026-10-12"
  },
  "disputes": [],
  "vs_mycatholic": {

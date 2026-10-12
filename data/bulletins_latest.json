@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-11T12:31+08:00",
+ "fetchedAt": "2026-10-12T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -189,8 +189,8 @@
   "27": {
    "from": "website",
    "title": "",
-   "date": "2026-10-04",
-   "url": "https://sh1.sendinblue.com/mk/sc/CPolWvcUvAgLG2QpF3V60tuwWenBlS4xG7UJUu2PQt6v6Qx3ir4rg6sBRGRB2SY67Y-CvNlRCL9jrZ8yk5cB-2K7cR6Xavk?t=1790958473593",
+   "date": "2026-10-12",
+   "url": "https://sh1.sendinblue.com/mk/sc/Ff6tnSdRNFEXffBHqlvBMjzHWB53zzW6u5d838zZIvw1-dYpK4zRt127vBD5mCQmj965-H8lAvB4O5mzFoC6WJP9DQwb5pY?t=1791758037960",
    "page": "https://stmichael.catholic.sg/bulletins/"
   },
   "28": {
