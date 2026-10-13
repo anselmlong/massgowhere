@@ -2,9 +2,9 @@
  "id": 16,
  "name": "Church of the Sacred Heart",
  "source_urls": [
-  "https://drive.google.com/file/d/18qNAP_6-NjWcjYMsFN-riDmSu_kxWF6H/view?usp=drive_web"
+  "https://drive.google.com/file/d/1yNgP7tNfAZqjN1Fg5WG9VCqYSxK50Df7/view?usp=drive_link"
  ],
- "fetched_at": "2026-10-10T12:34+08:00",
+ "fetched_at": "2026-10-13T12:34+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -32,7 +32,7 @@
    "type": "Mass",
    "lang": "Bilingual",
    "loc": "",
-   "note": "Bilingual Mass on the 2nd Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -64,7 +64,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": "1st Sunday of the month"
+   "note": ""
   },
   {
    "d": 1,
@@ -107,6 +107,28 @@
    "note": ""
   },
   {
+   "d": 4,
+   "t": "19:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "19:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Mary's Shrine",
+   "note": "Rosary with Mary"
+  },
+  {
    "d": 5,
    "t": "07:00",
    "weeks": [],
@@ -144,7 +166,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Church",
-   "note": "Devotion to the Sacred Heart; livestreamed on YouTube and Facebook"
+   "note": "Devotion to the Sacred Heart"
   },
   {
    "d": 6,
@@ -169,16 +191,7 @@
  ],
  "dated": [
   {
-   "type": "Devotion",
-   "date": "2026-10-13",
-   "time": "19:30",
-   "language": "English",
-   "location": "Mary's Shrine",
-   "title": "Rosary with Mary",
-   "action": "add"
-  },
-  {
-   "type": "Other",
+   "type": "Mass",
    "date": "2026-11-01",
    "time": "14:00",
    "language": "English",
@@ -191,20 +204,20 @@
  "public_holiday_masses": [
   "08:00"
  ],
- "notes": [
-  "Church and columbarium are closed on public holidays."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Holy Hour: 1st Thursday of each month, after the 7.00pm Mass, in the Main Church.",
-  "confession": "30 minutes before weekend Masses, or make an appointment directly with the priests.",
+  "adoration": "Holy Hour follows the 7.00pm Mass on the 1st Thursday of each month in the Main Church.",
+  "confession": "30 mins before weekend Masses or make appointment directly with the priests.",
   "devotions": [
-   "Devotion to the Sacred Heart: Fridays 7.45pm in Church, livestreamed on YouTube and Facebook",
-   "Rosary with Mary: every 13th of the month at 7.30pm at Mary's Shrine"
+   "Devotion to the Sacred Heart: Friday 7.45pm in Church and livestreamed on YouTube & Facebook.",
+   "Rosary with Mary: every 13th of the month at 7.30pm at Mary's Shrine."
   ],
-  "office_hours": "Parish Secretariat, Parish Building Level 3: Monday to Friday 9am-5pm; closed on public holidays.",
+  "office_hours": "Monday to Friday: 9am to 5pm. Closed on Public Holiday.",
   "good_to_know": [
-   "Church opening hours: 7.30am to 6.30pm.",
-   "Parking: Level 1 enter by Tank Road; Levels 4 & 5 enter by Jalan Rumbia from Oxley Rise, behind the Church."
+   "Bilingual Mass on every 2nd Sunday of the month.",
+   "1st Sunday of the month: 4.00pm Tagalog.",
+   "Public Holidays: 8.00am in Chapel.",
+   "Church opening hours: 7.30am to 6.30pm (closed on public holidays)."
   ]
  },
  "events": [
@@ -212,12 +225,12 @@
    "date": "2026-10-24",
    "time": "09:00",
    "title": "At the Feet of the Good Shepherd Retreat (FGS)",
-   "text": "In-person stay-in retreat at Punggol Retreat Centre, 199 Punggol Seventeenth Ave, for those carrying wounds from broken family relationships, separation, divorce or difficulties in marriage. Runs 9am on 24 Oct to 5pm on 25 Oct; fee $390, register at bit.ly/CDSG_FGS."
+   "text": "In-person stay-in retreat. Venue: Punggol Retreat Centre, 199 Punggol Seventeenth Ave, Singapore 829645. Time: 9am (24 Oct) – 5pm (25 Oct). Fee: $390. A specially commissioned retreat for those carrying wounds from broken family relationships, separation, divorce, or difficulties in marriage. Regist"
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/18qNAP_6-NjWcjYMsFN-riDmSu_kxWF6H/view?usp=drive_web",
-  "date": "2026-10-11"
+  "url": "https://drive.google.com/file/d/1yNgP7tNfAZqjN1Fg5WG9VCqYSxK50Df7/view?usp=drive_link",
+  "date": "2026-10-17"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -247,15 +260,6 @@
     "Sunday",
     "08:00",
     [],
-    []
-   ],
-   [
-    "Mass",
-    "Thursday",
-    "19:00",
-    [
-     1
-    ],
     []
    ]
   ]

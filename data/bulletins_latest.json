@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-12T12:31+08:00",
+ "fetchedAt": "2026-10-13T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -110,8 +110,8 @@
   "16": {
    "from": "website",
    "title": "",
-   "date": "2026-10-11",
-   "url": "https://drive.google.com/file/d/18qNAP_6-NjWcjYMsFN-riDmSu_kxWF6H/view?usp=drive_web",
+   "date": "2026-10-17",
+   "url": "https://drive.google.com/file/d/1yNgP7tNfAZqjN1Fg5WG9VCqYSxK50Df7/view?usp=drive_link",
    "page": "https://www.churchofthesacredheart.sg/bulletin"
   },
   "17": {
