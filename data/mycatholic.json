@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-10",
+"asOf": "2026-10-13",
 "rules": {
 "1": [
 {
@@ -6649,33 +6649,6 @@
 },
 {
 "k": "r",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-18",
 "type": "Mass",
 "t": "08:00",
@@ -7027,24 +7000,6 @@
 },
 {
 "k": "o",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
 "date": "2026-10-18",
 "type": "Mass",
 "t": "07:30",
@@ -7135,15 +7090,6 @@
 },
 {
 "k": "o",
-"date": "2026-10-11",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-10-18",
 "type": "Confession",
 "t": "07:00",
@@ -7157,15 +7103,6 @@
 "type": "Confession",
 "t": "07:00",
 "lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Confession",
-"t": "09:00",
-"lang": "English/Tamil",
 "loc": "Main Church",
 "note": ""
 },
@@ -7189,15 +7126,6 @@
 },
 {
 "k": "o",
-"date": "2026-10-11",
-"type": "Confession",
-"t": "18:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-10-18",
 "type": "Confession",
 "t": "18:00",
@@ -7211,15 +7139,6 @@
 "type": "Confession",
 "t": "18:00",
 "lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-11",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
 "loc": "Main Church",
 "note": ""
 },
@@ -7731,15 +7650,6 @@
 },
 {
 "k": "a",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "15:00",
-"lang": "Vietnamese",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
 "date": "2026-10-25",
 "type": "Mass",
 "t": "15:00",
@@ -7977,15 +7887,6 @@
 },
 {
 "k": "a",
-"date": "2026-10-11",
-"type": "Mass",
-"t": "14:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Mass for the Sick & Elderly with Anointing. Registration is required for all Baptised Catholics those who wish to receive the Sacrament of Anointing. Visit our Website for the Registration Link"
-},
-{
-"k": "a",
 "date": "2026-11-09",
 "type": "Mass",
 "t": "09:00",
@@ -8144,6 +8045,15 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-02",
 "type": "Mass",
@@ -8156,7 +8066,7 @@
 "k": "a",
 "date": "2026-11-02",
 "type": "Mass",
-"t": "20:30",
+"t": "20:00",
 "lang": "Mandarin",
 "loc": "Main Church",
 "note": "All Souls Day EC with blessing of niches"
@@ -8174,8 +8084,8 @@
 "k": "a",
 "date": "2026-11-02",
 "type": "Mass",
-"t": "18:00",
-"lang": "English",
+"t": "18:30",
+"lang": "Mandarin",
 "loc": "Main Church",
 "note": "All Souls Day EC + blessing of niches"
 },
@@ -8241,6 +8151,24 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "19:00",
+"lang": "Bilingual",
+"loc": "Main Church",
+"note": "Thanksgiving EC"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "09:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year Day"
 }
 ],
 "31": [
