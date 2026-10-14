@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-13T12:31+08:00",
+ "fetchedAt": "2026-10-14T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -181,7 +181,7 @@
   "26": {
    "from": "website",
    "title": "",
-   "date": "2026-10-09",
+   "date": "2026-10-13",
    "url": "https://www.stmary.sg/announcements",
    "page": "https://www.stmary.sg/announcements",
    "kind": "announcements"
@@ -209,9 +209,9 @@
   },
   "30": {
    "from": "myCatholicSG",
-   "title": "27TH SUNDAY IN ORDINARY TIME - 4 October 2026",
-   "date": "2026-10-06",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610061526_27TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=aee361b5-5226-4a6d-a96d-52b252ba512f",
+   "title": "28TH SUNDAY IN ORDINARY TIME - 11 October 2026",
+   "date": "2026-10-13",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610131245_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2011%20October%202026.pdf?alt=media&token=bfd1c096-a492-409a-98a2-4724e9745c5a",
    "page": "https://mycatholic.sg/bulletin/stvincentdepaul"
   },
   "31": {

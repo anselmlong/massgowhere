@@ -2,9 +2,9 @@
  "id": 30,
  "name": "Church of St Vincent de Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610061526_27TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=aee361b5-5226-4a6d-a96d-52b252ba512f"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610131245_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2011%20October%202026.pdf?alt=media&token=bfd1c096-a492-409a-98a2-4724e9745c5a"
  ],
- "fetched_at": "2026-10-08T12:31+08:00",
+ "fetched_at": "2026-10-14T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -324,7 +324,7 @@
   },
   {
    "d": 5,
-   "t": "19:00",
+   "t": "18:00",
    "weeks": [],
    "except": [],
    "type": "Devotion",
@@ -376,55 +376,53 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "No weekday Mass on public holidays."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room open every day from 7am to 6pm. Closed on Public Holidays.",
-  "confession": "30 mins before to 10 mins before Mass (weekend Masses only)",
+  "adoration": "Adoration Room open every day from 7am to 6pm; closed on Public Holidays.",
+  "confession": "30 minutes before to 10 minutes before Mass (weekend Masses only).",
   "devotions": [
    "Rosary: Monday-Saturday 6.15am and 5.30pm; Sunday 30 minutes before Mass",
    "Divine Mercy: Wednesdays 5pm, St Faustina Room",
    "Sacred Heart of Jesus: Fridays after 6pm Mass",
    "Liturgy of the Hours - Divine Office: Mon-Fri 7.45am, St Faustina Room"
   ],
-  "office_hours": "Parish Office: Weekdays 9am to 6pm; Saturday 9am to 12pm and 5pm to 6pm; Sunday 8am to 12pm and 5pm to 6pm. Closed on Public Holidays.",
+  "office_hours": "Parish Office: Weekdays 9am to 6pm; Saturday 9am to 12pm and 5pm to 6pm; Sunday 8am to 12pm and 5pm to 6pm; closed on Public Holidays.",
   "good_to_know": [
    "The carpark gate at Jalan Resak is closed immediately after Mass; please exit via the autogate to Yio Chu Kang Road.",
    "Do not park in front of the priests' parking lots.",
-   "Alternative parking: Yio Chu Kang Road between Lamppost No. 156 & 166 (Saturdays 6pm-7.15pm); Jalan Kelulut between Lamppost No. 4 & 9 (Sundays 9am-12.15pm); in front of Jalan Kelulut shophouses (coupon parking); HDB carparks at Blk 988 Bua",
+   "Alternative parking: Yio Chu Kang Road between lamppost 156 and 166 (Saturdays 6pm-7.15pm); Jalan Kelulut between lamppost 4 and 9 (Sundays 9am-12.15pm); in front of Jalan Kelulut shophouses (coupon parking, 7 days a week); HDB carparks at ",
    "Strictly no parking along 1 to 19 Jalan Jarak."
   ]
  },
  "events": [
   {
-   "date": "2026-10-16",
-   "time": "08:30",
-   "title": "A Journey of Discipleship Stay-in Retreat #2",
-   "text": "Stay-in retreat conducted by Msgr Peter Zhang and CSC Retreat Team, 16 Oct 8.30am to 18 Oct 6.30pm. Fee $280; register at https://bit.ly/cscjdr2."
-  },
-  {
-   "date": "2026-10-17",
-   "time": "15:00",
-   "title": "Young Missionaries of Hope: One in Christ, United in Mission",
-   "text": "Virtual ZOOM event on Sat 17 Oct, 3pm-5pm, with keynote by Cardinal \"Ambo\" and sharing by Catholics from Myanmar, Cambodia, the Philippines and Malaysia. Sign up at bit.ly/unitedinmission."
+   "date": "2026-10-24",
+   "time": "",
+   "title": "At the Feet of the Good Shepherd Retreat",
+   "text": "A semi-silent stay-in retreat at Punggol Retreat Centre on 24-25 Oct 2026 for those carrying inner wounds from broken family relationships. Register at bit.ly/CDSG_FGS."
   },
   {
    "date": "2026-11-08",
    "time": "12:30",
    "title": "Seniors Ministry Pilgrimage Tour",
-   "text": "EmmausElders@SVDP pilgrimage for seniors to Church of St Mary of the Angels, 8 Nov 12.30pm-6.30pm. Scan the QR code or submit a completed form to the Parish office."
+   "text": "EmmausElders@SVDP pilgrimage to Church of St Mary of the Angels on 8 Nov, 12.30pm-6.30pm, in conjunction with the Jubilee Year of St Francis of Assisi. Scan the QR code or submit a completed form to the Parish office."
   },
   {
    "date": "2026-11-09",
    "time": "08:30",
    "title": "Bible in the City: Scripture for the Concrete Jungle",
-   "text": "Bible Symposium 2026 by the Verbum Dei Missionaries, 9 Nov (PH) 8.30am-1pm at Novena Church Auditorium. Cost $30 single / $50 pair; sign up at tinyurl.com/VdeiBibleSymposium by 18 Oct."
+   "text": "Bible Symposium 2026 by the Verbum Dei Missionaries at Novena Church Auditorium, 8.30am-1pm. Cost $30 single / $50 pair with light refreshments. Sign up at tinyurl.com/VdeiBibleSymposium by 18 October 2026."
+  },
+  {
+   "date": "2026-11-18",
+   "time": "10:30",
+   "title": "BAGUS Wellness Talk",
+   "text": "Interactive session on mental well-being for parishioners aged 55 and above, 18 Nov at 10.30am, brought to you by EmmausElders@SVDP and Share-A-Pot Community. Scan the QR code to register."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610061526_27TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%204%20October%202026.pdf?alt=media&token=aee361b5-5226-4a6d-a96d-52b252ba512f",
-  "date": "2026-10-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610131245_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2011%20October%202026.pdf?alt=media&token=bfd1c096-a492-409a-98a2-4724e9745c5a",
+  "date": "2026-10-13"
  },
  "disputes": [],
  "vs_mycatholic": {
