@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-13",
+"asOf": "2026-10-14",
 "rules": {
 "1": [
 {
@@ -2140,7 +2140,7 @@
 "t": "18:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Eve of All Saints' Day"
+"note": ""
 },
 {
 "d": 0,
@@ -2150,7 +2150,7 @@
 "t": "08:00",
 "lang": "Mandarin (中文)",
 "loc": "Main Church",
-"note": "All Saints' Day"
+"note": ""
 },
 {
 "d": 0,
@@ -2160,7 +2160,7 @@
 "t": "09:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "All Saints' Day"
+"note": ""
 },
 {
 "d": 0,
@@ -2170,7 +2170,7 @@
 "t": "11:15",
 "lang": "English",
 "loc": "Main Church",
-"note": "All Saints' Day"
+"note": ""
 },
 {
 "d": 0,
@@ -2180,7 +2180,7 @@
 "t": "17:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "All Saints' Day"
+"note": ""
 }
 ],
 "17": [
@@ -6390,6 +6390,98 @@
 "note": ""
 }
 ],
+"7": [
+{
+"k": "o",
+"date": "2026-10-31",
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day (Vigil Mass)"
+},
+{
+"k": "o",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day Mass"
+},
+{
+"k": "o",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "09:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day Mass"
+},
+{
+"k": "o",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "11:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day Mass"
+},
+{
+"k": "o",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day Mass"
+},
+{
+"k": "o",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day Mass with Columbarium Blessing"
+},
+{
+"k": "o",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day Mass with Columbarium Blessing"
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-06",
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Mass followed by Parish Holy Hour"
+},
+{
+"k": "r",
+"date": "2026-11-06",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "CHAPEL",
+"note": ""
+}
+],
 "8": [
 {
 "k": "r",
@@ -7739,17 +7831,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Tagalog Mass"
-}
-],
-"15": [
-{
-"k": "a",
-"date": "2026-10-12",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "16": [
