@@ -5193,16 +5193,6 @@
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
 "t": "18:30",
 "lang": "English",
 "loc": "Main Church",
@@ -5334,6 +5324,16 @@
 "except": [],
 "type": "Mass",
 "t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "07:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -8041,6 +8041,53 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+}
+],
+"26": [
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day - Blessing of columbarium niches after mass"
+},
+{
+"k": "o",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day - Blessing of columbarium niches after mass"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day - Blessing of columbarium niches after mass"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day - Blessing of columbarium niches after mass"
 }
 ],
 "27": [
