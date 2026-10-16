@@ -2,9 +2,9 @@
  "id": 28,
  "name": "Church of St Stephen",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610091005_St_StephenBulletin_11102026.pdf?alt=media&token=c588fb7f-09cb-4982-97de-b6ce927b3789"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610161252_St_StephenBulletin_18102026.pdf?alt=media&token=16817b7b-d055-47cb-98fe-a655e9e9f315"
  ],
- "fetched_at": "2026-10-09T12:33+08:00",
+ "fetched_at": "2026-10-16T21:05+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -28,7 +28,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 0,
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "",
-   "note": "2nd Sunday only"
+   "note": ""
   },
   {
    "d": 0,
@@ -62,7 +62,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": "1st Sunday only"
+   "note": ""
   },
   {
    "d": 0,
@@ -132,7 +132,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary Devotion"
   },
   {
    "d": 6,
@@ -142,51 +142,130 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   }
  ],
  "dated": [
   {
-   "action": "add",
-   "date": "2026-11-13",
+   "type": "Mass",
+   "date": "2026-10-31",
+   "time": "17:30",
    "language": "English",
-   "location": "Novena Church",
+   "location": "",
+   "title": "All Saints Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "09:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "11:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "17:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "06:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
    "time": "20:00",
-   "title": "PIETA Annual Memorial Mass 2026",
-   "type": "Mass"
+   "language": "English",
+   "location": "",
+   "title": "All Souls Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "10:00",
+   "language": "English",
+   "location": "",
+   "title": "Mass with Sacrament of Anointing of the Sick",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "06:30",
+   "language": "English",
+   "location": "",
+   "title": "No 6.30am morning Mass",
+   "action": "cancel"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30"
  ],
- "notes": [
-  "Weekday Mass time changes on public holidays."
- ],
+ "notes": [],
  "info": {
+  "confession": "Confession is available half an hour before Mass starts.",
   "devotions": [
-   "Rosary Devotion: Saturday 16:45",
-   "Divine Mercy Devotion: Sunday 10:15"
+   "Rosary Devotion: Saturday 4.45pm",
+   "Divine Mercy Devotion: Sunday 10.15am"
   ],
-  "office_hours": "Monday to Friday 09:00 to 17:00"
+  "office_hours": "Monday to Friday 9.00am to 5.00pm",
+  "good_to_know": [
+   "Weddings: One year notification.",
+   "Infant Baptism: Please call office.",
+   "Funerals: Please notify the priest immediately and discuss with him in person on funeral services before you make any arrangement with the casket co."
+  ]
  },
  "events": [
+  {
+   "date": "2026-10-27",
+   "time": "19:30",
+   "title": "PIETA support group",
+   "text": "Monthly session for bereaved parents to pray, reflect and break open the Word of God. Face-to-face from 7:30pm to 9:15pm at Catholic Archdiocesan Education Ctr 2 Highland Rd LG-01."
+  },
   {
    "date": "2026-11-06",
    "time": "19:45",
    "title": "Treasure #18 Retreat for Young Working Adults",
-   "text": "Treasure #18 Retreat for Young Working Adults. Stay-in Catholic Encounter Retreat for young working adults (ages 21–35). Ends 9 Nov 6pm. Venue: St. Francis Xavier Retreat Centre. Fee: $163.50 (incl. 9% GST). Registration: tinyurl.com/oyp-treasure18. Email: treasure.oyp@catholic.org.sg."
+   "text": "Stay-in Catholic Encounter Retreat specially for young working adults (ages 21–35) in Singapore. 6 Nov (Fri) 7.45pm - 9 Nov (Mon) 6pm. Venue: St. Francis Xavier Retreat Centre (199 Ponggol Seventeenth Avenue). Retreat fee: $163.50 (incl. 9% GST). Registration: tinyurl.com/oyp-treasure18."
+  },
+  {
+   "date": "2026-11-21",
+   "time": "10:00",
+   "title": "OYP Outreach for Sec 4 & 5 Students",
+   "text": "OYP welcomes all who are graduating to join us for a time of prayer with the Lord and getting to know fellow Sec 4 & 5 students. Sat, 21 Nov 2026, 10AM - 1PM. Cost: Free! Venue: 55 Waterloo St, Catholic Ctr #08-01. Register: tinyurl.com/SecOutreach26Nov."
   },
   {
    "date": "2026-12-16",
    "time": "",
-   "title": "Breathe Youth Retreat",
-   "text": "Breathe Youth Retreat. Stay-in youth & young adults retreat for 16-30yos, 16-20 Dec. Organised by Catholic Spirituality Centre (CSC). Early bird promo price $160 till 11 Oct. Registration at bit.ly/breathe4 and closes on 30 Nov."
+   "title": "BREATHE Youth Retreat",
+   "text": "A space to step away, take a breath, and encounter the love of God. Stay-in retreat for 16-30yos on 16-20 Dec. Organised by the Catholic Spirituality Centre (CSC). Registration at bit.ly/breathe4 and closes on 30 Nov."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610091005_St_StephenBulletin_11102026.pdf?alt=media&token=c588fb7f-09cb-4982-97de-b6ce927b3789",
-  "date": "2026-10-09"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610161252_St_StephenBulletin_18102026.pdf?alt=media&token=16817b7b-d055-47cb-98fe-a655e9e9f315",
+  "date": "2026-10-16"
  },
  "disputes": [],
  "vs_mycatholic": {

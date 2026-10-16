@@ -2,9 +2,9 @@
  "id": 25,
  "name": "St Joseph's Church (Victoria Street)",
  "source_urls": [
-  "https://drive.google.com/file/d/1vmsrXp5gQejKZ9K-6-Rxtmd3651xjyO4/view?usp=sharing"
+  "https://drive.google.com/file/d/1I7ECKwhY_tvNiwUTn1g-02ThwVOn9GNv/view?usp=sharing"
  ],
- "fetched_at": "2026-10-09T21:08+08:00",
+ "fetched_at": "2026-10-16T21:06+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -92,6 +92,16 @@
   },
   {
    "d": 5,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -112,18 +122,33 @@
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "10:00"
  ],
- "notes": [],
+ "notes": [
+  "No weekday Mass on public holidays."
+ ],
  "info": {
-  "confession": "Confessions are available 45 minutes before Mass and 30 minutes before the Spanish Mass."
+  "confession": "Confession is 45 minutes before Mass. Confessions are available 30 minutes before the Spanish Mass.",
+  "devotions": [
+   "Eucharistic Adoration and the Sacred Heart Devotion on Fridays at 5.30pm."
+  ],
+  "good_to_know": [
+   "Opening hours: Mon-Fri 10:00-19:30; Public Holidays 09:00-11:00; Sat 09:00-19:00; Sun 09:00-19:00."
+  ]
  },
- "events": [],
+ "events": [
+  {
+   "date": "2026-10-18",
+   "time": "",
+   "title": "World Mission Sunday",
+   "text": "29th Week in Ordinary Time, Year A"
+  }
+ ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1vmsrXp5gQejKZ9K-6-Rxtmd3651xjyO4/view?usp=sharing",
-  "date": "2026-10-11"
+  "url": "https://drive.google.com/file/d/1I7ECKwhY_tvNiwUTn1g-02ThwVOn9GNv/view?usp=sharing",
+  "date": "2026-10-18"
  },
  "disputes": [],
  "vs_mycatholic": {

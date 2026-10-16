@@ -2,26 +2,14 @@
  "id": 8,
  "name": "Church of the Holy Trinity",
  "source_urls": [
-  "https://holytrinity.org.sg/"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610161746_18.10.26_29th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=93f7be25-a5d4-4800-824d-d0fdddf2a31b"
  ],
- "fetched_at": "2026-10-02T12:33+08:00",
- "fetch_mode": [
-  "rendered"
- ],
+ "fetched_at": "2026-10-16T21:02+08:00",
+ "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "06:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before 6.45am Mass"
-  },
   {
    "d": 0,
    "t": "06:45",
@@ -29,18 +17,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "08:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
    "loc": "",
-   "note": "30 minutes before 8.30am Mass"
+   "note": "Mass"
   },
   {
    "d": 0,
@@ -49,18 +27,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Main Church",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "09:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
    "loc": "",
-   "note": "30 minutes before 10.15am Mass"
+   "note": "Mass"
   },
   {
    "d": 0,
@@ -69,18 +37,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "11:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
    "loc": "",
-   "note": "30 minutes before 12.00pm Mass"
+   "note": "Mass"
   },
   {
    "d": 0,
@@ -89,8 +47,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 0,
@@ -100,17 +58,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary Prayer before Mass"
-  },
-  {
-   "d": 0,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before 5.30pm Mass"
+   "note": "Rosary"
   },
   {
    "d": 0,
@@ -119,8 +67,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 1,
@@ -129,8 +77,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 1,
@@ -140,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary Prayer before Mass"
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -149,8 +97,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 2,
@@ -159,8 +107,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 2,
@@ -180,7 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary Prayer before Mass"
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -189,8 +137,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 3,
@@ -199,8 +147,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 3,
@@ -210,7 +158,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary Prayer before Mass"
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -219,8 +167,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 4,
@@ -229,8 +177,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 4,
@@ -240,7 +188,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary Prayer before Mass"
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -249,8 +197,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 5,
@@ -259,8 +207,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 5,
@@ -270,7 +218,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary Prayer before Mass"
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -279,8 +227,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 6,
@@ -289,8 +237,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Chapel",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   },
   {
    "d": 6,
@@ -300,17 +248,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary Prayer before Mass"
-  },
-  {
-   "d": 6,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before 5.30pm Mass"
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -319,143 +257,54 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": ""
+   "loc": "",
+   "note": "Mass"
   }
  ],
- "dated": [
-  {
-   "type": "Devotion",
-   "date": "2026-10-06",
-   "time": "20:00",
-   "language": "English",
-   "location": "",
-   "title": "Divine Mercy Devotion",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-08",
-   "time": "19:30",
-   "language": "English",
-   "location": "",
-   "title": "Eucharist",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-09",
-   "time": "20:00",
-   "language": "Mandarin",
-   "location": "",
-   "title": "Hour of Prayer",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-10",
-   "time": "20:00",
-   "language": "English",
-   "location": "",
-   "title": "Christian Meditation",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00"
  ],
  "notes": [],
  "info": {
-  "adoration": "Chapel is open every day 06:00-18:00.",
-  "confession": "Confessions are available 30 minutes before Saturday 5.30pm Mass and all Sunday Masses.",
-  "devotions": [
-   "Rosary Prayer before Mass: Weekdays 5.25pm at Chapel; Weekends 4.55pm at Main Church.",
-   "Prayer for Priests: Tuesdays 4.50pm at Chapel."
-  ],
-  "office_hours": "Parish Office: Monday to Friday 9am-6pm (closed for lunch 12pm-1pm); Saturday and Sunday 9am-1pm; closed on Public Holidays.",
-  "good_to_know": [
-   "All Masses are in English unless stated otherwise.",
-   "Columbarium is open daily 6.30am-6pm."
-  ]
+  "office_hours": "Parish Office is open Monday to Friday 9am-6pm, Saturday and Sunday 9am-1pm, and closed on public holidays. The Columbarium is open daily 6.30am-6pm. For weddings, approach the Parish Office to book at least 1 year in advance. Address: 20 T"
  },
  "events": [
   {
-   "date": "2026-10-06",
-   "time": "19:30",
-   "title": "Legion of Mary",
-   "text": "Legion of Mary (Mandarin)"
+   "date": "2026-10-19",
+   "time": "19:45",
+   "title": "RCIA Mandarin",
+   "text": "RCIA Mandarin"
   },
   {
-   "date": "2026-10-07",
+   "date": "2026-10-21",
    "time": "10:00",
    "title": "JOY Ministry, for the Elderly",
    "text": "JOY Ministry, for the Elderly"
   },
   {
-   "date": "2026-10-07",
-   "time": "10:30",
-   "title": "Holy Trinity Youth",
-   "text": "Holy Trinity Youth"
-  },
-  {
-   "date": "2026-10-07",
-   "time": "11:00",
-   "title": "Legion of Mary",
-   "text": "Legion of Mary"
-  },
-  {
-   "date": "2026-10-07",
-   "time": "14:00",
-   "title": "Legion of Mary",
-   "text": "Legion of Mary"
-  },
-  {
-   "date": "2026-10-08",
-   "time": "09:30",
-   "title": "Bible Study",
-   "text": "Bible Study (Mandarin)"
-  },
-  {
-   "date": "2026-10-08",
-   "time": "10:00",
-   "title": "Legion of Mary",
-   "text": "Legion of Mary"
-  },
-  {
-   "date": "2026-10-08",
-   "time": "15:00",
-   "title": "Legion of Mary",
-   "text": "Legion of Mary"
-  },
-  {
-   "date": "2026-10-08",
-   "time": "19:30",
-   "title": "Neocatechumenal Way",
-   "text": "Neocatechumenal Way"
-  },
-  {
-   "date": "2026-10-08",
-   "time": "19:30",
-   "title": "Bible Study",
-   "text": "Bible Study (Mandarin)"
-  },
-  {
-   "date": "2026-10-08",
+   "date": "2026-10-22",
    "time": "19:45",
    "title": "RCIA",
    "text": "RCIA"
   },
   {
-   "date": "2026-10-08",
+   "date": "2026-10-22",
    "time": "20:00",
-   "title": "Legion of Mary",
-   "text": "Legion of Mary"
+   "title": "Lectors – Breaking of the Word",
+   "text": "Lectors – Breaking of the Word"
+  },
+  {
+   "date": "2026-10-24",
+   "time": "10:30",
+   "title": "Holy Trinity Youth",
+   "text": "Holy Trinity Youth"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610021045_04.10.26_27th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=0559dfa9-1350-42a8-b3a1-75ec1fc68bbd",
-  "date": "2026-10-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610161746_18.10.26_29th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=93f7be25-a5d4-4800-824d-d0fdddf2a31b",
+  "date": "2026-10-16"
  },
  "disputes": [],
  "vs_mycatholic": {

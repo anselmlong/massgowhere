@@ -2,9 +2,9 @@
  "id": 9,
  "name": "Church of the Immaculate Heart of Mary",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610100830_41_28th%20Sun%20in%20Ord%20Sun%2011Oct26.pdf?alt=media&token=3a7d5a79-6f42-451f-a767-0e7f6505465b"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610161739_42_29%20Sun%20in%20Ord%20Time%2018Oct26.pdf?alt=media&token=00d59470-6f37-4130-928b-8cd3857faefe"
  ],
- "fetched_at": "2026-10-10T12:32+08:00",
+ "fetched_at": "2026-10-16T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -199,23 +199,10 @@
  "public_holiday_masses": [],
  "notes": [],
  "info": {},
- "events": [
-  {
-   "date": "2026-10-31",
-   "time": "",
-   "title": "Infant Baptism Briefing",
-   "text": "Briefing Date: 31 Oct 2026"
-  },
-  {
-   "date": "2026-11-07",
-   "time": "",
-   "title": "Infant Baptism Day",
-   "text": "Baptism Day: 07 Nov 2026"
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610100830_41_28th%20Sun%20in%20Ord%20Sun%2011Oct26.pdf?alt=media&token=3a7d5a79-6f42-451f-a767-0e7f6505465b",
-  "date": "2026-10-10"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610161739_42_29%20Sun%20in%20Ord%20Time%2018Oct26.pdf?alt=media&token=00d59470-6f37-4130-928b-8cd3857faefe",
+  "date": "2026-10-16"
  },
  "disputes": [],
  "vs_mycatholic": {

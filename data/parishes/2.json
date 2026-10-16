@@ -2,24 +2,14 @@
  "id": 2,
  "name": "Cathedral of the Good Shepherd",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610101008_Bulletin_20261011.pdf?alt=media&token=9a39702d-8f3e-4005-b9b5-b8894239f40c"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610161749_Bulletin_20261018.pdf?alt=media&token=b35f3042-2764-4573-8dad-815e911b5fef"
  ],
- "fetched_at": "2026-10-10T21:02+08:00",
+ "fetched_at": "2026-10-16T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "08:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Main Church",
-   "note": "15 minutes before weekend Mass when priests are available"
-  },
   {
    "d": 0,
    "t": "08:30",
@@ -32,16 +22,6 @@
   },
   {
    "d": 0,
-   "t": "10:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Main Church",
-   "note": "15 minutes before weekend Mass when priests are available"
-  },
-  {
-   "d": 0,
    "t": "10:30",
    "weeks": [],
    "except": [],
@@ -49,16 +29,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Main Church",
-   "note": "15 minutes before weekend Mass when priests are available"
   },
   {
    "d": 0,
@@ -88,7 +58,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary on Zoom"
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -108,7 +78,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary on Zoom"
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -148,7 +118,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary on Zoom"
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -158,7 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Annex Building Level 3",
-   "note": "Divine Mercy (except public holidays)"
+   "note": "Divine Mercy; except public holidays"
   },
   {
    "d": 4,
@@ -204,16 +174,6 @@
   },
   {
    "d": 6,
-   "t": "17:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Main Church",
-   "note": "15 minutes before weekend Mass when priests are available"
-  },
-  {
-   "d": 6,
    "t": "18:00",
    "weeks": [],
    "except": [],
@@ -226,81 +186,105 @@
  "dated": [
   {
    "type": "Mass",
-   "title": "",
-   "time": "08:30",
-   "location": "Temporary Chapel",
+   "date": "2026-10-31",
+   "time": "18:00",
    "language": "English",
-   "date": "2026-10-18",
+   "location": "",
+   "title": "All Saints' Day anticipated Mass",
    "action": "add"
   },
   {
    "type": "Mass",
-   "title": "Annual PIETA Memorial Mass",
-   "time": "20:00",
-   "location": "Church of St. Alphonsus (Novena Church)",
+   "date": "2026-11-01",
+   "time": "08:30",
    "language": "English",
-   "date": "2026-11-13",
+   "location": "",
+   "title": "All Saints' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "10:30",
+   "language": "English",
+   "location": "",
+   "title": "All Saints' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints' Day Mass",
    "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Main Church is closed on 10-11 and 17-18 Oct; all Masses on those weekends are at the Temporary Chapel.",
-  "Divine Mercy is not held on public holidays.",
-  "Confession is subject to priest availability."
+  "Divine Mercy devotion is not held on public holidays.",
+  "Confession is subject to priest availability.",
+  "All Saints' Day Masses follow regular Mass timings."
  ],
  "info": {
-  "adoration": "Adoration Chapel open daily 7am-12mn.",
-  "confession": "Main Church 15min before Weekend Mass when priests are available.",
+  "adoration": "Adoration Chapel is open daily 07:00-24:00.",
+  "confession": "Confession is at the Main Church 15 minutes before Weekend Mass when priests are available.",
   "devotions": [
-   "Rosary on Zoom: Monday-Wednesday 9.30pm; 4th Friday of the month 12:30pm at Temporary Chapel.",
-   "Divine Mercy: Thursday 12.15pm at Annex Building Level 3 (except public holidays).",
-   "Breaking of the Word: Thursday 8pm-9.30pm; Wednesday 11am at Annex, Level 2 Room 4.",
-   "Intercessory Prayers: Wednesday 11:45am at Annex, Level 2 Room 4."
+   "Rosary on Zoom Monday-Wednesday 21:30; 4th Friday 12:30 at Temporary Chapel.",
+   "Divine Mercy Thursday 12:15 at Annex Building Level 3, except public holidays.",
+   "Breaking of the Word Thursday 20:00-21:30; Wednesday 11:00 at Annex, Level 2 Room 4.",
+   "Intercessory Prayers Wednesday 11:45 at Annex, Level 2 Room 4."
   ],
-  "office_hours": "Monday - Friday, 9am - 6pm (Closed on Public Holidays)",
+  "office_hours": "Cathedral Office is open Monday-Friday 09:00-18:00 and closed on Public Holidays.",
   "good_to_know": [
-   "Main Church: closed Monday-Friday; open Saturday at 4pm and full day Sundays.",
-   "Temporary Chapel: JM Beurel Centre (Annex Building) Level 1, Monday-Friday 10am-7pm.",
-   "Adoration Chapel open daily 7am-12mn."
+   "Main Church is closed Monday-Friday; open Saturday at 16:00 and full day on Sundays.",
+   "Temporary Chapel at JM Beurel Centre (Annex Building) Level 1 is open Monday-Friday 10:00-19:00.",
+   "Heritage Gallery is open 10:00-22:00."
   ]
  },
  "events": [
   {
-   "date": "2026-10-16",
-   "time": "08:30",
-   "title": "A Journey of Discipleship Retreat #2",
-   "text": "Stay-in retreat from 16-18 Oct 2026, 8:30am Fri to 6:30pm Sun. Conducted by Msgr Peter Zhang and CSC Retreat Team. Location: Catholic Spirituality Centre. Fee: $280 (incl. GST). Register: bit.ly/cscjdr2."
-  },
-  {
-   "date": "2026-10-24",
-   "time": "09:00",
-   "title": "At the Feet of the Good Shepherd Retreat (FGS)",
-   "text": "Retreat for those carrying wounds from broken family relationships, separation, divorce or difficulties in marriage. 24-25 Oct 2026, 9am Sat to 5pm Sun. Location: Punggol Retreat Centre, 199 Punggol Seventeenth Ave, Singapore 829645. Fee: $390. Register: bit.ly/CDSG_FGS."
+   "date": "2026-10-27",
+   "time": "19:30",
+   "title": "PIETA Singapore Monthly Session",
+   "text": "Support group for bereaved parents; prayer, reflection and breaking open the Word of God. 27 October 2026, Tuesday, 19:30-21:15. Location: Catholic Archdiocesan Education Centre, 2 Highland Road, unit LG-01, Singapore 549102. Enquiries: pieta.singapore@gmail.com."
   },
   {
    "date": "2026-11-06",
    "time": "19:45",
-   "title": "Treasure #18 Retreat for Young Working Adults",
-   "text": "Stay-in Catholic Encounter Retreat for young working adults (ages 21-35) from 6-9 Nov 2026, 7:45pm Fri to 6pm Mon. Location: St. Francis Xavier Retreat Centre. Fee: $163.50 (incl. 9% GST). Register: tinyurl.com/oyp-treasure18."
+   "title": "TREASURE #18 Retreat for Young Working Adults",
+   "text": "Stay-in Catholic Encounter Retreat for young working adults ages 21-35. 6-9 November 2026, 19:45 (Fri) - 18:00 (Mon). Location: St. Francis Xavier Retreat Centre. Fee: $163.50 incl. 9% GST. Register: tinyurl.com/oyp-treasure18."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "",
+   "title": "70th Beginning Experience Retreat",
+   "text": "Live-in weekend for permanently separated, divorced or widowed. 13-17 November 2026. Location: Lifesprings Canossian Spirituality Centre. Fee: $230. Register: besingapore.org/BE_Event. Contact: Mary 97554310, Jean 98285162."
   },
   {
    "date": "2026-11-13",
    "time": "10:00",
-   "title": "Emmanuel: Walking with God in Our Golden Years",
-   "text": "Talk/reflection for those approaching retirement or in golden years. 13 Nov 2026, 10am-1pm. Location: St. Joseph Church (Bukit Timah), St Joseph AVA Room, L1. Fee: $20 per pax, $35 for 2 pax. Register: familylife.sg/EWWG."
+   "title": "EMMANUEL: Walking with God in Our Golden Years",
+   "text": "Reflection for those approaching retirement or in golden years. 13 November 2026, Friday, 10:00-13:00. Location: St. Joseph Church (Bukit Timah), St Joseph AVA Room, L1. Fee: $20 per pax, $35 for 2 pax. Register: familylife.sg/EWWG."
+  },
+  {
+   "date": "2026-11-21",
+   "time": "10:00",
+   "title": "Secondary 4 & 5 Students Outreach",
+   "text": "For graduating secondary school students; prayer and gathering. 21 November 2026, Saturday, 10:00-13:00 (registration opens 09:45). Location: Catholic Centre, 55 Waterloo Street, #08-01, Singapore 187954. Register: tinyurl.com/SecOutreach26Nov."
   },
   {
    "date": "2026-12-17",
    "time": "",
-   "title": "Breathe Retreat #4",
-   "text": "Stay-in youth retreat for ages 16-35 from 17-20 Dec 2026. Location: Catholic Spirituality Centre. Fee: $160 early bird till 11 Oct, $175 thereafter. Register: bit.ly/breathe4."
+   "title": "BREATHE Retreat #4",
+   "text": "Stay-in youth retreat for ages 16-35. 17-20 December 2026. Location: Catholic Spirituality Centre. Fee: $160 early bird till 11 Oct, $175 thereafter. Register: bit.ly/breathe4."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610101008_Bulletin_20261011.pdf?alt=media&token=9a39702d-8f3e-4005-b9b5-b8894239f40c",
-  "date": "2026-10-10"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610161749_Bulletin_20261018.pdf?alt=media&token=b35f3042-2764-4573-8dad-815e911b5fef",
+  "date": "2026-10-16"
  },
  "disputes": [],
  "vs_mycatholic": {

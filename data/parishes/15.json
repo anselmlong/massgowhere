@@ -2,9 +2,9 @@
  "id": 15,
  "name": "Church of the Risen Christ",
  "source_urls": [
-  "https://drive.google.com/file/d/1Y6ZSDoTfx0b3_QtF5npdQ0vSXBGjDiep/view"
+  "https://drive.google.com/file/d/1fLTuk3tvRTzYdtsrAOAWonrD2U4QMOzN/view"
  ],
- "fetched_at": "2026-10-10T12:33+08:00",
+ "fetched_at": "2026-10-16T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -27,8 +27,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Church of the Risen Christ",
-   "note": "(M)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 0,
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -47,7 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -59,7 +59,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "Daughters of St Paul",
+   "loc": "",
    "note": "Monthly Mass"
   },
   {
@@ -69,7 +69,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -81,7 +81,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "Daughters of St Paul",
+   "loc": "",
    "note": "Monthly Mass"
   },
   {
@@ -91,7 +91,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -101,7 +101,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -111,7 +111,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -121,7 +121,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -131,7 +131,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -141,7 +141,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -151,7 +151,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -161,7 +161,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -169,10 +169,10 @@
    "t": "20:00",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "Parish Hall",
-   "note": "Spiritual gathering for weekend liturgy with a gospel reflection."
+   "note": "Breaking of the Word (BOW): spiritual gathering for the weekend liturgy with a gospel reflection"
   },
   {
    "d": 5,
@@ -181,7 +181,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -201,7 +201,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -213,7 +213,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Indonesian",
-   "loc": "Daughters of St Paul",
+   "loc": "",
    "note": "Monthly Mass"
   },
   {
@@ -223,7 +223,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
+   "loc": "",
    "note": ""
   },
   {
@@ -233,47 +233,66 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Risen Christ",
-   "note": "Anticipated Mass"
+   "loc": "",
+   "note": ""
   }
  ],
  "dated": [
   {
-   "action": "add",
+   "type": "Devotion",
    "date": "2026-10-24",
-   "language": "English",
-   "location": "Church of the Risen Christ",
    "time": "19:00",
-   "title": "Novena & Candle light Rosary Procession (Walk with Mary)",
-   "type": "Devotion"
+   "language": "English",
+   "location": "",
+   "title": "Novena & Candlelight Rosary Procession (Walk with Mary)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "06:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "All Souls Day Mass",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "07:30"
+ ],
  "notes": [
-  "Public Holiday Weekday Masses: Monday–Friday at 07:30 only; Saturday at 07:30 and 17:30."
+  "On public holidays the usual weekday Mass times do not apply."
  ],
  "info": {
   "devotions": [
-   "Breaking of the Word (BOW) Thursdays at 20:00 in the Parish Hall.",
-   "Divine Mercy Devotion Fridays at 15:00 in the Parish Hall."
+   "Divine Mercy Devotion: Fridays 3pm in the Parish Hall"
   ],
-  "office_hours": "Monday–Friday: 7.30am only (Public Holiday), Saturday: 7.30am & 5.30pm (Public Holiday)",
   "good_to_know": [
-   "Car park will be closed from 16:00 to 20:00 on 24 October for the Walk with Mary event."
+   "The church is at 91 Toa Payoh Central, Singapore 319193.",
+   "The carpark closes at 4pm on 24 October for the Rosary Procession."
   ]
  },
  "events": [
   {
-   "date": "2026-10-14",
-   "time": "13:00",
-   "title": "Advance Care Planning",
-   "text": "Vintage Group educational talk on Advance Care Planning by Fei Yue"
+   "date": "2026-11-01",
+   "time": "",
+   "title": "Dress like a Saint",
+   "text": "Children, teens and adults are invited to come dressed as their favourite saint for All Saints' Day on Saturday 31 October and Sunday 1 November. Prizes for all who dress as saints, with prize redemption on Sunday from 7.30am to 12pm."
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1Y6ZSDoTfx0b3_QtF5npdQ0vSXBGjDiep/view",
-  "date": "2026-10-11"
+  "url": "https://drive.google.com/file/d/1fLTuk3tvRTzYdtsrAOAWonrD2U4QMOzN/view",
+  "date": "2026-10-18"
  },
  "disputes": [],
  "vs_mycatholic": {

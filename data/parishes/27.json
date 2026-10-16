@@ -2,9 +2,9 @@
  "id": 27,
  "name": "Church of St Michael",
  "source_urls": [
-  "https://sh1.sendinblue.com/mk/sc/Ff6tnSdRNFEXffBHqlvBMjzHWB53zzW6u5d838zZIvw1-dYpK4zRt127vBD5mCQmj965-H8lAvB4O5mzFoC6WJP9DQwb5pY?t=1791758037960"
+  "https://sh1.sendinblue.com/mk/sc/JNc0jdr694EJ4cgLs3qVzQwwZBpW15d7U11Gbs5ior-iIaehTo8hFkHUefO3VJfcOKjIPpL0tEOuezxlx5DB7DIwAh-WIj4?t=1792145327057"
  ],
- "fetched_at": "2026-10-12T12:31+08:00",
+ "fetched_at": "2026-10-16T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -208,83 +208,118 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Anticipatory Mass for Sunday's liturgy"
+   "note": "Anticipatory Mass for Sunday"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "06:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "12:15",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "18:30",
+   "language": "Mandarin",
+   "location": "",
+   "title": "All Souls' Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day",
+   "action": "add"
+  },
+  {
+   "type": "Adoration",
+   "date": "2026-11-06",
+   "time": "19:00",
+   "language": "English",
+   "location": "Worship Hall",
+   "title": "Holy Hour: Building up Happy Families",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "07:30"
  ],
  "notes": [
-  "When a public holiday falls on a Sunday, the holiday is observed on the following Monday."
+  "On public holidays that fall on a Sunday, the public holiday is observed on the following Monday.",
+  "All Saints' Day (31 Oct-1 Nov) is a day of obligation; Masses follow the usual weekend times."
  ],
  "info": {
-  "confession": "30 minutes before the weekend Masses: Saturdays 5pm; Sundays 9am, 11am and 5pm.",
+  "confession": "30 minutes before the weekend Masses: Saturday 5pm; Sunday 9am, 11am and 5pm.",
   "good_to_know": [
-   "Church of St Michael, 17 St Michael's Road, Singapore 327976.",
-   "Parish contact: 6291 9272, csm.secretariat@catholic.org.sg."
+   "Church of St Michael, 17 St Michael's Road, Singapore 327976; tel 6291 9272.",
+   "Parish email: csm.secretariat@catholic.org.sg."
   ]
  },
  "events": [
   {
-   "date": "2026-10-12",
-   "time": "20:00",
-   "title": "Talk on the Creed",
-   "text": "Discover what the words Catholics recite each week at Mass actually mean for our lives. Register at https://tinyurl.com/CSMTalkonCreed."
-  },
-  {
-   "date": "2026-10-16",
-   "time": "19:00",
-   "title": "Encounter: Rosary Evening",
-   "text": "October, the Month of the Rosary. Held in the Worship Hall; meditate on the life of Christ and find comfort in prayer."
-  },
-  {
    "date": "2026-10-17",
-   "time": "20:00",
-   "title": "Worship & Healing Prayer Service",
-   "text": "Preacher: Rev Fr Henry Siew. All are welcome."
+   "time": "15:30",
+   "title": "Infant Baptism Preparatory Session",
+   "text": "Sessions on 17, 24, 31 October and 7 November at 3.30pm; infant baptisms on Saturday 14 November at 3pm. Email csm.secretariat@catholic.org.sg to register your child."
   },
   {
    "date": "2026-10-19",
    "time": "20:00",
-   "title": "Talk on the Creed",
-   "text": "Discover what the words Catholics recite each week at Mass actually mean for our lives. Register at https://tinyurl.com/CSMTalkonCreed."
-  },
-  {
-   "date": "2026-10-22",
-   "time": "",
-   "title": "Reading Group on Magnifica Humanitas",
-   "text": "Thursdays 22 Oct to 19 Nov, reading Pope Leo XIV's encyclical with Fr Jerome Leon, SJ. Register at bit.ly/magnifica2026."
+   "title": "Talk on Creed: What do Catholics believe in?",
+   "text": "Discover what the words of the Creed mean for our lives. Mondays 5, 12, 19 and 26 October at 8pm. Register at https://tinyurl.com/CSMTalkonCreed."
   },
   {
    "date": "2026-10-23",
-   "time": "19:30",
-   "title": "Family Rosary at Homes",
-   "text": "Pray the Holy Rosary with other families at homes in Balestier, McNair and Potong Pasir. Register by 18 Oct at https://tinyurl.com/CSMFamilyRosary."
-  },
-  {
-   "date": "2026-10-26",
-   "time": "20:00",
-   "title": "Talk on the Creed",
-   "text": "Discover what the words Catholics recite each week at Mass actually mean for our lives. Register at https://tinyurl.com/CSMTalkonCreed."
+   "time": "19:00",
+   "title": "Rosary Evening: Family Rosary at homes",
+   "text": "Family Rosary at homes, 7.30pm-9.30pm, at three homes in Balestier (near Zhong Shan), McNair and Potong Pasir. Register by 18 Oct at https://tinyurl.com/CSMFamilyRosary and indicate your preferred location."
   },
   {
    "date": "2026-10-30",
    "time": "19:00",
-   "title": "Encounter: Rosary at Mother Mary's Grotto",
-   "text": "October, the Month of the Rosary. Gather at Mother Mary's Grotto to pray the Rosary together."
+   "title": "Rosary Evening: Mother Mary's Grotto",
+   "text": "Pray the Holy Rosary at Mother Mary's Grotto, 7pm."
   },
   {
-   "date": "2026-11-14",
-   "time": "15:00",
-   "title": "Infant Baptism",
-   "text": "Baptism at 3pm; preparatory sessions on 17, 24 and 31 Oct and 7 Nov at 3.30pm. Email csm.secretariat@catholic.org.sg to register your child."
+   "date": "2026-11-02",
+   "time": "",
+   "title": "Blessing of Niches",
+   "text": "Blessing of niches in the Columbarium after every Mass on All Souls' Day."
+  },
+  {
+   "date": "2026-11-07",
+   "time": "10:30",
+   "title": "Talk on a Father's Mission",
+   "text": "In collaboration with Catholic Family Life, 10.30am-12.30pm at Church of Saint Michael. Registration required at https://tinyurl.com/CSMAFathersMission."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "",
+   "title": "70th Beginning Experience (BE) Weekend",
+   "text": "Live-in weekend 13-15 November for those who are separated, divorced or widowed. Cost $230. Register at https://www.besingapore.org/BE_Event."
   }
  ],
  "bulletin": {
-  "url": "https://sh1.sendinblue.com/mk/sc/Ff6tnSdRNFEXffBHqlvBMjzHWB53zzW6u5d838zZIvw1-dYpK4zRt127vBD5mCQmj965-H8lAvB4O5mzFoC6WJP9DQwb5pY?t=1791758037960",
-  "date": "2026-10-12"
+  "url": "https://sh1.sendinblue.com/mk/sc/JNc0jdr694EJ4cgLs3qVzQwwZBpW15d7U11Gbs5ior-iIaehTo8hFkHUefO3VJfcOKjIPpL0tEOuezxlx5DB7DIwAh-WIj4?t=1792145327057",
+  "date": "2026-10-18"
  },
  "disputes": [],
  "vs_mycatholic": {
