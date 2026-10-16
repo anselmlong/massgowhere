@@ -2,9 +2,9 @@
  "id": 18,
  "name": "St Anne's Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610111007_Oct_10%20%26%2011%202026.pdf?alt=media&token=7ea309b1-c4fd-4984-82f7-9cbea95dbf86"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610161112_Oct_17%20%26%2018%202026.pdf?alt=media&token=c3e6aa8f-b753-42c7-b78c-c76c18eb4617"
  ],
- "fetched_at": "2026-10-11T12:32+08:00",
+ "fetched_at": "2026-10-16T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -50,7 +50,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Church",
+   "loc": "Main Church",
    "note": "1st and 3rd Sunday of the month"
   },
   {
@@ -72,7 +72,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -82,7 +82,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -92,7 +92,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -102,7 +102,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -112,7 +112,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -122,7 +122,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -132,7 +132,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -142,7 +142,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -152,7 +152,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -164,8 +164,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Church",
-   "note": "Holy Hour"
+   "loc": "Main Church",
+   "note": "Holy Hour, 1st Thursday of the month"
   },
   {
    "d": 5,
@@ -174,7 +174,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -184,7 +184,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -194,7 +194,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -204,7 +204,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": "Sunset Mass"
   }
  ],
@@ -215,7 +215,70 @@
    "time": "16:30",
    "language": "English",
    "location": "Main Church",
-   "title": "All Saints' Day Family Celebration Mass",
+   "title": "All Saints' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "07:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Saints' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "09:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Saints' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "11:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Saints' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "13:30",
+   "language": "Mandarin",
+   "location": "Main Church",
+   "title": "All Saints' Day Mass (Mandarin)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "16:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Saints' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "06:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "19:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls' Day Mass",
    "action": "add"
   }
  ],
@@ -224,47 +287,66 @@
   "08:00"
  ],
  "notes": [
-  "No evening Mass on public holidays."
+  "No evening Mass on weekday public holidays.",
+  "Attending one of the All Saints' Day Masses fulfils both the Sunday and All Saints' Day obligations.",
+  "The blessing of niches in the columbarium follows the evening All Souls' Day Mass on 2 November."
  ],
  "info": {
-  "adoration": "Holy Hour: 1st Thursday of the month, 8.15pm in Church.",
-  "confession": "30 minutes before English weekend Masses, in Church.",
-  "devotions": [
-   "Columbarium prayers: last Sunday of the month, after the 11.30am Mass"
-  ],
-  "office_hours": "Secretariat: Mon-Fri 9am-6pm; Sat 9am-1pm; 2nd and last Sunday of the month 9am-12pm.",
+  "adoration": "Holy Hour: 1st Thursday of the month, 8.15pm, in the Church.",
+  "confession": "30 minutes before English weekend Masses, in the Church.",
+  "office_hours": "Mon-Fri 9am-6pm; Sat 9am-1pm; 2nd and last Sunday of the month 9am-12pm.",
   "good_to_know": [
-   "Church is open Mon-Sat 6am-10pm, Sun 6am-6pm, and 7am-1pm on weekday public holidays.",
-   "Book & Gift Service Centre: Sat 4pm-6pm, Sun 8am-1pm."
+   "Church open Mon-Sat 6am-10pm, Sun 6am-6pm; on weekday public holidays 7am-1pm.",
+   "Book & Gift Service Centre open Sat 4pm-6pm and Sun 8am-1pm."
   ]
  },
  "events": [
   {
-   "date": "2026-10-19",
-   "time": "20:00",
-   "title": "Divorce, Separation and Annulment Symposium (Part 2)",
-   "text": "Online on Zoom, 8pm-10pm, for Catholics whose marriage has ended and who want to stay in full communion with the Church. Register at http://bit.ly/DSAOct26."
-  },
-  {
-   "date": "2026-10-24",
+   "date": "2026-10-23",
    "time": "",
-   "title": "Inner Healing Retreat",
-   "text": "Stay-in retreat on 24-25 October at Punggol Retreat Centre for those carrying inner wounds from broken relationships caused by divorce, including children and parents. Fee $390 including ensuite accommodation and meals; register by scanning the QR code or email catholicdivorce.sg@gmail.com."
+   "title": "Saints Alive! 2.0 Exhibition: Children's Artwork Submissions",
+   "text": "Children up to 12 years old are invited to submit one A4 artwork answering 'If I was a saint, what would I be patron saint of?' Drop it in the box outside the Secretariat Office by 23 October; email sac.comms.design@catholic.org.sg for enquiries."
   },
   {
-   "date": "2026-10-31",
-   "time": "14:00",
-   "title": "All Saints' Day Family Celebration",
-   "text": "St Joachim's Hall (Level 4), 2pm-5.30pm: family games, a dish to share, the 'Saints Alive' exhibition, and children dressed as their favourite saint. Mass at 4.30pm in the Main Church. Register at https://tinyurl.com/saintsfamily."
+   "date": "2026-10-23",
+   "time": "19:30",
+   "title": "Month of the Rosary: Multilingual Outdoor Prayer and Procession",
+   "text": "Outdoor procession and recitation of the Rosary in multiple languages on the church grounds, immediately following the 7.30pm Mass. All are welcome."
+  },
+  {
+   "date": "2026-11-07",
+   "time": "09:30",
+   "title": "PEPT Responders Plus Programme (First Aid, CPR-AED, Fire Fighting)",
+   "text": "Emergency preparedness training with the SCDF, 9.30am-12.30pm at St Anne's Hall, Level 3. Register through the Google form; email Daniel at sac.pept@catholic.org.sg for enquiries."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "",
+   "title": "Camp Mosaic 2026 (CFC Youth for Christ)",
+   "text": "Camp for youths aged 13 to 21, 13-15 November, at The Girls' Brigade, Singapore. Register at https://forms.gle/9TJzSfqU4rFCgjuY9."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610111007_Oct_10%20%26%2011%202026.pdf?alt=media&token=7ea309b1-c4fd-4984-82f7-9cbea95dbf86",
-  "date": "2026-10-11"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610161112_Oct_17%20%26%2018%202026.pdf?alt=media&token=c3e6aa8f-b753-42c7-b78c-c76c18eb4617",
+  "date": "2026-10-16"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
+   [
+    "Mass",
+    "Friday",
+    "19:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Monday",
+    "19:30",
+    [],
+    []
+   ],
    [
     "Mass",
     "Sunday",
@@ -274,9 +356,44 @@
      3
     ],
     []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "19:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "19:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "19:30",
+    [],
+    []
    ]
   ],
   "only_on_mycatholic": [
+   [
+    "Mass",
+    "Friday",
+    "18:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Monday",
+    "18:30",
+    [],
+    []
+   ],
    [
     "Mass",
     "Sunday",
@@ -293,6 +410,27 @@
     [
      3
     ],
+    []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "18:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "18:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "18:30",
+    [],
     []
    ]
   ]

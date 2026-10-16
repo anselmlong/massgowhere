@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-15T12:31+08:00",
+ "fetchedAt": "2026-10-16T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -39,16 +39,16 @@
   },
   "6": {
    "from": "myCatholicSG",
-   "title": "28th Sunday In Ordinary Time",
-   "date": "2026-10-09",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610091828_28th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=7c802472-465d-4418-927f-7a1e74394c85",
+   "title": "29th Sunday In Ordinary Time",
+   "date": "2026-10-15",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610151752_29th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=069dfcce-4de8-489c-b8f8-6e7531a066de",
    "page": "https://mycatholic.sg/bulletin/holyfamily"
   },
   "7": {
    "from": "myCatholicSG",
-   "title": "Twenty-Eight Sunday in Ordinary Time",
-   "date": "2026-10-09",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610091647_CHS_Bulletin%2010%20-%2011%20Oct%202026.pdf?alt=media&token=5da92e8a-ddef-440d-929f-e1c38f49bb48",
+   "title": "Twenty-ninth Sunday in Ordinary Time (World Mission Sunday)",
+   "date": "2026-10-16",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610161101_CHS_Bulletin%2017%20-%2018%20October%202026.pdf?alt=media&token=01b73101-6bbf-4bba-a54b-d4b37d230789",
    "page": "https://mycatholic.sg/bulletin/holyspirit"
   },
   "8": {
@@ -74,16 +74,16 @@
   },
   "11": {
    "from": "myCatholicSG",
-   "title": "4 & 11 Oct 2026",
-   "date": "2026-10-01",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F11%2Fpublic%2Fpdf%2F2610011358_Bulletin_4%20%26%2011%20Oct%202026.pdf?alt=media&token=45822b25-9538-4b2b-b6ea-8b0d43ba655a",
+   "title": "18 & 25 Oct 2026",
+   "date": "2026-10-16",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F11%2Fpublic%2Fpdf%2F2610160818_Bulletin_18%20%26%2025%20Oct%202026.pdf?alt=media&token=ab1439cf-4671-488d-86bc-fc453502c1e0",
    "page": "https://mycatholic.sg/bulletin/nativityofblessedvirgin"
   },
   "12": {
    "from": "myCatholicSG",
-   "title": "OLPS Weekly Bulletin 11 Oct 2026",
-   "date": "2026-10-08",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610081932_28th_Sunday%20in%20Ordinary%20Time%2011%20Oct%202026.pdf?alt=media&token=96cb9970-4826-494c-af09-11a049355152",
+   "title": "OLPS Weekly Bulletin 18 Oct 2026",
+   "date": "2026-10-15",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610151850_Mission_%20Sunday%2018%20Oct%202026.pdf?alt=media&token=20caf920-f56a-4d8d-b399-e1f4c6818358",
    "page": "https://mycatholic.sg/bulletin/perpertualsuccour"
   },
   "13": {
@@ -123,16 +123,16 @@
   },
   "18": {
    "from": "myCatholicSG",
-   "title": "10 & 11 October 2026",
-   "date": "2026-10-11",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610111007_Oct_10%20%26%2011%202026.pdf?alt=media&token=7ea309b1-c4fd-4984-82f7-9cbea95dbf86",
+   "title": "17 & 18 October 2026",
+   "date": "2026-10-16",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610161112_Oct_17%20%26%2018%202026.pdf?alt=media&token=c3e6aa8f-b753-42c7-b78c-c76c18eb4617",
    "page": "https://mycatholic.sg/bulletin/stanne"
   },
   "19": {
    "from": "website",
    "title": "",
-   "date": "2026-10-11",
-   "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_11.pdf",
+   "date": "2026-10-18",
+   "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_18.pdf",
    "page": "https://saint-anthony.org/bulletin/"
   },
   "20": {
@@ -181,7 +181,7 @@
   "26": {
    "from": "website",
    "title": "",
-   "date": "2026-10-13",
+   "date": "2026-10-15",
    "url": "https://www.stmary.sg/announcements",
    "page": "https://www.stmary.sg/announcements",
    "kind": "announcements"
