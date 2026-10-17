@@ -2,9 +2,9 @@
  "id": 5,
  "name": "Church of the Holy Cross",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610091721_English_Bulletin%2011Oct.pdf?alt=media&token=dc7bcaac-6fb1-445e-98b0-edc20e89b091"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610170619_English_Bulletin%2018%20Oct.pdf?alt=media&token=89f11f6a-5fec-4afe-9ea6-79430d8a75ea"
  ],
- "fetched_at": "2026-10-09T21:02+08:00",
+ "fetched_at": "2026-10-17T12:35+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -88,7 +88,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass & Vespers"
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 2,
@@ -128,7 +138,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass & Vespers"
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 3,
@@ -168,7 +188,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass & Vespers"
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 4,
@@ -208,7 +238,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass & Vespers"
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 5,
@@ -248,7 +288,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Evening Mass & Vespers"
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Vespers"
   },
   {
    "d": 5,
@@ -319,7 +369,7 @@
    "time": "16:10",
    "language": "English",
    "location": "",
-   "title": "All Saints Day (Day of Obligation) Eve",
+   "title": "All Saints Day (Eve)",
    "action": "add"
   },
   {
@@ -328,7 +378,7 @@
    "time": "18:00",
    "language": "Mandarin",
    "location": "",
-   "title": "All Saints Day (Day of Obligation) Eve",
+   "title": "All Saints Day (Eve)",
    "action": "add"
   },
   {
@@ -337,7 +387,7 @@
    "time": "07:30",
    "language": "English",
    "location": "",
-   "title": "All Saints Day (Day of Obligation)",
+   "title": "All Saints Day",
    "action": "add"
   },
   {
@@ -346,7 +396,7 @@
    "time": "09:30",
    "language": "English",
    "location": "",
-   "title": "All Saints Day (Day of Obligation)",
+   "title": "All Saints Day",
    "action": "add"
   },
   {
@@ -355,7 +405,7 @@
    "time": "11:30",
    "language": "English",
    "location": "",
-   "title": "All Saints Day (Day of Obligation)",
+   "title": "All Saints Day",
    "action": "add"
   },
   {
@@ -364,7 +414,7 @@
    "time": "17:00",
    "language": "English",
    "location": "",
-   "title": "All Saints Day (Day of Obligation)",
+   "title": "All Saints Day",
    "action": "add"
   },
   {
@@ -395,55 +445,72 @@
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "07:30"
  ],
- "notes": [],
+ "notes": [
+  "All Saints Day (31 Oct/1 Nov) is a day of obligation.",
+  "On public holidays, only the 7.30am Mass is celebrated."
+ ],
  "info": {
-  "adoration": "Adoration Room is open daily until 10pm."
+  "adoration": "Adoration Room is open daily until 10pm.",
+  "devotions": [
+   "Holy Hour: Every 1st Friday at 8pm",
+   "Novena Devotion: Every Saturday at 3.30pm"
+  ],
+  "good_to_know": [
+   "All Saints Day (31 Oct/1 Nov) is a day of obligation.",
+   "On public holidays, only the 7.30am Mass is celebrated."
+  ]
  },
  "events": [
   {
-   "date": "2026-10-15",
-   "time": "",
+   "date": "2026-10-22",
+   "time": "19:30",
    "title": "Faith Enrichment - RCIA",
-   "text": "Also 22 Oct, 29 Oct, 05 Nov. Topics: 15 Oct: Jesus and the Greater Righteousness; 22 Oct: Jesus and the Kingdom of God; 29 Oct: The Death and Resurrection of Christ; 05 Nov: The Holy Spirit and Birth of the Church. Pre-registration is not required. All are welcome."
+   "text": "Jesus and the Kingdom of God. All Saints Hall. No pre-registration required. All are welcome."
   },
   {
-   "date": "2026-10-17",
-   "time": "",
-   "title": "Young Missionaries of Hope: One in Christ, United in Mission (Virtual Zoom Event)",
-   "text": "Keynote speaker: Cardinal \"Ambo\", Vice-President of The Federation of Asian Bishops' Conferences. Sign up at bit.ly/unitedinmission. Enquiries: formation.cst@caritas-singapore.org."
+   "date": "2026-10-25",
+   "time": "09:30",
+   "title": "Cupertino Library",
+   "text": "St Michael's Room. For children ages 2-12 to grow in virtue and faith. Scan the QR code to join."
   },
   {
-   "date": "2026-10-23",
-   "time": "",
-   "title": "Choice Weekend Programme",
-   "text": "For all unmarried young adults, single or dating, 18 to 40 years old. Venue: ME House, 201B Punggol 17th Ave S829651. Register at bit.ly/ChoiceSG26 or visit Choice Singapore."
+   "date": "2026-10-29",
+   "time": "19:30",
+   "title": "Faith Enrichment - RCIA",
+   "text": "The Death and Resurrection of Christ. All Saints Hall. No pre-registration required. All are welcome."
   },
   {
-   "date": "2026-10-24",
-   "time": "13:00",
-   "title": "Infant Baptism Preparatory Session",
-   "text": "Compulsory for parents and God-parents. Closing date for registration: 18 Oct 2026. Venue: St Michael's Room."
+   "date": "2026-11-05",
+   "time": "19:30",
+   "title": "Faith Enrichment - RCIA",
+   "text": "The Holy Spirit and Birth of the Church. All Saints Hall. No pre-registration required. All are welcome."
   },
   {
-   "date": "2026-10-30",
-   "time": "",
-   "title": "These Catholic Men - A Fireside Chat on Masculinity",
-   "text": "Dinner provided. Venue: PICO Event Hall. Register via familylife.sg/TCMM."
+   "date": "2026-11-12",
+   "time": "19:30",
+   "title": "Faith Enrichment - RCIA",
+   "text": "The Communion of Saints. All Saints Hall. No pre-registration required. All are welcome."
   },
   {
    "date": "2026-11-13",
-   "time": "",
-   "title": "Emmanuel: Walking with God in Our Golden Years",
-   "text": "$20 for 1 pax | $35 for 2 pax. Venue: St Joseph Church (Bt Timah). Register at FAMILYLIFE.SG/EWWG."
+   "time": "10:00",
+   "title": "Emmanuel: Walking with God in our Golden Years",
+   "text": "St Joseph Church (Bt Timah). $20 for 1 pax | $35 for 2 pax. For golden years, ageing, faith. Register at FAMILYLIFE.SG/EWWG."
+  },
+  {
+   "date": "2026-11-28",
+   "time": "13:30",
+   "title": "Conversations That Matter: When Your Teen Questions Their Sexuality",
+   "text": "Church of the Holy Cross (Auditorium). $20 for 1 pax | $35 for 2 pax. For parents, teen sexuality, Fr David Garcia, OP and psychologist Nicholas Gabriel Lim. Register at familylife.sg/CTM_B. No parking in church."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610091721_English_Bulletin%2011Oct.pdf?alt=media&token=dc7bcaac-6fb1-445e-98b0-edc20e89b091",
-  "date": "2026-10-09"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610170619_English_Bulletin%2018%20Oct.pdf?alt=media&token=89f11f6a-5fec-4afe-9ea6-79430d8a75ea",
+  "date": "2026-10-17"
  },
  "disputes": [],
  "vs_mycatholic": {

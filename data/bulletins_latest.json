@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-16T21:01+08:00",
+ "fetchedAt": "2026-10-17T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -25,16 +25,16 @@
   },
   "4": {
    "from": "myCatholicSG",
-   "title": "10/11 October 2026 - Vol 41 - 28th Sunday in Ordinary Time",
-   "date": "2026-10-10",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610100910_CDM_Parish%20Bulletin%20Vol2026.41%20%E2%80%93%2010-11%20Oct%20v2.pdf?alt=media&token=c068847c-80f9-4169-9fd3-7090dd0db3fb",
+   "title": "17/18 October - Vol 42 - 29th Sunday in Ordinary Time",
+   "date": "2026-10-17",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610170926_CDM_Parish%20Bulletin%20Vol202642%20%E2%80%93%2017-18%20Oct_v21_261016_173148.pdf?alt=media&token=7d09646f-1781-4be6-a620-901ce83b9eec",
    "page": "https://mycatholic.sg/bulletin/divinemercy"
   },
   "5": {
    "from": "myCatholicSG",
-   "title": "Twenty-eighth Sunday in Ordinary Time",
-   "date": "2026-10-09",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610091721_English_Bulletin%2011Oct.pdf?alt=media&token=dc7bcaac-6fb1-445e-98b0-edc20e89b091",
+   "title": "Twenty-ninth Sunday in Ordinary Time",
+   "date": "2026-10-17",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610170619_English_Bulletin%2018%20Oct.pdf?alt=media&token=89f11f6a-5fec-4afe-9ea6-79430d8a75ea",
    "page": "https://mycatholic.sg/bulletin/holycross"
   },
   "6": {
@@ -166,9 +166,9 @@
   },
   "24": {
    "from": "myCatholicSG",
-   "title": "11 October 2026 : 28th Sunday Ordinary Time",
-   "date": "2026-10-09",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610091139_20261011_SJCBT%20Bulletin.pdf?alt=media&token=85f06731-eec1-4b7c-a832-062322e9535a",
+   "title": "18 October 2026 : 29th Sunday Ordinary Time",
+   "date": "2026-10-16",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610162322_20261018_SJCBT%20Bulletin.pdf?alt=media&token=68547949-85f9-4141-a176-0bfd6ed40c28",
    "page": "https://mycatholic.sg/bulletin/stjosephbukittimah"
   },
   "25": {
@@ -216,9 +216,9 @@
   },
   "31": {
    "from": "myCatholicSG",
-   "title": "Twenty-Eighth Sunday in Ordinary Time",
-   "date": "2026-10-10",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610101113_1011_2026.pdf?alt=media&token=719d6626-ddf2-4701-8058-7f0df2576523",
+   "title": "Twenty-Ninth Sunday in Ordinary Time",
+   "date": "2026-10-17",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610170959_1018_2026.pdf?alt=media&token=c51a9b80-e756-483a-b374-8ea266d7a8f9",
    "page": "https://mycatholic.sg/bulletin/stspeterandpaul"
   },
   "32": {

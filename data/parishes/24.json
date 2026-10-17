@@ -2,24 +2,14 @@
  "id": 24,
  "name": "St Joseph's Church (Bukit Timah)",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610091139_20261011_SJCBT%20Bulletin.pdf?alt=media&token=85f06731-eec1-4b7c-a832-062322e9535a"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610162322_20261018_SJCBT%20Bulletin.pdf?alt=media&token=68547949-85f9-4141-a176-0bfd6ed40c28"
  ],
- "fetched_at": "2026-10-09T12:33+08:00",
+ "fetched_at": "2026-10-17T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms",
-   "note": "15 minutes before the 7.30am Mass"
-  },
   {
    "d": 0,
    "t": "07:30",
@@ -29,16 +19,6 @@
    "lang": "Mandarin",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "09:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms",
-   "note": "15 minutes before the 9.30am Mass"
   },
   {
    "d": 0,
@@ -52,16 +32,6 @@
   },
   {
    "d": 0,
-   "t": "11:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms",
-   "note": "15 minutes before the 11.30am Mass"
-  },
-  {
-   "d": 0,
    "t": "11:30",
    "weeks": [],
    "except": [],
@@ -69,16 +39,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "17:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms",
-   "note": "15 minutes before the 5.30pm Mass"
   },
   {
    "d": 0,
@@ -250,16 +210,6 @@
   },
   {
    "d": 6,
-   "t": "17:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms",
-   "note": "15 minutes before the 5.30pm Mass"
-  },
-  {
-   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
@@ -269,113 +219,102 @@
    "note": "Sunset Mass"
   }
  ],
- "dated": [
-  {
-   "type": "Adoration",
-   "date": "2026-10-15",
-   "time": "20:00",
-   "language": "English",
-   "location": "Chapel of St Joseph",
-   "title": "Holy Hour for Vocations - last session for 2026",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "Weekday Masses are held in the Chapel of St Joseph."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room: Mon-Fri 7.00am-9.00pm, Sat 9.30am-7.00pm, Sun 8.00am-7.00pm, public holidays 8.00am-4.00pm. Holy Hour: first Friday 8.00pm in the Main Church.",
-  "confession": "15 minutes before all weekend Masses, in the Reconciliation Rooms in the church.",
+  "adoration": "Adoration Room open Mon-Fri 7.00am-9.00pm, Sat 9.30am-7.00pm, Sun 8.00am-7.00pm and public holidays 8.00am-4.00pm. Holy Hour: first Friday 8pm in the Main Church (unless otherwise stated). Holy Hour for Vocations: third Thursday 8pm in the ",
+  "confession": "15 minutes before all weekend Masses, in the Reconciliation Rooms in the Church.",
   "devotions": [
-   "Garden Rosary: first Saturday, after the 5.30pm Sunset Mass",
-   "Grotto Rosary: every 13th of the month after the 6.30pm weekday Mass (weekdays only)",
-   "Blessing of Expectant Mothers: fourth Sunday of the month"
+   "Divine Mercy: every Friday 8pm (except the first Friday), Chapel of St Joseph",
+   "Garden Rosary: first Saturday after the 5.30pm Mass",
+   "Grotto Rosary: every 13th of the month after the 6.30pm Mass (weekdays only)",
+   "Blessing of Expectant Mothers: every fourth Sunday of the month"
   ],
   "good_to_know": [
-   "The church gate is open 6.00am to 10.00pm.",
-   "The columbarium, Rosary Garden and Stations of the Cross are open 8.00am to 8.00pm daily.",
-   "The Media Centre (bookshop) is open Saturdays 4.30pm-7.00pm and Sundays 8.30am-1.00pm, and on the 2nd Sunday also 5.30pm-7.00pm."
+   "Gate opening hours: 6.00am to 10.00pm daily.",
+   "Columbarium, Rosary Garden and Stations of the Cross are open daily 8.00am to 8.00pm.",
+   "Media Centre (bookshop): Sat 4.30pm-7.00pm, Sun 8.30am-1.00pm; also every 2nd Sunday 5.30pm-7.00pm."
   ]
  },
  "events": [
   {
-   "date": "2026-10-13",
-   "time": "",
-   "title": "Human Dignity & Development in the Era of AI",
-   "text": "Fr David speaks at Catholic Centre on Tuesday 13 October on discerning the impact of AI in light of Pope Leo XIV's encyclical. Register at bit.ly/dignityoct."
-  },
-  {
-   "date": "2026-10-13",
-   "time": "11:05",
-   "title": "Tuesday Morning Manna",
-   "text": "Lectio: Prayer with Dr Tim Gray, Tuesday mornings at 11.05am in the St Joseph AVA Room. Join the WhatsApp community at tinyurl.com/TuesdayMorningManna."
-  },
-  {
-   "date": "2026-10-15",
-   "time": "",
-   "title": "Rest, Relish and Recharge",
-   "text": "Days of reflection and prayer from 15 to 18 October, with rest and simple leisure activities, for self-discovery and emotional growth."
-  },
-  {
-   "date": "2026-10-16",
-   "time": "",
-   "title": "A Journey of Discipleship Retreat",
-   "text": "A retreat from 16 to 18 October."
-  },
-  {
-   "date": "2026-10-17",
-   "time": "",
-   "title": "My Hands, His Plans: The Musical - tickets on sale",
-   "text": "An original parish musical for the 180th anniversary, staged this November. Tickets ($10, or $50 premium view) go on sale from 17 October before and after weekend Masses at the St Joachim Room."
-  },
-  {
-   "date": "2026-10-17",
-   "time": "",
-   "title": "Crossroads Life Direction Retreat",
-   "text": "A life direction retreat on 17-18 October to reconnect with your spiritual purpose and chart a meaningful path forward."
-  },
-  {
    "date": "2026-10-17",
    "time": "18:45",
    "title": "Small Catholic Communities dinner",
-   "text": "Fellowship dinner with the Parish Priests on Saturday 17 October after the sunset Mass, for parishioners in their neighbourhood groups. Register at https://tinyurl.com/SCCGM2026."
+   "text": "Come together with the Small Catholic Community in your neighbourhood for dinner with our parish priests on Saturday 17 Oct after the sunset Mass. All parishioners are welcome; register at tinyurl.com/SCCGM2026 so a simple dinner can be provided."
   },
   {
    "date": "2026-10-20",
    "time": "",
    "title": "Mysteries of the Rosary: The Joyful Mysteries",
-   "text": "A video series on the Joyful Mysteries starting 20 October, every Tuesday night or Wednesday morning, in person and online via Zoom. Details via the Faith & Bible Reflections WhatsApp community: tinyurl.com/SJCBTFAB."
+   "text": "A video series on the Joyful Mysteries, in person and online via Zoom, every Tuesday night or Wednesday morning from 20 Oct. Join the Faith & Bible Reflections WhatsApp Community at tinyurl.com/SJCBTFAB."
+  },
+  {
+   "date": "2026-10-24",
+   "time": "",
+   "title": "World Youth Day Car Wash Fundraiser",
+   "text": "Car wash on 24 and 25 Oct in support of our youths travelling to Seoul for World Youth Day. Please do support them."
+  },
+  {
+   "date": "2026-10-27",
+   "time": "19:30",
+   "title": "PIETA",
+   "text": "PIETA gathering on Tuesday 27 Oct at 7.30pm."
   },
   {
    "date": "2026-10-30",
    "time": "20:00",
    "title": "Prayer thru Music",
-   "text": "An evening of prayer through music on Friday 30 October at 8pm."
+   "text": "An evening of prayer through music on Friday 30 Oct at 8pm."
+  },
+  {
+   "date": "2026-10-31",
+   "time": "",
+   "title": "All Saints Day Fair",
+   "text": "Parents, families and parishioners are invited to the All Saints Day Fair at the Parish Community Hall on 31 Oct-1 Nov, where children and youth from the catechetical sessions bring the stories of the saints to life. Admission is open to all."
+  },
+  {
+   "date": "2026-10-31",
+   "time": "15:00",
+   "title": "Formed to Flourish",
+   "text": "Young adults in their 20s and 30s are invited to a casual, welcoming space to meet the Catholic community, make new friends and share in fellowship, on Saturday 31 Oct at 3pm."
   },
   {
    "date": "2026-11-06",
    "time": "",
    "title": "Treasure #18 Retreat for Young Working Adults",
-   "text": "A stay-in Catholic encounter retreat from 6 to 9 November for young working adults aged 21-35."
+   "text": "A stay-in Catholic Encounter Retreat for young working adults aged 21-35, from Friday 6 Nov to Monday 9 Nov."
   },
   {
    "date": "2026-11-09",
    "time": "",
-   "title": "Bible in the City",
-   "text": "A symposium on Monday 9 November organised by the Verbum Dei Missionaries, with keynote speakers and panelists, on rooting your life in the living Word of God."
+   "title": "Parish Recollection",
+   "text": "A day with the Singapore Archdiocesan Catholic Charismatic Renewal (SACCRE) on discovering how God calls us to holiness where we are; free lunch and refreshments provided. Register by 2 November at tinyurl.com/SJCBTDoR2026."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "",
+   "title": "Beginning Experience",
+   "text": "A weekend programme from 13 to 15 Nov."
   },
   {
    "date": "2026-11-13",
    "time": "10:00",
    "title": "Emmanuel",
-   "text": "A morning of reflection on Friday 13 November at 10am for those approaching retirement or in their later years."
+   "text": "A morning of reflection for those approaching retirement or in their golden years, on Friday 13 Nov at 10am, on living this stage of life with confidence and purpose."
+  },
+  {
+   "date": "2026-11-21",
+   "time": "",
+   "title": "Sec 4/5 Outreach",
+   "text": "Graduating from secondary school this year? Join OYP for a time of prayer with the Lord and to meet fellow Sec 4 & 5 students on Saturday 21 Nov."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610091139_20261011_SJCBT%20Bulletin.pdf?alt=media&token=85f06731-eec1-4b7c-a832-062322e9535a",
-  "date": "2026-10-09"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610162322_20261018_SJCBT%20Bulletin.pdf?alt=media&token=68547949-85f9-4141-a176-0bfd6ed40c28",
+  "date": "2026-10-16"
  },
  "disputes": [],
  "vs_mycatholic": {
