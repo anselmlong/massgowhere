@@ -2,9 +2,9 @@
  "id": 10,
  "name": "Church of Our Lady of Lourdes",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610091434_20261011_28th_OT.pdf?alt=media&token=3b04605d-70d5-4f70-900f-315ddb435cd0"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610171419_20261018_29th_OT.pdf?alt=media&token=86194eaf-a84e-4b66-94cb-ad5f0738b3c5"
  ],
- "fetched_at": "2026-10-09T21:02+08:00",
+ "fetched_at": "2026-10-17T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -82,7 +82,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -112,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 2,
@@ -142,7 +142,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -172,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -202,7 +202,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -242,7 +242,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Our Lady of Good Health, Vailankkani"
   },
   {
    "d": 6,
@@ -260,13 +260,14 @@
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Daily 8:00am to 8:00pm.",
-  "confession": "Sacrament of Reconciliation is available 30 minutes before."
+  "adoration": "Adoration Room: Daily 08:00-20:00.",
+  "confession": "Reconciliation is available 30 minutes before Mass.",
+  "office_hours": "Parish Office: Mon-Fri 10:00-18:00, Sat 14:00-20:00, Sun 09:00-14:00."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610091434_20261011_28th_OT.pdf?alt=media&token=3b04605d-70d5-4f70-900f-315ddb435cd0",
-  "date": "2026-10-09"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610171419_20261018_29th_OT.pdf?alt=media&token=86194eaf-a84e-4b66-94cb-ad5f0738b3c5",
+  "date": "2026-10-17"
  },
  "disputes": [],
  "vs_mycatholic": {

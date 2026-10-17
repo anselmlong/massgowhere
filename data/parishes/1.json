@@ -2,9 +2,9 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610101714_CHURCH_BULLETIN%20%2011-17%20Oct.pdf?alt=media&token=04608af7-dd1a-4f02-a374-83b8aab810fc"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610171539_CHURCH_BULLETIN%20%2018-24%20Oct.pdf?alt=media&token=eed98e41-8a5b-4278-a0c9-92f774e73105"
  ],
- "fetched_at": "2026-10-10T21:02+08:00",
+ "fetched_at": "2026-10-17T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -18,7 +18,7 @@
    "type": "Devotion",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Rosary during October, before the 7.30am Mandarin Mass"
+   "note": "In October only, before the 7.30am Mandarin Mass."
   },
   {
    "d": 0,
@@ -60,7 +60,7 @@
    "type": "Mass",
    "lang": "Bahasa Indonesia",
    "loc": "",
-   "note": "Last Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -84,7 +84,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "3rd Sunday only"
+   "note": ""
   },
   {
    "d": 0,
@@ -123,8 +123,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass"
+   "loc": "",
+   "note": "In October only, before the 6.30pm Mass at the main church."
   },
   {
    "d": 1,
@@ -163,8 +163,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass"
+   "loc": "",
+   "note": "In October only, before the 6.30pm Mass at the main church."
   },
   {
    "d": 2,
@@ -203,8 +203,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass"
+   "loc": "",
+   "note": "In October only, before the 6.30pm Mass at the main church."
   },
   {
    "d": 3,
@@ -243,8 +243,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass"
+   "loc": "",
+   "note": "In October only, before the 6.30pm Mass at the main church."
   },
   {
    "d": 4,
@@ -283,8 +283,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Rosary during October, before the 6.30pm Mass"
+   "loc": "",
+   "note": "In October only, before the 6.30pm Mass at the main church."
   },
   {
    "d": 5,
@@ -306,7 +306,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Eucharistic Adoration, Sacred Heart of Jesus"
+   "note": "Sacred Heart of Jesus"
   },
   {
    "d": 5,
@@ -335,10 +335,10 @@
    "t": "08:30",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 6,
@@ -350,7 +350,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Eucharistic Adoration, Immaculate Heart of Mary"
+   "note": "Immaculate Heart of Mary"
   },
   {
    "d": 6,
@@ -370,7 +370,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday vigil Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -382,76 +382,83 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": "3rd Saturday only"
+   "note": ""
   }
  ],
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-10-13",
-   "time": "18:30",
+   "date": "2026-10-24",
+   "time": "18:00",
    "language": "English",
    "location": "",
-   "title": "Our Lady of Fatima Holy Mass & Procession",
+   "title": "L9 Confirmation Mass",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-26",
+   "time": "20:00",
+   "language": "English",
+   "location": "Blk 230 #09-09 Commonwealth Tower",
+   "title": "Block Rosary",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-28",
+   "time": "20:00",
+   "language": "English",
+   "location": "Blk 230 #09-09 Commonwealth Tower",
+   "title": "Block Rosary",
    "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "The Monday-Friday Rosary is only in October.",
+  "The Chinese Sunday Rosary is only in October."
+ ],
  "info": {
-  "adoration": "Eucharistic Adoration: 1st Friday 7pm (Sacred Heart of Jesus) and 1st Saturday 9am (Immaculate Heart of Mary).",
-  "confession": "Confession is available 15 minutes before every Mass.",
+  "confession": "Confession is available 15 minutes before Masses.",
   "devotions": [
-   "Divine Mercy: Fridays 8pm",
-   "Intercessory Prayers: 2nd Friday 7.45pm",
-   "Novena to our Blessed Mother: Saturdays 5pm",
-   "Rosary: Mondays to Fridays 6pm during October, before the 6.30pm Mass at the main church",
-   "Rosary: Sundays 7.05am during October, before the 7.30am Mandarin Mass"
+   "Divine Mercy: Friday 8pm, Saturday 8.30am.",
+   "Eucharistic Adoration: 1st Friday 7pm (Sacred Heart of Jesus), 1st Saturday 9am (Immaculate Heart of Mary).",
+   "Intercessory Prayers: 2nd Friday 7.45pm.",
+   "Novena to our Blessed Mother: Saturday 5pm."
   ],
-  "office_hours": "10am-6pm"
+  "office_hours": "10am-6pm",
+  "good_to_know": [
+   "Anointing of the Sick: Please make an appointment with the Secretariat for a priest to minister.",
+   "Holy Matrimony: Couples must inform the Priest at least 6 months before booking the Church for the Wedding Mass/Service.",
+   "Infant Baptism: Every 2nd Sunday of the month @ 5.30pm Mass. Please contact Parish Office to register interest 2 weeks in advance.",
+   "Bereavement: Please contact the Secretariat for help and advice before contacting a Funeral Director."
+  ]
  },
  "events": [
   {
-   "date": "2026-10-11",
-   "time": "",
-   "title": "圣体堂 10 月交流坊 (Parish Exchange Workshop)",
-   "text": "Theme: 同心携力. All parishioners are invited to come together, get to know one another and build friendships in the parish community."
-  },
-  {
-   "date": "2026-10-17",
-   "time": "",
-   "title": "Young Missionaries of Hope: One in Christ, United in Mission",
-   "text": "Sat 17 Oct via Zoom, with a keynote by Cardinal \"Ambo\" and sharings from Catholics in Myanmar, Cambodia, the Philippines and Malaysia. Sign up at bit.ly/unitedinmission."
-  },
-  {
-   "date": "2026-10-17",
-   "time": "",
-   "title": "CARE Outreach Weekend",
-   "text": "Catholic AIDS Response Effort visits Blessed Sacrament Church on 17 & 18 Oct with a booth to raise awareness; handcrafted items made by CARE's beneficiaries, including rosaries, crucifixes, candles and 3D-printed items, are available."
-  },
-  {
-   "date": "2026-10-17",
-   "time": "08:00",
-   "title": "圣爱相随—徒步朝圣 (Walking Pilgrimage)",
-   "text": "8am gather at St Joseph's Church Bukit Timah, pray and walk to the Church of Our Lady of the Angels (about 1 hour); 9am gather at the Church of Our Lady of the Angels. No registration needed — just turn up. Bring rosary, water, hat, rain gear, towel, sunscreen and personal medication, and wear comfo"
-  },
-  {
-   "date": "2026-10-18",
-   "time": "08:30",
-   "title": "Ministry Open House 2026",
-   "text": "Mission Sunday, 18 Oct, 8.30am to 1pm in Damien Hall. Enjoy breakfast at The Tent, then discover the ministries that make BSC a home."
-  },
-  {
-   "date": "2026-10-19",
+   "date": "2026-10-22",
    "time": "20:00",
-   "title": "Block Rosary",
-   "text": "19-21 Oct, 8pm, at Blk 43A #34-304 Margaret Drive, hosted by Freda Leon. All are welcome."
+   "title": "Safeguarding the Human Person during the Digital Revolution",
+   "text": "Thursdays 8-10pm, 22 Oct - 19 Nov. Register at bit.ly/magnifica2026"
+  },
+  {
+   "date": "2026-10-23",
+   "time": "",
+   "title": "Choice Weekend Program",
+   "text": "23-25 Oct at ME House (Punggol). Register at https://bit.ly/ChoiceSG26"
+  },
+  {
+   "date": "2026-11-06",
+   "time": "19:45",
+   "title": "Treasure #18 Retreat for Young Working Adults",
+   "text": "Stay-in Catholic Encounter Retreat for young working adults age 21-35 at St. Francis Xavier Retreat Centre, 199 Ponggol Seventeenth Avenue. Fee $163.50. Register: tinyurl.com/oyp-treasure18. Enquiries: treasure.oyp@catholic.org.sg."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610101714_CHURCH_BULLETIN%20%2011-17%20Oct.pdf?alt=media&token=04608af7-dd1a-4f02-a374-83b8aab810fc",
-  "date": "2026-10-10"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610171539_CHURCH_BULLETIN%20%2018-24%20Oct.pdf?alt=media&token=eed98e41-8a5b-4278-a0c9-92f774e73105",
+  "date": "2026-10-17"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -476,6 +483,13 @@
    ]
   ],
   "only_on_mycatholic": [
+   [
+    "Mass",
+    "Saturday",
+    "08:30",
+    [],
+    []
+   ],
    [
     "Mass",
     "Sunday",
