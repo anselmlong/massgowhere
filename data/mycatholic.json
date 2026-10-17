@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-15",
+"asOf": "2026-10-16",
 "rules": {
 "1": [
 {
@@ -4015,116 +4015,6 @@
 ],
 "21": [
 {
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
 "d": 0,
 "weeks": [],
 "except": [],
@@ -4210,6 +4100,116 @@
 "except": [],
 "type": "Mass",
 "t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -8138,15 +8138,6 @@
 {
 "k": "a",
 "date": "2026-10-23",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Please note that weekday evening Mass will be shifted to 6.30pm in the evening from 26 October 2026, Monday."
-},
-{
-"k": "a",
-"date": "2026-10-15",
 "type": "Mass",
 "t": "19:30",
 "lang": "English",
