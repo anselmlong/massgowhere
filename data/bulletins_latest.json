@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-17T21:01+08:00",
+ "fetchedAt": "2026-10-18T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -33,8 +33,8 @@
   "5": {
    "from": "myCatholicSG",
    "title": "Twenty-ninth Sunday in Ordinary Time",
-   "date": "2026-10-17",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610170619_English_Bulletin%2018%20Oct.pdf?alt=media&token=89f11f6a-5fec-4afe-9ea6-79430d8a75ea",
+   "date": "2026-10-18",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610180608_English_Bulletin%2018%20Oct%20-%20Edited.pdf?alt=media&token=5313e63f-e7c9-45c1-80a9-1e2cf6eb1533",
    "page": "https://mycatholic.sg/bulletin/holycross"
   },
   "6": {
