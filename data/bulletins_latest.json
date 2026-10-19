@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-18T12:31+08:00",
+ "fetchedAt": "2026-10-19T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -95,9 +95,9 @@
   },
   "14": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 11 Oct 2026",
-   "date": "2026-10-10",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610101233_Bulletin_-%2011Oct%202026.pdf?alt=media&token=a049d593-c3e3-493c-9218-e2ff544bb216",
+   "title": "Bulletin - 18 Oct 2026",
+   "date": "2026-10-19",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610190855_Bulletin_-%2018Oct%202026.pdf?alt=media&token=ab564082-807e-410b-b140-92a54dfa7bff",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {

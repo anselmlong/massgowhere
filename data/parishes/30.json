@@ -2,9 +2,9 @@
  "id": 30,
  "name": "Church of St Vincent de Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610131245_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2011%20October%202026.pdf?alt=media&token=bfd1c096-a492-409a-98a2-4724e9745c5a"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610171948_29TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2018%20October%202026.pdf?alt=media&token=d56c4da4-4909-4cd7-8a69-a6cd7d8a1c29"
  ],
- "fetched_at": "2026-10-14T12:31+08:00",
+ "fetched_at": "2026-10-19T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -44,7 +44,7 @@
    "d": 0,
    "t": "15:00",
    "weeks": [
-    -1
+    5
    ],
    "except": [],
    "type": "Mass",
@@ -87,10 +87,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours - Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 1,
@@ -137,10 +137,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours - Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 2,
@@ -187,10 +187,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours - Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 3,
@@ -247,10 +247,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours - Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 4,
@@ -297,10 +297,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours - Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 5,
@@ -321,16 +321,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Sacred Heart of Jesus, after 6pm Mass"
   },
   {
    "d": 6,
@@ -373,24 +363,36 @@
    "note": "Sunset Mass"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-07",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "Sacrament of Confirmation at the 6pm Mass",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "The Adoration Room and the Parish Office are closed on public holidays."
+ ],
  "info": {
-  "adoration": "Adoration Room open every day from 7am to 6pm; closed on Public Holidays.",
-  "confession": "30 minutes before to 10 minutes before Mass (weekend Masses only).",
+  "adoration": "Adoration Room open every day 7am-6pm; closed on public holidays.",
+  "confession": "30 minutes before to 10 minutes before Mass, weekend Masses only.",
   "devotions": [
    "Rosary: Monday-Saturday 6.15am and 5.30pm; Sunday 30 minutes before Mass",
    "Divine Mercy: Wednesdays 5pm, St Faustina Room",
-   "Sacred Heart of Jesus: Fridays after 6pm Mass",
-   "Liturgy of the Hours - Divine Office: Mon-Fri 7.45am, St Faustina Room"
+   "Sacred Heart of Jesus: Fridays after the 6pm Mass",
+   "Liturgy of the Hours (Divine Office): Monday-Friday 7.45am, St Faustina Room"
   ],
-  "office_hours": "Parish Office: Weekdays 9am to 6pm; Saturday 9am to 12pm and 5pm to 6pm; Sunday 8am to 12pm and 5pm to 6pm; closed on Public Holidays.",
+  "office_hours": "Parish Office: weekdays 9am-6pm; Saturday 9am-12pm and 5pm-6pm; Sunday 8am-12pm and 5pm-6pm; closed on public holidays.",
   "good_to_know": [
-   "The carpark gate at Jalan Resak is closed immediately after Mass; please exit via the autogate to Yio Chu Kang Road.",
+   "The carpark gate at Jalan Resak closes immediately after Mass; please exit via the autogate to Yio Chu Kang Road.",
    "Do not park in front of the priests' parking lots.",
-   "Alternative parking: Yio Chu Kang Road between lamppost 156 and 166 (Saturdays 6pm-7.15pm); Jalan Kelulut between lamppost 4 and 9 (Sundays 9am-12.15pm); in front of Jalan Kelulut shophouses (coupon parking, 7 days a week); HDB carparks at ",
+   "Alternative parking: Yio Chu Kang Road between lampposts 156 and 166 (Saturdays 6pm-7.15pm); Jalan Kelulut between lampposts 4 and 9 (Sundays 9am-12.15pm); HDB carparks at Blk 988 Buangkok Green, free on Sundays and public holidays.",
    "Strictly no parking along 1 to 19 Jalan Jarak."
   ]
  },
@@ -399,30 +401,36 @@
    "date": "2026-10-24",
    "time": "",
    "title": "At the Feet of the Good Shepherd Retreat",
-   "text": "A semi-silent stay-in retreat at Punggol Retreat Centre on 24-25 Oct 2026 for those carrying inner wounds from broken family relationships. Register at bit.ly/CDSG_FGS."
+   "text": "A stay-in semi-silent retreat at Punggol Retreat Centre on 24-25 Oct for those carrying inner wounds from broken family relationships. Register at bit.ly/CDSG_FGS."
+  },
+  {
+   "date": "2026-10-31",
+   "time": "09:00",
+   "title": "Day for Life 2026",
+   "text": "A day of formation on building a culture of life, 9am-4pm at St Gregory Hall, Church of the Immaculate Heart of Mary, with keynote speakers, Mass, Eucharistic adoration and confession. Register at tinyurl.com/dayforlife26."
   },
   {
    "date": "2026-11-08",
    "time": "12:30",
-   "title": "Seniors Ministry Pilgrimage Tour",
-   "text": "EmmausElders@SVDP pilgrimage to Church of St Mary of the Angels on 8 Nov, 12.30pm-6.30pm, in conjunction with the Jubilee Year of St Francis of Assisi. Scan the QR code or submit a completed form to the Parish office."
+   "title": "Seniors Ministry Pilgrimage to St Mary of the Angels",
+   "text": "EmmausElders@SVDP pilgrimage tour for seniors, 12.30pm-6.30pm, in the Jubilee Year of St Francis of Assisi. Scan the QR code or submit a completed form to the Parish Office."
   },
   {
-   "date": "2026-11-09",
-   "time": "08:30",
-   "title": "Bible in the City: Scripture for the Concrete Jungle",
-   "text": "Bible Symposium 2026 by the Verbum Dei Missionaries at Novena Church Auditorium, 8.30am-1pm. Cost $30 single / $50 pair with light refreshments. Sign up at tinyurl.com/VdeiBibleSymposium by 18 October 2026."
+   "date": "2026-11-13",
+   "time": "",
+   "title": "70th Beginning Experience Weekend",
+   "text": "A live-in weekend at Lifesprings Canossian Spirituality Centre, 13-15 Nov, for single-again individuals moving on from grief. Register at besingapore.org/BE_Event."
   },
   {
-   "date": "2026-11-18",
-   "time": "10:30",
-   "title": "BAGUS Wellness Talk",
-   "text": "Interactive session on mental well-being for parishioners aged 55 and above, 18 Nov at 10.30am, brought to you by EmmausElders@SVDP and Share-A-Pot Community. Scan the QR code to register."
+   "date": "2026-11-13",
+   "time": "",
+   "title": "Camp Mosaic",
+   "text": "A stay-in camp for youth aged 13 to 21 at The Girls' Brigade, 795 Upper Serangoon Road, 13-15 Nov. Scan the QR code to register."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610131245_28TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2011%20October%202026.pdf?alt=media&token=bfd1c096-a492-409a-98a2-4724e9745c5a",
-  "date": "2026-10-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610171948_29TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2018%20October%202026.pdf?alt=media&token=d56c4da4-4909-4cd7-8a69-a6cd7d8a1c29",
+  "date": "2026-10-17"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -432,7 +440,7 @@
     "Sunday",
     "15:00",
     [
-     -1
+     5
     ],
     []
    ]
