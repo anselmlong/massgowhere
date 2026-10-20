@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-16",
+"asOf": "2026-10-19",
 "rules": {
 "1": [
 {
@@ -5775,7 +5775,27 @@
 "note": ""
 },
 {
-"d": 6,
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 0,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -5795,31 +5815,11 @@
 "note": ""
 },
 {
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 0,
+"d": 6,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "06:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -6714,33 +6714,6 @@
 },
 {
 "k": "r",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-25",
 "type": "Mass",
 "t": "08:00",
@@ -7047,24 +7020,6 @@
 },
 {
 "k": "o",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
 "date": "2026-10-25",
 "type": "Mass",
 "t": "07:30",
@@ -7119,28 +7074,10 @@
 },
 {
 "k": "o",
-"date": "2026-10-18",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-10-25",
 "type": "Confession",
 "t": "07:00",
 "lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Confession",
-"t": "09:00",
-"lang": "English/Tamil",
 "loc": "Main Church",
 "note": ""
 },
@@ -7155,28 +7092,10 @@
 },
 {
 "k": "o",
-"date": "2026-10-18",
-"type": "Confession",
-"t": "18:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-10-25",
 "type": "Confession",
 "t": "18:00",
 "lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-18",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
 "loc": "Main Church",
 "note": ""
 },
@@ -8142,6 +8061,51 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -8149,6 +8113,105 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "1 Mass only on Public Holidays (Weekdays)"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "20:15",
+"lang": "Bahasa Indonesia",
+"loc": "Main Church",
+"note": "All Souls Day Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas Day Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:45",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "14:00",
+"lang": "Bahasa Indonesia",
+"loc": "Main Church",
+"note": "Christmas Day Mass"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve Vigil Mass. Christmas Carolling @ 8.30pm"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve Midnight Mass. Christmas Carolling @ 11pm"
+},
+{
+"k": "a",
+"date": "2026-12-15",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-20",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-17",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Solemnity of Mary, Mother of God"
 }
 ],
 "22": [
@@ -8492,6 +8555,125 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+}
+],
+"28": [
+{
+"k": "r",
+"date": "2026-10-31",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-10-31",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints Day"
+},
+{
+"k": "a",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints Day"
+},
+{
+"k": "a",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints Day"
+},
+{
+"k": "a",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints Day"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls Day"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls Day"
+},
+{
+"k": "a",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Mass with Anointing of the Sick"
 }
 ],
 "29": [
