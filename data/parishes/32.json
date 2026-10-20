@@ -2,34 +2,14 @@
  "id": 32,
  "name": "Church of the Transfiguration",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610161549_18_Oct%202026.pdf?alt=media&token=b89be385-5696-482e-b3e6-ad5d94965888"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610191916_25_Oct%202026.pdf?alt=media&token=d6828d8b-7a36-448f-a882-218912fda766"
  ],
- "fetched_at": "2026-10-16T21:06+08:00",
+ "fetched_at": "2026-10-20T12:35+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 0,
-   "t": "08:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
-   "note": ""
-  },
   {
    "d": 0,
    "t": "08:30",
@@ -42,52 +22,12 @@
   },
   {
    "d": 0,
-   "t": "10:20",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 0,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "11:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "16:20",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 0,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
    "note": ""
   },
   {
@@ -117,18 +57,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "L3 Room 3.4",
-   "note": "St Thérèse Intercessory"
-  },
-  {
-   "d": 1,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 1,
@@ -152,16 +82,6 @@
   },
   {
    "d": 2,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 2,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -177,8 +97,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Adoration Room",
-   "note": "Divine Mercy Devotion"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -197,18 +117,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "L3 Room 3.4",
-   "note": "St Thérèse Intercessory"
-  },
-  {
-   "d": 3,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 3,
@@ -232,20 +142,20 @@
   },
   {
    "d": 4,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 4,
    "t": "18:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -259,18 +169,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Church Hall",
-   "note": "Holy Hour with Reparation"
-  },
-  {
-   "d": 4,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "L3 Auditorium",
-   "note": "Charismatic Prayer Community"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -289,18 +189,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "L3 Room 3.4",
-   "note": "St Thérèse Intercessory"
-  },
-  {
-   "d": 5,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 5,
@@ -311,18 +201,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "20:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Church Hall",
-   "note": "Holy Hour with Reparation"
   },
   {
    "d": 5,
@@ -331,8 +209,20 @@
    "except": [],
    "type": "Devotion",
    "lang": "Chinese",
-   "loc": "L4 Room 4.2",
-   "note": "Chinese Prayer Group"
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -342,26 +232,6 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "15:20",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 6,
-   "t": "15:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
    "note": ""
   },
   {
@@ -382,22 +252,12 @@
  ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Weekdays 07:00-22:00; weekends 07:00-20:00; public holidays 09:00-17:00. Closed Mondays 09:00-14:00 for cleaning; on 1st Mondays 09:00-16:00.",
-  "confession": "Confession at L2 Confessionals, 30 minutes before all weekend Masses when a priest is available.",
-  "devotions": [
-   "Rosary 40 minutes before weekday evening and weekend Masses.",
-   "Divine Mercy Devotion every Tuesday 20:00 in the Adoration Room.",
-   "Holy Hour with Reparation every 1st Thursday 20:00 in the Church Hall.",
-   "Holy Hour with Reparation every 1st Friday 20:00 in the Church Hall.",
-   "St Thérèse Intercessory on Mon, Wed, Fri 15:00 in L3 Room 3.4.",
-   "Charismatic Prayer Community every Thursday 20:00 in L3 Auditorium."
-  ],
-  "office_hours": "Parish Office: Weekday 09:00-20:00 (lunch 12:00-13:00); Saturday 09:00-18:00 (lunch 12:00-13:00); Sunday 09:00-18:00 (lunch 13:00-14:00)."
+  "adoration": "Adoration Room: Weekdays 07:00–22:00; weekends 07:00–20:00; public holidays 09:00–17:00. Closed Mondays 09:00–14:00 for cleaning; on first Mondays closed 09:00–16:00."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610161549_18_Oct%202026.pdf?alt=media&token=b89be385-5696-482e-b3e6-ad5d94965888",
-  "date": "2026-10-16"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610191916_25_Oct%202026.pdf?alt=media&token=d6828d8b-7a36-448f-a882-218912fda766",
+  "date": "2026-10-19"
  },
  "disputes": [],
  "vs_mycatholic": {

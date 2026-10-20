@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-19T12:31+08:00",
+ "fetchedAt": "2026-10-20T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -223,9 +223,9 @@
   },
   "32": {
    "from": "myCatholicSG",
-   "title": "Mission Sunday - 18th Oct 2026",
-   "date": "2026-10-16",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610161549_18_Oct%202026.pdf?alt=media&token=b89be385-5696-482e-b3e6-ad5d94965888",
+   "title": "30th Ordinary Sunday - 25th Oct 2026",
+   "date": "2026-10-19",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610191916_25_Oct%202026.pdf?alt=media&token=d6828d8b-7a36-448f-a882-218912fda766",
    "page": "https://mycatholic.sg/bulletin/transfiguration"
   }
  }
