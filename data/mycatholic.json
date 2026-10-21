@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-19",
+"asOf": "2026-10-21",
 "rules": {
 "1": [
 {
@@ -6305,6 +6305,80 @@
 ]
 },
 "dated": {
+"2": [
+{
+"k": "o",
+"date": "2026-10-31",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day Vigil"
+},
+{
+"k": "o",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "08:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day"
+},
+{
+"k": "o",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day"
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "13:15",
+"lang": "English",
+"loc": "JM Beurel Centre Level 1",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints' Day"
+},
+{
+"k": "o",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "13:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls Day"
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "13:15",
+"lang": "English",
+"loc": "JM Beurel Centre Level 1",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls Day"
+}
+],
 "5": [
 {
 "k": "r",
@@ -7885,15 +7959,6 @@
 "18": [
 {
 "k": "r",
-"date": "2026-10-19",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-20",
 "type": "Mass",
 "t": "18:30",
@@ -7927,15 +7992,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-10-19",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Please note that weekday evening Mass will be shifted to 6.30pm in the evening from 26 October 2026, Monday."
 },
 {
 "k": "a",
