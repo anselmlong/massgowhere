@@ -9,6 +9,12 @@ cd "$(dirname "$0")/.."
 exec 9>/tmp/massgowhere.lock
 flock -w 1800 9
 git fetch --quiet origin main
+# Guard: the reset below is what makes each run start from the published state,
+# but --hard also silently discards uncommitted local edits. Refuse instead.
+if [ -n "$(git status --porcelain)" ]; then
+  echo "working tree has uncommitted changes; refusing to reset --hard. Commit or discard them first." >&2
+  exit 1
+fi
 git reset --quiet --hard origin/main
 # run the version just fetched: the shell is still reading the file it started with, so a script changed on main
 # would otherwise run its old code once (that's how a July copy of myCatholicSG got published on 2 Oct)
