@@ -3407,7 +3407,7 @@
 ],
 "except": [],
 "type": "Adoration",
-"t": "20:15",
+"t": "19:15",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -7959,15 +7959,6 @@
 "18": [
 {
 "k": "r",
-"date": "2026-10-20",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-21",
 "type": "Mass",
 "t": "18:30",
@@ -7994,13 +7985,13 @@
 "note": ""
 },
 {
-"k": "a",
-"date": "2026-10-20",
+"k": "r",
+"date": "2026-11-02",
 "type": "Mass",
-"t": "19:30",
+"t": "18:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "Please note that weekday evening Mass will be shifted to 6.30pm in the evening from 26 October 2026, Monday."
+"note": ""
 },
 {
 "k": "a",
@@ -8028,6 +8019,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Please note that weekday evening Mass will be shifted to 6.30pm in the evening from 26 October 2026, Monday."
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day Mass with Blessing of Niches in Columbarium after Mass"
 }
 ],
 "19": [
