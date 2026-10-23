@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-22T12:31+08:00",
+ "fetchedAt": "2026-10-23T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -39,23 +39,23 @@
   },
   "6": {
    "from": "myCatholicSG",
-   "title": "29th Sunday In Ordinary Time",
-   "date": "2026-10-15",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610151752_29th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=069dfcce-4de8-489c-b8f8-6e7531a066de",
+   "title": "30th Sunday In Ordinary Time",
+   "date": "2026-10-22",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610221841_30th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=9ce0a50a-9d6c-423a-a582-937b6a11000e",
    "page": "https://mycatholic.sg/bulletin/holyfamily"
   },
   "7": {
    "from": "myCatholicSG",
-   "title": "Twenty-ninth Sunday in Ordinary Time (World Mission Sunday)",
-   "date": "2026-10-16",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610161101_CHS_Bulletin%2017%20-%2018%20October%202026.pdf?alt=media&token=01b73101-6bbf-4bba-a54b-d4b37d230789",
+   "title": "Thirtieth Sunday in Ordinary Time",
+   "date": "2026-10-23",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610231222_CHS_Bulletin%2024%20-%2025%20October%202026.pdf?alt=media&token=8bac4e47-b8f0-4756-82fd-d729faa04062",
    "page": "https://mycatholic.sg/bulletin/holyspirit"
   },
   "8": {
    "from": "myCatholicSG",
-   "title": "29th Sunday in Ordinary Time",
-   "date": "2026-10-16",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610161746_18.10.26_29th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=93f7be25-a5d4-4800-824d-d0fdddf2a31b",
+   "title": "30th Sunday in Ordinary Time",
+   "date": "2026-10-23",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610231140_25.10.26_30th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=969f6e39-eb87-4540-bf68-d5c6a2a6992c",
    "page": "https://mycatholic.sg/bulletin/holytrinity"
   },
   "9": {
@@ -95,9 +95,9 @@
   },
   "14": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 18 Oct 2026",
-   "date": "2026-10-19",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610190855_Bulletin_-%2018Oct%202026.pdf?alt=media&token=ab564082-807e-410b-b140-92a54dfa7bff",
+   "title": "Bulletin - 25 Oct 2026",
+   "date": "2026-10-22",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610221813_Bulletin_-%2025Oct%202026.pdf?alt=media&token=17f56878-e1f8-4dbd-8420-addf8f6b9a86",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {
@@ -123,9 +123,9 @@
   },
   "18": {
    "from": "myCatholicSG",
-   "title": "17 & 18 October 2026",
-   "date": "2026-10-16",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610161112_Oct_17%20%26%2018%202026.pdf?alt=media&token=c3e6aa8f-b753-42c7-b78c-c76c18eb4617",
+   "title": "24 & 25 October 2026",
+   "date": "2026-10-22",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610222148_Oct_24%20%26%2025%202026.pdf?alt=media&token=55dde69b-b9c7-41fd-bd28-9f1b1baf9670",
    "page": "https://mycatholic.sg/bulletin/stanne"
   },
   "19": {
@@ -137,9 +137,9 @@
   },
   "20": {
    "from": "myCatholicSG",
-   "title": "The Voice of St Bernadette 18 – 24 October 2026",
-   "date": "2026-10-16",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610161430_VOICE_18%20Oct%202026%20V2%20(1).pdf?alt=media&token=fda00749-cbfd-48cb-b032-e69e1a68411f",
+   "title": "堂区周报 2026年10月25日 - 2026年10月31日",
+   "date": "2026-10-23",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610231101_48_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%8825%E6%97%A5%EF%BC%89.pdf?alt=media&token=015248dd-97f5-4c21-9629-bb2520a7c0ff",
    "page": "https://mycatholic.sg/bulletin/stbernadette"
   },
   "21": {
@@ -196,8 +196,8 @@
   "28": {
    "from": "myCatholicSG",
    "title": "St Stephen Bulletin",
-   "date": "2026-10-16",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610161252_St_StephenBulletin_18102026.pdf?alt=media&token=16817b7b-d055-47cb-98fe-a655e9e9f315",
+   "date": "2026-10-23",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2610231106_St_StephenBulletin_25102026.pdf?alt=media&token=848620f4-cb4c-417d-80c8-fc30d5422bec",
    "page": "https://mycatholic.sg/bulletin/ststephen"
   },
   "29": {

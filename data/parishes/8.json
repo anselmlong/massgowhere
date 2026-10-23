@@ -2,9 +2,9 @@
  "id": 8,
  "name": "Church of the Holy Trinity",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610161746_18.10.26_29th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=93f7be25-a5d4-4800-824d-d0fdddf2a31b"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610231140_25.10.26_30th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=969f6e39-eb87-4540-bf68-d5c6a2a6992c"
  ],
- "fetched_at": "2026-10-16T21:02+08:00",
+ "fetched_at": "2026-10-23T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -18,7 +18,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -28,7 +28,7 @@
    "type": "Mass",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -38,7 +38,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -48,7 +48,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -58,7 +58,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": "Rosary before Mass"
   },
   {
    "d": 0,
@@ -68,7 +68,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -78,7 +78,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -88,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary before Mass"
   },
   {
    "d": 1,
@@ -98,7 +98,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -108,7 +108,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -128,7 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary before Mass"
   },
   {
    "d": 2,
@@ -138,7 +138,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 3,
@@ -148,7 +148,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 3,
@@ -158,7 +158,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary before Mass"
   },
   {
    "d": 3,
@@ -168,7 +168,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -178,7 +178,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -188,7 +188,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary before Mass"
   },
   {
    "d": 4,
@@ -198,7 +198,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -208,7 +208,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -218,7 +218,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary"
+   "note": "Rosary before Mass"
   },
   {
    "d": 5,
@@ -228,7 +228,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Divine Mercy Devotion, ends 9pm"
   },
   {
    "d": 6,
@@ -238,7 +248,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -248,7 +258,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary"
+   "note": "Rosary before Mass"
   },
   {
    "d": 6,
@@ -258,7 +268,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Mass"
+   "note": "Anticipated Sunday Mass"
   }
  ],
  "dated": [],
@@ -268,43 +278,54 @@
  ],
  "notes": [],
  "info": {
-  "office_hours": "Parish Office is open Monday to Friday 9am-6pm, Saturday and Sunday 9am-1pm, and closed on public holidays. The Columbarium is open daily 6.30am-6pm. For weddings, approach the Parish Office to book at least 1 year in advance. Address: 20 T"
+  "devotions": [
+   "Rosary before Mass: weekdays 5.25pm at the Chapel",
+   "Rosary before Mass: weekends 4.55pm at the Main Church",
+   "Prayer for Priests: Tuesdays 4.50pm at the Chapel",
+   "Divine Mercy Devotion: Fridays 8pm-9pm"
+  ],
+  "office_hours": "Mon-Fri 9am-6pm; Sat-Sun 9am-1pm; closed on public holidays",
+  "good_to_know": [
+   "The church is at 20 Tampines St 11, Singapore 529455.",
+   "The columbarium is open daily 6.30am-6pm.",
+   "To book a wedding, approach the Parish Office at least one year in advance."
+  ]
  },
  "events": [
   {
-   "date": "2026-10-19",
+   "date": "2026-10-26",
    "time": "19:45",
-   "title": "RCIA Mandarin",
-   "text": "RCIA Mandarin"
+   "title": "RCIA (Mandarin)",
+   "text": "Mandarin RCIA session, 7.45pm-9.30pm. For those enquiring about the Catholic faith."
   },
   {
-   "date": "2026-10-21",
+   "date": "2026-10-27",
+   "time": "20:00",
+   "title": "Christian Meditation",
+   "text": "Christian Meditation group meets 8pm-9pm. All are welcome."
+  },
+  {
+   "date": "2026-10-28",
    "time": "10:00",
-   "title": "JOY Ministry, for the Elderly",
-   "text": "JOY Ministry, for the Elderly"
+   "title": "JOY Ministry for the Elderly",
+   "text": "Gathering for elderly parishioners, 10am-12pm."
   },
   {
-   "date": "2026-10-22",
+   "date": "2026-10-29",
    "time": "19:45",
    "title": "RCIA",
-   "text": "RCIA"
+   "text": "RCIA session, 7.45pm-9.30pm, for those preparing for the sacraments."
   },
   {
-   "date": "2026-10-22",
-   "time": "20:00",
-   "title": "Lectors – Breaking of the Word",
-   "text": "Lectors – Breaking of the Word"
-  },
-  {
-   "date": "2026-10-24",
-   "time": "10:30",
-   "title": "Holy Trinity Youth",
-   "text": "Holy Trinity Youth"
+   "date": "2026-11-30",
+   "time": "",
+   "title": "Infant Baptism registration closes",
+   "text": "Registration for December infant baptisms is open until 30 November. The list of required documents is on the parish website and application forms are available at the Parish Office."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610161746_18.10.26_29th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=93f7be25-a5d4-4800-824d-d0fdddf2a31b",
-  "date": "2026-10-16"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610231140_25.10.26_30th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=969f6e39-eb87-4540-bf68-d5c6a2a6992c",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {
