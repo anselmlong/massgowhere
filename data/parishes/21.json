@@ -2,9 +2,9 @@
  "id": 21,
  "name": "Church of St Francis of Assisi",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2610161432_Oct_18%202026%20-%2029th%20Sun%20in%20Ord.%20Time%20(Mission%20Sunday).pdf?alt=media&token=3a297092-a8f2-42fd-8189-d7978cad0d88"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2610231747_Oct_25%202026%20-%2030th%20Sun%20in%20Ord.%20Time.pdf?alt=media&token=d1bcdfe7-e4fc-4a6d-b610-e7a2e99dd66e"
  ],
- "fetched_at": "2026-10-16T21:04+08:00",
+ "fetched_at": "2026-10-23T21:05+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -35,18 +35,6 @@
    "t": "11:30",
    "weeks": [],
    "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "14:00",
-   "weeks": [],
-   "except": [
-    3
-   ],
    "type": "Mass",
    "lang": "English",
    "loc": "",
@@ -99,23 +87,13 @@
    "note": ""
   },
   {
-   "d": 0,
-   "t": "20:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Zoom",
-   "note": "Rosary"
-  },
-  {
    "d": 1,
    "t": "06:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -126,7 +104,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 1,
@@ -135,18 +113,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
-  },
-  {
-   "d": 1,
-   "t": "20:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Zoom",
-   "note": "Rosary"
   },
   {
    "d": 2,
@@ -155,7 +123,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -166,7 +134,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 2,
@@ -175,18 +143,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
-  },
-  {
-   "d": 2,
-   "t": "20:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Zoom",
-   "note": "Rosary"
   },
   {
    "d": 3,
@@ -195,7 +153,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -206,7 +164,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 3,
@@ -215,18 +173,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
-  },
-  {
-   "d": 3,
-   "t": "20:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Zoom",
-   "note": "Rosary"
   },
   {
    "d": 4,
@@ -235,7 +183,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -246,7 +194,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 4,
@@ -255,18 +203,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "20:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Zoom",
-   "note": "Rosary"
   },
   {
    "d": 5,
@@ -275,7 +213,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
   },
   {
@@ -286,7 +224,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Rosary before daily evening Mass"
   },
   {
    "d": 5,
@@ -295,18 +233,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "St Francis Chapel",
+   "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "20:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Zoom",
-   "note": "Rosary"
   },
   {
    "d": 6,
@@ -326,7 +254,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": "Rosary before Sunset Mass"
   },
   {
    "d": 6,
@@ -349,42 +277,41 @@
    "lang": "Tamil",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 6,
-   "t": "20:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Zoom",
-   "note": "Rosary"
   }
  ],
  "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-25",
+   "time": "09:30",
+   "language": "English",
+   "location": "",
+   "title": "",
+   "action": "add"
+  },
   {
    "type": "Mass",
    "date": "2026-11-02",
    "time": "06:30",
    "language": "English",
    "location": "",
-   "title": "All Souls Day",
+   "title": "",
    "action": "add"
   },
   {
    "type": "Mass",
    "date": "2026-11-02",
-   "time": "18:30",
+   "time": "19:30",
    "language": "English",
    "location": "",
-   "title": "All Souls Day",
+   "title": "",
    "action": "add"
   },
   {
-   "type": "Devotion",
+   "type": "Mass",
    "date": "2026-11-07",
    "time": "10:00",
-   "language": "",
+   "language": "English",
    "location": "",
    "title": "Infant Baptism",
    "action": "add"
@@ -393,45 +320,35 @@
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Church gate and Adoration Room are closed on public holidays.",
-  "All Saints Day (1 Nov) is a Day of Obligation; Masses as usual."
+  "All Saints Day (1 Nov) is a Day of Obligation; Masses as usual.",
+  "All Souls Day (2 Nov) evening Mass is at 19:30 instead of the usual weekday 18:30.",
+  "Adoration Room is closed on Public Holidays."
  ],
  "info": {
-  "adoration": "Adoration Room & Columbarium: Daily 9am to 9.30pm. Closed on Public Holidays.",
-  "confession": "15 minutes before weekend Masses; weekdays by appointment only.",
+  "adoration": "Adoration Room is open daily 09:00–21:30; closed on Public Holidays.",
+  "confession": "Confession is 15 minutes before weekend Masses; weekdays by appointment only.",
   "devotions": [
-   "Daily rosary over Zoom at 8.15pm.",
-   "Rosary at 5.50pm before daily evening Mass.",
-   "Rosary at 5.20pm before Sunset Mass.",
-   "Friday Divine Mercy devotion after evening Mass.",
-   "Rosary recitations half an hour before each Mass on 17/18 and 24/25 Oct."
+   "Rosary at 17:50 before daily evening Mass.",
+   "Rosary at 17:20 before Sunset Mass.",
+   "Daily rosary over Zoom at 20:15 by Family Rosary Group.",
+   "Friday Divine Mercy devotion after evening Mass."
   ],
-  "office_hours": "Church gate: Daily 6am to 10pm, Sundays closed after 7.30pm Mass. Closed on Public Holidays."
+  "office_hours": "Parish Office: 62640078. Secretariat: Marites | secretariat@csfa.sg. Administrator: Elizabeth Lee | administrator@csfa.sg. ICT & Facility Manager Laurence Ramos | ict@csfa.sg.",
+  "good_to_know": [
+   "All Saints Day (1 Nov) is a Day of Obligation; Masses as usual.",
+   "All Souls Day (2 Nov) Masses: 06:30 and 19:30. Evening Mass is at 19:30 instead of the usual weekday 18:30. After the 19:30 Mass, Rite of Blessing of the Columbarium, procession to the Columbarium, Sprinkling Rite, and prayers by the Minist",
+   "Rosary recitations half an hour before each Mass on 24/25 Oct.",
+   "First Holy Communion for 36 L3 seekers at the 09:30 Mass on Sun 25 Oct."
+  ]
  },
- "events": [
-  {
-   "date": "2026-10-27",
-   "time": "",
-   "title": "Pieta Prayer Support for Bereaved Parents",
-   "text": "For any parent who has lost a child (regardless of age and no matter how recent or long ago) to meet every fourth Tuesday of the month to pray and support each other. Enquiries: pieta.singapore@gmail.com or https://pieta.familylife.sg/ Note: We will be on Zoom for November. Please email us for Zoom "
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2610161432_Oct_18%202026%20-%2029th%20Sun%20in%20Ord.%20Time%20(Mission%20Sunday).pdf?alt=media&token=3a297092-a8f2-42fd-8189-d7978cad0d88",
-  "date": "2026-10-16"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2610231747_Oct_25%202026%20-%2030th%20Sun%20in%20Ord.%20Time.pdf?alt=media&token=d1bcdfe7-e4fc-4a6d-b610-e7a2e99dd66e",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
-   [
-    "Mass",
-    "Sunday",
-    "14:00",
-    [],
-    [
-     3
-    ]
-   ],
    [
     "Mass",
     "Sunday",

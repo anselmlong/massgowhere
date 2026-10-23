@@ -2,9 +2,9 @@
  "id": 17,
  "name": "Church of St Alphonsus (Novena Church)",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610161733_3._Novena%2018%20October%20to%2024%20October%20ROSE.pdf?alt=media&token=6880483a-9bb2-4a87-a539-7759856365b1"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610231538_1._Novena%201%20November%20to%207%20November%20OMPH.pdf?alt=media&token=5464169c-15b2-4218-84aa-d32084fbc917"
  ],
- "fetched_at": "2026-10-16T21:04+08:00",
+ "fetched_at": "2026-10-23T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -168,7 +168,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena to Our Lady of Perpetual Help"
   },
   {
    "d": 6,
@@ -178,7 +178,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena to Our Lady of Perpetual Help"
   },
   {
    "d": 6,
@@ -188,7 +188,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena to Our Lady of Perpetual Help"
   },
   {
    "d": 6,
@@ -198,7 +198,7 @@
    "type": "Devotion",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena to Our Lady of Perpetual Help"
   },
   {
    "d": 6,
@@ -208,7 +208,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena to Our Lady of Perpetual Help"
   },
   {
    "d": 6,
@@ -218,7 +218,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena"
+   "note": "Novena to Our Lady of Perpetual Help"
   },
   {
    "d": 6,
@@ -228,78 +228,34 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset"
+   "note": "Sunset Mass"
   }
  ],
- "dated": [
-  {
-   "type": "Devotion",
-   "date": "2026-10-23",
-   "time": "20:00",
-   "language": "English",
-   "location": "Main Church",
-   "title": "Taize Prayer",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-24",
-   "time": "20:00",
-   "language": "Tamil",
-   "location": "",
-   "title": "Tamil Novena",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-10-24",
-   "time": "20:30",
-   "language": "Tamil",
-   "location": "",
-   "title": "Tamil Mass",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "09:00",
   "18:30"
  ],
  "notes": [
-  "Weekday Mass times do not apply on public holidays."
+  "Reception and giftshop are closed on public holidays, and both will be closed on Monday 9 November (Deepavali public holiday in lieu)."
  ],
  "info": {
-  "confession": "Confession is 30 minutes before Mass.",
+  "confession": "Confession is heard 30 minutes before Mass.",
   "devotions": [
-   "Novena devotions on Saturday: 08:00, 10:00, 12:00, 14:00 (Mandarin), 16:00, 17:30."
+   "Novena to Our Lady of Perpetual Help: Saturdays 8.00am, 10.00am, 12.00pm, 2.00pm (Mandarin), 4.00pm and 5.30pm"
   ],
+  "office_hours": "Reception: Monday to Friday 9.00am to 8.00pm (lunch hour 11.45am to 12.45pm); Saturday 7.30am to 8.00pm; Sunday 8.30am to 1.30pm and 4.30pm to 7.00pm; closed on public holidays.",
   "good_to_know": [
-   "No booking is required. There will not be standing room allowed in the main church."
+   "No booking is required for Masses.",
+   "Standing room is not allowed in the main church.",
+   "Giftshop: Monday, Tuesday, Wednesday and Friday 10.30am to 6.30pm (lunch hour 12.15pm to 12.45pm); Saturday 8.30am to 6.30pm; Sunday 9.00am to 1.30pm; closed on Thursdays and public holidays."
   ]
  },
- "events": [
-  {
-   "date": "2026-11-06",
-   "time": "",
-   "title": "Marriage Encounter Weekend 2026",
-   "text": "Stay-In Weekends: English. Nov 6–8, Dec 4–6. Secure your Weekend at: https://www.wwmesg.org/Weekend_Reg"
-  },
-  {
-   "date": "2026-11-07",
-   "time": "20:30",
-   "title": "Choral Concert",
-   "text": "At Church of St Alphonsus. Part of proceeds goes to the Redemptorist Mission Fund. Tickets at $25 each. Contact Faye 92457145 / Sherry 87137416."
-  },
-  {
-   "date": "2026-12-04",
-   "time": "",
-   "title": "Marriage Encounter Weekend 2026",
-   "text": "Stay-In Weekends: English. Nov 6–8, Dec 4–6. Secure your Weekend at: https://www.wwmesg.org/Weekend_Reg"
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610161733_3._Novena%2018%20October%20to%2024%20October%20ROSE.pdf?alt=media&token=6880483a-9bb2-4a87-a539-7759856365b1",
-  "date": "2026-10-16"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2610231538_1._Novena%201%20November%20to%207%20November%20OMPH.pdf?alt=media&token=5464169c-15b2-4218-84aa-d32084fbc917",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {

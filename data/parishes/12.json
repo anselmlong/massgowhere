@@ -2,9 +2,9 @@
  "id": 12,
  "name": "Church of Our Lady of Perpetual Succour",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610151850_Mission_%20Sunday%2018%20Oct%202026.pdf?alt=media&token=20caf920-f56a-4d8d-b399-e1f4c6818358"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610231957_30th_Sunday%20in%20Ordinary%20Time%2025%20Oct%202026.pdf?alt=media&token=32d95e9f-48f6-4806-b4f6-9e191e853093"
  ],
- "fetched_at": "2026-10-16T12:31+08:00",
+ "fetched_at": "2026-10-23T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -60,7 +60,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": "5th Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -72,7 +72,7 @@
    "type": "Mass",
    "lang": "Bahasa Indonesia",
    "loc": "",
-   "note": "2nd Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -272,7 +272,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena Service"
+   "note": "Novena Svc"
   },
   {
    "d": 6,
@@ -297,12 +297,21 @@
  ],
  "dated": [
   {
-   "type": "Devotion",
-   "date": "2026-10-21",
-   "time": "18:45",
+   "type": "Adoration",
+   "date": "2026-10-30",
+   "time": "20:00",
    "language": "English",
-   "location": "Main Church",
-   "title": "St Pio Devotion Prayer",
+   "location": "Adoration Room, OLPS",
+   "title": "Children's Eucharistic Adoration",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "06:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day",
    "action": "add"
   },
   {
@@ -311,7 +320,25 @@
    "time": "12:30",
    "language": "English",
    "location": "",
-   "title": "All Souls' Day Mass with blessing of the columbarium",
+   "title": "All Souls' Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-15",
+   "time": "15:00",
+   "language": "English",
+   "location": "",
+   "title": "Infant Baptism",
    "action": "add"
   }
  ],
@@ -319,64 +346,51 @@
  "public_holiday_masses": [
   "08:00"
  ],
- "notes": [],
+ "notes": [
+  "All weekend Masses on 31 Oct/1 Nov 2026 celebrate All Saints.",
+  "No infant baptism in Dec 2026."
+ ],
  "info": {
-  "adoration": "Adoration Room open 6.00am to 10.15pm daily, closed every Wednesday from 10.00am to 12 noon for cleaning.",
-  "confession": "Sacrament of Reconciliation 30 minutes before every weekend Mass, in the Main Church.",
+  "adoration": "Adoration room open 06:00–22:15 daily, closed every Wednesday 10:00–12:00 for cleaning.",
+  "confession": "Confession is 30 minutes before weekend Masses in the Main Church.",
   "devotions": [
-   "Divine Mercy Devotion: Tuesdays 6.45pm in the Main Church",
-   "Rosary Prayers: Monday to Friday 5.15pm in the Main Church",
-   "Christian Meditation: Wednesdays 8pm in St John/St Luke room",
-   "Novena Service: Saturdays 3.30pm"
+   "Liturgy of the Word for Children every 2nd and 4th Sunday at the 10:30am Mass.",
+   "Holy Hour and Devotion to the Sacred Heart of Jesus on Friday 6 Nov after the 6pm evening Mass."
   ],
-  "office_hours": "Parish Office: Mon & Sat 9am-6pm, Tue-Fri 9am-8pm, Sun 9am-1pm; closed on public holidays. Catechetical Office: Tue/Wed/Fri 9am-3pm, Sat 11am-6pm, Sun 9am-1pm; closed Mon, Thu and public holidays.",
   "good_to_know": [
-   "OLPS Church carpark is open 5.30am-10.30pm daily; extra parking at St Stephen's School on Saturdays 3pm-7pm and Sundays 8am-2pm.",
-   "Standing along the aisles during Mass and services is not permitted; please keep all walkways and exits clear.",
-   "Liturgy of the Word for Children at the 10.30am Sunday Mass on the 2nd and 4th Sundays of the month."
+   "All weekend Masses on 31 Oct/1 Nov 2026 celebrate All Saints.",
+   "No infant baptism in Dec 2026."
   ]
  },
  "events": [
   {
-   "date": "2026-10-17",
+   "date": "2026-10-24",
    "time": "",
-   "title": "Level 1 Catechism Registration for 2027",
-   "text": "Children born in 2020 may register for Level 1 catechism in 2027. Phase 2 (parishioners within the OLPS parish boundary) runs 17-23 Oct, Phase 3 (all other applicants) 24 Oct-6 Nov. Register online at olps.sg/cats; registration closes 6 Nov 2026."
+   "title": "Breathe Retreat",
+   "text": "For youths and young adults aged 16-30. The Breathe retreat team from the Catholic Spirituality Centre is at OLPS this weekend of 24/25 Oct to share more about encountering Jesus anew as you rest in Him and learn to walk in His ways. Drop by the booth to learn more."
   },
   {
-   "date": "2026-10-17",
-   "time": "",
-   "title": "Book of Remembrance",
-   "text": "The parish Book of Remembrance is placed in the Main Church from 17 Oct to 2 Nov 2026. Parishioners are invited to inscribe the names of family members and friends who have gone before us."
-  },
-  {
-   "date": "2026-11-06",
-   "time": "20:00",
-   "title": "CTIS Information Night",
-   "text": "Information night for the Certificate in Theology 1st Semester 2027, 8pm at CTIS. Application forms are available from the CTIS office or www.ctis.sg; closing date 12 Dec 2026. Enquiries: 69028700."
+   "date": "2026-11-14",
+   "time": "14:00",
+   "title": "Certificate in Bioethics information session",
+   "text": "Online via Zoom. Conducted by the Catholic Medical Guild of Singapore and The Catholic Theological Institute of Singapore. Register at https://www.cmg.org.sg/cmg-ctis-certificate-in-bioethics/ to receive the Zoom link."
   },
   {
    "date": "2026-11-14",
    "time": "18:30",
    "title": "Milestone Wedding Celebration @ OLPS",
-   "text": "Couples celebrating 5th, 10th, 15th and later multiple-of-5 wedding anniversaries are invited to the 6.30pm Mass followed by a dinner celebration. Register at olps.sg/milestone2026 or contact Patrick at 91797723; registration closes 30 Oct 2026."
+   "text": "Couples celebrating their milestone wedding anniversaries (5th, 10th, 15th and multiple of 5 years thereafter) are invited to attend the 6:30pm Mass followed by a dinner celebration. Registration closes on 30 Oct 2026. Contact Patrick @ 91797723 or visit olps.sg/milestone2026."
   },
   {
-   "date": "2026-11-21",
-   "time": "14:00",
-   "title": "OLPS Family Weekend 2026 (Saturday)",
-   "text": "For families with children aged 7 to 21, 2pm-6.30pm at St Stephen's School. Registration fee $50 per family; enquiries: James at 9880 2203 or familylife@olps.sg."
-  },
-  {
-   "date": "2026-11-22",
-   "time": "09:00",
-   "title": "OLPS Family Weekend 2026 (Sunday)",
-   "text": "9am-7.30pm at St Stephen's School, including Mass. Registration fee $50 per family; enquiries: James at 9880 2203 or familylife@olps.sg."
+   "date": "2026-12-17",
+   "time": "",
+   "title": "Youth in the Spirit Seminar",
+   "text": "Held on 17-20 Dec 2026. A $15 discount is available for the first 15 parishioners to sign up. Drop by the booth to learn more."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610151850_Mission_%20Sunday%2018%20Oct%202026.pdf?alt=media&token=20caf920-f56a-4d8d-b399-e1f4c6818358",
-  "date": "2026-10-15"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610231957_30th_Sunday%20in%20Ordinary%20Time%2025%20Oct%202026.pdf?alt=media&token=32d95e9f-48f6-4806-b4f6-9e191e853093",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {

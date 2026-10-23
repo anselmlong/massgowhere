@@ -2,9 +2,9 @@
  "id": 19,
  "name": "Church of St Anthony",
  "source_urls": [
-  "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_18.pdf"
+  "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_25.pdf"
  ],
- "fetched_at": "2026-10-16T12:32+08:00",
+ "fetched_at": "2026-10-23T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -26,6 +26,16 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -61,6 +71,18 @@
    "note": ""
   },
   {
+   "d": 2,
+   "t": "20:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Agnes Room",
+   "note": ""
+  },
+  {
    "d": 3,
    "t": "18:30",
    "weeks": [],
@@ -76,6 +98,18 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:00",
+   "weeks": [],
+   "except": [
+    1
+   ],
+   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -103,69 +137,91 @@
  ],
  "dated": [
   {
-   "action": "add",
+   "type": "Mass",
    "date": "2026-10-24",
+   "time": "19:30",
    "language": "Tagalog",
    "location": "",
-   "time": "19:30",
-   "title": "Tagalog Mass",
-   "type": "Mass"
+   "title": "",
+   "action": "add"
   },
   {
-   "action": "add",
+   "type": "Mass",
    "date": "2026-10-31",
+   "time": "19:30",
    "language": "Malayalam",
    "location": "",
-   "time": "19:30",
-   "title": "Malayalam Mass",
-   "type": "Mass"
+   "title": "",
+   "action": "add"
   },
   {
-   "action": "add",
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-03",
+   "time": "20:00",
+   "language": "English",
+   "location": "St Agnes Room",
+   "title": "Divine Mercy Devotion",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
    "date": "2026-11-07",
+   "time": "19:30",
    "language": "Tamil",
    "location": "",
-   "time": "19:30",
-   "title": "Tamil Mass",
-   "type": "Mass"
+   "title": "",
+   "action": "add"
   },
   {
-   "action": "add",
+   "type": "Mass",
    "date": "2026-11-08",
+   "time": "07:30",
    "language": "Mandarin",
    "location": "",
-   "time": "07:30",
-   "title": "Mandarin Mass",
-   "type": "Mass"
+   "title": "",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "confession": "Confessions are 15 mins before Mass.",
+  "confession": "Confessions are 15 minutes before Mass.",
   "devotions": [
    "Devotion to St Anthony: Tuesday after the 6.30pm Mass.",
-   "Devotion to the Sacred Heart of Jesus: First Friday, after the 6.30pm Mass.",
-   "Divine Mercy Devotion: Friday (except first Friday) at 6pm; and Sunday at 5pm.",
-   "1st Tuesday of the month, 8pm at St Agnes Room."
+   "Devotion to the Sacred Heart of Jesus: First Friday, after the 6.30pm Mass."
   ],
-  "office_hours": "Monday to Saturday: 9am to 5pm; Sunday: 9am to 1pm; Public Holidays: Closed.",
   "good_to_know": [
-   "Office opening hours: Monday to Saturday 9am to 5pm; Sunday 9am to 1pm; Public Holidays closed."
+   "All Saints' Day Masses are held over the usual Saturday and Sunday Masses.",
+   "All Souls' Day Mass is on Monday, 2 November at 8pm, followed by blessing of niches after."
   ]
  },
  "events": [
   {
-   "date": "2026-10-17",
-   "time": "19:30",
-   "title": "The Living Rosary",
-   "text": "The Living Rosary, a joint collaboration of the language communities and the Legion of Mary, on 17 Oct at 7:30pm at the Church Hall."
+   "date": "2026-10-25",
+   "time": "14:00",
+   "title": "CSA Funeral Workshop (Part 1)",
+   "text": "Find out more about the Church's funeral and wake rites. Register at bit.ly/CSAFuneralWS."
+  },
+  {
+   "date": "2026-11-01",
+   "time": "14:00",
+   "title": "CSA Funeral Workshop (Part 2)",
+   "text": "Find out more about the Church's funeral and wake rites. Register at bit.ly/CSAFuneralWS."
   }
  ],
  "bulletin": {
-  "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_18.pdf",
-  "date": "2026-10-18"
+  "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_25.pdf",
+  "date": "2026-10-25"
  },
  "disputes": [],
  "vs_mycatholic": {

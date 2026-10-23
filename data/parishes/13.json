@@ -2,9 +2,9 @@
  "id": 13,
  "name": "Church of Our Lady Queen of Peace",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610161620_2026_10%2018%20%20-%2029th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=c7f8d813-d4a2-439c-ab7d-9c186ac062ca"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610231650_2026_10%2018%20%20-%2030th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=c1ad54cb-c736-4477-855f-9cd3a6b4a55b"
  ],
- "fetched_at": "2026-10-16T21:01+08:00",
+ "fetched_at": "2026-10-23T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -58,7 +58,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary, after evening Mass"
+   "note": "October only"
   },
   {
    "d": 1,
@@ -88,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary, after evening Mass"
+   "note": "October only"
   },
   {
    "d": 2,
@@ -118,7 +118,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary, after evening Mass"
+   "note": "October only"
   },
   {
    "d": 3,
@@ -148,7 +148,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary, after evening Mass"
+   "note": "October only"
   },
   {
    "d": 4,
@@ -178,7 +178,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary, after evening Mass"
+   "note": "October only"
   },
   {
    "d": 5,
@@ -190,7 +190,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Sacred Heart Devotion; also after the evening Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -220,7 +220,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary, after evening Mass"
+   "note": "October only"
   },
   {
    "d": 6,
@@ -240,7 +240,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena Devotion"
+   "note": ""
   },
   {
    "d": 6,
@@ -250,7 +250,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -260,32 +260,29 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Assumption Garden",
-   "note": "Rosary, after evening Mass"
+   "note": "October only"
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "09:00"
+ "public_holiday_masses": [],
+ "notes": [
+  "The daily Rosary is only during October."
  ],
- "notes": [],
  "info": {
-  "adoration": "Adoration Room is open 10am to 9pm.",
-  "devotions": [
-   "Novena Devotion: Saturdays 4.15pm",
-   "Sacred Heart Devotion: 1st Friday of the month at 12 noon and after the evening Mass",
-   "Divine Mercy Chaplet: after the 6.30pm Mass on the last Friday of the month",
-   "Rosary: after the evening Mass, 7pm on weekdays and 6pm on weekends, at Assumption Garden"
-  ],
-  "good_to_know": [
-   "The church is at 4 Sandy Lane, Singapore 437321.",
-   "Parish secretariat: 6744 2879, admin@queenofpeace.sg."
-  ]
+  "adoration": "Adoration Room is open 10:00 to 21:00."
  },
- "events": [],
+ "events": [
+  {
+   "date": "2026-11-07",
+   "time": "11:00",
+   "title": "Queen of Peace Holy Spirit Prayer Group 42nd Anniversary Celebration",
+   "text": "Queen of Peace Holy Spirit Prayer Group 42nd Anniversary Celebration, 11:00 AM–1:00 PM at David Hall 4.1. Theme: Faithful Service. Mass celebrant: Fr. 萧永伦. Includes praise and worship, Holy Mass, and fellowship meal. All are welcome."
+  }
+ ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610161620_2026_10%2018%20%20-%2029th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=c7f8d813-d4a2-439c-ab7d-9c186ac062ca",
-  "date": "2026-10-16"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610231650_2026_10%2018%20%20-%2030th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=c1ad54cb-c736-4477-855f-9cd3a6b4a55b",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {

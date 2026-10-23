@@ -2,14 +2,24 @@
  "id": 2,
  "name": "Cathedral of the Good Shepherd",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610161749_Bulletin_20261018.pdf?alt=media&token=b35f3042-2764-4573-8dad-815e911b5fef"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610231632_Bulletin_20261025.pdf?alt=media&token=93fb2089-224b-4bc9-b911-46b46d4b1e1c"
  ],
- "fetched_at": "2026-10-16T21:02+08:00",
+ "fetched_at": "2026-10-23T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
+  {
+   "d": 0,
+   "t": "08:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "When priests are available."
+  },
   {
    "d": 0,
    "t": "08:30",
@@ -22,6 +32,16 @@
   },
   {
    "d": 0,
+   "t": "10:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "When priests are available."
+  },
+  {
+   "d": 0,
    "t": "10:30",
    "weeks": [],
    "except": [],
@@ -29,6 +49,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "When priests are available."
   },
   {
    "d": 0,
@@ -58,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary"
+   "note": "Rosary. Password: cgs."
   },
   {
    "d": 2,
@@ -78,7 +108,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary"
+   "note": "Rosary. Password: cgs."
   },
   {
    "d": 3,
@@ -87,8 +117,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Annex, Level 2 Room 4",
-   "note": "Breaking of the Word"
+   "loc": "",
+   "note": "Breaking of the Word. Before Intercessory Prayers at 11:45."
   },
   {
    "d": 3,
@@ -98,7 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Annex, Level 2 Room 4",
-   "note": "Intercessory Prayers"
+   "note": "Intercessory Prayers."
   },
   {
    "d": 3,
@@ -118,7 +148,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Zoom",
-   "note": "Rosary"
+   "note": "Rosary. Password: cgs."
   },
   {
    "d": 4,
@@ -128,7 +158,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Annex Building Level 3",
-   "note": "Divine Mercy; except public holidays"
+   "note": "Divine Mercy. Not held on public holidays."
   },
   {
    "d": 4,
@@ -148,7 +178,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Breaking of the Word"
+   "note": "Breaking of the Word. Ends 21:30."
   },
   {
    "d": 5,
@@ -160,7 +190,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Temporary Chapel",
-   "note": "Rosary"
+   "note": "Rosary. 4th Friday of the month."
   },
   {
    "d": 5,
@@ -171,6 +201,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Main Church",
+   "note": "When priests are available."
   },
   {
    "d": 6,
@@ -190,7 +230,7 @@
    "time": "18:00",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day anticipated Mass",
+   "title": "All Saints' Day",
    "action": "add"
   },
   {
@@ -199,7 +239,7 @@
    "time": "08:30",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Mass",
+   "title": "All Saints' Day",
    "action": "add"
   },
   {
@@ -208,7 +248,7 @@
    "time": "10:30",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Mass",
+   "title": "All Saints' Day",
    "action": "add"
   },
   {
@@ -217,74 +257,85 @@
    "time": "18:00",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Mass",
+   "title": "All Saints' Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "13:15",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls' Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "19:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls' Day",
    "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [
-  "Divine Mercy devotion is not held on public holidays.",
-  "Confession is subject to priest availability.",
-  "All Saints' Day Masses follow regular Mass timings."
+  "Main Church is closed Monday-Friday; it opens Saturday at 4pm and all day Sunday. Temporary Chapel is open Monday-Friday, 10am-7pm.",
+  "Confession is subject to priest availability."
  ],
  "info": {
-  "adoration": "Adoration Chapel is open daily 07:00-24:00.",
-  "confession": "Confession is at the Main Church 15 minutes before Weekend Mass when priests are available.",
+  "adoration": "Adoration Chapel open daily 7am-12mn.",
+  "confession": "Main Church 15min before Weekend Mass when priests are available.",
   "devotions": [
-   "Rosary on Zoom Monday-Wednesday 21:30; 4th Friday 12:30 at Temporary Chapel.",
-   "Divine Mercy Thursday 12:15 at Annex Building Level 3, except public holidays.",
-   "Breaking of the Word Thursday 20:00-21:30; Wednesday 11:00 at Annex, Level 2 Room 4.",
-   "Intercessory Prayers Wednesday 11:45 at Annex, Level 2 Room 4."
+   "Rosary on Zoom Monday-Wednesday 9.30pm. Password: cgs.",
+   "4th Friday of the Month 12:30pm Rosary at Temporary Chapel.",
+   "Divine Mercy Thursday 12.15pm at Annex Building Level 3 (except public holidays).",
+   "Breaking of the Word Thursday 8pm-9.30pm.",
+   "Intercessory Prayers Wednesday 11:45am at Annex, Level 2 Room 4 (Breaking of the Word begins at 11am)."
   ],
-  "office_hours": "Cathedral Office is open Monday-Friday 09:00-18:00 and closed on Public Holidays.",
+  "office_hours": "Cathedral Office: Monday-Friday, 9am-6pm (Closed on Public Holidays).",
   "good_to_know": [
-   "Main Church is closed Monday-Friday; open Saturday at 16:00 and full day on Sundays.",
-   "Temporary Chapel at JM Beurel Centre (Annex Building) Level 1 is open Monday-Friday 10:00-19:00.",
-   "Heritage Gallery is open 10:00-22:00."
+   "Main Church: CLOSED Monday-Friday; OPEN Saturday at 4pm; full day on Sundays.",
+   "Temporary Chapel: JM Beurel Centre (Annex Building) Level 1, Monday-Friday, 10am-7pm."
   ]
  },
  "events": [
   {
-   "date": "2026-10-27",
-   "time": "19:30",
-   "title": "PIETA Singapore Monthly Session",
-   "text": "Support group for bereaved parents; prayer, reflection and breaking open the Word of God. 27 October 2026, Tuesday, 19:30-21:15. Location: Catholic Archdiocesan Education Centre, 2 Highland Road, unit LG-01, Singapore 549102. Enquiries: pieta.singapore@gmail.com."
-  },
-  {
-   "date": "2026-11-06",
-   "time": "19:45",
-   "title": "TREASURE #18 Retreat for Young Working Adults",
-   "text": "Stay-in Catholic Encounter Retreat for young working adults ages 21-35. 6-9 November 2026, 19:45 (Fri) - 18:00 (Mon). Location: St. Francis Xavier Retreat Centre. Fee: $163.50 incl. 9% GST. Register: tinyurl.com/oyp-treasure18."
-  },
-  {
    "date": "2026-11-13",
    "time": "",
    "title": "70th Beginning Experience Retreat",
-   "text": "Live-in weekend for permanently separated, divorced or widowed. 13-17 November 2026. Location: Lifesprings Canossian Spirituality Centre. Fee: $230. Register: besingapore.org/BE_Event. Contact: Mary 97554310, Jean 98285162."
+   "text": "13-17 November 2026. Lifesprings Canossian Spirituality Centre. Fee: $230. Register here: besingapore.org/BE_Event. For more information, contact Mary (97554310) | Jean (98285162)."
   },
   {
    "date": "2026-11-13",
    "time": "10:00",
-   "title": "EMMANUEL: Walking with God in Our Golden Years",
-   "text": "Reflection for those approaching retirement or in golden years. 13 November 2026, Friday, 10:00-13:00. Location: St. Joseph Church (Bukit Timah), St Joseph AVA Room, L1. Fee: $20 per pax, $35 for 2 pax. Register: familylife.sg/EWWG."
+   "title": "Emmanuel: Walking with God in Our Golden Years",
+   "text": "10am-1pm. St. Joseph Church (Bukit Timah), St Joseph AVA Room, L1. Fee: $20 per pax | $35 for 2 pax. Register here: familylife.sg/EWWG"
+  },
+  {
+   "date": "2026-11-14",
+   "time": "14:00",
+   "title": "Certificate in Catholic Bioethics Information Session",
+   "text": "2-3pm. Zoom. Register here: www.cmg.org.sg/cmg-ctis-certificate-inbioethics/"
   },
   {
    "date": "2026-11-21",
    "time": "10:00",
    "title": "Secondary 4 & 5 Students Outreach",
-   "text": "For graduating secondary school students; prayer and gathering. 21 November 2026, Saturday, 10:00-13:00 (registration opens 09:45). Location: Catholic Centre, 55 Waterloo Street, #08-01, Singapore 187954. Register: tinyurl.com/SecOutreach26Nov."
+   "text": "10am-1pm (registration opens at 9.45AM). Catholic Centre, 55 Waterloo Street, #08-01, Singapore 187954. Register here: tinyurl.com/SecOutreach26Nov. For enquiries, email Melvin (melvin.oyp@catholic.org.sg)."
   },
   {
-   "date": "2026-12-17",
-   "time": "",
-   "title": "BREATHE Retreat #4",
-   "text": "Stay-in youth retreat for ages 16-35. 17-20 December 2026. Location: Catholic Spirituality Centre. Fee: $160 early bird till 11 Oct, $175 thereafter. Register: bit.ly/breathe4."
+   "date": "2026-11-28",
+   "time": "13:30",
+   "title": "Conversations That Matter: When Your Teen Questions Their Identity & Sexuality",
+   "text": "1.30pm-4pm. Church of the Holy Cross, Auditorium (Level 4). Fee: $20 per pax | $35 for 2 pax. Register here: familylife.sg/CTM_B"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610161749_Bulletin_20261018.pdf?alt=media&token=b35f3042-2764-4573-8dad-815e911b5fef",
-  "date": "2026-10-16"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610231632_Bulletin_20261025.pdf?alt=media&token=93fb2089-224b-4bc9-b911-46b46d4b1e1c",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {

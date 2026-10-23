@@ -2,9 +2,9 @@
  "id": 27,
  "name": "Church of St Michael",
  "source_urls": [
-  "https://sh1.sendinblue.com/mk/sc/JNc0jdr694EJ4cgLs3qVzQwwZBpW15d7U11Gbs5ior-iIaehTo8hFkHUefO3VJfcOKjIPpL0tEOuezxlx5DB7DIwAh-WIj4?t=1792145327057"
+  "https://sh1.sendinblue.com/mk/sc/PPM-bwA2lgwxn0fcr2NqSB_hnYCCFRxoRpOH2F9AVofBOymRlGG39qIawTSjPa_DCd4zn-utwMmE1un-qMtEmk7DxV23t7w?t=1792751869938"
  ],
- "fetched_at": "2026-10-16T21:04+08:00",
+ "fetched_at": "2026-10-23T21:05+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -213,12 +213,21 @@
  ],
  "dated": [
   {
+   "type": "Devotion",
+   "date": "2026-10-30",
+   "time": "19:00",
+   "language": "",
+   "location": "Mother Mary's Grotto",
+   "title": "Encounter: Rosary for the Month of the Rosary",
+   "action": "add"
+  },
+  {
    "type": "Mass",
    "date": "2026-11-02",
    "time": "06:30",
    "language": "English",
    "location": "",
-   "title": "All Souls' Day",
+   "title": "All Souls' Day Mass",
    "action": "add"
   },
   {
@@ -227,7 +236,7 @@
    "time": "12:15",
    "language": "English",
    "location": "",
-   "title": "All Souls' Day",
+   "title": "All Souls' Day Mass",
    "action": "add"
   },
   {
@@ -236,7 +245,7 @@
    "time": "18:30",
    "language": "Mandarin",
    "location": "",
-   "title": "All Souls' Day",
+   "title": "All Souls' Day Mass",
    "action": "add"
   },
   {
@@ -245,81 +254,60 @@
    "time": "20:00",
    "language": "English",
    "location": "",
-   "title": "All Souls' Day",
+   "title": "All Souls' Day Mass",
    "action": "add"
   },
   {
    "type": "Adoration",
    "date": "2026-11-06",
    "time": "19:00",
-   "language": "English",
+   "language": "",
    "location": "Worship Hall",
    "title": "Holy Hour: Building up Happy Families",
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30"
  ],
  "notes": [
-  "On public holidays that fall on a Sunday, the public holiday is observed on the following Monday.",
-  "All Saints' Day (31 Oct-1 Nov) is a day of obligation; Masses follow the usual weekend times."
+  "On public holidays, the weekday Masses are replaced by a single morning Mass.",
+  "When a public holiday falls on a Sunday, it is celebrated on the following Monday."
  ],
  "info": {
-  "confession": "30 minutes before the weekend Masses: Saturday 5pm; Sunday 9am, 11am and 5pm.",
+  "confession": "30 minutes before the weekend Eucharistic Celebrations: Saturdays 5pm; Sundays 9am, 11am and 5pm.",
+  "devotions": [
+   "Chaplet of Divine Mercy: Tuesdays after the 6pm Mass, from 3 Nov 2026, Worship Hall."
+  ],
   "good_to_know": [
-   "Church of St Michael, 17 St Michael's Road, Singapore 327976; tel 6291 9272.",
-   "Parish email: csm.secretariat@catholic.org.sg."
+   "Church of St Michael, 17 St Michael's Road, Singapore 327976; tel 6291 9272. Parish email: csm.secretariat@catholic.org.sg.",
+   "On All Souls' Day, the niches in the Columbarium are blessed after each Eucharistic Celebration."
   ]
  },
  "events": [
   {
-   "date": "2026-10-17",
-   "time": "15:30",
-   "title": "Infant Baptism Preparatory Session",
-   "text": "Sessions on 17, 24, 31 October and 7 November at 3.30pm; infant baptisms on Saturday 14 November at 3pm. Email csm.secretariat@catholic.org.sg to register your child."
-  },
-  {
-   "date": "2026-10-19",
+   "date": "2026-10-29",
    "time": "20:00",
-   "title": "Talk on Creed: What do Catholics believe in?",
-   "text": "Discover what the words of the Creed mean for our lives. Mondays 5, 12, 19 and 26 October at 8pm. Register at https://tinyurl.com/CSMTalkonCreed."
-  },
-  {
-   "date": "2026-10-23",
-   "time": "19:00",
-   "title": "Rosary Evening: Family Rosary at homes",
-   "text": "Family Rosary at homes, 7.30pm-9.30pm, at three homes in Balestier (near Zhong Shan), McNair and Potong Pasir. Register by 18 Oct at https://tinyurl.com/CSMFamilyRosary and indicate your preferred location."
-  },
-  {
-   "date": "2026-10-30",
-   "time": "19:00",
-   "title": "Rosary Evening: Mother Mary's Grotto",
-   "text": "Pray the Holy Rosary at Mother Mary's Grotto, 7pm."
+   "title": "Faith Formation evenings",
+   "text": "Thursdays 8pm at St Michael Room, 29 Oct to 26 Nov 2026: The Death and Resurrection of Christ, The Catholic Church, The Liturgical Calendar, Who is Mother Mary, and God's gift of healing (Anointing and Reconciliation). Open to any Catholic who wants to rediscover the faith — just drop by."
   },
   {
    "date": "2026-11-02",
    "time": "",
-   "title": "Blessing of Niches",
-   "text": "Blessing of niches in the Columbarium after every Mass on All Souls' Day."
+   "title": "Blessing of Niches in the Columbarium",
+   "text": "On All Souls' Day, the niches in the Columbarium are blessed after every Eucharistic Celebration. All are welcome."
   },
   {
    "date": "2026-11-07",
    "time": "10:30",
-   "title": "Talk on a Father's Mission",
-   "text": "In collaboration with Catholic Family Life, 10.30am-12.30pm at Church of Saint Michael. Registration required at https://tinyurl.com/CSMAFathersMission."
-  },
-  {
-   "date": "2026-11-13",
-   "time": "",
-   "title": "70th Beginning Experience (BE) Weekend",
-   "text": "Live-in weekend 13-15 November for those who are separated, divorced or widowed. Cost $230. Register at https://www.besingapore.org/BE_Event."
+   "title": "A Father's Mission",
+   "text": "In collaboration with Catholic Family Life, 10.30am-12.30pm at Church of Saint Michael. For fathers wanting to reclaim their mission; registration required at https://tinyurl.com/CSMAFathersMission."
   }
  ],
  "bulletin": {
-  "url": "https://sh1.sendinblue.com/mk/sc/JNc0jdr694EJ4cgLs3qVzQwwZBpW15d7U11Gbs5ior-iIaehTo8hFkHUefO3VJfcOKjIPpL0tEOuezxlx5DB7DIwAh-WIj4?t=1792145327057",
-  "date": "2026-10-18"
+  "url": "https://sh1.sendinblue.com/mk/sc/PPM-bwA2lgwxn0fcr2NqSB_hnYCCFRxoRpOH2F9AVofBOymRlGG39qIawTSjPa_DCd4zn-utwMmE1un-qMtEmk7DxV23t7w?t=1792751869938",
+  "date": "2026-10-25"
  },
  "disputes": [],
  "vs_mycatholic": {

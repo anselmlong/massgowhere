@@ -2,9 +2,9 @@
  "id": 15,
  "name": "Church of the Risen Christ",
  "source_urls": [
-  "https://drive.google.com/file/d/1fLTuk3tvRTzYdtsrAOAWonrD2U4QMOzN/view"
+  "https://drive.google.com/file/d/10MkEke4mDQ47tMCIjJZApzpW8jItWIsK/view"
  ],
- "fetched_at": "2026-10-16T21:03+08:00",
+ "fetched_at": "2026-10-23T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -60,7 +60,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": "Monthly Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -82,7 +82,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": "Monthly Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -163,16 +163,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Other",
-   "lang": "English",
-   "loc": "Parish Hall",
-   "note": "Breaking of the Word (BOW): spiritual gathering for the weekend liturgy with a gospel reflection"
   },
   {
    "d": 5,
@@ -214,7 +204,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "Monthly Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -239,12 +229,12 @@
  ],
  "dated": [
   {
-   "type": "Devotion",
-   "date": "2026-10-24",
-   "time": "19:00",
+   "type": "Mass",
+   "date": "2026-10-31",
+   "time": "17:30",
    "language": "English",
    "location": "",
-   "title": "Novena & Candlelight Rosary Procession (Walk with Mary)",
+   "title": "All Saints Mass",
    "action": "add"
   },
   {
@@ -267,32 +257,35 @@
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "07:30"
- ],
+ "public_holiday_masses": [],
  "notes": [
-  "On public holidays the usual weekday Mass times do not apply."
+  "All Saints Day is a Day of Obligation."
  ],
  "info": {
-  "devotions": [
-   "Divine Mercy Devotion: Fridays 3pm in the Parish Hall"
-  ],
   "good_to_know": [
-   "The church is at 91 Toa Payoh Central, Singapore 319193.",
-   "The carpark closes at 4pm on 24 October for the Rosary Procession."
+   "Church Wedding Booking: Couples planning to solemnize their marriage in Church must register with the parish office at least one year in advance.",
+   "Infant Baptism: Registration forms can be downloaded from the website. Completed forms together with other relevant documents are required to be submitted to the office at least 2 weeks before the preparation session.",
+   "Funeral Mass: All deceased parishioners of our parish should have their last rites celebrated in the parish. Check for availability of Church and Priest at the office before making any other arrangements.",
+   "All Saints Day (Day of Obligation): All Saints Mass: Saturday 31 Oct at 5.30pm and Sunday 1 Nov - usual Sunday schedule."
   ]
  },
  "events": [
   {
-   "date": "2026-11-01",
+   "date": "2026-10-31",
    "time": "",
    "title": "Dress like a Saint",
-   "text": "Children, teens and adults are invited to come dressed as their favourite saint for All Saints' Day on Saturday 31 October and Sunday 1 November. Prizes for all who dress as saints, with prize redemption on Sunday from 7.30am to 12pm."
+   "text": "Children, teens, and adults are warmly invited to dress as their favourite Saint as we celebrate All Saints’ Day on Saturday/Sunday. Prizes will be awarded to all dressed as saints at all Masses. Redemption of prize only on Sunday from 7.30am to 12.00pm."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "",
+   "title": "Beginning Experience Ministry 70th BE Weekend",
+   "text": "For people who are separated, divorced or widowed (both males and females). A live-in weekend to help single-again persons move on from the darkness of their grief into the light of a new beginning, to be healed and be free to love themselves, others and God. Registration or enquiries at https://www"
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1fLTuk3tvRTzYdtsrAOAWonrD2U4QMOzN/view",
-  "date": "2026-10-18"
+  "url": "https://drive.google.com/file/d/10MkEke4mDQ47tMCIjJZApzpW8jItWIsK/view",
+  "date": "2026-10-25"
  },
  "disputes": [],
  "vs_mycatholic": {

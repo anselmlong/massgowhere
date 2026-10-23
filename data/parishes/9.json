@@ -2,9 +2,9 @@
  "id": 9,
  "name": "Church of the Immaculate Heart of Mary",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610161739_42_29%20Sun%20in%20Ord%20Time%2018Oct26.pdf?alt=media&token=00d59470-6f37-4130-928b-8cd3857faefe"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610231800_43_30th%20Sun%20in%20Ord%20Time%2025Oct26.pdf?alt=media&token=01db31f5-fdc7-4a4f-bf42-2cc59f599b75"
  ],
- "fetched_at": "2026-10-16T21:02+08:00",
+ "fetched_at": "2026-10-23T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -181,7 +181,7 @@
    "type": "Mass",
    "lang": "Mandarin",
    "loc": "",
-   "note": ""
+   "note": "Anticipatory Mass"
   },
   {
    "d": 6,
@@ -191,18 +191,24 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Anticipatory Mass"
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
- "info": {},
+ "notes": [
+  ""
+ ],
+ "info": {
+  "good_to_know": [
+   "Church of the Immaculate Heart of Mary, 24 Highland Road, Singapore 549115. Phone: 6288 9140. Email: info@ihm.sg. Website: https://ihm.sg. All are welcome."
+  ]
+ },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610161739_42_29%20Sun%20in%20Ord%20Time%2018Oct26.pdf?alt=media&token=00d59470-6f37-4130-928b-8cd3857faefe",
-  "date": "2026-10-16"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610231800_43_30th%20Sun%20in%20Ord%20Time%2025Oct26.pdf?alt=media&token=01db31f5-fdc7-4a4f-bf42-2cc59f599b75",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {

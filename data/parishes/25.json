@@ -2,9 +2,9 @@
  "id": 25,
  "name": "St Joseph's Church (Victoria Street)",
  "source_urls": [
-  "https://drive.google.com/file/d/1I7ECKwhY_tvNiwUTn1g-02ThwVOn9GNv/view?usp=sharing"
+  "https://drive.google.com/file/d/1BGJnV58DBH_NBpnCK-BZOQOQ_j3dzwi3/view?usp=sharing"
  ],
- "fetched_at": "2026-10-16T21:06+08:00",
+ "fetched_at": "2026-10-23T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -88,7 +88,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Eucharistic Adoration with the Sacred Heart Devotion"
   },
   {
    "d": 5,
@@ -98,7 +98,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sacred Heart Devotion, together with Eucharistic Adoration"
   },
   {
    "d": 5,
@@ -122,33 +122,31 @@
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "10:00"
  ],
  "notes": [
-  "No weekday Mass on public holidays."
+  "On public holidays the weekday evening Mass is replaced by a morning Mass.",
+  "Weekday Masses are in the evening; confessions are heard shortly before each Mass."
  ],
  "info": {
-  "confession": "Confession is 45 minutes before Mass. Confessions are available 30 minutes before the Spanish Mass.",
+  "adoration": "Eucharistic Adoration together with the Sacred Heart Devotion on Fridays at 5.30pm.",
+  "confession": "45 minutes before every Mass; 30 minutes before the Spanish Mass on Sundays.",
   "devotions": [
-   "Eucharistic Adoration and the Sacred Heart Devotion on Fridays at 5.30pm."
+   "Sacred Heart Devotion: Fridays 5.30pm, with Eucharistic Adoration"
   ],
   "good_to_know": [
-   "Opening hours: Mon-Fri 10:00-19:30; Public Holidays 09:00-11:00; Sat 09:00-19:00; Sun 09:00-19:00."
+   "Church opening hours: Monday to Friday 10am-7.30pm, Saturday and Sunday 9am-7pm; on public holidays 9am-11am.",
+   "Address: 143 Victoria Street, Singapore 188020; tel 63383167.",
+   "Mass intentions can be dropped in the box at the narthex or emailed to sjc.myprayers@catholic.org.sg.",
+   "Enquiries about joining a church ministry: sjc.comms@catholic.org.sg."
   ]
  },
- "events": [
-  {
-   "date": "2026-10-18",
-   "time": "",
-   "title": "World Mission Sunday",
-   "text": "29th Week in Ordinary Time, Year A"
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1I7ECKwhY_tvNiwUTn1g-02ThwVOn9GNv/view?usp=sharing",
-  "date": "2026-10-18"
+  "url": "https://drive.google.com/file/d/1BGJnV58DBH_NBpnCK-BZOQOQ_j3dzwi3/view?usp=sharing",
+  "date": "2026-10-25"
  },
  "disputes": [],
  "vs_mycatholic": {

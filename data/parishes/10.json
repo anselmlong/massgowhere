@@ -2,9 +2,9 @@
  "id": 10,
  "name": "Church of Our Lady of Lourdes",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610171419_20261018_29th_OT.pdf?alt=media&token=86194eaf-a84e-4b66-94cb-ad5f0738b3c5"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610231918_20261025_30th_OT.pdf?alt=media&token=71d12512-5634-4c01-a4e5-a2cb027382e1"
  ],
- "fetched_at": "2026-10-17T21:02+08:00",
+ "fetched_at": "2026-10-23T21:01+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "",
-   "note": ""
+   "note": "1st Sunday of the month"
   },
   {
    "d": 0,
@@ -62,7 +62,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": ""
+   "note": "2nd Sunday of the month"
   },
   {
    "d": 0,
@@ -257,17 +257,29 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "09:00",
+  "10:00"
+ ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Daily 08:00-20:00.",
-  "confession": "Reconciliation is available 30 minutes before Mass.",
-  "office_hours": "Parish Office: Mon-Fri 10:00-18:00, Sat 14:00-20:00, Sun 09:00-14:00."
+  "adoration": "Adoration Room open daily 8:00am to 8:00pm.",
+  "confession": "The Sacrament of Reconciliation is available 30 minutes before Mass.",
+  "devotions": [
+   "Rosary: Monday, Wednesday, Thursday and Friday 11:45am",
+   "Divine Mercy: Tuesdays 11:45am",
+   "Our Lady of Good Health, Vailankkani: Saturdays 5:30pm"
+  ],
+  "office_hours": "Parish office: Mon-Fri 10:00am-6:00pm; Sat 2:00pm-8:00pm; Sun 9:00am-2:00pm.",
+  "good_to_know": [
+   "The church is at 50 Ophir Road, Singapore 188690.",
+   "Bookshop: Saturdays 5:00pm-8:00pm and Sundays 8:30am-1:30pm; closed on public holidays."
+  ]
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610171419_20261018_29th_OT.pdf?alt=media&token=86194eaf-a84e-4b66-94cb-ad5f0738b3c5",
-  "date": "2026-10-17"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610231918_20261025_30th_OT.pdf?alt=media&token=71d12512-5634-4c01-a4e5-a2cb027382e1",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {

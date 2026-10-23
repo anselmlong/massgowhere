@@ -2,9 +2,9 @@
  "id": 22,
  "name": "Church of St Francis Xavier",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610161623_Bulletin_2026_10_18.pdf?alt=media&token=3793a219-b42d-4f2b-a301-5e2578c310d9"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610231720_Bulletin_2026_10_25.pdf?alt=media&token=7870b094-7934-4fca-8d8a-21ed595a6257"
  ],
- "fetched_at": "2026-10-16T21:04+08:00",
+ "fetched_at": "2026-10-23T21:05+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -138,7 +138,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "until 6pm"
+   "note": ""
   },
   {
    "d": 5,
@@ -168,7 +168,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "until 12pm"
+   "note": ""
   },
   {
    "d": 6,
@@ -178,17 +178,17 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday anticipated Mass"
+   "note": ""
   }
  ],
  "dated": [
   {
-   "type": "Adoration",
-   "date": "2026-10-19",
+   "type": "Devotion",
+   "date": "2026-10-26",
    "time": "20:00",
-   "language": "English",
+   "language": "",
    "location": "Mount Tabor Adoration Room",
-   "title": "Intercessory Prayer before the Blessed Sacrament",
+   "title": "Intercessory",
    "action": "add"
   },
   {
@@ -197,7 +197,7 @@
    "time": "17:30",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Vigil Mass (Day of Obligation)",
+   "title": "All Saints' Day (Vigil)",
    "action": "add"
   },
   {
@@ -206,7 +206,7 @@
    "time": "07:00",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Mass (Day of Obligation)",
+   "title": "All Saints' Day",
    "action": "add"
   },
   {
@@ -215,7 +215,7 @@
    "time": "09:00",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Mass (Day of Obligation)",
+   "title": "All Saints' Day",
    "action": "add"
   },
   {
@@ -224,7 +224,7 @@
    "time": "11:00",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Mass (Day of Obligation)",
+   "title": "All Saints' Day",
    "action": "add"
   },
   {
@@ -233,7 +233,7 @@
    "time": "17:30",
    "language": "English",
    "location": "",
-   "title": "All Saints' Day Mass (Day of Obligation)",
+   "title": "All Saints' Day",
    "action": "add"
   },
   {
@@ -242,7 +242,7 @@
    "time": "06:30",
    "language": "English",
    "location": "",
-   "title": "All Souls' Day Mass (blessing of niches at the Columbarium after Mass)",
+   "title": "All Souls' Day",
    "action": "add"
   },
   {
@@ -251,16 +251,16 @@
    "time": "18:30",
    "language": "English",
    "location": "",
-   "title": "All Souls' Day Mass (blessing of niches at the Columbarium after Mass)",
+   "title": "All Souls' Day",
    "action": "add"
   },
   {
    "type": "Confession",
    "date": "2026-11-09",
    "time": "10:00",
-   "language": "English",
+   "language": "",
    "location": "Main Church",
-   "title": "Confession before the Mass and Anointing of the Sick & Elderly",
+   "title": "Mass and Anointing of the Sick & Elderly",
    "action": "add"
   },
   {
@@ -269,81 +269,69 @@
    "time": "11:00",
    "language": "English",
    "location": "Main Church",
-   "title": "Mass and Anointing of the Sick & Elderly (be seated by 10.45am)",
+   "title": "Mass and Anointing of the Sick & Elderly",
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00"
  ],
  "notes": [
-  "No weekday Mass on public holidays; Mass is at 9am instead."
+  "There is currently no Confession before Mass.",
+  "Blessing of niches at the Columbarium after each All Souls' Day Mass on 2 Nov."
  ],
  "info": {
-  "adoration": "Adoration Room open Mon-Sun 7am-11pm; closed on public holidays.",
-  "confession": "Fridays 4pm-6pm and Saturdays 10am-12pm. There is currently no Confession before Mass; you can also contact the Parish Office to make an appointment.",
-  "office_hours": "Mon-Fri 9.30am-6.30pm; Sat-Sun 8.30am-1pm; closed on public holidays.",
-  "good_to_know": [
-   "Main gate and back gate are open daily 5am-11pm, and close on public holidays after the 9am Mass.",
-   "Parish library is open Sundays 8am-1pm and 4pm-5.30pm.",
-   "Columbarium is open Mon-Fri 10am-7.30pm and Sat-Sun 8.30am-7.30pm; closed on public holidays.",
-   "Anointing of the Sick can be requested through the Parish Office; in an emergency, contact the priests of the church nearest the hospital."
-  ]
+  "adoration": "Adoration Room: Mon-Sun 7am-11pm; closed on Public Holidays.",
+  "confession": "Contact Parish Office to make an appointment."
  },
  "events": [
   {
-   "date": "2026-10-18",
+   "date": "2026-10-25",
    "time": "",
-   "title": "Sunday Fellowship Breakfast",
-   "text": "The L7 Catechetical Ministry serves breakfast at JPII Hall after Mass this Sunday. Love offerings are welcome."
-  },
-  {
-   "date": "2026-10-19",
-   "time": "20:00",
-   "title": "Charismatic: Life in the Spirit - Growth Series",
-   "text": "Fruit of the Spirit (Galatians 5:22) with speaker Mike Arents, 8-9pm in the Hosea Room, Parish Centre Level 2."
+   "title": "Sunday Fellowship",
+   "text": "The L6 Catechetical Ministry will be serving breakfast. Love offerings are welcome. Venue: JPII Hall."
   },
   {
    "date": "2026-10-25",
    "time": "09:00",
-   "title": "Why Do I Have to Go to Confession?",
-   "text": "SFX Biblical Apostolate Team session, 9-10.30am in the Jeremiah Room, Parish Centre Level 2. Enquiries: tinyurl.com/2026WhyConfession."
+   "title": "Biblical Apostolate Team: Why Do I Have to Go to Confession?",
+   "text": "Join SFXBAT as we unpack what Confession really is, why it matters, and how it draws us closer to the Father’s love. 9am - 10.30am. Venue: Jeremiah Room (Parish Centre, Level 2)."
   },
   {
    "date": "2026-10-26",
    "time": "20:00",
    "title": "Charismatic: Life in the Spirit - Growth Series",
-   "text": "Worship in the Spirit with speaker Roderick Lim, 8-9pm in the Hosea Room, Parish Centre Level 2."
+   "text": "Join us for a session on “Worship in the Spirit”. All are welcome! Venue: Hosea Room, Parish Centre Level 2."
   },
   {
-   "date": "2026-11-02",
-   "time": "20:00",
-   "title": "Charismatic: Life in the Spirit - Growth Series",
-   "text": "Spiritual Warfare with speaker Fr Karolus Huar, 8-9pm in the Hosea Room, Parish Centre Level 2."
+   "date": "2026-10-27",
+   "time": "19:30",
+   "title": "PIETA Monthly Session – Oct",
+   "text": "Bereaved parents are warmly invited to gather for prayer, reflection and the breaking open of the Word of God, journeying together in faith and hope. 7.30pm - 9.15pm. Venue: Catholic Archdiocesan Education Centre, 2 Highland Road, #LG-01, Singapore 549102."
   },
   {
-   "date": "2026-11-06",
-   "time": "20:00",
-   "title": "CTIS Certificate in Theology - Info Night",
-   "text": "8pm at St Ignatius Room (B1), SFX Seminary, Bukit Timah. Download forms from www.ctis.sg; enquiries 6902 8700."
-  },
-  {
-   "date": "2026-11-21",
-   "time": "10:00",
-   "title": "OYP Outreach for Secondary 4 & 5 Students",
-   "text": "10am-1pm (registration opens 9.45am) at Catholic Centre, 55 Waterloo Street, #08-01. Register at tinyurl.com/SecOutreach26Nov."
-  },
-  {
-   "date": "2026-12-04",
+   "date": "2026-11-13",
    "time": "",
-   "title": "BREATHE Youth Retreat",
-   "text": "Four-day stay-in retreat for youths and young adults aged 16-30 at St Clement Hall, 1261 Upper Serangoon Rd; cost $160. Register at bit.ly/breathe4 by 30 Nov."
+   "title": "70th Beginning Experience (BE) Weekend",
+   "text": "A live-in weekend for the permanently separated, divorced or widowed (for both males and females). Dates: 13–15 Nov (Friday night to Sunday afternoon). Cost: $230. Registration: www.besingapore.org/BE_Event. Enquiries: 9755 4310 (Mary) / 9828 5162 (Jean)."
+  },
+  {
+   "date": "2026-11-14",
+   "time": "14:00",
+   "title": "CTIS: Certificate in Catholic Bioethics – Information Session",
+   "text": "Information session for the Certificate in Bioethics programme. 2pm – 3pm. Venue: Online via Zoom. Registration: https://www.cmg.org.sg/cmg-ctis-certificate-in-bioethics"
+  },
+  {
+   "date": "2026-11-28",
+   "time": "13:30",
+   "title": "Conversations That Matter: When Your Teen Questions Their Identity & Sexuality",
+   "text": "Join Fr David Garcia, OP and Nicholas Gabriel Lim as they explore identity, attraction and morality, offering practical guidance on listening, responding and having meaningful conversations with your teen. 1.30pm - 4pm. Venue: Church of the Holy Cross, Auditorium (Level 4). Fee: $20 per pax | $35 fo"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610161623_Bulletin_2026_10_18.pdf?alt=media&token=3793a219-b42d-4f2b-a301-5e2578c310d9",
-  "date": "2026-10-16"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610231720_Bulletin_2026_10_25.pdf?alt=media&token=7870b094-7934-4fca-8d8a-21ed595a6257",
+  "date": "2026-10-23"
  },
  "disputes": [],
  "vs_mycatholic": {
