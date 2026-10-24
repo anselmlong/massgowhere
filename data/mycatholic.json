@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-22",
+"asOf": "2026-10-24",
 "rules": {
 "1": [
 {
@@ -4351,16 +4351,6 @@
 "note": ""
 },
 {
-"d": 3,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 4,
 "weeks": [],
 "except": [],
@@ -4431,21 +4421,31 @@
 "note": ""
 },
 {
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 6,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "20:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -6455,6 +6455,15 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-11-20",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-02",
 "type": "Mass",
@@ -6462,6 +6471,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-11-20",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Eucharistic Adoration & Mass"
 }
 ],
 "7": [
@@ -7920,6 +7938,78 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-25",
+"type": "Devotion",
+"t": "19:45",
+"lang": "English",
+"loc": "Main Church",
+"note": "Sacred Heart Devotion"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Lunchtime Mass"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Devotion",
+"t": "19:45",
+"lang": "English",
+"loc": "Main Church",
+"note": "Sacred Heart Devotion"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Lunchtime Mass"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-02",
 "type": "Mass",
@@ -7954,18 +8044,45 @@
 "lang": "English",
 "loc": "Chapel",
 "note": "Public Holiday"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Mary, Mother of God"
 }
 ],
 "18": [
-{
-"k": "r",
-"date": "2026-10-22",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-10-23",
@@ -7983,15 +8100,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-10-22",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Please note that weekday evening Mass will be shifted to 6.30pm in the evening from 26 October 2026, Monday."
 },
 {
 "k": "a",
@@ -8252,16 +8360,7 @@
 "note": "Solemnity of Mary, Mother of God"
 }
 ],
-"22": [
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day mass"
-},
+"21": [
 {
 "k": "r",
 "date": "2026-11-02",
@@ -8270,6 +8369,98 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "o",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls Day Mass"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls Day Mass followed by Blessing of Columbarium"
+}
+],
+"22": [
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-02",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Triduum Mass by Fr Marcus Chew"
+},
+{
+"k": "r",
+"date": "2026-11-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-26",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-27",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-28",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day mass"
 },
 {
 "k": "a",
@@ -8281,15 +8472,6 @@
 "note": "All Souls' day mass"
 },
 {
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -8297,6 +8479,125 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "1 Mass only. Public Holiday in lieu (Deepavali)"
+},
+{
+"k": "a",
+"date": "2026-11-25",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Triduum Mass by Fr Marcus Chew. NO 6.30pm Mass."
+},
+{
+"k": "a",
+"date": "2026-11-26",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Triduum Mass by Fr Timothy Soo. NO 6.30pm Mass"
+},
+{
+"k": "a",
+"date": "2026-11-27",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Triduum Mass by Fr Eugene Chan. NO 6.30pm Mass"
+},
+{
+"k": "a",
+"date": "2026-11-28",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Feast Day Mass celebrated by His Eminence Cardinal William Goh"
+}
+],
+"24": [
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-04",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-05",
+"type": "Mass",
+"t": "20:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Memorial Mass (Chinese)"
+},
+{
+"k": "r",
+"date": "2026-11-06",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "08:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-19",
+"type": "Adoration",
+"t": "20:00",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": "Holy Hour for Vocations"
 }
 ],
 "25": [
@@ -8595,6 +8896,42 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Morning lauds followed by Mass"
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Morning lauds followed by Mass"
+},
+{
+"k": "r",
+"date": "2026-10-31",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -8604,13 +8941,40 @@
 "note": "Preceded by Morning Prayer at 7.40am"
 },
 {
-"k": "r",
-"date": "2026-11-09",
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "12:15",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "All Souls' Day (Blessing of niches)"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Souls' Day (Blessing of niches)"
+},
+{
+"k": "a",
+"date": "2026-11-02",
 "type": "Mass",
 "t": "07:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Morning lauds followed by Mass"
+"note": "Morning lauds followed by Mass. All Souls's Day (Blessing of niches)"
+},
+{
+"k": "a",
+"date": "2026-10-31",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints Day (Anticipated Mass)"
 }
 ],
 "28": [
