@@ -2,9 +2,9 @@
  "id": 4,
  "name": "Church of Divine Mercy",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610170926_CDM_Parish%20Bulletin%20Vol202642%20%E2%80%93%2017-18%20Oct_v21_261016_173148.pdf?alt=media&token=7d09646f-1781-4be6-a620-901ce83b9eec"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610240910_CDM_Parish%20Bulletin%20Vol2026.43%20%E2%80%93%2024-25%20Oct%20v2.1.pdf?alt=media&token=e322911c-1e54-4a7e-b3e7-c7dfabd4693e"
  ],
- "fetched_at": "2026-10-17T12:33+08:00",
+ "fetched_at": "2026-10-24T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -12,22 +12,12 @@
  "rules": [
   {
    "d": 0,
-   "t": "06:40",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confessional",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -38,17 +28,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary. October only."
-  },
-  {
-   "d": 0,
-   "t": "08:40",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confessional",
-   "note": ""
+   "note": "Rosary; October"
   },
   {
    "d": 0,
@@ -57,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -68,17 +48,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary. October only."
-  },
-  {
-   "d": 0,
-   "t": "11:10",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confessional",
-   "note": ""
+   "note": "Rosary; October"
   },
   {
    "d": 0,
@@ -87,7 +57,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -97,8 +67,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy"
+   "loc": "In homes",
+   "note": "Home Divine Mercy; location details from the Divine Mercy Apostolate"
   },
   {
    "d": 0,
@@ -112,22 +82,12 @@
   },
   {
    "d": 0,
-   "t": "17:10",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confessional",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -138,7 +98,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Lauds"
   },
   {
    "d": 1,
@@ -147,7 +107,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -168,7 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary. October only."
+   "note": "Rosary; October"
   },
   {
    "d": 1,
@@ -178,7 +138,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Vespers"
   },
   {
    "d": 1,
@@ -187,7 +147,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -197,8 +157,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy"
+   "loc": "In homes",
+   "note": "Home Divine Mercy; location details from the Divine Mercy Apostolate"
   },
   {
    "d": 2,
@@ -208,7 +168,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Lauds"
   },
   {
    "d": 2,
@@ -217,7 +177,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -238,7 +198,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary. October only."
+   "note": "Rosary; October"
   },
   {
    "d": 2,
@@ -248,7 +208,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Vespers"
   },
   {
    "d": 2,
@@ -257,7 +217,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -267,8 +227,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy"
+   "loc": "In homes",
+   "note": "Home Divine Mercy; location details from the Divine Mercy Apostolate"
   },
   {
    "d": 3,
@@ -278,7 +238,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Lauds"
   },
   {
    "d": 3,
@@ -287,7 +247,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -308,7 +268,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary. October only."
+   "note": "Rosary; October"
   },
   {
    "d": 3,
@@ -318,7 +278,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Vespers"
   },
   {
    "d": 3,
@@ -327,7 +287,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -337,8 +297,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy"
+   "loc": "In homes",
+   "note": "Home Divine Mercy; location details from the Divine Mercy Apostolate"
   },
   {
    "d": 4,
@@ -348,7 +308,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Lauds"
   },
   {
    "d": 4,
@@ -357,7 +317,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -378,7 +338,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Vespers"
   },
   {
    "d": 4,
@@ -387,7 +347,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -397,8 +357,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy"
+   "loc": "In homes",
+   "note": "Home Divine Mercy; location details from the Divine Mercy Apostolate"
   },
   {
    "d": 5,
@@ -408,7 +368,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Lauds"
   },
   {
    "d": 5,
@@ -417,7 +377,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -438,7 +398,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary. October only."
+   "note": "Rosary; October"
   },
   {
    "d": 5,
@@ -448,7 +408,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Vespers"
   },
   {
    "d": 5,
@@ -457,7 +417,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -467,8 +427,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy"
+   "loc": "In homes",
+   "note": "Home Divine Mercy; location details from the Divine Mercy Apostolate"
   },
   {
    "d": 6,
@@ -477,7 +437,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -502,22 +462,12 @@
   },
   {
    "d": 6,
-   "t": "17:10",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Confessional",
-   "note": ""
-  },
-  {
-   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": "Sunset Mass"
   },
   {
@@ -529,8 +479,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "3rd Saturday of the month"
   },
   {
    "d": 6,
@@ -539,46 +489,28 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy"
+   "loc": "In homes",
+   "note": "Home Divine Mercy; location details from the Divine Mercy Apostolate"
   }
  ],
  "dated": [
   {
-   "action": "add",
-   "date": "2026-10-24",
-   "language": "English",
-   "location": "Main Church",
-   "time": "19:00",
-   "title": "Mass in Honour of St Sharbel Makhlouf",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-10-24",
-   "language": "English",
-   "location": "Main Church",
-   "time": "20:00",
-   "title": "Blessing & Distribution of Holy Oil",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
+   "type": "Mass",
    "date": "2026-11-02",
-   "language": "English",
-   "location": "Main Church",
    "time": "06:30",
-   "title": "All Souls Day Mass",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-02",
    "language": "English",
    "location": "Main Church",
+   "title": "All Souls' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
    "time": "18:15",
-   "title": "All Souls Day Mass",
-   "type": "Mass"
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls' Day Mass",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": true,
@@ -586,81 +518,69 @@
   "08:00"
  ],
  "notes": [
-  "The October Rosary recitation is for October only.",
-  "Home Divine Mercy location varies weekly; check the DMA website.",
-  "All Saints Day follows usual Sunday Mass times."
+  "No weekday Mass on public holidays; only the 8am public holiday Mass is celebrated.",
+  "All Saints' Day (1 Nov) is a day of obligation and follows the regular Sunday Mass times."
  ],
  "info": {
-  "confession": "Confessions are available 20 minutes before all weekend Masses at the confessional.",
-  "devotions": [
-   "Home Divine Mercy location varies weekly; visit the DMA website for location detail each week."
+  "confession": "Available 20 minutes before all weekend Masses, at the confessional.",
+  "office_hours": "Mon-Fri 10.30am-6pm; Sat 9am-5pm; Sun 9am-1pm; closed for lunch daily 1-2pm; closed on weekday public holidays.",
+  "good_to_know": [
+   "Petitions to Divine Mercy can be placed in the Petition Box at the Divine Mercy Mosaic in the main church, or emailed to cdm.dma@catholic.org.sg."
   ]
  },
  "events": [
   {
-   "date": "2026-10-18",
-   "time": "",
-   "title": "World Mission Sunday Mission roadshow",
-   "text": "World Mission Sunday Mission roadshow at the foyer this weekend to learn more about missions, pray for missionaries and support our church’s missionary efforts."
-  },
-  {
-   "date": "2026-10-22",
-   "time": "",
-   "title": "Feast of St John Paul II",
-   "text": "Feast of St John Paul II. Let us honour his sainthood by promoting peace and understanding among people of different faiths."
-  },
-  {
-   "date": "2026-10-23",
-   "time": "19:30",
-   "title": "NCC Coral Heights",
-   "text": "Where 969B Tampines St 96 S522969. Contact Vincent@91061868."
-  },
-  {
-   "date": "2026-10-31",
-   "time": "09:30",
-   "title": "Day for Life 2026",
-   "text": "9.30am - 4pm at Immaculate Heart of Mary Church (IHM). Register at tinyurl.com/dayforlife26"
+   "date": "2026-10-30",
+   "time": "20:00",
+   "title": "NCC Coastar Elias Rise gathering",
+   "text": "Neighbourhood Christian Community gathering at 519 Pasir Ris St 52, S(510519). Contact Marie at 98414142."
   },
   {
    "date": "2026-11-06",
    "time": "15:00",
-   "title": "GEN AI Course",
-   "text": "AI for Smarter & Safer Living. 3pm - 5pm at CDM St Faustina Room (Level 4). Register at bit.ly/4AqCG3M"
+   "title": "GEN AI Course: AI for Smarter & Safer Living",
+   "text": "Session for seniors and retirees, 3pm-5pm at CDM St Faustina Room (Level 4). Register at bit.ly/4AqCG3M."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "10:00",
+   "title": "Emmanuel: Walking with God in Our Golden Years",
+   "text": "Catholic Family Life session for those retiring or in their golden years, 10am-1pm at St Joseph Church (Bukit Timah). Register at familylife.sg/EWWG."
   },
   {
    "date": "2026-11-13",
    "time": "15:30",
-   "title": "Catholic Grandparenting Programme",
-   "text": "Session 1: 3.30pm-6pm, St. Faustina, Level 4. Register by 9 Nov at tinyurl.com/GrandparentingDivineMercy. Enquiries GrandParenting2023@gmail.com"
+   "title": "Catholic Grandparenting Programme – Session 1",
+   "text": "First of two sessions, 3.30pm-6pm at St Faustina, Level 4. Register by 9 Nov at tinyurl.com/GrandparentingDivineMercy."
   },
   {
    "date": "2026-11-14",
    "time": "09:00",
-   "title": "Catholic Grandparenting Programme",
-   "text": "Session 2: 9am-11.30am, Rm 12, Level 3. Register by 9 Nov at tinyurl.com/GrandparentingDivineMercy. Enquiries GrandParenting2023@gmail.com"
+   "title": "Catholic Grandparenting Programme – Session 2",
+   "text": "Second session, 9am-11.30am at Rm 12, Level 3. Register by 9 Nov at tinyurl.com/GrandparentingDivineMercy."
   },
   {
    "date": "2026-11-20",
    "time": "15:00",
-   "title": "GEN AI Course",
-   "text": "Create with AI. 3pm - 5pm at CDM St Faustina Room (Level 4). Register at bit.ly/4AqCG3M"
+   "title": "GEN AI Course: Create with AI",
+   "text": "Session for seniors and retirees, 3pm-5pm at CDM St Faustina Room (Level 4). Register at bit.ly/4AqCG3M."
   },
   {
    "date": "2026-12-04",
    "time": "",
-   "title": "REACH 26 - Youth Encounter Camp",
-   "text": "For ages 15 to 25. Register at tinyurl.com/reachcdm26"
+   "title": "REACH 26 – Youth Encounter Camp",
+   "text": "Encounter camp for ages 15-25, 4-7 Dec. Register at tinyurl.com/reachcdm26."
   },
   {
    "date": "2026-12-11",
    "time": "",
    "title": "Batam Mission Christmas",
-   "text": "Limited to 25 pax only. Register at tinyurl.com/christmasinbatam26. Contact Lisa @ 9833 9337 for more info."
+   "text": "Mission trip 11-13 Dec, limited to 25 people. Register at tinyurl.com/christmasinbatam26 or contact Lisa at 9833 9337."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610170926_CDM_Parish%20Bulletin%20Vol202642%20%E2%80%93%2017-18%20Oct_v21_261016_173148.pdf?alt=media&token=7d09646f-1781-4be6-a620-901ce83b9eec",
-  "date": "2026-10-17"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610240910_CDM_Parish%20Bulletin%20Vol2026.43%20%E2%80%93%2024-25%20Oct%20v2.1.pdf?alt=media&token=e322911c-1e54-4a7e-b3e7-c7dfabd4693e",
+  "date": "2026-10-24"
  },
  "disputes": [],
  "vs_mycatholic": {

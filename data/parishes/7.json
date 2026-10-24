@@ -2,9 +2,9 @@
  "id": 7,
  "name": "Church of the Holy Spirit",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610231222_CHS_Bulletin%2024%20-%2025%20October%202026.pdf?alt=media&token=8bac4e47-b8f0-4756-82fd-d729faa04062"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610240803_CHS_Bulletin%2024%20-%2025%20October%202026.pdf?alt=media&token=94c3d628-c894-4e48-bc45-68e417265625"
  ],
- "fetched_at": "2026-10-23T12:32+08:00",
+ "fetched_at": "2026-10-24T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -18,7 +18,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Before 07:00 Mass."
+   "note": "before the 7am Mass; ends when Mass begins"
   },
   {
    "d": 0,
@@ -38,7 +38,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Before 09:30 Mass."
+   "note": "before the 9:30am Mass; ends when Mass begins"
   },
   {
    "d": 0,
@@ -58,7 +58,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Before 11:30 Mass."
+   "note": "before the 11:30am Mass; ends when Mass begins"
   },
   {
    "d": 0,
@@ -78,7 +78,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Before 17:00 Mass."
+   "note": "before the 5pm Mass; ends when Mass begins"
   },
   {
    "d": 0,
@@ -208,7 +208,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Before Sunset Mass."
+   "note": "30 minutes before Sunset Mass; ends when Mass begins"
   },
   {
    "d": 6,
@@ -218,7 +218,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass."
+   "note": "Sunset Mass"
   }
  ],
  "dated": [
@@ -228,52 +228,7 @@
    "time": "17:00",
    "language": "English",
    "location": "",
-   "title": "All Saints Vigil Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "07:00",
-   "language": "English",
-   "location": "",
-   "title": "All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "09:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "11:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "17:00",
-   "language": "English",
-   "location": "",
-   "title": "All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "07:00",
-   "language": "English",
-   "location": "Main Church",
-   "title": "All Souls",
+   "title": "All Saints Day Vigil Mass (Holy Day of Obligation)",
    "action": "add"
   },
   {
@@ -282,45 +237,50 @@
    "time": "19:00",
    "language": "English",
    "location": "Main Church",
-   "title": "All Souls",
+   "title": "All Souls Day Mass, with blessing of niches afterwards",
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "09:00"
  ],
  "notes": [
-  "All Saints' Day is a day of obligation."
+  "No weekday Mass on public holidays."
  ],
  "info": {
-  "adoration": "Adoration Room: Daily 08:00-21:30. Chapel: Mon-Fri 08:00-18:30, Sat 08:00-12:00; closed Sundays and public holidays. Oratory: Mon-Fri 10:00-22:00, Sat & Sun 13:00-22:00.",
-  "confession": "Confessions are 30 minutes before Sunset Mass on Saturday and all Masses on Sunday, and cease when Mass begins.",
-  "office_hours": "Parish Office: Mon-Fri 08:00-16:00, Sat 08:00-12:00, Sun 08:00-13:00; closed on public holidays.",
+  "adoration": "Adoration Room open daily 8:00am-9:30pm.",
+  "confession": "30 minutes before the Saturday Sunset Mass and before every Sunday Mass; confessions stop when Mass begins.",
+  "office_hours": "Mon-Fri 8:00am-4:00pm; Sat 8:00am-12:00pm; Sun 8:00am-1:00pm; closed on public holidays.",
   "good_to_know": [
-   "Infant Baptism: refer to the parish website for details.",
-   "Weddings: arrangements must be made at least 1 year ahead with the Parish Office. Couples need to attend Marriage Preparation Course or Catholic Engaged Encounter. Wedding bookings are strictly by appointment only.",
-   "Anointing of the Sick: contact the Parish Office for the availability of the Priest.",
-   "Funerals: contact the Parish Office for availability of the Priest and Church before confirming the timing for cremation or burial."
+   "Oratory open Mon-Fri 10:00am-10:00pm, Sat & Sun 1:00pm-10:00pm.",
+   "Chapel open Mon-Fri 8:00am-6:30pm and Sat 8:00am-12:00pm; closed Sundays and public holidays.",
+   "Columbarium open daily 8:00am-9:30pm."
   ]
  },
  "events": [
   {
    "date": "2026-10-25",
    "time": "",
-   "title": "Altar Servers Recruitment",
-   "text": "Recruitment drive at the church foyer after the 5pm Mass. Visit their booth after Mass. Contact chs.altarservers@gmail.com."
+   "title": "Altar Servers recruitment drive",
+   "text": "At the church foyer after the 5pm Mass on Sunday 25 October. Visit the booth after Mass to learn more or sign up, or email chs.altarservers@gmail.com."
+  },
+  {
+   "date": "2026-10-31",
+   "time": "18:30",
+   "title": "NCC Potluck closing the Rosary Month",
+   "text": "6:30pm-9:30pm at the CHS Canteen; come with family and NCC members and bring food to share. Register by 25 October at https://forms.gle/ULGLSjuZkGaUbjpLA."
   },
   {
    "date": "2026-11-11",
-   "time": "",
-   "title": "From Disciples to Apostles: Session 6",
-   "text": "Colin Tan, OCDS, speaks on human virtues. Followed by fellowship. Venue: Main Church. Sign up at https://bit.ly/chs_formation."
+   "time": "19:30",
+   "title": "Parish Formation Programme: From Disciples to Apostles, Session 6",
+   "text": "7:30pm-9:15pm in the Main Church, followed by fellowship. Colin Tan OCDS speaks on the human virtues; sign up at https://bit.ly/chs_formation."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610231222_CHS_Bulletin%2024%20-%2025%20October%202026.pdf?alt=media&token=8bac4e47-b8f0-4756-82fd-d729faa04062",
-  "date": "2026-10-23"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610240803_CHS_Bulletin%2024%20-%2025%20October%202026.pdf?alt=media&token=94c3d628-c894-4e48-bc45-68e417265625",
+  "date": "2026-10-24"
  },
  "disputes": [],
  "vs_mycatholic": {

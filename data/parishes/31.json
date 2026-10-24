@@ -2,9 +2,9 @@
  "id": 31,
  "name": "Church of Sts Peter and Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610030929_1004_2026.pdf?alt=media&token=60e46206-8b2c-42ef-ae1a-f3cb7bf63347"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610241143_1024_2026.pdf?alt=media&token=c4a9149f-1d86-4c92-aa58-66a1944eda86"
  ],
- "fetched_at": "2026-10-03T12:35+08:00",
+ "fetched_at": "2026-10-24T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,17 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -37,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -48,17 +38,7 @@
    "type": "Devotion",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Divine Mercy Devotion"
-  },
-  {
-   "d": 0,
-   "t": "13:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion, 11.00am-12.30pm"
   },
   {
    "d": 0,
@@ -67,17 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Cantonese",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "15:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
   },
   {
@@ -87,18 +57,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
-  },
-  {
-   "d": 1,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Morning Prayer"
   },
   {
    "d": 1,
@@ -107,8 +67,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "preceded by morning prayer at 7.00am"
   },
   {
    "d": 1,
@@ -118,17 +78,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy Devotion"
-  },
-  {
-   "d": 1,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion, 3.00pm-4.00pm"
   },
   {
    "d": 1,
@@ -137,18 +87,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
-  },
-  {
-   "d": 2,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Morning Prayer"
   },
   {
    "d": 2,
@@ -157,8 +97,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "preceded by morning prayer at 7.00am"
   },
   {
    "d": 2,
@@ -168,17 +108,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy Devotion"
-  },
-  {
-   "d": 2,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion, 3.00pm-4.00pm"
   },
   {
    "d": 2,
@@ -187,18 +117,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
-  },
-  {
-   "d": 3,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Morning Prayer"
   },
   {
    "d": 3,
@@ -207,8 +127,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "preceded by morning prayer at 7.00am"
   },
   {
    "d": 3,
@@ -218,19 +138,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy Devotion"
-  },
-  {
-   "d": 3,
-   "t": "17:30",
-   "weeks": [],
-   "except": [
-    3
-   ],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion, 3.00pm-4.00pm"
   },
   {
    "d": 3,
@@ -241,18 +149,8 @@
    ],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Morning Prayer"
+   "loc": "Main Church",
+   "note": "no evening Mass on the 3rd Wednesday of the month"
   },
   {
    "d": 4,
@@ -261,8 +159,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "preceded by morning prayer at 7.00am"
   },
   {
    "d": 4,
@@ -272,7 +170,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy Devotion, 3.00pm-4.00pm"
   },
   {
    "d": 4,
@@ -291,18 +189,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Morning Prayer"
   },
   {
    "d": 5,
@@ -311,8 +199,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "preceded by morning prayer at 7.00am"
   },
   {
    "d": 5,
@@ -322,17 +210,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy Devotion"
-  },
-  {
-   "d": 5,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion, 3.00pm-4.00pm"
   },
   {
    "d": 5,
@@ -341,18 +219,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": ""
-  },
-  {
-   "d": 6,
-   "t": "07:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Morning Prayer"
   },
   {
    "d": 6,
@@ -361,8 +229,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Main Church",
+   "note": "preceded by morning prayer at 7.00am"
   },
   {
    "d": 6,
@@ -372,7 +240,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Sion Adorers - Holy Hour"
+   "note": "Sion Adorers Holy Hour, 4.00pm-5.00pm"
   },
   {
    "d": 6,
@@ -386,60 +254,129 @@
   },
   {
    "d": 6,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": "Sunset Mass"
   }
  ],
- "dated": [],
- "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-10-31",
+   "time": "17:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Anticipated Mass for the Solemnity of All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "08:30",
+   "language": "Mandarin",
+   "location": "Main Church",
+   "title": "Solemnity of All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "11:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Solemnity of All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "14:00",
+   "language": "Cantonese",
+   "location": "Main Church",
+   "title": "Solemnity of All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "16:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Solemnity of All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "07:20",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls' Day Mass, with Blessing of niches afterwards",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "12:15",
+   "language": "Mandarin",
+   "location": "Main Church",
+   "title": "All Souls' Day Mass, with Blessing of niches afterwards",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "18:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "All Souls' Day Mass, with Blessing of niches afterwards",
+   "action": "add"
+  }
+ ],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "08:00"
+ ],
  "notes": [
-  "No evening Mass every 3rd Wednesday of the month.",
-  "No evening Mass on public holidays that fall on a weekday.",
-  "No Devotions/Prayers on public holidays."
+  "No evening Mass on a public holiday that falls on a weekday.",
+  "No devotions or prayers on public holidays."
  ],
  "info": {
-  "adoration": "Chapel of the Incarnation: Monday to Friday 08:00–21:00; Saturday/Sunday 08:00–18:00; closed on public holidays.",
-  "confession": "Confessions are heard half an hour before weekday evening and weekend Masses. The Sacrament is not available on Thursday evenings or before the Sunday 8.30am Mandarin Mass.",
+  "adoration": "Sion Adorers Holy Hour: Saturdays 4.00pm-5.00pm. Chapel of the Incarnation open Monday to Friday 8.00am-9.00pm, Saturday and Sunday 8.00am-6.00pm; closed on public holidays.",
+  "confession": "Confessions are heard half an hour before weekday evening Masses and before weekend Masses. They are not available on Thursday evenings (Infant Jesus devotion) or before the Sunday 8.30am Mandarin Mass.",
   "devotions": [
-   "Infant Jesus Devotion: Thursday 17:30, followed by Mass.",
-   "Rosary: Saturday 16:30.",
-   "Divine Mercy Devotion: Monday–Friday 15:00–16:00 English; Sunday 11:00–12:30 Mandarin.",
-   "Sion Adorers - Holy Hour: Saturday 16:00–17:00."
+   "Infant Jesus Devotion: Thursdays 5.30pm, followed by Mass",
+   "Rosary: Saturdays 4.30pm",
+   "Divine Mercy Devotion: Mondays to Fridays 3.00pm-4.00pm (English)",
+   "Divine Mercy Devotion: Sundays 11.00am-12.30pm (Mandarin)"
   ],
-  "office_hours": "Secretariat: Monday–Friday 09:30–19:30; Saturday 09:00–17:00; Sunday 09:00–12:00; Public Holidays closed.",
+  "office_hours": "Secretariat: Monday to Friday 9.30am-7.30pm; Saturday 9.00am-5.00pm; Sunday 9.00am-12.00pm; closed on public holidays.",
   "good_to_know": [
-   "No evening Mass every 3rd Wednesday of the month.",
-   "No evening Mass on a public holiday if it falls on a weekday.",
-   "No Devotions/Prayers if they fall on a public holiday."
+   "Church open Monday to Friday 7.00am-7.00pm, Saturday and Sunday 7.00am-5.00pm; on public holidays 7.00am-7.00pm with the car park closed.",
+   "Church Office closed on 8 and 9 November 2026; the canteen is closed on 8 November 2026."
   ]
  },
  "events": [
   {
+   "date": "2026-10-27",
+   "time": "19:30",
+   "title": "Pieta Prayer Support for Bereaved Parents",
+   "text": "At Catholic Archdiocesan Education Centre, 2 Highland Road, unit LG-01 (next to the Church of the Immaculate Heart of Mary), 7.30pm-9.15pm. For any parent who has lost a child; the group meets every fourth Tuesday. Enquiries: pieta.singapore@gmail.com."
+  },
+  {
    "date": "2026-12-27",
    "time": "11:00",
    "title": "Celebration of Milestone Wedding Anniversaries",
-   "text": "Couples celebrating milestone wedding anniversaries of 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80 years are invited to renew their matrimonial commitment during the 11.00am Mass. They will receive a special blessing and a Papal Blessing Parchment. Register via the QR code by 15 Novem"
+   "text": "On the Feast of the Holy Family, couples marking 10 to 80 years of marriage renew their commitment during the 11.00am Mass and receive a special blessing and a Papal Blessing Parchment. Register by 15 November 2026 at tinyurl.com/sppwedann26; registration is required for the parchment."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610030929_1004_2026.pdf?alt=media&token=60e46206-8b2c-42ef-ae1a-f3cb7bf63347",
-  "date": "2026-10-03"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610241143_1024_2026.pdf?alt=media&token=c4a9149f-1d86-4c92-aa58-66a1944eda86",
+  "date": "2026-10-24"
  },
  "disputes": [],
  "vs_mycatholic": {

@@ -2,9 +2,9 @@
  "id": 5,
  "name": "Church of the Holy Cross",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610180608_English_Bulletin%2018%20Oct%20-%20Edited.pdf?alt=media&token=5313e63f-e7c9-45c1-80a9-1e2cf6eb1533"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610240344_English_Bulletin%2025%20Oct.pdf?alt=media&token=7d387cae-b291-4912-bc36-c6f2a01f3ea5"
  ],
- "fetched_at": "2026-10-18T12:32+08:00",
+ "fetched_at": "2026-10-24T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -47,7 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -57,7 +57,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -67,8 +67,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Lunchtime Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 1,
@@ -77,8 +77,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -87,7 +87,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -97,8 +97,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Lunchtime Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 2,
@@ -107,8 +107,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -117,7 +117,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -127,8 +127,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Lunchtime Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 3,
@@ -137,8 +137,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -147,7 +147,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -157,8 +157,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Lunchtime Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 4,
@@ -167,8 +167,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Evening Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -177,7 +177,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -187,8 +187,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Lunchtime Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -197,20 +197,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Evening Mass"
-  },
-  {
-   "d": 5,
-   "t": "20:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Holy Hour"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -219,7 +207,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -229,8 +217,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Novena Devotion"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -239,8 +227,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": "Sunset Mass"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -249,192 +237,73 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Church of the Holy Cross",
-   "note": "Sunset Mass"
+   "loc": "",
+   "note": ""
   }
  ],
- "dated": [
-  {
-   "action": "add",
-   "date": "2026-10-30",
-   "language": "English",
-   "location": "Online",
-   "time": "20:00",
-   "title": "Parish Rosary",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-10-31",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "16:10",
-   "title": "All Saints Day (Eve)",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-10-31",
-   "language": "Mandarin",
-   "location": "Church of the Holy Cross",
-   "time": "18:00",
-   "title": "All Saints Day (Eve)",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-01",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "07:30",
-   "title": "All Saints Day",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-01",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "09:30",
-   "title": "All Saints Day",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-01",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "11:30",
-   "title": "All Saints Day",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-01",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "17:00",
-   "title": "All Saints Day",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-01",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "12:45",
-   "title": "Infant Baptism",
-   "type": "Other"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-02",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "06:30",
-   "title": "All Souls Day",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-02",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "18:00",
-   "title": "All Souls Day",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-02",
-   "language": "Mandarin",
-   "location": "Church of the Holy Cross",
-   "time": "19:30",
-   "title": "All Souls Day",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-13",
-   "language": "English",
-   "location": "Church of St Alphonsus (Novena Church)",
-   "time": "20:00",
-   "title": "PIETA Memorial Mass for children who have died",
-   "type": "Mass"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "All Saints Day is a Day of Obligation.",
-  "All Souls Day on 2 Nov 2026 has no noon Mass."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room is open daily until 10pm.",
+  "adoration": "Adoration Room open daily until 22:00.",
   "devotions": [
-   "Holy Hour: Every 1st Friday at 8pm.",
-   "Novena Devotion: Every Saturday at 3.30pm."
+   "Holy Hour every 1st Friday at 20:00.",
+   "Novena Devotion every Saturday at 15:30."
   ],
   "good_to_know": [
-   "Public Holiday Mass is at 7.30am.",
-   "Deepavali, Monday 9 Nov 2026: Mass at 7.30am only; no noon and evening Masses.",
-   "Infant Baptism registration closes Sunday 18 October 2026.",
-   "Pro-bono counselling by Catholic Family Life is available; book at pbc.familylife.sg or call 6631 8963 (Monday-Friday)."
+   "Public holiday Mass at 07:30.",
+   "No noon and evening Masses on Deepavali, 9 Nov 2026.",
+   "No noon Mass on All Souls Day, 2 Nov 2026."
   ]
  },
  "events": [
   {
-   "date": "2026-10-22",
-   "time": "19:30",
-   "title": "Faith Enrichment - RCIA",
-   "text": "RCIA faith enrichment session: Jesus and the Kingdom of God. 7.30pm-9.30pm, All Saints Hall. Pre-registration is not required. All are welcome."
+   "date": "2026-10-30",
+   "time": "20:00",
+   "title": "Parish Rosary at 8pm via Zoom. ID: 724 702 0490. Password: 129955. Theme: mental health ministry.",
+   "text": "Parish Rosary at 8pm via Zoom. ID: 724 702 0490. Password: 129955. Theme: mental health ministry."
   },
   {
-   "date": "2026-10-24",
-   "time": "13:00",
-   "title": "Infant Baptism preparatory session",
-   "text": "Compulsory preparatory session for parents and God-parents. 1pm, St Michael’s Room."
+   "date": "2026-11-06",
+   "time": "20:00",
+   "title": "Parish Holy Hour at 8pm. Come, spend an hour in the presence of Jesus.",
+   "text": "Parish Holy Hour at 8pm. Come, spend an hour in the presence of Jesus."
   },
   {
-   "date": "2026-10-25",
-   "time": "09:30",
-   "title": "Cupertino Library",
-   "text": "Cupertino Library helps children ages 2-12 grow in virtue and faith. 9.30am-12.00pm, St Michael’s Room."
-  },
-  {
-   "date": "2026-10-29",
-   "time": "19:30",
-   "title": "Faith Enrichment - RCIA",
-   "text": "RCIA faith enrichment session: The Death and Resurrection of Christ. 7.30pm-9.30pm, All Saints Hall. Pre-registration is not required. All are welcome."
-  },
-  {
-   "date": "2026-11-05",
-   "time": "19:30",
-   "title": "Faith Enrichment - RCIA",
-   "text": "RCIA faith enrichment session: The Holy Spirit and Birth of the Church. 7.30pm-9.30pm, All Saints Hall. Pre-registration is not required. All are welcome."
-  },
-  {
-   "date": "2026-11-12",
-   "time": "19:30",
-   "title": "Faith Enrichment - RCIA",
-   "text": "RCIA faith enrichment session: The Communion of Saints. 7.30pm-9.30pm, All Saints Hall. Pre-registration is not required. All are welcome."
+   "date": "2026-11-13",
+   "time": "00:00",
+   "title": "Beginning Experience Weekend, 13-15 Nov 2026 at Lifesprings Canossian Spirituality Centre. $230 per pax. For divorced, s",
+   "text": "Beginning Experience Weekend, 13-15 Nov 2026 at Lifesprings Canossian Spirituality Centre. $230 per pax. For divorced, separated, widowed. Contact Mary 9755 4310 or Jean 9828 5162. Register at www.besingapore.org."
   },
   {
    "date": "2026-11-13",
    "time": "10:00",
-   "title": "Emmanuel: Walking with God in Our Golden Years",
-   "text": "Emmanuel: Walking with God in Our Golden Years. 10am-1pm, St Joseph Church (Bt Timah). $20 for 1 pax | $35 for 2 pax. Register at FAMILYLIFE.SG/EWWG."
+   "title": "Emmanuel: Walking with God in Our Golden Years, 10am-1pm at St Joseph Church (Bt Timah). $20 for 1 pax | $35 for 2 pax. ",
+   "text": "Emmanuel: Walking with God in Our Golden Years, 10am-1pm at St Joseph Church (Bt Timah). $20 for 1 pax | $35 for 2 pax. Register at FAMILYLIFE.SG/EWWG."
+  },
+  {
+   "date": "2026-11-13",
+   "time": "20:00",
+   "title": "PIETA Memorial Mass for children who have died, 8pm at Church of St Alphonsus (Novena Church). Register by 30 October at",
+   "text": "PIETA Memorial Mass for children who have died, 8pm at Church of St Alphonsus (Novena Church). Register by 30 October at tinyurl.com/MM2026Pieta. Email pietamass@gmail.com. Website pieta.familylife.sg."
+  },
+  {
+   "date": "2026-11-14",
+   "time": "14:00",
+   "title": "Certificate in Catholic Bioethics online information session at 2pm via Zoom. Register at www.cmg.org.sg.",
+   "text": "Certificate in Catholic Bioethics online information session at 2pm via Zoom. Register at www.cmg.org.sg."
   },
   {
    "date": "2026-11-28",
    "time": "13:30",
-   "title": "Conversations That Matter",
-   "text": "Conversations That Matter: When Your Teen Questions Their Sexuality. 1.30pm-4pm, Church of the Holy Cross (Auditorium). $20 for 1 pax | $35 for 2 pax. Register at familylife.sg/CTM_B. Please note there is no parking in church."
+   "title": "Conversations That Matter: When Your Teen Questions Their Sexuality, 1.30pm-4pm at Church of the Holy Cross (Auditorium)",
+   "text": "Conversations That Matter: When Your Teen Questions Their Sexuality, 1.30pm-4pm at Church of the Holy Cross (Auditorium). $20 for 1 pax | $35 for 2 pax. Register at familylife.sg/CTM_B. Parking is not available in the church; park at the HDB multi storey carpark."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610180608_English_Bulletin%2018%20Oct%20-%20Edited.pdf?alt=media&token=5313e63f-e7c9-45c1-80a9-1e2cf6eb1533",
-  "date": "2026-10-18"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610240344_English_Bulletin%2025%20Oct.pdf?alt=media&token=7d387cae-b291-4912-bc36-c6f2a01f3ea5",
+  "date": "2026-10-24"
  },
  "disputes": [],
  "vs_mycatholic": {
