@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-24T12:31+08:00",
+ "fetchedAt": "2026-10-24T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -202,9 +202,9 @@
   },
   "29": {
    "from": "myCatholicSG",
-   "title": "20261018 Church Bulletin 18 October 2026",
-   "date": "2026-10-17",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2610171951_CST_Bulletin%20-%2018%20Oct%2026.pdf?alt=media&token=5d6ebc33-484c-4021-9e79-3860e03e08b2",
+   "title": "20261025 Church Bulletin 25 October 2026",
+   "date": "2026-10-24",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2610242017_CST_Bulletin%20-%2025%20Oct%2026.pdf?alt=media&token=80a112f7-7bc1-4d7d-820e-d0861a5002d8",
    "page": "https://mycatholic.sg/bulletin/stteresa"
   },
   "30": {
