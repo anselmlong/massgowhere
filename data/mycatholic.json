@@ -8085,30 +8085,12 @@
 "18": [
 {
 "k": "r",
-"date": "2026-10-23",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-02",
 "type": "Mass",
 "t": "18:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-10-23",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Please note that weekday evening Mass will be shifted to 6.30pm in the evening from 26 October 2026, Monday."
 },
 {
 "k": "a",
@@ -8932,6 +8914,51 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "08:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-08",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "14:00",
+"lang": "Cantonese",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "16:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -8975,6 +9002,51 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "All Saints Day (Anticipated Mass)"
+},
+{
+"k": "a",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "08:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "All Saints Day"
+},
+{
+"k": "a",
+"date": "2026-11-08",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints Day"
+},
+{
+"k": "a",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "14:00",
+"lang": "Cantonese",
+"loc": "Main Church",
+"note": "All Saints Day"
+},
+{
+"k": "a",
+"date": "2026-11-01",
+"type": "Mass",
+"t": "16:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "All Saints Day"
 }
 ],
 "28": [
