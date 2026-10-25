@@ -2,24 +2,14 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610171539_CHURCH_BULLETIN%20%2018-24%20Oct.pdf?alt=media&token=eed98e41-8a5b-4278-a0c9-92f774e73105"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610250726_CHURCH_BULLETIN%20%2025-31%20Oct%202026.pdf?alt=media&token=7ae23b47-98fd-4c1a-b323-d05aa29bd0f3"
  ],
- "fetched_at": "2026-10-17T21:02+08:00",
+ "fetched_at": "2026-10-25T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:05",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "Mandarin",
-   "loc": "",
-   "note": "In October only, before the 7.30am Mandarin Mass."
-  },
   {
    "d": 0,
    "t": "07:30",
@@ -118,16 +108,6 @@
   },
   {
    "d": 1,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "In October only, before the 6.30pm Mass at the main church."
-  },
-  {
-   "d": 1,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -155,16 +135,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 2,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "In October only, before the 6.30pm Mass at the main church."
   },
   {
    "d": 2,
@@ -198,16 +168,6 @@
   },
   {
    "d": 3,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "In October only, before the 6.30pm Mass at the main church."
-  },
-  {
-   "d": 3,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -235,16 +195,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "In October only, before the 6.30pm Mass at the main church."
   },
   {
    "d": 4,
@@ -275,16 +225,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "In October only, before the 6.30pm Mass at the main church."
   },
   {
    "d": 5,
@@ -306,7 +246,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Sacred Heart of Jesus"
+   "note": "Eucharistic Adoration (Sacred Heart of Jesus)"
   },
   {
    "d": 5,
@@ -350,7 +290,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Immaculate Heart of Mary"
+   "note": "Eucharistic Adoration (Immaculate Heart of Mary)"
   },
   {
    "d": 6,
@@ -387,12 +327,12 @@
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-10-24",
+   "type": "Devotion",
+   "date": "2026-10-26",
    "time": "18:00",
    "language": "English",
    "location": "",
-   "title": "L9 Confirmation Mass",
+   "title": "Rosary",
    "action": "add"
   },
   {
@@ -407,58 +347,87 @@
   {
    "type": "Devotion",
    "date": "2026-10-28",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "Rosary",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-10-28",
    "time": "20:00",
    "language": "English",
    "location": "Blk 230 #09-09 Commonwealth Tower",
    "title": "Block Rosary",
    "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-10-31",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "All Saints' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "08:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "12:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "18:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day Mass",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "The Monday-Friday Rosary is only in October.",
-  "The Chinese Sunday Rosary is only in October."
- ],
+ "notes": [],
  "info": {
   "confession": "Confession is available 15 minutes before Masses.",
   "devotions": [
    "Divine Mercy: Friday 8pm, Saturday 8.30am.",
-   "Eucharistic Adoration: 1st Friday 7pm (Sacred Heart of Jesus), 1st Saturday 9am (Immaculate Heart of Mary).",
    "Intercessory Prayers: 2nd Friday 7.45pm.",
-   "Novena to our Blessed Mother: Saturday 5pm."
+   "Novena to our Blessed Mother: Saturday 5pm.",
+   "Eucharistic Adoration: 1st Friday 7pm (Sacred Heart of Jesus), 1st Saturday 9am (Immaculate Heart of Mary)."
   ],
-  "office_hours": "10am-6pm",
   "good_to_know": [
-   "Anointing of the Sick: Please make an appointment with the Secretariat for a priest to minister.",
-   "Holy Matrimony: Couples must inform the Priest at least 6 months before booking the Church for the Wedding Mass/Service.",
-   "Infant Baptism: Every 2nd Sunday of the month @ 5.30pm Mass. Please contact Parish Office to register interest 2 weeks in advance.",
-   "Bereavement: Please contact the Secretariat for help and advice before contacting a Funeral Director."
+   "All Saints' Day Mass on Sat 31 Oct at 6pm and Sun 1 Nov at all Masses.",
+   "All Souls' Day Masses on 2 Nov at 8.30am, 12.30pm and 6.30pm.",
+   "Chinese All Souls' Day Mass on 7 Nov at 11am.",
+   "Infant Baptism every 2nd Sunday at the 5.30pm Mass. Contact Parish Office to register 2 weeks in advance."
   ]
  },
  "events": [
   {
-   "date": "2026-10-22",
-   "time": "20:00",
-   "title": "Safeguarding the Human Person during the Digital Revolution",
-   "text": "Thursdays 8-10pm, 22 Oct - 19 Nov. Register at bit.ly/magnifica2026"
-  },
-  {
-   "date": "2026-10-23",
-   "time": "",
-   "title": "Choice Weekend Program",
-   "text": "23-25 Oct at ME House (Punggol). Register at https://bit.ly/ChoiceSG26"
-  },
-  {
-   "date": "2026-11-06",
-   "time": "19:45",
-   "title": "Treasure #18 Retreat for Young Working Adults",
-   "text": "Stay-in Catholic Encounter Retreat for young working adults age 21-35 at St. Francis Xavier Retreat Centre, 199 Ponggol Seventeenth Avenue. Fee $163.50. Register: tinyurl.com/oyp-treasure18. Enquiries: treasure.oyp@catholic.org.sg."
+   "date": "2026-11-13",
+   "time": "10:00",
+   "title": "Emmanuel: Walking with God in Our Golden Years",
+   "text": "Happening on Fri, 13 Nov, 10am - 1pm, at St Joseph's Church. Fee: $20 per person or $35 for two. Register at familylife.sg/EWWG"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610171539_CHURCH_BULLETIN%20%2018-24%20Oct.pdf?alt=media&token=eed98e41-8a5b-4278-a0c9-92f774e73105",
-  "date": "2026-10-17"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610250726_CHURCH_BULLETIN%20%2025-31%20Oct%202026.pdf?alt=media&token=7ae23b47-98fd-4c1a-b323-d05aa29bd0f3",
+  "date": "2026-10-25"
  },
  "disputes": [],
  "vs_mycatholic": {

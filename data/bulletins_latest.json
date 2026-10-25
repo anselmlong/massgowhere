@@ -1,12 +1,12 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-24T21:01+08:00",
+ "fetchedAt": "2026-10-25T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
-   "title": "18th - 24th Oct 2026",
-   "date": "2026-10-17",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610171539_CHURCH_BULLETIN%20%2018-24%20Oct.pdf?alt=media&token=eed98e41-8a5b-4278-a0c9-92f774e73105",
+   "title": "25th - 31st Oct 2026",
+   "date": "2026-10-25",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610250726_CHURCH_BULLETIN%20%2025-31%20Oct%202026.pdf?alt=media&token=7ae23b47-98fd-4c1a-b323-d05aa29bd0f3",
    "page": "https://mycatholic.sg/bulletin/blessedsacrament"
   },
   "2": {
