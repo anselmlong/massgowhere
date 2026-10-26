@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-25T12:31+08:00",
+ "fetchedAt": "2026-10-26T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -209,9 +209,9 @@
   },
   "30": {
    "from": "myCatholicSG",
-   "title": "29TH SUNDAY IN ORDINARY TIME - 18 October 2026",
-   "date": "2026-10-17",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610171948_29TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2018%20October%202026.pdf?alt=media&token=d56c4da4-4909-4cd7-8a69-a6cd7d8a1c29",
+   "title": "30TH SUNDAY IN ORDINARY TIME - 25 October 2026",
+   "date": "2026-10-25",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610251740_30TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2025%20October%202026.pdf?alt=media&token=896d52c8-2806-4645-ad23-38b803925b19",
    "page": "https://mycatholic.sg/bulletin/stvincentdepaul"
   },
   "31": {
