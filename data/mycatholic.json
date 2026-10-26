@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-24",
+"asOf": "2026-10-26",
 "rules": {
 "1": [
 {
@@ -6572,6 +6572,24 @@
 "lang": "English",
 "loc": "CHAPEL",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-10-30",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-10-30",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "CHAPEL",
+"note": ""
 }
 ],
 "8": [
@@ -6752,36 +6770,9 @@
 "10": [
 {
 "k": "r",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-10-31",
 "type": "Mass",
 "t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "19:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -7073,30 +7064,12 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "o",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
 },
 {
 "k": "o",
 "date": "2026-10-31",
 "type": "Mass",
 "t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-24",
-"type": "Mass",
-"t": "18:30",
 "lang": "English",
 "loc": "Main Church",
 "note": "New Timing!"
@@ -7127,24 +7100,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-24",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-24",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 },
 {
 "k": "o",
