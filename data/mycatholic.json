@@ -6797,33 +6797,6 @@
 },
 {
 "k": "r",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-01",
 "type": "Mass",
 "t": "08:00",
@@ -7085,24 +7058,6 @@
 },
 {
 "k": "o",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
 "date": "2026-10-31",
 "type": "Confession",
 "t": "18:00",
@@ -7115,42 +7070,6 @@
 "date": "2026-10-31",
 "type": "Confession",
 "t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Confession",
-"t": "09:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Confession",
-"t": "18:00",
-"lang": "English/Tamil",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-25",
-"type": "Confession",
-"t": "11:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -7642,15 +7561,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Advent Confession for Serangoon District"
-},
-{
-"k": "a",
-"date": "2026-10-25",
-"type": "Mass",
-"t": "15:00",
-"lang": "Vietnamese",
-"loc": "Main Church",
-"note": ""
 },
 {
 "k": "a",
