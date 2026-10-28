@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-26",
+"asOf": "2026-10-27",
 "rules": {
 "1": [
 {
@@ -8460,6 +8460,87 @@
 {
 "k": "r",
 "date": "2026-11-09",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "19:00",
+"lang": "Spanish",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "22:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Last Mass of the Year"
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year"
+},
+{
+"k": "r",
+"date": "2027-01-01",
 "type": "Mass",
 "t": "18:30",
 "lang": "English",
