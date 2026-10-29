@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-27",
+"asOf": "2026-10-29",
 "rules": {
 "1": [
 {
@@ -7792,6 +7792,53 @@
 "note": "Tagalog Mass"
 }
 ],
+"15": [
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-30",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Public Holiday - No Evening Mass"
+},
+{
+"k": "a",
+"date": "2026-11-30",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+}
+],
 "16": [
 {
 "k": "r",
@@ -9116,6 +9163,15 @@
 ],
 "29": [
 {
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-02",
 "type": "Mass",
@@ -9143,10 +9199,10 @@
 "note": "PH Mass"
 },
 {
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
+"k": "a",
+"date": "2026-12-16",
+"type": "Confession",
+"t": "20:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
