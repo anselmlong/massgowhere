@@ -1,5 +1,5 @@
 {
-"asOf": "2026-10-29",
+"asOf": "2026-10-30",
 "rules": {
 "1": [
 {
@@ -2400,16 +2400,6 @@
 "d": 1,
 "weeks": [],
 "except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 1,
-"weeks": [],
-"except": [],
 "type": "Devotion",
 "t": "17:15",
 "lang": "English",
@@ -2594,7 +2584,17 @@
 "t": "06:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "Public holiday"
+"note": ""
+},
+{
+"d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 },
 {
 "d": 0,
@@ -6377,6 +6377,105 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "All Souls Day"
+},
+{
+"k": "o",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "13:15",
+"lang": "English",
+"loc": "JM Beurel Centre Level 1",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "o",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "o",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "13:15",
+"lang": "English",
+"loc": "JM Beurel Centre Level 1",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christms Day"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "22:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year' Eve"
+},
+{
+"k": "o",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year's Day"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "13:15",
+"lang": "English",
+"loc": "JM Beurel Centre Level 1",
+"note": ""
 }
 ],
 "5": [
@@ -7774,6 +7873,105 @@
 "note": "Public holiday"
 },
 {
+"k": "r",
+"date": "2026-12-24",
+"type": "Devotion",
+"t": "17:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "Rosary (Intentions for Priests)"
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Devotion",
+"t": "17:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "Rosary"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Devotion",
+"t": "17:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "Rosary (Intentions for Priests)"
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Devotion",
+"t": "17:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "Rosary"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Adoration",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Holy Hour with Devotion to the Sacred Heart of Jesus"
+},
+{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -7790,6 +7988,132 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Tagalog Mass"
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Vigil Mass"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Children's Christmas Vigil Mass"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Midnight Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:15",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:45",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "22:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Thanksgiving Mass"
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Adoration",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "08:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-01-25",
+"type": "Other",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Service · Prayer Service for Week of Christian Unity"
 }
 ],
 "15": [
