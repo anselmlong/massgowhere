@@ -2,9 +2,9 @@
  "id": 13,
  "name": "Church of Our Lady Queen of Peace",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610231650_2026_10%2018%20%20-%2030th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=c1ad54cb-c736-4477-855f-9cd3a6b4a55b"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610301725_2026_11%2001%20%20-%2031st%20Sunday%20in%20Ordinary%20Time-All%20Saints.pdf?alt=media&token=e6f7fd2e-838a-4373-971f-e70aa2e15c0b"
  ],
- "fetched_at": "2026-10-23T21:03+08:00",
+ "fetched_at": "2026-10-30T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -51,16 +51,6 @@
    "note": ""
   },
   {
-   "d": 0,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Assumption Garden",
-   "note": "October only"
-  },
-  {
    "d": 1,
    "t": "12:15",
    "weeks": [],
@@ -79,16 +69,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 1,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Assumption Garden",
-   "note": "October only"
   },
   {
    "d": 2,
@@ -111,16 +91,6 @@
    "note": ""
   },
   {
-   "d": 2,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Assumption Garden",
-   "note": "October only"
-  },
-  {
    "d": 3,
    "t": "12:15",
    "weeks": [],
@@ -141,16 +111,6 @@
    "note": ""
   },
   {
-   "d": 3,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Assumption Garden",
-   "note": "October only"
-  },
-  {
    "d": 4,
    "t": "12:15",
    "weeks": [],
@@ -169,16 +129,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Assumption Garden",
-   "note": "October only"
   },
   {
    "d": 5,
@@ -190,7 +140,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sacred Heart Devotion"
   },
   {
    "d": 5,
@@ -211,16 +161,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Assumption Garden",
-   "note": "October only"
   },
   {
    "d": 6,
@@ -240,7 +180,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -250,39 +190,63 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Assumption Garden",
-   "note": "October only"
+   "note": "Sunset Mass"
   }
  ],
- "dated": [],
- "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
- "notes": [
-  "The daily Rosary is only during October."
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "12:15",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-02",
+   "time": "18:30",
+   "language": "English",
+   "location": "",
+   "title": "All Souls' Day",
+   "action": "add"
+  }
  ],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "09:00"
+ ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room is open 10:00 to 21:00."
+  "adoration": "Adoration Room is open 10am to 9pm.",
+  "devotions": [
+   "In October, the Rosary is recited daily after all evening Masses: 7pm on weekdays and 6pm on weekends, at Assumption Garden."
+  ]
  },
  "events": [
   {
    "date": "2026-11-07",
-   "time": "11:00",
-   "title": "Queen of Peace Holy Spirit Prayer Group 42nd Anniversary Celebration",
-   "text": "Queen of Peace Holy Spirit Prayer Group 42nd Anniversary Celebration, 11:00 AM–1:00 PM at David Hall 4.1. Theme: Faithful Service. Mass celebrant: Fr. 萧永伦. Includes praise and worship, Holy Mass, and fellowship meal. All are welcome."
+   "time": "",
+   "title": "Queen of Peace Charismatic Prayer Group 42nd Anniversary Celebration",
+   "text": "Theme: Faithful Service. Mass celebrant: 萧永伦神父. Includes praise worship, Mass and fellowship. All are welcome."
+  },
+  {
+   "date": "2026-11-14",
+   "time": "14:00",
+   "title": "CTIS Certificate in Catholic Bioethics online information session",
+   "text": "Register at https://www.cmg.org.sg/cmg-ctiscertificate-in-bioethics/ to receive the Zoom link."
+  },
+  {
+   "date": "2026-12-05",
+   "time": "",
+   "title": "QOP Advent Recollection 2026",
+   "text": "Led by Bro Joel Tan. A quiet morning of reflections, prayer and encouragement to prepare for Christ. All are welcome. No background needed."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610231650_2026_10%2018%20%20-%2030th%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=c1ad54cb-c736-4477-855f-9cd3a6b4a55b",
-  "date": "2026-10-23"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610301725_2026_11%2001%20%20-%2031st%20Sunday%20in%20Ordinary%20Time-All%20Saints.pdf?alt=media&token=e6f7fd2e-838a-4373-971f-e70aa2e15c0b",
+  "date": "2026-10-30"
  },
  "disputes": [],
  "vs_mycatholic": {

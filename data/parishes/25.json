@@ -2,9 +2,9 @@
  "id": 25,
  "name": "St Joseph's Church (Victoria Street)",
  "source_urls": [
-  "https://drive.google.com/file/d/1BGJnV58DBH_NBpnCK-BZOQOQ_j3dzwi3/view?usp=sharing"
+  "https://drive.google.com/file/d/1UFviva3bUA_mh7jmwo0TVFruzBPRRJ-M/view?usp=sharing"
  ],
- "fetched_at": "2026-10-23T21:04+08:00",
+ "fetched_at": "2026-10-30T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -85,20 +85,10 @@
    "t": "17:30",
    "weeks": [],
    "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Eucharistic Adoration with the Sacred Heart Devotion"
-  },
-  {
-   "d": 5,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Sacred Heart Devotion, together with Eucharistic Adoration"
+   "note": ""
   },
   {
    "d": 5,
@@ -122,31 +112,27 @@
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "10:00"
  ],
- "notes": [
-  "On public holidays the weekday evening Mass is replaced by a morning Mass.",
-  "Weekday Masses are in the evening; confessions are heard shortly before each Mass."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Eucharistic Adoration together with the Sacred Heart Devotion on Fridays at 5.30pm.",
-  "confession": "45 minutes before every Mass; 30 minutes before the Spanish Mass on Sundays.",
+  "confession": "Confessions are available 45 minutes before Mass, and 30 minutes before the Spanish Mass.",
   "devotions": [
-   "Sacred Heart Devotion: Fridays 5.30pm, with Eucharistic Adoration"
+   "Rosary",
+   "Divine Mercy"
   ],
+  "office_hours": "Monday to Friday: 10am to 7.30pm (Public Holidays: 9am to 11am). Sat: 9am to 7pm. Sun: 9am to 7pm.",
   "good_to_know": [
-   "Church opening hours: Monday to Friday 10am-7.30pm, Saturday and Sunday 9am-7pm; on public holidays 9am-11am.",
-   "Address: 143 Victoria Street, Singapore 188020; tel 63383167.",
-   "Mass intentions can be dropped in the box at the narthex or emailed to sjc.myprayers@catholic.org.sg.",
-   "Enquiries about joining a church ministry: sjc.comms@catholic.org.sg."
+   "Rosary at 5.30pm.",
+   "Divine Mercy at 6pm."
   ]
  },
  "events": [],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1BGJnV58DBH_NBpnCK-BZOQOQ_j3dzwi3/view?usp=sharing",
-  "date": "2026-10-25"
+  "url": "https://drive.google.com/file/d/1UFviva3bUA_mh7jmwo0TVFruzBPRRJ-M/view?usp=sharing",
+  "date": "2026-11-01"
  },
  "disputes": [],
  "vs_mycatholic": {

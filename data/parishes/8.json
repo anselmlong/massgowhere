@@ -2,9 +2,9 @@
  "id": 8,
  "name": "Church of the Holy Trinity",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610231140_25.10.26_30th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=969f6e39-eb87-4540-bf68-d5c6a2a6992c"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610301315_01.11.26_All%20Saints%20Day%20A%20A5%20(Copy).pdf?alt=media&token=32e3f424-ccac-41a4-8cd0-aeaaee25438c"
  ],
- "fetched_at": "2026-10-23T12:31+08:00",
+ "fetched_at": "2026-10-30T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -58,7 +58,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary before Mass"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 0,
@@ -88,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary before Mass"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 1,
@@ -128,7 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary before Mass"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 2,
@@ -158,7 +158,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary before Mass"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 3,
@@ -188,7 +188,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary before Mass"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 4,
@@ -218,7 +218,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Chapel",
-   "note": "Rosary before Mass"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 5,
@@ -229,16 +229,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Divine Mercy Devotion, ends 9pm"
   },
   {
    "d": 6,
@@ -258,7 +248,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Rosary before Mass"
+   "note": "Rosary Prayer before Mass"
   },
   {
    "d": 6,
@@ -268,7 +258,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Anticipated Sunday Mass"
+   "note": ""
   }
  ],
  "dated": [],
@@ -278,54 +268,85 @@
  ],
  "notes": [],
  "info": {
-  "devotions": [
-   "Rosary before Mass: weekdays 5.25pm at the Chapel",
-   "Rosary before Mass: weekends 4.55pm at the Main Church",
-   "Prayer for Priests: Tuesdays 4.50pm at the Chapel",
-   "Divine Mercy Devotion: Fridays 8pm-9pm"
-  ],
-  "office_hours": "Mon-Fri 9am-6pm; Sat-Sun 9am-1pm; closed on public holidays",
+  "office_hours": "Mon-Fri 9am-6pm; Sat/Sun 9am-1pm; closed on public holidays",
   "good_to_know": [
-   "The church is at 20 Tampines St 11, Singapore 529455.",
-   "The columbarium is open daily 6.30am-6pm.",
-   "To book a wedding, approach the Parish Office at least one year in advance."
+   "Parish Office: Mon-Fri 9am-6pm; Sat/Sun 9am-1pm; closed on public holidays.",
+   "Infant Baptism for December: registration open until 30 November; forms at Parish Office.",
+   "Church Wedding: approach Parish Office to book at least 1 year in advance.",
+   "Address: 20 Tampines St 11, Singapore 529455. Tel: 67842332. Email: htadmin@holytrinity.org.sg. Website: holytrinity.org.sg."
   ]
  },
  "events": [
   {
-   "date": "2026-10-26",
+   "date": "2026-11-02",
    "time": "19:45",
-   "title": "RCIA (Mandarin)",
-   "text": "Mandarin RCIA session, 7.45pm-9.30pm. For those enquiring about the Catholic faith."
+   "title": "RCIA Mandarin",
+   "text": "19:45"
   },
   {
-   "date": "2026-10-27",
-   "time": "20:00",
-   "title": "Christian Meditation",
-   "text": "Christian Meditation group meets 8pm-9pm. All are welcome."
+   "date": "2026-11-03",
+   "time": "19:30",
+   "title": "Legion of Mary (Mandarin)",
+   "text": "19:30"
   },
   {
-   "date": "2026-10-28",
+   "date": "2026-11-04",
    "time": "10:00",
-   "title": "JOY Ministry for the Elderly",
-   "text": "Gathering for elderly parishioners, 10am-12pm."
+   "title": "JOY Ministry, for the Elderly",
+   "text": "10:00"
   },
   {
-   "date": "2026-10-29",
+   "date": "2026-11-05",
+   "time": "10:00",
+   "title": "Legion of Mary",
+   "text": "10:00"
+  },
+  {
+   "date": "2026-11-05",
+   "time": "19:30",
+   "title": "Legion of Mary",
+   "text": "19:30"
+  },
+  {
+   "date": "2026-11-05",
    "time": "19:45",
    "title": "RCIA",
-   "text": "RCIA session, 7.45pm-9.30pm, for those preparing for the sacraments."
+   "text": "19:45"
   },
   {
-   "date": "2026-11-30",
-   "time": "",
-   "title": "Infant Baptism registration closes",
-   "text": "Registration for December infant baptisms is open until 30 November. The list of required documents is on the parish website and application forms are available at the Parish Office."
+   "date": "2026-11-05",
+   "time": "20:00",
+   "title": "Legion of Mary",
+   "text": "20:00"
+  },
+  {
+   "date": "2026-11-06",
+   "time": "09:30",
+   "title": "Catholic Praying Mothers",
+   "text": "09:30"
+  },
+  {
+   "date": "2026-11-06",
+   "time": "19:15",
+   "title": "Legion of Mary (Mandarin)",
+   "text": "19:15"
+  },
+  {
+   "date": "2026-11-07",
+   "time": "11:00",
+   "title": "Legion of Mary",
+   "text": "11:00"
+  },
+  {
+   "date": "2026-11-07",
+   "time": "15:00",
+   "title": "Legion of Mary",
+   "text": "15:00"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610231140_25.10.26_30th%20Sunday%20in%20Ordinary%20Time%20A%20A5%20(Alternate).pdf?alt=media&token=969f6e39-eb87-4540-bf68-d5c6a2a6992c",
-  "date": "2026-10-23"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610301315_01.11.26_All%20Saints%20Day%20A%20A5%20(Copy).pdf?alt=media&token=32e3f424-ccac-41a4-8cd0-aeaaee25438c",
+  "date": "2026-10-30"
  },
  "disputes": [],
  "vs_mycatholic": {

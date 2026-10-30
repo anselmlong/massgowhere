@@ -2,9 +2,9 @@
  "id": 22,
  "name": "Church of St Francis Xavier",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610231720_Bulletin_2026_10_25.pdf?alt=media&token=7870b094-7934-4fca-8d8a-21ed595a6257"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610301756_Bulletin_2026_11_01.pdf?alt=media&token=c669e72a-b5c5-4173-883e-c160fb9f02e4"
  ],
- "fetched_at": "2026-10-23T21:05+08:00",
+ "fetched_at": "2026-10-30T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -138,7 +138,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "4pm-6pm"
   },
   {
    "d": 5,
@@ -168,7 +168,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "10am-12pm"
   },
   {
    "d": 6,
@@ -178,89 +178,35 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday Vigil Mass"
   }
  ],
  "dated": [
   {
    "type": "Devotion",
-   "date": "2026-10-26",
+   "date": "2026-11-02",
    "time": "20:00",
-   "language": "",
+   "language": "English",
    "location": "Mount Tabor Adoration Room",
-   "title": "Intercessory",
+   "title": "Intercessory Prayer before the Blessed Sacrament",
    "action": "add"
   },
   {
    "type": "Mass",
-   "date": "2026-10-31",
-   "time": "17:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day (Vigil)",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "07:00",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
+   "date": "2026-11-09",
    "time": "09:00",
    "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "11:00",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "17:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "06:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "18:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day",
+   "location": "Main Church",
+   "title": "Deepavali public holiday Mass",
    "action": "add"
   },
   {
    "type": "Confession",
    "date": "2026-11-09",
    "time": "10:00",
-   "language": "",
+   "language": "English",
    "location": "Main Church",
-   "title": "Mass and Anointing of the Sick & Elderly",
+   "title": "Confession before Mass and Anointing of the Sick",
    "action": "add"
   },
   {
@@ -270,6 +216,51 @@
    "language": "English",
    "location": "Main Church",
    "title": "Mass and Anointing of the Sick & Elderly",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "18:30",
+   "language": "English",
+   "location": "",
+   "title": "Weekday Mass not held (Deepavali)",
+   "action": "cancel"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-25",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Parish Triduum Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-26",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Parish Triduum Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-27",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Parish Triduum Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-28",
+   "time": "17:30",
+   "language": "English",
+   "location": "",
+   "title": "Feast Day Mass, celebrated by Cardinal William Goh",
    "action": "add"
   }
  ],
@@ -277,61 +268,64 @@
  "public_holiday_masses": [
   "09:00"
  ],
- "notes": [
-  "There is currently no Confession before Mass.",
-  "Blessing of niches at the Columbarium after each All Souls' Day Mass on 2 Nov."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room: Mon-Sun 7am-11pm; closed on Public Holidays.",
-  "confession": "Contact Parish Office to make an appointment."
+  "adoration": "Adoration Room (Mount Tabor) open daily 7am-11pm; closed on public holidays.",
+  "confession": "Fridays 4pm-6pm and Saturdays 10am-12pm; otherwise by appointment with the Parish Office. There is currently no Confession before Mass.",
+  "office_hours": "Mon-Fri 9.30am-6.30pm; Sat-Sun 8.30am-1pm; closed on public holidays.",
+  "good_to_know": [
+   "Main gate and back gate are open daily 5am-11pm, and close on public holidays after the 9am Mass.",
+   "From 2 to 11 Nov a boom lift is stationed at the open car park outside Little Shepherds' Schoolhouse, so some parking spaces, including handicap lots, are temporarily unavailable.",
+   "St Jerome Library is open Sundays 8am-1pm and 4pm-5.30pm."
+  ]
  },
  "events": [
   {
-   "date": "2026-10-25",
+   "date": "2026-11-01",
    "time": "",
-   "title": "Sunday Fellowship",
-   "text": "The L6 Catechetical Ministry will be serving breakfast. Love offerings are welcome. Venue: JPII Hall."
+   "title": "Sunday Fellowship breakfast",
+   "text": "The Biblical Apostolate Team serves breakfast at JPII Hall after the Sunday Masses. All are welcome; love offerings are welcome."
   },
   {
-   "date": "2026-10-25",
-   "time": "09:00",
-   "title": "Biblical Apostolate Team: Why Do I Have to Go to Confession?",
-   "text": "Join SFXBAT as we unpack what Confession really is, why it matters, and how it draws us closer to the Father’s love. 9am - 10.30am. Venue: Jeremiah Room (Parish Centre, Level 2)."
-  },
-  {
-   "date": "2026-10-26",
+   "date": "2026-11-02",
    "time": "20:00",
-   "title": "Charismatic: Life in the Spirit - Growth Series",
-   "text": "Join us for a session on “Worship in the Spirit”. All are welcome! Venue: Hosea Room, Parish Centre Level 2."
+   "title": "Charismatic Growth Series: Spiritual Warfare",
+   "text": "Session by Fr Karolus Huar at the Hosea Room, Parish Centre Level 2. All are welcome."
   },
   {
-   "date": "2026-10-27",
+   "date": "2026-11-11",
+   "time": "19:45",
+   "title": "Count It All Joy — talk by Dr Mary Healy",
+   "text": "Archdiocesan Biblical Apostolate talk, 7.45pm-9.45pm at the Church of St Mary of the Angels. Register at bit.ly/2026CountItAllJoy."
+  },
+  {
+   "date": "2026-11-25",
    "time": "19:30",
-   "title": "PIETA Monthly Session – Oct",
-   "text": "Bereaved parents are warmly invited to gather for prayer, reflection and the breaking open of the Word of God, journeying together in faith and hope. 7.30pm - 9.15pm. Venue: Catholic Archdiocesan Education Centre, 2 Highland Road, #LG-01, Singapore 549102."
-  },
-  {
-   "date": "2026-11-13",
-   "time": "",
-   "title": "70th Beginning Experience (BE) Weekend",
-   "text": "A live-in weekend for the permanently separated, divorced or widowed (for both males and females). Dates: 13–15 Nov (Friday night to Sunday afternoon). Cost: $230. Registration: www.besingapore.org/BE_Event. Enquiries: 9755 4310 (Mary) / 9828 5162 (Jean)."
-  },
-  {
-   "date": "2026-11-14",
-   "time": "14:00",
-   "title": "CTIS: Certificate in Catholic Bioethics – Information Session",
-   "text": "Information session for the Certificate in Bioethics programme. 2pm – 3pm. Venue: Online via Zoom. Registration: https://www.cmg.org.sg/cmg-ctis-certificate-in-bioethics"
+   "title": "Potluck fellowship after every Triduum Mass",
+   "text": "Bring a dish portioned for 4 to share; drop off by 7.30pm at JPII Hall."
   },
   {
    "date": "2026-11-28",
-   "time": "13:30",
-   "title": "Conversations That Matter: When Your Teen Questions Their Identity & Sexuality",
-   "text": "Join Fr David Garcia, OP and Nicholas Gabriel Lim as they explore identity, attraction and morality, offering practical guidance on listening, responding and having meaningful conversations with your teen. 1.30pm - 4pm. Venue: Church of the Holy Cross, Auditorium (Level 4). Fee: $20 per pax | $35 fo"
+   "time": "",
+   "title": "Feast Day celebration at JPII Hall",
+   "text": "Dinner after the 5.30pm Feast Day Mass on Sat 28 Nov; on Sun 29 Nov breakfast after the 7am and 9am Masses and lunch after the 11am Mass."
+  },
+  {
+   "date": "2026-12-21",
+   "time": "",
+   "title": "2027 Catechism registration closes",
+   "text": "Register children born in 2020-2021 for the K2 and L1 sessions on myCatholicSG and upload the Baptism certificate. Sessions are Sundays 3pm-4.30pm; parents are expected to be present as catechists."
+  },
+  {
+   "date": "2027-01-16",
+   "time": "09:00",
+   "title": "Encounter — Day of Prayer",
+   "text": "A day of quiet to encounter God in Scripture and daily life, 9am-4.30pm at San Damiano Franciscan Centre. $80 per person; register at tinyurl.com/epjan27."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610231720_Bulletin_2026_10_25.pdf?alt=media&token=7870b094-7934-4fca-8d8a-21ed595a6257",
-  "date": "2026-10-23"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2610301756_Bulletin_2026_11_01.pdf?alt=media&token=c669e72a-b5c5-4173-883e-c160fb9f02e4",
+  "date": "2026-10-30"
  },
  "disputes": [],
  "vs_mycatholic": {
