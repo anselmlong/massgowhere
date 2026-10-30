@@ -2,9 +2,9 @@
  "id": 6,
  "name": "Church of the Holy Family",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610221841_30th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=9ce0a50a-9d6c-423a-a582-937b6a11000e"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610292227_All_Saints%20.pdf?alt=media&token=d4eeb6a4-9453-4ca5-859d-7643042b72fb"
  ],
- "fetched_at": "2026-10-23T12:32+08:00",
+ "fetched_at": "2026-10-30T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -98,7 +98,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 3,
@@ -170,7 +170,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "First Friday Adoration"
   },
   {
    "d": 6,
@@ -190,7 +190,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -200,7 +200,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   },
   {
    "d": 6,
@@ -215,21 +215,21 @@
  ],
  "dated": [
   {
-   "type": "Devotion",
-   "date": "2026-11-14",
-   "time": "15:45",
-   "language": "",
-   "location": "Grotto",
-   "title": "Monthly Rosary Prayer at the Grotto",
-   "action": "add"
-  },
-  {
    "type": "Adoration",
    "date": "2026-11-20",
    "time": "19:30",
-   "language": "",
+   "language": "English",
    "location": "Main Church",
    "title": "Eucharistic Adoration",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-20",
+   "time": "21:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Eucharistic Adoration & Mass",
    "action": "add"
   }
  ],
@@ -239,73 +239,97 @@
  ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Daily, 6am–10.30pm.",
-  "confession": "Confession: 30 minutes before all weekend Masses.",
+  "adoration": "Adoration Room open daily, 6am–10.30pm.",
+  "confession": "30 minutes before all weekend Masses.",
   "devotions": [
-   "First Friday Adoration: 7pm",
-   "Tuesday Divine Mercy Devotion: 7pm",
-   "Saturday Novena Devotion: 4.30pm"
+   "Divine Mercy Devotion: Tuesdays 7pm",
+   "Novena Devotion: Saturdays 4.30pm",
+   "First Friday Adoration: 7pm"
   ],
-  "office_hours": "Weekdays: 9am–1pm, 2–8pm; Saturdays: 9am–1pm, 2–5pm; Sundays: 8.30am–1pm",
+  "office_hours": "Weekdays 9am–1pm and 2–8pm; Saturdays 9am–1pm and 2–5pm; Sundays 8.30am–1pm.",
   "good_to_know": [
-   "Infant Baptism preparation: 24 Jan; Baptism: 31 Jan; apply by 10 Jan at w.holyfamily.org.sg/infant-baptism.",
-   "Elders Catechism: Thursdays, 1–3pm, Pastoral Centre, Level 3.",
-   "Weddings: Apply at the Parish Office at least one year in advance."
+   "Columbarium open daily 6am–10pm; lift runs daily 9am–7pm, and 8.30am–12 noon on public holidays.",
+   "For Last Rites or urgent care for the seriously ill, call 6344 0046 to reach the priest on duty.",
+   "Katong Catholic Shop is at the parish: Tue–Fri 12 noon–6.30pm, Sat–Sun 8.30am–5.30pm; closed Mondays and public holidays."
   ]
  },
  "events": [
   {
-   "date": "2026-10-26",
-   "time": "09:30",
-   "title": "CaFE Video Program on Mother Mary: Let It Be Done To Me (Morning Session)",
-   "text": "5-part video series with video screenings, discussions, prayer and praise & worship. Venue: Church Level 4 Function Hall Dome."
-  },
-  {
-   "date": "2026-10-28",
+   "date": "2026-11-11",
    "time": "20:00",
    "title": "Opening the Word of Life",
-   "text": "Read, reflect & share on the upcoming Sunday’s Eucharistic Readings. No registration required. Venue: Pastoral Centre Level 1 Multi-Purpose Hall."
-  },
-  {
-   "date": "2026-10-29",
-   "time": "20:00",
-   "title": "CaFE Video Program on Mother Mary: Let It Be Done To Me (Evening Session)",
-   "text": "5-part video series with video screenings, discussions, prayer and praise & worship. Venue: Church Level 4 Function Hall Big Room."
-  },
-  {
-   "date": "2026-10-31",
-   "time": "18:30",
-   "title": "Joo Chiat NCC Fellowship",
-   "text": "Dinner after sunset Mass. Venue: Chat corner, ground floor of the Parish Pastoral Centre. RSVP by scanning QR code. Contact Philip Ho at 96694987."
-  },
-  {
-   "date": "2026-11-02",
-   "time": "09:30",
-   "title": "CaFE Video Program on Mother Mary: Let It Be Done To Me (Morning Session)",
-   "text": "5-part video series with video screenings, discussions, prayer and praise & worship. Venue: Church Level 4 Function Hall Dome."
-  },
-  {
-   "date": "2026-11-05",
-   "time": "20:00",
-   "title": "CaFE Video Program on Mother Mary: Let It Be Done To Me (Evening Session)",
-   "text": "5-part video series with video screenings, discussions, prayer and praise & worship. Venue: Church Level 4 Function Hall Big Room."
+   "text": "Reading and reflecting on the coming Sunday's Eucharistic Readings, 8pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are welcome."
   },
   {
    "date": "2026-11-12",
    "time": "19:45",
-   "title": "The Chosen Encounter & Premiere Season 6 (PM Session)",
-   "text": "Journey closer to Jesus through Scripture, reflection, and faith sharing, followed by screening of The Chosen Season 6, Episode 1. Venue: Holy Family Church Level 4 Function Room."
+   "title": "The Chosen Encounter & Premiere Season 6 (evening session)",
+   "text": "Scripture, reflection and faith sharing followed by a screening of The Chosen Season 6 Episode 1, 7.45pm–9.45pm at Holy Family Church Level 4 Function Room (take the lift outside the Adoration Room). Scan the QR code to register."
+  },
+  {
+   "date": "2026-11-16",
+   "time": "19:45",
+   "title": "Eternal Rest – The Art of Dying Well (Part 1)",
+   "text": "First part of a two-part video programme, 7.45pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are warmly welcome."
+  },
+  {
+   "date": "2026-11-21",
+   "time": "09:00",
+   "title": "Parish Day of Recollection",
+   "text": "Draw closer to Jesus and grow together as a parish, 9am–3pm at Pastoral Centre Levels 3 & 4. All parishioners are warmly invited."
   },
   {
    "date": "2026-11-23",
    "time": "09:30",
-   "title": "The Chosen Encounter & Premiere Season 6 (AM Session)",
-   "text": "Journey closer to Jesus through Scripture, reflection, and faith sharing, followed by screening of The Chosen Season 6, Episode 1. Venue: Holy Family Church Pastoral Centre Level 3 St. Ephrem Room."
+   "title": "The Chosen Encounter & Premiere Season 6 (morning session)",
+   "text": "Scripture, reflection and faith sharing followed by a screening of The Chosen Season 6 Episode 1, 9.30am–11.30am at Pastoral Centre Level 3, St Ephrem Room. Scan the QR code to register."
+  },
+  {
+   "date": "2026-11-23",
+   "time": "19:45",
+   "title": "Eternal Rest – The Art of Dying Well (Part 2)",
+   "text": "Second part of the video programme, 7.45pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are warmly welcome."
+  },
+  {
+   "date": "2026-11-24",
+   "time": "19:45",
+   "title": "Advent Reflection (week 1)",
+   "text": "Reflection on the Advent scripture readings with a sharing session, 7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room. Continues on 1, 8 and 15 December. Register by 22 Nov using the QR code."
+  },
+  {
+   "date": "2026-11-25",
+   "time": "20:00",
+   "title": "Opening the Word of Life",
+   "text": "Reading and reflecting on the coming Sunday's Eucharistic Readings, 8pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are welcome."
+  },
+  {
+   "date": "2026-12-01",
+   "time": "19:45",
+   "title": "Advent Reflection (week 2)",
+   "text": "Reflection on the Advent scripture readings with a sharing session, 7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room."
+  },
+  {
+   "date": "2026-12-08",
+   "time": "19:45",
+   "title": "Advent Reflection (week 3)",
+   "text": "Reflection on the Advent scripture readings with a sharing session, 7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room."
+  },
+  {
+   "date": "2026-12-15",
+   "time": "19:45",
+   "title": "Advent Reflection (week 4)",
+   "text": "Reflection on the Advent scripture readings with a sharing session, 7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room."
+  },
+  {
+   "date": "2027-01-24",
+   "time": "",
+   "title": "Infant Baptism preparation",
+   "text": "Preparation session on 24 Jan and Baptism on 31 Jan 2027. Apply by 10 Jan at www.holyfamily.org.sg/infant-baptism."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610221841_30th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=9ce0a50a-9d6c-423a-a582-937b6a11000e",
-  "date": "2026-10-22"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610292227_All_Saints%20.pdf?alt=media&token=d4eeb6a4-9453-4ca5-859d-7643042b72fb",
+  "date": "2026-10-29"
  },
  "disputes": [],
  "vs_mycatholic": {

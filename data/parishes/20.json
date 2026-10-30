@@ -2,9 +2,9 @@
  "id": 20,
  "name": "Church of St Bernadette",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610231101_48_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%8825%E6%97%A5%EF%BC%89.pdf?alt=media&token=015248dd-97f5-4c21-9629-bb2520a7c0ff"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610301001_49_%20%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E8%AF%B8%E5%9C%A3%E8%8A%82%EF%BC%8811%E6%9C%881%E6%97%A5%EF%BC%89.pdf?alt=media&token=d19956a5-0429-43b5-be78-d027e55982d2"
  ],
- "fetched_at": "2026-10-23T12:33+08:00",
+ "fetched_at": "2026-10-30T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -202,44 +202,18 @@
   "09:00"
  ],
  "notes": [],
- "info": {
-  "office_hours": "Mon–Fri 9:30am–6:30pm, Sat 9:30am–7:30pm, Sun 7:30am–7:30pm (closed on public holidays)",
-  "good_to_know": [
-   "Address: 12 Zion Road, Singapore 247731",
-   "Tel: 67373529",
-   "Email: csb.secretariat@catholic.org.sg",
-   "Canteen: Sun 8:30am–12:00pm"
-  ]
- },
+ "info": {},
  "events": [
   {
-   "date": "2026-10-31",
-   "time": "16:30",
-   "title": "All Saints' Day celebration",
-   "text": "Dress as your favourite saint at Church of St Bernadette. 4:30pm photo, 6pm Mass, 'saint' procession, 7pm dinner and fellowship. Registration required for procession and dinner: https://tinyurl.com/stbernsallsaints"
-  },
-  {
    "date": "2026-11-09",
-   "time": "09:30",
-   "title": "2026 St Bernadette Chinese Retreat",
-   "text": "Theme: 'Creation and Encounter with Christ, One Body Many Members'. Spiritual director: Fr Peter Koh. 9:30am–5:30pm at St Bernadette Hall. Talks and group sharing. Fee $10 includes lunch and tea. Organised by the Chinese Committee. Register with Bro Li Bin 91195952 or Bro Yong Chang 96628873."
-  },
-  {
-   "date": "2026-11-21",
-   "time": "09:30",
-   "title": "Workshop: Does childhood trauma affect adult physical and mental health?",
-   "text": "9:30am–12:30pm at 20 Aljunied Road, S389805. Organised by Asian Pastoral Institute. Trainers: Dr Lu Jingcong and Ms Zheng Ruihong. Learn to identify forms of childhood trauma and adversity, recognise signs of psychological distress, understand neurological and psychological mechanisms, and create su"
-  },
-  {
-   "date": "2026-12-10",
-   "time": "10:00",
-   "title": "2026 Four-District Youth Rally (14 years and above)",
-   "text": "Theme: 'Take courage, I have overcome the world!' 10 Dec 10:00am to 12 Dec 5:00pm at Catholic Spirituality Centre (CSC). Fee S$175. Spiritual director/lecturer: Fr Joseph Huang, OCD Fr He Chongzhen. Organised by Singapore Archdiocesan Chinese Commission. Register with Zheng Tianzhi 91136598 or https"
+   "time": "",
+   "title": "2026 年圣伯纳德堂华语退省",
+   "text": "2026 年圣伯纳德堂华语退省"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610231101_48_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%8825%E6%97%A5%EF%BC%89.pdf?alt=media&token=015248dd-97f5-4c21-9629-bb2520a7c0ff",
-  "date": "2026-10-23"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610301001_49_%20%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E8%AF%B8%E5%9C%A3%E8%8A%82%EF%BC%8811%E6%9C%881%E6%97%A5%EF%BC%89.pdf?alt=media&token=d19956a5-0429-43b5-be78-d027e55982d2",
+  "date": "2026-10-30"
  },
  "disputes": [],
  "vs_mycatholic": {

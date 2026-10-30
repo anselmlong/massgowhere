@@ -2,9 +2,9 @@
  "id": 18,
  "name": "St Anne's Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610222148_Oct_24%20%26%2025%202026.pdf?alt=media&token=55dde69b-b9c7-41fd-bd28-9f1b1baf9670"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610301207_Oct_31%20%26%20Nov%201%202026.pdf?alt=media&token=362e7bba-7abb-43bc-ab0b-970af566c68c"
  ],
- "fetched_at": "2026-10-23T12:32+08:00",
+ "fetched_at": "2026-10-30T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -49,8 +49,8 @@
    ],
    "except": [],
    "type": "Mass",
-   "lang": "Mandarin",
-   "loc": "Church",
+   "lang": "Chinese",
+   "loc": "In Church",
    "note": ""
   },
   {
@@ -96,16 +96,6 @@
    "note": ""
   },
   {
-   "d": 1,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
    "d": 2,
    "t": "06:30",
    "weeks": [],
@@ -124,16 +114,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 2,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
   },
   {
    "d": 3,
@@ -156,16 +136,6 @@
    "note": ""
   },
   {
-   "d": 3,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
    "d": 4,
    "t": "06:30",
    "weeks": [],
@@ -184,16 +154,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
   },
   {
    "d": 4,
@@ -204,7 +164,7 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Church",
+   "loc": "In Church",
    "note": "Holy Hour"
   },
   {
@@ -228,16 +188,6 @@
    "note": ""
   },
   {
-   "d": 5,
-   "t": "19:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
    "d": 6,
    "t": "06:30",
    "weeks": [],
@@ -245,7 +195,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   },
   {
    "d": 6,
@@ -258,117 +208,27 @@
    "note": "Sunset Mass"
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-10-31",
-   "time": "16:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "07:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "09:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "11:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "13:30",
-   "language": "Mandarin",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "16:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "06:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "19:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "08:00"
  ],
- "notes": [
-  "No weekday evening Mass on public holidays.",
-  "Weekday evening Mass time changes from 26 Oct 2026.",
-  "Weekday Rosary begins 26 Oct 2026."
- ],
+ "notes": [],
  "info": {
   "confession": "Confessions: 30 minutes before English weekend Masses in Church.",
-  "devotions": [
-   "Children's Liturgy: Every Sunday at the 11.30am Mass.",
-   "Columbarium Prayers & Mass Intentions: Last Sunday of the month after the 11.30am Mass."
-  ],
-  "good_to_know": [
-   "Book of Remembrance: Prayer requests for the faithful departed can be submitted for the month of November.",
-   "Blessing of niches in the columbarium after the 7.30pm Mass on 2 Nov 2026."
-  ]
+  "office_hours": "Mon–Fri: 9am to 6pm; Sat: 9am to 1pm; 2nd & last Sun of the month: 9am to 12pm"
  },
  "events": [
   {
    "date": "2026-11-07",
    "time": "09:30",
    "title": "Responders Plus Programme (RPP)",
-   "text": "SCDF’s emergency preparedness training programme equipping learners with First Aid, CPR-AED and Fire Fighting. Venue: St Anne's Hall, Level 3. Registration via Google form. Email Daniel at sac.pept@catholic.org.sg."
-  },
-  {
-   "date": "2026-11-13",
-   "time": "",
-   "title": "Camp Mosaic 2026",
-   "text": "Youth for Christ (YFC) Singapore invites youths aged 13 to 21 to deepen their relationship with Christ, build meaningful friendships and discover their place in the wider Church. Dates: 13 to 15 November 2026, Friday to Sunday. Venue: The Girls’ Brigade, Singapore 534667. Register at https://forms.g"
+   "text": "09:30"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610222148_Oct_24%20%26%2025%202026.pdf?alt=media&token=55dde69b-b9c7-41fd-bd28-9f1b1baf9670",
-  "date": "2026-10-22"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610301207_Oct_31%20%26%20Nov%201%202026.pdf?alt=media&token=362e7bba-7abb-43bc-ab0b-970af566c68c",
+  "date": "2026-10-30"
  },
  "disputes": [],
  "vs_mycatholic": {

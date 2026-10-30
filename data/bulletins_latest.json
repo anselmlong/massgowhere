@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-29T12:31+08:00",
+ "fetchedAt": "2026-10-30T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -39,16 +39,16 @@
   },
   "6": {
    "from": "myCatholicSG",
-   "title": "30th Sunday In Ordinary Time",
-   "date": "2026-10-22",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610221841_30th_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=9ce0a50a-9d6c-423a-a582-937b6a11000e",
+   "title": "All Saints",
+   "date": "2026-10-29",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610292227_All_Saints%20.pdf?alt=media&token=d4eeb6a4-9453-4ca5-859d-7643042b72fb",
    "page": "https://mycatholic.sg/bulletin/holyfamily"
   },
   "7": {
    "from": "myCatholicSG",
-   "title": "Thirtieth Sunday in Ordinary Time",
-   "date": "2026-10-24",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610240803_CHS_Bulletin%2024%20-%2025%20October%202026.pdf?alt=media&token=94c3d628-c894-4e48-bc45-68e417265625",
+   "title": "Solemnity of All Saints",
+   "date": "2026-10-30",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610301155_CHS_Bulletin%2031%20Oct%20-%201%20Nov%202026.pdf?alt=media&token=53a35beb-0a84-4bd6-8fbf-5438002f822f",
    "page": "https://mycatholic.sg/bulletin/holyspirit"
   },
   "8": {
@@ -74,9 +74,9 @@
   },
   "11": {
    "from": "myCatholicSG",
-   "title": "18 & 25 Oct 2026",
-   "date": "2026-10-16",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F11%2Fpublic%2Fpdf%2F2610160818_Bulletin_18%20%26%2025%20Oct%202026.pdf?alt=media&token=ab1439cf-4671-488d-86bc-fc453502c1e0",
+   "title": "1 & 8 Nov 2026",
+   "date": "2026-10-30",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F11%2Fpublic%2Fpdf%2F2610300814_Bulletin_1%20%26%208%20Nov%202026.pdf?alt=media&token=0974cff5-5429-4f7b-9f79-b254765babee",
    "page": "https://mycatholic.sg/bulletin/nativityofblessedvirgin"
   },
   "12": {
@@ -103,8 +103,8 @@
   "15": {
    "from": "website",
    "title": "",
-   "date": "2026-10-25",
-   "url": "https://drive.google.com/file/d/10MkEke4mDQ47tMCIjJZApzpW8jItWIsK/view",
+   "date": "2026-11-01",
+   "url": "https://drive.google.com/file/d/1LHUbcU70apy9a53faShb6grW8cySimJk/view",
    "page": "https://www.risenchrist.org.sg/bulletin"
   },
   "16": {
@@ -123,9 +123,9 @@
   },
   "18": {
    "from": "myCatholicSG",
-   "title": "24 & 25 October 2026",
-   "date": "2026-10-22",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610222148_Oct_24%20%26%2025%202026.pdf?alt=media&token=55dde69b-b9c7-41fd-bd28-9f1b1baf9670",
+   "title": "31 October & 1 November 2026",
+   "date": "2026-10-30",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610301207_Oct_31%20%26%20Nov%201%202026.pdf?alt=media&token=362e7bba-7abb-43bc-ab0b-970af566c68c",
    "page": "https://mycatholic.sg/bulletin/stanne"
   },
   "19": {
@@ -137,9 +137,9 @@
   },
   "20": {
    "from": "myCatholicSG",
-   "title": "堂区周报 2026年10月25日 - 2026年10月31日",
-   "date": "2026-10-23",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610231101_48_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%BB%E6%97%A5%20%EF%BC%8810%E6%9C%8825%E6%97%A5%EF%BC%89.pdf?alt=media&token=015248dd-97f5-4c21-9629-bb2520a7c0ff",
+   "title": "堂区周报 2026年11月1日 - 2026年11月7日",
+   "date": "2026-10-30",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610301001_49_%20%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E8%AF%B8%E5%9C%A3%E8%8A%82%EF%BC%8811%E6%9C%881%E6%97%A5%EF%BC%89.pdf?alt=media&token=d19956a5-0429-43b5-be78-d027e55982d2",
    "page": "https://mycatholic.sg/bulletin/stbernadette"
   },
   "21": {
@@ -202,9 +202,9 @@
   },
   "29": {
    "from": "myCatholicSG",
-   "title": "20261025 Church Bulletin 25 October 2026",
-   "date": "2026-10-24",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2610242017_CST_Bulletin%20-%2025%20Oct%2026.pdf?alt=media&token=80a112f7-7bc1-4d7d-820e-d0861a5002d8",
+   "title": "20261101 Church Bulletin 1 November 2026",
+   "date": "2026-10-30",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2610301057_CST_Bulletin%20-%201%20Nov%2026.pdf?alt=media&token=ede428ba-6ab6-4943-97a5-134485b24d18",
    "page": "https://mycatholic.sg/bulletin/stteresa"
   },
   "30": {

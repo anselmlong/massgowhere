@@ -2,9 +2,9 @@
  "id": 15,
  "name": "Church of the Risen Christ",
  "source_urls": [
-  "https://drive.google.com/file/d/10MkEke4mDQ47tMCIjJZApzpW8jItWIsK/view"
+  "https://drive.google.com/file/d/1LHUbcU70apy9a53faShb6grW8cySimJk/view"
  ],
- "fetched_at": "2026-10-23T21:04+08:00",
+ "fetched_at": "2026-10-30T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -165,6 +165,16 @@
    "note": ""
   },
   {
+   "d": 4,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Parish Hall",
+   "note": "Breaking of the Word (BOW)"
+  },
+  {
    "d": 5,
    "t": "06:30",
    "weeks": [],
@@ -227,65 +237,35 @@
    "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-10-31",
-   "time": "17:30",
-   "language": "English",
-   "location": "",
-   "title": "All Saints Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "06:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls Day Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "All Souls Day Mass",
-   "action": "add"
-  }
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": true,
+ "public_holiday_masses": [
+  "07:30"
  ],
- "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
  "notes": [
-  "All Saints Day is a Day of Obligation."
+  "No evening Mass on public holidays."
  ],
  "info": {
+  "adoration": "Adoration room closes at 18:00 on 9 Nov.",
+  "devotions": [
+   "Divine Mercy Devotion at 15:00 on Fridays in the Parish Hall.",
+   "Breaking of the Word (BOW) at 20:00 on Thursdays in the Parish Hall."
+  ],
   "good_to_know": [
-   "Church Wedding Booking: Couples planning to solemnize their marriage in Church must register with the parish office at least one year in advance.",
-   "Infant Baptism: Registration forms can be downloaded from the website. Completed forms together with other relevant documents are required to be submitted to the office at least 2 weeks before the preparation session.",
-   "Funeral Mass: All deceased parishioners of our parish should have their last rites celebrated in the parish. Check for availability of Church and Priest at the office before making any other arrangements.",
-   "All Saints Day (Day of Obligation): All Saints Mass: Saturday 31 Oct at 5.30pm and Sunday 1 Nov - usual Sunday schedule."
+   "Parish office closed on 8 Nov (Deepavali) and 9 Nov (public holiday)."
   ]
  },
  "events": [
   {
-   "date": "2026-10-31",
-   "time": "",
-   "title": "Dress like a Saint",
-   "text": "Children, teens, and adults are warmly invited to dress as their favourite Saint as we celebrate All Saints’ Day on Saturday/Sunday. Prizes will be awarded to all dressed as saints at all Masses. Redemption of prize only on Sunday from 7.30am to 12.00pm."
-  },
-  {
    "date": "2026-11-13",
    "time": "",
    "title": "Beginning Experience Ministry 70th BE Weekend",
-   "text": "For people who are separated, divorced or widowed (both males and females). A live-in weekend to help single-again persons move on from the darkness of their grief into the light of a new beginning, to be healed and be free to love themselves, others and God. Registration or enquiries at https://www"
+   "text": "13 to 15 Nov 2026 (Fri night till Sun afternoon) for people who are separated, divorced or widowed. Registration at https://www.besingapore.org/BE_Event"
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/10MkEke4mDQ47tMCIjJZApzpW8jItWIsK/view",
-  "date": "2026-10-25"
+  "url": "https://drive.google.com/file/d/1LHUbcU70apy9a53faShb6grW8cySimJk/view",
+  "date": "2026-11-01"
  },
  "disputes": [],
  "vs_mycatholic": {
