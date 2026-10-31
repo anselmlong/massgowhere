@@ -7696,6 +7696,24 @@
 "lang": "Vietnamese",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "r",
+"date": "2026-12-04",
+"type": "Confession",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday from 730pm to 830pm."
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Confession",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday from 730pm to 830pm."
 }
 ],
 "17": [
