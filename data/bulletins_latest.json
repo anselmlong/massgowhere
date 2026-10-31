@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-31T12:31+08:00",
+ "fetchedAt": "2026-10-31T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -67,9 +67,9 @@
   },
   "10": {
    "from": "myCatholicSG",
-   "title": "30th Sunday in Ordinary Time",
-   "date": "2026-10-23",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610231918_20261025_30th_OT.pdf?alt=media&token=71d12512-5634-4c01-a4e5-a2cb027382e1",
+   "title": "Solemnity of All Saints",
+   "date": "2026-10-31",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610311415_20261101_All_Saints%20Day.pdf?alt=media&token=94bc7f3a-6f04-4c76-bdb3-08a1b0963401",
    "page": "https://mycatholic.sg/bulletin/ladyoflourdes"
   },
   "11": {
@@ -95,9 +95,9 @@
   },
   "14": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 1 NOV 2026",
+   "title": "Bulletin - 01 Nov 2026",
    "date": "2026-10-31",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610311032_Bulletin_-%201%20NOV%202026.pdf?alt=media&token=09c6280f-5a60-4e8a-a53c-bd248ab1b975",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610311242_Bulletin_-%201%20NOV%202026.pdf?alt=media&token=012e4533-5f00-4e3b-8731-73980362e350",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {
@@ -166,9 +166,9 @@
   },
   "24": {
    "from": "myCatholicSG",
-   "title": "25 October 2026 : 30th Sunday Ordinary Time",
-   "date": "2026-10-23",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610232329_20261025_SJCBT%20Bulletin%20v2.pdf?alt=media&token=a5332e58-d3bf-4161-af7f-38e4bd430a26",
+   "title": "01 November 2026 : All Saints",
+   "date": "2026-10-31",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2610311837_20261101_SJCBT%20Bulletin.pdf?alt=media&token=5193dfdc-595c-4ba2-8f01-3f1b09f15218",
    "page": "https://mycatholic.sg/bulletin/stjosephbukittimah"
   },
   "25": {
@@ -189,8 +189,8 @@
   "27": {
    "from": "website",
    "title": "",
-   "date": "2026-10-25",
-   "url": "https://sh1.sendinblue.com/mk/sc/PPM-bwA2lgwxn0fcr2NqSB_hnYCCFRxoRpOH2F9AVofBOymRlGG39qIawTSjPa_DCd4zn-utwMmE1un-qMtEmk7DxV23t7w?t=1792751869938",
+   "date": "2026-11-01",
+   "url": "https://sh1.sendinblue.com/mk/sc/r6A90vvIhVns50VsTsiTwIHFPxgSGE45lUknKsjx3aGcC_aYl8M8EgDEYUU7yMsXYBupeM5rmiXcwKeby5-uosOj7qd0PTo?t=1793434098515",
    "page": "https://stmichael.catholic.sg/bulletins/"
   },
   "28": {

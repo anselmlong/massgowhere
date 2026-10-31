@@ -2,9 +2,9 @@
  "id": 10,
  "name": "Church of Our Lady of Lourdes",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610231918_20261025_30th_OT.pdf?alt=media&token=71d12512-5634-4c01-a4e5-a2cb027382e1"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610311415_20261101_All_Saints%20Day.pdf?alt=media&token=94bc7f3a-6f04-4c76-bdb3-08a1b0963401"
  ],
- "fetched_at": "2026-10-23T21:01+08:00",
+ "fetched_at": "2026-10-31T21:01+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "",
-   "note": "1st Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -62,7 +62,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "2nd Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -76,16 +76,6 @@
   },
   {
    "d": 1,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 1,
    "t": "12:30",
    "weeks": [],
    "except": [],
@@ -106,16 +96,6 @@
   },
   {
    "d": 2,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Divine Mercy"
-  },
-  {
-   "d": 2,
    "t": "12:30",
    "weeks": [],
    "except": [],
@@ -136,16 +116,6 @@
   },
   {
    "d": 3,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 3,
    "t": "12:30",
    "weeks": [],
    "except": [],
@@ -166,16 +136,6 @@
   },
   {
    "d": 4,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 4,
    "t": "12:30",
    "weeks": [],
    "except": [],
@@ -193,16 +153,6 @@
    "lang": "Tamil",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
   },
   {
    "d": 5,
@@ -236,16 +186,6 @@
   },
   {
    "d": 6,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Our Lady of Good Health, Vailankkani"
-  },
-  {
-   "d": 6,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -261,25 +201,28 @@
   "09:00",
   "10:00"
  ],
- "notes": [],
+ "notes": [
+  "Sacrament of Reconciliation is available 30mins before.",
+  "Public Holidays masses are listed separately."
+ ],
  "info": {
-  "adoration": "Adoration Room open daily 8:00am to 8:00pm.",
-  "confession": "The Sacrament of Reconciliation is available 30 minutes before Mass.",
+  "adoration": "Adoration Room Daily 8:00am to 8:00pm.",
+  "confession": "Sacrament of Reconciliation is available 30mins before.",
   "devotions": [
-   "Rosary: Monday, Wednesday, Thursday and Friday 11:45am",
-   "Divine Mercy: Tuesdays 11:45am",
-   "Our Lady of Good Health, Vailankkani: Saturdays 5:30pm"
+   "Rosary Monday to Friday at 11:45am (Except Tuesdays)",
+   "Divine Mercy at 11:45am (Tuesdays Only)",
+   "Devotion at 17:30 on Saturday at Our Lady of Good Health, Vailankkani"
   ],
-  "office_hours": "Parish office: Mon-Fri 10:00am-6:00pm; Sat 2:00pm-8:00pm; Sun 9:00am-2:00pm.",
+  "office_hours": "Parish Office Mon - Fri 10:00am to 6:00pm, Saturday 2:00pm to 8:00pm, Sunday 9:00am to 2:00pm.",
   "good_to_know": [
-   "The church is at 50 Ophir Road, Singapore 188690.",
-   "Bookshop: Saturdays 5:00pm-8:00pm and Sundays 8:30am-1:30pm; closed on public holidays."
+   "Bookshop open Saturday 5:00pm to 8:00pm",
+   "Bookshop open Sunday 8:30am to 1:30pm"
   ]
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610231918_20261025_30th_OT.pdf?alt=media&token=71d12512-5634-4c01-a4e5-a2cb027382e1",
-  "date": "2026-10-23"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2610311415_20261101_All_Saints%20Day.pdf?alt=media&token=94bc7f3a-6f04-4c76-bdb3-08a1b0963401",
+  "date": "2026-10-31"
  },
  "disputes": [],
  "vs_mycatholic": {
