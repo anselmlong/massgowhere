@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-10-30T21:01+08:00",
+ "fetchedAt": "2026-10-31T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -25,16 +25,16 @@
   },
   "4": {
    "from": "myCatholicSG",
-   "title": "24/25 October 2026 - Vol 43 - 30th Sunday in Ordinary Time",
-   "date": "2026-10-24",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610240910_CDM_Parish%20Bulletin%20Vol2026.43%20%E2%80%93%2024-25%20Oct%20v2.1.pdf?alt=media&token=e322911c-1e54-4a7e-b3e7-c7dfabd4693e",
+   "title": "31 October/01 November 2026 - Vol 44 - Solemnity of All Saints",
+   "date": "2026-10-31",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610311016_CDM_Parish%20Bulletin%20Vol2026.44%20%E2%80%93%2031Oct-01Nov_v2.pdf?alt=media&token=3d737376-b30c-4632-8c4f-68c6dfd8ba4d",
    "page": "https://mycatholic.sg/bulletin/divinemercy"
   },
   "5": {
    "from": "myCatholicSG",
-   "title": "Thirtieth Sunday in Ordinary Time",
-   "date": "2026-10-24",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610240344_English_Bulletin%2025%20Oct.pdf?alt=media&token=7d387cae-b291-4912-bc36-c6f2a01f3ea5",
+   "title": "Solemnity of All Saints",
+   "date": "2026-10-31",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610311136_English_Bulletin%201%20Nov.pdf?alt=media&token=280f26d6-2dba-4f3c-bc65-a5ae1e5f48bf",
    "page": "https://mycatholic.sg/bulletin/holycross"
   },
   "6": {
@@ -81,9 +81,9 @@
   },
   "12": {
    "from": "myCatholicSG",
-   "title": "OLPS Weekly Bulletin 25 Oct 2026",
-   "date": "2026-10-23",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610231957_30th_Sunday%20in%20Ordinary%20Time%2025%20Oct%202026.pdf?alt=media&token=32d95e9f-48f6-4806-b4f6-9e191e853093",
+   "title": "OLPS Weekly Bulletin 01 Nov 2026",
+   "date": "2026-10-31",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610310918_All_Saints'%20Day%2001%20Nov%202026.pdf?alt=media&token=3594f6c8-f45c-42eb-85b8-d44cdab45524",
    "page": "https://mycatholic.sg/bulletin/perpertualsuccour"
   },
   "13": {
@@ -95,9 +95,9 @@
   },
   "14": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 25 Oct 2026",
-   "date": "2026-10-22",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610221813_Bulletin_-%2025Oct%202026.pdf?alt=media&token=17f56878-e1f8-4dbd-8420-addf8f6b9a86",
+   "title": "Bulletin - 1 NOV 2026",
+   "date": "2026-10-31",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610311032_Bulletin_-%201%20NOV%202026.pdf?alt=media&token=09c6280f-5a60-4e8a-a53c-bd248ab1b975",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {
@@ -131,8 +131,8 @@
   "19": {
    "from": "website",
    "title": "",
-   "date": "2026-10-25",
-   "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_10_25.pdf",
+   "date": "2026-11-01",
+   "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_11_01.pdf",
    "page": "https://saint-anthony.org/bulletin/"
   },
   "20": {
@@ -216,9 +216,9 @@
   },
   "31": {
    "from": "myCatholicSG",
-   "title": "Thirtieth Sunday in Ordinary Time",
-   "date": "2026-10-24",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610241143_1024_2026.pdf?alt=media&token=c4a9149f-1d86-4c92-aa58-66a1944eda86",
+   "title": "All Saints Day",
+   "date": "2026-10-31",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2610311121_1101_2026.pdf?alt=media&token=21262033-486d-4846-8464-c1179a59dfa7",
    "page": "https://mycatholic.sg/bulletin/stspeterandpaul"
   },
   "32": {

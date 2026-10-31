@@ -2,9 +2,9 @@
  "id": 5,
  "name": "Church of the Holy Cross",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610240344_English_Bulletin%2025%20Oct.pdf?alt=media&token=7d387cae-b291-4912-bc36-c6f2a01f3ea5"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610311136_English_Bulletin%201%20Nov.pdf?alt=media&token=280f26d6-2dba-4f3c-bc65-a5ae1e5f48bf"
  ],
- "fetched_at": "2026-10-24T12:33+08:00",
+ "fetched_at": "2026-10-31T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -111,6 +111,16 @@
    "note": ""
   },
   {
+   "d": 2,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "All Saints Hall",
+   "note": "Charismatic Renewal Movement"
+  },
+  {
    "d": 3,
    "t": "06:30",
    "weeks": [],
@@ -171,6 +181,16 @@
    "note": ""
   },
   {
+   "d": 4,
+   "t": "19:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "All Saints Hall",
+   "note": "Charismatic Renewal Movement"
+  },
+  {
    "d": 5,
    "t": "06:30",
    "weeks": [],
@@ -199,6 +219,30 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Hour"
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [],
+   "except": [
+    1
+   ],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Holy Hour"
   },
   {
    "d": 6,
@@ -218,7 +262,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -228,7 +272,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   },
   {
    "d": 6,
@@ -241,69 +285,93 @@
    "note": ""
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "06:30",
+   "language": "English",
+   "location": "",
+   "title": "Solemnity of All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "Solemnity of All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-01",
+   "time": "19:30",
+   "language": "Mandarin",
+   "location": "",
+   "title": "Solemnity of All Saints",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-27",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Prayers for the All Souls",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "07:30",
+   "language": "English",
+   "location": "",
+   "title": "Deepavali Public Holiday Mass",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
- "notes": [],
+ "public_holiday_masses": [
+  "07:30"
+ ],
+ "notes": [
+  "No noon and evening Masses on 5 Nov & 12 Nov.",
+  "No lunch time Masses on 5 Nov & 12 Nov."
+ ],
  "info": {
-  "adoration": "Adoration Room open daily until 22:00.",
+  "adoration": "Adoration Room is open daily till 22:00. Holy Hour is held every 1st Friday at 20:00.",
   "devotions": [
-   "Holy Hour every 1st Friday at 20:00.",
-   "Novena Devotion every Saturday at 15:30."
+   "Novena Devotion: Every Saturday at 15:30"
   ],
   "good_to_know": [
-   "Public holiday Mass at 07:30.",
-   "No noon and evening Masses on Deepavali, 9 Nov 2026.",
-   "No noon Mass on All Souls Day, 2 Nov 2026."
+   "Parking is not available in the church. You may park at the HDB multi-storey carpark."
   ]
  },
  "events": [
   {
-   "date": "2026-10-30",
-   "time": "20:00",
-   "title": "Parish Rosary at 8pm via Zoom. ID: 724 702 0490. Password: 129955. Theme: mental health ministry.",
-   "text": "Parish Rosary at 8pm via Zoom. ID: 724 702 0490. Password: 129955. Theme: mental health ministry."
-  },
-  {
-   "date": "2026-11-06",
-   "time": "20:00",
-   "title": "Parish Holy Hour at 8pm. Come, spend an hour in the presence of Jesus.",
-   "text": "Parish Holy Hour at 8pm. Come, spend an hour in the presence of Jesus."
-  },
-  {
    "date": "2026-11-13",
-   "time": "00:00",
-   "title": "Beginning Experience Weekend, 13-15 Nov 2026 at Lifesprings Canossian Spirituality Centre. $230 per pax. For divorced, s",
-   "text": "Beginning Experience Weekend, 13-15 Nov 2026 at Lifesprings Canossian Spirituality Centre. $230 per pax. For divorced, separated, widowed. Contact Mary 9755 4310 or Jean 9828 5162. Register at www.besingapore.org."
+   "time": "",
+   "title": "Beginning Experience Weekend",
+   "text": "A peer support Ministry for divorced, separated, or widowed individuals at Lifesprings Canossian Spirituality Centre. Contact Mary 9755 4310 or Jean 9828 5162 to register."
   },
   {
    "date": "2026-11-13",
    "time": "10:00",
-   "title": "Emmanuel: Walking with God in Our Golden Years, 10am-1pm at St Joseph Church (Bt Timah). $20 for 1 pax | $35 for 2 pax. ",
-   "text": "Emmanuel: Walking with God in Our Golden Years, 10am-1pm at St Joseph Church (Bt Timah). $20 for 1 pax | $35 for 2 pax. Register at FAMILYLIFE.SG/EWWG."
+   "title": "Emmanuel: Walking with God",
+   "text": "A gathering at St Joseph Church (Bt Timah) for $20 for 1 pax | $35 for 2 pax."
   },
   {
-   "date": "2026-11-13",
-   "time": "20:00",
-   "title": "PIETA Memorial Mass for children who have died, 8pm at Church of St Alphonsus (Novena Church). Register by 30 October at",
-   "text": "PIETA Memorial Mass for children who have died, 8pm at Church of St Alphonsus (Novena Church). Register by 30 October at tinyurl.com/MM2026Pieta. Email pietamass@gmail.com. Website pieta.familylife.sg."
-  },
-  {
-   "date": "2026-11-14",
-   "time": "14:00",
-   "title": "Certificate in Catholic Bioethics online information session at 2pm via Zoom. Register at www.cmg.org.sg.",
-   "text": "Certificate in Catholic Bioethics online information session at 2pm via Zoom. Register at www.cmg.org.sg."
-  },
-  {
-   "date": "2026-11-28",
-   "time": "13:30",
-   "title": "Conversations That Matter: When Your Teen Questions Their Sexuality, 1.30pm-4pm at Church of the Holy Cross (Auditorium)",
-   "text": "Conversations That Matter: When Your Teen Questions Their Sexuality, 1.30pm-4pm at Church of the Holy Cross (Auditorium). $20 for 1 pax | $35 for 2 pax. Register at familylife.sg/CTM_B. Parking is not available in the church; park at the HDB multi storey carpark."
+   "date": "2026-11-15",
+   "time": "11:30",
+   "title": "RCIA Rite of Initiation",
+   "text": "The RCIA (Saturday) is preparing for the Rite of Initiation on 15th Nov 2026 at 11:30am Mass. Parishioners are invited to write prayers and messages of encouragement for our elect and candidates."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610240344_English_Bulletin%2025%20Oct.pdf?alt=media&token=7d387cae-b291-4912-bc36-c6f2a01f3ea5",
-  "date": "2026-10-24"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610311136_English_Bulletin%201%20Nov.pdf?alt=media&token=280f26d6-2dba-4f3c-bc65-a5ae1e5f48bf",
+  "date": "2026-10-31"
  },
  "disputes": [],
  "vs_mycatholic": {
