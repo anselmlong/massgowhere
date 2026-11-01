@@ -36,6 +36,10 @@ hand-curated ────────────┤ data/rich/<id>.json (review
 MOM public holidays ─────┘ data/holidays.json                                                         ┘
                                                      │ git commit + push to main
                                                      ▼
+                          GitHub (raw JSON). Vercel skips the build when the
+                          commit only touches data. Production reads the JSON
+                          at runtime, cached on the CDN for about 10 minutes.
+                                                     ▼
                                    Vercel (static public/ + serverless api/)
                          ┌──────────────────────────────────────────────────────────────┐
   browser (SPA) ─────────┤ public/index.html, app.js, style.css                          │
@@ -51,8 +55,8 @@ MOM public holidays ─────┘ data/holidays.json                       
 
 **Design principles**
 - **One answer everywhere.** The ranking lives in `public/rank.js` (plain JS, no build step). The browser loads it, and the API `require`s it. The bots never rank; they call the API. So the site, the bot and the gospel bot always agree.
-- **Static data, live routing.** Mass times are a static JSON snapshot rebuilt by cron and deployed by git push. Only travel time is live, from OneMap.
-- **Never block on the slow part.** The browser asks for an estimate-only answer (`fast=1`, a few ms) and the live answer together. It waits up to 2.5 s (3 s for "on the way") for live, so most answers appear once. If live is slow, the estimate shows first and the live times settle in place without a repaint.
+- **Static data, live routing.** Mass times are a JSON snapshot rebuilt by cron and pushed to `main`. A data-only commit does not redeploy: the site and the API read `public/data.json` from GitHub (or `DATA_BASE_URL`, if set) and the CDN caches it. Only travel time is live, from OneMap.
+- **Never block on the slow part.** The browser ranks a distance estimate itself (the same `rank.js`) and asks for the live answer together. It waits up to 2.5 s (3 s for "on the way") for live, so most answers appear once. If live is slow, the estimate shows first and the live times settle in place without a repaint. The bots still request `fast=1` from the API.
 - **Works offline-ish.** If the API fails, the browser ranks with `data.json` and distance estimates.
 
 ---
@@ -85,7 +89,7 @@ MOM public holidays ─────┘ data/holidays.json                       
 
 ### 3.2 API (`api/`, Vercel Node functions)
 
-All endpoints return JSON with `Cache-Control: no-store`.
+`GET /api/next` and `GET /api/way` cache a successful answer on the CDN for a minute (`s-maxage=60, stale-while-revalidate=120`); the answer moves as the clock does, so it is not cached longer. `GET /api/search` caches a found place for a day. `POST /api/feedback` is `no-store`. The browser works the distance estimate out itself (`rank.js`), and only calls the API for live OneMap routes. The bots still call `fast=1`.
 
 **`GET /api/next`**: the Mass you can make.
 
@@ -211,7 +215,7 @@ Response:
 
 | | |
 |---|---|
-| Runtime | Vercel static hosting (`public/`) + Node serverless functions (`api/`); no build step (`vercel.json`: `outputDirectory: public`, no framework) |
+| Runtime | Vercel static hosting + Node serverless functions (`api/`). `vercel.json` copies `public/` to `dist` except the schedule JSON, which is served by `/api/schedule` and `/api/parish` with CDN caching. Data-only commits skip the build (`ignoreCommand`) |
 | Client | Vanilla ES2020+, no dependencies. MapLibre GL 5.24 loaded on demand. Uses `:has()`, `<dialog>`, `IntersectionObserver`, `color-mix()`; current Safari / Chrome / Firefox |
 | Routing provider | OneMap (Singapore Land Authority): `/api/public/routingsvc/route`. Token from email + password, cached ~72 h; one shared in-flight login; retried on 401. Route cache in memory, keyed by origin (3 dp), destination, mode and 15-minute departure slot |
 | Map tiles | OpenFreeMap "liberty" (no key) |
@@ -266,8 +270,8 @@ Without OneMap credentials, the API answers with distance estimates. Add `?previ
 
 | What | How | Schedule |
 |---|---|---|
-| myCatholicSG times | `sh scripts/update_mycatholic.sh` (fetch, import, build, commit, push) | VPS cron, daily 04:00 UTC (12:00 SGT); `~/mgw.log` |
-| This week's bulletins | `sh scripts/update_bulletins.sh` | VPS cron, weekly, Saturday 13:00 UTC (9pm SGT); `~/mgw-bulletins.log` |
+| myCatholicSG times | `sh scripts/update_mycatholic.sh` (fetch, import, build, commit, push). The push does not redeploy; production reads the new JSON from GitHub within about 10 minutes | VPS cron, daily 04:00 UTC (12:00 SGT); `~/mgw.log` |
+| This week's bulletins | `sh scripts/update_bulletins.sh` (same: push, no Vercel build) | VPS cron, weekly, Saturday 13:00 UTC (9pm SGT); `~/mgw-bulletins.log` |
 | Church photos | `scripts/fetch_photos.py`, `scripts/fetch_mycatholic_photos.py` | by hand |
 | Public holidays | edit `data/holidays.json` when MOM publishes next year's list | build warns at < 60 days |
 | Bot changes | `git pull` on the VPS, then `systemctl --user restart massgowhere-bot` | after any change to `bot/bot.py` |

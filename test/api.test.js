@@ -24,6 +24,16 @@ test("at= in the past or missing means now; more than a week ahead is refused", 
   assert.equal((await call(`at=${Date.now() + 10 * 864e5}`)).statusCode, 400);
 });
 
+test("a successful answer is CDN-cached; a refusal is not", async () => {
+  const ok = await call("");
+  assert.equal(ok.statusCode, 200);
+  assert.match(ok.headers["Cache-Control"], /s-maxage=60/);
+  assert.match(ok.headers["Cache-Control"], /stale-while-revalidate=/);
+  const bad = await call(`at=${Date.now() + 10 * 864e5}`);
+  assert.equal(bad.statusCode, 400);
+  assert.equal(bad.headers["Cache-Control"], "no-store");
+});
+
 test("part= keeps every answer in that time of day; an unknown part is refused", async () => {
   const S = require("../public/schedule.js");
   for (const part of Object.keys(S.PARTS)) {

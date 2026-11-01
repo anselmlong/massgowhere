@@ -229,14 +229,16 @@
 
   // ---------- data ----------
   let dataP = null;
-  const data = () => (dataP ||= fetch("data.json", { cache: "no-cache", signal: AbortSignal.timeout(8000) })
+  // Browser-default cache. The responses carry s-maxage; sending no-cache would
+  // revalidate on every visit and run the function that serves them.
+  const data = () => (dataP ||= fetch("data.json", { signal: AbortSignal.timeout(8000) })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .catch((e) => { dataP = null; throw e; }));
   // what a parish's own website says beyond Mass times (public/parish/<id>.json, not every parish has one);
   // the church page renders without it
   const infoP = new Map();
   const parishInfo = (id) => {
-    if (!infoP.has(id)) infoP.set(id, fetch(`parish/${id}.json`, { cache: "no-cache", signal: AbortSignal.timeout(8000) })
+    if (!infoP.has(id)) infoP.set(id, fetch(`parish/${id}.json`, { signal: AbortSignal.timeout(8000) })
       .then((r) => (r.ok ? r.json() : null)).catch(() => { infoP.delete(id); return null; }));
     return infoP.get(id);
   };
@@ -762,7 +764,32 @@
   }
 
   // ---------- result ----------
+  const inSingapore = (lat, lng) => lat > 1.15 && lat < 1.475 && lng > 103.59 && lng < 104.1;
+  // The estimate the page used to ask /api/next?fast=1 for. Same rank.js, run here,
+  // so a search doesn't spend a function invocation on distance maths. Live routes
+  // still come from the API, which has the OneMap token.
+  async function localNext(q) {
+    const lat = Number(q.get("lat")), lng = Number(q.get("lng"));
+    if (!inSingapore(lat, lng)) return { outside: true };
+    const at = parseAt(q.get("at"));
+    const part = partOf(q.get("part"));
+    const late = Math.min(15, Number(q.get("late")) || 0);
+    const sunday = q.get("sunday") === "1", lang = q.get("lang") || "";
+    const mode = q.get("mode") || "transit";
+    const d = await data();
+    const now = at ?? Date.now();
+    const origin = { lat, lng };
+    const out = await R.rank({ origin, now, mode, parishes: d.parishes, events: S.expandAll(d, now - late * 60000, sunday || lang ? 7 : 2).filter(S.inPart(part)).filter(S.inLang(lang)).filter((e) => !sunday || S.forSunday(e)), lateMin: late });
+    const byId = new Map(d.parishes.map((p) => [p.id, p]));
+    const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, lateMin: e.lateMin || 0, distanceKm: Math.round(e.distanceKm * 10) / 10, language: e.lang, location: e.loc, note: e.note || "" };
+    return { mode, best: pack(out.best), alternatives: out.alternatives.map(pack),
+      nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, distanceKm: Math.round(out.nearest.distanceKm * 10) / 10, next: pack(out.nearest.next) },
+      around: out.around.map((a) => ({ parish: byId.get(a.pid), travelMin: a.travelMin, travelSource: a.travelSource, walk: a.travelWalk, next: pack(a.next) })),
+      specialDay: out.best ? S.specialDay(out.best.start, d) : null };
+  }
+
   async function fetchNext(q, fast = false) {
+    if (fast) return localNext(q);
     const params = new URLSearchParams({ lat: q.get("lat"), lng: q.get("lng"), mode: q.get("mode") || "transit" });
     const at = parseAt(q.get("at"));
     if (at) params.set("at", at);
@@ -773,23 +800,13 @@
     const sunday = q.get("sunday") === "1", lang = q.get("lang") || "";
     if (sunday) params.set("sunday", "1");
     if (lang) params.set("lang", lang);
-    if (fast) params.set("fast", "1");
     try {
-      const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 4000 : 12000) });
+      const r = await fetch(`api/next?${params}`, { signal: AbortSignal.timeout(12000) });
       if (r.status === 400) return { outside: true };
       if (!r.ok) throw new Error(r.status);
       return await r.json();
     } catch {
-      // offline or API down: same ranking in the browser, travel times estimated
-      const d = await data();
-      const origin = { lat: Number(q.get("lat")), lng: Number(q.get("lng")) };
-      const now = at ?? Date.now();
-      const out = await R.rank({ origin, now, mode: params.get("mode"), parishes: d.parishes, events: S.expandAll(d, now - late * 60000, sunday || lang ? 7 : 2).filter(S.inPart(part)).filter(S.inLang(lang)).filter((e) => !sunday || S.forSunday(e)), lateMin: late });
-      const byId = new Map(d.parishes.map((p) => [p.id, p]));
-      const pack = (e) => e && { parish: byId.get(e.pid), start: e.start, leaveBy: e.leaveBy, travelMin: e.travelMin, travelSource: e.travelSource, walk: e.travelWalk, lateMin: e.lateMin || 0, distanceKm: e.distanceKm, language: e.lang, location: e.loc, note: e.note };
-      return { mode: params.get("mode"), best: pack(out.best), alternatives: out.alternatives.map(pack),
-        nearest: out.nearest && { parish: byId.get(out.nearest.pid), travelMin: out.nearest.travelMin, travelSource: out.nearest.travelSource, walk: out.nearest.travelWalk, next: pack(out.nearest.next) },
-        around: out.around.map((a) => ({ parish: byId.get(a.pid), travelMin: a.travelMin, travelSource: a.travelSource, walk: a.travelWalk, next: pack(a.next) })) };
+      return localNext(q); // offline or API down: same ranking, travel times estimated
     }
   }
 
@@ -917,9 +934,9 @@
       painted = true;
     };
 
-    // Ask for the estimate and the live answer together. Live usually lands within a couple of seconds: wait for it
-    // so the answer appears once and never jumps. Only when it's slow do we show the estimate first, then settle
-    // the live times in place (a gentle highlight, no repaint).
+    // Work out the distance estimate here, and ask the API for live routes at the same time. Live usually lands
+    // within a couple of seconds: wait for it so the answer appears once and never jumps. Only when it's slow do
+    // we show the estimate first, then settle the live times in place (a gentle highlight, no repaint).
     const fullP = fetchNext(q, false).then((r) => ({ r }), (e) => ({ e }));
     const fastP = fetchNext(q, true);
     const LIVE_WAIT_MS = 2500;
@@ -1101,26 +1118,33 @@
     adoration: { title: "Adoration", looking: "Adoration rooms", none: "an Adoration room open", days: "in the next two days" },
     confession: { title: "Confession", looking: "Confession times", none: "Confession", days: "in the next week" },
   };
+  async function localOpen(q, kind) {
+    const lat = Number(q.get("lat")), lng = Number(q.get("lng"));
+    if (!inSingapore(lat, lng)) return { outside: true };
+    const at = parseAt(q.get("at"));
+    const d = await data();
+    const X = window.MassServices, now = at ?? Date.now();
+    const origin = { lat, lng };
+    const mode = q.get("mode") || "transit";
+    const out = await X.rankOpen({ origin, now, mode, parishes: d.parishes, windows: X.expandAllServices(d, kind, now), fast: true });
+    const byId = new Map(d.parishes.map((p) => [p.id, p]));
+    const pack = (e) => e && { ...e, parish: byId.get(e.pid), walk: e.travelWalk, location: e.loc, source: e.from };
+    return { kind, best: pack(out.best), alternatives: out.alternatives.map(pack), checked: d.services?.checked,
+      unconfirmed: X.unconfirmed(d, kind).map((x) => ({ parish: byId.get(x.pid), text: x.text })),
+      specialDay: out.best ? S.specialDay(out.best.start, d) : null };
+  }
   async function fetchOpen(q, kind, fast) {
+    if (fast) return localOpen(q, kind);
     const params = new URLSearchParams({ lat: q.get("lat"), lng: q.get("lng"), mode: q.get("mode") || "transit", kind });
     const at = parseAt(q.get("at"));
     if (at) params.set("at", at);
-    if (fast) params.set("fast", "1");
     try {
-      const r = await fetch(`api/next?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 4000 : 12000) });
+      const r = await fetch(`api/next?${params}`, { signal: AbortSignal.timeout(12000) });
       if (r.status === 400) return { outside: true };
       if (!r.ok) throw new Error(r.status);
       return await r.json();
     } catch {
-      // offline or API down: the same answer worked out here, travel times estimated
-      const d = await data();
-      const X = window.MassServices, now = at ?? Date.now();
-      const origin = { lat: Number(q.get("lat")), lng: Number(q.get("lng")) };
-      const out = await X.rankOpen({ origin, now, mode: params.get("mode"), parishes: d.parishes, windows: X.expandAllServices(d, kind, now), fast: true });
-      const byId = new Map(d.parishes.map((p) => [p.id, p]));
-      const pack = (e) => e && { ...e, parish: byId.get(e.pid), walk: e.travelWalk, location: e.loc, source: e.from };
-      return { kind, best: pack(out.best), alternatives: out.alternatives.map(pack), checked: d.services?.checked,
-        unconfirmed: X.unconfirmed(d, kind).map((x) => ({ parish: byId.get(x.pid), text: x.text })) };
+      return localOpen(q, kind); // offline or API down: the same answer, travel times estimated
     }
   }
   async function renderOpen(q) {
@@ -1539,27 +1563,34 @@
     });
   }
 
+  async function localWay(q) {
+    const from = readPt(q.get("from")), to = readPt(q.get("to"));
+    if (!from || !to || !inSingapore(from.lat, from.lng) || !inSingapore(to.lat, to.lng)) return { outside: true };
+    const d = await data();
+    const depart = parseAt(q.get("at")) ?? Date.now(), by = parseAt(q.get("by"));
+    const late = Math.min(15, Number(q.get("late")) || 0);
+    const mode = q.get("mode") || "transit";
+    const out = await window.MassWay.planWay({ from, to, depart, arriveBy: by, mode,
+      parishes: d.parishes, events: S.expandAll(d, depart - late * 60000, 2).filter((e) => e.start >= depart - late * 60000 && (!by || e.start < by)), fast: true, lateMin: late });
+    const byId = new Map(d.parishes.map((p) => [p.id, p]));
+    const pack = (x) => x && { parish: byId.get(x.pid), start: x.start, end: x.end, leaveBy: x.leaveBy, arrive: x.arrive, toMin: x.toMin, toWalk: x.toWalk,
+      onwardMin: x.onwardMin, onwardWalk: x.onwardWalk, detourMin: x.detourMin, lateMin: x.lateMin || 0, travelSource: "estimate", language: x.lang, location: x.loc, note: x.note || "" };
+    return { best: pack(out.best), alternatives: out.alternatives.map(pack), direct: out.direct,
+      specialDay: out.best ? S.specialDay(out.best.start, d) : null };
+  }
   async function fetchWay(q, fast) {
+    if (fast) return localWay(q);
     const params = new URLSearchParams({ from: q.get("from"), to: q.get("to"), mode: q.get("mode") || "transit" });
     for (const k of ["at", "by"]) { const v = parseAt(q.get(k)); if (v) params.set(k, v); }
     const late = Math.min(15, Number(q.get("late")) || 0);
     if (late) params.set("late", late);
-    if (fast) params.set("fast", "1");
     try {
-      const r = await fetch(`api/way?${params}`, { cache: "no-store", signal: AbortSignal.timeout(fast ? 5000 : 15000) });
+      const r = await fetch(`api/way?${params}`, { signal: AbortSignal.timeout(15000) });
       if (r.status === 400) return { outside: true };
       if (!r.ok) throw new Error(r.status);
       return await r.json();
     } catch {
-      // offline or API down: the same plan in the browser, travel times estimated
-      const d = await data();
-      const depart = parseAt(q.get("at")) ?? Date.now(), by = parseAt(q.get("by"));
-      const out = await window.MassWay.planWay({ from: readPt(q.get("from")), to: readPt(q.get("to")), depart, arriveBy: by, mode: params.get("mode"),
-        parishes: d.parishes, events: S.expandAll(d, depart - late * 60000, 2).filter((e) => e.start >= depart - late * 60000 && (!by || e.start < by)), fast: true, lateMin: late });
-      const byId = new Map(d.parishes.map((p) => [p.id, p]));
-      const pack = (x) => x && { parish: byId.get(x.pid), start: x.start, end: x.end, leaveBy: x.leaveBy, arrive: x.arrive, toMin: x.toMin, toWalk: x.toWalk,
-        onwardMin: x.onwardMin, onwardWalk: x.onwardWalk, detourMin: x.detourMin, lateMin: x.lateMin, travelSource: "estimate", language: x.lang, note: x.note };
-      return { best: pack(out.best), alternatives: out.alternatives.map(pack), direct: out.direct };
+      return localWay(q); // offline or API down: the same plan, travel times estimated
     }
   }
 

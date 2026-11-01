@@ -39,4 +39,4 @@ git add data/mycatholic.json public/data.json public/parish
 if git diff --cached --quiet; then echo "no changes"; exit 0; fi
 git -c user.name="MassGoWhere refresh" -c user.email="refresh@massgowhere.com" commit --quiet -m "data: myCatholicSG refresh $(date +%F)"
 git push --quiet origin HEAD:main || { echo "push rejected; the next run starts again from origin/main" >&2; exit 1; }
-echo "pushed; Vercel will deploy"
+echo "pushed; the site reads this from GitHub, so Vercel skips the build"

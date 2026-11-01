@@ -1,7 +1,7 @@
 // GET /api/way?from=1.35,103.85&to=1.30,103.83&mode=transit|drive|walk[&at=<epoch ms>][&by=<epoch ms>][&late=15][&fast=1]
 // A Mass on the way from A to B: the one that adds the least to the trip, and still gets you to B by `by` if given.
 const S = require("../public/schedule.js");
-const data = require("../public/data.json");
+const { loadData } = require("../lib/live-data");
 const { planWay } = require("../public/way.js");
 const { tripMinutesWithin } = require("../lib/onemap.js");
 
@@ -21,10 +21,13 @@ function when(raw, now) {
   return ms > now + (PLAN_DAYS + 1) * 864e5 ? undefined : ms;
 }
 
+// Same trip within a minute is served from the CDN. Errors are never cached.
+const CACHE = "public, max-age=0, s-maxage=60, stale-while-revalidate=120";
+
 function send(res, status, body) {
   res.statusCode = status;
-  res.setHeader("Content-Type", "application/json");
-  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Cache-Control", status === 200 ? CACHE : "no-store");
   res.end(JSON.stringify(body));
 }
 
@@ -38,6 +41,7 @@ module.exports = async function handler(req, res) {
 };
 
 async function answer(req, res) {
+  const data = await loadData();
   const u = new URL(req.url, "http://x");
   const from = point(u.searchParams.get("from")), to = point(u.searchParams.get("to"));
   if (!inSingapore(from) || !inSingapore(to)) return send(res, 400, { error: "from and to must be lat,lng points in Singapore" });

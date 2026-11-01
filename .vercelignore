@@ -1,4 +1,9 @@
-scripts
+# The data job lives in scripts/, and must not be uploaded. The two hooks below
+# are the exception: ignoreCommand and buildCommand run after this file is applied,
+# and a bare `scripts` rule would hide them (a parent directory cannot be re-included).
+scripts/**
+!scripts/ignore-data-build.sh
+!scripts/vercel-build.sh
 data
 bot
 test

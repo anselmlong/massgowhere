@@ -1,5 +1,16 @@
 {
-  "outputDirectory": "public",
-  "buildCommand": null,
-  "framework": null
+  "outputDirectory": "dist",
+  "buildCommand": "sh scripts/vercel-build.sh",
+  "ignoreCommand": "sh scripts/ignore-data-build.sh",
+  "framework": null,
+  "rewrites": [
+    { "source": "/data.json", "destination": "/api/schedule" },
+    { "source": "/parish/:id.json", "destination": "/api/parish?id=:id" }
+  ],
+  "functions": {
+    "api/next.js": { "includeFiles": "public/data.json" },
+    "api/way.js": { "includeFiles": "public/data.json" },
+    "api/schedule.js": { "includeFiles": "public/data.json" },
+    "api/parish.js": { "includeFiles": "public/parish/**" }
+  }
 }

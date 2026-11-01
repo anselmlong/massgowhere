@@ -4,7 +4,7 @@
 // &kind=adoration|confession instead finds an Adoration room open or Confession you can get to (see public/services.js);
 // part, lang and late don't apply there.
 const S = require("../public/schedule.js");
-const data = require("../public/data.json");
+const { loadData } = require("../lib/live-data");
 const { rank } = require("../public/rank.js");
 const { rankOpen, expandAllServices, unconfirmed, KINDS } = require("../public/services.js");
 const { tripMinutesWithin } = require("../lib/onemap.js");
@@ -40,23 +40,27 @@ function summarize(e, byId) {
   };
 }
 
+// Same search within a minute is served from the CDN. The answer moves as time
+// passes, so this stays short; errors are never cached.
+const CACHE = "public, max-age=0, s-maxage=60, stale-while-revalidate=120";
+
 function send(res, status, body) {
   res.statusCode = status;
-  res.setHeader("Content-Type", "application/json");
-  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Cache-Control", status === 200 ? CACHE : "no-store");
   res.end(JSON.stringify(body));
 }
 
 module.exports = async function handler(req, res) {
   try {
-    await answer(req, res);
+    await answer(req, res, await loadData());
   } catch (e) {
     console.error(e);
     send(res, 500, { error: "Something went wrong working out the next Mass. Please try again." });
   }
 };
 
-async function answer(req, res) {
+async function answer(req, res, data) {
   const u = new URL(req.url, "http://x");
   const lat = Number(u.searchParams.get("lat"));
   const lng = Number(u.searchParams.get("lng"));
@@ -75,7 +79,7 @@ async function answer(req, res) {
   const origin = { lat, lng };
   const kind = u.searchParams.get("kind") || "";
   if (kind && !KINDS.includes(kind)) return send(res, 400, { error: `kind must be one of ${KINDS.join(", ")}` });
-  if (kind) return answerOpen(res, { kind, origin, now, at, mode, fast });
+  if (kind) return answerOpen(res, { kind, origin, now, at, mode, fast, data });
   // late=N (max 15): Masses that have just started still count if you'd walk in at most N minutes late
   const lateMin = Math.max(0, Math.min(15, Number(u.searchParams.get("late")) || 0));
   const sunday = u.searchParams.get("sunday") === "1";
@@ -149,7 +153,7 @@ function summarizeOpen(e, byId) {
   };
 }
 
-async function answerOpen(res, { kind, origin, now, at, mode, fast }) {
+async function answerOpen(res, { kind, origin, now, at, mode, fast, data }) {
   const travel = async (p, departMs) => {
     const t = await tripMinutesWithin(origin, p, mode, departMs);
     return t && { minutes: t.minutes, walk: t.walk, source: "onemap" };
