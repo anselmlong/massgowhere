@@ -2,9 +2,9 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610250726_CHURCH_BULLETIN%20%2025-31%20Oct%202026.pdf?alt=media&token=7ae23b47-98fd-4c1a-b323-d05aa29bd0f3"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611010949_Spotlight_Nov%2026%20(final).pdf?alt=media&token=acaa8c84-c3f2-4d3b-9ea2-6e4a0ad4799c"
  ],
- "fetched_at": "2026-10-25T12:32+08:00",
+ "fetched_at": "2026-11-01T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -237,70 +237,14 @@
    "note": ""
   },
   {
-   "d": 5,
-   "t": "19:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Eucharistic Adoration (Sacred Heart of Jesus)"
-  },
-  {
-   "d": 5,
-   "t": "19:45",
-   "weeks": [
-    2
-   ],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Intercessory Prayers"
-  },
-  {
-   "d": 5,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Divine Mercy"
-  },
-  {
    "d": 6,
    "t": "08:30",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
-  },
-  {
-   "d": 6,
-   "t": "09:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": "Eucharistic Adoration (Immaculate Heart of Mary)"
-  },
-  {
-   "d": 6,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Novena to our Blessed Mother"
+   "note": ""
   },
   {
    "d": 6,
@@ -325,109 +269,32 @@
    "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Devotion",
-   "date": "2026-10-26",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "Rosary",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-26",
-   "time": "20:00",
-   "language": "English",
-   "location": "Blk 230 #09-09 Commonwealth Tower",
-   "title": "Block Rosary",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-28",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "Rosary",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-10-28",
-   "time": "20:00",
-   "language": "English",
-   "location": "Blk 230 #09-09 Commonwealth Tower",
-   "title": "Block Rosary",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-10-31",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "All Saints' Day Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "08:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "12:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "18:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day Mass",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "08:30"
+ ],
  "notes": [],
  "info": {
-  "confession": "Confession is available 15 minutes before Masses.",
-  "devotions": [
-   "Divine Mercy: Friday 8pm, Saturday 8.30am.",
-   "Intercessory Prayers: 2nd Friday 7.45pm.",
-   "Novena to our Blessed Mother: Saturday 5pm.",
-   "Eucharistic Adoration: 1st Friday 7pm (Sacred Heart of Jesus), 1st Saturday 9am (Immaculate Heart of Mary)."
-  ],
+  "office_hours": "10am-6pm, Lunch Hours 1pm-2pm",
   "good_to_know": [
-   "All Saints' Day Mass on Sat 31 Oct at 6pm and Sun 1 Nov at all Masses.",
-   "All Souls' Day Masses on 2 Nov at 8.30am, 12.30pm and 6.30pm.",
-   "Chinese All Souls' Day Mass on 7 Nov at 11am.",
-   "Infant Baptism every 2nd Sunday at the 5.30pm Mass. Contact Parish Office to register 2 weeks in advance."
+   "Infant Baptism: every 2nd Sunday at the 5.30pm Mass.",
+   "Anointing of the Sick: by appointment with the Secretariat.",
+   "Holy Matrimony: couples must inform the Priest at least 6 months before booking.",
+   "Adult Baptism or Confirmation: contact rcia.bsc@gmail.com."
   ]
  },
  "events": [
   {
-   "date": "2026-11-13",
+   "date": "2026-11-21",
    "time": "10:00",
-   "title": "Emmanuel: Walking with God in Our Golden Years",
-   "text": "Happening on Fri, 13 Nov, 10am - 1pm, at St Joseph's Church. Fee: $20 per person or $35 for two. Register at familylife.sg/EWWG"
+   "title": "OYP Outreach for Secondary 4 & 5 Students",
+   "text": "OYP Outreach for Secondary 4 & 5 Students"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2610250726_CHURCH_BULLETIN%20%2025-31%20Oct%202026.pdf?alt=media&token=7ae23b47-98fd-4c1a-b323-d05aa29bd0f3",
-  "date": "2026-10-25"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611010949_Spotlight_Nov%2026%20(final).pdf?alt=media&token=acaa8c84-c3f2-4d3b-9ea2-6e4a0ad4799c",
+  "date": "2026-11-01"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -452,13 +319,6 @@
    ]
   ],
   "only_on_mycatholic": [
-   [
-    "Mass",
-    "Saturday",
-    "08:30",
-    [],
-    []
-   ],
    [
     "Mass",
     "Sunday",
