@@ -6,7 +6,7 @@ const { searchPlaces } = require("../lib/onemap.js");
 function send(res, status, body, cache) {
   res.statusCode = status;
   res.setHeader("Content-Type", "application/json");
-  res.setHeader("Cache-Control", cache ? "public, s-maxage=86400, max-age=3600" : "no-store");
+  res.setHeader("Cache-Control", cache ? "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800" : "no-store");
   res.end(JSON.stringify(body));
 }
 

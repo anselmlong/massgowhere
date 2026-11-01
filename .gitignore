@@ -9,6 +9,7 @@ scripts/cache/
 bot/state.json
 .impeccable/review/
 node_modules/
+dist/
 data/allsched.raw.json
 data/parishes/_report.json
 bot/stats.json
