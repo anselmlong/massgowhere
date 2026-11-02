@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-01",
+"asOf": "2026-11-02",
 "rules": {
 "1": [
 {
@@ -6308,15 +6308,6 @@
 "2": [
 {
 "k": "o",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Saints' Day Vigil"
-},
-{
-"k": "o",
 "date": "2026-11-01",
 "type": "Mass",
 "t": "08:30",
@@ -6582,15 +6573,6 @@
 }
 ],
 "7": [
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Saints' Day (Vigil Mass)"
-},
 {
 "k": "o",
 "date": "2026-11-01",
@@ -6860,33 +6842,6 @@
 "10": [
 {
 "k": "r",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-01",
 "type": "Mass",
 "t": "08:00",
@@ -7124,42 +7079,6 @@
 "date": "2026-11-28",
 "type": "Mass",
 "t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-10-31",
-"type": "Confession",
-"t": "15:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -7624,15 +7543,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "16:00",
-"lang": "Teochew",
-"loc": "Main Church",
-"note": "Eve of All Saints' Day"
 },
 {
 "k": "a",
@@ -8948,6 +8858,15 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "o",
 "date": "2026-11-14",
 "type": "Mass",
@@ -8961,6 +8880,24 @@
 "date": "2026-11-09",
 "type": "Mass",
 "t": "08:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-02",
+"type": "Mass",
+"t": "20:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -9071,18 +9008,9 @@
 "date": "2026-11-02",
 "type": "Mass",
 "t": "20:00",
-"lang": "Mandarin",
-"loc": "Main Church",
-"note": "All Souls Day EC with blessing of niches"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "All Souls Day EC + blessing of niches"
+"note": "All Souls Day EC with blessing of niches"
 },
 {
 "k": "a",
@@ -9223,15 +9151,6 @@
 },
 {
 "k": "r",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-01",
 "type": "Mass",
 "t": "08:30",
@@ -9313,15 +9232,6 @@
 },
 {
 "k": "a",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Saints Day (Anticipated Mass)"
-},
-{
-"k": "a",
 "date": "2026-11-01",
 "type": "Mass",
 "t": "08:30",
@@ -9369,15 +9279,6 @@
 "28": [
 {
 "k": "r",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-01",
 "type": "Mass",
 "t": "09:00",
@@ -9420,15 +9321,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-10-31",
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Saints Day"
 },
 {
 "k": "a",
