@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-01T12:31+08:00",
+ "fetchedAt": "2026-11-02T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -181,7 +181,7 @@
   "26": {
    "from": "website",
    "title": "",
-   "date": "2026-10-29",
+   "date": "2026-11-01",
    "url": "https://www.stmary.sg/announcements",
    "page": "https://www.stmary.sg/announcements",
    "kind": "announcements"
@@ -223,9 +223,9 @@
   },
   "32": {
    "from": "myCatholicSG",
-   "title": "All Saints  - 1st Nov 2026",
-   "date": "2026-10-30",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610301653_01_Nov%202026.pdf?alt=media&token=ed8c5dc5-d474-45dd-99cb-01df12e44ff7",
+   "title": "32nd Ordinary Sunday - 15th Nov 2026",
+   "date": "2026-11-02",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611021143_08_Nov%202026.pdf?alt=media&token=5bb55c0d-5b60-4286-a636-d5e913784bc5",
    "page": "https://mycatholic.sg/bulletin/transfiguration"
   }
  }

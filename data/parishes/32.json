@@ -2,9 +2,9 @@
  "id": 32,
  "name": "Church of the Transfiguration",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610301653_01_Nov%202026.pdf?alt=media&token=ed8c5dc5-d474-45dd-99cb-01df12e44ff7"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611021143_08_Nov%202026.pdf?alt=media&token=5bb55c0d-5b60-4286-a636-d5e913784bc5"
  ],
- "fetched_at": "2026-10-30T21:04+08:00",
+ "fetched_at": "2026-11-02T12:35+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -28,7 +28,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "L2 Confessionals",
-   "note": "when priest is available"
+   "note": ""
   },
   {
    "d": 0,
@@ -58,7 +58,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "L2 Confessionals",
-   "note": "when priest is available"
+   "note": ""
   },
   {
    "d": 0,
@@ -88,7 +88,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "L2 Confessionals",
-   "note": "when priest is available"
+   "note": ""
   },
   {
    "d": 0,
@@ -112,6 +112,16 @@
   },
   {
    "d": 1,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Thérèse L3 Room 3.4",
+   "note": "Intercessory Prayer"
+  },
+  {
+   "d": 1,
    "t": "17:50",
    "weeks": [],
    "except": [],
@@ -142,16 +152,6 @@
   },
   {
    "d": 2,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 2,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -167,8 +167,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "L3 Room 3.4",
-   "note": "Intercessory"
+   "loc": "Adoration Room",
+   "note": "Eucharistic Healing Session"
   },
   {
    "d": 3,
@@ -179,6 +179,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 3,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Thérèse L3 Room 3.4",
+   "note": "Intercessory Prayer"
   },
   {
    "d": 3,
@@ -264,6 +274,16 @@
   },
   {
    "d": 5,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Thérèse L3 Room 3.4",
+   "note": "Intercessory Prayer"
+  },
+  {
+   "d": 5,
    "t": "17:50",
    "weeks": [],
    "except": [],
@@ -316,23 +336,13 @@
   },
   {
    "d": 6,
-   "t": "15:20",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 6,
    "t": "15:30",
    "weeks": [],
    "except": [],
    "type": "Confession",
    "lang": "English",
    "loc": "L2 Confessionals",
-   "note": "when priest is available"
+   "note": ""
   },
   {
    "d": 6,
@@ -354,46 +364,22 @@
   "Confession is subject to priest availability."
  ],
  "info": {
-  "adoration": "Adoration Room: Weekdays 07:00–22:00; weekends 07:00–20:00; public holidays 09:00–17:00; closed on Mondays 09:00–14:00 for cleaning (1st Mondays 09:00–16:00).",
-  "confession": "Confession is available 30 minutes before all weekend Masses when a priest is available.",
+  "adoration": "Adoration Room: weekdays 07:00–22:00; weekends 07:00–20:00; public holidays 09:00–17:00; closed Mondays 09:00–14:00 (first Mondays 09:00–16:00 for cleaning).",
+  "confession": "Confession is at L2 Confessionals 30 minutes before all weekend Eucharistic Celebrations when a priest is available.",
   "devotions": [
-   "Rosary is said 40 minutes before weekday evening Masses and weekend Masses.",
-   "Divine Mercy Devotion every Thursday at 20:00 in L3 Auditorium.",
-   "Intercessory every Tuesday at 20:00 in L3 Room 3.4.",
-   "Chinese Prayer Group every Friday at 20:00 in L4 Room 4.2.",
-   "Holy Hour with Reparation every 1st Thursday at 20:00 in Church Hall.",
-   "Holy Hour with Reparation every 1st Friday at 20:00 in Church Hall."
+   "Divine Mercy Devotion every Thursday 20:00 at L3 Auditorium.",
+   "Holy Hour with Reparation every 1st Thursday 20:00 at Church Hall.",
+   "Holy Hour with Reparation every 1st Friday 20:00 at Church Hall.",
+   "Eucharistic Healing Session every Tuesday 20:00 at Adoration Room.",
+   "Intercessory Prayer Monday, Wednesday and Friday 15:00 at St Thérèse L3 Room 3.4.",
+   "Chinese Prayer Group every Friday 20:00 at L4 Room 4.2."
   ],
-  "office_hours": "Weekday 09:00–19:00 (lunch 12:00–13:00); Saturday 09:00–16:00 (lunch 12:00–13:00); Sunday 09:00–12:00.",
-  "good_to_know": [
-   "Weekday morning Mass includes Saturday mornings.",
-   "Public holiday Mass is at 08:30.",
-   "Rosary is said after public holiday Mass."
-  ]
+  "office_hours": "Weekday 09:00–19:00, lunch 12:00–13:00; Saturday 09:00–16:00, lunch 12:00–13:00; Sunday 09:00–12:00."
  },
- "events": [
-  {
-   "date": "2026-11-01",
-   "time": "",
-   "title": "Eucharistic Revival Retreat",
-   "text": ""
-  },
-  {
-   "date": "2026-11-01",
-   "time": "",
-   "title": "Catechism Registration - Phase 2",
-   "text": ""
-  },
-  {
-   "date": "2026-11-01",
-   "time": "",
-   "title": "Advent Wreath Family Day 2026",
-   "text": ""
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2610301653_01_Nov%202026.pdf?alt=media&token=ed8c5dc5-d474-45dd-99cb-01df12e44ff7",
-  "date": "2026-10-30"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611021143_08_Nov%202026.pdf?alt=media&token=5bb55c0d-5b60-4286-a636-d5e913784bc5",
+  "date": "2026-11-02"
  },
  "disputes": [],
  "vs_mycatholic": {
