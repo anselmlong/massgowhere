@@ -6317,33 +6317,6 @@
 },
 {
 "k": "o",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "13:15",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day"
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "13:15",
-"lang": "English",
-"loc": "JM Beurel Centre Level 1",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day"
-},
-{
-"k": "o",
 "date": "2026-12-24",
 "type": "Mass",
 "t": "17:00",
@@ -6445,15 +6418,6 @@
 "5": [
 {
 "k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-05",
 "type": "Mass",
 "t": "12:15",
@@ -6467,15 +6431,6 @@
 "type": "Mass",
 "t": "12:15",
 "lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "Mandarin",
 "loc": "Main Church",
 "note": ""
 },
@@ -6510,27 +6465,9 @@
 "6": [
 {
 "k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-20",
 "type": "Mass",
 "t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -6546,33 +6483,6 @@
 }
 ],
 "7": [
-{
-"k": "o",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day Mass with Columbarium Blessing"
-},
-{
-"k": "o",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day Mass with Columbarium Blessing"
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
 {
 "k": "a",
 "date": "2026-11-06",
@@ -6607,24 +6517,6 @@
 "date": "2026-11-09",
 "type": "Mass",
 "t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
 "lang": "English",
 "loc": "Chapel",
 "note": ""
@@ -6676,33 +6568,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day Mass with Columbarium Blessing"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day Mass"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day Mass"
-},
-{
-"k": "a",
 "date": "2026-12-25",
 "type": "Mass",
 "t": "06:45",
@@ -6750,15 +6615,6 @@
 "9": [
 {
 "k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-09",
 "type": "Mass",
 "t": "18:15",
@@ -6792,15 +6648,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "ALL SOULS' DAY"
 },
 {
 "k": "a",
@@ -7483,15 +7330,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
 "date": "2026-12-18",
 "type": "Confession",
 "t": "20:00",
@@ -7847,15 +7685,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
 "date": "2026-12-24",
 "type": "Mass",
 "t": "21:00",
@@ -7993,15 +7822,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
 "date": "2026-11-09",
 "type": "Mass",
 "t": "07:30",
@@ -8103,15 +7923,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls"
-},
-{
-"k": "a",
 "date": "2026-11-05",
 "type": "Adoration",
 "t": "19:45",
@@ -8174,26 +7985,6 @@
 "note": "Mary, Mother of God"
 }
 ],
-"18": [
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day Mass with Blessing of Niches in Columbarium after Mass"
-}
-],
 "19": [
 {
 "k": "a",
@@ -8207,24 +7998,6 @@
 {
 "k": "r",
 "date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day"
-},
-{
-"k": "r",
-"date": "2026-11-02",
 "type": "Mass",
 "t": "18:30",
 "lang": "English",
@@ -8336,15 +8109,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:15",
-"lang": "Bahasa Indonesia",
-"loc": "Main Church",
-"note": "All Souls Day Mass"
-},
-{
-"k": "a",
 "date": "2026-12-25",
 "type": "Mass",
 "t": "08:30",
@@ -8434,45 +8198,7 @@
 "note": "Solemnity of Mary, Mother of God"
 }
 ],
-"21": [
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day Mass"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day Mass followed by Blessing of Columbarium"
-}
-],
 "22": [
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-11-09",
@@ -8529,24 +8255,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day mass"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' day mass"
-},
-{
-"k": "a",
 "date": "2026-11-09",
 "type": "Mass",
 "t": "09:00",
@@ -8592,24 +8300,6 @@
 }
 ],
 "24": [
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel Of St Joseph",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-11-04",
@@ -8795,15 +8485,6 @@
 "note": ""
 },
 {
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "o",
 "date": "2026-11-14",
 "type": "Mass",
@@ -8820,45 +8501,9 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "27": [
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-11-09",
@@ -8930,33 +8575,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day with blessing of niches"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day EC with blessing of niches"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "Mandarin",
-"loc": "Main Church",
-"note": "All Souls Day EC + blessing of niches"
 },
 {
 "k": "a",
@@ -9070,24 +8688,6 @@
 },
 {
 "k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Morning lauds followed by Mass"
-},
-{
-"k": "r",
 "date": "2026-11-08",
 "type": "Mass",
 "t": "11:00",
@@ -9106,33 +8706,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "12:15",
-"lang": "Mandarin",
-"loc": "Main Church",
-"note": "All Souls' Day (Blessing of niches)"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls' Day (Blessing of niches)"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Morning lauds followed by Mass. All Souls's Day (Blessing of niches)"
-},
-{
-"k": "a",
 "date": "2026-11-08",
 "type": "Mass",
 "t": "11:00",
@@ -9144,39 +8717,12 @@
 "28": [
 {
 "k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-09",
 "type": "Mass",
 "t": "06:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Day"
 },
 {
 "k": "a",
@@ -9197,24 +8743,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "12:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Mass"
-},
-{
-"k": "a",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "All Souls Mass"
 },
 {
 "k": "a",
@@ -9247,15 +8775,6 @@
 }
 ],
 "32": [
-{
-"k": "r",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-11-09",
@@ -9315,15 +8834,6 @@
 "date": "2026-12-24",
 "type": "Mass",
 "t": "23:59",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-02",
-"type": "Mass",
-"t": "20:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
