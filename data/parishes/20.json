@@ -2,9 +2,9 @@
  "id": 20,
  "name": "Church of St Bernadette",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610301001_49_%20%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E8%AF%B8%E5%9C%A3%E8%8A%82%EF%BC%8811%E6%9C%881%E6%97%A5%EF%BC%89.pdf?alt=media&token=d19956a5-0429-43b5-be78-d027e55982d2"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611061206_50_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%8C%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%888%E6%97%A5%EF%BC%89.pdf?alt=media&token=3cf182d2-a9d4-43f6-a271-a540238d4b32"
  ],
- "fetched_at": "2026-10-30T12:32+08:00",
+ "fetched_at": "2026-11-06T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Filipino",
    "loc": "",
-   "note": ""
+   "note": "4th Sunday of the month"
   },
   {
    "d": 0,
@@ -63,7 +63,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": ""
+   "note": "1st and 3rd Sunday of the month"
   },
   {
    "d": 0,
@@ -193,7 +193,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunday anticipated Mass"
   }
  ],
  "dated": [],
@@ -202,18 +202,44 @@
   "09:00"
  ],
  "notes": [],
- "info": {},
+ "info": {
+  "office_hours": "Mon-Fri 9.30am-6.30pm; Sat 9.30am-7.30pm; Sun 7.30am-7.30pm; closed on public holidays.",
+  "good_to_know": [
+   "Media centre (bookshop): Saturdays 5pm-7.30pm, Sundays 8.30am-1pm; closed on public holidays.",
+   "St Bernadette Exhibition Hall: Tuesdays 4pm-6pm, Saturdays 10am-12pm and 3.30pm-5.30pm, Sundays 9am-1pm and 3pm-5pm; closed on public holidays.",
+   "Thrift shop: Thursdays 10.30am-3pm, Saturdays 9am-4pm, and the last Sunday of the month 9am-1pm.",
+   "Restaurant: Sundays 8.30am-12pm."
+  ]
+ },
  "events": [
   {
    "date": "2026-11-09",
-   "time": "",
-   "title": "2026 年圣伯纳德堂华语退省",
-   "text": "2026 年圣伯纳德堂华语退省"
+   "time": "09:30",
+   "title": "Chinese Retreat: Encountering Christ in Creation",
+   "text": "St Bernadette Hall, 9.30am-5.30pm on the Deepavali public holiday, with talks and small-group sharing led by Fr Peter Koh. $10 includes lunch and tea; register with 立斌兄弟 91195952 or 永昌兄弟 96628873."
+  },
+  {
+   "date": "2026-11-11",
+   "time": "21:30",
+   "title": "All Souls' Month Online Prayer: Communion of Saints",
+   "text": "Nine consecutive nights, 11-19 Nov, 9.30pm-10pm on Zoom (ID 893 9804 8863, password 123456); the line opens at 9.15pm. A guest priest or religious shares each night."
+  },
+  {
+   "date": "2026-11-20",
+   "time": "18:30",
+   "title": "Sunday School Closing Carnival",
+   "text": "Begins with Mass at 6.30pm in the church, then a carnival at the basketball court and entertainment for the children in the parish hall. Dinner is $10 per person; sign up at https://forms.gle/QvNhAZMbMRpFVep16."
+  },
+  {
+   "date": "2026-12-10",
+   "time": "10:00",
+   "title": "Four Districts Chinese Youth Rally (14 years and above)",
+   "text": "10-12 Dec at the Catholic Spirituality Centre, ending Saturday at 5pm; theme 'Take courage, I have conquered the world'. $175; register with 郑天智 91136598 or at https://acams.org.sg/acams/2026-si-jiao-qu-youth-rally."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2610301001_49_%20%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E8%AF%B8%E5%9C%A3%E8%8A%82%EF%BC%8811%E6%9C%881%E6%97%A5%EF%BC%89.pdf?alt=media&token=d19956a5-0429-43b5-be78-d027e55982d2",
-  "date": "2026-10-30"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611061206_50_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%8C%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%888%E6%97%A5%EF%BC%89.pdf?alt=media&token=3cf182d2-a9d4-43f6-a271-a540238d4b32",
+  "date": "2026-11-06"
  },
  "disputes": [],
  "vs_mycatholic": {

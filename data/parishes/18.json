@@ -2,9 +2,9 @@
  "id": 18,
  "name": "St Anne's Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610301207_Oct_31%20%26%20Nov%201%202026.pdf?alt=media&token=362e7bba-7abb-43bc-ab0b-970af566c68c"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611061219_Nov_7%20%26%208%202026.pdf?alt=media&token=37d1328f-e4d4-4528-ac56-0d8bf14583b1"
  ],
- "fetched_at": "2026-10-30T12:32+08:00",
+ "fetched_at": "2026-11-06T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -50,8 +50,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Chinese",
-   "loc": "In Church",
-   "note": ""
+   "loc": "Main Church",
+   "note": "1st and 3rd Sunday of the month"
   },
   {
    "d": 0,
@@ -63,7 +63,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": ""
+   "note": "4th Sunday of the month"
   },
   {
    "d": 0,
@@ -164,7 +164,7 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "In Church",
+   "loc": "Church",
    "note": "Holy Hour"
   },
   {
@@ -195,7 +195,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -208,27 +208,49 @@
    "note": "Sunset Mass"
   }
  ],
- "dated": [],
- "no_weekday_mass_on_public_holidays": true,
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "08:00",
+   "language": "English",
+   "location": "",
+   "title": "Public Holiday Morning Mass",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-14",
+   "time": "15:00",
+   "language": "English",
+   "location": "Main Church Hall",
+   "title": "Divine Mercy Devotion",
+   "action": "add"
+  }
+ ],
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "08:00"
  ],
- "notes": [],
- "info": {
-  "confession": "Confessions: 30 minutes before English weekend Masses in Church.",
-  "office_hours": "Mon–Fri: 9am to 6pm; Sat: 9am to 1pm; 2nd & last Sun of the month: 9am to 12pm"
- },
- "events": [
-  {
-   "date": "2026-11-07",
-   "time": "09:30",
-   "title": "Responders Plus Programme (RPP)",
-   "text": "09:30"
-  }
+ "notes": [
+  "The usual weekday Mass times do not apply on public holidays."
  ],
+ "info": {
+  "adoration": "Holy Hour: 1st Thursday of the month, 8.15pm in the church.",
+  "confession": "30 minutes before English weekend Masses, in the church.",
+  "devotions": [
+   "Columbarium prayers and Mass intentions: last Sunday of the month, at the columbarium after the 11.30am Mass."
+  ],
+  "office_hours": "Secretariat: Mon-Fri 9am-6pm, Sat 9am-1pm, and 9am-12pm on the 2nd and last Sunday of the month.",
+  "good_to_know": [
+   "Church open Mon-Sat 6am-10pm, Sun 6am-6pm; on weekday public holidays 7am-1pm.",
+   "Book & Gift Service Centre open Sat 4pm-6pm and Sun 8am-1pm."
+  ]
+ },
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2610301207_Oct_31%20%26%20Nov%201%202026.pdf?alt=media&token=362e7bba-7abb-43bc-ab0b-970af566c68c",
-  "date": "2026-10-30"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611061219_Nov_7%20%26%208%202026.pdf?alt=media&token=37d1328f-e4d4-4528-ac56-0d8bf14583b1",
+  "date": "2026-11-06"
  },
  "disputes": [],
  "vs_mycatholic": {

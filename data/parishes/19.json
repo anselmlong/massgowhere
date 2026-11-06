@@ -2,9 +2,9 @@
  "id": 19,
  "name": "Church of St Anthony",
  "source_urls": [
-  "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_11_01.pdf"
+  "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_08.pdf"
  ],
- "fetched_at": "2026-10-31T12:35+08:00",
+ "fetched_at": "2026-11-06T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -38,7 +38,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy"
   },
   {
    "d": 0,
@@ -80,7 +80,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Agnes Room",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy"
   },
   {
    "d": 3,
@@ -112,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy"
   },
   {
    "d": 5,
@@ -132,37 +132,10 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": ""
   }
  ],
  "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-10-31",
-   "time": "19:30",
-   "language": "Malayalam",
-   "location": "",
-   "title": "Malayalam Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "20:00",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day Mass (followed by blessing of niches)",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-03",
-   "time": "20:00",
-   "language": "English",
-   "location": "St Agnes Room",
-   "title": "Divine Mercy Devotion",
-   "action": "add"
-  },
   {
    "type": "Mass",
    "date": "2026-11-07",
@@ -189,36 +162,27 @@
    "location": "",
    "title": "Tagalog Mass",
    "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-05",
+   "time": "19:30",
+   "language": "Malayalam",
+   "location": "",
+   "title": "Malayalam Mass",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [
-  "All Saints' Day (1 November) is celebrated at the usual Saturday sunset and Sunday Masses."
- ],
+ "notes": [],
  "info": {
-  "confession": "15 minutes before every Mass.",
-  "devotions": [
-   "Devotion to St Anthony: Tuesdays after the 6.30pm Mass",
-   "Devotion to the Sacred Heart of Jesus: First Friday after the 6.30pm Mass"
-  ],
-  "office_hours": "Monday to Saturday 9am-5pm; Sunday 9am-1pm; closed on public holidays.",
-  "good_to_know": [
-   "Address: 25 Woodlands Ave 1, Singapore 739064.",
-   "Please treat the church and its furnishings with care; several pews have recently been vandalised."
-  ]
+  "confession": "Confessions are 15 minutes before Mass."
  },
- "events": [
-  {
-   "date": "2026-12-31",
-   "time": "",
-   "title": "Thanksgiving Mass 2026 Choir Recruitment",
-   "text": "The Sunday 11:15am choir is recruiting for the Thanksgiving Mass on 31 December 2026, with four rehearsals in November and December. Call or WhatsApp Allison if you are keen."
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://saint-anthony.org/wp-content/uploads/2026/10/Voice-2026_11_01.pdf",
-  "date": "2026-11-01"
+  "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_08.pdf",
+  "date": "2026-11-08"
  },
  "disputes": [],
  "vs_mycatholic": {

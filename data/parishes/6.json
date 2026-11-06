@@ -2,9 +2,9 @@
  "id": 6,
  "name": "Church of the Holy Family",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610292227_All_Saints%20.pdf?alt=media&token=d4eeb6a4-9453-4ca5-859d-7643042b72fb"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611051921_32nd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=6320a90d-2b45-4985-bbea-14ab35062af0"
  ],
- "fetched_at": "2026-10-30T12:31+08:00",
+ "fetched_at": "2026-11-06T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -215,12 +215,21 @@
  ],
  "dated": [
   {
+   "type": "Devotion",
+   "date": "2026-11-14",
+   "time": "15:45",
+   "language": "English",
+   "location": "Grotto",
+   "title": "Monthly Rosary Prayer at the Grotto",
+   "action": "add"
+  },
+  {
    "type": "Adoration",
    "date": "2026-11-20",
    "time": "19:30",
    "language": "English",
    "location": "Main Church",
-   "title": "Eucharistic Adoration",
+   "title": "Eucharistic Adoration & Mass",
    "action": "add"
   },
   {
@@ -230,6 +239,24 @@
    "language": "English",
    "location": "Main Church",
    "title": "Eucharistic Adoration & Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-11",
+   "time": "10:30",
+   "language": "English",
+   "location": "",
+   "title": "Advent Penitential Service – Mass & Intercessory Prayer",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-11",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Advent Penitential Service – Mass & Intercessory Prayer",
    "action": "add"
   }
  ],
@@ -248,88 +275,70 @@
   ],
   "office_hours": "Weekdays 9am–1pm and 2–8pm; Saturdays 9am–1pm and 2–5pm; Sundays 8.30am–1pm.",
   "good_to_know": [
-   "Columbarium open daily 6am–10pm; lift runs daily 9am–7pm, and 8.30am–12 noon on public holidays.",
-   "For Last Rites or urgent care for the seriously ill, call 6344 0046 to reach the priest on duty.",
-   "Katong Catholic Shop is at the parish: Tue–Fri 12 noon–6.30pm, Sat–Sun 8.30am–5.30pm; closed Mondays and public holidays."
+   "Columbarium open daily 6am–10pm; lift runs daily 9am–7pm and on public holidays 8.30am–12 noon.",
+   "Katong Catholic Shop: Tue–Fri 12 noon–6.30pm, Sat–Sun 8.30am–5.30pm; closed Mondays and public holidays.",
+   "For Last Rites or urgent care of the seriously ill after office hours, call 6344 0046 to reach the priest on duty."
   ]
  },
  "events": [
   {
    "date": "2026-11-11",
    "time": "20:00",
-   "title": "Opening the Word of Life",
-   "text": "Reading and reflecting on the coming Sunday's Eucharistic Readings, 8pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are welcome."
+   "title": "The Chosen Encounter & Premiere of The Chosen Season 6",
+   "text": "8pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. Readings for the 33rd Sunday in Ordinary Time Year A, followed by a screening of The Chosen Season 6, Episode 1."
   },
   {
    "date": "2026-11-12",
    "time": "19:45",
-   "title": "The Chosen Encounter & Premiere Season 6 (evening session)",
-   "text": "Scripture, reflection and faith sharing followed by a screening of The Chosen Season 6 Episode 1, 7.45pm–9.45pm at Holy Family Church Level 4 Function Room (take the lift outside the Adoration Room). Scan the QR code to register."
+   "title": "PM Session",
+   "text": "7.45pm–9.45pm at Holy Family Church Level 4 Function Room (take the lift outside the Adoration Room)."
   },
   {
    "date": "2026-11-16",
    "time": "19:45",
-   "title": "Eternal Rest – The Art of Dying Well (Part 1)",
-   "text": "First part of a two-part video programme, 7.45pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are warmly welcome."
+   "title": "Eternal Rest – Part 1",
+   "text": "First part of the video programme 'Eternal Rest – The Art of Dying Well', 7.45pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are welcome."
   },
   {
    "date": "2026-11-21",
    "time": "09:00",
    "title": "Parish Day of Recollection",
-   "text": "Draw closer to Jesus and grow together as a parish, 9am–3pm at Pastoral Centre Levels 3 & 4. All parishioners are warmly invited."
+   "text": "9am–3pm at Pastoral Centre Levels 3 & 4. All parishioners are invited to draw closer to Jesus and grow together as a parish before Advent."
   },
   {
    "date": "2026-11-23",
    "time": "09:30",
-   "title": "The Chosen Encounter & Premiere Season 6 (morning session)",
-   "text": "Scripture, reflection and faith sharing followed by a screening of The Chosen Season 6 Episode 1, 9.30am–11.30am at Pastoral Centre Level 3, St Ephrem Room. Scan the QR code to register."
+   "title": "AM Session",
+   "text": "9.30am–11.30am at Pastoral Centre Level 3, St Ephrem Room. Scan the QR code to register."
   },
   {
    "date": "2026-11-23",
    "time": "19:45",
-   "title": "Eternal Rest – The Art of Dying Well (Part 2)",
-   "text": "Second part of the video programme, 7.45pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are warmly welcome."
+   "title": "Eternal Rest – Part 2",
+   "text": "Second part of the video programme 'Eternal Rest – The Art of Dying Well', 7.45pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall."
   },
   {
    "date": "2026-11-24",
    "time": "19:45",
-   "title": "Advent Reflection (week 1)",
-   "text": "Reflection on the Advent scripture readings with a sharing session, 7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room. Continues on 1, 8 and 15 December. Register by 22 Nov using the QR code."
+   "title": "Advent Reflection 2026",
+   "text": "7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room, on Tuesdays 24 Nov and 1, 8 and 15 Dec. Scripture readings for Advent followed by sharing; bring family and friends. Scan the QR code to register by 22 Nov."
   },
   {
    "date": "2026-11-25",
    "time": "20:00",
+   "title": "The Chosen Encounter & Premiere of The Chosen Season 6",
+   "text": "8pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. Readings for the 1st Sunday in Advent Year B, followed by a screening of The Chosen Season 6, Episode 1."
+  },
+  {
+   "date": "2026-11-27",
+   "time": "19:30",
    "title": "Opening the Word of Life",
-   "text": "Reading and reflecting on the coming Sunday's Eucharistic Readings, 8pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are welcome."
-  },
-  {
-   "date": "2026-12-01",
-   "time": "19:45",
-   "title": "Advent Reflection (week 2)",
-   "text": "Reflection on the Advent scripture readings with a sharing session, 7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room."
-  },
-  {
-   "date": "2026-12-08",
-   "time": "19:45",
-   "title": "Advent Reflection (week 3)",
-   "text": "Reflection on the Advent scripture readings with a sharing session, 7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room."
-  },
-  {
-   "date": "2026-12-15",
-   "time": "19:45",
-   "title": "Advent Reflection (week 4)",
-   "text": "Reflection on the Advent scripture readings with a sharing session, 7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room."
-  },
-  {
-   "date": "2027-01-24",
-   "time": "",
-   "title": "Infant Baptism preparation",
-   "text": "Preparation session on 24 Jan and Baptism on 31 Jan 2027. Apply by 10 Jan at www.holyfamily.org.sg/infant-baptism."
+   "text": "7.30pm–9.30pm at the Adoration Room. Read, reflect and share on the coming Sunday's Eucharistic Readings to prepare spiritually for Sunday Mass."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2610292227_All_Saints%20.pdf?alt=media&token=d4eeb6a4-9453-4ca5-859d-7643042b72fb",
-  "date": "2026-10-29"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611051921_32nd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=6320a90d-2b45-4985-bbea-14ab35062af0",
+  "date": "2026-11-05"
  },
  "disputes": [],
  "vs_mycatholic": {
