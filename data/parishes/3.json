@@ -2,9 +2,9 @@
  "id": 3,
  "name": "Church of Christ the King",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2610301651_CTK_LEAVEN%201%20Nov%20Final.pdf?alt=media&token=9b37860f-c5b0-45e8-b250-b52b653bd441"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611061637_CTK_LEAVEN%208%20Nov%20Final.pdf?alt=media&token=b885935c-e9d4-4ba7-ad64-5e37451ee802"
  ],
- "fetched_at": "2026-10-30T21:05+08:00",
+ "fetched_at": "2026-11-06T21:01+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -70,7 +70,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "Main Church",
-   "note": "4th Sunday"
+   "note": ""
   },
   {
    "d": 1,
@@ -120,7 +120,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 3,
@@ -200,45 +200,18 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset"
+   "note": "Sunset Mass"
   }
  ],
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-02",
-   "time": "07:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
+   "date": "2026-11-09",
    "time": "18:00",
    "language": "English",
    "location": "",
-   "title": "All Souls' Day Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-22",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "Feast of Christ the King Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-12-06",
-   "time": "15:00",
-   "language": "English",
-   "location": "",
-   "title": "Infant Baptism",
-   "action": "add"
+   "title": "No 6pm Mass (public holiday)",
+   "action": "cancel"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
@@ -247,58 +220,52 @@
   "09:00"
  ],
  "notes": [
-  "Public holidays follow a different Mass schedule."
+  "On public holidays the usual weekday Masses are replaced by the public holiday Masses."
  ],
  "info": {
-  "adoration": "Adoration Room: Mon-Sun 7am to 9.30pm; public holidays 7am to 12 noon.",
+  "adoration": "Adoration Room open Mon-Sun 7am to 9.30pm; on public holidays 7am to 12 noon.",
   "confession": "Available half an hour before all weekend Masses.",
   "devotions": [
-   "Divine Mercy: every Tuesday at 8pm in the Main Church.",
-   "Sacred Heart Devotion: every Friday after 6pm evening Mass in the Main Church.",
-   "Nightly Rosary: via Zoom at 8.30pm (except Tuesdays)."
+   "Sacred Heart Devotion: every Friday after the 6pm evening Mass in the Main Church.",
+   "Divine Mercy Devotion: every Tuesday at 8pm in the Main Church."
   ],
-  "office_hours": "Parish Office: Mon-Fri 9am to 6pm; Sat & Sun 9am to 1pm; closed on public holidays.",
-  "good_to_know": [
-   "Tamil Mass is at 6.30pm at the Main Church on the 4th Sunday of the month.",
-   "Reconciliation is available half an hour before all weekend Masses.",
-   "Adoration Room is open Mon-Sun 7am to 9.30pm; on public holidays 7am to 12 noon."
-  ]
+  "office_hours": "Mon-Fri 9am to 6pm; Sat & Sun 9am to 1pm; closed on public holidays."
  },
  "events": [
   {
-   "date": "2026-11-13",
-   "time": "19:00",
-   "title": "TOPSIS 2.0 Training Programme (Part 1)",
-   "text": "Venue: CTK Canteen. 7pm to 10pm. Interested parties call Felicia @ 96833344 or Jeffrey @ 96949222."
+   "date": "2026-11-12",
+   "time": "10:00",
+   "title": "CTK Joyful Seniors",
+   "text": "Session at CTK Canteen, 10am to 12.30pm, organised by the Familylife Ministry. Open to seniors of the parish."
   },
   {
    "date": "2026-11-22",
    "time": "",
-   "title": "Blessing of niches in the columbarium",
-   "text": "After the 6pm Mass."
+   "title": "Feast of Christ the King",
+   "text": "Parish Feast Day celebration with community fellowship. Love offerings can be given through the donation envelopes or PayNow (UEN T08CC4038L, reference: Feast Day 2026)."
   },
   {
    "date": "2026-11-24",
    "time": "19:00",
-   "title": "Free Legal Consultation",
-   "text": "Replaces the 27 October session. Held every last Tuesday of the month at 7pm. Free legal advice to low-income individuals. Registration form from Parish Office; submit at least 5 days in advance. Strictly no walk-ins."
-  },
-  {
-   "date": "2026-11-26",
-   "time": "19:00",
-   "title": "TOPSIS 2.0 Training Programme (Part 2)",
-   "text": "Only for those who completed Part 1 and keen to take on a higher role. Venue: CTK Canteen. 7pm to 10pm. Interested parties call Felicia @ 96833344 or Jeffrey @ 96949222."
+   "title": "Free legal consultation",
+   "text": "Free legal advice for low-income individuals, held on the last Tuesday of the month at 7pm. Registration form from the Parish Office, submitted at least 5 days in advance; strictly no walk-ins."
   },
   {
    "date": "2026-12-01",
    "time": "19:30",
-   "title": "Infant Baptism Preparation Session",
-   "text": "For parents and godparents. Baptism Day: 6 December 2026 at 3pm. Registration closes 20 November 2026. Enquiries: christthekingchurch@catholic.org.sg."
+   "title": "Infant Baptism preparation session",
+   "text": "Preparation for the Infant Baptism on 6 December at 3pm; registration closes 20 November. Parents and godparents must attend. Email christthekingchurch@catholic.org.sg."
+  },
+  {
+   "date": "2026-12-12",
+   "time": "",
+   "title": "CTK Youth Camp 2026",
+   "text": "3D2N stay-in Advent-themed camp from 12-14 December for young people aged 16-25. Sign up at https://tinyurl.com/CTKchannel or the youth telegram channel https://t.me/ctkyouth; queries to youthsofctk@gmail.com."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2610301651_CTK_LEAVEN%201%20Nov%20Final.pdf?alt=media&token=9b37860f-c5b0-45e8-b250-b52b653bd441",
-  "date": "2026-10-30"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611061637_CTK_LEAVEN%208%20Nov%20Final.pdf?alt=media&token=b885935c-e9d4-4ba7-ad64-5e37451ee802",
+  "date": "2026-11-06"
  },
  "disputes": [],
  "vs_mycatholic": {

@@ -2,9 +2,9 @@
  "id": 8,
  "name": "Church of the Holy Trinity",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610301315_01.11.26_All%20Saints%20Day%20A%20A5%20(Copy).pdf?alt=media&token=32e3f424-ccac-41a4-8cd0-aeaaee25438c"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611061330_08.11.26_32nd%20Sunday%20in%20Ordinary%20Time%20A%20A5.pdf?alt=media&token=f0b9782c-f574-413c-87b7-61dc5ac0adfe"
  ],
- "fetched_at": "2026-10-30T21:02+08:00",
+ "fetched_at": "2026-11-06T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -261,92 +261,79 @@
    "note": ""
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "09:00",
+   "language": "English",
+   "location": "Main Church Level 3",
+   "title": "Feast of the Dedication of the Lateran Basilica",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-10",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Christian Meditation",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-13",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Divine Mercy Devotion",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-14",
+   "time": "19:30",
+   "language": "English",
+   "location": "",
+   "title": "Neocatechumenal Way Eucharist",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00"
  ],
  "notes": [],
- "info": {
-  "office_hours": "Mon-Fri 9am-6pm; Sat/Sun 9am-1pm; closed on public holidays",
-  "good_to_know": [
-   "Parish Office: Mon-Fri 9am-6pm; Sat/Sun 9am-1pm; closed on public holidays.",
-   "Infant Baptism for December: registration open until 30 November; forms at Parish Office.",
-   "Church Wedding: approach Parish Office to book at least 1 year in advance.",
-   "Address: 20 Tampines St 11, Singapore 529455. Tel: 67842332. Email: htadmin@holytrinity.org.sg. Website: holytrinity.org.sg."
-  ]
- },
+ "info": {},
  "events": [
   {
-   "date": "2026-11-02",
-   "time": "19:45",
-   "title": "RCIA Mandarin",
-   "text": "19:45"
-  },
-  {
-   "date": "2026-11-03",
-   "time": "19:30",
-   "title": "Legion of Mary (Mandarin)",
-   "text": "19:30"
-  },
-  {
-   "date": "2026-11-04",
+   "date": "2026-11-11",
    "time": "10:00",
    "title": "JOY Ministry, for the Elderly",
-   "text": "10:00"
+   "text": "10.00am – 12.00pm"
   },
   {
-   "date": "2026-11-05",
-   "time": "10:00",
-   "title": "Legion of Mary",
-   "text": "10:00"
-  },
-  {
-   "date": "2026-11-05",
-   "time": "19:30",
-   "title": "Legion of Mary",
-   "text": "19:30"
-  },
-  {
-   "date": "2026-11-05",
+   "date": "2026-11-12",
    "time": "19:45",
    "title": "RCIA",
-   "text": "19:45"
+   "text": "7.45pm – 9.30pm"
   },
   {
-   "date": "2026-11-05",
-   "time": "20:00",
-   "title": "Legion of Mary",
-   "text": "20:00"
+   "date": "2026-11-13",
+   "time": "19:30",
+   "title": "Movie Night",
+   "text": "Parish Hall. Free admission. No registration. Bring your own mats or cushions. Snacks provided while stocks last."
   },
   {
-   "date": "2026-11-06",
-   "time": "09:30",
-   "title": "Catholic Praying Mothers",
-   "text": "09:30"
-  },
-  {
-   "date": "2026-11-06",
-   "time": "19:15",
-   "title": "Legion of Mary (Mandarin)",
-   "text": "19:15"
-  },
-  {
-   "date": "2026-11-07",
-   "time": "11:00",
-   "title": "Legion of Mary",
-   "text": "11:00"
-  },
-  {
-   "date": "2026-11-07",
-   "time": "15:00",
-   "title": "Legion of Mary",
-   "text": "15:00"
+   "date": "2026-11-14",
+   "time": "08:30",
+   "title": "CERT First Aider and CPR + AED Course",
+   "text": "Level 2, Rm 19. Also on 21 November, 8.30am – 6.00pm."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2610301315_01.11.26_All%20Saints%20Day%20A%20A5%20(Copy).pdf?alt=media&token=32e3f424-ccac-41a4-8cd0-aeaaee25438c",
-  "date": "2026-10-30"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611061330_08.11.26_32nd%20Sunday%20in%20Ordinary%20Time%20A%20A5.pdf?alt=media&token=f0b9782c-f574-413c-87b7-61dc5ac0adfe",
+  "date": "2026-11-06"
  },
  "disputes": [],
  "vs_mycatholic": {

@@ -2,9 +2,9 @@
  "id": 7,
  "name": "Church of the Holy Spirit",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610301155_CHS_Bulletin%2031%20Oct%20-%201%20Nov%202026.pdf?alt=media&token=53a35beb-0a84-4bd6-8fbf-5438002f822f"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611061402_CHS_Bulletin%207%20-%208%20November%202026.pdf?alt=media&token=f59c6227-3b45-47a2-9d65-0279d0da4fc4"
  ],
- "fetched_at": "2026-10-30T12:32+08:00",
+ "fetched_at": "2026-11-06T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -12,12 +12,32 @@
  "rules": [
   {
    "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -27,7 +47,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -37,7 +67,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -47,7 +87,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -57,7 +97,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -67,7 +107,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -77,7 +117,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -87,7 +127,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -97,7 +137,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -107,7 +147,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -117,7 +157,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -127,7 +167,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -137,7 +177,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -147,7 +187,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -157,7 +197,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -167,21 +217,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
-   "note": "Sunset Mass"
+   "loc": "",
+   "note": ""
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "09:00"
- ],
- "notes": [
-  "Confessions will cease when Mass begins."
- ],
+ "public_holiday_masses": [],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room: Daily 8:00 AM - 9:30 PM. Chapel: Mon-Fri 8:00 AM - 6:30 PM; Sat 8:00 AM - 12 NN; closed on Sundays and public holidays. Oratory: Mon-Fri 10:00 AM - 10:00 PM; Sat & Sun 1:00 PM - 10:00 PM.",
-  "office_hours": "Mon-Fri: 8:00 AM - 4:00 PM; Sat: 8:00 AM - 12 NN; Sun: 8:00 AM - 1 PM; closed on public holidays."
+  "adoration": "Adoration Room: Daily 8:00 AM – 9:30 PM. Chapel: Mon-Fri 8:00 AM – 6:30 PM, Sat 8:00 AM – 12 NN, closed on Sundays & public holidays. Oratory: Mon-Fri 10:00 AM – 10:00 PM, Sat & Sun 1:00 PM – 10:00 PM.",
+  "confession": "30 minutes before Sunset Mass on Saturday and all Masses on Sunday. Confessions cease when Mass begins.",
+  "office_hours": "Parish Office: Mon-Fri 8:00 AM – 4:00 PM, Sat 8:00 AM – 12 NN, Sun 8:00 AM – 1 PM, closed on public holidays."
  },
  "events": [
   {
@@ -192,8 +239,8 @@
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2610301155_CHS_Bulletin%2031%20Oct%20-%201%20Nov%202026.pdf?alt=media&token=53a35beb-0a84-4bd6-8fbf-5438002f822f",
-  "date": "2026-10-30"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611061402_CHS_Bulletin%207%20-%208%20November%202026.pdf?alt=media&token=f59c6227-3b45-47a2-9d65-0279d0da4fc4",
+  "date": "2026-11-06"
  },
  "disputes": [],
  "vs_mycatholic": {

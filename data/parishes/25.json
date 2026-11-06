@@ -2,9 +2,9 @@
  "id": 25,
  "name": "St Joseph's Church (Victoria Street)",
  "source_urls": [
-  "https://drive.google.com/file/d/1UFviva3bUA_mh7jmwo0TVFruzBPRRJ-M/view?usp=sharing"
+  "https://drive.google.com/file/d/1ahvsuyn7p4URtD3AO13dAxF8I2AUlDDL/view?usp=sharing"
  ],
- "fetched_at": "2026-10-30T21:03+08:00",
+ "fetched_at": "2026-11-06T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -85,7 +85,7 @@
    "t": "17:30",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Adoration",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -116,23 +116,17 @@
  "public_holiday_masses": [
   "10:00"
  ],
- "notes": [],
+ "notes": [
+  "No weekday Mass on public holidays."
+ ],
  "info": {
-  "confession": "Confessions are available 45 minutes before Mass, and 30 minutes before the Spanish Mass.",
-  "devotions": [
-   "Rosary",
-   "Divine Mercy"
-  ],
-  "office_hours": "Monday to Friday: 10am to 7.30pm (Public Holidays: 9am to 11am). Sat: 9am to 7pm. Sun: 9am to 7pm.",
-  "good_to_know": [
-   "Rosary at 5.30pm.",
-   "Divine Mercy at 6pm."
-  ]
+  "confession": "Confession is available 45 minutes before Mass. Confessions are available 30 minutes before the Spanish Mass.",
+  "office_hours": "Monday to Friday: 10:00 to 19:30 (Public Holidays: 09:00 to 11:00); Sat: 09:00 to 19:00; Sun: 09:00 to 19:00."
  },
  "events": [],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1UFviva3bUA_mh7jmwo0TVFruzBPRRJ-M/view?usp=sharing",
-  "date": "2026-11-01"
+  "url": "https://drive.google.com/file/d/1ahvsuyn7p4URtD3AO13dAxF8I2AUlDDL/view?usp=sharing",
+  "date": "2026-11-08"
  },
  "disputes": [],
  "vs_mycatholic": {

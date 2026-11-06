@@ -2,9 +2,9 @@
  "id": 13,
  "name": "Church of Our Lady Queen of Peace",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610301725_2026_11%2001%20%20-%2031st%20Sunday%20in%20Ordinary%20Time-All%20Saints.pdf?alt=media&token=e6f7fd2e-838a-4373-971f-e70aa2e15c0b"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611061503_2026_11%2008%20-%2032nd%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=3074f7d1-71ba-4bfe-869b-7c30d44c5752"
  ],
- "fetched_at": "2026-10-30T21:02+08:00",
+ "fetched_at": "2026-11-06T21:01+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -190,63 +190,47 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "12:15",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "18:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00"
  ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room is open 10am to 9pm.",
-  "devotions": [
-   "In October, the Rosary is recited daily after all evening Masses: 7pm on weekdays and 6pm on weekends, at Assumption Garden."
-  ]
+  "adoration": "Adoration Room: 10:00-21:00."
  },
  "events": [
-  {
-   "date": "2026-11-07",
-   "time": "",
-   "title": "Queen of Peace Charismatic Prayer Group 42nd Anniversary Celebration",
-   "text": "Theme: Faithful Service. Mass celebrant: 萧永伦神父. Includes praise worship, Mass and fellowship. All are welcome."
-  },
   {
    "date": "2026-11-14",
    "time": "14:00",
    "title": "CTIS Certificate in Catholic Bioethics online information session",
-   "text": "Register at https://www.cmg.org.sg/cmg-ctiscertificate-in-bioethics/ to receive the Zoom link."
+   "text": "Online information session conducted by Zoom. Register via the online form to receive the Zoom link."
+  },
+  {
+   "date": "2026-11-22",
+   "time": "",
+   "title": "Remembering Fr Carlo Ly: 20th Anniversary of His Passing",
+   "text": "Articles, photographs and short videos will be on display. Join as we look back on the life, ministry and memories of Fr Carlo Ly. All are welcome; enjoy a meal and fellowship together."
+  },
+  {
+   "date": "2026-12-02",
+   "time": "",
+   "title": "2026 Gift: Walking Prayer • Discovering the Christmas Manger",
+   "text": "Meet at Church of Sts Peter and Paul. Walking prayer in nearby areas, lunch and sharing at Catholic Centre, St Flora. Register by WhatsApp 91536292."
   },
   {
    "date": "2026-12-05",
    "time": "",
-   "title": "QOP Advent Recollection 2026",
-   "text": "Led by Bro Joel Tan. A quiet morning of reflections, prayer and encouragement to prepare for Christ. All are welcome. No background needed."
+   "title": "Parish Advent Recollection",
+   "text": "A peaceful morning of reflections, prayer and encouragement to prepare our hearts for Christ. All are welcome. No background needed. Led by Br. Joel Tan. Register via QR code."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2610301725_2026_11%2001%20%20-%2031st%20Sunday%20in%20Ordinary%20Time-All%20Saints.pdf?alt=media&token=e6f7fd2e-838a-4373-971f-e70aa2e15c0b",
-  "date": "2026-10-30"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611061503_2026_11%2008%20-%2032nd%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=3074f7d1-71ba-4bfe-869b-7c30d44c5752",
+  "date": "2026-11-06"
  },
  "disputes": [],
  "vs_mycatholic": {
