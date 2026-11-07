@@ -2,9 +2,9 @@
  "id": 12,
  "name": "Church of Our Lady of Perpetual Succour",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610310918_All_Saints'%20Day%2001%20Nov%202026.pdf?alt=media&token=3594f6c8-f45c-42eb-85b8-d44cdab45524"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611070950_32nd_Sunday%20in%20Ordinary%20Time%208%20Nov%202026.pdf?alt=media&token=5135498f-a694-4a24-987d-71a4b5b034a8"
  ],
- "fetched_at": "2026-10-31T12:32+08:00",
+ "fetched_at": "2026-11-07T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -39,19 +39,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "10:30",
-   "weeks": [
-    2,
-    4
-   ],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Liturgy of the Word for Children"
   },
   {
    "d": 0,
@@ -115,7 +102,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary Prayers"
   },
   {
    "d": 1,
@@ -145,7 +132,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary Prayers"
   },
   {
    "d": 2,
@@ -165,7 +152,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 3,
@@ -185,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary Prayers"
   },
   {
    "d": 3,
@@ -205,7 +192,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St John/St Luke room",
-   "note": ""
+   "note": "Christian Meditation"
   },
   {
    "d": 4,
@@ -225,7 +212,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary Prayers"
   },
   {
    "d": 4,
@@ -255,7 +242,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": ""
+   "note": "Rosary Prayers"
   },
   {
    "d": 5,
@@ -310,155 +297,67 @@
  ],
  "dated": [
   {
-   "action": "add",
-   "date": "2026-11-02",
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "08:00",
    "language": "English",
    "location": "",
-   "time": "06:30",
-   "title": "All Souls' Day Mass",
-   "type": "Mass"
+   "title": "",
+   "action": "add"
   },
   {
-   "action": "add",
-   "date": "2026-11-02",
-   "language": "English",
-   "location": "",
-   "time": "12:30",
-   "title": "All Souls' Day Mass",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-02",
-   "language": "English",
-   "location": "",
+   "type": "Mass",
+   "date": "2026-11-09",
    "time": "18:00",
-   "title": "All Souls' Day Mass (with blessing of the columbarium)",
-   "type": "Mass"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-05",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "time": "20:00",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-12",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "time": "20:00",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-19",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "time": "20:00",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-26",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "time": "20:00",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-27",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "time": "20:00",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-28",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "time": "13:00",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-28",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "time": "20:00",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-15",
    "language": "English",
    "location": "",
-   "time": "15:00",
-   "title": "Infant Baptism",
-   "type": "Other"
+   "title": "",
+   "action": "cancel"
   }
  ],
- "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
- "notes": [
-  "No infant baptism in Dec 2026.",
-  "Standing along the aisles is not permitted during Mass and services."
+ "no_weekday_mass_on_public_holidays": true,
+ "public_holiday_masses": [
+  "08:00"
  ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration room is open 6:00am to 10:15pm daily, closed every Wednesday from 10:00am to 12 noon for cleaning.",
-  "confession": "Sacrament of Reconciliation is 30 minutes before Weekend Mass in the Main Church.",
+  "adoration": "Adoration room is open 06:00–22:15 daily, closed every Wednesday from 10:00 to 12:00 for cleaning.",
+  "confession": "Confession is 30 minutes before weekend Masses in the Main Church.",
   "devotions": [
-   "Rosary Prayers: Mon to Fri at 5:15pm in the Main Church.",
-   "Divine Mercy Devotion: Every Tue at 6:45pm in the Main Church.",
-   "Christian Meditation: Every Wed at 8:00pm in St John/St Luke room."
+   "Rosary Prayers Mon to Fri at 17:15 in the Main Church.",
+   "Divine Mercy Devotion every Tue at 18:45 in the Main Church.",
+   "Christian Meditation every Wed at 20:00 in St John/St Luke room.",
+   "Novena Service Saturday at 15:30."
   ],
-  "office_hours": "Parish Office: Mon & Sat 9:00am–6:00pm; Tue to Fri 9:00am–8:00pm; Sun 9:00am–1:00pm; closed on public holidays.",
   "good_to_know": [
-   "Public holiday weekday Mass is at 8:00am only.",
-   "Columbarium visiting hours are extended to 10:00pm on 2 Nov.",
-   "No infant baptism in Dec 2026."
+   "Liturgy of the Word for Children every 2nd and 4th Sunday at the 10:30am Mass.",
+   "Bahasa Indonesia Mass on the 2nd Sunday of the month at 15:00.",
+   "Tagalog Mass on the 5th Sunday of the month at 14:30."
   ]
  },
  "events": [
   {
-   "date": "2026-11-08",
-   "time": "14:00",
-   "title": "Infant Baptism Preparation Session",
-   "text": "Infant Baptism Preparation Session for parents and godparents at 14:00 at Verbist Hall. Registration closes 01 Nov at 12:00. Application form and required documents to be submitted to the Parish Secretary; no submission by email."
-  },
-  {
    "date": "2026-11-13",
-   "time": "",
-   "title": "Beginning Experience (BE) Weekend",
-   "text": "Beginning Experience (BE) Weekend, 13–15 Nov 2026, for the permanently separated, divorced or widowed (both males and females). Cost: $230. Registration or enquiries: https://www.besingapore.org/BE_Event."
+   "time": "20:00",
+   "title": "OLPS Small Group Community: Unshakable Peace",
+   "text": "Join the OLPS Small Group Community and Fr. Edward Lim, OCD as he shares how St. Elizabeth of the Trinity found divine peace. At OLPS Verbist Hall."
   },
   {
    "date": "2026-11-20",
    "time": "19:00",
    "title": "OLPS 2026 Parish Conversations",
-   "text": "OLPS 2026 Parish Conversations at Verbist Hall (Level 4), 19:00–21:30. Open to all OLPS parishioners. 19:00–19:45 light dinner and fellowship; 20:00 synodal dialogue. Register by 6 Nov 2026."
+   "text": "Open to all OLPS parishioners. 7:00pm–7:45pm light dinner and fellowship; 8:00pm synodal dialogue. Venue: Verbist Hall (Level 4). Register at https://olps.sg/events/olps-2026-parish-conversations/"
   },
   {
-   "date": "2026-11-21",
-   "time": "",
-   "title": "OLPS Family Weekend 2026",
-   "text": "OLPS Family Weekend 2026, 21–22 Nov 2026 at St Stephen’s School. Open to families with children aged 7 to 21. Registration fee: $50 per family. Registration closes 6 Nov 2026. Enquiries: James @ 9880 2203 or familylife@olps.sg."
+   "date": "2026-11-25",
+   "time": "19:30",
+   "title": "Discussion Night for Young Adults on Artificial Intelligence",
+   "text": "Join Caritas Young Adults for a night of discussion on AI tools from the lens of faith. At Church of Holy Spirit, room 03-14. Sign up at bit.ly/streetcreed or email formation.cst@caritas-singapore.org."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610310918_All_Saints'%20Day%2001%20Nov%202026.pdf?alt=media&token=3594f6c8-f45c-42eb-85b8-d44cdab45524",
-  "date": "2026-10-31"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611070950_32nd_Sunday%20in%20Ordinary%20Time%208%20Nov%202026.pdf?alt=media&token=5135498f-a694-4a24-987d-71a4b5b034a8",
+  "date": "2026-11-07"
  },
  "disputes": [],
  "vs_mycatholic": {

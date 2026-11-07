@@ -2,9 +2,9 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611010949_Spotlight_Nov%2026%20(final).pdf?alt=media&token=acaa8c84-c3f2-4d3b-9ea2-6e4a0ad4799c"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611071054_CHURCH_BULLETIN%20%208-14%20NOV.pdf?alt=media&token=5e78c65a-5131-46ea-a7a9-6aae8c10b8ff"
  ],
- "fetched_at": "2026-11-01T12:31+08:00",
+ "fetched_at": "2026-11-07T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -16,8 +16,8 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "Mandarin",
-   "loc": "",
+   "lang": "Chinese",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -48,8 +48,8 @@
    ],
    "except": [],
    "type": "Mass",
-   "lang": "Bahasa Indonesia",
-   "loc": "",
+   "lang": "Indonesian",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -61,7 +61,7 @@
    ],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -73,7 +73,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -83,7 +83,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -93,7 +93,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -103,7 +103,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -113,7 +113,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -123,7 +123,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -133,7 +133,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -143,7 +143,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -153,7 +153,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -163,7 +163,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -173,7 +173,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -183,7 +183,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -193,7 +193,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -203,7 +203,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -213,7 +213,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -223,7 +223,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -233,8 +233,42 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "19:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "Blessed Sacrament Church",
+   "note": "Eucharistic Adoration (Sacred Heart of Jesus)"
+  },
+  {
+   "d": 5,
+   "t": "19:45",
+   "weeks": [
+    2
+   ],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Blessed Sacrament Church",
+   "note": "Intercessory Prayers"
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Blessed Sacrament Church",
+   "note": "Divine Mercy"
   },
   {
    "d": 6,
@@ -243,8 +277,30 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "09:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "Blessed Sacrament Church",
+   "note": "Eucharistic Adoration (Immaculate Heart of Mary)"
+  },
+  {
+   "d": 6,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Blessed Sacrament Church",
+   "note": "Novena to Our Blessed Mother"
   },
   {
    "d": 6,
@@ -253,7 +309,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   },
   {
@@ -265,36 +321,44 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "",
+   "loc": "Blessed Sacrament Church",
    "note": ""
   }
  ],
- "dated": [],
- "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [
-  "08:30"
- ],
- "notes": [],
- "info": {
-  "office_hours": "10am-6pm, Lunch Hours 1pm-2pm",
-  "good_to_know": [
-   "Infant Baptism: every 2nd Sunday at the 5.30pm Mass.",
-   "Anointing of the Sick: by appointment with the Secretariat.",
-   "Holy Matrimony: couples must inform the Priest at least 6 months before booking.",
-   "Adult Baptism or Confirmation: contact rcia.bsc@gmail.com."
-  ]
- },
- "events": [
+ "dated": [
   {
-   "date": "2026-11-21",
-   "time": "10:00",
-   "title": "OYP Outreach for Secondary 4 & 5 Students",
-   "text": "OYP Outreach for Secondary 4 & 5 Students"
+   "type": "Mass",
+   "date": "2026-11-13",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Alphonsus",
+   "title": "Pieta Singapore Annual Memorial Mass 2026",
+   "action": "add"
   }
  ],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [],
+ "notes": [],
+ "info": {
+  "confession": "Confession is available 15 minutes before Masses.",
+  "devotions": [
+   "Divine Mercy every Friday at 8pm.",
+   "Eucharistic Adoration on the 1st Friday at 7pm and 1st Saturday at 9am.",
+   "Intercessory Prayers on the 2nd Friday at 7.45pm.",
+   "Novena to Our Blessed Mother every Saturday at 5pm."
+  ],
+  "office_hours": "Parish Office: Tel 64740582, open 10am-6pm.",
+  "good_to_know": [
+   "Infant Baptism: every 2nd Sunday of the month at the 5.30pm Mass. Contact the Parish Office to register interest 2 weeks in advance.",
+   "Anointing of the Sick: make an appointment with the Secretariat for a priest to minister.",
+   "Holy Matrimony: couples must inform the Priest at least 6 months before booking the Church for the Wedding Mass/Service.",
+   "Bereavement: contact the Secretariat for help and advice before contacting a Funeral Director."
+  ]
+ },
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611010949_Spotlight_Nov%2026%20(final).pdf?alt=media&token=acaa8c84-c3f2-4d3b-9ea2-6e4a0ad4799c",
-  "date": "2026-11-01"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611071054_CHURCH_BULLETIN%20%208-14%20NOV.pdf?alt=media&token=5e78c65a-5131-46ea-a7a9-6aae8c10b8ff",
+  "date": "2026-11-07"
  },
  "disputes": [],
  "vs_mycatholic": {

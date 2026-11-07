@@ -1,19 +1,19 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-06T21:01+08:00",
+ "fetchedAt": "2026-11-07T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
-   "title": "1st Nov - 7th Nov 2026",
-   "date": "2026-11-01",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611010949_Spotlight_Nov%2026%20(final).pdf?alt=media&token=acaa8c84-c3f2-4d3b-9ea2-6e4a0ad4799c",
+   "title": "8 - 14 Nov 2026",
+   "date": "2026-11-07",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611071054_CHURCH_BULLETIN%20%208-14%20NOV.pdf?alt=media&token=5e78c65a-5131-46ea-a7a9-6aae8c10b8ff",
    "page": "https://mycatholic.sg/bulletin/blessedsacrament"
   },
   "2": {
    "from": "myCatholicSG",
-   "title": "1 November 2026",
-   "date": "2026-10-30",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2610301835_Bulletin_20261101.pdf?alt=media&token=6a8cbc3f-473b-4540-9ba5-0de48b09fe13",
+   "title": "8 November 2026",
+   "date": "2026-11-06",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611062103_Bulletin_20261108.pdf?alt=media&token=115f4c8a-66a5-4ab1-8dff-3f73d78cb62c",
    "page": "https://mycatholic.sg/bulletin/cathedral"
   },
   "3": {
@@ -25,16 +25,16 @@
   },
   "4": {
    "from": "myCatholicSG",
-   "title": "31 October/01 November 2026 - Vol 44 - Solemnity of All Saints",
-   "date": "2026-10-31",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2610311016_CDM_Parish%20Bulletin%20Vol2026.44%20%E2%80%93%2031Oct-01Nov_v2.pdf?alt=media&token=3d737376-b30c-4632-8c4f-68c6dfd8ba4d",
+   "title": "7/8 November 2026 - Vol 45 - 32nd Sunday in Ordinary Time",
+   "date": "2026-11-07",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611070915_CDM_Parish%20Bulletin%20Vol2026.45%E2%80%93%2007-08Nov_v2.pdf?alt=media&token=fc0750e0-0223-485e-9e98-f89ec6fd8e9e",
    "page": "https://mycatholic.sg/bulletin/divinemercy"
   },
   "5": {
    "from": "myCatholicSG",
-   "title": "Solemnity of All Saints",
-   "date": "2026-10-31",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2610311136_English_Bulletin%201%20Nov.pdf?alt=media&token=280f26d6-2dba-4f3c-bc65-a5ae1e5f48bf",
+   "title": "Thirty-second Sunday in Ordinary Time",
+   "date": "2026-11-07",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611070159_English_Bulletin%208%20Nov.pdf?alt=media&token=53ee7d42-01ff-413f-a177-16677598c946",
    "page": "https://mycatholic.sg/bulletin/holycross"
   },
   "6": {
@@ -81,9 +81,9 @@
   },
   "12": {
    "from": "myCatholicSG",
-   "title": "OLPS Weekly Bulletin 01 Nov 2026",
-   "date": "2026-10-31",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2610310918_All_Saints'%20Day%2001%20Nov%202026.pdf?alt=media&token=3594f6c8-f45c-42eb-85b8-d44cdab45524",
+   "title": "OLPS Weekly Bulletin 08 Nov 2026",
+   "date": "2026-11-07",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611070950_32nd_Sunday%20in%20Ordinary%20Time%208%20Nov%202026.pdf?alt=media&token=5135498f-a694-4a24-987d-71a4b5b034a8",
    "page": "https://mycatholic.sg/bulletin/perpertualsuccour"
   },
   "13": {
@@ -95,9 +95,9 @@
   },
   "14": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 01 Nov 2026",
-   "date": "2026-10-31",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2610311242_Bulletin_-%201%20NOV%202026.pdf?alt=media&token=012e4533-5f00-4e3b-8731-73980362e350",
+   "title": "Bulletin - 08 Nov 2026",
+   "date": "2026-11-07",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2611071146_Bulletin_-%2008%20NOV%202026%20(latest).pdf?alt=media&token=3405b6cf-62f0-4a5f-9c69-05075533e3e7",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {
