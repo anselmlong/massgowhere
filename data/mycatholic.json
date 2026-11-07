@@ -1235,16 +1235,6 @@
 "note": "Novena to Our Lady of Perpetual Succour"
 },
 {
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "19:30",
-"lang": "Mandarin",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 1,
 "weeks": [],
 "except": [],
@@ -1272,6 +1262,16 @@
 "t": "18:30",
 "lang": "English",
 "loc": "Main Church",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "19:30",
+"lang": "Mandarin",
+"loc": "Church - 4th Floor Big Room",
 "note": ""
 },
 {
@@ -6438,15 +6438,6 @@
 "5": [
 {
 "k": "r",
-"date": "2026-11-05",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-12",
 "type": "Mass",
 "t": "12:15",
@@ -7340,6 +7331,78 @@
 "note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
 },
 {
+"k": "r",
+"date": "2026-12-04",
+"type": "Confession",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday from 730pm to 830pm."
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Confession",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday from 730pm to 830pm."
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Adoration",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
+},
+{
+"k": "r",
+"date": "2026-12-04",
+"type": "Adoration",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Confession",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday from 730pm to 830pm."
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Adoration",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -7355,7 +7418,7 @@
 "t": "20:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Advent Confession for Serangoon District"
+"note": "Advent Penitential Service for Serangoon District"
 },
 {
 "k": "a",
@@ -7394,22 +7457,85 @@
 "note": ""
 },
 {
-"k": "r",
+"k": "a",
 "date": "2026-12-04",
 "type": "Confession",
 "t": "19:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "Every Friday from 730pm to 830pm."
+"note": ""
 },
 {
-"k": "r",
+"k": "a",
 "date": "2027-01-01",
-"type": "Confession",
-"t": "19:30",
+"type": "Mass",
+"t": "08:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Every Friday from 730pm to 830pm."
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Christmas Eve"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "15:00",
+"lang": "Vietnamese",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-23",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Simbang Gabi"
 }
 ],
 "17": [
@@ -8330,15 +8456,6 @@
 ],
 "24": [
 {
-"k": "a",
-"date": "2026-11-05",
-"type": "Mass",
-"t": "20:00",
-"lang": "Mandarin",
-"loc": "Main Church",
-"note": "Memorial Mass (Chinese)"
-},
-{
 "k": "r",
 "date": "2026-11-06",
 "type": "Mass",
@@ -8354,15 +8471,6 @@
 "t": "18:30",
 "lang": "English",
 "loc": "Chapel Of St Joseph",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
 "note": ""
 },
 {
@@ -8382,6 +8490,33 @@
 "lang": "English",
 "loc": "Chapel Of St Joseph",
 "note": "Holy Hour for Vocations"
+},
+{
+"k": "r",
+"date": "2026-11-20",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "08:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-20",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "SFXMS Feast Day Celebrations & Installation of Ministries"
 }
 ],
 "25": [
