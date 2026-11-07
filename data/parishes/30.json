@@ -2,9 +2,9 @@
  "id": 30,
  "name": "Church of St Vincent de Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610251740_30TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2025%20October%202026.pdf?alt=media&token=896d52c8-2806-4645-ad23-38b803925b19"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611071516_32ND_SUNDAY%20IN%20ORDINARY%20TIME%20-%208%20Nov%202026.pdf?alt=media&token=21ff1599-18da-4404-8292-d077d5809601"
  ],
- "fetched_at": "2026-10-26T12:32+08:00",
+ "fetched_at": "2026-11-07T21:01+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": ""
+   "note": "Every 5th Sunday"
   },
   {
    "d": 0,
@@ -87,10 +87,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 1,
@@ -137,10 +137,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 2,
@@ -187,10 +187,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 3,
@@ -247,10 +247,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 4,
@@ -297,10 +297,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours-Divine Office"
+   "note": "Liturgy of the Hours (Divine Office)"
   },
   {
    "d": 5,
@@ -363,113 +363,62 @@
    "note": "Sunset Mass"
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-10-31",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "Vigil Mass for All Saints Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "07:00",
-   "language": "English",
-   "location": "",
-   "title": "All Saints Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "11:00",
-   "language": "English",
-   "location": "",
-   "title": "All Saints Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "All Saints Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "07:00",
-   "language": "English",
-   "location": "",
-   "title": "All Souls Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "All Souls Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-07",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "Sacrament of Confirmation",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room open every day from 07:00 to 18:00; closed on Public Holidays.",
-  "confession": "Confession is available 30 minutes before to 10 minutes before weekend Masses.",
+  "adoration": "Adoration Room open every day 7am to 6pm; closed on public holidays.",
+  "confession": "30 minutes before to 10 minutes before Mass, weekend Masses only.",
   "devotions": [
-   "Rosary: Monday–Saturday 06:15 and 17:30; Sunday 30 minutes before Mass.",
-   "Divine Mercy: Wednesdays 17:00 in St Faustina Room.",
-   "Sacred Heart of Jesus: Fridays after 18:00 Mass.",
-   "Liturgy of the Hours-Divine Office: Monday–Friday 07:45 in St Faustina Room."
+   "Rosary: Mondays to Saturdays 6.15am and 5.30pm; Sundays 30 minutes before Mass",
+   "Divine Mercy: Wednesdays 5pm, St Faustina Room",
+   "Sacred Heart of Jesus: Fridays after the 6pm Mass",
+   "Liturgy of the Hours (Divine Office): Mondays to Fridays 7.45am, St Faustina Room"
   ],
-  "office_hours": "Parish Office: Weekdays 09:00–18:00; Saturday 09:00–12:00 and 17:00–18:00; Sunday 08:00–12:00 and 17:00–18:00; closed on Public Holidays.",
+  "office_hours": "Parish Office: weekdays 9am to 6pm; Saturdays 9am to 12pm and 5pm to 6pm; Sundays 8am to 12pm and 5pm to 6pm; closed on public holidays.",
   "good_to_know": [
-   "All Saints Day (1 Nov) is a Holy Day of Obligation. The 11am Mass is a Family Mass; children from Catechetical Year 1 & 2 and CGS will be dressed as their favourite saint and will be part of the entrance procession.",
-   "All Souls Day (2 Nov) Masses are at 07:00 and 18:00. You are invited to write the names of your dearly departed on slips of post-its and paste them on the wooden cross on the left of the sanctuary to be offered up at the All Souls Day Masse",
-   "59 youths and adults will receive the Sacrament of Confirmation on Saturday, 7 Nov at the 18:00 Mass."
+   "The carpark gate at Jalan Resak is closed immediately after Mass; please exit via the autogate to Yio Chu Kang Road.",
+   "Do not park in front of the priests' parking lots or along 1 to 19 Jalan Jarak.",
+   "Alternative parking: Yio Chu Kang Road between lamposts 156 and 166 on Saturdays 6pm to 7.15pm, Jalan Kelulut between lamposts 4 and 9 on Sundays 9am to 12.15pm, and HDB carparks at Blk 988 Buangkok Green (free on Sundays and public holiday",
+   "Sunday fellowship and breakfast at Fr Saussard's Café after the morning Masses; the food is for eating in the canteen only, with no takeaways."
   ]
  },
  "events": [
   {
-   "date": "2026-11-13",
-   "time": "",
-   "title": "70th Beginning Experience (BE) Weekend",
-   "text": "Live-in weekend getaway for single-again individuals to move on from grief into a new beginning. At Lifesprings Canossian Spirituality Centre. Register at https://www.besingapore.org/BE_Event."
+   "date": "2026-11-14",
+   "time": "09:00",
+   "title": "Holy Innocents' High School Open House",
+   "text": "Saturday 14 November, 9am to 12pm. All Primary 6 students and their parents are welcome to explore the school grounds and learn about its programmes."
   },
   {
-   "date": "2026-11-13",
-   "time": "",
-   "title": "Camp Mosaic – Where Every Piece Belongs",
-   "text": "Stay-in camp for youth aged 13 to 21, organised by CFC Youth for Christ Singapore. At The Girls’ Brigade, 795 Upper Serangoon Road, Singapore 534667. Scan QR code for details and to register."
+   "date": "2026-11-14",
+   "time": "14:30",
+   "title": "Made for More (young people aged 18-30)",
+   "text": "Four sessions on 14, 21 and 28 November and 5 December, 2.30pm to 5.30pm at Fr Saussard's Café, exploring identity, relationships and living well. Free and sponsored for the youth of the parish; sign up with the parish."
+  },
+  {
+   "date": "2026-11-25",
+   "time": "19:30",
+   "title": "Young Adults' Discussion Night: Artificial Intelligence and the Catholic Faith",
+   "text": "Wednesday 25 November, 7.30pm to 9.30pm at Church of the Holy Spirit, Room 03-14, with pizza and ice-cream. Sign up at bit.ly/streetcreed or email formation.cst@caritas-singapore.org."
   },
   {
    "date": "2026-11-28",
    "time": "",
-   "title": "SVDP Corporal Works of Mercy Advent Outreach 2026",
-   "text": "Theme: Bringing Christ’s Love to Our Community. Volunteer for one of four missions: Christmas with children at Gracehaven Children’s Home; A Heartland Christmas; outing with senior parishioners; prayer warriors. Register interest via QR code."
+   "title": "Advent Outreach 2026: Corporal Works of Mercy",
+   "text": "Saturday 28 November. Volunteer for one of four missions - Christmas with the children at Gracehaven Children's Home, a Heartland Christmas, an outing with senior parishioners, or prayer warriors - or donate via PayNow to UEN T08CC4034E, Ref: CWOM 2026. Register through the QR code."
+  },
+  {
+   "date": "2026-12-04",
+   "time": "19:00",
+   "title": "The Lord is Near: Come Home to Him Who Comes (Advent retreat)",
+   "text": "Stay-in retreat from Friday 4 December, 7pm, to Sunday 6 December, 4pm, for Catholics who are same-sex attracted or identify as LGBTQ. Register through the QR code."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2610251740_30TH_SUNDAY%20IN%20ORDINARY%20TIME%20-%2025%20October%202026.pdf?alt=media&token=896d52c8-2806-4645-ad23-38b803925b19",
-  "date": "2026-10-25"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611071516_32ND_SUNDAY%20IN%20ORDINARY%20TIME%20-%208%20Nov%202026.pdf?alt=media&token=21ff1599-18da-4404-8292-d077d5809601",
+  "date": "2026-11-07"
  },
  "disputes": [],
  "vs_mycatholic": {
