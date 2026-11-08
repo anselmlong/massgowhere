@@ -6446,15 +6446,6 @@
 "note": ""
 },
 {
-"k": "a",
-"date": "2026-11-06",
-"type": "Adoration",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "r",
 "date": "2026-11-09",
 "type": "Mass",
@@ -6491,26 +6482,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Eucharistic Adoration & Mass"
-}
-],
-"7": [
-{
-"k": "a",
-"date": "2026-11-06",
-"type": "Mass",
-"t": "19:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Mass followed by Parish Holy Hour"
-},
-{
-"k": "r",
-"date": "2026-11-06",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "CHAPEL",
-"note": ""
 }
 ],
 "8": [
@@ -7294,15 +7265,6 @@
 }
 ],
 "11": [
-{
-"k": "r",
-"date": "2026-11-06",
-"type": "Adoration",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
-},
 {
 "k": "r",
 "date": "2026-11-09",
@@ -8455,15 +8417,6 @@
 }
 ],
 "24": [
-{
-"k": "r",
-"date": "2026-11-06",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-11-09",
