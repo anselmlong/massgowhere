@@ -2,9 +2,9 @@
  "id": 15,
  "name": "Church of the Risen Christ",
  "source_urls": [
-  "https://drive.google.com/file/d/1LHUbcU70apy9a53faShb6grW8cySimJk/view"
+  "https://drive.google.com/file/d/1u1aCqV2VY0_JQoln4DQSYLZ8ceBEJWda/view"
  ],
- "fetched_at": "2026-10-30T12:32+08:00",
+ "fetched_at": "2026-11-08T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -60,7 +60,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": ""
+   "note": "4th Sunday"
   },
   {
    "d": 0,
@@ -82,7 +82,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": ""
+   "note": "2nd Sunday"
   },
   {
    "d": 1,
@@ -172,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Parish Hall",
-   "note": "Breaking of the Word (BOW)"
+   "note": "Breaking of the Word: spiritual gathering for weekend liturgy with a gospel reflection."
   },
   {
    "d": 5,
@@ -186,13 +186,23 @@
   },
   {
    "d": 5,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "St Cecilia's Room",
+   "note": "Mothers' Prayer Group, 9.30am-11.00am."
+  },
+  {
+   "d": 5,
    "t": "15:00",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
    "loc": "Parish Hall",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy Devotion."
   },
   {
    "d": 5,
@@ -214,7 +224,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": ""
+   "note": "1st Friday"
   },
   {
    "d": 6,
@@ -237,35 +247,56 @@
    "note": ""
   }
  ],
- "dated": [],
- "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [
-  "07:30"
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-09",
+   "time": "07:30",
+   "language": "English",
+   "location": "",
+   "title": "Public Holiday Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-13",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Alphonsus (Novena Church)",
+   "title": "PIETA Memorial Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-20",
+   "time": "18:30",
+   "language": "English",
+   "location": "Church of St Joseph, Bukit Timah",
+   "title": "Ordination to the Order Diaconate of Bro Francis Tan",
+   "action": "add"
+  }
  ],
+ "no_weekday_mass_on_public_holidays": true,
+ "public_holiday_masses": [],
  "notes": [
-  "No evening Mass on public holidays."
+  "Parish office closed on 8 Nov and 9 Nov.",
+  "No evening Mass on 9 Nov (public holiday)."
  ],
  "info": {
   "adoration": "Adoration room closes at 18:00 on 9 Nov.",
   "devotions": [
-   "Divine Mercy Devotion at 15:00 on Fridays in the Parish Hall.",
-   "Breaking of the Word (BOW) at 20:00 on Thursdays in the Parish Hall."
+   "All Souls Month Prayer: 11-19 Nov, every night 21:30-22:00 (line opens 21:15) on Zoom 893 9804 8863, password 123456."
   ],
+  "office_hours": "Parish office closed on 8 Nov and 9 Nov.",
   "good_to_know": [
-   "Parish office closed on 8 Nov (Deepavali) and 9 Nov (public holiday)."
+   "No evening Mass on 9 Nov (public holiday).",
+   "No talk on 9 Nov for Aflame! Charismatic Prayer Community."
   ]
  },
- "events": [
-  {
-   "date": "2026-11-13",
-   "time": "",
-   "title": "Beginning Experience Ministry 70th BE Weekend",
-   "text": "13 to 15 Nov 2026 (Fri night till Sun afternoon) for people who are separated, divorced or widowed. Registration at https://www.besingapore.org/BE_Event"
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1LHUbcU70apy9a53faShb6grW8cySimJk/view",
-  "date": "2026-11-01"
+  "url": "https://drive.google.com/file/d/1u1aCqV2VY0_JQoln4DQSYLZ8ceBEJWda/view",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {

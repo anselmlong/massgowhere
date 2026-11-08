@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-07T21:01+08:00",
+ "fetchedAt": "2026-11-08T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -103,8 +103,8 @@
   "15": {
    "from": "website",
    "title": "",
-   "date": "2026-11-01",
-   "url": "https://drive.google.com/file/d/1LHUbcU70apy9a53faShb6grW8cySimJk/view",
+   "date": "2026-11-14",
+   "url": "https://drive.google.com/file/d/1u1aCqV2VY0_JQoln4DQSYLZ8ceBEJWda/view",
    "page": "https://www.risenchrist.org.sg/bulletin"
   },
   "16": {
