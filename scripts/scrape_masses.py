@@ -98,13 +98,20 @@ def ask(parish, bulletin_date, text, model):
                  "HTTP-Referer": "https://massgowhere.com", "X-Title": "massgowhere"})
     with urllib.request.urlopen(req, timeout=180) as r:
         out = json.load(r)
-    return json.loads(out["choices"][0]["message"]["content"])["masses"]
+    choice = (out.get("choices") or [{}])[0]
+    content = (choice.get("message") or {}).get("content")
+    if not content:
+        raise ValueError(f"model returned no content (finish_reason={choice.get('finish_reason')})")
+    return json.loads(content)["masses"]
 
 
 def one(pid, rec, name, model):
     try:
         text = sp.bulletin_text(rec["url"])
-        rows = ask(name, rec.get("date", ""), text, model)
+        try:
+            rows = ask(name, rec.get("date", ""), text, model)
+        except ValueError:  # an empty or unparseable answer: one more try before giving up on the parish
+            rows = ask(name, rec.get("date", ""), text, model)
     except Exception as e:  # noqa: BLE001 - reported per parish, never fatal
         return pid, name, [], f"{type(e).__name__}: {e}", rec.get("date", "")
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
