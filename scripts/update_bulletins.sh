@@ -24,10 +24,12 @@ NEW=$(python3 scripts/fetch_bulletins.py --unread)
 if [ -n "$NEW" ]; then
   echo "reading new bulletins: $NEW"
   python3 scripts/scrape_parishes.py --bulletin-only --only "$NEW" --workers 4 || echo "some bulletins could not be read"
+  # every Mass in those same bulletins, unfiltered, into data/masses.db (the holiday timetables come from here)
+  python3 scripts/scrape_masses.py --only "$NEW" --workers 4 || echo "some bulletins could not be listed"
 fi
 python3 scripts/build_data.py
-git add data/bulletins_latest.json data/parishes public/data.json public/parish
+git add data/bulletins_latest.json data/parishes data/masses.db public/data.json public/parish
 if git diff --cached --quiet; then echo "no changes"; exit 0; fi
 git -c user.name="MassGoWhere bulletins" -c user.email="refresh@massgowhere.com" commit --quiet -m "data: this week's bulletins $(date +%F)"
 git push --quiet origin HEAD:main || { echo "push rejected; the next run starts again from origin/main" >&2; exit 1; }
-echo "pushed; the site reads this from GitHub, so Vercel skips the build"
+echo "pushed; Vercel rebuilds on the data commit, so the site serves the new data.json"

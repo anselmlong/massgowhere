@@ -11,6 +11,7 @@ Usage: python3 scripts/build_data.py
 No network access.
 """
 import json
+import sqlite3
 import os
 import re
 from datetime import datetime, timedelta, timezone
@@ -99,6 +100,14 @@ def clean_notes(entries, weekly=False):
 # engine swaps them in on a weekday holiday.
 def public_holiday_times():
     out = {}
+    # the bulletin corpus (scripts/scrape_masses.py) knows a holiday timetable for more parishes than the page scrape
+    dbfile = os.path.join(ROOT, "data", "masses.db")
+    if os.path.exists(dbfile):
+        with sqlite3.connect(dbfile) as db:
+            for pid, times in db.execute(
+                    "SELECT parish_id, GROUP_CONCAT(DISTINCT time) FROM masses WHERE kind='public_holiday' "
+                    "GROUP BY parish_id"):
+                out[str(pid)] = sorted(times.split(","))
     pdir = os.path.join(ROOT, "data", "parishes")
     if not os.path.isdir(pdir):
         return out
@@ -106,9 +115,10 @@ def public_holiday_times():
         if not name.endswith(".json"):
             continue
         p = json.load(open(os.path.join(pdir, name)))
+        pid = str(p.get("id") or name[:-5])
         times = [t for t in (p.get("public_holiday_masses") or []) if t]
-        if times:
-            out[str(p.get("id") or name[:-5])] = times
+        if times and pid not in out:  # the bulletin wins; the page is the fallback
+            out[pid] = times
     return out
 
 
