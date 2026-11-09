@@ -45,6 +45,8 @@
     const dated = (data.dated[pid] || []).filter(want);
     const start = sgtDay(fromMs);
     const byKey = new Map();
+    // keys that came from the parish's holiday timetable: the parish's own dated entries outrank them
+    const phKeys = new Set();
 
     // parishes with no weekday Mass on public holidays (hand-checked): their regular Monday-Friday Masses drop out
     // that day; a dated Mass the parish lists for the holiday still shows
@@ -52,7 +54,6 @@
     // a parish whose page publishes a public-holiday timetable: on a weekday holiday those times replace the
     // normal weekday Masses (usually there are none that day)
     const phTimes = (data.phMasses || {})[pid] || [];
-    const byDate = (data.byDate || {})[pid] || {};
     const phEvent = (x) => (typeof x === "string" ? { t: x, type: "Mass", lang: "", loc: "" } : { type: "Mass", ...x });
     for (let i = 0; i <= days; i++) {
       const day = new Date(start.getTime() + i * 86400000);
@@ -65,9 +66,14 @@
         if ((skipWeekday || phOnly) && (r.type || "Mass") === "Mass") continue;
         if (ruleOn(r, day)) byKey.set(slotKey(date, r), { ...r, date });
       }
-      if (phOnly) for (const x of phTimes) { const e = phEvent(x); byKey.set(slotKey(date, e), { ...e, date }); }
+      if (phOnly) for (const x of phTimes) {
+        const e = phEvent(x);
+        // a parish that also lists its weekday Mass at the same hour must not get it twice
+        const dup = [...byKey.values()].some((v) => v.date === date && v.t === e.t && (v.type || "Mass") === "Mass");
+        if (!dup) { const k = slotKey(date, e); byKey.set(k, { ...e, date }); phKeys.add(k); }
+      }
       // hand-checked correction for one date: drop the Masses that didn't happen, add the ones that did
-      const ov = byDate[date];
+      const ov = (data.byDate || {})[date] && (data.byDate || {})[date][pid];
       if (ov) {
         for (const t of ov.drop || []) {
           for (const [k, e] of byKey) if (e.date === date && e.t === t) byKey.delete(k);
@@ -76,6 +82,8 @@
       }
     }
     for (const e of dated) {
+      // the parish's own entry for that hour replaces the holiday-timetable guess, not joins it
+      for (const k of [...phKeys]) { const v = byKey.get(k); if (v && v.date === e.date && v.t === e.t) { byKey.delete(k); phKeys.delete(k); } }
       if (e.k !== "r" && e.k !== "o") continue;
       if (byKey.delete(slotKey(e.date, e))) continue;
       // location strings get renamed after cancellations are entered: accept same date + time + type,

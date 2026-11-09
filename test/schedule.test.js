@@ -100,11 +100,21 @@ test("a hand-checked date override drops and adds Masses for one parish only", (
                   { d: 0, t: "08:00", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" }],
              11: [{ d: 0, t: "12:30", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" }] },
     dated: {}, holidays: {},
-    byDate: { 10: { "2026-11-08": { drop: ["12:30"], add: [{ t: "09:00", lang: "English", loc: "Main Church" }] } } },
+    byDate: { "2026-11-08": { 10: { drop: ["12:30"], add: [{ t: "09:00", lang: "English", loc: "Main Church" }] } } },
   };
   const day = Date.parse("2026-11-08T00:00:00+08:00");
   assert.deepEqual(times(S.expandParish("10", data, day, 0)), ["2026-11-08 08:00 English", "2026-11-08 09:00 English"]);
   assert.deepEqual(times(S.expandParish("11", data, day, 0)), ["2026-11-08 12:30 English"]);
   // and the following Sunday is untouched
   assert.equal(S.expandParish("10", data, day + 7 * 86400000, 0).length, 2);
+});
+
+test("a holiday Mass at the hour the parish itself lists is not shown twice", () => {
+  const data = {
+    rules: { 12: [{ d: 1, t: "18:00", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" }] },
+    dated: { 12: [{ k: "o", date: "2026-11-09", t: "08:00", type: "Mass", lang: "English", loc: "Main Church", note: "" }] },
+    holidays: { "2026-11-09": "Deepavali (Observed)" }, phMasses: { 12: ["08:00"] },
+  };
+  const evs = S.expandParish("12", data, Date.parse("2026-11-09T00:00:00+08:00"), 0);
+  assert.deepEqual(times(evs), ["2026-11-09 08:00 English"]);
 });
