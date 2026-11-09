@@ -1,7 +1,8 @@
 // Expands parish schedule rules into concrete service times.
 // All date math is done in fixed Singapore time (UTC+8, no DST), independent of the viewer's timezone.
 //
-// Public holidays are not modelled: parishes vary too much; the UI shows a "check with the parish" notice instead.
+// Public holidays: a weekday holiday uses a parish's published holiday timetable when there is one, drops the
+// weekday Masses for the hand-listed parishes, and otherwise shows the normal weekday times.
 // Recurring rule: {d: weekday 0=Sun, t: "HH:MM", weeks: [] | [1..5, -1=last], except: [...], type, lang, loc, note}
 // Dated entry:    {k: "a"dd | "r"emove | "o"verride, date: "YYYY-MM-DD", t, type, lang, loc, note}
 (function (root) {
@@ -48,13 +49,30 @@
     // parishes with no weekday Mass on public holidays (hand-checked): their regular Monday-Friday Masses drop out
     // that day; a dated Mass the parish lists for the holiday still shows
     const phOff = (data.noWeekdayMassOnPH || []).includes(String(pid));
+    // a parish whose page publishes a public-holiday timetable: on a weekday holiday those times replace the
+    // normal weekday Masses (usually there are none that day)
+    const phTimes = (data.phMasses || {})[pid] || [];
+    const byDate = (data.byDate || {})[pid] || {};
+    const phEvent = (x) => (typeof x === "string" ? { t: x, type: "Mass", lang: "", loc: "" } : { type: "Mass", ...x });
     for (let i = 0; i <= days; i++) {
       const day = new Date(start.getTime() + i * 86400000);
       const date = iso(day);
-      const skipWeekday = phOff && data.holidays && data.holidays[date] && day.getUTCDay() >= 1 && day.getUTCDay() <= 5;
+      const wd = day.getUTCDay();
+      const weekdayHoliday = wd >= 1 && wd <= 5 && !!(data.holidays && data.holidays[date]);
+      const phOnly = weekdayHoliday && phTimes.length > 0;
+      const skipWeekday = weekdayHoliday && phOff;
       for (const r of rules) {
-        if (skipWeekday && (r.type || "Mass") === "Mass") continue;
+        if ((skipWeekday || phOnly) && (r.type || "Mass") === "Mass") continue;
         if (ruleOn(r, day)) byKey.set(slotKey(date, r), { ...r, date });
+      }
+      if (phOnly) for (const x of phTimes) { const e = phEvent(x); byKey.set(slotKey(date, e), { ...e, date }); }
+      // hand-checked correction for one date: drop the Masses that didn't happen, add the ones that did
+      const ov = byDate[date];
+      if (ov) {
+        for (const t of ov.drop || []) {
+          for (const [k, e] of byKey) if (e.date === date && e.t === t) byKey.delete(k);
+        }
+        for (const a of ov.add || []) { const e = phEvent(a); byKey.set(slotKey(date, e), { ...e, date }); }
       }
     }
     for (const e of dated) {

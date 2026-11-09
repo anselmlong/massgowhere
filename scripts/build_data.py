@@ -95,6 +95,23 @@ def clean_notes(entries, weekly=False):
     return [{**e, "note": ""} if noisy(e.get("note") or "") else e for e in entries]
 
 
+# Public-holiday Mass times come from the parish pages (data/parishes/<id>.json), not myCatholicSG: the schedule
+# engine swaps them in on a weekday holiday.
+def public_holiday_times():
+    out = {}
+    pdir = os.path.join(ROOT, "data", "parishes")
+    if not os.path.isdir(pdir):
+        return out
+    for name in sorted(os.listdir(pdir)):
+        if not name.endswith(".json"):
+            continue
+        p = json.load(open(os.path.join(pdir, name)))
+        times = [t for t in (p.get("public_holiday_masses") or []) if t]
+        if times:
+            out[str(p.get("id") or name[:-5])] = times
+    return out
+
+
 def main():
     parishes = load("scripts/parishes_geo.json")
     mc = load("data/mycatholic.json")
@@ -124,8 +141,11 @@ def main():
     out = {"builtAt": datetime.now(SGT).isoformat(timespec="minutes"), "asOf": mc["asOf"], "holidays": holidays.get("dates", {}),
            "parishes": out_parishes, "rules": {k: clean_notes(v, weekly=True) + overrides.get("add_rules", {}).get(k, []) for k, v in mc["rules"].items()},
            "dated": {k: clean_notes(v) for k, v in mc["dated"].items() if v}, "services": services,
-           # hand-checked: parishes with no weekday Mass on public holidays (data/overrides.json)
-           "noWeekdayMassOnPH": overrides.get("no_weekday_mass_on_ph", [])}
+           # hand-checked: parishes with no weekday Mass on public holidays, and per-date corrections (data/overrides.json)
+           "noWeekdayMassOnPH": overrides.get("no_weekday_mass_on_ph", []),
+           "byDate": overrides.get("by_date", {}),
+           # from the parish pages: the times a parish keeps on a public holiday
+           "phMasses": public_holiday_times()}
     path = os.path.join(ROOT, "public", "data.json")
     tmp = path + ".tmp"
     json.dump(out, open(tmp, "w"), ensure_ascii=False, separators=(",", ":"))

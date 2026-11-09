@@ -74,3 +74,37 @@ test("a parish with no weekday Mass on public holidays: its Monday-Friday Masses
   assert.equal(S.expandParish("9", data, day("2026-11-08"), 0).length, 1);   // Sunday holiday: Sunday Mass stays
   assert.equal(S.expandParish("9", { ...data, noWeekdayMassOnPH: [] }, day("2026-11-09"), 0).length, 1); // other parishes unchanged
 });
+
+
+test("a parish with a public-holiday timetable uses it on a weekday holiday, in place of the weekday Mass", () => {
+  const data = {
+    rules: { 7: [{ d: 3, t: "12:15", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" },
+                 { d: 0, t: "11:00", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" }] },
+    dated: {}, holidays: { "2026-11-04": "Deepavali", "2026-11-08": "Deepavali" },
+    phMasses: { 7: ["09:00"] },
+  };
+  const day = (iso) => Date.parse(`${iso}T00:00:00+08:00`);
+  // Wednesday holiday: the 12:15 goes, the 9am holiday Mass takes its place
+  assert.deepEqual(times(S.expandParish("7", data, day("2026-11-04"), 0)), ["2026-11-04 09:00 "]);
+  // the same Wednesday a week later is an ordinary day again
+  assert.deepEqual(times(S.expandParish("7", data, day("2026-11-11"), 0)), ["2026-11-11 12:15 English"]);
+  // a holiday on a Sunday must not replace the Sunday Masses
+  assert.deepEqual(times(S.expandParish("7", data, day("2026-11-08"), 0)), ["2026-11-08 11:00 English"]);
+  // a parish with no published timetable keeps its weekday times
+  assert.deepEqual(times(S.expandParish("8", { ...data, phMasses: {} }, day("2026-11-04"), 0)), []);
+});
+
+test("a hand-checked date override drops and adds Masses for one parish only", () => {
+  const data = {
+    rules: { 10: [{ d: 0, t: "12:30", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" },
+                  { d: 0, t: "08:00", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" }],
+             11: [{ d: 0, t: "12:30", weeks: [], except: [], type: "Mass", lang: "English", loc: "Main Church" }] },
+    dated: {}, holidays: {},
+    byDate: { 10: { "2026-11-08": { drop: ["12:30"], add: [{ t: "09:00", lang: "English", loc: "Main Church" }] } } },
+  };
+  const day = Date.parse("2026-11-08T00:00:00+08:00");
+  assert.deepEqual(times(S.expandParish("10", data, day, 0)), ["2026-11-08 08:00 English", "2026-11-08 09:00 English"]);
+  assert.deepEqual(times(S.expandParish("11", data, day, 0)), ["2026-11-08 12:30 English"]);
+  // and the following Sunday is untouched
+  assert.equal(S.expandParish("10", data, day + 7 * 86400000, 0).length, 2);
+});

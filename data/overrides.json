@@ -1,5 +1,5 @@
 {
- "_about": "Hand-checked parish facts that change how the schedule is read. no_weekday_mass_on_ph: parish ids with no weekday (Monday-Friday) Mass on public holidays. add_rules: weekly Mass rules myCatholicSG lacks or mislabels, by parish id, same shape as data/mycatholic.json rules (weeks 1..5, -1 = last); a myCatholicSG dated entry at the same date, time and place merges into it.",
+ "_about": "Hand-checked parish facts that change how the schedule is read. no_weekday_mass_on_ph: parish ids with no weekday (Monday-Friday) Mass on public holidays. add_rules: weekly Mass rules myCatholicSG lacks or mislabels, by parish id, same shape as data/mycatholic.json rules (weeks 1..5, -1 = last); a myCatholicSG dated entry at the same date, time and place merges into it. by_date: per-parish corrections for one date, { \"YYYY-MM-DD\": { \"<parish id>\": {\"drop\": [\"HH:MM\"], \"add\": [{t, lang, loc}] } } }; drop removes any Mass at that time that day, add inserts one. Use it when a source is wrong and the parish has confirmed.",
  "no_weekday_mass_on_ph": [
   "2"
  ],
