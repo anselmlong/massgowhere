@@ -98,6 +98,25 @@ def clean_notes(entries, weekly=False):
 
 # Public-holiday Mass times come from the parish pages (data/parishes/<id>.json), not myCatholicSG: the schedule
 # engine swaps them in on a weekday holiday.
+def date_corrections(overrides):
+    """Masses that will not happen on one named date: what the bulletins say, plus any hand-checked correction."""
+    out = {}
+    dbfile = os.path.join(ROOT, "data", "masses.db")
+    if os.path.exists(dbfile):
+        with sqlite3.connect(dbfile) as db:
+            for pid, date, time in db.execute(
+                    "SELECT parish_id, date, time FROM masses WHERE kind='cancelled' AND date<>''"):
+                entry = out.setdefault(date, {}).setdefault(str(pid), {"drop": [], "add": []})
+                if time not in entry["drop"]:
+                    entry["drop"].append(time)
+    for date, byparish in (overrides.get("by_date") or {}).items():
+        for pid, fix in byparish.items():
+            entry = out.setdefault(date, {}).setdefault(str(pid), {"drop": [], "add": []})
+            entry["drop"] = sorted(set(entry["drop"]) | set(fix.get("drop") or []))
+            entry["add"] = (fix.get("add") or []) or entry["add"]
+    return out
+
+
 def public_holiday_times():
     out = {}
     # the bulletin corpus (scripts/scrape_masses.py) knows a holiday timetable for more parishes than the page scrape
@@ -154,7 +173,7 @@ def main():
            "dated": {k: clean_notes(v) for k, v in mc["dated"].items() if v}, "services": services,
            # hand-checked: parishes with no weekday Mass on public holidays, and per-date corrections (data/overrides.json)
            "noWeekdayMassOnPH": overrides.get("no_weekday_mass_on_ph", []),
-           "byDate": overrides.get("by_date", {}),
+           "byDate": date_corrections(overrides),
            # from the parish pages: the times a parish keeps on a public holiday
            "phMasses": public_holiday_times()}
     path = os.path.join(ROOT, "public", "data.json")
