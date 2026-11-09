@@ -104,10 +104,11 @@ def public_holiday_times():
     dbfile = os.path.join(ROOT, "data", "masses.db")
     if os.path.exists(dbfile):
         with sqlite3.connect(dbfile) as db:
-            for pid, times in db.execute(
-                    "SELECT parish_id, GROUP_CONCAT(DISTINCT time) FROM masses WHERE kind='public_holiday' "
-                    "GROUP BY parish_id"):
-                out[str(pid)] = sorted(times.split(","))
+            for pid, pairs in db.execute(
+                    "SELECT parish_id, GROUP_CONCAT(DISTINCT time || '|' || language) FROM masses "
+                    "WHERE kind='public_holiday' GROUP BY parish_id"):
+                out[str(pid)] = [{"t": t, "lang": lang} for t, lang in
+                                 sorted({tuple(x.split("|")) for x in pairs.split(",")})]
     pdir = os.path.join(ROOT, "data", "parishes")
     if not os.path.isdir(pdir):
         return out

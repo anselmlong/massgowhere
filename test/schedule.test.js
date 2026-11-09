@@ -118,3 +118,13 @@ test("a holiday Mass at the hour the parish itself lists is not shown twice", ()
   const evs = S.expandParish("12", data, Date.parse("2026-11-09T00:00:00+08:00"), 0);
   assert.deepEqual(times(evs), ["2026-11-09 08:00 English"]);
 });
+
+test("a holiday timetable keeps each Mass's language", () => {
+  const data = {
+    rules: { 10: [{ d: 1, t: "12:30", weeks: [], except: [], type: "Mass", lang: "English", loc: "" }] },
+    dated: {}, holidays: { "2026-11-09": "Deepavali (Observed)" },
+    phMasses: { 10: [{ t: "09:00", lang: "English" }, { t: "10:00", lang: "Tamil" }] },
+  };
+  const evs = S.expandParish("10", data, Date.parse("2026-11-09T00:00:00+08:00"), 0);
+  assert.deepEqual(evs.map((e) => `${e.t} ${e.lang}`), ["09:00 English", "10:00 Tamil"]);
+});
