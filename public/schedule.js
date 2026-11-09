@@ -78,7 +78,11 @@
         for (const t of ov.drop || []) {
           for (const [k, e] of byKey) if (e.date === date && e.t === t) byKey.delete(k);
         }
-        for (const a of ov.add || []) { const e = phEvent(a); byKey.set(slotKey(date, e), { ...e, date }); }
+        for (const a of ov.add || []) {
+          const e = phEvent(a);
+          const dup = [...byKey.values()].some((v) => v.date === date && v.t === e.t && (v.type || "Mass") === (e.type || "Mass"));
+          if (!dup) byKey.set(slotKey(date, e), { ...e, date });
+        }
       }
     }
     for (const e of dated) {
