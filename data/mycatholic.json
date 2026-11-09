@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-06",
+"asOf": "2026-11-08",
 "rules": {
 "1": [
 {
@@ -6435,6 +6435,26 @@
 "note": ""
 }
 ],
+"3": [
+{
+"k": "a",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+}
+],
 "5": [
 {
 "k": "r",
@@ -6482,6 +6502,35 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Eucharistic Adoration & Mass"
+}
+],
+"7": [
+{
+"k": "o",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-09",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
 }
 ],
 "8": [
@@ -6806,33 +6855,6 @@
 },
 {
 "k": "r",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-14",
 "type": "Mass",
 "t": "17:00",
@@ -6986,24 +7008,6 @@
 },
 {
 "k": "o",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-07",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
 "date": "2026-11-14",
 "type": "Mass",
 "t": "16:00",
@@ -7055,24 +7059,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-07",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-07",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 },
 {
 "k": "o",
