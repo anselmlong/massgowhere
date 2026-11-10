@@ -6747,33 +6747,6 @@
 "10": [
 {
 "k": "r",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-15",
 "type": "Mass",
 "t": "08:00",
@@ -6933,24 +6906,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
 },
 {
 "k": "o",
@@ -7116,15 +7071,6 @@
 },
 {
 "k": "o",
-"date": "2026-11-08",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-11-15",
 "type": "Confession",
 "t": "07:00",
@@ -7174,24 +7120,6 @@
 "type": "Confession",
 "t": "11:00",
 "lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Confession",
-"t": "09:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-08",
-"type": "Confession",
-"t": "18:00",
-"lang": "Tamil/English",
 "loc": "Main Church",
 "note": ""
 },
@@ -7367,15 +7295,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Advent Penitential Service for Serangoon District"
-},
-{
-"k": "a",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "15:00",
-"lang": "Vietnamese",
-"loc": "Main Church",
-"note": ""
 },
 {
 "k": "a",
@@ -8781,15 +8700,6 @@
 "note": "Morning lauds followed by Mass"
 },
 {
-"k": "r",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "a",
 "date": "2026-11-09",
 "type": "Mass",
@@ -8797,15 +8707,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Preceded by Morning Prayer at 7.40am"
-},
-{
-"k": "a",
-"date": "2026-11-08",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "28": [
