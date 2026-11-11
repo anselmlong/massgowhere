@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-08",
+"asOf": "2026-11-11",
 "rules": {
 "1": [
 {
@@ -375,16 +375,6 @@
 "note": ""
 },
 {
-"d": 6,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 1,
 "weeks": [],
 "except": [],
@@ -432,6 +422,16 @@
 "t": "13:15",
 "lang": "English",
 "loc": "JM Beurel Centre Level 1",
+"note": ""
+},
+{
+"d": 6,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
 "note": ""
 }
 ],
@@ -963,16 +963,6 @@
 "note": ""
 },
 {
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Vespers followed by Mass"
-},
-{
 "d": 3,
 "weeks": [],
 "except": [],
@@ -1091,6 +1081,16 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Thanksgiving Mass"
 }
 ],
 "6": [
@@ -6305,30 +6305,28 @@
 ]
 },
 "dated": {
-"1": [
+"2": [
 {
 "k": "r",
-"date": "2026-11-09",
+"date": "2026-12-24",
 "type": "Mass",
-"t": "12:30",
+"t": "13:15",
 "lang": "English",
-"loc": "Main Church",
+"loc": "JM Beurel Centre Level 1",
 "note": ""
 },
 {
 "k": "r",
-"date": "2026-11-09",
+"date": "2026-12-25",
 "type": "Mass",
-"t": "18:30",
+"t": "13:15",
 "lang": "English",
-"loc": "Main Church",
+"loc": "JM Beurel Centre Level 1",
 "note": ""
-}
-],
-"2": [
+},
 {
 "k": "r",
-"date": "2026-11-09",
+"date": "2027-01-01",
 "type": "Mass",
 "t": "13:15",
 "lang": "English",
@@ -6340,24 +6338,6 @@
 "date": "2026-12-24",
 "type": "Mass",
 "t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Christmas Eve"
-},
-{
-"k": "r",
-"date": "2026-12-24",
-"type": "Mass",
-"t": "13:15",
-"lang": "English",
-"loc": "JM Beurel Centre Level 1",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-12-24",
-"type": "Mass",
-"t": "21:00",
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas Eve"
@@ -6381,13 +6361,22 @@
 "note": "Christmas Day"
 },
 {
-"k": "r",
-"date": "2026-12-25",
+"k": "o",
+"date": "2027-01-01",
 "type": "Mass",
-"t": "13:15",
+"t": "10:30",
 "lang": "English",
-"loc": "JM Beurel Centre Level 1",
-"note": ""
+"loc": "Main Church",
+"note": "New Year's Day"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
 },
 {
 "k": "a",
@@ -6415,44 +6404,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "New Year' Eve"
-},
-{
-"k": "o",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "10:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Year's Day"
-},
-{
-"k": "r",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "13:15",
-"lang": "English",
-"loc": "JM Beurel Centre Level 1",
-"note": ""
-}
-],
-"3": [
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "09:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "5": [
@@ -6467,7 +6418,25 @@
 },
 {
 "k": "r",
-"date": "2026-11-09",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Vespers followed by Mass"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Lauds before Mass"
+},
+{
+"k": "r",
+"date": "2026-12-25",
 "type": "Mass",
 "t": "12:15",
 "lang": "English",
@@ -6476,12 +6445,156 @@
 },
 {
 "k": "r",
-"date": "2026-11-09",
+"date": "2026-12-25",
 "type": "Mass",
 "t": "18:00",
 "lang": "English",
 "loc": "Main Church",
 "note": "Vespers followed by Mass"
+},
+{
+"k": "o",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-18",
+"type": "Confession",
+"t": "20:00",
+"lang": "Bilingual",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "19:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Lauds before Mass"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Vespers followed by Mass"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-03",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-10",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-04",
+"type": "Adoration",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-07",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-14",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "6": [
@@ -6504,56 +6617,9 @@
 "note": "Eucharistic Adoration & Mass"
 }
 ],
-"7": [
-{
-"k": "o",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "09:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-}
-],
 "8": [
 {
 "k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-12-25",
 "type": "Mass",
 "t": "18:00",
@@ -6569,15 +6635,6 @@
 "lang": "English",
 "loc": "Chapel",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "09:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Dedication of the Lateran Basilica"
 },
 {
 "k": "a",
@@ -6644,15 +6701,6 @@
 }
 ],
 "9": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-12-24",
@@ -7181,15 +7229,6 @@
 "11": [
 {
 "k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-12-18",
 "type": "Confession",
 "t": "19:30",
@@ -7274,15 +7313,6 @@
 "date": "2026-12-24",
 "type": "Mass",
 "t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -7408,15 +7438,6 @@
 "17": [
 {
 "k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-12-24",
 "type": "Mass",
 "t": "18:30",
@@ -7456,15 +7477,6 @@
 "date": "2027-01-01",
 "type": "Mass",
 "t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "09:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -7552,33 +7564,6 @@
 }
 ],
 "12": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Devotion",
-"t": "17:15",
-"lang": "English",
-"loc": "Main Church",
-"note": "Rosary"
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Public holiday"
-},
 {
 "k": "r",
 "date": "2026-12-24",
@@ -7677,15 +7662,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Holy Hour with Devotion to the Sacred Heart of Jesus"
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Public holiday"
 },
 {
 "k": "a",
@@ -7817,30 +7793,12 @@
 "15": [
 {
 "k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-30",
 "type": "Mass",
 "t": "18:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Public Holiday - No Evening Mass"
 },
 {
 "k": "a",
@@ -7853,15 +7811,6 @@
 }
 ],
 "16": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-12-25",
@@ -7945,15 +7894,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Chapel",
-"note": "Public Holiday"
-},
-{
-"k": "a",
 "date": "2026-12-25",
 "type": "Mass",
 "t": "08:00",
@@ -8007,74 +7947,7 @@
 "note": "Christmas Eve. Christmas Carol at 10.30pm."
 }
 ],
-"19": [
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "No 6:30pm Mass"
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-}
-],
-"14": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:45",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Deepavali PH Mass, Lauds@7.40am"
-}
-],
 "20": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-12-24",
@@ -8119,15 +7992,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "09:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "1 Mass only on Public Holidays (Weekdays)"
 },
 {
 "k": "a",
@@ -8223,15 +8087,6 @@
 "22": [
 {
 "k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-12-02",
 "type": "Mass",
 "t": "20:00",
@@ -8277,15 +8132,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "09:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "1 Mass only. Public Holiday in lieu (Deepavali)"
-},
-{
-"k": "a",
 "date": "2026-11-25",
 "type": "Mass",
 "t": "20:00",
@@ -8324,24 +8170,6 @@
 "24": [
 {
 "k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel Of St Joseph",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Chapel Of St Joseph",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-19",
 "type": "Adoration",
 "t": "20:00",
@@ -8360,15 +8188,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
 "date": "2026-11-20",
 "type": "Mass",
 "t": "18:30",
@@ -8378,24 +8197,6 @@
 }
 ],
 "25": [
-{
-"k": "o",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "10:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "a",
 "date": "2026-12-24",
@@ -8480,24 +8281,6 @@
 ],
 "26": [
 {
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "12:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "o",
 "date": "2026-11-14",
 "type": "Mass",
@@ -8505,36 +8288,9 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Confirmation Mass 2026"
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 }
 ],
 "27": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "r",
 "date": "2026-12-24",
@@ -8588,15 +8344,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Public Holiday"
 },
 {
 "k": "a",
@@ -8680,74 +8427,9 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Morning lauds followed by Mass"
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Preceded by Morning Prayer at 7.40am"
-}
-],
-"28": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "10:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Mass with Anointing of the Sick"
 }
 ],
 "29": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "PH Mass"
-},
 {
 "k": "a",
 "date": "2026-12-16",
@@ -8770,33 +8452,6 @@
 }
 ],
 "32": [
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-09",
-"type": "Mass",
-"t": "08:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
 {
 "k": "o",
 "date": "2026-12-25",
