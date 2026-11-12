@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-11",
+"asOf": "2026-11-12",
 "rules": {
 "1": [
 {
@@ -8082,6 +8082,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Solemnity of Mary, Mother of God"
+},
+{
+"k": "a",
+"date": "2026-12-20",
+"type": "Confession",
+"t": "16:00",
+"lang": "Bahasa Indonesia",
+"loc": "Parish Hall",
+"note": "KKIS Penitential Service"
 }
 ],
 "22": [
