@@ -2,9 +2,9 @@
  "id": 19,
  "name": "Church of St Anthony",
  "source_urls": [
-  "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_08.pdf"
+  "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_15.pdf"
  ],
- "fetched_at": "2026-11-06T12:31+08:00",
+ "fetched_at": "2026-11-13T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -38,7 +38,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 0,
@@ -80,7 +80,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Agnes Room",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 3,
@@ -112,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Divine Mercy"
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 5,
@@ -138,24 +138,6 @@
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-07",
-   "time": "19:30",
-   "language": "Tamil",
-   "location": "",
-   "title": "Tamil Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-08",
-   "time": "07:30",
-   "language": "Mandarin",
-   "location": "",
-   "title": "Mandarin Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
    "date": "2026-11-21",
    "time": "19:30",
    "language": "Tagalog",
@@ -171,18 +153,45 @@
    "location": "",
    "title": "Malayalam Mass",
    "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-12",
+   "time": "19:30",
+   "language": "Tamil",
+   "location": "",
+   "title": "Tamil Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-13",
+   "time": "07:30",
+   "language": "Mandarin",
+   "location": "",
+   "title": "Mandarin Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-26",
+   "time": "17:30",
+   "language": "English",
+   "location": "",
+   "title": "Milestone Wedding Anniversary Mass",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "confession": "Confessions are 15 minutes before Mass."
+  "confession": "Confessions: 15 mins before Mass."
  },
  "events": [],
  "bulletin": {
-  "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_08.pdf",
-  "date": "2026-11-08"
+  "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_15.pdf",
+  "date": "2026-11-15"
  },
  "disputes": [],
  "vs_mycatholic": {

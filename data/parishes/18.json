@@ -2,9 +2,9 @@
  "id": 18,
  "name": "St Anne's Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611061219_Nov_7%20%26%208%202026.pdf?alt=media&token=37d1328f-e4d4-4528-ac56-0d8bf14583b1"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611131551_Nov_14%20%26%2015%202026.pdf?alt=media&token=99a1b9a0-dc65-4199-8313-0ee4183dfb30"
  ],
- "fetched_at": "2026-11-06T12:33+08:00",
+ "fetched_at": "2026-11-13T21:06+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -42,6 +42,16 @@
   },
   {
    "d": 0,
+   "t": "11:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Children Liturgy"
+  },
+  {
+   "d": 0,
    "t": "13:30",
    "weeks": [
     1,
@@ -50,8 +60,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Chinese",
-   "loc": "Main Church",
-   "note": "1st and 3rd Sunday of the month"
+   "loc": "Church",
+   "note": ""
   },
   {
    "d": 0,
@@ -63,7 +73,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": "4th Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -205,52 +215,46 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": "Sunset"
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-11-09",
-   "time": "08:00",
-   "language": "English",
-   "location": "",
-   "title": "Public Holiday Morning Mass",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-14",
-   "time": "15:00",
-   "language": "English",
-   "location": "Main Church Hall",
-   "title": "Divine Mercy Devotion",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "08:00"
  ],
  "notes": [
-  "The usual weekday Mass times do not apply on public holidays."
+  "On public holidays on weekdays, there is no evening Mass."
  ],
  "info": {
-  "adoration": "Holy Hour: 1st Thursday of the month, 8.15pm in the church.",
-  "confession": "30 minutes before English weekend Masses, in the church.",
-  "devotions": [
-   "Columbarium prayers and Mass intentions: last Sunday of the month, at the columbarium after the 11.30am Mass."
-  ],
-  "office_hours": "Secretariat: Mon-Fri 9am-6pm, Sat 9am-1pm, and 9am-12pm on the 2nd and last Sunday of the month.",
+  "confession": "Confessions: 30 mins before English weekend Masses in Church.",
   "good_to_know": [
-   "Church open Mon-Sat 6am-10pm, Sun 6am-6pm; on weekday public holidays 7am-1pm.",
-   "Book & Gift Service Centre open Sat 4pm-6pm and Sun 8am-1pm."
+   "Church opening hours: Mon–Sat 6am–10pm; Sun 6am–6pm; Public Holidays on weekdays 7am–1pm."
   ]
  },
- "events": [],
+ "events": [
+  {
+   "date": "2026-11-28",
+   "time": "",
+   "title": "Conversations that Matter: When Your Teen Questions Their Identity & Sexuality",
+   "text": "Conversations that Matter: When Your Teen Questions Their Identity & Sexuality. Time: 1.30pm to 4pm. Venue: Church of the Holy Cross, Auditorium (Level 4). Fee: $20 per pax, $35 for 2 pax. Register at familylife.sg/CTM_B or scan the QR code."
+  },
+  {
+   "date": "2026-12-12",
+   "time": "",
+   "title": "Our Lady of Guadalupe: Honouring the Patroness of Unborn Children",
+   "text": "Our Lady of Guadalupe: Honouring the Patroness of Unborn Children. Time: 1.30pm (Rosary) | 2pm (Mass). Venue: Church of Our Lady of Lourdes; 50 Ophir Road, Singapore 188690. There will be a healing prayer and blessing of pregnant women after Mass."
+  },
+  {
+   "date": "2026-12-17",
+   "time": "",
+   "title": "Breathe Youth Retreat",
+   "text": "Breathe Youth Retreat. Dates: 17 to 20 December, Thursday to Sunday. Time: Thursday 9am to Sunday 6.30pm (Stay-In). Venue: Catholic Spirituality Centre; 1261 Upper Serangoon Road, Singapore 534796. Registration closes on 30 November 2026. To register, scan the QR code."
+  }
+ ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611061219_Nov_7%20%26%208%202026.pdf?alt=media&token=37d1328f-e4d4-4528-ac56-0d8bf14583b1",
-  "date": "2026-11-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611131551_Nov_14%20%26%2015%202026.pdf?alt=media&token=99a1b9a0-dc65-4199-8313-0ee4183dfb30",
+  "date": "2026-11-13"
  },
  "disputes": [],
  "vs_mycatholic": {

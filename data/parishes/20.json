@@ -2,9 +2,9 @@
  "id": 20,
  "name": "Church of St Bernadette",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611130920_51_Final%20%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%89%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%8815%E6%97%A5%EF%BC%89.pdf?alt=media&token=d569647c-fb5b-4ab2-ad18-f5819aebefdf"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611131240_VOICE_15%20Nov%202026%20V2.pdf?alt=media&token=69e70b1d-2af4-4008-a17a-959e153c9816"
  ],
- "fetched_at": "2026-11-13T12:31+08:00",
+ "fetched_at": "2026-11-13T21:05+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -16,7 +16,7 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "Chinese",
+   "lang": "Mandarin",
    "loc": "",
    "note": ""
   },
@@ -42,9 +42,10 @@
   },
   {
    "d": 0,
-   "t": "14:00",
+   "t": "13:45",
    "weeks": [
-    4
+    4,
+    5
    ],
    "except": [],
    "type": "Mass",
@@ -201,18 +202,54 @@
  "public_holiday_masses": [
   "09:00"
  ],
- "notes": [],
- "info": {},
+ "notes": [
+  "Public holiday Mass applies to weekdays only."
+ ],
+ "info": {
+  "good_to_know": [
+   "Carolling starts 30 minutes before Christmas Eve Masses."
+  ]
+ },
  "events": [
   {
    "date": "2026-11-20",
    "time": "18:30",
-   "title": "Sunday School Closing Carnival",
-   "text": "Sunday School Closing Carnival"
+   "title": "Catechetical Year 2026 Closing Fiesta",
+   "text": ""
+  },
+  {
+   "date": "2026-12-05",
+   "time": "",
+   "title": "Christmas Fair: Preparing a Place for Christ",
+   "text": ""
+  },
+  {
+   "date": "2026-12-05",
+   "time": "14:00",
+   "title": "Christmas Caroling",
+   "text": ""
+  },
+  {
+   "date": "2026-12-13",
+   "time": "14:00",
+   "title": "Christmas Caroling",
+   "text": ""
+  },
+  {
+   "date": "2026-12-13",
+   "time": "15:45",
+   "title": "Christmas Caroling",
+   "text": ""
+  },
+  {
+   "date": "2026-12-19",
+   "time": "10:00",
+   "title": "Advent Spring Cleaning",
+   "text": ""
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611130920_51_Final%20%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%89%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%8815%E6%97%A5%EF%BC%89.pdf?alt=media&token=d569647c-fb5b-4ab2-ad18-f5819aebefdf",
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611131240_VOICE_15%20Nov%202026%20V2.pdf?alt=media&token=69e70b1d-2af4-4008-a17a-959e153c9816",
   "date": "2026-11-13"
  },
  "disputes": [],
@@ -221,9 +258,10 @@
    [
     "Mass",
     "Sunday",
-    "14:00",
+    "13:45",
     [
-     4
+     4,
+     5
     ],
     []
    ],

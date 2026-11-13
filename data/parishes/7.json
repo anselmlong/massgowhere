@@ -2,9 +2,9 @@
  "id": 7,
  "name": "Church of the Holy Spirit",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611061402_CHS_Bulletin%207%20-%208%20November%202026.pdf?alt=media&token=f59c6227-3b45-47a2-9d65-0279d0da4fc4"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611131722_CHS_Bulletin%2014%20-%2015%20November%202026.pdf?alt=media&token=2ff20198-f1f3-4958-9357-89f5ff1f26fc"
  ],
- "fetched_at": "2026-11-06T21:02+08:00",
+ "fetched_at": "2026-11-13T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -223,24 +223,50 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "09:00"
+ ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Daily 8:00 AM – 9:30 PM. Chapel: Mon-Fri 8:00 AM – 6:30 PM, Sat 8:00 AM – 12 NN, closed on Sundays & public holidays. Oratory: Mon-Fri 10:00 AM – 10:00 PM, Sat & Sun 1:00 PM – 10:00 PM.",
-  "confession": "30 minutes before Sunset Mass on Saturday and all Masses on Sunday. Confessions cease when Mass begins.",
-  "office_hours": "Parish Office: Mon-Fri 8:00 AM – 4:00 PM, Sat 8:00 AM – 12 NN, Sun 8:00 AM – 1 PM, closed on public holidays."
+  "adoration": "Adoration Room: Daily 08:00–21:30. Chapel: Mon–Fri 08:00–18:30, Sat 08:00–12:00; closed Sundays and public holidays. Oratory: Mon–Fri 10:00–22:00, Sat & Sun 13:00–22:00.",
+  "confession": "Confessions are 30 minutes before the Saturday Sunset Mass and all Sunday Masses, and cease when Mass begins.",
+  "office_hours": "Parish Office: Mon-Fri 08:00–16:00, Sat 08:00–12:00, Sun 08:00–13:00; closed on public holidays."
  },
  "events": [
   {
-   "date": "2026-11-11",
-   "time": "19:30",
-   "title": "Parish Formation Programme From Disciples to Apostles Session 6",
-   "text": "Parish Formation Programme From Disciples to Apostles Session 6"
+   "date": "2026-11-16",
+   "time": "20:00",
+   "title": "Fellowship",
+   "text": ""
+  },
+  {
+   "date": "2026-11-20",
+   "time": "19:45",
+   "title": "CHS Youth Session",
+   "text": ""
+  },
+  {
+   "date": "2026-11-21",
+   "time": "",
+   "title": "Presentation of the Blessed Virgin Mary",
+   "text": ""
+  },
+  {
+   "date": "2026-11-21",
+   "time": "",
+   "title": "SSVP Booth",
+   "text": ""
+  },
+  {
+   "date": "2026-11-28",
+   "time": "13:30",
+   "title": "Surviving the Holidays Talk and Advent Wreath Making",
+   "text": ""
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611061402_CHS_Bulletin%207%20-%208%20November%202026.pdf?alt=media&token=f59c6227-3b45-47a2-9d65-0279d0da4fc4",
-  "date": "2026-11-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611131722_CHS_Bulletin%2014%20-%2015%20November%202026.pdf?alt=media&token=2ff20198-f1f3-4958-9357-89f5ff1f26fc",
+  "date": "2026-11-13"
  },
  "disputes": [],
  "vs_mycatholic": {

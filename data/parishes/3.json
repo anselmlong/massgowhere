@@ -2,14 +2,24 @@
  "id": 3,
  "name": "Church of Christ the King",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611061637_CTK_LEAVEN%208%20Nov%20Final.pdf?alt=media&token=b885935c-e9d4-4ba7-ad64-5e37451ee802"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611131558_CTK_LEAVEN%2015%20Nov%20Final.pdf?alt=media&token=5358a773-0479-46b0-8a7a-bc5214fec95b"
  ],
- "fetched_at": "2026-11-06T21:01+08:00",
+ "fetched_at": "2026-11-13T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
+  {
+   "d": 0,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Half hour before 07:00 Mass"
+  },
   {
    "d": 0,
    "t": "07:00",
@@ -19,6 +29,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Half hour before 08:30 Mass"
   },
   {
    "d": 0,
@@ -32,6 +52,16 @@
   },
   {
    "d": 0,
+   "t": "09:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Half hour before 10:00 Mass"
+  },
+  {
+   "d": 0,
    "t": "10:00",
    "weeks": [],
    "except": [],
@@ -39,6 +69,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Half hour before 11:30 Mass"
   },
   {
    "d": 0,
@@ -52,6 +92,16 @@
   },
   {
    "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Half hour before 17:00 Mass"
+  },
+  {
+   "d": 0,
    "t": "17:00",
    "weeks": [],
    "except": [],
@@ -59,6 +109,18 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "18:00",
+   "weeks": [
+    4
+   ],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Half hour before 18:30 Tamil Mass"
   },
   {
    "d": 0,
@@ -70,7 +132,17 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "Main Church",
-   "note": ""
+   "note": "4th Sunday of the month"
+  },
+  {
+   "d": 0,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Nightly Rosary via Zoom (except Tuesdays)"
   },
   {
    "d": 1,
@@ -91,6 +163,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 1,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Nightly Rosary via Zoom (except Tuesdays)"
   },
   {
    "d": 2,
@@ -120,7 +202,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Main Church",
-   "note": "Divine Mercy Devotion"
+   "note": "Divine Mercy"
   },
   {
    "d": 3,
@@ -143,6 +225,16 @@
    "note": ""
   },
   {
+   "d": 3,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Nightly Rosary via Zoom (except Tuesdays)"
+  },
+  {
    "d": 4,
    "t": "07:30",
    "weeks": [],
@@ -163,6 +255,16 @@
    "note": ""
   },
   {
+   "d": 4,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Nightly Rosary via Zoom (except Tuesdays)"
+  },
+  {
    "d": 5,
    "t": "07:30",
    "weeks": [],
@@ -181,6 +283,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Nightly Rosary via Zoom (except Tuesdays)"
   },
   {
    "d": 6,
@@ -191,6 +303,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "Half hour before 17:00 Mass"
   },
   {
    "d": 6,
@@ -201,71 +323,47 @@
    "lang": "English",
    "loc": "",
    "note": "Sunset Mass"
-  }
- ],
- "dated": [
+  },
   {
-   "type": "Mass",
-   "date": "2026-11-09",
-   "time": "18:00",
-   "language": "English",
-   "location": "",
-   "title": "No 6pm Mass (public holiday)",
-   "action": "cancel"
+   "d": 6,
+   "t": "20:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Nightly Rosary via Zoom (except Tuesdays)"
   }
  ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30",
   "09:00"
  ],
  "notes": [
-  "On public holidays the usual weekday Masses are replaced by the public holiday Masses."
+  "Church car park closed whole day on 22 Nov for Feast Day celebration."
  ],
  "info": {
-  "adoration": "Adoration Room open Mon-Sun 7am to 9.30pm; on public holidays 7am to 12 noon.",
-  "confession": "Available half an hour before all weekend Masses.",
-  "devotions": [
-   "Sacred Heart Devotion: every Friday after the 6pm evening Mass in the Main Church.",
-   "Divine Mercy Devotion: every Tuesday at 8pm in the Main Church."
-  ],
-  "office_hours": "Mon-Fri 9am to 6pm; Sat & Sun 9am to 1pm; closed on public holidays."
+  "adoration": "Adoration Room: Mon-Sun 07:00-21:30; public holidays 07:00-12:00."
  },
  "events": [
   {
-   "date": "2026-11-12",
-   "time": "10:00",
-   "title": "CTK Joyful Seniors",
-   "text": "Session at CTK Canteen, 10am to 12.30pm, organised by the Familylife Ministry. Open to seniors of the parish."
-  },
-  {
    "date": "2026-11-22",
    "time": "",
-   "title": "Feast of Christ the King",
-   "text": "Parish Feast Day celebration with community fellowship. Love offerings can be given through the donation envelopes or PayNow (UEN T08CC4038L, reference: Feast Day 2026)."
-  },
-  {
-   "date": "2026-11-24",
-   "time": "19:00",
-   "title": "Free legal consultation",
-   "text": "Free legal advice for low-income individuals, held on the last Tuesday of the month at 7pm. Registration form from the Parish Office, submitted at least 5 days in advance; strictly no walk-ins."
-  },
-  {
-   "date": "2026-12-01",
-   "time": "19:30",
-   "title": "Infant Baptism preparation session",
-   "text": "Preparation for the Infant Baptism on 6 December at 3pm; registration closes 20 November. Parents and godparents must attend. Email christthekingchurch@catholic.org.sg."
+   "title": "Feast of Christ the King Feast Day Celebration",
+   "text": "Celebration of the Feast Day of Christ the King."
   },
   {
    "date": "2026-12-12",
    "time": "",
    "title": "CTK Youth Camp 2026",
-   "text": "3D2N stay-in Advent-themed camp from 12-14 December for young people aged 16-25. Sign up at https://tinyurl.com/CTKchannel or the youth telegram channel https://t.me/ctkyouth; queries to youthsofctk@gmail.com."
+   "text": "3D2N stay-in Advent themed camp for young people aged 16-25. All are welcome. More information at https://tinyurl.com/CTKchannel or youth telegram channel: https://t.me/ctkyouth. Contact youthsofctk@gmail.com."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611061637_CTK_LEAVEN%208%20Nov%20Final.pdf?alt=media&token=b885935c-e9d4-4ba7-ad64-5e37451ee802",
-  "date": "2026-11-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611131558_CTK_LEAVEN%2015%20Nov%20Final.pdf?alt=media&token=5358a773-0479-46b0-8a7a-bc5214fec95b",
+  "date": "2026-11-13"
  },
  "disputes": [],
  "vs_mycatholic": {

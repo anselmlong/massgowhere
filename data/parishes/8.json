@@ -2,9 +2,9 @@
  "id": 8,
  "name": "Church of the Holy Trinity",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611061330_08.11.26_32nd%20Sunday%20in%20Ordinary%20Time%20A%20A5.pdf?alt=media&token=f0b9782c-f574-413c-87b7-61dc5ac0adfe"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611131933_15.11.26_33rd%20Sunday%20in%20Ordinary%20Time%20A%20A5%20.pdf?alt=media&token=2f2d4f3a-4444-4bd0-b9d2-176787a2fdea"
  ],
- "fetched_at": "2026-11-06T21:02+08:00",
+ "fetched_at": "2026-11-13T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -231,6 +231,16 @@
    "note": ""
   },
   {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Divine Mercy Devotion"
+  },
+  {
    "d": 6,
    "t": "06:30",
    "weeks": [],
@@ -264,38 +274,38 @@
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-09",
-   "time": "09:00",
-   "language": "English",
-   "location": "Main Church Level 3",
-   "title": "Feast of the Dedication of the Lateran Basilica",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-10",
-   "time": "20:00",
+   "date": "2026-11-21",
+   "time": "19:30",
    "language": "English",
    "location": "",
-   "title": "Christian Meditation",
+   "title": "Neocatechumenal Way Eucharist",
    "action": "add"
   },
   {
    "type": "Devotion",
-   "date": "2026-11-13",
-   "time": "20:00",
+   "date": "2026-11-27",
+   "time": "19:15",
    "language": "English",
    "location": "",
    "title": "Divine Mercy Devotion",
    "action": "add"
   },
   {
-   "type": "Mass",
-   "date": "2026-11-14",
-   "time": "19:30",
+   "type": "Confession",
+   "date": "2026-12-09",
+   "time": "10:30",
    "language": "English",
-   "location": "",
-   "title": "Neocatechumenal Way Eucharist",
+   "location": "3rd floor, Main Church",
+   "title": "Holy Trinity Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-09",
+   "time": "20:00",
+   "language": "English",
+   "location": "3rd floor, Main Church",
+   "title": "Holy Trinity Advent Penitential Service",
    "action": "add"
   }
  ],
@@ -307,33 +317,39 @@
  "info": {},
  "events": [
   {
-   "date": "2026-11-11",
+   "date": "2026-11-14",
+   "time": "08:30",
+   "title": "CERT First Aider and CPR + AED Course",
+   "text": "Level 2, Rm 19; 8.30am – 6.00pm"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "19:45",
+   "title": "RCIA Mandarin",
+   "text": "7.45pm – 9.30pm"
+  },
+  {
+   "date": "2026-11-18",
    "time": "10:00",
    "title": "JOY Ministry, for the Elderly",
    "text": "10.00am – 12.00pm"
   },
   {
-   "date": "2026-11-12",
+   "date": "2026-11-19",
    "time": "19:45",
    "title": "RCIA",
    "text": "7.45pm – 9.30pm"
   },
   {
-   "date": "2026-11-13",
-   "time": "19:30",
-   "title": "Movie Night",
-   "text": "Parish Hall. Free admission. No registration. Bring your own mats or cushions. Snacks provided while stocks last."
-  },
-  {
-   "date": "2026-11-14",
+   "date": "2026-11-21",
    "time": "08:30",
    "title": "CERT First Aider and CPR + AED Course",
-   "text": "Level 2, Rm 19. Also on 21 November, 8.30am – 6.00pm."
+   "text": "Level 2, Rm 19; 8.30am – 6.00pm"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611061330_08.11.26_32nd%20Sunday%20in%20Ordinary%20Time%20A%20A5.pdf?alt=media&token=f0b9782c-f574-413c-87b7-61dc5ac0adfe",
-  "date": "2026-11-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611131933_15.11.26_33rd%20Sunday%20in%20Ordinary%20Time%20A%20A5%20.pdf?alt=media&token=2f2d4f3a-4444-4bd0-b9d2-176787a2fdea",
+  "date": "2026-11-13"
  },
  "disputes": [],
  "vs_mycatholic": {
