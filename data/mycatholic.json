@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-12",
+"asOf": "2026-11-13",
 "rules": {
 "1": [
 {
@@ -2046,6 +2046,36 @@
 "except": [],
 "type": "Mass",
 "t": "11:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 3,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "12:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -6956,6 +6986,33 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-25",
+"type": "Confession",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "19:00",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "o",
 "date": "2026-11-15",
 "type": "Mass",
@@ -7224,6 +7281,60 @@
 "lang": "Tamil/English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "20:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Carolling begins at 8pm"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": "Christmas · Carolling begins at 11:30pm"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:30",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": "Christmas"
 }
 ],
 "11": [
