@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-12T12:31+08:00",
+ "fetchedAt": "2026-11-13T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -39,9 +39,9 @@
   },
   "6": {
    "from": "myCatholicSG",
-   "title": "32nd Sunday In Ordinary Time",
-   "date": "2026-11-05",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611051921_32nd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=6320a90d-2b45-4985-bbea-14ab35062af0",
+   "title": "33rd Sunday In Ordinary Time",
+   "date": "2026-11-12",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611121821_33rd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=af32280a-d2e6-401d-8a6c-953737e7d0a8",
    "page": "https://mycatholic.sg/bulletin/holyfamily"
   },
   "7": {
@@ -74,9 +74,9 @@
   },
   "11": {
    "from": "myCatholicSG",
-   "title": "1 & 8 Nov 2026",
-   "date": "2026-10-30",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F11%2Fpublic%2Fpdf%2F2610300814_Bulletin_1%20%26%208%20Nov%202026.pdf?alt=media&token=0974cff5-5429-4f7b-9f79-b254765babee",
+   "title": "15 & 22 Nov 2026",
+   "date": "2026-11-13",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F11%2Fpublic%2Fpdf%2F2611131148_Bulletin_15%20%26%2022%20Nov%202026.pdf?alt=media&token=c3c3f661-3efe-4c95-88ef-5f17e5afa930",
    "page": "https://mycatholic.sg/bulletin/nativityofblessedvirgin"
   },
   "12": {
@@ -95,9 +95,9 @@
   },
   "14": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 08 Nov 2026",
-   "date": "2026-11-07",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2611071146_Bulletin_-%2008%20NOV%202026%20(latest).pdf?alt=media&token=3405b6cf-62f0-4a5f-9c69-05075533e3e7",
+   "title": "Bulletin - 15 Nov 2026",
+   "date": "2026-11-12",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2611121733_Bulletin_-%2015%20NOV%202026.pdf?alt=media&token=6f115489-b3e7-44e5-9da1-bd1cb3e39938",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {
@@ -116,9 +116,9 @@
   },
   "17": {
    "from": "myCatholicSG",
-   "title": "Bulletin 8th November till 14th November 2026",
-   "date": "2026-11-06",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2611061115_2._Novena%208%20November%20%20to%2014%20November%20EVAN.pdf?alt=media&token=caff878f-9486-4144-8874-79d43977ba0e",
+   "title": "Bulletin 15th November till  21st November 2026",
+   "date": "2026-11-12",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2611121741_3._Novena%2015%20November%20%20to%2021%20November%20ROSE.pdf?alt=media&token=9fd2c833-b866-4a84-b6ed-c6a5482f12d8",
    "page": "https://mycatholic.sg/bulletin/novena"
   },
   "18": {
@@ -137,9 +137,9 @@
   },
   "20": {
    "from": "myCatholicSG",
-   "title": "堂区周报 2026年11月8日 - 2026年11月14日",
-   "date": "2026-11-06",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611061206_50_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%8C%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%888%E6%97%A5%EF%BC%89.pdf?alt=media&token=3cf182d2-a9d4-43f6-a271-a540238d4b32",
+   "title": "堂区周报 2026年11月15日 - 2026年11月21日",
+   "date": "2026-11-13",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611130920_51_Final%20%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%89%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%8815%E6%97%A5%EF%BC%89.pdf?alt=media&token=d569647c-fb5b-4ab2-ad18-f5819aebefdf",
    "page": "https://mycatholic.sg/bulletin/stbernadette"
   },
   "21": {
@@ -181,7 +181,7 @@
   "26": {
    "from": "website",
    "title": "",
-   "date": "2026-11-11",
+   "date": "2026-11-13",
    "url": "https://www.stmary.sg/announcements",
    "page": "https://www.stmary.sg/announcements",
    "kind": "announcements"
@@ -196,8 +196,8 @@
   "28": {
    "from": "myCatholicSG",
    "title": "St Stephen Bulletin",
-   "date": "2026-11-06",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611061303_St_StephenBulletin_08112026.pdf?alt=media&token=7c2c765c-8bcc-4fb1-8c36-c1a5dad89eb2",
+   "date": "2026-11-13",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611130927_St_StephenBulletin_15112026.pdf?alt=media&token=80fe0156-f4ef-45c9-8a98-fefe312b023e",
    "page": "https://mycatholic.sg/bulletin/ststephen"
   },
   "29": {
@@ -223,9 +223,9 @@
   },
   "32": {
    "from": "myCatholicSG",
-   "title": "32nd Ordinary Sunday - 15th Nov 2026",
-   "date": "2026-11-02",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611021143_08_Nov%202026.pdf?alt=media&token=5bb55c0d-5b60-4286-a636-d5e913784bc5",
+   "title": "33rd Ordinary Sunday - 15th Nov 2026",
+   "date": "2026-11-12",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611121929_15_Nov%202026.pdf?alt=media&token=4ae18f0b-8f0c-43ee-81a0-4e6352947248",
    "page": "https://mycatholic.sg/bulletin/transfiguration"
   }
  }

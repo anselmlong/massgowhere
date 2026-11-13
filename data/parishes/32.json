@@ -2,9 +2,9 @@
  "id": 32,
  "name": "Church of the Transfiguration",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611021143_08_Nov%202026.pdf?alt=media&token=5bb55c0d-5b60-4286-a636-d5e913784bc5"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611121929_15_Nov%202026.pdf?alt=media&token=4ae18f0b-8f0c-43ee-81a0-4e6352947248"
  ],
- "fetched_at": "2026-11-02T12:35+08:00",
+ "fetched_at": "2026-11-13T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -117,8 +117,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Thérèse L3 Room 3.4",
-   "note": "Intercessory Prayer"
+   "loc": "L3 Room 3.4",
+   "note": "Intercessory; St Thérèse"
   },
   {
    "d": 1,
@@ -152,6 +152,16 @@
   },
   {
    "d": 2,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary"
+  },
+  {
+   "d": 2,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -168,7 +178,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Adoration Room",
-   "note": "Eucharistic Healing Session"
+   "note": "Intercessory"
   },
   {
    "d": 3,
@@ -187,8 +197,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Thérèse L3 Room 3.4",
-   "note": "Intercessory Prayer"
+   "loc": "L3 Room 3.4",
+   "note": "Intercessory; St Thérèse"
   },
   {
    "d": 3,
@@ -279,8 +289,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "St Thérèse L3 Room 3.4",
-   "note": "Intercessory Prayer"
+   "loc": "L3 Room 3.4",
+   "note": "Intercessory; St Thérèse"
   },
   {
    "d": 5,
@@ -305,16 +315,6 @@
   {
    "d": 5,
    "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "Chinese",
-   "loc": "L4 Room 4.2",
-   "note": "Chinese Prayer Group"
-  },
-  {
-   "d": 5,
-   "t": "20:00",
    "weeks": [
     1
    ],
@@ -325,6 +325,16 @@
    "note": "Holy Hour with Reparation"
   },
   {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "Chinese",
+   "loc": "L4 Room 4.2",
+   "note": "Chinese Prayer Group"
+  },
+  {
    "d": 6,
    "t": "06:30",
    "weeks": [],
@@ -333,6 +343,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "15:20",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -364,22 +384,13 @@
   "Confession is subject to priest availability."
  ],
  "info": {
-  "adoration": "Adoration Room: weekdays 07:00–22:00; weekends 07:00–20:00; public holidays 09:00–17:00; closed Mondays 09:00–14:00 (first Mondays 09:00–16:00 for cleaning).",
-  "confession": "Confession is at L2 Confessionals 30 minutes before all weekend Eucharistic Celebrations when a priest is available.",
-  "devotions": [
-   "Divine Mercy Devotion every Thursday 20:00 at L3 Auditorium.",
-   "Holy Hour with Reparation every 1st Thursday 20:00 at Church Hall.",
-   "Holy Hour with Reparation every 1st Friday 20:00 at Church Hall.",
-   "Eucharistic Healing Session every Tuesday 20:00 at Adoration Room.",
-   "Intercessory Prayer Monday, Wednesday and Friday 15:00 at St Thérèse L3 Room 3.4.",
-   "Chinese Prayer Group every Friday 20:00 at L4 Room 4.2."
-  ],
-  "office_hours": "Weekday 09:00–19:00, lunch 12:00–13:00; Saturday 09:00–16:00, lunch 12:00–13:00; Sunday 09:00–12:00."
+  "adoration": "Adoration Room: weekday 07:00-22:00, weekend 07:00-20:00, public holidays 09:00-17:00; closed Mondays 09:00-14:00 for cleaning (1st Mondays 09:00-16:00).",
+  "confession": "L2 Confessionals, 30 minutes before all weekend Masses when priest is available."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611021143_08_Nov%202026.pdf?alt=media&token=5bb55c0d-5b60-4286-a636-d5e913784bc5",
-  "date": "2026-11-02"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611121929_15_Nov%202026.pdf?alt=media&token=4ae18f0b-8f0c-43ee-81a0-4e6352947248",
+  "date": "2026-11-12"
  },
  "disputes": [],
  "vs_mycatholic": {

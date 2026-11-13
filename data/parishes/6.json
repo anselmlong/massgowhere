@@ -2,9 +2,9 @@
  "id": 6,
  "name": "Church of the Holy Family",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611051921_32nd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=6320a90d-2b45-4985-bbea-14ab35062af0"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611121821_33rd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=af32280a-d2e6-401d-8a6c-953737e7d0a8"
  ],
- "fetched_at": "2026-11-06T12:31+08:00",
+ "fetched_at": "2026-11-13T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -47,7 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -57,7 +57,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -67,7 +67,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -77,7 +77,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -87,7 +87,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -97,7 +97,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": "Divine Mercy Devotion"
   },
   {
@@ -107,7 +107,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -117,7 +117,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -127,7 +127,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -137,7 +137,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -147,7 +147,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -157,7 +157,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -169,7 +169,7 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": "First Friday Adoration"
   },
   {
@@ -179,7 +179,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   },
   {
@@ -189,7 +189,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": "Novena Devotion"
   },
   {
@@ -199,8 +199,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": "Sunset Mass"
+   "loc": "Church of the Holy Family",
+   "note": "English Sunset Mass"
   },
   {
    "d": 6,
@@ -209,55 +209,100 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
+   "loc": "Church of the Holy Family",
    "note": ""
   }
  ],
  "dated": [
   {
-   "type": "Devotion",
-   "date": "2026-11-14",
-   "time": "15:45",
-   "language": "English",
-   "location": "Grotto",
-   "title": "Monthly Rosary Prayer at the Grotto",
-   "action": "add"
-  },
-  {
-   "type": "Adoration",
+   "action": "add",
    "date": "2026-11-20",
+   "language": "English",
+   "location": "Main Church",
    "time": "19:30",
-   "language": "English",
-   "location": "Main Church",
-   "title": "Eucharistic Adoration & Mass",
-   "action": "add"
+   "title": "Eucharistic Adoration",
+   "type": "Adoration"
   },
   {
-   "type": "Mass",
+   "action": "add",
    "date": "2026-11-20",
-   "time": "21:00",
    "language": "English",
    "location": "Main Church",
+   "time": "21:00",
    "title": "Eucharistic Adoration & Mass",
-   "action": "add"
+   "type": "Mass"
   },
   {
-   "type": "Mass",
+   "action": "add",
+   "date": "2026-11-27",
+   "language": "English",
+   "location": "Adoration Room",
+   "time": "19:30",
+   "title": "Mass & Intercessory Prayer",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
    "date": "2026-12-11",
+   "language": "English",
+   "location": "Church of the Holy Family",
    "time": "10:30",
-   "language": "English",
-   "location": "",
-   "title": "Advent Penitential Service – Mass & Intercessory Prayer",
-   "action": "add"
+   "title": "Advent Penitential",
+   "type": "Confession"
   },
   {
-   "type": "Mass",
+   "action": "add",
    "date": "2026-12-11",
-   "time": "20:00",
    "language": "English",
-   "location": "",
-   "title": "Advent Penitential Service – Mass & Intercessory Prayer",
-   "action": "add"
+   "location": "Church of the Holy Family",
+   "time": "20:00",
+   "title": "Advent Penitential",
+   "type": "Confession"
+  },
+  {
+   "action": "add",
+   "date": "2026-12-24",
+   "language": "English",
+   "location": "Church of the Holy Family",
+   "time": "21:00",
+   "title": "Christmas Mass",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-12-25",
+   "language": "English",
+   "location": "Church of the Holy Family",
+   "time": "09:30",
+   "title": "Christmas Mass",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-12-25",
+   "language": "English",
+   "location": "Church of the Holy Family",
+   "time": "11:30",
+   "title": "Christmas Mass",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-12-25",
+   "language": "Mandarin",
+   "location": "Church of the Holy Family",
+   "time": "14:00",
+   "title": "Christmas Mass",
+   "type": "Mass"
+  },
+  {
+   "action": "add",
+   "date": "2026-12-25",
+   "language": "English",
+   "location": "Church of the Holy Family",
+   "time": "17:30",
+   "title": "Christmas Mass",
+   "type": "Mass"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
@@ -266,79 +311,79 @@
  ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room open daily, 6am–10.30pm.",
-  "confession": "30 minutes before all weekend Masses.",
+  "adoration": "Adoration Room: Daily, 6am–10.30pm.",
+  "confession": "Confession: 30 minutes before all weekend Masses.",
   "devotions": [
-   "Divine Mercy Devotion: Tuesdays 7pm",
-   "Novena Devotion: Saturdays 4.30pm",
-   "First Friday Adoration: 7pm"
+   "First Friday Adoration: 7pm",
+   "Tuesday Divine Mercy Devotion: 7pm",
+   "Saturday Novena Devotion: 4.30pm"
   ],
-  "office_hours": "Weekdays 9am–1pm and 2–8pm; Saturdays 9am–1pm and 2–5pm; Sundays 8.30am–1pm.",
+  "office_hours": "PARISH OFFICE HOURS: Weekdays: 9am–1pm, 2–8pm; Saturdays: 9am–1pm, 2–5pm; Sundays: 8.30am–1pm.",
   "good_to_know": [
-   "Columbarium open daily 6am–10pm; lift runs daily 9am–7pm and on public holidays 8.30am–12 noon.",
-   "Katong Catholic Shop: Tue–Fri 12 noon–6.30pm, Sat–Sun 8.30am–5.30pm; closed Mondays and public holidays.",
-   "For Last Rites or urgent care of the seriously ill after office hours, call 6344 0046 to reach the priest on duty."
+   "For Last Rites or urgent care for the seriously ill, call 6344 0046 to reach the priest on duty.",
+   "Weddings: Apply at the Parish Office at least one year in advance.",
+   "Elders Catechism: Thursdays, 1–3pm, Pastoral Centre, Level 3."
   ]
  },
  "events": [
   {
-   "date": "2026-11-11",
-   "time": "20:00",
-   "title": "The Chosen Encounter & Premiere of The Chosen Season 6",
-   "text": "8pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. Readings for the 33rd Sunday in Ordinary Time Year A, followed by a screening of The Chosen Season 6, Episode 1."
-  },
-  {
-   "date": "2026-11-12",
-   "time": "19:45",
-   "title": "PM Session",
-   "text": "7.45pm–9.45pm at Holy Family Church Level 4 Function Room (take the lift outside the Adoration Room)."
-  },
-  {
    "date": "2026-11-16",
    "time": "19:45",
-   "title": "Eternal Rest – Part 1",
-   "text": "First part of the video programme 'Eternal Rest – The Art of Dying Well', 7.45pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. All are welcome."
+   "title": "Video on \"Eternal Rest\" (Part 1)",
+   "text": "Video on \"Eternal Rest\" (Part 1) from 7.45pm to 9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall."
   },
   {
    "date": "2026-11-21",
    "time": "09:00",
    "title": "Parish Day of Recollection",
-   "text": "9am–3pm at Pastoral Centre Levels 3 & 4. All parishioners are invited to draw closer to Jesus and grow together as a parish before Advent."
+   "text": "Parish Day of Recollection: Draw Closer to Jesus, Grow Together as a Parish, 9.00am to 3.00pm at Pastoral Centre Level 3 & 4."
   },
   {
    "date": "2026-11-23",
    "time": "09:30",
-   "title": "AM Session",
-   "text": "9.30am–11.30am at Pastoral Centre Level 3, St Ephrem Room. Scan the QR code to register."
+   "title": "The Chosen Encounter & Premiere Season 6",
+   "text": "The Chosen Encounter & Premiere Season 6, AM Session, 9.30am to 11.30am at Pastoral Centre Level 3 St. Ephrem Room."
   },
   {
    "date": "2026-11-23",
    "time": "19:45",
-   "title": "Eternal Rest – Part 2",
-   "text": "Second part of the video programme 'Eternal Rest – The Art of Dying Well', 7.45pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall."
+   "title": "Video on \"Eternal Rest\" (Part 2)",
+   "text": "Video on \"Eternal Rest\" (Part 2) from 7.45pm to 9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall."
   },
   {
    "date": "2026-11-24",
    "time": "19:45",
    "title": "Advent Reflection 2026",
-   "text": "7.45pm–9.30pm at Pastoral Centre Level 3, St Ephrem Room, on Tuesdays 24 Nov and 1, 8 and 15 Dec. Scripture readings for Advent followed by sharing; bring family and friends. Scan the QR code to register by 22 Nov."
+   "text": "Advent Reflection 2026, 7.45pm to 9.30pm at Pastoral Centre Level 3 St. Ephrem Room."
   },
   {
    "date": "2026-11-25",
    "time": "20:00",
-   "title": "The Chosen Encounter & Premiere of The Chosen Season 6",
-   "text": "8pm–9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall. Readings for the 1st Sunday in Advent Year B, followed by a screening of The Chosen Season 6, Episode 1."
+   "title": "Opening the Word of Life",
+   "text": "Opening the Word of Life: Reading & Reflecting on the Sunday's Eucharistic Readings, 8.00pm to 9.30pm at Pastoral Centre Level 1 Multi-Purpose Hall."
   },
   {
-   "date": "2026-11-27",
-   "time": "19:30",
-   "title": "Opening the Word of Life",
-   "text": "7.30pm–9.30pm at the Adoration Room. Read, reflect and share on the coming Sunday's Eucharistic Readings to prepare spiritually for Sunday Mass."
+   "date": "2026-12-01",
+   "time": "19:45",
+   "title": "Advent Reflection 2026",
+   "text": "Advent Reflection 2026, 7.45pm to 9.30pm at Pastoral Centre Level 3 St. Ephrem Room."
+  },
+  {
+   "date": "2026-12-08",
+   "time": "19:45",
+   "title": "Advent Reflection 2026",
+   "text": "Advent Reflection 2026, 7.45pm to 9.30pm at Pastoral Centre Level 3 St. Ephrem Room."
+  },
+  {
+   "date": "2026-12-15",
+   "time": "19:45",
+   "title": "Advent Reflection 2026",
+   "text": "Advent Reflection 2026, 7.45pm to 9.30pm at Pastoral Centre Level 3 St. Ephrem Room."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611051921_32nd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=6320a90d-2b45-4985-bbea-14ab35062af0",
-  "date": "2026-11-05"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611121821_33rd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=af32280a-d2e6-401d-8a6c-953737e7d0a8",
+  "date": "2026-11-12"
  },
  "disputes": [],
  "vs_mycatholic": {

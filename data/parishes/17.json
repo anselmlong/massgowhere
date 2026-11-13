@@ -2,9 +2,9 @@
  "id": 17,
  "name": "Church of St Alphonsus (Novena Church)",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2611061115_2._Novena%208%20November%20%20to%2014%20November%20EVAN.pdf?alt=media&token=caff878f-9486-4144-8874-79d43977ba0e"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2611121741_3._Novena%2015%20November%20%20to%2021%20November%20ROSE.pdf?alt=media&token=9fd2c833-b866-4a84-b6ed-c6a5482f12d8"
  ],
- "fetched_at": "2026-11-06T12:32+08:00",
+ "fetched_at": "2026-11-13T12:34+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -12,30 +12,10 @@
  "rules": [
   {
    "d": 0,
-   "t": "07:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "08:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "09:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -52,30 +32,10 @@
   },
   {
    "d": 0,
-   "t": "11:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "12:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -92,30 +52,10 @@
   },
   {
    "d": 1,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 1,
    "t": "12:15",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 1,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -132,30 +72,10 @@
   },
   {
    "d": 2,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
    "t": "12:15",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -172,30 +92,10 @@
   },
   {
    "d": 3,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
    "t": "12:15",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -212,30 +112,10 @@
   },
   {
    "d": 4,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
    "t": "12:15",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -252,30 +132,10 @@
   },
   {
    "d": 5,
-   "t": "11:45",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
    "t": "12:15",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -368,25 +228,43 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": "Sunset"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "action": "add",
+   "date": "2026-12-07",
+   "language": "English",
+   "location": "",
+   "time": "19:45",
+   "title": "Christmas Penitential Service",
+   "type": "Confession"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "09:00",
+  "18:30"
+ ],
  "notes": [
-  "No booking is required. There will not be standing room allowed in the main church."
+  "Public holidays follow the public holiday Mass schedule."
  ],
  "info": {
-  "confession": "Confession is 30 minutes before Mass on weekdays, Sundays, and public holidays.",
+  "confession": "Confession is 30 minutes before Mass.",
   "devotions": [
-   "Novena Devotions are held on Saturdays."
+   "Saturday Novena Devotions",
+   "Saturday Novena Devotions (Mandarin)"
+  ],
+  "good_to_know": [
+   "No booking is required. There will not be standing room allowed in the main church.",
+   "Public holidays follow a different Mass schedule."
   ]
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2611061115_2._Novena%208%20November%20%20to%2014%20November%20EVAN.pdf?alt=media&token=caff878f-9486-4144-8874-79d43977ba0e",
-  "date": "2026-11-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2611121741_3._Novena%2015%20November%20%20to%2021%20November%20ROSE.pdf?alt=media&token=9fd2c833-b866-4a84-b6ed-c6a5482f12d8",
+  "date": "2026-11-12"
  },
  "disputes": [],
  "vs_mycatholic": {

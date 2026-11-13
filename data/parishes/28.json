@@ -2,9 +2,9 @@
  "id": 28,
  "name": "Church of St Stephen",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611061303_St_StephenBulletin_08112026.pdf?alt=media&token=7c2c765c-8bcc-4fb1-8c36-c1a5dad89eb2"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611130927_St_StephenBulletin_15112026.pdf?alt=media&token=80fe0156-f4ef-45c9-8a98-fefe312b023e"
  ],
- "fetched_at": "2026-11-06T21:03+08:00",
+ "fetched_at": "2026-11-13T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": ""
   },
   {
@@ -27,8 +27,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Divine Mercy Devotion, praying the Chaplet"
+   "loc": "Church of St Stephen",
+   "note": ""
   },
   {
    "d": 0,
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": ""
   },
   {
@@ -49,8 +49,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Malayalam",
-   "loc": "",
-   "note": "Malayalam Syro-Malabar Qurbana, 2nd Sunday only"
+   "loc": "Church of St Stephen",
+   "note": "2nd Sunday"
   },
   {
    "d": 0,
@@ -61,8 +61,8 @@
    "except": [],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "",
-   "note": "1st Sunday only"
+   "loc": "Church of St Stephen",
+   "note": "1st Sunday"
   },
   {
    "d": 0,
@@ -71,7 +71,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": ""
   },
   {
@@ -81,7 +81,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": ""
   },
   {
@@ -91,7 +91,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": ""
   },
   {
@@ -101,7 +101,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": ""
   },
   {
@@ -111,7 +111,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": ""
   },
   {
@@ -121,7 +121,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": ""
   },
   {
@@ -131,8 +131,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Rosary, followed by Mass"
+   "loc": "Church of St Stephen",
+   "note": ""
   },
   {
    "d": 6,
@@ -141,102 +141,73 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Stephen",
    "note": "Sunset Mass"
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-11-09",
-   "time": "10:00",
-   "language": "English",
-   "location": "Church of St Stephen",
-   "title": "Mass with Anointing of the Sick",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-09",
-   "time": "06:30",
-   "language": "English",
-   "location": "",
-   "title": "No 6.30am weekday morning Mass (public holiday)",
-   "action": "cancel"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-20",
-   "time": "18:30",
-   "language": "English",
-   "location": "St Joseph's Church (Bukit Timah)",
-   "title": "Ordination Mass of Bro Francis Tan",
-   "action": "add"
-  },
-  {
-   "type": "Confession",
-   "date": "2026-12-16",
-   "time": "20:00",
-   "language": "English",
-   "location": "Church of St Stephen",
-   "title": "Penitential Service",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30"
  ],
- "notes": [],
+ "notes": [
+  "Public holidays follow a different weekday Mass schedule."
+ ],
  "info": {
-  "confession": "Half an hour before Mass.",
+  "confession": "Confession is available half an hour before Mass.",
   "devotions": [
-   "Rosary: Saturdays 4.45pm, followed by Mass",
-   "Divine Mercy Devotion (Chaplet): Sundays 10.15am"
+   "Rosary Devotion: Saturday 4.45pm",
+   "Divine Mercy Devotion: Sunday 10.15am"
   ],
   "office_hours": "Monday to Friday 9.00am to 5.00pm",
   "good_to_know": [
-   "Nearest MRT: Mattar station (DT25), Exit B.",
-   "Buses 62, 64 and 100 stop on Aljunied Road (entry through the front gate); buses 40, 61, 63, 65, 135, 154, 155 and 158 stop on Mattar Road (entry through the back gate).",
-   "Bookshop: Saturdays 5.00pm to 6.30pm, Sundays 9.00am to 12.30pm.",
-   "Parish office is on Level 1, in front of the main church entrance."
+   "For weddings, one year notification is required.",
+   "For infant baptism, please call the office.",
+   "For funerals, please notify the priest immediately.",
+   "Mass intentions are $10 per name per mass; drop your envelope at least one week ahead."
   ]
  },
  "events": [
   {
    "date": "2026-11-15",
-   "time": "19:00",
-   "title": "The Chosen Season 6, Episode 1 — Early Access Screening",
-   "text": "At the 3rd Floor Multi-Purpose Hall, presented by Come and See. Free admission but registration is required and seating is limited, so register early via the QR code."
+   "time": "",
+   "title": "Catechism Year End Party",
+   "text": "Potluck party after the 11:00am Mass for catechism children and parents."
   },
   {
-   "date": "2026-11-20",
-   "time": "15:00",
-   "title": "Tea-ology: Theology over Tea",
-   "text": "For 16 to 19 year olds, 3pm to 5.15pm at the Training & Development Centre, Catholic Junior College, 129 Whitley Road. Bubble tea and snacks provided; sign up at go.gov.sg/cjctot2026 by Friday 13 November."
+   "date": "2026-11-15",
+   "time": "19:00",
+   "title": "Special Early Access Screening: The Chosen Season 6, Episode 1",
+   "text": ""
   },
   {
    "date": "2026-11-21",
    "time": "10:00",
    "title": "OYP Outreach for Sec 4 & 5 Students",
-   "text": "10am to 1pm at 55 Waterloo St, Catholic Centre #08-01, for students graduating from Sec 4 and 5. Free; register at tinyurl.com/SecOutreach26Nov."
+   "text": "10AM - 1PM. Free. Venue: 55 Waterloo St, Catholic Ctr #08-01. Register: tinyurl.com/SecOutreach26Nov"
   },
   {
    "date": "2026-12-04",
    "time": "19:00",
    "title": "Advent Retreat for LGBTQ",
-   "text": "\"The Lord is Near: Come Home to Him who Comes\" — a stay-in weekend retreat from Friday 4 Dec, 7pm, to Sunday 6 Dec, 4pm, with Friar John Paul Tan OFM, Sr Monika (Verbum Dei) and other clergy and religious. Register at tinyurl.com/couragedadvent2026."
+   "text": "Stay-in weekend retreat from Friday 4 Dec (7pm) to Sunday, 6 Dec (4pm). Register at tinyurl.com/couragedadvent2026"
+  },
+  {
+   "date": "2026-12-05",
+   "time": "",
+   "title": "Christmas Carolling",
+   "text": "Jubilate Choir house-to-house carolling. Also on Dec 6, 12, 13, 19, 20. Contact Germain @98882666 to book."
   },
   {
    "date": "2026-12-16",
    "time": "",
    "title": "BREATHE Youth Retreat",
-   "text": "A stay-in retreat for 16 to 30 year olds from 16 to 20 December, organised by the Catholic Spirituality Centre. Register at bit.ly/breathe4 by 30 November."
+   "text": "Stay-in retreat for 16-30yos on 16-20 Dec. Registration at bit.ly/breathe4 closes on 30 Nov. Organised by Catholic Spirituality Centre."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611061303_St_StephenBulletin_08112026.pdf?alt=media&token=7c2c765c-8bcc-4fb1-8c36-c1a5dad89eb2",
-  "date": "2026-11-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611130927_St_StephenBulletin_15112026.pdf?alt=media&token=80fe0156-f4ef-45c9-8a98-fefe312b023e",
+  "date": "2026-11-13"
  },
  "disputes": [],
  "vs_mycatholic": {
