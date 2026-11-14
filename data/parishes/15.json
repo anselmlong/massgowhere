@@ -2,9 +2,9 @@
  "id": 15,
  "name": "Church of the Risen Christ",
  "source_urls": [
-  "https://drive.google.com/file/d/1u1aCqV2VY0_JQoln4DQSYLZ8ceBEJWda/view"
+  "https://drive.google.com/file/d/1yVQig38xhHBdvkeLRMUvgIakoldQD1Kq/view"
  ],
- "fetched_at": "2026-11-08T12:32+08:00",
+ "fetched_at": "2026-11-14T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -60,7 +60,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": "4th Sunday"
+   "note": ""
   },
   {
    "d": 0,
@@ -82,7 +82,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": "2nd Sunday"
+   "note": ""
   },
   {
    "d": 1,
@@ -165,16 +165,6 @@
    "note": ""
   },
   {
-   "d": 4,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Parish Hall",
-   "note": "Breaking of the Word: spiritual gathering for weekend liturgy with a gospel reflection."
-  },
-  {
    "d": 5,
    "t": "06:30",
    "weeks": [],
@@ -183,16 +173,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "09:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "St Cecilia's Room",
-   "note": "Mothers' Prayer Group, 9.30am-11.00am."
   },
   {
    "d": 5,
@@ -202,7 +182,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Parish Hall",
-   "note": "Divine Mercy Devotion."
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 5,
@@ -224,7 +204,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "1st Friday"
+   "note": ""
   },
   {
    "d": 6,
@@ -250,53 +230,97 @@
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-09",
-   "time": "07:30",
-   "language": "English",
-   "location": "",
-   "title": "Public Holiday Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-13",
-   "time": "20:00",
-   "language": "English",
-   "location": "Church of St Alphonsus (Novena Church)",
-   "title": "PIETA Memorial Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
    "date": "2026-11-20",
    "time": "18:30",
    "language": "English",
    "location": "Church of St Joseph, Bukit Timah",
-   "title": "Ordination to the Order Diaconate of Bro Francis Tan",
+   "title": "Ordination to the Order of Diaconate",
    "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "07:30"
+ ],
  "notes": [
-  "Parish office closed on 8 Nov and 9 Nov.",
-  "No evening Mass on 9 Nov (public holiday)."
+  "Public holiday Mass times differ from the regular schedule."
  ],
  "info": {
-  "adoration": "Adoration room closes at 18:00 on 9 Nov.",
   "devotions": [
-   "All Souls Month Prayer: 11-19 Nov, every night 21:30-22:00 (line opens 21:15) on Zoom 893 9804 8863, password 123456."
+   "Divine Mercy Devotion at 15:00 on Fridays in the Parish Hall"
   ],
-  "office_hours": "Parish office closed on 8 Nov and 9 Nov.",
   "good_to_know": [
-   "No evening Mass on 9 Nov (public holiday).",
-   "No talk on 9 Nov for Aflame! Charismatic Prayer Community."
+   "Address: 91 Toa Payoh Central, Singapore 319193",
+   "Tel: 6253 2166",
+   "Website: www.risenchrist.org.sg",
+   "Church Wedding Booking: register with the parish office at least one year in advance."
   ]
  },
- "events": [],
+ "events": [
+  {
+   "date": "2026-11-26",
+   "time": "20:00",
+   "title": "Breaking of the Word for Advent",
+   "text": "All are welcome. Join us to prepare our hearts for our Lord’s Nativity. At Parish Hall."
+  },
+  {
+   "date": "2026-12-03",
+   "time": "20:00",
+   "title": "Breaking of the Word for Advent",
+   "text": "All are welcome. Join us to prepare our hearts for our Lord’s Nativity. At Parish Hall."
+  },
+  {
+   "date": "2026-12-10",
+   "time": "20:00",
+   "title": "Breaking of the Word for Advent",
+   "text": "All are welcome. Join us to prepare our hearts for our Lord’s Nativity. At Parish Hall."
+  },
+  {
+   "date": "2026-12-17",
+   "time": "20:00",
+   "title": "Breaking of the Word for Advent",
+   "text": "All are welcome. Join us to prepare our hearts for our Lord’s Nativity. At Parish Hall."
+  },
+  {
+   "date": "2027-01-05",
+   "time": "",
+   "title": "Keryma 27 Opening Retreat [Stay in]",
+   "text": "Discipleship school for young adults (18-25 yo)."
+  },
+  {
+   "date": "2027-01-23",
+   "time": "",
+   "title": "Keryma 27 Christian Living",
+   "text": "4 full Saturdays."
+  },
+  {
+   "date": "2027-01-30",
+   "time": "",
+   "title": "Keryma 27 Christian Living",
+   "text": "4 full Saturdays."
+  },
+  {
+   "date": "2027-02-13",
+   "time": "",
+   "title": "Keryma 27 Christian Living",
+   "text": "4 full Saturdays."
+  },
+  {
+   "date": "2027-02-20",
+   "time": "",
+   "title": "Keryma 27 Christian Living",
+   "text": "4 full Saturdays."
+  },
+  {
+   "date": "2027-02-25",
+   "time": "",
+   "title": "Keryma 27 Closing Retreat",
+   "text": "Discipleship school for young adults (18-25 yo)."
+  }
+ ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1u1aCqV2VY0_JQoln4DQSYLZ8ceBEJWda/view",
-  "date": "2026-11-14"
+  "url": "https://drive.google.com/file/d/1yVQig38xhHBdvkeLRMUvgIakoldQD1Kq/view",
+  "date": "2026-11-15"
  },
  "disputes": [],
  "vs_mycatholic": {

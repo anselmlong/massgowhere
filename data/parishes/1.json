@@ -2,9 +2,9 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611071054_CHURCH_BULLETIN%20%208-14%20NOV.pdf?alt=media&token=5e78c65a-5131-46ea-a7a9-6aae8c10b8ff"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611141731_CHURCH_BULLETIN%20%2015-21%20NOV.pdf?alt=media&token=e36b8014-4601-496f-9dc3-93e84c6465f6"
  ],
- "fetched_at": "2026-11-07T12:32+08:00",
+ "fetched_at": "2026-11-14T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -328,11 +328,11 @@
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-13",
-   "time": "20:00",
+   "date": "2026-11-26",
+   "time": "18:30",
    "language": "English",
-   "location": "Church of St Alphonsus",
-   "title": "Pieta Singapore Annual Memorial Mass 2026",
+   "location": "St Joseph's Church",
+   "title": "Catholic Foundation Thanksgiving Mass 2026",
    "action": "add"
   }
  ],
@@ -342,23 +342,43 @@
  "info": {
   "confession": "Confession is available 15 minutes before Masses.",
   "devotions": [
-   "Divine Mercy every Friday at 8pm.",
-   "Eucharistic Adoration on the 1st Friday at 7pm and 1st Saturday at 9am.",
-   "Intercessory Prayers on the 2nd Friday at 7.45pm.",
-   "Novena to Our Blessed Mother every Saturday at 5pm."
+   "Divine Mercy every Friday at 20:00.",
+   "Eucharistic Adoration (Sacred Heart of Jesus) on 1st Friday at 19:00.",
+   "Intercessory Prayers on 2nd Friday at 19:45.",
+   "Novena to Our Blessed Mother every Saturday at 17:00.",
+   "Eucharistic Adoration (Immaculate Heart of Mary) on 1st Saturday at 09:00."
   ],
-  "office_hours": "Parish Office: Tel 64740582, open 10am-6pm.",
+  "office_hours": "Parish Office: 10am-6pm.",
   "good_to_know": [
-   "Infant Baptism: every 2nd Sunday of the month at the 5.30pm Mass. Contact the Parish Office to register interest 2 weeks in advance.",
-   "Anointing of the Sick: make an appointment with the Secretariat for a priest to minister.",
-   "Holy Matrimony: couples must inform the Priest at least 6 months before booking the Church for the Wedding Mass/Service.",
-   "Bereavement: contact the Secretariat for help and advice before contacting a Funeral Director."
+   "Anointing of the Sick by appointment.",
+   "Holy Matrimony requires at least 6 months' notice.",
+   "Infant Baptism every 2nd Sunday at the 5.30pm Mass; contact Parish Office to register 2 weeks in advance.",
+   "Bereavement: contact the Secretariat before contacting a Funeral Director."
   ]
  },
- "events": [],
+ "events": [
+  {
+   "date": "2026-11-25",
+   "time": "19:30",
+   "title": "Discussion Night for Young Adults on AI",
+   "text": "Join Caritas Young Adults for a night of discussion on AI tools, their benefits, and their effects on our lives from the lens of faith. Dinner provided. Sign up at bit.ly/streetcreed."
+  },
+  {
+   "date": "2026-11-28",
+   "time": "13:30",
+   "title": "Conversations that Matter",
+   "text": "Join Fr David Garcia, OP and Nicholas Gabriel Lim for practical guidance on listening, responding and walking alongside your teen with love and understanding. Fee: $20 per person or $35 for 2 persons. Register at familylife.sg/CTM_B."
+  },
+  {
+   "date": "2027-07-25",
+   "time": "00:00",
+   "title": "World Youth Day 2027",
+   "text": "Pilgrimage from 25 Jul - 9 Aug 2027, 16D15N to the Philippines and Korea. Registration is open. For details, visit Instagram @bscyouth."
+  }
+ ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611071054_CHURCH_BULLETIN%20%208-14%20NOV.pdf?alt=media&token=5e78c65a-5131-46ea-a7a9-6aae8c10b8ff",
-  "date": "2026-11-07"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611141731_CHURCH_BULLETIN%20%2015-21%20NOV.pdf?alt=media&token=e36b8014-4601-496f-9dc3-93e84c6465f6",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {

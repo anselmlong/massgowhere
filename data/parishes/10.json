@@ -2,9 +2,9 @@
  "id": 10,
  "name": "Church of Our Lady of Lourdes",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611071415_20261108_32nd_OT.pdf?alt=media&token=b84b1c61-3c21-44f4-9f98-f41d4fb3b3c6"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611141404_20261115_33rd_OT.pdf?alt=media&token=dc544f0a-bcfc-4a56-a8c7-6b3b0baa680b"
  ],
- "fetched_at": "2026-11-07T21:02+08:00",
+ "fetched_at": "2026-11-14T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -82,7 +82,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -112,7 +112,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 2,
@@ -142,7 +142,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -172,7 +172,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -202,7 +202,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -242,7 +242,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Our Lady of Good Health, Vailankkani"
   },
   {
    "d": 6,
@@ -261,12 +261,12 @@
  "notes": [],
  "info": {
   "adoration": "Adoration Room: Daily 08:00-20:00.",
-  "confession": "Sacrament of Reconciliation is available 30 minutes before."
+  "confession": "Reconciliation is available 30 minutes before Mass."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611071415_20261108_32nd_OT.pdf?alt=media&token=b84b1c61-3c21-44f4-9f98-f41d4fb3b3c6",
-  "date": "2026-11-07"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611141404_20261115_33rd_OT.pdf?alt=media&token=dc544f0a-bcfc-4a56-a8c7-6b3b0baa680b",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {

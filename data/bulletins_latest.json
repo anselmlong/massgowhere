@@ -1,12 +1,12 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-14T12:31+08:00",
+ "fetchedAt": "2026-11-14T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
-   "title": "8 - 14 Nov 2026",
-   "date": "2026-11-07",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611071054_CHURCH_BULLETIN%20%208-14%20NOV.pdf?alt=media&token=5e78c65a-5131-46ea-a7a9-6aae8c10b8ff",
+   "title": "15th - 21st Nov 2026",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611141731_CHURCH_BULLETIN%20%2015-21%20NOV.pdf?alt=media&token=e36b8014-4601-496f-9dc3-93e84c6465f6",
    "page": "https://mycatholic.sg/bulletin/blessedsacrament"
   },
   "2": {
@@ -67,9 +67,9 @@
   },
   "10": {
    "from": "myCatholicSG",
-   "title": "32nd Sunday in Ordinary Time",
-   "date": "2026-11-07",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611071415_20261108_32nd_OT.pdf?alt=media&token=b84b1c61-3c21-44f4-9f98-f41d4fb3b3c6",
+   "title": "33rd Sunday in Ordinary Time",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611141404_20261115_33rd_OT.pdf?alt=media&token=dc544f0a-bcfc-4a56-a8c7-6b3b0baa680b",
    "page": "https://mycatholic.sg/bulletin/ladyoflourdes"
   },
   "11": {
@@ -103,8 +103,8 @@
   "15": {
    "from": "website",
    "title": "",
-   "date": "2026-11-14",
-   "url": "https://drive.google.com/file/d/1u1aCqV2VY0_JQoln4DQSYLZ8ceBEJWda/view",
+   "date": "2026-11-15",
+   "url": "https://drive.google.com/file/d/1yVQig38xhHBdvkeLRMUvgIakoldQD1Kq/view",
    "page": "https://www.risenchrist.org.sg/bulletin"
   },
   "16": {
@@ -202,16 +202,16 @@
   },
   "29": {
    "from": "myCatholicSG",
-   "title": "20261108 Church Bulletin 8 November 2026",
-   "date": "2026-11-07",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2611071709_CST_BULLETIN%20-%2008%20Nov%2026.pdf?alt=media&token=753e379e-efb3-4bd6-8a15-9022c3beda17",
+   "title": "20261115 Church Bulletin 15 November 2026",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2611141603_CST_BULLETIN%20-%2015%20Nov%2026.pdf?alt=media&token=770e6368-dfbf-4da0-b155-c3124216c4a6",
    "page": "https://mycatholic.sg/bulletin/stteresa"
   },
   "30": {
    "from": "myCatholicSG",
-   "title": "32ND SUNDAY IN ORDINARY TIME - 8 NOV 2026",
-   "date": "2026-11-07",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611071516_32ND_SUNDAY%20IN%20ORDINARY%20TIME%20-%208%20Nov%202026.pdf?alt=media&token=21ff1599-18da-4404-8292-d077d5809601",
+   "title": "33RD SUNDAY IN ORDINARY TIME - 15 November 2026",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611142027_33RD_SUNDAY%20IN%20ORDINARY%20TIME%20-%2015%20November%202026.pdf?alt=media&token=098f4c86-117a-4248-afb9-f50a5b487c32",
    "page": "https://mycatholic.sg/bulletin/stvincentdepaul"
   },
   "31": {
