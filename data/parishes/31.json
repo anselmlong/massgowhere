@@ -2,9 +2,9 @@
  "id": 31,
  "name": "Church of Sts Peter and Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611061510_1108_2026.pdf?alt=media&token=2d0947d3-9d37-4959-ad9b-da42cd7d9eaa"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611141054_1115_2026.pdf?alt=media&token=ea4ac038-f508-4bcf-a233-4c8711507f04"
  ],
- "fetched_at": "2026-11-06T21:06+08:00",
+ "fetched_at": "2026-11-14T12:35+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -22,16 +22,6 @@
   },
   {
    "d": 0,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Half an hour before 11:00am Mass"
-  },
-  {
-   "d": 0,
    "t": "11:00",
    "weeks": [],
    "except": [],
@@ -48,17 +38,7 @@
    "type": "Devotion",
    "lang": "Mandarin",
    "loc": "",
-   "note": "11:00-12:30"
-  },
-  {
-   "d": 0,
-   "t": "13:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Half an hour before 2:00pm Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -72,16 +52,6 @@
   },
   {
    "d": 0,
-   "t": "15:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Half an hour before 4:00pm Mass"
-  },
-  {
-   "d": 0,
    "t": "16:00",
    "weeks": [],
    "except": [],
@@ -108,7 +78,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Morning Prayer at 07:00"
+   "note": ""
   },
   {
    "d": 1,
@@ -118,17 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "English, 15:00-16:00"
-  },
-  {
-   "d": 1,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Half an hour before evening Mass"
+   "note": ""
   },
   {
    "d": 1,
@@ -158,7 +118,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Morning Prayer at 07:00"
+   "note": ""
   },
   {
    "d": 2,
@@ -168,17 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "English, 15:00-16:00"
-  },
-  {
-   "d": 2,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Half an hour before evening Mass"
+   "note": ""
   },
   {
    "d": 2,
@@ -208,7 +158,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Morning Prayer at 07:00"
+   "note": ""
   },
   {
    "d": 3,
@@ -218,31 +168,19 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "English, 15:00-16:00"
-  },
-  {
-   "d": 3,
-   "t": "17:30",
-   "weeks": [],
-   "except": [
-    -1
-   ],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Half an hour before evening Mass; no evening Mass on 3rd Wednesday"
+   "note": ""
   },
   {
    "d": 3,
    "t": "18:00",
    "weeks": [],
    "except": [
-    -1
+    3
    ],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "No evening Mass every 3rd Wednesday of the month"
+   "note": ""
   },
   {
    "d": 4,
@@ -262,7 +200,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Morning Prayer at 07:00"
+   "note": ""
   },
   {
    "d": 4,
@@ -272,7 +210,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "English, 15:00-16:00"
+   "note": ""
   },
   {
    "d": 4,
@@ -282,7 +220,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Followed by Mass"
+   "note": ""
   },
   {
    "d": 4,
@@ -292,7 +230,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "No Confession before this Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -312,7 +250,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Morning Prayer at 07:00"
+   "note": ""
   },
   {
    "d": 5,
@@ -322,17 +260,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "English, 15:00-16:00"
-  },
-  {
-   "d": 5,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Half an hour before evening Mass"
+   "note": ""
   },
   {
    "d": 5,
@@ -362,7 +290,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Morning Prayer at 07:00"
+   "note": ""
   },
   {
    "d": 6,
@@ -372,7 +300,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Sion Adorers; 16:00-17:00"
+   "note": ""
   },
   {
    "d": 6,
@@ -386,59 +314,34 @@
   },
   {
    "d": 6,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "Half an hour before Sunset Mass"
-  },
-  {
-   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": ""
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "08:00"
+ ],
  "notes": [
-  "No evening Mass on a public holiday that falls on a weekday.",
-  "Regular devotions and prayers are not held on public holidays; the public holiday Mass is preceded by Morning Prayer at 07:40.",
-  "Church Office closed on 8 and 9 November; Canteen closed on 8 November 2026."
+  "No evening Mass on public holidays that fall on a weekday.",
+  "No devotions/prayers on public holidays.",
+  "No evening Mass every 3rd Wednesday of the month."
  ],
  "info": {
-  "adoration": "Chapel of the Incarnation: Monday to Friday 08:00-21:00, Saturday/Sunday 08:00-18:00; closed on public holidays. Holy Hour (Sion Adorers): Saturday 16:00-17:00.",
-  "confession": "Confessions are heard half an hour before weekday evening and weekend Masses, except Thursday evenings and before the Sunday 08:30 Mandarin Mass.",
-  "devotions": [
-   "Morning Prayer: Monday to Saturday 07:00",
-   "Infant Jesus Devotion: Thursday 17:30",
-   "Rosary: Saturday 16:30",
-   "Divine Mercy Devotion: Monday to Friday 15:00-16:00 (English), Sunday 11:00-12:30 (Mandarin)",
-   "Sion Adorers - Holy Hour: Saturday 16:00-17:00"
-  ],
-  "office_hours": "Secretariat: Monday to Friday 09:30-19:30, Saturday 09:00-17:00, Sunday 09:00-12:00, Public Holidays closed. Columbarium: Monday to Friday 07:00-19:00, Saturday/Sunday 07:00-17:00, Public Holidays 07:00-19:00 (car park closed).",
-  "good_to_know": [
-   "Church Office closed on 8 and 9 November; Canteen closed on 8 November 2026."
-  ]
+  "adoration": "Chapel of the Incarnation: Mon-Fri 08:00-21:00, Sat-Sun 08:00-18:00; closed on public holidays.",
+  "confession": "Confessions are heard half an hour before weekday evening and weekend Masses. Not available on Thursday evenings or before the Sunday 08:30 Mandarin Mass.",
+  "office_hours": "Secretariat: Mon-Fri 09:30-19:30, Sat 09:00-17:00, Sun 09:00-12:00, Public Holidays closed. Columbarium: Mon-Fri 07:00-19:00, Sat-Sun 07:00-17:00, Public Holidays 07:00-19:00 (car park closed)."
  },
- "events": [
-  {
-   "date": "2026-12-27",
-   "time": "11:00",
-   "title": "Celebration of Milestone Wedding Anniversaries",
-   "text": "Celebration of Milestone Wedding Anniversaries: couples celebrating 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75 or 80 years are invited to renew their matrimonial commitment during the 11:00am Mass. Register by 15 November 2026 for the Papal Blessing Parchment."
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611061510_1108_2026.pdf?alt=media&token=2d0947d3-9d37-4959-ad9b-da42cd7d9eaa",
-  "date": "2026-11-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611141054_1115_2026.pdf?alt=media&token=ea4ac038-f508-4bcf-a233-4c8711507f04",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -491,7 +394,7 @@
     "18:00",
     [],
     [
-     -1
+     3
     ]
    ]
   ],

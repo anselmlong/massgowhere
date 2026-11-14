@@ -2,9 +2,9 @@
  "id": 9,
  "name": "Church of the Immaculate Heart of Mary",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610301532_44_All%20Saints'%20Day%2001NOv26.pdf?alt=media&token=89587d46-4381-4a33-8bf8-a7d4b35bc36c"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611141112_33rd_Sun%20in%20Ord%20Time%2015Nov26.pdf?alt=media&token=954e55b1-de0d-47b0-987d-c05ea0ad5483"
  ],
- "fetched_at": "2026-10-31T12:31+08:00",
+ "fetched_at": "2026-11-14T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -181,7 +181,7 @@
    "type": "Mass",
    "lang": "Mandarin",
    "loc": "",
-   "note": "Anticipatory Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -191,7 +191,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Anticipatory Mass"
+   "note": ""
   }
  ],
  "dated": [],
@@ -201,8 +201,8 @@
  "info": {},
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610301532_44_All%20Saints'%20Day%2001NOv26.pdf?alt=media&token=89587d46-4381-4a33-8bf8-a7d4b35bc36c",
-  "date": "2026-10-30"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611141112_33rd_Sun%20in%20Ord%20Time%2015Nov26.pdf?alt=media&token=954e55b1-de0d-47b0-987d-c05ea0ad5483",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {

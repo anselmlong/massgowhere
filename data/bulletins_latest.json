@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-13T21:01+08:00",
+ "fetchedAt": "2026-11-14T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -25,16 +25,16 @@
   },
   "4": {
    "from": "myCatholicSG",
-   "title": "7/8 November 2026 - Vol 45 - 32nd Sunday in Ordinary Time",
-   "date": "2026-11-07",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611070915_CDM_Parish%20Bulletin%20Vol2026.45%E2%80%93%2007-08Nov_v2.pdf?alt=media&token=fc0750e0-0223-485e-9e98-f89ec6fd8e9e",
+   "title": "14/15 November 2026 - Vol 46 - 33rd Sunday in Ordinary Time",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611140915_CDM_Parish%20Bulletin%20Vol2026.46%E2%80%93%2014-15Nov%20v2.pdf?alt=media&token=b3f595d7-e8a1-4fb1-b5c4-635cd8e981bc",
    "page": "https://mycatholic.sg/bulletin/divinemercy"
   },
   "5": {
    "from": "myCatholicSG",
-   "title": "Thirty-second Sunday in Ordinary Time",
-   "date": "2026-11-07",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611070159_English_Bulletin%208%20Nov.pdf?alt=media&token=53ee7d42-01ff-413f-a177-16677598c946",
+   "title": "33rd Sunday in Ordinary Time",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611140238_English_Bulletin%2015%20Nov.pdf?alt=media&token=bce8a1ba-a52a-4c21-8e06-5fc03da39792",
    "page": "https://mycatholic.sg/bulletin/holycross"
   },
   "6": {
@@ -60,9 +60,9 @@
   },
   "9": {
    "from": "myCatholicSG",
-   "title": "44. All Saints' day - 01 Nov 2026",
-   "date": "2026-10-30",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2610301532_44_All%20Saints'%20Day%2001NOv26.pdf?alt=media&token=89587d46-4381-4a33-8bf8-a7d4b35bc36c",
+   "title": "46. 33th Sunday in Ord. Time - 15 Nov 2026",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611141112_33rd_Sun%20in%20Ord%20Time%2015Nov26.pdf?alt=media&token=954e55b1-de0d-47b0-987d-c05ea0ad5483",
    "page": "https://mycatholic.sg/bulletin/immaculateheartofmary"
   },
   "10": {
@@ -81,9 +81,9 @@
   },
   "12": {
    "from": "myCatholicSG",
-   "title": "OLPS Weekly Bulletin 08 Nov 2026",
-   "date": "2026-11-07",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611070950_32nd_Sunday%20in%20Ordinary%20Time%208%20Nov%202026.pdf?alt=media&token=5135498f-a694-4a24-987d-71a4b5b034a8",
+   "title": "OLPS Weekly Bulletin 15 Nov 2026",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611140912_33rd_Sunday%20in%20Ordinary%20Time%2015%20Nov%202026.pdf?alt=media&token=bd6e1b2e-8a59-470d-9955-d713313507ca",
    "page": "https://mycatholic.sg/bulletin/perpertualsuccour"
   },
   "13": {
@@ -166,9 +166,9 @@
   },
   "24": {
    "from": "myCatholicSG",
-   "title": "08 November 2026 : 32nd Sunday Ordinary Time",
-   "date": "2026-11-06",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611061330_20261108_SJCBT%20Bulletin.pdf?alt=media&token=ad0c8ed3-57ea-455b-a0c2-a07eea0c876b",
+   "title": "15 November 2026 : 33rd Sunday Ordinary Time",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611141115_20261115_SJCBT%20Bulletin.pdf?alt=media&token=539ddb22-cc64-49ee-bec0-7d97c791bb76",
    "page": "https://mycatholic.sg/bulletin/stjosephbukittimah"
   },
   "25": {
@@ -216,9 +216,9 @@
   },
   "31": {
    "from": "myCatholicSG",
-   "title": "Thirty-Second Sunday in Ordinary Time",
-   "date": "2026-11-06",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611061510_1108_2026.pdf?alt=media&token=2d0947d3-9d37-4959-ad9b-da42cd7d9eaa",
+   "title": "Thirty-Third Sunday in Ordinary Time",
+   "date": "2026-11-14",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611141054_1115_2026.pdf?alt=media&token=ea4ac038-f508-4bcf-a233-4c8711507f04",
    "page": "https://mycatholic.sg/bulletin/stspeterandpaul"
   },
   "32": {

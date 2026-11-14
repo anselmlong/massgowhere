@@ -2,9 +2,9 @@
  "id": 4,
  "name": "Church of Divine Mercy",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611070915_CDM_Parish%20Bulletin%20Vol2026.45%E2%80%93%2007-08Nov_v2.pdf?alt=media&token=fc0750e0-0223-485e-9e98-f89ec6fd8e9e"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611140915_CDM_Parish%20Bulletin%20Vol2026.46%E2%80%93%2014-15Nov%20v2.pdf?alt=media&token=b3f595d7-e8a1-4fb1-b5c4-635cd8e981bc"
  ],
- "fetched_at": "2026-11-07T12:31+08:00",
+ "fetched_at": "2026-11-14T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -47,8 +47,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy; in homes, see DMA website for each week's location"
+   "loc": "Adoration Room/Chapel",
+   "note": "Divine Mercy Chaplet"
   },
   {
    "d": 0,
@@ -75,7 +75,7 @@
    "t": "06:10",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Lauds"
@@ -105,7 +105,7 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Vespers"
@@ -119,23 +119,13 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 1,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy; in homes, see DMA website for each week's location"
   },
   {
    "d": 2,
    "t": "06:10",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Lauds"
@@ -165,7 +155,7 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Vespers"
@@ -179,23 +169,13 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 2,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy; in homes, see DMA website for each week's location"
   },
   {
    "d": 3,
    "t": "06:10",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Lauds"
@@ -225,7 +205,7 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Vespers"
@@ -239,23 +219,13 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 3,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy; in homes, see DMA website for each week's location"
   },
   {
    "d": 4,
    "t": "06:10",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Lauds"
@@ -285,7 +255,7 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Vespers"
@@ -299,23 +269,13 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy; in homes, see DMA website for each week's location"
   },
   {
    "d": 5,
    "t": "06:10",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Lauds"
@@ -345,7 +305,7 @@
    "t": "18:00",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": "Vespers"
@@ -359,16 +319,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy; in homes, see DMA website for each week's location"
   },
   {
    "d": 6,
@@ -420,27 +370,17 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": "Tagalog Mass"
-  },
-  {
-   "d": 6,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Home Divine Mercy; in homes, see DMA website for each week's location"
+   "note": "Every 3rd Saturday"
   }
  ],
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-15",
+   "date": "2026-12-26",
    "time": "17:30",
    "language": "English",
-   "location": "",
-   "title": "Sacrament of Confirmation Mass",
+   "location": "CDM",
+   "title": "Milestone Wedding Anniversary Mass",
    "action": "add"
   }
  ],
@@ -448,84 +388,76 @@
  "public_holiday_masses": [
   "08:00"
  ],
- "notes": [
-  "No weekday Mass on public holidays."
- ],
+ "notes": [],
  "info": {
-  "confession": "Available 20 minutes before all weekend Masses at the confessional.",
+  "confession": "Available 20 minutes before all weekend Masses, at the confessional.",
   "devotions": [
    "Divine Mercy Chaplet: Saturdays and Sundays 5pm (Main Church)",
    "Divine Mercy Chaplet: daily 3pm (Adoration Room/Chapel)",
-   "Home Divine Mercy: Mondays to Saturdays 8pm, Sundays 3pm (in homes; see the Divine Mercy Apostolate website for each week's location)",
    "Lauds: weekdays 6.10am",
    "Vespers: weekdays 6pm"
   ],
-  "office_hours": "Mon-Fri 10.30am-6pm; Sat 9am-5pm; Sun 9am-1pm; closed on public holidays; closed for lunch daily 1-2pm.",
-  "good_to_know": [
-   "Located at 19 Pasir Ris Street 72, Singapore 518771.",
-   "Parish office: 6583 3378; cdm.secretariat@catholic.org.sg.",
-   "Website: www.divinemercy.sg"
-  ]
+  "office_hours": "Mon-Fri 10.30am-6pm; Sat 9am-5pm; Sun 9am-1pm; closed for lunch daily 1-2pm and on weekday public holidays."
  },
  "events": [
-  {
-   "date": "2026-11-07",
-   "time": "",
-   "title": "Home Divine Mercy 2027 registration booth",
-   "text": "Divine Mercy Apostolate booth at the CDM foyer on 7-8 Nov (Sat-Sun). Register to invite the King of Mercy into your home for a week of grace with family and neighbours."
-  },
-  {
-   "date": "2026-11-13",
-   "time": "15:30",
-   "title": "Catholic Grandparenting Programme (Session 1)",
-   "text": "St Faustina Room, Level 4, 3.30pm-6pm. Two-session programme on guiding your grandchildren in faith. Register by 9 Nov at tinyurl.com/GrandparentingDivineMercy."
-  },
-  {
-   "date": "2026-11-14",
-   "time": "09:00",
-   "title": "Catholic Grandparenting Programme (Session 2)",
-   "text": "Room 12, Level 3, 9am-11.30am. Second session of the grandparenting programme. Register by 9 Nov at tinyurl.com/GrandparentingDivineMercy."
-  },
   {
    "date": "2026-11-14",
    "time": "19:30",
    "title": "CDM Young Adults Session",
-   "text": "St Faustina Room, Level 4, 7.30pm. For young adults aged 21-35; dinner provided. Register at tinyurl.com/cdmyyanov26 by 10 Nov."
+   "text": "Fellowship evening for young adults aged 21-35 of the parish, with an announcement to make. CDM St Faustina Room (Level 4); dinner provided. Register at tinyurl.com/cdmyyanov26."
   },
   {
    "date": "2026-11-20",
    "time": "15:00",
-   "title": "Create with AI (Gratus Ministry)",
-   "text": "St Faustina Room, Level 4, 3pm-5pm. Final session of a 4-part series for seniors and retirees on Generative AI. Register at bit.ly/4AqCG3M."
+   "title": "Create with AI course",
+   "text": "Gratus Ministry's session for seniors and retirees on using Generative AI, 3-5pm in CDM St Faustina Room (Level 4). Register at bit.ly/4AqCG3M."
   },
   {
    "date": "2026-11-20",
-   "time": "15:00",
-   "title": "Tea-ology: Theology over Tea",
-   "text": "Catholic Junior College, Training & Development Centre, 3pm-5.15pm. For ages 16-19; bubble tea and snacks provided. Register at tinyurl.com/33am7san."
+   "time": "19:30",
+   "title": "NCC Tampines Boulevard gathering",
+   "text": "Neighbourhood Christian Community meeting at 646B Tampines St 62. Contact Kelly at 9069 9308."
+  },
+  {
+   "date": "2026-11-20",
+   "time": "20:00",
+   "title": "NCC Pasir Ris Beach Park gathering",
+   "text": "Neighbourhood Christian Community meeting at Pasir Ris Terrace. Contact Schoen at 96519621."
   },
   {
    "date": "2026-11-23",
    "time": "20:00",
    "title": "Christmas Carols with Malcolm Nerva",
-   "text": "CDM Parish Hall, Level 2, 8pm. An uplifting evening of Christmas carols featuring Malcolm's original compositions."
+   "text": "An evening of Christmas carols featuring Malcolm's original compositions, in CDM Parish Hall (Level 2)."
+  },
+  {
+   "date": "2026-11-25",
+   "time": "20:00",
+   "title": "Jesus and the Jewish Roots of Advent (Part 1)",
+   "text": "First of a 3-part video presentation with Dr Brant Pitre on the Jewish prophecies behind Advent. CDM Parish Hall (Level 2); no registration required."
+  },
+  {
+   "date": "2026-12-02",
+   "time": "20:00",
+   "title": "Jesus and the Jewish Roots of Advent (Part 2)",
+   "text": "Second part of the video presentation with Dr Brant Pitre. CDM Parish Hall (Level 2); no registration required."
   },
   {
    "date": "2026-12-04",
    "time": "",
    "title": "REACH 26 Youth Encounter Camp",
-   "text": "4-7 Dec (Fri-Mon). For those aged 15-25 looking to reconnect with God and one another. Register at tinyurl.com/reachcdm26."
+   "text": "Camp for those aged 15-25, 4-7 Dec (Fri-Mon), to reconnect with God and one another. Register at tinyurl.com/reachcdm26."
   },
   {
-   "date": "2026-12-11",
-   "time": "",
-   "title": "Batam Mission Christmas",
-   "text": "11-13 Dec (Fri-Sun). Limited to 25 pax. Register at tinyurl.com/christmasinbatam26 or contact Lisa at 9833 9337."
+   "date": "2026-12-09",
+   "time": "20:00",
+   "title": "Jesus and the Jewish Roots of Advent (Part 3)",
+   "text": "Final part of the video presentation with Dr Brant Pitre. CDM Parish Hall (Level 2); no registration required."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611070915_CDM_Parish%20Bulletin%20Vol2026.45%E2%80%93%2007-08Nov_v2.pdf?alt=media&token=fc0750e0-0223-485e-9e98-f89ec6fd8e9e",
-  "date": "2026-11-07"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611140915_CDM_Parish%20Bulletin%20Vol2026.46%E2%80%93%2014-15Nov%20v2.pdf?alt=media&token=b3f595d7-e8a1-4fb1-b5c4-635cd8e981bc",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {

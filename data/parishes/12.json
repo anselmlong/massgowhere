@@ -2,9 +2,9 @@
  "id": 12,
  "name": "Church of Our Lady of Perpetual Succour",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611070950_32nd_Sunday%20in%20Ordinary%20Time%208%20Nov%202026.pdf?alt=media&token=5135498f-a694-4a24-987d-71a4b5b034a8"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611140912_33rd_Sunday%20in%20Ordinary%20Time%2015%20Nov%202026.pdf?alt=media&token=bd6e1b2e-8a59-470d-9955-d713313507ca"
  ],
- "fetched_at": "2026-11-07T12:32+08:00",
+ "fetched_at": "2026-11-14T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -60,7 +60,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": ""
+   "note": "5th Sunday of the month"
   },
   {
    "d": 0,
@@ -72,7 +72,7 @@
    "type": "Mass",
    "lang": "Bahasa Indonesia",
    "loc": "",
-   "note": ""
+   "note": "2nd Sunday of the month"
   },
   {
    "d": 0,
@@ -297,67 +297,110 @@
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-11-09",
-   "time": "08:00",
+   "type": "Devotion",
+   "date": "2026-11-18",
+   "time": "18:45",
    "language": "English",
-   "location": "",
-   "title": "",
+   "location": "Main Church",
+   "title": "St Pio Devotion Prayer",
    "action": "add"
   },
   {
-   "type": "Mass",
-   "date": "2026-11-09",
-   "time": "18:00",
+   "type": "Devotion",
+   "date": "2026-11-19",
+   "time": "20:00",
    "language": "English",
-   "location": "",
-   "title": "",
-   "action": "cancel"
+   "location": "OLPS Adoration Room",
+   "title": "Prayers for L9 Confirmation Retreat",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-26",
+   "time": "20:00",
+   "language": "English",
+   "location": "OLPS Adoration Room",
+   "title": "Prayers for L9 Confirmation Retreat",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-27",
+   "time": "20:00",
+   "language": "English",
+   "location": "OLPS Adoration Room",
+   "title": "Prayers for L9 Confirmation Retreat",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-28",
+   "time": "13:00",
+   "language": "English",
+   "location": "OLPS Adoration Room",
+   "title": "Prayers for L9 Confirmation Retreat",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-28",
+   "time": "20:00",
+   "language": "English",
+   "location": "OLPS Adoration Room",
+   "title": "Prayers for L9 Confirmation Retreat",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-10",
+   "time": "10:30",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-10",
+   "time": "20:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Advent Penitential Service",
+   "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "08:00"
  ],
  "notes": [],
  "info": {
-  "adoration": "Adoration room is open 06:00–22:15 daily, closed every Wednesday from 10:00 to 12:00 for cleaning.",
-  "confession": "Confession is 30 minutes before weekend Masses in the Main Church.",
+  "adoration": "Adoration Room open 6.00am to 10.15pm daily; closed every Wednesday 10.00am–12 noon for cleaning.",
+  "confession": "30 minutes before every weekend Mass, in the Main Church.",
   "devotions": [
-   "Rosary Prayers Mon to Fri at 17:15 in the Main Church.",
-   "Divine Mercy Devotion every Tue at 18:45 in the Main Church.",
-   "Christian Meditation every Wed at 20:00 in St John/St Luke room.",
-   "Novena Service Saturday at 15:30."
+   "Divine Mercy Devotion: Tuesdays 6.45pm in the Main Church",
+   "Rosary Prayers: Mondays to Fridays 5.15pm in the Main Church",
+   "Christian Meditation: Wednesdays 8pm in St John/St Luke room",
+   "Novena Service: Saturdays 3.30pm"
   ],
+  "office_hours": "Parish Office: Mon & Sat 9am–6pm, Tue–Fri 9am–8pm, Sun 9am–1pm; closed on public holidays.",
   "good_to_know": [
-   "Liturgy of the Word for Children every 2nd and 4th Sunday at the 10:30am Mass.",
-   "Bahasa Indonesia Mass on the 2nd Sunday of the month at 15:00.",
-   "Tagalog Mass on the 5th Sunday of the month at 14:30."
+   "OLPS Church carpark is open 5.30am–10.30pm daily.",
+   "Overflow parking at St Stephen's School: Saturdays 3pm–7pm, Sundays 8am–2pm; no overnight parking.",
+   "Standing along the aisles during Mass and services is not permitted; please keep walkways and exits clear."
   ]
  },
  "events": [
   {
-   "date": "2026-11-13",
-   "time": "20:00",
-   "title": "OLPS Small Group Community: Unshakable Peace",
-   "text": "Join the OLPS Small Group Community and Fr. Edward Lim, OCD as he shares how St. Elizabeth of the Trinity found divine peace. At OLPS Verbist Hall."
-  },
-  {
-   "date": "2026-11-20",
-   "time": "19:00",
-   "title": "OLPS 2026 Parish Conversations",
-   "text": "Open to all OLPS parishioners. 7:00pm–7:45pm light dinner and fellowship; 8:00pm synodal dialogue. Venue: Verbist Hall (Level 4). Register at https://olps.sg/events/olps-2026-parish-conversations/"
-  },
-  {
-   "date": "2026-11-25",
-   "time": "19:30",
-   "title": "Discussion Night for Young Adults on Artificial Intelligence",
-   "text": "Join Caritas Young Adults for a night of discussion on AI tools from the lens of faith. At Church of Holy Spirit, room 03-14. Sign up at bit.ly/streetcreed or email formation.cst@caritas-singapore.org."
+   "date": "2026-11-21",
+   "time": "10:00",
+   "title": "OYP Outreach for Secondary 4 & 5 Students",
+   "text": "At Catholic Centre #08-01, 55 Waterloo St, 10am–1pm with registration from 9.45am. Free; register at tinyurl.com/SecOutreach26Nov."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611070950_32nd_Sunday%20in%20Ordinary%20Time%208%20Nov%202026.pdf?alt=media&token=5135498f-a694-4a24-987d-71a4b5b034a8",
-  "date": "2026-11-07"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611140912_33rd_Sunday%20in%20Ordinary%20Time%2015%20Nov%202026.pdf?alt=media&token=bd6e1b2e-8a59-470d-9955-d713313507ca",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {

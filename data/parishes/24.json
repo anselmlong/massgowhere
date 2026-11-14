@@ -2,24 +2,14 @@
  "id": 24,
  "name": "St Joseph's Church (Bukit Timah)",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611061330_20261108_SJCBT%20Bulletin.pdf?alt=media&token=ad0c8ed3-57ea-455b-a0c2-a07eea0c876b"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611141115_20261115_SJCBT%20Bulletin.pdf?alt=media&token=539ddb22-cc64-49ee-bec0-7d97c791bb76"
  ],
- "fetched_at": "2026-11-06T21:05+08:00",
+ "fetched_at": "2026-11-14T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms in Church",
-   "note": "15 mins before all weekend Masses"
-  },
   {
    "d": 0,
    "t": "07:30",
@@ -29,16 +19,6 @@
    "lang": "Mandarin",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "09:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms in Church",
-   "note": "15 mins before all weekend Masses"
   },
   {
    "d": 0,
@@ -52,16 +32,6 @@
   },
   {
    "d": 0,
-   "t": "11:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms in Church",
-   "note": "15 mins before all weekend Masses"
-  },
-  {
-   "d": 0,
    "t": "11:30",
    "weeks": [],
    "except": [],
@@ -69,16 +39,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "17:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms in Church",
-   "note": "15 mins before all weekend Masses"
   },
   {
    "d": 0,
@@ -250,58 +210,154 @@
   },
   {
    "d": 6,
-   "t": "17:15",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "Reconciliation Rooms in Church",
-   "note": "15 mins before all weekend Masses"
-  },
-  {
-   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset"
+   "note": "Sunset Mass"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-19",
+   "time": "06:30",
+   "language": "English",
+   "location": "Chapel of St Joseph",
+   "title": "Requiem Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-19",
+   "time": "18:30",
+   "language": "English",
+   "location": "Chapel of St Joseph",
+   "title": "Requiem Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-20",
+   "time": "18:30",
+   "language": "English",
+   "location": "",
+   "title": "SFXMS Feast Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-22",
+   "time": "11:30",
+   "language": "English",
+   "location": "",
+   "title": "Mass with Youth (Christ the King Sunday), presided by Rev Fr Jude David",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-27",
+   "time": "06:30",
+   "language": "English",
+   "location": "Chapel of St Joseph",
+   "title": "Requiem Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-11-27",
+   "time": "18:30",
+   "language": "English",
+   "location": "Chapel of St Joseph",
+   "title": "Requiem Mass",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Mon–Fri 07:00–21:00; Sat 09:30–19:00; Sun 08:00–19:00; Public Holidays 08:00–16:00.",
-  "confession": "15 mins before all weekend Masses in the Reconciliation Rooms in Church.",
+  "adoration": "Adoration Room: Mon-Fri 7.00am-9.00pm, Sat 9.30am-7.00pm, Sun 8.00am-7.00pm, public holidays 8.00am-4.00pm. Holy Hour: first Friday 8.00pm in the Main Church (unless otherwise stated). Holy Hour for Vocations: third Thursday 8.00pm in the C",
+  "confession": "15 minutes before all weekend Masses, in the Reconciliation Rooms in the church.",
   "devotions": [
-   "Holy Hour: First Friday 20:00 in Main Church (unless otherwise stated).",
-   "Mass in Honour of St Joseph: First Wednesday 20:00 in Main Church.",
-   "Divine Mercy: Every Friday 20:00 (except First Fri) in the Chapel of St Joseph.",
-   "Garden Rosary: First Saturday after the 17:30 Mass.",
-   "Grotto Rosary: Every 13th of the month after 18:30 Mass (weekdays only).",
-   "Holy Hour for Vocations: Every Third Thursday of the month in the Chapel of St Joseph at 20:00."
+   "Divine Mercy: every Friday 8.00pm (except first Friday) in the Chapel of St Joseph",
+   "Garden Rosary: first Saturday after the 5.30pm Mass",
+   "Grotto Rosary: every 13th of the month after the 6.30pm Mass (weekdays only)",
+   "Blessing of Expectant Mothers: every fourth Sunday of the month"
   ],
-  "office_hours": "Parish Secretariat: Tel 6769 1666; sjcbt.secretariat@catholic.org.sg. Administration: Tel 6769 1608; sjcbt.admin@catholic.org.sg.",
   "good_to_know": [
-   "Gate Opening Hours: 06:00 to 22:00.",
-   "Columbarium / Rosary Garden / Stations of the Cross: Mon–Sun 08:00 to 20:00.",
-   "Media Centre (Bookshop): Sat 16:30 to 19:00; Sun 08:30 to 13:00; Every 2nd Sunday also 17:30 to 19:00."
+   "Gate opening hours: 6.00am to 10.00pm.",
+   "Columbarium, Rosary Garden and Stations of the Cross: daily 8.00am to 8.00pm.",
+   "Media Centre (bookshop): Sat 4.30pm-7.00pm, Sun 8.30am-1.00pm; every 2nd Sunday also 5.30pm-7.00pm."
   ]
  },
  "events": [
   {
-   "date": "2026-11-09",
+   "date": "2026-11-14",
    "time": "",
-   "title": "Parish Recollection",
-   "text": "Parish Recollection"
+   "title": "Media Centre Christmas Fair",
+   "text": "Christmas fair at the parish Media Centre (bookshop) on 14 and 15 November. Open to all parishioners."
+  },
+  {
+   "date": "2026-11-14",
+   "time": "",
+   "title": "Welcoming New Parishioners",
+   "text": "A casual, welcoming space on 14 and 15 November to meet fellow parishioners, make new friends and learn more about parish life, with snacks."
+  },
+  {
+   "date": "2026-11-20",
+   "time": "15:00",
+   "title": "Tea-ology: Theology over Tea @ Catholic JC",
+   "text": "For ages 16 to 19, with Friar John Paul Tan OFM, Sr Monika (Verbum Dei) and other clergy and religious, over bubble tea and snacks. Sign up at https://go.gov.sg/cjctot2026."
+  },
+  {
+   "date": "2026-11-21",
+   "time": "",
+   "title": "Sec 4/5 Outreach",
+   "text": "For students graduating from secondary school this year: a time of prayer with the Lord and getting to know fellow Sec 4 & 5 students, organised by OYP."
+  },
+  {
+   "date": "2026-11-24",
+   "time": "",
+   "title": "Kidz Bible Camp",
+   "text": "Bible camp for children, 24 to 26 November."
+  },
+  {
+   "date": "2026-11-25",
+   "time": "",
+   "title": "Creed on the Street",
+   "text": "Caritas Young Adults' night of discussion on how we use AI tools, with pizza and ice-cream. Sign up at bit.ly/streetcreed; enquiries to formation.cst@caritas-singapore.org."
+  },
+  {
+   "date": "2026-11-28",
+   "time": "08:30",
+   "title": "Neighbourhood Prayer Walk",
+   "text": "Meet at the main church lobby to pray for all staying in the Chestnut area. Updates via the Neighbourhood Prayer Walk WhatsApp community: tinyurl.com/SJCBTNPW."
+  },
+  {
+   "date": "2026-11-28",
+   "time": "09:00",
+   "title": "Columbaria Visits",
+   "text": "Visits to columbaria in other parishes, 9am-12.30pm, with transport by chartered bus. Places are limited; register at https://tinyurl.com/NovColumbaria."
+  },
+  {
+   "date": "2026-11-28",
+   "time": "13:30",
+   "title": "Conversations that Matter",
+   "text": "Fr David Garcia, OP and Nicholas Gabriel Lim on identity, attraction and morality, and how to talk with your teen while staying rooted in the faith."
+  },
+  {
+   "date": "2026-12-04",
+   "time": "",
+   "title": "Courage: The Lord is Near",
+   "text": "Retreat running 4 to 6 December."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611061330_20261108_SJCBT%20Bulletin.pdf?alt=media&token=ad0c8ed3-57ea-455b-a0c2-a07eea0c876b",
-  "date": "2026-11-06"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611141115_20261115_SJCBT%20Bulletin.pdf?alt=media&token=539ddb22-cc64-49ee-bec0-7d97c791bb76",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {

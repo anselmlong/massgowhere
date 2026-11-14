@@ -2,9 +2,9 @@
  "id": 5,
  "name": "Church of the Holy Cross",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611070159_English_Bulletin%208%20Nov.pdf?alt=media&token=53ee7d42-01ff-413f-a177-16677598c946"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611140238_English_Bulletin%2015%20Nov.pdf?alt=media&token=bce8a1ba-a52a-4c21-8e06-5fc03da39792"
  ],
- "fetched_at": "2026-11-07T12:32+08:00",
+ "fetched_at": "2026-11-14T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -55,7 +55,7 @@
    "t": "06:15",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -92,16 +92,6 @@
   },
   {
    "d": 2,
-   "t": "06:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
    "t": "06:30",
    "weeks": [],
    "except": [],
@@ -131,14 +121,14 @@
    "note": ""
   },
   {
-   "d": 3,
-   "t": "06:15",
+   "d": 2,
+   "t": "20:00",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "All Saints Hall",
+   "note": "Charismatic Renewal Movement"
   },
   {
    "d": 3,
@@ -166,16 +156,6 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
-   "t": "06:15",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -211,14 +191,14 @@
    "note": ""
   },
   {
-   "d": 5,
-   "t": "06:15",
+   "d": 4,
+   "t": "19:30",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Other",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "All Saints Hall",
+   "note": "Faith Enrichment - RCIA"
   },
   {
    "d": 5,
@@ -253,14 +233,12 @@
   {
    "d": 5,
    "t": "20:00",
-   "weeks": [
-    1
-   ],
+   "weeks": [],
    "except": [],
-   "type": "Adoration",
+   "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "via Zoom",
+   "note": "Parish Rosary"
   },
   {
    "d": 6,
@@ -280,7 +258,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -290,7 +268,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   },
   {
    "d": 6,
@@ -305,95 +283,125 @@
  ],
  "dated": [
   {
-   "action": "add",
-   "date": "2026-11-15",
+   "type": "Devotion",
+   "date": "2026-11-27",
+   "time": "20:00",
    "language": "English",
    "location": "",
-   "time": "11:30",
-   "title": "RCIA Rite of Initiation",
-   "type": "Mass"
+   "title": "Prayer for all departed souls",
+   "action": "add"
   },
   {
-   "action": "add",
-   "date": "2026-11-27",
+   "type": "Other",
+   "date": "2026-11-22",
+   "time": "14:30",
+   "language": "English",
+   "location": "Auditorium",
+   "title": "Catechism Ministry Briefing for Parents",
+   "action": "add"
+  },
+  {
+   "type": "Other",
+   "date": "2026-12-06",
+   "time": "14:00",
    "language": "English",
    "location": "",
+   "title": "Understanding Advent and Christmas",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-12-26",
    "time": "20:00",
-   "title": "Prayers for All Souls",
-   "type": "Devotion"
+   "language": "English",
+   "location": "Auditorium",
+   "title": "Christmas Carols",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "07:30"
+ ],
  "notes": [
-  "On Deepavali (9 Nov 2026), no noon or evening Masses."
+  "The bulletin states a Public Holiday Mass time of 07:30am.",
+  "The Charismatic Renewal Movement meets on Tuesdays at 8pm in All Saints Hall.",
+  "The RCIA sessions are held on Thursdays from 7:30pm to 9:30pm in All Saints Hall."
  ],
  "info": {
-  "adoration": "Adoration Room open daily until 22:00.",
+  "adoration": "Adoration Room - Daily till 22:00. Holy Hour - Every 1st Friday at 20:00.",
   "devotions": [
-   "Holy Hour - Every 1st Friday at 20:00.",
-   "Novena Devotion - Every Saturday at 15:30."
+   "Novena Devotion - Every Saturday at 15:30"
   ],
   "good_to_know": [
-   "Lauds - 06:15 & Mass - 06:30 (Weekdays).",
-   "Lunchtime Mass - 12:15 (Weekdays).",
-   "Evening Mass & Vespers - 18:00 (Weekdays).",
-   "Saturday: 07:30. Saturday Sunset Mass - 16:10 & 18:00 (Mandarin)."
+   "The Church Emergency Response Team (CERT) is available at the Prayer Wall for first aid and fire safety concerns."
   ]
  },
  "events": [
   {
-   "date": "2026-11-12",
-   "time": "19:30",
-   "title": "Faith Enrichment: The Communion of Saints",
-   "text": "Faith Enrichment: The Communion of Saints, Thursdays, 7.30 - 9.30pm, All Saints Hall"
+   "date": "2026-11-14",
+   "time": "",
+   "title": "Post-Confirmation Project 2026",
+   "text": "The Class of 2026 will be selling a variety of baked items like florentines, pineapple tarts & cookies from $25 to $35 at the church foyer during this weekend, 14/15 November 2026."
   },
   {
-   "date": "2026-11-13",
-   "time": "19:45",
-   "title": "Chill Out Night by Holy Cross Youth Communities",
-   "text": "Chill Out Night by Holy Cross Youth Communities, Friday, 7.45pm - 10.15pm, All Saints Hall (ASH)"
+   "date": "2026-11-17",
+   "time": "",
+   "title": "Charismatic Renewal Movement",
+   "text": "Overcoming the Flesh by Gerard Francisco"
   },
   {
-   "date": "2026-11-19",
-   "time": "19:30",
-   "title": "Faith Enrichment: Mother Mary",
-   "text": "Faith Enrichment: Mother Mary, Thursdays, 7.30 - 9.30pm, All Saints Hall"
+   "date": "2026-11-24",
+   "time": "",
+   "title": "Faith Enrichment - RCIA",
+   "text": "You are invited to attend the sessions to enrich your faith. Pre-registration is NOT required. All are welcome! Topic: The World and Christian Community by Derrick Chee"
   },
   {
-   "date": "2026-11-22",
-   "time": "14:30",
-   "title": "Catechism Ministry Briefing for Parents",
-   "text": "Catechism Ministry Briefing for Parents, Sunday, 2.30pm - 3.30pm, Auditorium"
-  },
-  {
-   "date": "2026-11-26",
-   "time": "19:30",
-   "title": "Faith Enrichment: The Liturgical Calendar",
-   "text": "Faith Enrichment: The Liturgical Calendar, Thursdays, 7.30 - 9.30pm, All Saints Hall"
-  },
-  {
-   "date": "2026-11-28",
-   "time": "13:30",
-   "title": "Conversations That Matter: When Your Teen Questions Their Sexuality",
-   "text": "Conversations That Matter: When Your Teen Questions Their Sexuality, Saturday, 1.30pm - 4pm, Church of the Holy Cross (Auditorium), $20 for 1 pax | $35 for 2 pax, parking is NOT available in the church"
+   "date": "2026-12-01",
+   "time": "",
+   "title": "Charismatic Renewal Movement",
+   "text": "Repairing wrong doings - Jessica Francisco"
   },
   {
    "date": "2026-12-03",
-   "time": "19:30",
-   "title": "Faith Enrichment: The Sacraments and their Liturgy",
-   "text": "Faith Enrichment: The Sacraments and their Liturgy, Thursdays, 7.30 - 9.30pm, All Saints Hall"
+   "time": "",
+   "title": "Faith Enrichment - RCIA",
+   "text": "The Sacraments and their Liturgy"
   },
   {
-   "date": "2026-12-06",
-   "time": "14:00",
-   "title": "Understanding Advent & Christmas",
-   "text": "Understanding Advent & Christmas, Friday, 2pm - 3.30pm, conducted by Fr Terence Pereira"
+   "date": "2026-12-04",
+   "time": "18:00",
+   "title": "The Lord is Near Courage Advent Retreat 2026",
+   "text": "A weekend of prayer and reflection to prepare your heart for Jesus. This retreat is for those who are same-sex attracted or identify as LGBTQ. Register by 23rd Nov 2026 via tinyurl.com/courageadvent2026."
+  },
+  {
+   "date": "2026-12-08",
+   "time": "",
+   "title": "Faith Enrichment - RCIA",
+   "text": "Overcoming the works of the evil spirits by Philip Kok"
+  },
+  {
+   "date": "2026-12-10",
+   "time": "",
+   "title": "Faith Enrichment - RCIA",
+   "text": "Baptism and Confirmation"
+  },
+  {
+   "date": "2026-12-19",
+   "time": "",
+   "title": "Faith Enrichment - RCIA",
+   "text": "Mother Mary"
+  },
+  {
+   "date": "2026-12-26",
+   "time": "",
+   "title": "Faith Enrichment - RCIA",
+   "text": "The Liturgical Calendar"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611070159_English_Bulletin%208%20Nov.pdf?alt=media&token=53ee7d42-01ff-413f-a177-16677598c946",
-  "date": "2026-11-07"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611140238_English_Bulletin%2015%20Nov.pdf?alt=media&token=bce8a1ba-a52a-4c21-8e06-5fc03da39792",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {
