@@ -2,9 +2,9 @@
  "id": 30,
  "name": "Church of St Vincent de Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611071516_32ND_SUNDAY%20IN%20ORDINARY%20TIME%20-%208%20Nov%202026.pdf?alt=media&token=21ff1599-18da-4404-8292-d077d5809601"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611142027_33RD_SUNDAY%20IN%20ORDINARY%20TIME%20-%2015%20November%202026.pdf?alt=media&token=098f4c86-117a-4248-afb9-f50a5b487c32"
  ],
- "fetched_at": "2026-11-07T21:01+08:00",
+ "fetched_at": "2026-11-15T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "Every 5th Sunday"
+   "note": ""
   },
   {
    "d": 0,
@@ -70,7 +70,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 1,
@@ -87,10 +87,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 1,
@@ -100,7 +100,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 1,
@@ -120,7 +120,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 2,
@@ -137,10 +137,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 2,
@@ -150,7 +150,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 2,
@@ -170,7 +170,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 3,
@@ -187,10 +187,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 3,
@@ -200,7 +200,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Divine Mercy"
+   "note": ""
   },
   {
    "d": 3,
@@ -210,7 +210,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 3,
@@ -230,7 +230,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 4,
@@ -247,10 +247,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 4,
@@ -260,7 +260,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 4,
@@ -280,7 +280,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 5,
@@ -297,10 +297,10 @@
    "t": "07:45",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": "Liturgy of the Hours (Divine Office)"
+   "note": ""
   },
   {
    "d": 5,
@@ -310,7 +310,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 5,
@@ -330,7 +330,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 6,
@@ -350,7 +350,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Rosary"
+   "note": ""
   },
   {
    "d": 6,
@@ -360,7 +360,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset Mass"
+   "note": ""
   }
  ],
  "dated": [],
@@ -368,57 +368,33 @@
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room open every day 7am to 6pm; closed on public holidays.",
-  "confession": "30 minutes before to 10 minutes before Mass, weekend Masses only.",
+  "adoration": "Adoration Room open every day from 07:00 to 18:00; closed on Public Holidays.",
+  "confession": "Confession: 30 minutes before to 10 minutes before weekend Masses.",
   "devotions": [
-   "Rosary: Mondays to Saturdays 6.15am and 5.30pm; Sundays 30 minutes before Mass",
-   "Divine Mercy: Wednesdays 5pm, St Faustina Room",
-   "Sacred Heart of Jesus: Fridays after the 6pm Mass",
-   "Liturgy of the Hours (Divine Office): Mondays to Fridays 7.45am, St Faustina Room"
+   "Rosary: Monday-Saturday at 06:15 and 17:30; Sunday 30 minutes before Mass.",
+   "Divine Mercy: Wednesdays at 17:00 in St Faustina Room.",
+   "Sacred Heart of Jesus: Fridays after 6pm Mass.",
+   "Liturgy of the Hours - Divine Office: Mon-Fri at 07:45 in St Faustina Room."
   ],
-  "office_hours": "Parish Office: weekdays 9am to 6pm; Saturdays 9am to 12pm and 5pm to 6pm; Sundays 8am to 12pm and 5pm to 6pm; closed on public holidays.",
+  "office_hours": "Parish Office: Weekdays 09:00-18:00; Saturday 09:00-12:00 and 17:00-18:00; Sunday 08:00-12:00 and 17:00-18:00; closed on Public Holidays.",
   "good_to_know": [
-   "The carpark gate at Jalan Resak is closed immediately after Mass; please exit via the autogate to Yio Chu Kang Road.",
-   "Do not park in front of the priests' parking lots or along 1 to 19 Jalan Jarak.",
-   "Alternative parking: Yio Chu Kang Road between lamposts 156 and 166 on Saturdays 6pm to 7.15pm, Jalan Kelulut between lamposts 4 and 9 on Sundays 9am to 12.15pm, and HDB carparks at Blk 988 Buangkok Green (free on Sundays and public holiday",
-   "Sunday fellowship and breakfast at Fr Saussard's Café after the morning Masses; the food is for eating in the canteen only, with no takeaways."
+   "Adoration Room open every day from 07:00 to 18:00; closed on Public Holidays.",
+   "Confession: 30 minutes before to 10 minutes before weekend Masses.",
+   "Rosary: Monday-Saturday at 06:15 and 17:30; Sunday 30 minutes before Mass.",
+   "Divine Mercy: Wednesdays at 17:00 in St Faustina Room."
   ]
  },
  "events": [
   {
-   "date": "2026-11-14",
-   "time": "09:00",
-   "title": "Holy Innocents' High School Open House",
-   "text": "Saturday 14 November, 9am to 12pm. All Primary 6 students and their parents are welcome to explore the school grounds and learn about its programmes."
-  },
-  {
-   "date": "2026-11-14",
-   "time": "14:30",
-   "title": "Made for More (young people aged 18-30)",
-   "text": "Four sessions on 14, 21 and 28 November and 5 December, 2.30pm to 5.30pm at Fr Saussard's Café, exploring identity, relationships and living well. Free and sponsored for the youth of the parish; sign up with the parish."
-  },
-  {
    "date": "2026-11-25",
-   "time": "19:30",
-   "title": "Young Adults' Discussion Night: Artificial Intelligence and the Catholic Faith",
-   "text": "Wednesday 25 November, 7.30pm to 9.30pm at Church of the Holy Spirit, Room 03-14, with pizza and ice-cream. Sign up at bit.ly/streetcreed or email formation.cst@caritas-singapore.org."
-  },
-  {
-   "date": "2026-11-28",
    "time": "",
-   "title": "Advent Outreach 2026: Corporal Works of Mercy",
-   "text": "Saturday 28 November. Volunteer for one of four missions - Christmas with the children at Gracehaven Children's Home, a Heartland Christmas, an outing with senior parishioners, or prayer warriors - or donate via PayNow to UEN T08CC4034E, Ref: CWOM 2026. Register through the QR code."
-  },
-  {
-   "date": "2026-12-04",
-   "time": "19:00",
-   "title": "The Lord is Near: Come Home to Him Who Comes (Advent retreat)",
-   "text": "Stay-in retreat from Friday 4 December, 7pm, to Sunday 6 December, 4pm, for Catholics who are same-sex attracted or identify as LGBTQ. Register through the QR code."
+   "title": "A Discussion Night for Young Adults on Artificial Intelligence through the Lens of the Catholic Faith",
+   "text": "19:30-21:30"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611071516_32ND_SUNDAY%20IN%20ORDINARY%20TIME%20-%208%20Nov%202026.pdf?alt=media&token=21ff1599-18da-4404-8292-d077d5809601",
-  "date": "2026-11-07"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611142027_33RD_SUNDAY%20IN%20ORDINARY%20TIME%20-%2015%20November%202026.pdf?alt=media&token=098f4c86-117a-4248-afb9-f50a5b487c32",
+  "date": "2026-11-14"
  },
  "disputes": [],
  "vs_mycatholic": {
