@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-13",
+"asOf": "2026-11-17",
 "rules": {
 "1": [
 {
@@ -437,16 +437,6 @@
 ],
 "3": [
 {
-"d": 2,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 1,
 "weeks": [],
 "except": [],
@@ -488,16 +478,6 @@
 },
 {
 "d": 1,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -577,16 +557,6 @@
 "note": ""
 },
 {
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 6,
 "weeks": [],
 "except": [],
@@ -597,7 +567,37 @@
 "note": ""
 },
 {
+"d": 2,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "d": 3,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -6434,6 +6434,89 @@
 "note": "New Year' Eve"
 }
 ],
+"3": [
+{
+"k": "r",
+"date": "2026-11-18",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-19",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-11-20",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-18",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Triduum 7.15pm Praise & Worship"
+},
+{
+"k": "a",
+"date": "2026-11-19",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Triduum 7.15pm Rosary"
+},
+{
+"k": "a",
+"date": "2026-11-16",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Triduum 7.15pm Sacred Heart Devotion"
+},
+{
+"k": "a",
+"date": "2026-11-20",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Triduum 7.15pm Sacred Heart Devotion"
+},
+{
+"k": "a",
+"date": "2026-12-09",
+"type": "Confession",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-09",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+}
+],
 "5": [
 {
 "k": "r",
@@ -7574,38 +7657,20 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas · Christmas 2026"
+},
+{
+"k": "a",
+"date": "2026-12-08",
+"type": "Devotion",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Hour of Grace: Prayer & Reflection"
 }
 ],
 "10": [
 {
 "k": "r",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-22",
 "type": "Mass",
 "t": "08:00",
@@ -7768,24 +7833,6 @@
 },
 {
 "k": "o",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
 "date": "2026-11-22",
 "type": "Mass",
 "t": "07:30",
@@ -7894,24 +7941,6 @@
 },
 {
 "k": "o",
-"date": "2026-11-15",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-11-29",
 "type": "Confession",
 "t": "07:00",
@@ -7943,24 +7972,6 @@
 "type": "Confession",
 "t": "11:00",
 "lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Confession",
-"t": "09:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-15",
-"type": "Confession",
-"t": "18:00",
-"lang": "Tamil/English",
 "loc": "Main Church",
 "note": ""
 },
@@ -8792,6 +8803,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas Eve. Christmas Carol at 10.30pm."
+},
+{
+"k": "a",
+"date": "2026-12-09",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "20": [
@@ -8836,6 +8856,15 @@
 "date": "2027-01-01",
 "type": "Mass",
 "t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "07:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -8938,6 +8967,24 @@
 "lang": "Bahasa Indonesia",
 "loc": "Parish Hall",
 "note": "KKIS Penitential Service"
+},
+{
+"k": "a",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "08:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Chinese New Year Mass"
+},
+{
+"k": "a",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Chinese New Year Mass"
 }
 ],
 "22": [
@@ -9269,6 +9316,17 @@
 "date": "2026-11-18",
 "type": "Mass",
 "t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+}
+],
+"28": [
+{
+"k": "a",
+"date": "2026-12-16",
+"type": "Confession",
+"t": "20:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
