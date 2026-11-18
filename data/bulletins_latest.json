@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-17T12:31+08:00",
+ "fetchedAt": "2026-11-18T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -111,7 +111,7 @@
    "from": "website",
    "title": "",
    "date": "2026-11-21",
-   "url": "https://drive.google.com/file/d/1yNgP7tNfAZqjN1Fg5WG9VCqYSxK50Df7/view?usp=drive_link",
+   "url": "https://drive.google.com/file/d/10s-AiiOUOwCGxlq-ZTLe6dpVPham2iSE/view?usp=drive_link",
    "page": "https://www.churchofthesacredheart.sg/bulletin"
   },
   "17": {
@@ -223,9 +223,9 @@
   },
   "32": {
    "from": "myCatholicSG",
-   "title": "33rd Ordinary Sunday - 15th Nov 2026",
-   "date": "2026-11-12",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611121929_15_Nov%202026.pdf?alt=media&token=4ae18f0b-8f0c-43ee-81a0-4e6352947248",
+   "title": "Christ the King - 22th Nov 2026",
+   "date": "2026-11-17",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611171455_22_Nov%202026.pdf?alt=media&token=dd3cfadb-8ffb-4cdb-aa9f-4c4922fc19b5",
    "page": "https://mycatholic.sg/bulletin/transfiguration"
   }
  }

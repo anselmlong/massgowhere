@@ -2,26 +2,14 @@
  "id": 16,
  "name": "Church of the Sacred Heart",
  "source_urls": [
-  "https://drive.google.com/file/d/1yNgP7tNfAZqjN1Fg5WG9VCqYSxK50Df7/view?usp=drive_link"
+  "https://drive.google.com/file/d/10s-AiiOUOwCGxlq-ZTLe6dpVPham2iSE/view?usp=drive_link"
  ],
- "fetched_at": "2026-10-13T12:34+08:00",
+ "fetched_at": "2026-11-18T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "08:00",
-   "weeks": [],
-   "except": [
-    2
-   ],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
   {
    "d": 0,
    "t": "08:00",
@@ -31,6 +19,18 @@
    "except": [],
    "type": "Mass",
    "lang": "Bilingual",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [
+    2
+   ],
+   "type": "Mass",
+   "lang": "English",
    "loc": "",
    "note": ""
   },
@@ -56,15 +56,13 @@
   },
   {
    "d": 0,
-   "t": "16:00",
-   "weeks": [
-    1
-   ],
+   "t": "19:30",
+   "weeks": [],
    "except": [],
-   "type": "Mass",
-   "lang": "Tagalog",
-   "loc": "",
-   "note": ""
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Mary's Shrine",
+   "note": "Rosary with Mary, every 13th of the month"
   },
   {
    "d": 1,
@@ -117,16 +115,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "19:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Mary's Shrine",
-   "note": "Rosary with Mary"
   },
   {
    "d": 5,
@@ -192,11 +180,74 @@
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-01",
+   "date": "2026-12-12",
    "time": "14:00",
    "language": "English",
-   "location": "",
-   "title": "Infant Baptism",
+   "location": "Church of Our Lady of Lourdes",
+   "title": "Our Lady of Guadalupe Feast Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-12-12",
+   "time": "13:30",
+   "language": "English",
+   "location": "Church of Our Lady of Lourdes",
+   "title": "Pro-Life Rosary",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-07",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Alphonsus Ligouri (Novena Church)",
+   "title": "City District Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-09",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of the Sacred Heart",
+   "title": "City District Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-10",
+   "time": "20:00",
+   "language": "English",
+   "location": "St Joseph’s Church (Victoria Street)",
+   "title": "City District Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-11",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Michael",
+   "title": "City District Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-16",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Teresa",
+   "title": "City District Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-17",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Bernadette",
+   "title": "City District Advent Penitential Service",
    "action": "add"
   }
  ],
@@ -206,31 +257,41 @@
  ],
  "notes": [],
  "info": {
-  "adoration": "Holy Hour follows the 7.00pm Mass on the 1st Thursday of each month in the Main Church.",
-  "confession": "30 mins before weekend Masses or make appointment directly with the priests.",
+  "confession": "30 mins before weekend Masses or make appointment directly with the priests",
   "devotions": [
-   "Devotion to the Sacred Heart: Friday 7.45pm in Church and livestreamed on YouTube & Facebook.",
-   "Rosary with Mary: every 13th of the month at 7.30pm at Mary's Shrine."
+   "Devotion to the Sacred Heart: Friday 7.45pm in Church & livestreamed on YouTube & Facebook.",
+   "Holy Hour: On the 1st Thursday of each month, the 7.00pm Mass will be followed by Holy Hour in the Main Church.",
+   "Rosary with Mary: Every 13th of the month at 7.30pm at Mary's Shrine."
   ],
   "office_hours": "Monday to Friday: 9am to 5pm. Closed on Public Holiday.",
   "good_to_know": [
-   "Bilingual Mass on every 2nd Sunday of the month.",
-   "1st Sunday of the month: 4.00pm Tagalog.",
-   "Public Holidays: 8.00am in Chapel.",
-   "Church opening hours: 7.30am to 6.30pm (closed on public holidays)."
+   "Church opening hours: 7.30am to 6.30pm (Closed on Public Holiday).",
+   "Columbarium visit: 7.30am to 6.30pm (Closed on Public Holiday)."
   ]
  },
  "events": [
   {
-   "date": "2026-10-24",
-   "time": "09:00",
-   "title": "At the Feet of the Good Shepherd Retreat (FGS)",
-   "text": "In-person stay-in retreat. Venue: Punggol Retreat Centre, 199 Punggol Seventeenth Ave, Singapore 829645. Time: 9am (24 Oct) – 5pm (25 Oct). Fee: $390. A specially commissioned retreat for those carrying wounds from broken family relationships, separation, divorce, or difficulties in marriage. Regist"
+   "date": "2026-11-20",
+   "time": "15:00",
+   "title": "Tea-ology: Theology over Tea @ Catholic JC!",
+   "text": "Are you aged 16 to 19 and looking to connect with like-minded youth while exploring meaningful questions about the Catholic faith over bubble tea and snacks? Join Tea-ology: Theology over Tea for an afternoon of faith, fellowship and fun! Date: Friday, 20 November 2026 | Time: 3.00 pm – 5.15 pm | Ve"
+  },
+  {
+   "date": "2026-11-28",
+   "time": "10:30",
+   "title": "Church Cleaning",
+   "text": "Let us come together to prepare our church for Christmas! Join us for our church cleaning on Saturday, 28 November, from 10.30 am to 12.00 noon. All are welcome to lend a helping hand as we prepare our church for the joyful celebration of Christ’s birth!"
+  },
+  {
+   "date": "2026-12-04",
+   "time": "19:00",
+   "title": "Courage Advent Retreat 2026",
+   "text": "“The Lord is Near: Come Home to Him who Comes” Come away this Advent for a weekend of prayer, reflection and spiritual renewal. Organised by Courage Singapore, this stay-in retreat invites Catholics who experience same-sex attraction or identify as LGBTQ to deepen their relationship with God and pre"
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1yNgP7tNfAZqjN1Fg5WG9VCqYSxK50Df7/view?usp=drive_link",
-  "date": "2026-10-17"
+  "url": "https://drive.google.com/file/d/10s-AiiOUOwCGxlq-ZTLe6dpVPham2iSE/view?usp=drive_link",
+  "date": "2026-11-21"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -260,6 +321,15 @@
     "Sunday",
     "08:00",
     [],
+    []
+   ],
+   [
+    "Mass",
+    "Sunday",
+    "16:00",
+    [
+     1
+    ],
     []
    ]
   ]

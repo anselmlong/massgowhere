@@ -2,34 +2,14 @@
  "id": 32,
  "name": "Church of the Transfiguration",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611121929_15_Nov%202026.pdf?alt=media&token=4ae18f0b-8f0c-43ee-81a0-4e6352947248"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611171455_22_Nov%202026.pdf?alt=media&token=dd3cfadb-8ffb-4cdb-aa9f-4c4922fc19b5"
  ],
- "fetched_at": "2026-11-13T12:33+08:00",
+ "fetched_at": "2026-11-18T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 0,
-   "t": "08:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
-   "note": ""
-  },
   {
    "d": 0,
    "t": "08:30",
@@ -42,52 +22,12 @@
   },
   {
    "d": 0,
-   "t": "10:20",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 0,
-   "t": "10:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "11:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "16:20",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 0,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
    "note": ""
   },
   {
@@ -112,26 +52,6 @@
   },
   {
    "d": 1,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "L3 Room 3.4",
-   "note": "Intercessory; St Thérèse"
-  },
-  {
-   "d": 1,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 1,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -149,16 +69,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 2,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
   },
   {
    "d": 2,
@@ -178,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Adoration Room",
-   "note": "Intercessory"
+   "note": ""
   },
   {
    "d": 3,
@@ -189,26 +99,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 3,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "L3 Room 3.4",
-   "note": "Intercessory; St Thérèse"
-  },
-  {
-   "d": 3,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
   },
   {
    "d": 3,
@@ -229,16 +119,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
   },
   {
    "d": 4,
@@ -258,7 +138,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "L3 Auditorium",
-   "note": "Divine Mercy Devotion"
+   "note": ""
   },
   {
    "d": 4,
@@ -270,7 +150,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "Church Hall",
-   "note": "Holy Hour with Reparation"
+   "note": ""
   },
   {
    "d": 5,
@@ -281,26 +161,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "L3 Room 3.4",
-   "note": "Intercessory; St Thérèse"
-  },
-  {
-   "d": 5,
-   "t": "17:50",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
   },
   {
    "d": 5,
@@ -322,7 +182,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "Church Hall",
-   "note": "Holy Hour with Reparation"
+   "note": ""
   },
   {
    "d": 5,
@@ -332,7 +192,7 @@
    "type": "Devotion",
    "lang": "Chinese",
    "loc": "L4 Room 4.2",
-   "note": "Chinese Prayer Group"
+   "note": ""
   },
   {
    "d": 6,
@@ -342,26 +202,6 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "15:20",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Rosary"
-  },
-  {
-   "d": 6,
-   "t": "15:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "L2 Confessionals",
    "note": ""
   },
   {
@@ -380,17 +220,16 @@
  "public_holiday_masses": [
   "08:30"
  ],
- "notes": [
-  "Confession is subject to priest availability."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room: weekday 07:00-22:00, weekend 07:00-20:00, public holidays 09:00-17:00; closed Mondays 09:00-14:00 for cleaning (1st Mondays 09:00-16:00).",
-  "confession": "L2 Confessionals, 30 minutes before all weekend Masses when priest is available."
+  "adoration": "Adoration Room: Weekday 7am–10pm; Weekend 7am–8pm; Public holiday 9am–5pm; closed on Mondays 9am–2pm for cleaning (1st Mondays 9am–4pm).",
+  "confession": "Confession at L2 Confessionals 30 minutes before all weekend Masses when a priest is available.",
+  "office_hours": "Weekday 9am–7pm (lunch 12pm–1pm); Saturday 9am–4pm (lunch 12pm–1pm); Sunday 9am–12pm."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611121929_15_Nov%202026.pdf?alt=media&token=4ae18f0b-8f0c-43ee-81a0-4e6352947248",
-  "date": "2026-11-12"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611171455_22_Nov%202026.pdf?alt=media&token=dd3cfadb-8ffb-4cdb-aa9f-4c4922fc19b5",
+  "date": "2026-11-17"
  },
  "disputes": [],
  "vs_mycatholic": {
