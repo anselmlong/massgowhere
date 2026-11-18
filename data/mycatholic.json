@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-17",
+"asOf": "2026-11-18",
 "rules": {
 "1": [
 {
@@ -6413,7 +6413,7 @@
 "t": "17:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christms Day"
+"note": "Christmas Day"
 },
 {
 "k": "a",
@@ -6422,7 +6422,7 @@
 "t": "23:59",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christmas Day"
+"note": "Christmas Midnight Mass"
 },
 {
 "k": "a",
@@ -6479,15 +6479,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Triduum 7.15pm Rosary"
-},
-{
-"k": "a",
-"date": "2026-11-16",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Triduum 7.15pm Sacred Heart Devotion"
 },
 {
 "k": "a",
@@ -7666,6 +7657,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Hour of Grace: Prayer & Reflection"
+},
+{
+"k": "a",
+"date": "2026-12-17",
+"type": "Other",
+"t": "20:00",
+"lang": "English / Chinese",
+"loc": "Main Church",
+"note": "Service · Penitential Service at IHM"
 }
 ],
 "10": [
@@ -8814,6 +8814,17 @@
 "note": ""
 }
 ],
+"19": [
+{
+"k": "a",
+"date": "2026-12-15",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+}
+],
 "20": [
 {
 "k": "r",
@@ -8985,6 +8996,134 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Chinese New Year Mass"
+}
+],
+"21": [
+{
+"k": "a",
+"date": "2026-12-14",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-15",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-16",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-17",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-18",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-19",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-20",
+"type": "Mass",
+"t": "20:15",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-21",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-22",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-23",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
 }
 ],
 "22": [
