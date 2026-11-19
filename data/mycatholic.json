@@ -83,26 +83,6 @@
 "note": ""
 },
 {
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 6,
 "weeks": [],
 "except": [],
@@ -224,6 +204,26 @@
 },
 {
 "d": 1,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
 "weeks": [],
 "except": [],
 "type": "Mass",
@@ -6333,6 +6333,305 @@
 ]
 },
 "dated": {
+"1": [
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Devotion",
+"t": "20:00",
+"lang": "English",
+"loc": "Damian Hall",
+"note": "Intercessory prayers"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas Mass"
+},
+{
+"k": "o",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Midnight Mass"
+},
+{
+"k": "a",
+"date": "2026-12-11",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-15",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-16",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-17",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-18",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-19",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-20",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-21",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-22",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-23",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "19:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2026-11-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas Mass"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-11-18",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Thanksgiving Mass"
+},
+{
+"k": "o",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Thanksgiving Mass"
+},
+{
+"k": "o",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year's Day Mass"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "08:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Devotion",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Eucharistic Adoration and Sacred Heart of Jesus devotion"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Devotion",
+"t": "20:00",
+"lang": "English",
+"loc": "Damian Hall",
+"note": "Intercessory prayers"
+}
+],
 "2": [
 {
 "k": "r",
@@ -7472,6 +7771,33 @@
 "t": "17:30",
 "lang": "English",
 "loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "14:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "15:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "19:30",
+"lang": "Mandarin",
+"loc": "Church - 4th Floor Big Room",
 "note": ""
 }
 ],
@@ -8881,6 +9207,15 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-12-25",
 "type": "Mass",
@@ -8996,6 +9331,33 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Chinese New Year Mass"
+},
+{
+"k": "a",
+"date": "2027-02-10",
+"type": "Mass",
+"t": "10:15",
+"lang": "Bahasa Indonesia",
+"loc": "Main Church",
+"note": "Ash Wednesday Mass (Additional)"
+},
+{
+"k": "a",
+"date": "2027-02-10",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Ash Wednesday Mass (Additional)"
+},
+{
+"k": "a",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "21": [
@@ -9314,6 +9676,24 @@
 {
 "k": "r",
 "date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-02-08",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-02-08",
 "type": "Mass",
 "t": "18:30",
 "lang": "English",
