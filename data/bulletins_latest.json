@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-20T12:31+08:00",
+ "fetchedAt": "2026-11-20T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -11,16 +11,16 @@
   },
   "2": {
    "from": "myCatholicSG",
-   "title": "15 November 2026",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611131829_Bulletin_20261115.pdf?alt=media&token=7efca9db-5665-48d9-9c6b-dd85d26e363e",
+   "title": "22 November 2026",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611201642_Bulletin_20261122.pdf?alt=media&token=aa265d64-3caf-48e5-9f6d-d8812bb0827b",
    "page": "https://mycatholic.sg/bulletin/cathedral"
   },
   "3": {
    "from": "myCatholicSG",
-   "title": "CTK LEAVEN 15 NOVEMBER 2026",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611131558_CTK_LEAVEN%2015%20Nov%20Final.pdf?alt=media&token=5358a773-0479-46b0-8a7a-bc5214fec95b",
+   "title": "CTK LEAVEN 22 NOVEMBER 2026",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611201603_CTK_LEAVEN%20%2022%20Nov%20Final.pdf?alt=media&token=684b82d8-d757-4e59-9079-d9849d02812a",
    "page": "https://mycatholic.sg/bulletin/christtheking"
   },
   "4": {
@@ -32,9 +32,9 @@
   },
   "5": {
    "from": "myCatholicSG",
-   "title": "33rd Sunday in Ordinary Time",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611140238_English_Bulletin%2015%20Nov.pdf?alt=media&token=bce8a1ba-a52a-4c21-8e06-5fc03da39792",
+   "title": "Solemnity of Christ the King",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611202001_English_Bulletin%2022%20Nov.pdf?alt=media&token=c68f7d42-495b-4637-972d-b6efa312ec03",
    "page": "https://mycatholic.sg/bulletin/holycross"
   },
   "6": {
@@ -46,9 +46,9 @@
   },
   "7": {
    "from": "myCatholicSG",
-   "title": "Thirty-Third Sunday in Ordinary Time",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611131722_CHS_Bulletin%2014%20-%2015%20November%202026.pdf?alt=media&token=2ff20198-f1f3-4958-9357-89f5ff1f26fc",
+   "title": "Thirty Fourth Sunday in Ordinary Time",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611201336_CHS_Bulletin%2021%20-%2022%20November%202026.pdf?alt=media&token=274fcdfe-3df1-455f-b990-b64aa680c0d9",
    "page": "https://mycatholic.sg/bulletin/holyspirit"
   },
   "8": {
@@ -60,9 +60,9 @@
   },
   "9": {
    "from": "myCatholicSG",
-   "title": "46. 33th Sunday in Ord. Time - 15 Nov 2026",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611141112_33rd_Sun%20in%20Ord%20Time%2015Nov26.pdf?alt=media&token=954e55b1-de0d-47b0-987d-c05ea0ad5483",
+   "title": "47. Christ the King - 22 Nov 2026",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611201539_Christ_the%20King%2022Nov26.pdf?alt=media&token=2f243c3d-787e-4518-8eb8-4b0bac0e23ab",
    "page": "https://mycatholic.sg/bulletin/immaculateheartofmary"
   },
   "10": {
@@ -88,29 +88,29 @@
   },
   "13": {
    "from": "myCatholicSG",
-   "title": "Bulletin: 33rd Sunday in Oridinary TIme",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611131651_2026_11%2015%20-%2033rd%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=382730db-762a-44f9-9b42-3c0e4ee24a3b",
+   "title": "Bulletin : Christ The King",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611201451_2026_11%2022%20-%20Christ%20The%20King.pdf?alt=media&token=0144dbff-e5ee-4635-8e8c-f856c2a7b8f5",
    "page": "https://mycatholic.sg/bulletin/queenofpeace"
   },
   "14": {
    "from": "myCatholicSG",
-   "title": "Bulletin - 15 Nov 2026",
-   "date": "2026-11-12",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2611121733_Bulletin_-%2015%20NOV%202026.pdf?alt=media&token=6f115489-b3e7-44e5-9da1-bd1cb3e39938",
+   "title": "Bulletin - 22 Nov 2026",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2611201737_Bulletin_-%2022%20NOV%202026.pdf?alt=media&token=bf45ad2b-d308-4d13-9819-e914d1d96520",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {
    "from": "website",
    "title": "",
-   "date": "2026-11-15",
-   "url": "https://drive.google.com/file/d/1yVQig38xhHBdvkeLRMUvgIakoldQD1Kq/view",
+   "date": "2026-11-22",
+   "url": "https://drive.google.com/file/d/10dunEyAstpJior0n1Efwg1B46UX4aikV/view",
    "page": "https://www.risenchrist.org.sg/bulletin"
   },
   "16": {
    "from": "website",
    "title": "",
-   "date": "2026-11-21",
+   "date": "2026-11-28",
    "url": "https://drive.google.com/file/d/10s-AiiOUOwCGxlq-ZTLe6dpVPham2iSE/view?usp=drive_link",
    "page": "https://www.churchofthesacredheart.sg/bulletin"
   },
@@ -137,23 +137,23 @@
   },
   "20": {
    "from": "myCatholicSG",
-   "title": "The Voice of St Bernadette 15 – 21 November 2026",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611131240_VOICE_15%20Nov%202026%20V2.pdf?alt=media&token=69e70b1d-2af4-4008-a17a-959e153c9816",
+   "title": "堂区周报 2026年11月22日 - 2026年11月28日",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611201434_52_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E4%B8%BB%E6%97%A5%EF%BC%88%E5%9F%BA%E7%9D%A3%E6%99%AE%E4%B8%96%E5%90%9B%E7%8E%8B%E8%8A%82-11%E6%9C%8822%E6%97%A5%EF%BC%89.pdf?alt=media&token=9c3c6e55-153e-49ff-affc-f2b2aaa8814f",
    "page": "https://mycatholic.sg/bulletin/stbernadette"
   },
   "21": {
    "from": "myCatholicSG",
-   "title": "15 Nov 2026 - Yr A 33rd Sunday in Ord Time Chinese",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611131733_15_Nov%202026%20-%20Yr%20A%2033rd%20Sunday%20in%20Ord%20Time%20Chinese.pdf?alt=media&token=ee3e6e83-0eb4-41c9-ba7a-ca12dffe21b0",
+   "title": "22 Nov 2026 - Yr A Jesus Christ, King of the Universe (Chinese)",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611201635_22_Nov%202026%20-%20Yr%20A%20Jesus%20Christ%2C%20King%20of%20the%20Universe%20Chinese.pdf?alt=media&token=3e322a3f-ad15-4145-bae3-6107ade13d79",
    "page": "https://mycatholic.sg/bulletin/stfrancisassisi"
   },
   "22": {
    "from": "myCatholicSG",
-   "title": "SFXBulletin_2026_11_15",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2611131606_Bulletin_2026_11_15.pdf?alt=media&token=97edf387-5b4c-4b89-a69a-742e14b24212",
+   "title": "SFXBulletin_2026_11_22",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2611201558_Bulletin_2026_11_22.pdf?alt=media&token=f4234edf-893d-4ebd-8f90-285dd718ac11",
    "page": "https://mycatholic.sg/bulletin/stfrancisxavier"
   },
   "23": {
@@ -174,8 +174,8 @@
   "25": {
    "from": "website",
    "title": "",
-   "date": "2026-11-15",
-   "url": "https://drive.google.com/file/d/1wrUAL_vne2r7IDt8NKcxl-vuZM_hUeZU/view?usp=sharing",
+   "date": "2026-11-22",
+   "url": "https://drive.google.com/file/d/12P5_knlr27rPSK9FdgB16LYCAlISCt5g/view?usp=drivesdk",
    "page": "https://sjcvs.org.sg/"
   },
   "26": {

@@ -2,9 +2,9 @@
  "id": 21,
  "name": "Church of St Francis of Assisi",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611131733_15_Nov%202026%20-%20Yr%20A%2033rd%20Sunday%20in%20Ord%20Time%20Chinese.pdf?alt=media&token=ee3e6e83-0eb4-41c9-ba7a-ca12dffe21b0"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611201635_22_Nov%202026%20-%20Yr%20A%20Jesus%20Christ%2C%20King%20of%20the%20Universe%20Chinese.pdf?alt=media&token=3e322a3f-ad15-4145-bae3-6107ade13d79"
  ],
- "fetched_at": "2026-11-14T12:32+08:00",
+ "fetched_at": "2026-11-20T21:06+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -38,16 +38,6 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "St Clare Room, 4th floor",
    "note": ""
   },
   {
@@ -190,37 +180,92 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": ""
+   "note": "Every fourth Saturday"
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "06:30"
+ ],
  "notes": [
-  "No evening Mass on public holidays."
+  "No evening Mass on public holidays.",
+  "The Blessed Sacrament room is permanently closed from 16 Nov 2026."
  ],
  "info": {
-  "adoration": "Blessed Sacrament Room and columbarium: open daily 09:00–21:30; closed on public holidays.",
+  "adoration": "The Blessed Sacrament room is permanently closed from 16 Nov 2026. The church is open daily 06:30–21:00 except public holidays for prayer.",
   "confession": "Confession is 15 minutes before Mass or by appointment.",
-  "office_hours": "Church gate open daily 06:00–22:00; on Sundays closes after the 19:30 Mass; closed on public holidays."
+  "devotions": [
+   "Holy Mercy Prayer Group and Purgatorial Souls Prayer Group: All Souls' remembrance after Chinese Mass every Sunday in November at the basement columbarium.",
+   "Family Rosary Novena: 20:00 online, 17–25 Nov and 27 Nov."
+  ],
+  "office_hours": "Parish office: 62640078. Church doors open daily 06:00–22:00; on Sundays they close after the 19:30 Mass. Closed on public holidays.",
+  "good_to_know": [
+   "Anointing of the Sick: contact the parish office before surgery; major surgery can be arranged at home, minor in church.",
+   "Infant Baptism: application form at www.csfa.sg. Date: 9 Jan 2027 (Saturday).",
+   "Marriage: enquire at the parish office at least 1 year in advance.",
+   "Funerals: contact the parish office before arranging with a funeral director."
+  ]
  },
  "events": [
   {
-   "date": "2026-11-22",
-   "time": "",
-   "title": "圣方济亚西西堂祈祷堡垒 - 神恩复兴团体公开祈祷聚会 / 圣体治愈",
-   "text": "13:00-16:00"
+   "date": "2026-11-26",
+   "time": "20:00",
+   "title": "Advent reflection (English)",
+   "text": "Every Thursday from 26 Nov, 20:00–21:30, Level 4 St Thomas Aquinas Room. Reflection handbook provided."
   },
   {
-   "date": "2026-12-02",
-   "time": "",
-   "title": "2026 爱的礼物：步行祈祷 • 发现圣诞马槽",
-   "text": "09:00-12:30"
+   "date": "2026-11-28",
+   "time": "10:00",
+   "title": "Chinese Holy Hour",
+   "text": "10:00–11:00 at St Joseph's Church (Bukit Timah) small chapel. Tea after."
+  },
+  {
+   "date": "2026-12-05",
+   "time": "10:00",
+   "title": "Advent Chinese confession",
+   "text": "10:00–11:30 at St Joseph's Church (Victoria Street)."
+  },
+  {
+   "date": "2026-12-11",
+   "time": "20:00",
+   "title": "West District confession",
+   "text": "At Church of the Holy Eucharist."
+  },
+  {
+   "date": "2026-12-14",
+   "time": "20:00",
+   "title": "West District confession",
+   "text": "At Church of St Francis of Assisi."
+  },
+  {
+   "date": "2026-12-16",
+   "time": "20:00",
+   "title": "West District confession",
+   "text": "At Church of Our Lady Queen of Angels."
+  },
+  {
+   "date": "2026-12-17",
+   "time": "20:00",
+   "title": "West District confession",
+   "text": "At Church of St Ignatius."
+  },
+  {
+   "date": "2026-12-18",
+   "time": "20:00",
+   "title": "West District confession",
+   "text": "At Church of the Holy Cross."
+  },
+  {
+   "date": "2027-01-16",
+   "time": "15:00",
+   "title": "Chinese Children's Catechism Class 2027",
+   "text": "Saturdays 15:00–16:15 at Church of the Holy Cross (in person) / Zoom. For children born in 2020 or 2021. Free, donations welcome. Register: 85012959 / 81136087."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611131733_15_Nov%202026%20-%20Yr%20A%2033rd%20Sunday%20in%20Ord%20Time%20Chinese.pdf?alt=media&token=ee3e6e83-0eb4-41c9-ba7a-ca12dffe21b0",
-  "date": "2026-11-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611201635_22_Nov%202026%20-%20Yr%20A%20Jesus%20Christ%2C%20King%20of%20the%20Universe%20Chinese.pdf?alt=media&token=3e322a3f-ad15-4145-bae3-6107ade13d79",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {

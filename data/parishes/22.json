@@ -2,9 +2,9 @@
  "id": 22,
  "name": "Church of St Francis Xavier",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2611131606_Bulletin_2026_11_15.pdf?alt=media&token=97edf387-5b4c-4b89-a69a-742e14b24212"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2611201558_Bulletin_2026_11_22.pdf?alt=media&token=f4234edf-893d-4ebd-8f90-285dd718ac11"
  ],
- "fetched_at": "2026-11-14T12:32+08:00",
+ "fetched_at": "2026-11-20T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -62,27 +62,7 @@
   },
   {
    "d": 2,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
    "t": "18:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 3,
-   "t": "06:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
@@ -102,16 +82,6 @@
   },
   {
    "d": 4,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 4,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -119,26 +89,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 5,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "16:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "until 6pm"
   },
   {
    "d": 5,
@@ -152,52 +102,23 @@
   },
   {
    "d": 6,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "10:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "until 12pm"
-  },
-  {
-   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunday Vigil Mass"
+   "note": ""
   }
  ],
  "dated": [
   {
-   "type": "Adoration",
-   "date": "2026-11-16",
-   "time": "20:00",
+   "type": "Mass",
+   "date": "2026-11-22",
+   "time": "09:00",
    "language": "English",
-   "location": "Mount Tabor Adoration Room",
-   "title": "Intercessory Prayer before the Blessed Sacrament",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-18",
-   "time": "20:00",
-   "language": "English",
-   "location": "JPII Hall",
-   "title": "Scriptural Rosary Devotion",
+   "location": "",
+   "title": "Solemnity of Our Lord Jesus Christ, King of the Universe",
    "action": "add"
   },
   {
@@ -206,7 +127,7 @@
    "time": "20:00",
    "language": "English",
    "location": "",
-   "title": "Triduum Day 1 Mass (Fr Marcus Chew)",
+   "title": "Triduum Day 1",
    "action": "add"
   },
   {
@@ -215,7 +136,7 @@
    "time": "20:00",
    "language": "English",
    "location": "",
-   "title": "Triduum Day 2 Mass (Fr Timothy Soo)",
+   "title": "Triduum Day 2",
    "action": "add"
   },
   {
@@ -224,7 +145,7 @@
    "time": "20:00",
    "language": "English",
    "location": "",
-   "title": "Triduum Day 3 Mass (Fr Eugene Chan)",
+   "title": "Triduum Day 3",
    "action": "add"
   },
   {
@@ -233,101 +154,106 @@
    "time": "17:30",
    "language": "English",
    "location": "",
-   "title": "Feast Day Mass, celebrated by Cardinal William Goh",
+   "title": "Feast Day Mass",
    "action": "add"
   },
   {
    "type": "Devotion",
-   "date": "2026-12-12",
-   "time": "13:30",
+   "date": "2026-11-22",
+   "time": "09:00",
    "language": "English",
-   "location": "Church of Our Lady of Lourdes",
-   "title": "Pro-Life Rosary before the Feast of Our Lady of Guadalupe Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-12-12",
-   "time": "14:00",
-   "language": "English",
-   "location": "Church of Our Lady of Lourdes",
-   "title": "Feast of Our Lady of Guadalupe Mass, with Healing Prayer and Blessing of Pregnant Women after Mass",
+   "location": "Jeremiah (Parish Centre, Level 2)",
+   "title": "Jewish Roots of Advent Bible Study",
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "09:00"
  ],
  "notes": [
-  "Adoration Room is closed on public holidays."
+  "No Confession is available before Mass.",
+  "The parish office and gates are closed on Public Holidays."
  ],
  "info": {
-  "adoration": "Adoration Room (Mount Tabor) open daily 7am-11pm; closed on public holidays.",
-  "confession": "Fridays 4pm-6pm and Saturdays 10am-12pm. There is currently no Confession before Mass; Confession at other times is by appointment with the Parish Office.",
-  "office_hours": "Mon-Fri 9.30am-6.30pm; Sat-Sun 8.30am-1pm; closed on public holidays.",
+  "adoration": "Adoration Room is open Mon - Sun from 07:00am to 11:00pm. It is closed on Public Holidays after 09:00am Mass.",
+  "confession": "Contact Parish Office to make an appointment.",
+  "office_hours": "Parish Office is open Mon - Fri from 09:30am to 06:30pm and Sat - Sun from 08:30am to 01:00pm. It is closed on Public Holidays.",
   "good_to_know": [
-   "Main and back gates are open daily 5am-11pm.",
-   "Parish library is open Sundays 8am-1pm and 4pm-5.30pm."
+   "The Main Gate and Back Gate are open Mon - Sun from 05:00am to 11:00pm. They are closed on Public Holidays after 09:00am Mass.",
+   "The Columbarium is open Mon - Fri from 10:00am to 07:30pm and Sat - Sun from 08:30am to 07:30pm. It is closed on Public Holidays.",
+   "Mass on Public Holidays is held at 09:00am."
   ]
  },
  "events": [
   {
-   "date": "2026-11-15",
+   "date": "2026-11-25",
    "time": "",
-   "title": "Sunday Fellowship breakfast",
-   "text": "The Charismatic Prayer Group serves breakfast at JPII Hall this Sunday; love offerings are welcome."
-  },
-  {
-   "date": "2026-11-15",
-   "time": "09:00",
-   "title": "The Jewish Roots of Advent (Session 1)",
-   "text": "Two-session Bible study with SFXBAT based on the work of Dr Brant Pitre, at the Jeremiah room, Parish Centre Level 2. All are welcome; register at tinyurl.com/2026JewishRootsofAdvent."
-  },
-  {
-   "date": "2026-11-16",
-   "time": "20:00",
-   "title": "Charismatic Prayer Meeting",
-   "text": "Praise & Worship followed by Praying Over at the Hosea room, Parish Centre Level 2. All are welcome."
-  },
-  {
-   "date": "2026-11-22",
-   "time": "",
-   "title": "Exhibition on Pope Leo's catechesis on Lumen Gentium",
-   "text": "Exhibition outside JPII Hall on Pope Leo's catecheses on the 16 documents of Vatican Council II; it ends on Sun 22 Nov."
-  },
-  {
-   "date": "2026-11-22",
-   "time": "09:00",
-   "title": "The Jewish Roots of Advent (Session 2)",
-   "text": "Second session of the SFXBAT Bible study at the Jeremiah room, Parish Centre Level 2. Register at tinyurl.com/2026JewishRootsofAdvent."
+   "title": "520th Birth Anniversary of St Francis Xavier",
+   "text": "Join us from 25 Nov to 6 Dec outside JPII Hall as we celebrate his remarkable life and missionary journeys. Children can enjoy stamping and craft activities, or even dress up as St Francis Xavier or King John III of Portugal."
   },
   {
    "date": "2026-11-25",
    "time": "19:30",
-   "title": "Caritas Singapore discussion night for young adults on AI",
-   "text": "A night of discussion with pizza and ice-cream at Church of the Holy Spirit (Room 03-14); dinner starts at 7pm. Register at bit.ly/streetcreed."
+   "title": "OYP: NS Community Outreach",
+   "text": "Join us for a time of prayer, sharing, and fellowship over two dates. Dinner starts at 7:00pm at the Church of the Holy Spirit (Room 03-14)."
   },
   {
    "date": "2026-11-28",
-   "time": "",
-   "title": "Feast Day celebrations",
-   "text": "Dinner at JPII Hall after the 5.30pm Feast Day Mass on Sat 28 Nov; breakfast after the 7am and 9am Masses and lunch after the 11am Mass on Sun 29 Nov. Potluck dishes (portioned for 4) are welcome at every Triduum Mass, dropped off by 7.30pm at JPII Hall."
+   "time": "10:00",
+   "title": "OYP: Seeds of Growth",
+   "text": "Calling all A-levels/IB students and graduating Secondary School students. Come join us for a time of prayer, sharing, and fellowship over two dates at Level 8, Catholic Centre."
   },
   {
-   "date": "2026-12-02",
-   "time": "20:00",
-   "title": "Sunday Mass Readings Explained (SMRE)",
-   "text": "Weekly Zoom study every Wednesday from 2 Dec, 8pm-9.45pm, with a short talk and small-group breakouts. Register at bit.ly/SFXBATSMRE."
+   "date": "2026-12-04",
+   "time": "14:00",
+   "title": "OYP: Seeds of Growth",
+   "text": "Calling all A-levels/IB students and graduating Secondary School students. Come join us for a time of prayer, sharing, and fellowship over two dates at Level 8, Catholic Centre."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2611131606_Bulletin_2026_11_15.pdf?alt=media&token=97edf387-5b4c-4b89-a69a-742e14b24212",
-  "date": "2026-11-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2611201558_Bulletin_2026_11_22.pdf?alt=media&token=f4234edf-893d-4ebd-8f90-285dd718ac11",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [],
-  "only_on_mycatholic": []
+  "only_on_mycatholic": [
+   [
+    "Mass",
+    "Friday",
+    "06:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Saturday",
+    "06:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Thursday",
+    "06:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Tuesday",
+    "06:30",
+    [],
+    []
+   ],
+   [
+    "Mass",
+    "Wednesday",
+    "06:30",
+    [],
+    []
+   ]
+  ]
  }
 }

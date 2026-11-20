@@ -2,9 +2,9 @@
  "id": 3,
  "name": "Church of Christ the King",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611131558_CTK_LEAVEN%2015%20Nov%20Final.pdf?alt=media&token=5358a773-0479-46b0-8a7a-bc5214fec95b"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611201603_CTK_LEAVEN%20%2022%20Nov%20Final.pdf?alt=media&token=684b82d8-d757-4e59-9079-d9849d02812a"
  ],
- "fetched_at": "2026-11-13T21:04+08:00",
+ "fetched_at": "2026-11-20T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -18,7 +18,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Half hour before 07:00 Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -38,7 +38,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Half hour before 08:30 Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -58,7 +58,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Half hour before 10:00 Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -78,7 +78,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Half hour before 11:30 Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -98,7 +98,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Half hour before 17:00 Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -120,7 +120,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Half hour before 18:30 Tamil Mass"
+   "note": ""
   },
   {
    "d": 0,
@@ -132,7 +132,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "Main Church",
-   "note": "4th Sunday of the month"
+   "note": ""
   },
   {
    "d": 0,
@@ -141,8 +141,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Nightly Rosary via Zoom (except Tuesdays)"
+   "loc": "via Zoom",
+   "note": "Nightly Rosary"
   },
   {
    "d": 1,
@@ -171,8 +171,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Nightly Rosary via Zoom (except Tuesdays)"
+   "loc": "via Zoom",
+   "note": "Nightly Rosary"
   },
   {
    "d": 2,
@@ -231,8 +231,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Nightly Rosary via Zoom (except Tuesdays)"
+   "loc": "via Zoom",
+   "note": "Nightly Rosary"
   },
   {
    "d": 4,
@@ -261,8 +261,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Nightly Rosary via Zoom (except Tuesdays)"
+   "loc": "via Zoom",
+   "note": "Nightly Rosary"
   },
   {
    "d": 5,
@@ -291,8 +291,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Nightly Rosary via Zoom (except Tuesdays)"
+   "loc": "via Zoom",
+   "note": "Nightly Rosary"
   },
   {
    "d": 6,
@@ -312,7 +312,7 @@
    "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Half hour before 17:00 Mass"
+   "note": ""
   },
   {
    "d": 6,
@@ -331,39 +331,93 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Nightly Rosary via Zoom (except Tuesdays)"
+   "loc": "via Zoom",
+   "note": "Nightly Rosary"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Mass",
+   "date": "2026-11-22",
+   "time": "11:30",
+   "language": "English",
+   "location": "",
+   "title": "Solemnity of Our Lord Jesus Christ, King of the Universe",
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-11-29",
+   "time": "13:00",
+   "language": "English",
+   "location": "Room 107",
+   "title": "Devotion to St Peregrine",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-09",
+   "time": "10:30",
+   "language": "English",
+   "location": "Christ the King Church",
+   "title": "Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-09",
+   "time": "20:00",
+   "language": "English",
+   "location": "Christ the King Church",
+   "title": "Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-06",
+   "time": "15:00",
+   "language": "English",
+   "location": "",
+   "title": "Infant Baptism",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30",
   "09:00"
  ],
- "notes": [
-  "Church car park closed whole day on 22 Nov for Feast Day celebration."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room: Mon-Sun 07:00-21:30; public holidays 07:00-12:00."
+  "adoration": "Adoration Room: Mon-Sun 7am to 9.30pm; public holidays 7am to 12 noon.",
+  "confession": "Confession available half an hour before all weekend Masses.",
+  "devotions": [
+   "Divine Mercy devotion every Tuesday at 8pm in the Main Church.",
+   "Nightly Rosary via Zoom at 8.30pm except Tuesdays. Zoom ID: 862 1111 7348, Passcode: nccctk."
+  ],
+  "office_hours": "Parish Office: Mon-Fri 9am to 6pm; Sat & Sun 9am to 1pm; public holidays closed.",
+  "good_to_know": [
+   "Tamil Mass at 6.30pm at the Main Church on the 4th Sunday of the month.",
+   "Sacred Heart Devotion every Friday after 6pm evening Mass in the Main Church."
+  ]
  },
  "events": [
   {
    "date": "2026-11-22",
    "time": "",
-   "title": "Feast of Christ the King Feast Day Celebration",
-   "text": "Celebration of the Feast Day of Christ the King."
+   "title": "Feast Day Celebration and community fellowship",
+   "text": "Feast Day Celebration and community fellowship on 22 November 2026."
   },
   {
-   "date": "2026-12-12",
-   "time": "",
-   "title": "CTK Youth Camp 2026",
-   "text": "3D2N stay-in Advent themed camp for young people aged 16-25. All are welcome. More information at https://tinyurl.com/CTKchannel or youth telegram channel: https://t.me/ctkyouth. Contact youthsofctk@gmail.com."
+   "date": "2026-12-01",
+   "time": "19:30",
+   "title": "Infant Baptism preparation session",
+   "text": "Preparation session for Infant Baptism on 1 December 2026 at 7.30pm. Parents and godparents must attend."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611131558_CTK_LEAVEN%2015%20Nov%20Final.pdf?alt=media&token=5358a773-0479-46b0-8a7a-bc5214fec95b",
-  "date": "2026-11-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611201603_CTK_LEAVEN%20%2022%20Nov%20Final.pdf?alt=media&token=684b82d8-d757-4e59-9079-d9849d02812a",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {

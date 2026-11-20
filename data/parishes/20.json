@@ -2,9 +2,9 @@
  "id": 20,
  "name": "Church of St Bernadette",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611131240_VOICE_15%20Nov%202026%20V2.pdf?alt=media&token=69e70b1d-2af4-4008-a17a-959e153c9816"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611201434_52_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E4%B8%BB%E6%97%A5%EF%BC%88%E5%9F%BA%E7%9D%A3%E6%99%AE%E4%B8%96%E5%90%9B%E7%8E%8B%E8%8A%82-11%E6%9C%8822%E6%97%A5%EF%BC%89.pdf?alt=media&token=9c3c6e55-153e-49ff-affc-f2b2aaa8814f"
  ],
- "fetched_at": "2026-11-13T21:05+08:00",
+ "fetched_at": "2026-11-20T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -16,7 +16,7 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "Mandarin",
+   "lang": "Chinese",
    "loc": "",
    "note": ""
   },
@@ -42,10 +42,9 @@
   },
   {
    "d": 0,
-   "t": "13:45",
+   "t": "14:00",
    "weeks": [
-    4,
-    5
+    4
    ],
    "except": [],
    "type": "Mass",
@@ -188,6 +187,16 @@
   },
   {
    "d": 6,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": "Public Holiday"
+  },
+  {
+   "d": 6,
    "t": "18:00",
    "weeks": [],
    "except": [],
@@ -203,65 +212,46 @@
   "09:00"
  ],
  "notes": [
-  "Public holiday Mass applies to weekdays only."
+  "The O Antiphons devotion runs from November 7/8 to December 19/20, involving a 15-minute reflection before Sunday Mass.",
+  "St. Vincent de Paul Christmas Wish Collection will be held on November 21-22 and November 28-29 outside the restaurant.",
+  "The Christmas Caroling team will perform on December 5 (Saturday) at 2:00pm and December 13 (Sunday) at 2:00pm and 3:45pm."
  ],
  "info": {
+  "office_hours": "Monday to Friday: 9:30am–6:30pm; Saturday: 9:30am–7:30pm; Sunday: 7:30am–7:30pm",
   "good_to_know": [
-   "Carolling starts 30 minutes before Christmas Eve Masses."
+   "Media Center (Sacrament/Relics) is open Saturday: 5:00pm–7:30pm, Sunday: 8:30am–1:00pm.",
+   "St. Bernadette Exhibition Hall is open Tuesday: 4:00pm–6:00pm, Saturday: 10:00am–12:00pm, 3:30pm–5:30pm, Sunday: 9:00am–1:00pm, 3:00pm–5:00pm.",
+   "Second-hand shop is open Thursday: 10:30am–3:00pm, Saturday: 9:00am–4:00pm, and the last Sunday of the month: 9:00am–1:00pm."
   ]
  },
  "events": [
   {
-   "date": "2026-11-20",
+   "date": "2026-11-27",
    "time": "18:30",
-   "title": "Catechetical Year 2026 Closing Fiesta",
-   "text": ""
-  },
-  {
-   "date": "2026-12-05",
-   "time": "",
-   "title": "Christmas Fair: Preparing a Place for Christ",
-   "text": ""
-  },
-  {
-   "date": "2026-12-05",
-   "time": "14:00",
-   "title": "Christmas Caroling",
-   "text": ""
-  },
-  {
-   "date": "2026-12-13",
-   "time": "14:00",
-   "title": "Christmas Caroling",
-   "text": ""
-  },
-  {
-   "date": "2026-12-13",
-   "time": "15:45",
-   "title": "Christmas Caroling",
-   "text": ""
-  },
-  {
-   "date": "2026-12-19",
-   "time": "10:00",
-   "title": "Advent Spring Cleaning",
-   "text": ""
+   "title": "Youth Activity: Seven Miles - Fifth Mile!",
+   "text": "The Youth Office invites young people aged 15 to 35 to participate in this biennial festival. Sign up before November 25th."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611131240_VOICE_15%20Nov%202026%20V2.pdf?alt=media&token=69e70b1d-2af4-4008-a17a-959e153c9816",
-  "date": "2026-11-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611201434_52_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E4%B8%BB%E6%97%A5%EF%BC%88%E5%9F%BA%E7%9D%A3%E6%99%AE%E4%B8%96%E5%90%9B%E7%8E%8B%E8%8A%82-11%E6%9C%8822%E6%97%A5%EF%BC%89.pdf?alt=media&token=9c3c6e55-153e-49ff-affc-f2b2aaa8814f",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
    [
     "Mass",
+    "Saturday",
+    "09:00",
+    [],
+    []
+   ],
+   [
+    "Mass",
     "Sunday",
-    "13:45",
+    "14:00",
     [
-     4,
-     5
+     4
     ],
     []
    ],

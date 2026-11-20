@@ -2,9 +2,9 @@
  "id": 25,
  "name": "St Joseph's Church (Victoria Street)",
  "source_urls": [
-  "https://drive.google.com/file/d/1wrUAL_vne2r7IDt8NKcxl-vuZM_hUeZU/view?usp=sharing"
+  "https://drive.google.com/file/d/12P5_knlr27rPSK9FdgB16LYCAlISCt5g/view?usp=drivesdk"
  ],
- "fetched_at": "2026-11-13T21:05+08:00",
+ "fetched_at": "2026-11-20T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -88,7 +88,17 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "with the Sacred Heart Devotion"
+   "note": "Eucharistic Adoration"
+  },
+  {
+   "d": 5,
+   "t": "17:30",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Sacred Heart Devotion"
   },
   {
    "d": 5,
@@ -117,17 +127,11 @@
   "10:00"
  ],
  "notes": [],
- "info": {
-  "adoration": "Eucharistic Adoration and the Sacred Heart Devotion: Fridays 5.30pm.",
-  "confession": "45 minutes before every Mass; 30 minutes before the Spanish Mass on Sundays.",
-  "good_to_know": [
-   "Church open Monday to Friday 10am to 7.30pm, Saturday and Sunday 9am to 7pm; public holidays 9am to 11am."
-  ]
- },
+ "info": {},
  "events": [],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1wrUAL_vne2r7IDt8NKcxl-vuZM_hUeZU/view?usp=sharing",
-  "date": "2026-11-15"
+  "url": "https://drive.google.com/file/d/12P5_knlr27rPSK9FdgB16LYCAlISCt5g/view?usp=drivesdk",
+  "date": "2026-11-22"
  },
  "disputes": [],
  "vs_mycatholic": {

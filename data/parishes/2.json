@@ -2,9 +2,9 @@
  "id": 2,
  "name": "Cathedral of the Good Shepherd",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611131829_Bulletin_20261115.pdf?alt=media&token=7efca9db-5665-48d9-9c6b-dd85d26e363e"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611201642_Bulletin_20261122.pdf?alt=media&token=aa265d64-3caf-48e5-9f6d-d8812bb0827b"
  ],
- "fetched_at": "2026-11-13T21:01+08:00",
+ "fetched_at": "2026-11-20T21:01+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -57,7 +57,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Online (Zoom)",
+   "loc": "Zoom",
    "note": "Rosary"
   },
   {
@@ -77,7 +77,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Online (Zoom)",
+   "loc": "Zoom",
    "note": "Rosary"
   },
   {
@@ -88,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Annex, Level 2 Room 4",
-   "note": "Intercessory Prayers"
+   "note": "Intercessory Prayers; Breaking of the Word begins at 11am"
   },
   {
    "d": 3,
@@ -107,7 +107,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Online (Zoom)",
+   "loc": "Zoom",
    "note": "Rosary"
   },
   {
@@ -118,7 +118,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Annex Building Level 3",
-   "note": "Divine Mercy; not on public holidays"
+   "note": "Divine Mercy; except public holidays"
   },
   {
    "d": 4,
@@ -138,7 +138,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Breaking of the Word, ends 9.30pm"
+   "note": "Breaking of the Word, 8-9.30pm"
   },
   {
    "d": 5,
@@ -169,80 +169,53 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Main Church",
+   "loc": "",
    "note": ""
   }
  ],
  "dated": [
   {
-   "type": "Mass",
+   "type": "Adoration",
    "date": "2026-12-12",
-   "time": "14:00",
+   "time": "20:00",
    "language": "English",
-   "location": "Church of Our Lady of Lourdes",
-   "title": "Feast of Our Lady of Guadalupe",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-12-12",
-   "time": "13:30",
-   "language": "English",
-   "location": "Church of Our Lady of Lourdes",
-   "title": "Prolife Rosary before the Feast of Our Lady of Guadalupe Mass",
+   "location": "",
+   "title": "Night of Prayer: O Come, Let Us Adore Him",
    "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "The Main Church is closed on weekdays; weekday Masses are in the Temporary Chapel."
+ ],
  "info": {
   "adoration": "Adoration Chapel open daily 7am-12mn.",
   "confession": "Main Church, 15 minutes before weekend Masses, when priests are available.",
   "devotions": [
-   "Rosary on Zoom: Mondays-Wednesdays 9.30pm",
-   "Rosary: 4th Friday of the month 12.30pm at the Temporary Chapel",
+   "Rosary: Mondays-Wednesdays 9.30pm on Zoom; 4th Friday of the month 12.30pm at the Temporary Chapel",
    "Divine Mercy: Thursdays 12.15pm at Annex Building Level 3 (except public holidays)",
-   "Breaking of the Word: Thursdays 8pm-9.30pm",
+   "Breaking of the Word: Thursdays 8-9.30pm",
    "Intercessory Prayers: Wednesdays 11.45am at Annex, Level 2 Room 4"
   ],
-  "office_hours": "Monday-Friday 9am-6pm; closed on public holidays.",
+  "office_hours": "Cathedral Office: Monday-Friday 9am-6pm, closed on public holidays.",
   "good_to_know": [
    "Main Church: closed Monday-Friday; open Saturday from 4pm and all day Sunday.",
-   "Temporary Chapel: JM Beurel Centre (Annex Building) Level 1, open Monday-Friday 10am-7pm.",
-   "Heritage Gallery open 10am-10pm; heritage tours can be booked at cathedral.catholic.sg/heritage.",
-   "Cathedral address: 'A' Queen Street, Singapore 188533; tel 6337 2036."
+   "Temporary Chapel (JM Beurel Centre, Annex Building Level 1): open Monday-Friday 10am-7pm.",
+   "Heritage Gallery open 10am-10pm; heritage tours can be booked at cathedral.catholic.sg/heritage."
   ]
  },
  "events": [
   {
-   "date": "2026-11-20",
-   "time": "",
-   "title": "Ordination to the Diaconate of Bro. Francis Tan",
-   "text": "Seminarian Bro. Francis Tan Teow Jin will be called to the Order of Deacons by Cardinal William Goh at St Joseph's Church (Bukit Timah)."
-  },
-  {
-   "date": "2026-12-04",
-   "time": "18:00",
-   "title": "Courage Singapore Advent Retreat: The Lord Is Near",
-   "text": "Weekend retreat of prayer and reflection for those who are same-sex attracted, 4-6 December at St Francis Xavier Retreat Center. Register at tinyurl.com/courageadvent2026; sign-ups close 23 November 2026."
-  },
-  {
-   "date": "2026-12-17",
-   "time": "",
-   "title": "Breathe Retreat #4",
-   "text": "Stay-in youth retreat for ages 16-35 at the Catholic Spirituality Centre, 17-20 December. Fee $160 early bird (till 11 Oct), $175 thereafter; register at bit.ly/breathe4."
-  },
-  {
    "date": "2027-01-05",
    "time": "",
    "title": "Kerygma School 2027",
-   "text": "For ages 18-25: opening retreat 5-15 January 2027, Saturday formation days 23 & 30 January and 13 & 20 February 2027, closing retreat 25 February-1 March 2027. Fee $381.50; register at bit.ly/kerygma2027."
+   "text": "For ages 18-25: opening retreat 5-15 January 2027, Saturday formation days in January and February, closing retreat 25 February-1 March 2027. Fee $381.50; register at bit.ly/kerygma2027."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611131829_Bulletin_20261115.pdf?alt=media&token=7efca9db-5665-48d9-9c6b-dd85d26e363e",
-  "date": "2026-11-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611201642_Bulletin_20261122.pdf?alt=media&token=aa265d64-3caf-48e5-9f6d-d8812bb0827b",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {

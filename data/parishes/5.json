@@ -2,9 +2,9 @@
  "id": 5,
  "name": "Church of the Holy Cross",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611140238_English_Bulletin%2015%20Nov.pdf?alt=media&token=bce8a1ba-a52a-4c21-8e06-5fc03da39792"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611202001_English_Bulletin%2022%20Nov.pdf?alt=media&token=c68f7d42-495b-4637-972d-b6efa312ec03"
  ],
- "fetched_at": "2026-11-14T12:31+08:00",
+ "fetched_at": "2026-11-20T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -47,7 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -55,9 +55,9 @@
    "t": "06:15",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -67,7 +67,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -77,7 +77,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -87,48 +87,58 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
    "d": 2,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "12:15",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 2,
-   "t": "20:00",
+   "t": "06:15",
    "weeks": [],
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "All Saints Hall",
-   "note": "Charismatic Renewal Movement"
+   "loc": "Church of the Holy Cross",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Church of the Holy Cross",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "12:15",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Church of the Holy Cross",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "Church of the Holy Cross",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Church of the Holy Cross",
+   "note": ""
   },
   {
    "d": 3,
@@ -137,7 +147,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -147,7 +157,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -157,7 +167,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "06:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -167,7 +187,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -177,7 +197,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -187,18 +207,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
-   "d": 4,
-   "t": "19:30",
+   "d": 5,
+   "t": "06:15",
    "weeks": [],
    "except": [],
-   "type": "Other",
+   "type": "Devotion",
    "lang": "English",
-   "loc": "All Saints Hall",
-   "note": "Faith Enrichment - RCIA"
+   "loc": "Church of the Holy Cross",
+   "note": ""
   },
   {
    "d": 5,
@@ -207,7 +227,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -217,7 +237,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -227,18 +247,20 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
    "d": 5,
    "t": "20:00",
-   "weeks": [],
+   "weeks": [
+    1
+   ],
    "except": [],
-   "type": "Devotion",
+   "type": "Adoration",
    "lang": "English",
-   "loc": "via Zoom",
-   "note": "Parish Rosary"
+   "loc": "Church of the Holy Cross",
+   "note": ""
   },
   {
    "d": 6,
@@ -247,7 +269,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   },
   {
@@ -257,8 +279,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Novena Devotion"
+   "loc": "Church of the Holy Cross",
+   "note": ""
   },
   {
    "d": 6,
@@ -267,8 +289,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": "Sunset Mass"
+   "loc": "Church of the Holy Cross",
+   "note": ""
   },
   {
    "d": 6,
@@ -277,131 +299,79 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
+   "loc": "Church of the Holy Cross",
    "note": ""
   }
  ],
  "dated": [
   {
-   "type": "Devotion",
+   "action": "add",
+   "date": "2026-11-26",
+   "language": "English",
+   "location": "Zoom",
+   "time": "20:00",
+   "title": "Parish Rosary",
+   "type": "Devotion"
+  },
+  {
+   "action": "add",
    "date": "2026-11-27",
+   "language": "English",
+   "location": "Church of the Holy Cross",
    "time": "20:00",
-   "language": "English",
-   "location": "",
-   "title": "Prayer for all departed souls",
-   "action": "add"
+   "title": "Prayer for All Departed Souls",
+   "type": "Devotion"
   },
   {
-   "type": "Other",
-   "date": "2026-11-22",
-   "time": "14:30",
+   "action": "add",
+   "date": "2026-12-04",
    "language": "English",
-   "location": "Auditorium",
-   "title": "Catechism Ministry Briefing for Parents",
-   "action": "add"
-  },
-  {
-   "type": "Other",
-   "date": "2026-12-06",
-   "time": "14:00",
-   "language": "English",
-   "location": "",
-   "title": "Understanding Advent and Christmas",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-12-26",
+   "location": "Church of the Holy Cross",
    "time": "20:00",
+   "title": "Parish Holy Hour",
+   "type": "Adoration"
+  },
+  {
+   "action": "add",
+   "date": "2026-12-18",
    "language": "English",
-   "location": "Auditorium",
-   "title": "Christmas Carols",
-   "action": "add"
+   "location": "Church of the Holy Cross",
+   "time": "20:00",
+   "title": "Advent Penitential Service",
+   "type": "Confession"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30"
  ],
- "notes": [
-  "The bulletin states a Public Holiday Mass time of 07:30am.",
-  "The Charismatic Renewal Movement meets on Tuesdays at 8pm in All Saints Hall.",
-  "The RCIA sessions are held on Thursdays from 7:30pm to 9:30pm in All Saints Hall."
- ],
+ "notes": [],
  "info": {
-  "adoration": "Adoration Room - Daily till 22:00. Holy Hour - Every 1st Friday at 20:00.",
-  "devotions": [
-   "Novena Devotion - Every Saturday at 15:30"
-  ],
-  "good_to_know": [
-   "The Church Emergency Response Team (CERT) is available at the Prayer Wall for first aid and fire safety concerns."
-  ]
+  "adoration": "Adoration Room open daily until 22:00."
  },
  "events": [
   {
-   "date": "2026-11-14",
-   "time": "",
-   "title": "Post-Confirmation Project 2026",
-   "text": "The Class of 2026 will be selling a variety of baked items like florentines, pineapple tarts & cookies from $25 to $35 at the church foyer during this weekend, 14/15 November 2026."
+   "date": "2026-11-28",
+   "time": "13:30",
+   "title": "Conversations That Matter: When Your Teen Questions Their Sexuality",
+   "text": "Conversations That Matter: When Your Teen Questions Their Sexuality. Saturday 28 Nov 2026, 1.30pm - 4pm, Church of the Holy Cross (Auditorium). $20 for 1 pax | $35 for 2 pax. Join Fr David Garcia, OP and psychologist Nicholas Gabriel Lim. Register: familylife.sg/CTM_B."
   },
   {
-   "date": "2026-11-17",
-   "time": "",
-   "title": "Charismatic Renewal Movement",
-   "text": "Overcoming the Flesh by Gerard Francisco"
-  },
-  {
-   "date": "2026-11-24",
-   "time": "",
-   "title": "Faith Enrichment - RCIA",
-   "text": "You are invited to attend the sessions to enrich your faith. Pre-registration is NOT required. All are welcome! Topic: The World and Christian Community by Derrick Chee"
-  },
-  {
-   "date": "2026-12-01",
-   "time": "",
-   "title": "Charismatic Renewal Movement",
-   "text": "Repairing wrong doings - Jessica Francisco"
-  },
-  {
-   "date": "2026-12-03",
-   "time": "",
-   "title": "Faith Enrichment - RCIA",
-   "text": "The Sacraments and their Liturgy"
-  },
-  {
-   "date": "2026-12-04",
-   "time": "18:00",
-   "title": "The Lord is Near Courage Advent Retreat 2026",
-   "text": "A weekend of prayer and reflection to prepare your heart for Jesus. This retreat is for those who are same-sex attracted or identify as LGBTQ. Register by 23rd Nov 2026 via tinyurl.com/courageadvent2026."
-  },
-  {
-   "date": "2026-12-08",
-   "time": "",
-   "title": "Faith Enrichment - RCIA",
-   "text": "Overcoming the works of the evil spirits by Philip Kok"
-  },
-  {
-   "date": "2026-12-10",
-   "time": "",
-   "title": "Faith Enrichment - RCIA",
-   "text": "Baptism and Confirmation"
-  },
-  {
-   "date": "2026-12-19",
-   "time": "",
-   "title": "Faith Enrichment - RCIA",
-   "text": "Mother Mary"
+   "date": "2026-12-06",
+   "time": "14:00",
+   "title": "Understanding Advent and Christmas",
+   "text": "Understanding Advent and Christmas. Sunday 6 Dec 2026, 2pm - 3.30pm. Session conducted by Fr Terence Pereira. Register: tinyurl.com/CHC-TP6DEC26."
   },
   {
    "date": "2026-12-26",
-   "time": "",
-   "title": "Faith Enrichment - RCIA",
-   "text": "The Liturgical Calendar"
+   "time": "20:00",
+   "title": "Christmas Carols",
+   "text": "Christmas Carols. Saturday 26 Dec 2026, 8pm, Auditorium. Register: tinyurl.com/holycross-carol or scan QR code."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611140238_English_Bulletin%2015%20Nov.pdf?alt=media&token=bce8a1ba-a52a-4c21-8e06-5fc03da39792",
-  "date": "2026-11-14"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611202001_English_Bulletin%2022%20Nov.pdf?alt=media&token=c68f7d42-495b-4637-972d-b6efa312ec03",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {
