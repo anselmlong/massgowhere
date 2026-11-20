@@ -2,9 +2,9 @@
  "id": 19,
  "name": "Church of St Anthony",
  "source_urls": [
-  "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_15.pdf"
+  "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_22.pdf"
  ],
- "fetched_at": "2026-11-13T21:04+08:00",
+ "fetched_at": "2026-11-20T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -142,7 +142,7 @@
    "time": "19:30",
    "language": "Tagalog",
    "location": "",
-   "title": "Tagalog Mass",
+   "title": "",
    "action": "add"
   },
   {
@@ -151,7 +151,7 @@
    "time": "19:30",
    "language": "Malayalam",
    "location": "",
-   "title": "Malayalam Mass",
+   "title": "",
    "action": "add"
   },
   {
@@ -160,7 +160,7 @@
    "time": "19:30",
    "language": "Tamil",
    "location": "",
-   "title": "Tamil Mass",
+   "title": "",
    "action": "add"
   },
   {
@@ -169,29 +169,18 @@
    "time": "07:30",
    "language": "Mandarin",
    "location": "",
-   "title": "Mandarin Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-12-26",
-   "time": "17:30",
-   "language": "English",
-   "location": "",
-   "title": "Milestone Wedding Anniversary Mass",
+   "title": "",
    "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [],
- "info": {
-  "confession": "Confessions: 15 mins before Mass."
- },
+ "info": {},
  "events": [],
  "bulletin": {
-  "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_15.pdf",
-  "date": "2026-11-15"
+  "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_22.pdf",
+  "date": "2026-11-22"
  },
  "disputes": [],
  "vs_mycatholic": {

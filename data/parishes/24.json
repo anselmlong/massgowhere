@@ -2,9 +2,9 @@
  "id": 24,
  "name": "St Joseph's Church (Bukit Timah)",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611141115_20261115_SJCBT%20Bulletin.pdf?alt=media&token=539ddb22-cc64-49ee-bec0-7d97c791bb76"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611201019_20261122_SJCBT%20Bulletin.pdf?alt=media&token=0708f9c3-1b0d-4c92-b059-1055c558c9eb"
  ],
- "fetched_at": "2026-11-14T12:32+08:00",
+ "fetched_at": "2026-11-20T12:34+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "",
+   "loc": "Church",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church",
    "note": ""
   },
   {
@@ -47,7 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church",
    "note": ""
   },
   {
@@ -215,63 +215,27 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church",
    "note": "Sunset Mass"
   }
  ],
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-19",
-   "time": "06:30",
-   "language": "English",
-   "location": "Chapel of St Joseph",
-   "title": "Requiem Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-19",
-   "time": "18:30",
-   "language": "English",
-   "location": "Chapel of St Joseph",
-   "title": "Requiem Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-20",
-   "time": "18:30",
-   "language": "English",
-   "location": "",
-   "title": "SFXMS Feast Day Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
    "date": "2026-11-22",
    "time": "11:30",
    "language": "English",
-   "location": "",
-   "title": "Mass with Youth (Christ the King Sunday), presided by Rev Fr Jude David",
+   "location": "St Joseph's Church (Bukit Timah)",
+   "title": "Mass with Youth",
    "action": "add"
   },
   {
-   "type": "Mass",
-   "date": "2026-11-27",
-   "time": "06:30",
+   "type": "Devotion",
+   "date": "2026-12-18",
+   "time": "19:45",
    "language": "English",
-   "location": "Chapel of St Joseph",
-   "title": "Requiem Mass",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-27",
-   "time": "18:30",
-   "language": "English",
-   "location": "Chapel of St Joseph",
-   "title": "Requiem Mass",
+   "location": "St Joseph's Church (Bukit Timah)",
+   "title": "Prayer thru Music",
    "action": "add"
   }
  ],
@@ -279,85 +243,73 @@
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Mon-Fri 7.00am-9.00pm, Sat 9.30am-7.00pm, Sun 8.00am-7.00pm, public holidays 8.00am-4.00pm. Holy Hour: first Friday 8.00pm in the Main Church (unless otherwise stated). Holy Hour for Vocations: third Thursday 8.00pm in the C",
-  "confession": "15 minutes before all weekend Masses, in the Reconciliation Rooms in the church.",
+  "adoration": "Adoration Room: Mon-Fri 07:00-21:00; Sat 09:30-19:00; Sun 08:00-19:00; Public Holidays 08:00-16:00.",
+  "confession": "Confessions: 15 minutes before all weekend Masses in the Reconciliation Rooms in Church.",
   "devotions": [
-   "Divine Mercy: every Friday 8.00pm (except first Friday) in the Chapel of St Joseph",
-   "Garden Rosary: first Saturday after the 5.30pm Mass",
-   "Grotto Rosary: every 13th of the month after the 6.30pm Mass (weekdays only)",
-   "Blessing of Expectant Mothers: every fourth Sunday of the month"
-  ],
-  "good_to_know": [
-   "Gate opening hours: 6.00am to 10.00pm.",
-   "Columbarium, Rosary Garden and Stations of the Cross: daily 8.00am to 8.00pm.",
-   "Media Centre (bookshop): Sat 4.30pm-7.00pm, Sun 8.30am-1.00pm; every 2nd Sunday also 5.30pm-7.00pm."
+   "Garden Rosary: First Saturday after the 17:30 Mass.",
+   "Grotto Rosary: Every 13th of the month after the 18:30 Mass (weekdays only).",
+   "Blessing of Expectant Mothers: Every Fourth Sunday of the month."
   ]
  },
  "events": [
   {
-   "date": "2026-11-14",
-   "time": "",
-   "title": "Media Centre Christmas Fair",
-   "text": "Christmas fair at the parish Media Centre (bookshop) on 14 and 15 November. Open to all parishioners."
-  },
-  {
-   "date": "2026-11-14",
-   "time": "",
-   "title": "Welcoming New Parishioners",
-   "text": "A casual, welcoming space on 14 and 15 November to meet fellow parishioners, make new friends and learn more about parish life, with snacks."
-  },
-  {
-   "date": "2026-11-20",
-   "time": "15:00",
-   "title": "Tea-ology: Theology over Tea @ Catholic JC",
-   "text": "For ages 16 to 19, with Friar John Paul Tan OFM, Sr Monika (Verbum Dei) and other clergy and religious, over bubble tea and snacks. Sign up at https://go.gov.sg/cjctot2026."
-  },
-  {
-   "date": "2026-11-21",
-   "time": "",
-   "title": "Sec 4/5 Outreach",
-   "text": "For students graduating from secondary school this year: a time of prayer with the Lord and getting to know fellow Sec 4 & 5 students, organised by OYP."
-  },
-  {
-   "date": "2026-11-24",
-   "time": "",
-   "title": "Kidz Bible Camp",
-   "text": "Bible camp for children, 24 to 26 November."
-  },
-  {
    "date": "2026-11-25",
    "time": "",
    "title": "Creed on the Street",
-   "text": "Caritas Young Adults' night of discussion on how we use AI tools, with pizza and ice-cream. Sign up at bit.ly/streetcreed; enquiries to formation.cst@caritas-singapore.org."
+   "text": "Join Caritas Young Adults for a night of discussion (with pizza and ice-cream) as we pause to consider how we are using AI tools, their benefits, and their effects on our lives from the lens of faith. Sign up now at bit.ly/streetcreed. For enquiries, please email Caritas Singapore at formation.cst@c"
+  },
+  {
+   "date": "2026-11-27",
+   "time": "17:00",
+   "title": "2nd SCC General Meeting",
+   "text": "Calling all Parishioners to the 2nd SCC General Meeting. Come and meet up with Catholics in our neighbourhood over prayer and fellowship, on Friday, 27 November, 5pm before the debut session of our My Hands His Plans musical. Come together to pray the Divine Mercy prayer and enjoy each other’s compa"
   },
   {
    "date": "2026-11-28",
-   "time": "08:30",
+   "time": "",
    "title": "Neighbourhood Prayer Walk",
-   "text": "Meet at the main church lobby to pray for all staying in the Chestnut area. Updates via the Neighbourhood Prayer Walk WhatsApp community: tinyurl.com/SJCBTNPW."
+   "text": "Neighbourhood Prayer Walk on 28 Nov."
   },
   {
    "date": "2026-11-28",
    "time": "09:00",
    "title": "Columbaria Visits",
-   "text": "Visits to columbaria in other parishes, 9am-12.30pm, with transport by chartered bus. Places are limited; register at https://tinyurl.com/NovColumbaria."
+   "text": "As part of the Month of praying for the dead in November, the parish is organising visits to columbaria in other parishes on 14 & 28 November 2026, from 9am - 12.30pm. Transport via chartered bus is provided. Places are limited. For more information and to register, please go to: https://tinyurl.com"
+  },
+  {
+   "date": "2026-11-28",
+   "time": "10:00",
+   "title": "Seeds of Growth",
+   "text": "A-levels/IB students, let's wrap up the year together! Come and join us for a time of prayer, sharing, and fellowship over two dates! Sign up at tinyurl.com/OYPSOGNOV26. Venue: L8, Catholic Centre (55 Waterloo Street, S187954). It’s okay if you can’t make it for both sessions, just sign up for the o"
   },
   {
    "date": "2026-11-28",
    "time": "13:30",
    "title": "Conversations that Matter",
-   "text": "Fr David Garcia, OP and Nicholas Gabriel Lim on identity, attraction and morality, and how to talk with your teen while staying rooted in the faith."
+   "text": "What if your teen questions their sexuality or expresses views on identity that seem at odds with your Catholic faith? Join Fr David Garcia, OP and Nicholas Gabriel Lim as they explore identity, attraction and morality, offering practical guidance on listening, responding and having meaningful conve"
   },
   {
    "date": "2026-12-04",
    "time": "",
-   "title": "Courage: The Lord is Near",
-   "text": "Retreat running 4 to 6 December."
+   "title": "Courage : The Lord is Near",
+   "text": "A retreat from 4 – 6 Dec."
+  },
+  {
+   "date": "2026-12-04",
+   "time": "14:00",
+   "title": "Seeds of Growth",
+   "text": "A-levels/IB students, let's wrap up the year together! Come and join us for a time of prayer, sharing, and fellowship over two dates! Sign up at tinyurl.com/OYPSOGNOV26. Venue: L8, Catholic Centre (55 Waterloo Street, S187954). It’s okay if you can’t make it for both sessions, just sign up for the o"
+  },
+  {
+   "date": "2026-12-05",
+   "time": "",
+   "title": "OYP NS Community Outreach",
+   "text": "The NS community (CAYA: Come As You Are) warmly invites all National Servicemen (NSFs) to a morning of fellowship, worship and prayer. Come and connect with fellow brothers, build meaningful friendships, and grow together in faith. Register at tinyurl.com/CAYADECOUTREACH. For enquiries: Please conta"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611141115_20261115_SJCBT%20Bulletin.pdf?alt=media&token=539ddb22-cc64-49ee-bec0-7d97c791bb76",
-  "date": "2026-11-14"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611201019_20261122_SJCBT%20Bulletin.pdf?alt=media&token=0708f9c3-1b0d-4c92-b059-1055c558c9eb",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {

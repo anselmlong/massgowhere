@@ -2,9 +2,9 @@
  "id": 18,
  "name": "St Anne's Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611131551_Nov_14%20%26%2015%202026.pdf?alt=media&token=99a1b9a0-dc65-4199-8313-0ee4183dfb30"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611201008_Nov_21%20%26%2022%202026.pdf?alt=media&token=73a147e7-e0a7-4403-8bb2-dac0919fa819"
  ],
- "fetched_at": "2026-11-13T21:06+08:00",
+ "fetched_at": "2026-11-20T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -42,16 +42,6 @@
   },
   {
    "d": 0,
-   "t": "11:30",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": "Children Liturgy"
-  },
-  {
-   "d": 0,
    "t": "13:30",
    "weeks": [
     1,
@@ -60,7 +50,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Chinese",
-   "loc": "Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -174,8 +164,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Church",
-   "note": "Holy Hour"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -215,7 +205,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sunset"
+   "note": ""
   }
  ],
  "dated": [],
@@ -224,37 +214,28 @@
   "08:00"
  ],
  "notes": [
-  "On public holidays on weekdays, there is no evening Mass."
+  "No evening Mass on weekday public holidays."
  ],
  "info": {
-  "confession": "Confessions: 30 mins before English weekend Masses in Church.",
+  "confession": "30 mins before English weekend Masses in Church.",
+  "devotions": [
+   "On the last Sunday of the month, prayers at the columbarium after the 11.30am Mass."
+  ],
   "good_to_know": [
-   "Church opening hours: Mon–Sat 6am–10pm; Sun 6am–6pm; Public Holidays on weekdays 7am–1pm."
+   "Children Liturgy every Sunday at the 11.30am Mass."
   ]
  },
  "events": [
   {
-   "date": "2026-11-28",
-   "time": "",
-   "title": "Conversations that Matter: When Your Teen Questions Their Identity & Sexuality",
-   "text": "Conversations that Matter: When Your Teen Questions Their Identity & Sexuality. Time: 1.30pm to 4pm. Venue: Church of the Holy Cross, Auditorium (Level 4). Fee: $20 per pax, $35 for 2 pax. Register at familylife.sg/CTM_B or scan the QR code."
-  },
-  {
-   "date": "2026-12-12",
-   "time": "",
-   "title": "Our Lady of Guadalupe: Honouring the Patroness of Unborn Children",
-   "text": "Our Lady of Guadalupe: Honouring the Patroness of Unborn Children. Time: 1.30pm (Rosary) | 2pm (Mass). Venue: Church of Our Lady of Lourdes; 50 Ophir Road, Singapore 188690. There will be a healing prayer and blessing of pregnant women after Mass."
-  },
-  {
-   "date": "2026-12-17",
-   "time": "",
-   "title": "Breathe Youth Retreat",
-   "text": "Breathe Youth Retreat. Dates: 17 to 20 December, Thursday to Sunday. Time: Thursday 9am to Sunday 6.30pm (Stay-In). Venue: Catholic Spirituality Centre; 1261 Upper Serangoon Road, Singapore 534796. Registration closes on 30 November 2026. To register, scan the QR code."
+   "date": "2026-12-04",
+   "time": "18:00",
+   "title": "COURAGE Singapore: An Advent Retreat – The Lord Is Near",
+   "text": "A weekend of prayer and reflection for those who are same-sex attracted or identify as LGBTQ. Registration closes on 23 November 2026. Register at tinyurl.com/courageadvent2026. Venue: St Francis Xavier Retreat Centre; 199 Ponggol Seventeenth Ave, Singapore 829645. Ends Sunday 6 December 2026 at 4pm"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611131551_Nov_14%20%26%2015%202026.pdf?alt=media&token=99a1b9a0-dc65-4199-8313-0ee4183dfb30",
-  "date": "2026-11-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611201008_Nov_21%20%26%2022%202026.pdf?alt=media&token=73a147e7-e0a7-4403-8bb2-dac0919fa819",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {

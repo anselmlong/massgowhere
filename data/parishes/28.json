@@ -2,9 +2,9 @@
  "id": 28,
  "name": "Church of St Stephen",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611130927_St_StephenBulletin_15112026.pdf?alt=media&token=80fe0156-f4ef-45c9-8a98-fefe312b023e"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611200924_St_StephenBulletin_22112026.pdf?alt=media&token=4f3c4a41-099f-4236-a197-09776cb29b73"
  ],
- "fetched_at": "2026-11-13T12:32+08:00",
+ "fetched_at": "2026-11-20T12:34+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -28,7 +28,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Church of St Stephen",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 0,
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Malayalam",
    "loc": "Church of St Stephen",
-   "note": "2nd Sunday"
+   "note": "2nd Sunday only"
   },
   {
    "d": 0,
@@ -62,7 +62,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "Church of St Stephen",
-   "note": "1st Sunday"
+   "note": "1st Sunday only"
   },
   {
    "d": 0,
@@ -132,7 +132,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "Church of St Stephen",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -142,72 +142,133 @@
    "type": "Mass",
    "lang": "English",
    "loc": "Church of St Stephen",
-   "note": "Sunset Mass"
+   "note": "Saturday Sunset Mass"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "type": "Confession",
+   "date": "2026-12-16",
+   "time": "20:00",
+   "language": "",
+   "location": "Church of St Stephen",
+   "title": "Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-24",
+   "time": "21:00",
+   "language": "English",
+   "location": "Church of St Stephen",
+   "title": "Christmas Eve",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "09:00",
+   "language": "English",
+   "location": "Church of St Stephen",
+   "title": "Christmas Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "11:00",
+   "language": "English",
+   "location": "Church of St Stephen",
+   "title": "Christmas Day",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-26",
+   "time": "10:00",
+   "language": "English",
+   "location": "Church of St Stephen",
+   "title": "Feast of St Stephen",
+   "action": "add"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "07:30"
  ],
  "notes": [
-  "Public holidays follow a different weekday Mass schedule."
+  "Weekday Mass time changes on public holidays.",
+  "Confession is available half an hour before Mass."
  ],
  "info": {
   "confession": "Confession is available half an hour before Mass.",
-  "devotions": [
-   "Rosary Devotion: Saturday 4.45pm",
-   "Divine Mercy Devotion: Sunday 10.15am"
-  ],
   "office_hours": "Monday to Friday 9.00am to 5.00pm",
   "good_to_know": [
-   "For weddings, one year notification is required.",
-   "For infant baptism, please call the office.",
-   "For funerals, please notify the priest immediately.",
-   "Mass intentions are $10 per name per mass; drop your envelope at least one week ahead."
+   "Bookshop opening hours: Saturday 5.00pm to 6.30pm, Sunday 9.00am to 12.30pm.",
+   "Catechism: Sunday 9.00am (English).",
+   "Weddings: One year notification.",
+   "Infant Baptism: Please call office."
   ]
  },
  "events": [
   {
-   "date": "2026-11-15",
-   "time": "",
-   "title": "Catechism Year End Party",
-   "text": "Potluck party after the 11:00am Mass for catechism children and parents."
+   "date": "2026-11-22",
+   "time": "11:00",
+   "title": "Hospitality Minister Commissioning",
+   "text": "Hospitality Ministers will be commissioned this Sunday, 22nd November 2026 at 11am Mass. Please support your HMs with your prayers."
   },
   {
-   "date": "2026-11-15",
-   "time": "19:00",
-   "title": "Special Early Access Screening: The Chosen Season 6, Episode 1",
-   "text": ""
+   "date": "2026-11-24",
+   "time": "19:30",
+   "title": "PIETA Zoom session",
+   "text": "Support group for bereaved parents. Next Zoom session is on Tuesday 24 November, 7:30pm to 9:15pm. Email pieta.singapore@gmail.com for Zoom link."
   },
   {
-   "date": "2026-11-21",
+   "date": "2026-11-28",
    "time": "10:00",
-   "title": "OYP Outreach for Sec 4 & 5 Students",
-   "text": "10AM - 1PM. Free. Venue: 55 Waterloo St, Catholic Ctr #08-01. Register: tinyurl.com/SecOutreach26Nov"
+   "title": "Seeds of Growth",
+   "text": "A-levels/IB students, join us for a time of prayer, sharing, and fellowship. Dates: Sat, 28 Nov, 10AM to 12PM & Fri, 4 Dec, 2PM to 4PM. Venue: L8, Catholic Centre (55 Waterloo Street, S187954). Sign up at tinyurl.com/OYPSOGNOV26."
   },
   {
    "date": "2026-12-04",
    "time": "19:00",
    "title": "Advent Retreat for LGBTQ",
-   "text": "Stay-in weekend retreat from Friday 4 Dec (7pm) to Sunday, 6 Dec (4pm). Register at tinyurl.com/couragedadvent2026"
+   "text": "\"The Lord is Near: Come Home to Him who Comes.\" Stay-in weekend retreat from Friday 4 Dec (7pm) to Sunday, 6 Dec (4pm). Register at tinyurl.com/couragedadvent2026."
   },
   {
    "date": "2026-12-05",
-   "time": "",
+   "time": "10:30",
+   "title": "OYP NS Community Outreach",
+   "text": "All National Servicemen (NSFs) are invited to a morning of fellowship, worship and prayer. Date: Saturday, 5 December 2026, 10.30am. Venue: Level 8, Catholic Centre, 55 Waterloo Street, Singapore 187954. Registration: tinyurl.com/CAYADECOUTREACH."
+  },
+  {
+   "date": "2026-12-05",
+   "time": "17:00",
    "title": "Christmas Carolling",
-   "text": "Jubilate Choir house-to-house carolling. Also on Dec 6, 12, 13, 19, 20. Contact Germain @98882666 to book."
+   "text": "Jubilate Choir will be spreading Christmas joy this December with house-to-house carolling. Dates: Dec 5, 6, 12, 13, 19, 20. Time: 5pm or 8pm. Contact Germain @98882666 or scan the QR code or approach our choir after Mass."
+  },
+  {
+   "date": "2026-12-12",
+   "time": "09:00",
+   "title": "CHARIS IN THANKSGIVING with MASS",
+   "text": "Date: Sat, 12 December 2026. Time: 9am - 1pm. Venue: Catholic Centre, Level 3, 55 Waterloo Street, S187954. Register by Fri, 27 November: https://go.charis-singapore.org/In-thanks-rsvp."
   },
   {
    "date": "2026-12-16",
    "time": "",
    "title": "BREATHE Youth Retreat",
-   "text": "Stay-in retreat for 16-30yos on 16-20 Dec. Registration at bit.ly/breathe4 closes on 30 Nov. Organised by Catholic Spirituality Centre."
+   "text": "Stay-in retreat for 16-30yos on 16-20 Dec. Registration at bit.ly/breathe4 and closes on 30 Nov. Organised by the Catholic Spirituality Centre (CSC)."
+  },
+  {
+   "date": "2026-12-24",
+   "time": "23:00",
+   "title": "A Light in the Darkness",
+   "text": "This Christmas Eve, experience a moving musical play of struggle, hope and faith. Join us on 24 December 2026 at 11.00pm, followed by Christmas Carolling at 11.40pm and our Christmas Mass at 12 midnight."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611130927_St_StephenBulletin_15112026.pdf?alt=media&token=80fe0156-f4ef-45c9-8a98-fefe312b023e",
-  "date": "2026-11-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611200924_St_StephenBulletin_22112026.pdf?alt=media&token=4f3c4a41-099f-4236-a197-09776cb29b73",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {

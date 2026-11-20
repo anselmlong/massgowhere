@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-19T12:31+08:00",
+ "fetchedAt": "2026-11-20T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -39,9 +39,9 @@
   },
   "6": {
    "from": "myCatholicSG",
-   "title": "33rd Sunday In Ordinary Time",
-   "date": "2026-11-12",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611121821_33rd_Sunday%20In%20Ordinary%20Time.pdf?alt=media&token=af32280a-d2e6-401d-8a6c-953737e7d0a8",
+   "title": "Our Lord Jesus Christ,King Of The Universe",
+   "date": "2026-11-19",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611191824_Our_Lord%20Jesus%20Christ%2CKing%20Of%20The%20Universe.pdf?alt=media&token=aaa61bc3-cd21-4951-bd6a-3c76acdc34e3",
    "page": "https://mycatholic.sg/bulletin/holyfamily"
   },
   "7": {
@@ -53,9 +53,9 @@
   },
   "8": {
    "from": "myCatholicSG",
-   "title": "33rd Sunday in Ordinary Time",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611131933_15.11.26_33rd%20Sunday%20in%20Ordinary%20Time%20A%20A5%20.pdf?alt=media&token=2f2d4f3a-4444-4bd0-b9d2-176787a2fdea",
+   "title": "Solemnity of Christ the King",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611201053_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=b5b815ec-ae01-4ea1-8a59-10ab3a7d9d5d",
    "page": "https://mycatholic.sg/bulletin/holytrinity"
   },
   "9": {
@@ -81,9 +81,9 @@
   },
   "12": {
    "from": "myCatholicSG",
-   "title": "OLPS Weekly Bulletin 15 Nov 2026",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611140912_33rd_Sunday%20in%20Ordinary%20Time%2015%20Nov%202026.pdf?alt=media&token=bd6e1b2e-8a59-470d-9955-d713313507ca",
+   "title": "OLPS Weekly Bulletin 22 Nov 2026",
+   "date": "2026-11-19",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611191925_Solemnity_of%20Christ%20the%20King%2022%20Nov%202026.pdf?alt=media&token=1220a99d-c83d-434f-b7cb-4e13d35772d6",
    "page": "https://mycatholic.sg/bulletin/perpertualsuccour"
   },
   "13": {
@@ -116,23 +116,23 @@
   },
   "17": {
    "from": "myCatholicSG",
-   "title": "Bulletin 15th November till  21st November 2026",
-   "date": "2026-11-12",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2611121741_3._Novena%2015%20November%20%20to%2021%20November%20ROSE.pdf?alt=media&token=9fd2c833-b866-4a84-b6ed-c6a5482f12d8",
+   "title": "Bulletin 22nd November till 28th November 2026",
+   "date": "2026-11-19",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F17%2Fpublic%2Fpdf%2F2611191738_4._Novena%2022%20November%20to%2028%20November%20HS.pdf?alt=media&token=5fa0cd46-24a2-4a7b-aee0-c4cc12ee9f74",
    "page": "https://mycatholic.sg/bulletin/novena"
   },
   "18": {
    "from": "myCatholicSG",
-   "title": "14 & 15 November 2026",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611131551_Nov_14%20%26%2015%202026.pdf?alt=media&token=99a1b9a0-dc65-4199-8313-0ee4183dfb30",
+   "title": "21 & 22 November 2026",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611201008_Nov_21%20%26%2022%202026.pdf?alt=media&token=73a147e7-e0a7-4403-8bb2-dac0919fa819",
    "page": "https://mycatholic.sg/bulletin/stanne"
   },
   "19": {
    "from": "website",
    "title": "",
-   "date": "2026-11-15",
-   "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_15.pdf",
+   "date": "2026-11-22",
+   "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_22.pdf",
    "page": "https://saint-anthony.org/bulletin/"
   },
   "20": {
@@ -166,9 +166,9 @@
   },
   "24": {
    "from": "myCatholicSG",
-   "title": "15 November 2026 : 33rd Sunday Ordinary Time",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611141115_20261115_SJCBT%20Bulletin.pdf?alt=media&token=539ddb22-cc64-49ee-bec0-7d97c791bb76",
+   "title": "22 November 2026 : Christ the King",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611201019_20261122_SJCBT%20Bulletin.pdf?alt=media&token=0708f9c3-1b0d-4c92-b059-1055c558c9eb",
    "page": "https://mycatholic.sg/bulletin/stjosephbukittimah"
   },
   "25": {
@@ -196,8 +196,8 @@
   "28": {
    "from": "myCatholicSG",
    "title": "St Stephen Bulletin",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611130927_St_StephenBulletin_15112026.pdf?alt=media&token=80fe0156-f4ef-45c9-8a98-fefe312b023e",
+   "date": "2026-11-20",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611200924_St_StephenBulletin_22112026.pdf?alt=media&token=4f3c4a41-099f-4236-a197-09776cb29b73",
    "page": "https://mycatholic.sg/bulletin/ststephen"
   },
   "29": {
