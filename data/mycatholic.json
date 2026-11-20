@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-18",
+"asOf": "2026-11-20",
 "rules": {
 "1": [
 {
@@ -6389,6 +6389,69 @@
 "note": "Christmas Mass"
 },
 {
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "08:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Devotion",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Eucharistic Adoration and Sacred Heart of Jesus devotion"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Devotion",
+"t": "20:00",
+"lang": "English",
+"loc": "Damian Hall",
+"note": "Intercessory prayers"
+},
+{
 "k": "o",
 "date": "2026-12-24",
 "type": "Mass",
@@ -6405,6 +6468,24 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas Midnight Mass"
+},
+{
+"k": "o",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Thanksgiving Mass"
+},
+{
+"k": "o",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year's Day Mass"
 },
 {
 "k": "a",
@@ -6542,94 +6623,13 @@
 "note": "Christmas Mass"
 },
 {
-"k": "r",
-"date": "2026-12-25",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-12-31",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "a",
-"date": "2026-11-18",
+"date": "2026-12-24",
 "type": "Mass",
-"t": "21:00",
+"t": "23:59",
 "lang": "English",
 "loc": "Main Church",
-"note": "Thanksgiving Mass"
-},
-{
-"k": "o",
-"date": "2026-12-31",
-"type": "Mass",
-"t": "21:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Thanksgiving Mass"
-},
-{
-"k": "o",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "10:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Year's Day Mass"
-},
-{
-"k": "r",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "08:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2027-01-01",
-"type": "Devotion",
-"t": "19:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Eucharistic Adoration and Sacred Heart of Jesus devotion"
-},
-{
-"k": "r",
-"date": "2027-01-01",
-"type": "Devotion",
-"t": "20:00",
-"lang": "English",
-"loc": "Damian Hall",
-"note": "Intercessory prayers"
+"note": "Christmas · Christmas Midnight Mass"
 }
 ],
 "2": [
@@ -6736,15 +6736,6 @@
 "3": [
 {
 "k": "r",
-"date": "2026-11-18",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-19",
 "type": "Mass",
 "t": "18:00",
@@ -6760,15 +6751,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-18",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Triduum 7.15pm Praise & Worship"
 },
 {
 "k": "a",
@@ -7845,7 +7827,7 @@
 "t": "06:45",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christmas Day"
+"note": "Christmas · Christmas Day Mass"
 },
 {
 "k": "a",
@@ -7854,7 +7836,7 @@
 "t": "08:30",
 "lang": "Mandarin",
 "loc": "Main Church",
-"note": "Christmas Day"
+"note": "Christmas · Christmas Day Mass"
 },
 {
 "k": "a",
@@ -7863,7 +7845,7 @@
 "t": "10:15",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christmas Day"
+"note": "Christmas · Christmas Day Mass"
 },
 {
 "k": "a",
@@ -7872,7 +7854,7 @@
 "t": "12:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christmas Day"
+"note": "Christmas · Christmas Day Mass"
 },
 {
 "k": "a",
@@ -7881,7 +7863,25 @@
 "t": "17:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christmas Day"
+"note": "Christmas · Christmas Day Mass"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Other",
+"t": "22:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Service · Christmas Carolling"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "22:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Christmas Mass at Night"
 }
 ],
 "9": [
@@ -9829,18 +9829,25 @@
 "note": "New Year Day"
 }
 ],
-"31": [
+"28": [
 {
 "k": "r",
-"date": "2026-11-18",
+"date": "2026-12-25",
 "type": "Mass",
-"t": "18:00",
+"t": "06:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-}
-],
-"28": [
+},
+{
+"k": "r",
+"date": "2026-12-26",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
 {
 "k": "a",
 "date": "2026-12-16",
@@ -9849,6 +9856,51 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-26",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Feast of St Stephen"
 }
 ],
 "29": [
@@ -9922,6 +9974,15 @@
 {
 "k": "r",
 "date": "2027-02-10",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-02-05",
 "type": "Mass",
 "t": "18:30",
 "lang": "English",
@@ -10134,6 +10195,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas"
+},
+{
+"k": "a",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ]
 }
