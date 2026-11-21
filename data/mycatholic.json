@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-20",
+"asOf": "2026-11-21",
 "rules": {
 "1": [
 {
@@ -5685,16 +5685,6 @@
 "weeks": [],
 "except": [],
 "type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 0,
-"weeks": [],
-"except": [],
-"type": "Mass",
 "t": "14:00",
 "lang": "Cantonese",
 "loc": "Main Church",
@@ -5749,6 +5739,16 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Morning lauds followed by Mass"
+},
+{
+"d": 0,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "28": [
@@ -6597,15 +6597,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-24",
-"type": "Mass",
-"t": "23:59",
-"lang": "English",
-"loc": "Main Church",
-"note": "Christmas Eve"
-},
-{
-"k": "a",
 "date": "2026-12-25",
 "type": "Mass",
 "t": "11:00",
@@ -6630,6 +6621,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas · Christmas Midnight Mass"
+},
+{
+"k": "r",
+"date": "2026-11-22",
+"type": "Mass",
+"t": "13:00",
+"lang": "Bahasa Indonesia",
+"loc": "Main Church",
+"note": "Last Sunday of every month"
 }
 ],
 "2": [
@@ -6736,30 +6736,12 @@
 "3": [
 {
 "k": "r",
-"date": "2026-11-19",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-20",
 "type": "Mass",
 "t": "18:00",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-19",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Triduum 7.15pm Rosary"
 },
 {
 "k": "a",
@@ -9362,6 +9344,60 @@
 ],
 "21": [
 {
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
 "k": "a",
 "date": "2026-12-14",
 "type": "Confession",
@@ -9452,22 +9488,13 @@
 "note": "Simbang Gabi"
 },
 {
-"k": "r",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "a",
 "date": "2026-12-24",
 "type": "Mass",
 "t": "23:59",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christmas"
+"note": "Christmas · Christmas Gala starts at 11pm"
 },
 {
 "k": "a",
@@ -9486,6 +9513,42 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas · Christmas carols start at 8.30pm"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:30",
+"lang": "Malayalam",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "08:00",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": "New Year · Mary, Mother of God"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year · Mary, Mother of God"
 }
 ],
 "22": [
@@ -9572,15 +9635,6 @@
 }
 ],
 "24": [
-{
-"k": "r",
-"date": "2026-11-19",
-"type": "Adoration",
-"t": "20:00",
-"lang": "English",
-"loc": "Chapel Of St Joseph",
-"note": "Holy Hour for Vocations"
-},
 {
 "k": "r",
 "date": "2026-11-20",
@@ -9827,6 +9881,116 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "New Year Day"
+}
+],
+"31": [
+{
+"k": "r",
+"date": "2026-12-16",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-20",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-02-17",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Morning lauds followed by Mass"
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Morning lauds followed by Mass"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-27",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "22:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · 9.20pm Office Readings with Carols"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas · Carolling after Mass"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-27",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Milestone Wedding Anniversary"
 }
 ],
 "28": [
