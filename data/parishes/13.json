@@ -2,9 +2,9 @@
  "id": 13,
  "name": "Church of Our Lady Queen of Peace",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611131651_2026_11%2015%20-%2033rd%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=382730db-762a-44f9-9b42-3c0e4ee24a3b"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611201451_2026_11%2022%20-%20Christ%20The%20King.pdf?alt=media&token=0144dbff-e5ee-4635-8e8c-f856c2a7b8f5"
  ],
- "fetched_at": "2026-11-13T21:02+08:00",
+ "fetched_at": "2026-11-21T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -140,7 +140,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Sacred Heart Devotion"
+   "note": "Sacred Heart Devotion; also after the evening Mass"
   },
   {
    "d": 5,
@@ -161,6 +161,18 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [
+    -1
+   ],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": "Divine Mercy Chaplet, recited after the 6.30pm Mass"
   },
   {
    "d": 6,
@@ -190,47 +202,156 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   }
  ],
- "dated": [],
- "no_weekday_mass_on_public_holidays": false,
+ "dated": [
+  {
+   "type": "Confession",
+   "date": "2026-12-15",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of Our Lady Queen of Peace",
+   "title": "Advent Penitential Service (East District)",
+   "action": "add"
+  },
+  {
+   "type": "Other",
+   "date": "2026-12-24",
+   "time": "19:30",
+   "language": "Mandarin",
+   "location": "",
+   "title": "Carolling in Mandarin",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-24",
+   "time": "20:00",
+   "language": "Mandarin",
+   "location": "",
+   "title": "Christmas Eve Mass (Mandarin)",
+   "action": "add"
+  },
+  {
+   "type": "Other",
+   "date": "2026-12-24",
+   "time": "22:00",
+   "language": "English",
+   "location": "",
+   "title": "Nativity Play",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-24",
+   "time": "23:00",
+   "language": "English",
+   "location": "",
+   "title": "Christmas Eve Mass (English)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "08:00",
+   "language": "Mandarin",
+   "location": "",
+   "title": "Christmas Day Mass (Mandarin)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "10:00",
+   "language": "English",
+   "location": "",
+   "title": "Christmas Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "12:00",
+   "language": "English",
+   "location": "",
+   "title": "Christmas Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "17:00",
+   "language": "English",
+   "location": "",
+   "title": "Christmas Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-31",
+   "time": "16:00",
+   "language": "English",
+   "location": "",
+   "title": "New Year's Eve Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2027-01-01",
+   "time": "08:00",
+   "language": "Mandarin",
+   "location": "",
+   "title": "New Year's Day Mass (Mandarin)",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2027-01-01",
+   "time": "10:00",
+   "language": "English",
+   "location": "",
+   "title": "New Year's Day Mass (English)",
+   "action": "add"
+  }
+ ],
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "09:00"
  ],
- "notes": [],
+ "notes": [
+  "On public holidays the usual weekday Mass times do not apply."
+ ],
  "info": {
-  "adoration": "Adoration Room: 10am to 9pm."
+  "adoration": "Adoration Room open 10am to 9pm.",
+  "devotions": [
+   "Novena Devotion: Saturdays 4.15pm",
+   "Sacred Heart Devotion: 1st Friday of the month at 12 noon and after the evening Mass",
+   "Divine Mercy Chaplet: recited after the 6.30pm Mass on the last Friday of the month"
+  ],
+  "good_to_know": [
+   "4 Sandy Lane, Singapore 437321.",
+   "Parish secretariat: 6744 2879, admin@queenofpeace.sg.",
+   "Sunday canteen after the weekend Masses, run by a different ministry each week - all are welcome to come and connect."
+  ]
  },
  "events": [
   {
-   "date": "2026-11-15",
-   "time": "",
-   "title": "Evergreen Crochet Interest Group Sale",
-   "text": "Items crocheted by the seniors will be sold. All proceeds go to St Vincent de Paul. Venue: Church Canteen."
-  },
-  {
    "date": "2026-11-22",
-   "time": "",
-   "title": "Evergreen Crochet Interest Group Sale",
-   "text": "Items crocheted by the seniors will be sold. All proceeds go to St Vincent de Paul. Venue: Church Canteen."
-  },
-  {
-   "date": "2026-11-22",
-   "time": "",
-   "title": "Remembering Fr Carlo Ly: 20th Anniversary of his passing",
-   "text": "Articles, photographs and short videos will be on display. Join as we look back on the life, ministry and touching memories of Fr Carlo Ly. All are welcome to join us. Enjoy a meal and have fellowship together. Venue: Church Canteen."
+   "time": "08:30",
+   "title": "20th Anniversary Memorial for former parish priest Fr Lee",
+   "text": "Photo exhibition, short videos and message boards honouring former parish priest Fr Lee, running 8.30am-1.30pm alongside the Sunday canteen. Organised by the Chinese Ministry; all are welcome."
   },
   {
    "date": "2026-12-05",
-   "time": "",
+   "time": "09:00",
    "title": "Parish Advent Recollection",
-   "text": "A quiet space for your soul this season. A peaceful morning of reflections, prayer and encouragement to better prepare our hearts for Christ. All are welcome. No background needed. Led by Br. Joel Tan. Venue: House of Mary (2nd floor)."
+   "text": "A peaceful morning of reflection, prayer and encouragement to prepare for Christ, 9am-1pm at House of Mary (2nd floor), led by Br. Joel Tan. All are welcome, no background needed; register via the QR code."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611131651_2026_11%2015%20-%2033rd%20Sunday%20in%20Ordinary%20Time.pdf?alt=media&token=382730db-762a-44f9-9b42-3c0e4ee24a3b",
-  "date": "2026-11-13"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611201451_2026_11%2022%20-%20Christ%20The%20King.pdf?alt=media&token=0144dbff-e5ee-4635-8e8c-f856c2a7b8f5",
+  "date": "2026-11-20"
  },
  "disputes": [],
  "vs_mycatholic": {

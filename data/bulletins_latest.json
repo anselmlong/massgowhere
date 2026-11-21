@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-20T21:01+08:00",
+ "fetchedAt": "2026-11-21T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -25,9 +25,9 @@
   },
   "4": {
    "from": "myCatholicSG",
-   "title": "14/15 November 2026 - Vol 46 - 33rd Sunday in Ordinary Time",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611140915_CDM_Parish%20Bulletin%20Vol2026.46%E2%80%93%2014-15Nov%20v2.pdf?alt=media&token=b3f595d7-e8a1-4fb1-b5c4-635cd8e981bc",
+   "title": "21/22 November 2026 - Vol 47 - Feast of Christ the King",
+   "date": "2026-11-21",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F4%2Fpublic%2Fpdf%2F2611210914_CDM_Parish%20Bulletin%20Vol2026.47%E2%80%93%2021-22%20Nov%20v2.1.pdf?alt=media&token=6870616a-bda4-4bf4-b899-226504257410",
    "page": "https://mycatholic.sg/bulletin/divinemercy"
   },
   "5": {
@@ -189,8 +189,8 @@
   "27": {
    "from": "website",
    "title": "",
-   "date": "2026-11-01",
-   "url": "https://sh1.sendinblue.com/mk/sc/r6A90vvIhVns50VsTsiTwIHFPxgSGE45lUknKsjx3aGcC_aYl8M8EgDEYUU7yMsXYBupeM5rmiXcwKeby5-uosOj7qd0PTo?t=1793434098515",
+   "date": "2026-11-22",
+   "url": "https://sh1.sendinblue.com/mk/sc/Li5oK0USAiQW4WKW46Q5u_07WNeK3evcT-UkNaKsRi2t9rkXa19YN1sjRCHuKlSqow0QnQMu6uaJC5q0MPE00bOXfs-Bm4U?t=1795228604626",
    "page": "https://stmichael.catholic.sg/bulletins/"
   },
   "28": {
@@ -216,9 +216,9 @@
   },
   "31": {
    "from": "myCatholicSG",
-   "title": "Thirty-Third Sunday in Ordinary Time",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611141054_1115_2026.pdf?alt=media&token=ea4ac038-f508-4bcf-a233-4c8711507f04",
+   "title": "Solemnity of Christ the King.",
+   "date": "2026-11-21",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611211026_1122_2026.pdf?alt=media&token=05f88cb8-ca01-4edd-a2be-a258c9b2a58e",
    "page": "https://mycatholic.sg/bulletin/stspeterandpaul"
   },
   "32": {

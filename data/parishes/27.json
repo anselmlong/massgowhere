@@ -2,9 +2,9 @@
  "id": 27,
  "name": "Church of St Michael",
  "source_urls": [
-  "https://sh1.sendinblue.com/mk/sc/r6A90vvIhVns50VsTsiTwIHFPxgSGE45lUknKsjx3aGcC_aYl8M8EgDEYUU7yMsXYBupeM5rmiXcwKeby5-uosOj7qd0PTo?t=1793434098515"
+  "https://sh1.sendinblue.com/mk/sc/Li5oK0USAiQW4WKW46Q5u_07WNeK3evcT-UkNaKsRi2t9rkXa19YN1sjRCHuKlSqow0QnQMu6uaJC5q0MPE00bOXfs-Bm4U?t=1795228604626"
  ],
- "fetched_at": "2026-10-31T21:01+08:00",
+ "fetched_at": "2026-11-21T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -22,6 +22,16 @@
   },
   {
    "d": 0,
+   "t": "09:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before the 9.30am Mass"
+  },
+  {
+   "d": 0,
    "t": "09:30",
    "weeks": [],
    "except": [],
@@ -32,6 +42,16 @@
   },
   {
    "d": 0,
+   "t": "11:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before the 11.30am Mass"
+  },
+  {
+   "d": 0,
    "t": "11:30",
    "weeks": [],
    "except": [],
@@ -39,6 +59,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before the 5.30pm Mass"
   },
   {
    "d": 0,
@@ -162,175 +192,116 @@
   },
   {
    "d": 6,
+   "t": "17:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before the 5.30pm Mass"
+  },
+  {
+   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Anticipatory Mass"
+   "note": "Anticipatory Mass for Sunday"
   }
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-10-31",
-   "time": "17:30",
-   "language": "English",
-   "location": "",
-   "title": "Solemnity of All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "07:45",
-   "language": "Mandarin",
-   "location": "",
-   "title": "Solemnity of All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "09:30",
-   "language": "English",
-   "location": "",
-   "title": "Solemnity of All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "11:30",
-   "language": "English",
-   "location": "",
-   "title": "Solemnity of All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-01",
-   "time": "17:30",
-   "language": "English",
-   "location": "",
-   "title": "Solemnity of All Saints",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "06:30",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "12:15",
-   "language": "English",
-   "location": "",
-   "title": "All Souls' Day",
-   "action": "add"
-  },
-  {
-   "type": "Mass",
-   "date": "2026-11-02",
-   "time": "18:30",
-   "language": "Mandarin",
-   "location": "",
-   "title": "All Souls' Day",
-   "action": "add"
-  },
-  {
-   "type": "Other",
-   "date": "2026-11-14",
-   "time": "15:00",
-   "language": "",
-   "location": "",
-   "title": "Infant Baptism",
-   "action": "add"
-  },
-  {
-   "type": "Other",
-   "date": "2026-11-14",
-   "time": "17:30",
-   "language": "",
-   "location": "",
-   "title": "First Holy Communion",
-   "action": "add"
-  },
-  {
    "type": "Devotion",
-   "date": "2026-11-28",
-   "time": "10:00",
-   "language": "",
-   "location": "",
-   "title": "Advent Wreath Making Workshop",
+   "date": "2026-11-21",
+   "time": "20:00",
+   "language": "English",
+   "location": "Worship Hall",
+   "title": "Encounter Praise and Worship",
+   "action": "add"
+  },
+  {
+   "type": "Adoration",
+   "date": "2026-12-04",
+   "time": "19:00",
+   "language": "English",
+   "location": "Worship Hall",
+   "title": "Holy Hour: Hope in Christ",
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [],
+ "no_weekday_mass_on_public_holidays": false,
+ "public_holiday_masses": [
+  "07:30"
+ ],
  "notes": [
-  "No weekday Mass on public holidays.",
-  "Public holiday Mass times are restricted (e.g., 7:30am only on weekdays).",
-  "The Solemnity of All Saints is celebrated on November 1st."
+  "When a public holiday falls on a Sunday, the holiday is observed on the following Monday."
  ],
  "info": {
-  "adoration": "Holy Hour: Friday, 6 Nov at 19:00.",
-  "confession": "30 minutes before the Eucharistic Celebrations on weekends.",
+  "adoration": "Holy Hour: Friday 4 December 2026, 7pm, Worship Hall.",
+  "confession": "30 minutes before the weekend Masses: Saturdays 5pm; Sundays 9am, 11am and 5pm.",
   "devotions": [
-   "Chaplet of Divine Mercy: Every Tuesday after 18:00 (Starting from 3 November 2026)"
+   "Chaplet of Divine Mercy: Tuesdays after the 6pm Mass, Worship Hall (from 3 November 2026)"
   ],
   "good_to_know": [
-   "Registration for Catechism begins November 2026.",
-   "The Bridging Programme for Catechism is available for children aged 9 and above in 2027."
+   "Church of St Michael, 17 St Michael's Road, Singapore 327976.",
+   "Parish contact: 6291 9272, csm.secretariat@catholic.org.sg."
   ]
  },
  "events": [
   {
-   "date": "2026-11-05",
-   "time": "",
-   "title": "RCIA Session",
-   "text": "Drop by St Michael’s Room in CSM for the session on Thursdays."
-  },
-  {
-   "date": "2026-11-07",
-   "time": "10:30",
-   "title": "Talk: A Father's Mission",
-   "text": "In Collaboration with Catholic Family Life. Join us to learn about a father’s challenges and his mission."
-  },
-  {
-   "date": "2026-11-12",
-   "time": "",
-   "title": "RCIA Session",
-   "text": "Drop by St Michael’s Room in CSM for the session on Thursdays."
-  },
-  {
-   "date": "2026-11-19",
-   "time": "",
-   "title": "RCIA Session",
-   "text": "Drop by St Michael’s Room in CSM for the session on Thursdays."
-  },
-  {
    "date": "2026-11-26",
-   "time": "",
-   "title": "RCIA Session",
-   "text": "Drop by St Michael’s Room in CSM for the session on Thursdays."
+   "time": "20:00",
+   "title": "RCIA: God's gift of healing (Anointing and Reconciliation)",
+   "text": "St Michael's Room, CSM, 8pm. Open to any Catholic who wants to rediscover the faith; just drop by."
   },
   {
-   "date": "2026-11-28",
-   "time": "10:00",
-   "title": "Advent Wreath Making Workshop",
-   "text": "Create a meaningful tradition for your home this Advent. Registration deadline: 10 Nov 2026."
+   "date": "2026-12-02",
+   "time": "09:00",
+   "title": "CSM Workout & Breakfast",
+   "text": "9am to 11am at Church of St Michael, with KWSC @ St. George. For older adults above 60 living in St. George's and St. Michael's estates."
+  },
+  {
+   "date": "2026-12-03",
+   "time": "20:00",
+   "title": "RCIA: The Call to Love (Marriage and the Priesthood)",
+   "text": "St Michael's Room, CSM, 8pm. Open to any Catholic who wants to rediscover the faith; just drop by."
+  },
+  {
+   "date": "2026-12-10",
+   "time": "20:00",
+   "title": "RCIA: Catholicism and Christianity",
+   "text": "St Michael's Room, CSM, 8pm. Open to any Catholic who wants to rediscover the faith; just drop by."
+  },
+  {
+   "date": "2026-12-16",
+   "time": "09:00",
+   "title": "CSM Workout & Breakfast",
+   "text": "9am to 11am at Church of St Michael, with KWSC @ St. George. For older adults above 60 living in St. George's and St. Michael's estates."
+  },
+  {
+   "date": "2026-12-17",
+   "time": "20:00",
+   "title": "RCIA: The Communion of Saints",
+   "text": "St Michael's Room, CSM, 8pm. Open to any Catholic who wants to rediscover the faith; just drop by."
+  },
+  {
+   "date": "2026-12-30",
+   "time": "09:00",
+   "title": "CSM Workout & Breakfast",
+   "text": "9am to 11am at Church of St Michael, with KWSC @ St. George. For older adults above 60 living in St. George's and St. Michael's estates."
+  },
+  {
+   "date": "2027-05-22",
+   "time": "",
+   "title": "Holy Land Mission 2027",
+   "text": "22-30 May 2027 pilgrimage; answer the call to serve. Details and sign-up at www.gebirah.org/holy-land."
   }
  ],
  "bulletin": {
-  "url": "https://sh1.sendinblue.com/mk/sc/r6A90vvIhVns50VsTsiTwIHFPxgSGE45lUknKsjx3aGcC_aYl8M8EgDEYUU7yMsXYBupeM5rmiXcwKeby5-uosOj7qd0PTo?t=1793434098515",
-  "date": "2026-11-01"
+  "url": "https://sh1.sendinblue.com/mk/sc/Li5oK0USAiQW4WKW46Q5u_07WNeK3evcT-UkNaKsRi2t9rkXa19YN1sjRCHuKlSqow0QnQMu6uaJC5q0MPE00bOXfs-Bm4U?t=1795228604626",
+  "date": "2026-11-22"
  },
  "disputes": [],
  "vs_mycatholic": {

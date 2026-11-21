@@ -2,9 +2,9 @@
  "id": 15,
  "name": "Church of the Risen Christ",
  "source_urls": [
-  "https://drive.google.com/file/d/1yVQig38xhHBdvkeLRMUvgIakoldQD1Kq/view"
+  "https://drive.google.com/file/d/10dunEyAstpJior0n1Efwg1B46UX4aikV/view"
  ],
- "fetched_at": "2026-11-14T21:04+08:00",
+ "fetched_at": "2026-11-21T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -26,9 +26,9 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "Mandarin",
+   "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "(M)"
   },
   {
    "d": 0,
@@ -60,7 +60,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": ""
+   "note": "Monthly Mass"
   },
   {
    "d": 0,
@@ -82,7 +82,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": ""
+   "note": "Monthly Mass"
   },
   {
    "d": 1,
@@ -156,26 +156,6 @@
   },
   {
    "d": 4,
-   "t": "18:00",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
    "t": "15:00",
    "weeks": [],
    "except": [],
@@ -183,6 +163,36 @@
    "lang": "English",
    "loc": "Parish Hall",
    "note": "Divine Mercy Devotion"
+  },
+  {
+   "d": 4,
+   "t": "18:00",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Other",
+   "lang": "English",
+   "loc": "Parish Hall",
+   "note": "Breaking of the Word: gospel reflection for the weekend liturgy"
+  },
+  {
+   "d": 5,
+   "t": "06:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -204,7 +214,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": ""
+   "note": "Monthly Mass"
   },
   {
    "d": 6,
@@ -229,98 +239,75 @@
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-11-20",
-   "time": "18:30",
+   "type": "Confession",
+   "date": "2026-12-11",
+   "time": "10:30",
    "language": "English",
-   "location": "Church of St Joseph, Bukit Timah",
-   "title": "Ordination to the Order of Diaconate",
+   "location": "Church of the Risen Christ",
+   "title": "Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-11",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of the Risen Christ",
+   "title": "Advent Penitential Service",
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
-  "07:30"
+  "07:30",
+  "17:30"
  ],
  "notes": [
-  "Public holiday Mass times differ from the regular schedule."
+  "Advent Penitential Services are also held at other parishes from 8 to 15 December."
  ],
  "info": {
   "devotions": [
-   "Divine Mercy Devotion at 15:00 on Fridays in the Parish Hall"
+   "Divine Mercy Devotion: Thursdays 3pm in the Parish Hall"
   ],
   "good_to_know": [
-   "Address: 91 Toa Payoh Central, Singapore 319193",
-   "Tel: 6253 2166",
-   "Website: www.risenchrist.org.sg",
-   "Church Wedding Booking: register with the parish office at least one year in advance."
+   "The church is at 91 Toa Payoh Central, Singapore 319193."
   ]
  },
  "events": [
   {
-   "date": "2026-11-26",
-   "time": "20:00",
-   "title": "Breaking of the Word for Advent",
-   "text": "All are welcome. Join us to prepare our hearts for our Lord’s Nativity. At Parish Hall."
+   "date": "2026-11-28",
+   "time": "10:00",
+   "title": "Seeds of Growth (Session 1)",
+   "text": "A two-session series for A-Level and IB students, at Level 8, Catholic Centre (55 Waterloo Street). Sign up at tinyurl.com/OYPSOGNOV26."
   },
   {
-   "date": "2026-12-03",
-   "time": "20:00",
-   "title": "Breaking of the Word for Advent",
-   "text": "All are welcome. Join us to prepare our hearts for our Lord’s Nativity. At Parish Hall."
+   "date": "2026-12-04",
+   "time": "14:00",
+   "title": "Seeds of Growth (Session 2)",
+   "text": "Second session of the series for A-Level and IB students, at Level 8, Catholic Centre (55 Waterloo Street). Sign up at tinyurl.com/OYPSOGNOV26."
   },
   {
-   "date": "2026-12-10",
-   "time": "20:00",
-   "title": "Breaking of the Word for Advent",
-   "text": "All are welcome. Join us to prepare our hearts for our Lord’s Nativity. At Parish Hall."
+   "date": "2026-12-05",
+   "time": "10:30",
+   "title": "Come as You Are",
+   "text": "NSF community outreach for NSF and pre-enlistees, at Level 8, Catholic Centre (55 Waterloo Street). Sign up at tinyurl.com/CAYADECOUTREACH."
   },
   {
-   "date": "2026-12-17",
-   "time": "20:00",
-   "title": "Breaking of the Word for Advent",
-   "text": "All are welcome. Join us to prepare our hearts for our Lord’s Nativity. At Parish Hall."
+   "date": "2026-12-27",
+   "time": "",
+   "title": "Christmas Fiesta",
+   "text": "Parish Christmas celebration; parishioners are invited to bring along someone who has drifted from the faith."
   },
   {
    "date": "2027-01-05",
    "time": "",
-   "title": "Keryma 27 Opening Retreat [Stay in]",
-   "text": "Discipleship school for young adults (18-25 yo)."
-  },
-  {
-   "date": "2027-01-23",
-   "time": "",
-   "title": "Keryma 27 Christian Living",
-   "text": "4 full Saturdays."
-  },
-  {
-   "date": "2027-01-30",
-   "time": "",
-   "title": "Keryma 27 Christian Living",
-   "text": "4 full Saturdays."
-  },
-  {
-   "date": "2027-02-13",
-   "time": "",
-   "title": "Keryma 27 Christian Living",
-   "text": "4 full Saturdays."
-  },
-  {
-   "date": "2027-02-20",
-   "time": "",
-   "title": "Keryma 27 Christian Living",
-   "text": "4 full Saturdays."
-  },
-  {
-   "date": "2027-02-25",
-   "time": "",
-   "title": "Keryma 27 Closing Retreat",
-   "text": "Discipleship school for young adults (18-25 yo)."
+   "title": "Keryma 27: Discipleship School for Young Adults",
+   "text": "For young adults aged 18-25: opening stay-in retreat 5-15 Jan 2027, five weeks of Christian Living on four full Saturdays (23 and 30 Jan, 13 and 20 Feb), closing retreat 25 Feb-1 Mar 2027. Sign up at bit.ly/keryma2027."
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/1yVQig38xhHBdvkeLRMUvgIakoldQD1Kq/view",
-  "date": "2026-11-15"
+  "url": "https://drive.google.com/file/d/10dunEyAstpJior0n1Efwg1B46UX4aikV/view",
+  "date": "2026-11-22"
  },
  "disputes": [],
  "vs_mycatholic": {

@@ -2,9 +2,9 @@
  "id": 31,
  "name": "Church of Sts Peter and Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611141054_1115_2026.pdf?alt=media&token=ea4ac038-f508-4bcf-a233-4c8711507f04"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611211026_1122_2026.pdf?alt=media&token=05f88cb8-ca01-4edd-a2be-a258c9b2a58e"
  ],
- "fetched_at": "2026-11-14T12:35+08:00",
+ "fetched_at": "2026-11-21T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -38,7 +38,7 @@
    "type": "Devotion",
    "lang": "Mandarin",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 0,
@@ -68,7 +68,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Morning Prayer"
   },
   {
    "d": 1,
@@ -88,7 +88,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 1,
@@ -108,7 +108,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Morning Prayer"
   },
   {
    "d": 2,
@@ -128,7 +128,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 2,
@@ -148,7 +148,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Morning Prayer"
   },
   {
    "d": 3,
@@ -168,7 +168,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 3,
@@ -190,7 +190,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Morning Prayer"
   },
   {
    "d": 4,
@@ -210,7 +210,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 4,
@@ -220,7 +220,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Infant Jesus Devotion"
   },
   {
    "d": 4,
@@ -240,7 +240,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Morning Prayer"
   },
   {
    "d": 5,
@@ -260,7 +260,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 5,
@@ -280,7 +280,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Morning Prayer"
   },
   {
    "d": 6,
@@ -300,7 +300,7 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sion Adorers - Holy Hour"
   },
   {
    "d": 6,
@@ -310,7 +310,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -320,7 +320,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   }
  ],
  "dated": [],
@@ -329,19 +329,25 @@
   "08:00"
  ],
  "notes": [
-  "No evening Mass on public holidays that fall on a weekday.",
-  "No devotions/prayers on public holidays.",
-  "No evening Mass every 3rd Wednesday of the month."
+  "No evening Mass on every 3rd Wednesday of the month.",
+  "No evening Mass on a public holiday if it falls on a weekday.",
+  "No devotions/prayers if they fall on a public holiday."
  ],
  "info": {
-  "adoration": "Chapel of the Incarnation: Mon-Fri 08:00-21:00, Sat-Sun 08:00-18:00; closed on public holidays.",
-  "confession": "Confessions are heard half an hour before weekday evening and weekend Masses. Not available on Thursday evenings or before the Sunday 08:30 Mandarin Mass.",
-  "office_hours": "Secretariat: Mon-Fri 09:30-19:30, Sat 09:00-17:00, Sun 09:00-12:00, Public Holidays closed. Columbarium: Mon-Fri 07:00-19:00, Sat-Sun 07:00-17:00, Public Holidays 07:00-19:00 (car park closed)."
+  "adoration": "Chapel of the Incarnation: Monday to Friday 08:00-21:00; Saturday/Sunday 08:00-18:00; closed on public holidays.",
+  "confession": "Confessions are heard half an hour before weekday evening and weekend Masses. Not available on Thursday evenings or before the Sunday 8.30am Mandarin Mass."
  },
- "events": [],
+ "events": [
+  {
+   "date": "2026-11-24",
+   "time": "19:30",
+   "title": "Pieta Prayer Support for Bereaved Parents",
+   "text": "On Zoom, 7.30pm-9.15pm. For parents who have lost a child. Email pieta.singapore@gmail.com or visit https://pieta.familylife.sg/ for the Zoom link. In December, meeting in person at Catholic Family Life at Highland Road; email for details."
+  }
+ ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611141054_1115_2026.pdf?alt=media&token=ea4ac038-f508-4bcf-a233-4c8711507f04",
-  "date": "2026-11-14"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F31%2Fpublic%2Fpdf%2F2611211026_1122_2026.pdf?alt=media&token=05f88cb8-ca01-4edd-a2be-a258c9b2a58e",
+  "date": "2026-11-21"
  },
  "disputes": [],
  "vs_mycatholic": {
