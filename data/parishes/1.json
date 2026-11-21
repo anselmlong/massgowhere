@@ -2,9 +2,9 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611141731_CHURCH_BULLETIN%20%2015-21%20NOV.pdf?alt=media&token=e36b8014-4601-496f-9dc3-93e84c6465f6"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611211738_CHURCH_BULLETIN%20%2022%20-%2028%20NOV.pdf?alt=media&token=a5966078-cf3a-499f-9ada-0d49c5df2a6a"
  ],
- "fetched_at": "2026-11-14T21:04+08:00",
+ "fetched_at": "2026-11-21T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Chinese",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -49,7 +49,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Indonesian",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -61,7 +61,7 @@
    ],
    "type": "Mass",
    "lang": "Tagalog",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -73,7 +73,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -83,7 +83,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -93,7 +93,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -103,7 +103,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -113,7 +113,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -123,7 +123,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -133,7 +133,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -143,7 +143,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -153,7 +153,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -163,7 +163,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -173,7 +173,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -183,7 +183,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -193,7 +193,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -203,7 +203,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -213,7 +213,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -223,7 +223,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -233,7 +233,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -245,8 +245,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
-   "note": "Eucharistic Adoration (Sacred Heart of Jesus)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -257,8 +257,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
-   "note": "Intercessory Prayers"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 5,
@@ -267,8 +267,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
-   "note": "Divine Mercy"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -277,7 +277,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -289,8 +289,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
-   "note": "Eucharistic Adoration (Immaculate Heart of Mary)"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -299,8 +299,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
-   "note": "Novena to Our Blessed Mother"
+   "loc": "",
+   "note": ""
   },
   {
    "d": 6,
@@ -309,7 +309,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -321,64 +321,47 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "Blessed Sacrament Church",
+   "loc": "",
    "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Mass",
-   "date": "2026-11-26",
-   "time": "18:30",
-   "language": "English",
-   "location": "St Joseph's Church",
-   "title": "Catholic Foundation Thanksgiving Mass 2026",
-   "action": "add"
-  }
- ],
+ "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "confession": "Confession is available 15 minutes before Masses.",
-  "devotions": [
-   "Divine Mercy every Friday at 20:00.",
-   "Eucharistic Adoration (Sacred Heart of Jesus) on 1st Friday at 19:00.",
-   "Intercessory Prayers on 2nd Friday at 19:45.",
-   "Novena to Our Blessed Mother every Saturday at 17:00.",
-   "Eucharistic Adoration (Immaculate Heart of Mary) on 1st Saturday at 09:00."
-  ],
-  "office_hours": "Parish Office: 10am-6pm.",
-  "good_to_know": [
-   "Anointing of the Sick by appointment.",
-   "Holy Matrimony requires at least 6 months' notice.",
-   "Infant Baptism every 2nd Sunday at the 5.30pm Mass; contact Parish Office to register 2 weeks in advance.",
-   "Bereavement: contact the Secretariat before contacting a Funeral Director."
-  ]
+  "confession": "Confession available 15 minutes before Masses.",
+  "office_hours": "Parish Office: Tel 64740582, Opening Hours 10am-6pm."
  },
  "events": [
   {
-   "date": "2026-11-25",
+   "date": "2026-11-24",
    "time": "19:30",
-   "title": "Discussion Night for Young Adults on AI",
-   "text": "Join Caritas Young Adults for a night of discussion on AI tools, their benefits, and their effects on our lives from the lens of faith. Dinner provided. Sign up at bit.ly/streetcreed."
+   "title": "Pieta Prayer Support for Bereaved Parents",
+   "text": "Pieta Prayer Support for Bereaved Parents"
   },
   {
-   "date": "2026-11-28",
-   "time": "13:30",
-   "title": "Conversations that Matter",
-   "text": "Join Fr David Garcia, OP and Nicholas Gabriel Lim for practical guidance on listening, responding and walking alongside your teen with love and understanding. Fee: $20 per person or $35 for 2 persons. Register at familylife.sg/CTM_B."
+   "date": "2026-12-02",
+   "time": "09:00",
+   "title": "教委 2026 爱的礼物：步行祈祷 • 发现圣诞马槽",
+   "text": "教委 2026 爱的礼物：步行祈祷 • 发现圣诞马槽"
   },
   {
-   "date": "2027-07-25",
-   "time": "00:00",
-   "title": "World Youth Day 2027",
-   "text": "Pilgrimage from 25 Jul - 9 Aug 2027, 16D15N to the Philippines and Korea. Registration is open. For details, visit Instagram @bscyouth."
+   "date": "2026-12-04",
+   "time": "",
+   "title": "Marriage Encounter Weekend",
+   "text": "Marriage Encounter Weekend"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "09:00",
+   "title": "CHARIS In Thanksgiving",
+   "text": "CHARIS In Thanksgiving"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611141731_CHURCH_BULLETIN%20%2015-21%20NOV.pdf?alt=media&token=e36b8014-4601-496f-9dc3-93e84c6465f6",
-  "date": "2026-11-14"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611211738_CHURCH_BULLETIN%20%2022%20-%2028%20NOV.pdf?alt=media&token=a5966078-cf3a-499f-9ada-0d49c5df2a6a",
+  "date": "2026-11-21"
  },
  "disputes": [],
  "vs_mycatholic": {

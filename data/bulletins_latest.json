@@ -1,12 +1,12 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-21T12:31+08:00",
+ "fetchedAt": "2026-11-21T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
-   "title": "15th - 21st Nov 2026",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611141731_CHURCH_BULLETIN%20%2015-21%20NOV.pdf?alt=media&token=e36b8014-4601-496f-9dc3-93e84c6465f6",
+   "title": "22nd Nov - 28th Nov 2026",
+   "date": "2026-11-21",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611211738_CHURCH_BULLETIN%20%2022%20-%2028%20NOV.pdf?alt=media&token=a5966078-cf3a-499f-9ada-0d49c5df2a6a",
    "page": "https://mycatholic.sg/bulletin/blessedsacrament"
   },
   "2": {
@@ -67,9 +67,9 @@
   },
   "10": {
    "from": "myCatholicSG",
-   "title": "33rd Sunday in Ordinary Time",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611141404_20261115_33rd_OT.pdf?alt=media&token=dc544f0a-bcfc-4a56-a8c7-6b3b0baa680b",
+   "title": "Our Lord Jesus Christ, King of the Universe",
+   "date": "2026-11-21",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611211233_20261122_Our_Lord%20Jesus%20Christ%2C%20King%20of%20the%20Universe.pdf?alt=media&token=db2003cd-eb5b-48e8-a02a-d163f0118c95",
    "page": "https://mycatholic.sg/bulletin/ladyoflourdes"
   },
   "11": {
@@ -96,8 +96,8 @@
   "14": {
    "from": "myCatholicSG",
    "title": "Bulletin - 22 Nov 2026",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2611201737_Bulletin_-%2022%20NOV%202026.pdf?alt=media&token=bf45ad2b-d308-4d13-9819-e914d1d96520",
+   "date": "2026-11-21",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F14%2Fpublic%2Fpdf%2F2611211430_Bulletin_-%2022%20NOV%202026.pdf?alt=media&token=69d75321-22b9-41e1-8e88-52e4485183c3",
    "page": "https://mycatholic.sg/bulletin/starofthesea"
   },
   "15": {
@@ -202,9 +202,9 @@
   },
   "29": {
    "from": "myCatholicSG",
-   "title": "20261115 Church Bulletin 15 November 2026",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2611141603_CST_BULLETIN%20-%2015%20Nov%2026.pdf?alt=media&token=770e6368-dfbf-4da0-b155-c3124216c4a6",
+   "title": "20261122 Church Bulletin 22 November 2026",
+   "date": "2026-11-21",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F29%2Fpublic%2Fpdf%2F2611211529_CST_BULLETIN%20-%2022%20Nov%2026.pdf?alt=media&token=d6d0cc9b-b59a-4670-bcb9-5217e5fde8aa",
    "page": "https://mycatholic.sg/bulletin/stteresa"
   },
   "30": {
