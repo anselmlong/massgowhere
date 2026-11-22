@@ -67,7 +67,7 @@ MOM public holidays ─────┘ data/holidays.json                       
 
 - **Stack:** vanilla JS single-page app, no framework and no build step. Hash routes: `#/`, `#/next`, `#/church/:id`, `#/churches`, `#/way`, `#/open`. One stylesheet. Font: Atkinson Hyperlegible Next (Google Fonts). Vercel Web Analytics records hash-route pageviews.
 - **Maps:** MapLibre GL 5.24, loaded from jsdelivr on demand. The home screen prefetches it in idle time. OpenFreeMap "liberty" style. The answer's map loads when scrolled near (IntersectionObserver) and needs two fingers to move (`cooperativeGestures`).
-- **Home:** a step-by-step wizard: what (Mass / Adoration room / Confession) → from where → when → how → which Mass. Each tap moves on; on the last step, tapping a Mass card searches. Other layouts (simple, list, quick picks) are available behind `?preview=1`.
+- **Home:** the map. Every church is labelled with its next Mass (or Adoration / Confession, by chip); one button finds the nearest you can make, and "Now ▾" sets the time and filters. Search a place sits on top. The older layouts (step by step, simple, list, quick picks) are available behind `?preview=1`.
 - **Answer (`#/next`):**
   - The time, with the church's photo beside it (tap to enlarge) and the church name.
   - "Leave by …", with the trip time and "You'll arrive 5 min early, to prepare for Mass". A planned trip adds "Leaving at X gets you there by Y".
