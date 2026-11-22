@@ -6735,24 +6735,6 @@
 ],
 "3": [
 {
-"k": "r",
-"date": "2026-11-20",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-20",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Triduum 7.15pm Sacred Heart Devotion"
-},
-{
 "k": "a",
 "date": "2026-12-09",
 "type": "Confession",
@@ -6956,15 +6938,6 @@
 "6": [
 {
 "k": "r",
-"date": "2026-11-20",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-12-24",
 "type": "Mass",
 "t": "18:30",
@@ -7010,15 +6983,6 @@
 },
 {
 "k": "r",
-"date": "2026-11-20",
-"type": "Adoration",
-"t": "09:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-27",
 "type": "Adoration",
 "t": "09:30",
@@ -7178,15 +7142,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-20",
-"type": "Mass",
-"t": "21:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Eucharistic Adoration & Mass"
 },
 {
 "k": "a",
@@ -9632,26 +9587,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Feast Day Mass celebrated by His Eminence Cardinal William Goh"
-}
-],
-"24": [
-{
-"k": "r",
-"date": "2026-11-20",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
-"k": "a",
-"date": "2026-11-20",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "SFXMS Feast Day Celebrations & Installation of Ministries"
 }
 ],
 "25": [
