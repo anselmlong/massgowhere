@@ -2,24 +2,14 @@
  "id": 23,
  "name": "Church of St Ignatius",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F23%2Fpublic%2Fpdf%2F2610231303_Stigs_Bulletin_20261018.pdf?alt=media&token=43ad91ff-9d9d-4b4e-aa8b-a81c3bf42470"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F23%2Fpublic%2Fpdf%2F2611221223_Stigs_Bulletin_20261108.pdf?alt=media&token=ea34fe6a-5fad-482e-8e51-62a8901d0d27"
  ],
- "fetched_at": "2026-10-25T12:33+08:00",
+ "fetched_at": "2026-11-22T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "07:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before weekend Mass"
-  },
   {
    "d": 0,
    "t": "08:00",
@@ -29,16 +19,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "09:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before weekend Mass"
   },
   {
    "d": 0,
@@ -52,16 +32,6 @@
   },
   {
    "d": 0,
-   "t": "11:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before weekend Mass"
-  },
-  {
-   "d": 0,
    "t": "12:00",
    "weeks": [],
    "except": [],
@@ -69,16 +39,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "15:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before weekend Mass"
   },
   {
    "d": 0,
@@ -92,16 +52,6 @@
   },
   {
    "d": 0,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before weekend Mass"
-  },
-  {
-   "d": 0,
    "t": "18:00",
    "weeks": [],
    "except": [],
@@ -127,8 +77,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Rosary before 6pm Mass"
+   "loc": "Main Church",
+   "note": "Rosary, before the 6pm Mass"
   },
   {
    "d": 1,
@@ -157,8 +107,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Rosary before 6pm Mass"
+   "loc": "Main Church",
+   "note": "Rosary, before the 6pm Mass"
   },
   {
    "d": 2,
@@ -187,8 +137,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Rosary before 6pm Mass"
+   "loc": "Main Church",
+   "note": "Rosary, before the 6pm Mass"
   },
   {
    "d": 3,
@@ -217,8 +167,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Rosary before 6pm Mass"
+   "loc": "Main Church",
+   "note": "Rosary, before the 6pm Mass"
   },
   {
    "d": 4,
@@ -247,28 +197,15 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": "Rosary before 6pm Mass"
-  },
-  {
-   "d": 5,
-   "t": "17:30",
-   "weeks": [],
-   "except": [
-    1
-   ],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before Friday evening Mass"
+   "loc": "Main Church",
+   "note": "Rosary, before the 6pm Mass"
   },
   {
    "d": 5,
    "t": "18:00",
    "weeks": [],
    "except": [
-    1,
-    4
+    1
    ],
    "type": "Mass",
    "lang": "English",
@@ -285,7 +222,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Memorial Mass followed by prayers at the Columbarium"
+   "note": "Memorial Mass, followed by prayers at the Columbarium"
   },
   {
    "d": 5,
@@ -296,20 +233,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "",
+   "loc": "Main Church",
    "note": "Eucharistic Adoration for Children"
-  },
-  {
-   "d": 5,
-   "t": "19:30",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before Friday evening Mass"
   },
   {
    "d": 5,
@@ -321,7 +246,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "Sacred Heart of Jesus Mass followed by Eucharistic Adoration"
+   "note": "Sacred Heart of Jesus Mass, followed by Eucharistic Adoration"
   },
   {
    "d": 6,
@@ -332,16 +257,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 6,
-   "t": "17:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before weekend Mass"
   },
   {
    "d": 6,
@@ -357,82 +272,34 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "The Sacred Heart & Adoration Room and the parish office are closed on public holidays."
+ ],
  "info": {
-  "adoration": "Sacred Heart & Adoration Room: Daily 07:00-23:00; closed on public holidays.",
-  "confession": "30 minutes before Friday evening Mass and before all weekend Masses."
+  "adoration": "Sacred Heart & Adoration Room open daily 7am-11pm; closed on public holidays. Eucharistic Adoration follows the 8pm Mass on the 1st Friday.",
+  "confession": "30 minutes before the Friday evening Mass and before all weekend Masses.",
+  "devotions": [
+   "Rosary: Mondays-Saturdays after the 7:30am Mass; Mondays-Fridays 5:15pm before the 6pm Mass",
+   "Divine Mercy Devotion: Wednesdays after the 6pm Mass"
+  ],
+  "office_hours": "Mon-Fri 9am-6pm; Sun 9am-1pm; closed Saturdays and public holidays.",
+  "good_to_know": [
+   "Infant Baptisms: every 2nd Sunday, 2:15pm, Main Church.",
+   "Inigo Gifts: open Saturdays 5pm-7pm; Sundays 9am-1pm and 4pm-7pm.",
+   "For weddings, wakes and funerals, contact the sacristan, Therese, at 8511 4614."
+  ]
  },
  "events": [
   {
-   "date": "2026-10-25",
+   "date": "2027-01-16",
    "time": "",
-   "title": "Social Mission",
-   "text": "Join Fr Colin Tan, SJ on a Social Mission 23–25 October 2026 @ ME House (Punggol). Register: https://bit.ly/ChoiceSG26."
-  },
-  {
-   "date": "2026-10-25",
-   "time": "17:00",
-   "title": "At the Feet of the Good Shepherd Retreat (FGS)",
-   "text": "Stay-in retreat. 9am 24 Oct to 5pm 25 Oct at Punggol Retreat Centre, 199 Punggol Seventeenth Ave, Singapore 829645. Register at bit.ly/CDSG_FGS."
-  },
-  {
-   "date": "2026-10-30",
-   "time": "19:45",
-   "title": "Fons Vitae DVC: Good Choices Don’t Happen by Accident",
-   "text": "Join Fr Marcus Chew for an evening of formation, adoration and fellowship. All are welcome. Register: https://tinyurl.com/FVDVCOCT2026."
-  },
-  {
-   "date": "2026-10-31",
-   "time": "",
-   "title": "Life Everlasting: Heaven, Hell, Death and Judgement",
-   "text": "5-session Bible study by Sat Rockers. Begins 31 Oct. In person or via Zoom. Register at https://bit.ly/Life_Everlasting."
-  },
-  {
-   "date": "2026-10-31",
-   "time": "14:00",
-   "title": "Living a God-Centred Life",
-   "text": "Part 1. Hosted by the Praying Parents Group. Parents and non-parents alike are warmly welcome to learn and pray together."
-  },
-  {
-   "date": "2026-11-06",
-   "time": "19:45",
-   "title": "Treasure #18: Come, Encounter God",
-   "text": "Encounter retreat for young working adults aged 21–35. Fri 6 Nov 7:45pm to Mon 9 Nov 6pm. Stay-in. Register: tiny.url.com/oyptreasure18."
-  },
-  {
-   "date": "2026-11-08",
-   "time": "",
-   "title": "Trip to Cambodia",
-   "text": "8–11 Nov 2026. Highlights include mangrove planting, engagement with at-risk communities, dolphin sightings, Mass, and spiritual reflections. Register: https://tinyurl.com/JRSMissionNov2026."
-  },
-  {
-   "date": "2026-11-14",
-   "time": "09:30",
-   "title": "Video Editing 101 (Basics) – Using CapCut",
-   "text": "La Storta Room, Level 3. Beginner-friendly workshop. Learn video editing with CapCut. Bring a current project. Register at https://forms.gle/azR21hLkYhvSzqc38."
-  },
-  {
-   "date": "2026-11-14",
-   "time": "16:00",
-   "title": "Living a God-Centred Life (Part 2)",
-   "text": "La Storta Room. Hosted by the Praying Parents Group. Parents and non-parents alike are warmly welcome to learn and pray together."
-  },
-  {
-   "date": "2026-11-21",
-   "time": "10:00",
-   "title": "Secondary 4 & 5 Outreach: Your Next Chapter Awaits",
-   "text": "Catholic Centre #08-01. Register: tinyurl.com/SecOutreach26Nov."
-  },
-  {
-   "date": "2026-11-28",
-   "time": "",
-   "title": "Homemakers Jumble Sale",
-   "text": "28 & 29 Nov. Proceeds go to the Kingsmead Project. Pre-loved designer items may be dropped off at Classroom #01-09 on 7 & 8 November, 9:15am to 12noon."
+   "title": "Introduction to the Bible (Saturday Rockers)",
+   "text": "A six-session Bible study beginning 16 January 2027, looking at how the Bible came to be, which translation to choose and how to understand God's Word. Register at https://bit.ly/IntrotoBible."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F23%2Fpublic%2Fpdf%2F2610231303_Stigs_Bulletin_20261018.pdf?alt=media&token=43ad91ff-9d9d-4b4e-aa8b-a81c3bf42470",
-  "date": "2026-10-23"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F23%2Fpublic%2Fpdf%2F2611221223_Stigs_Bulletin_20261108.pdf?alt=media&token=ea34fe6a-5fad-482e-8e51-62a8901d0d27",
+  "date": "2026-11-22"
  },
  "disputes": [],
  "vs_mycatholic": {
@@ -443,8 +310,7 @@
     "18:00",
     [],
     [
-     1,
-     4
+     1
     ]
    ]
   ],

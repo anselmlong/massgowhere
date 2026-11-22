@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-21T21:01+08:00",
+ "fetchedAt": "2026-11-22T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -158,10 +158,10 @@
   },
   "23": {
    "from": "myCatholicSG",
-   "title": "October 18, 2026",
-   "date": "2026-10-23",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F23%2Fpublic%2Fpdf%2F2610231303_Stigs_Bulletin_20261018.pdf?alt=media&token=43ad91ff-9d9d-4b4e-aa8b-a81c3bf42470",
-   "for": "2026-10-18",
+   "title": "November 8, 2026",
+   "date": "2026-11-22",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F23%2Fpublic%2Fpdf%2F2611221223_Stigs_Bulletin_20261108.pdf?alt=media&token=ea34fe6a-5fad-482e-8e51-62a8901d0d27",
+   "for": "2026-11-08",
    "page": "https://mycatholic.sg/bulletin/stignatius"
   },
   "24": {
