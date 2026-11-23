@@ -54,6 +54,12 @@
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* private mode */ } },
   };
 
+  // every sheet over the map can be folded down to its handle and a one-line summary, and unfolded again; remembered
+  // while you move between screens
+  let sheetCollapsed = false;
+  const sheetCls = () => (sheetCollapsed ? " collapsed" : "");
+  const GRAB = () => `<button class="grab-btn" type="button" aria-expanded="${!sheetCollapsed}" aria-label="${sheetCollapsed ? "Show details" : "Hide details"}"><span></span></button>`;
+
   // ---------- liturgical season -> accent ----------
   const ord = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th"}`;
   function season(ms) {
@@ -246,10 +252,75 @@
     return infoP.get(id);
   };
 
+  // ---------- the sheet over the map: fold and unfold ----------
+  // the height of the sheet as drawn, which the map keeps its pins and controls above
+  const sheetEl = () => view.querySelector(".sheet-card, .peek");
+  const sheetH = () => { const el = sheetEl(); return el ? Math.min(el.getBoundingClientRect().height, innerHeight * 0.75) : 0; };
+  let sheetRO = null, sheetSeen = null, fitH = 0;
+  // the map on screen frames its pins above the sheet; set by the map, cleared when it goes
+  let mapFit = null, mapFitAt = 0;
+  function syncSheet(animate) {
+    const el = sheetEl();
+    if (!el) return;
+    const h = sheetH();
+    document.documentElement.style.setProperty("--sheet-h", `${Math.round(h)}px`);
+    // refit when you fold or unfold, and while the answer is still arriving (the sheet grows from its loading state);
+    // after that, a change in the sheet leaves the map where you moved it
+    if (mapFit && (animate || (Math.abs(h - fitH) > 40 && Date.now() - mapFitAt < 6000))) {
+      fitH = h;
+      mapFit(h + 24, reduceMotion() ? 0 : 350);
+    }
+    if (el !== sheetSeen) {
+      sheetSeen = el;
+      sheetRO?.disconnect();
+      sheetRO = new ResizeObserver(() => syncSheet(false));
+      sheetRO.observe(el);
+    }
+  }
+  const fitter = (map, pts, top) => {
+    const lngs = pts.map((x) => x.lng), lats = pts.map((x) => x.lat);
+    mapFitAt = Date.now();
+    fitH = sheetH();
+    mapFit = (bottom, duration) => map.fitBounds([[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]],
+      { padding: { top, bottom: Math.min(bottom, innerHeight - top - 80), left: 36, right: 36 }, maxZoom: 15, duration });
+  };
+  function setSheet(collapsed) {
+    const el = sheetEl();
+    if (!el || collapsed === sheetCollapsed) return;
+    sheetCollapsed = collapsed;
+    el.classList.toggle("collapsed", collapsed);
+    el.scrollTop = 0;
+    const g = el.querySelector(".grab-btn");
+    g?.setAttribute("aria-expanded", String(!collapsed));
+    g?.setAttribute("aria-label", collapsed ? "Show details" : "Hide details");
+    syncSheet(true);
+  }
+  new MutationObserver(() => requestAnimationFrame(() => syncSheet(false))).observe(view, { childList: true });
+  let dragged = 0; // a drag ends in a click too: don't let that click undo it
+  view.addEventListener("click", (e) => {
+    if (Date.now() - dragged < 400) return;
+    if (e.target.closest(".grab-btn")) setSheet(!sheetCollapsed);
+    else if (e.target.closest(".collapse-sum") && !e.target.closest("a")) setSheet(false);
+  });
+  // drag the handle (or the folded summary) down to fold, up to unfold, like a native sheet
+  let fold = null;
+  view.addEventListener("touchstart", (e) => {
+    if (!e.target.closest(".grab-btn, .collapse-sum")) return;
+    fold = { y: e.touches[0].clientY, dy: 0 };
+  }, { passive: true });
+  view.addEventListener("touchmove", (e) => { if (fold) fold.dy = e.touches[0].clientY - fold.y; }, { passive: true });
+  view.addEventListener("touchend", () => {
+    if (!fold) return;
+    if (Math.abs(fold.dy) > 10) dragged = Date.now();
+    if (fold.dy > 40) setSheet(true); else if (fold.dy < -40) setSheet(false);
+    fold = null;
+  });
+
   // ---------- router ----------
   let currentMap = null;
   function route() {
     if (currentMap) { currentMap.remove(); currentMap = null; }
+    mapFit = null;
     const [path, qs] = location.hash.replace(/^#/, "").split("?");
     const q = new URLSearchParams(qs || "");
     window.scrollTo(0, 0);
@@ -896,7 +967,7 @@
     const kept = [], meets = (a, b) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
     for (const x of pins.filter((x) => x.info && x.info.label).sort((a, b) => a.info.order - b.info.order)) {
       const { x: px, y: py } = map.project([x.p.lng, x.p.lat]);
-      const w = 8 + x.info.label.length * 7, tag = [px - w / 2, py - 64, px + w / 2, py - 38], pin = [px - 13, py - 36, px + 13, py];
+      const w = 16 + x.info.label.length * 8, tag = [px - w / 2 - 2, py - 66, px + w / 2 + 2, py - 36], pin = [px - 13, py - 36, px + 13, py];
       const hit = kept.some((k) => meets(tag, k) || meets(pin, k));
       x.el.classList.toggle("quiet", hit);
       x.el.style.zIndex = hit ? 1 : 2;
@@ -914,8 +985,8 @@
         <div class="kinds" role="group" aria-label="Looking for">${KINDS.map(([k, l]) => `<button type="button" class="kind" data-k="${k}" aria-pressed="${plan.kind === k}">${l}</button>`).join("")}</div>
       </div>
       <button class="locate-fab" type="button" id="m-locate" aria-label="Show my location">${svg(ICON.locate)}</button>
-      <div class="peek">
-        <div class="grab" aria-hidden="true"></div>
+      <div class="peek${sheetCls()}">
+        ${GRAB()}
         <div class="peek-head">
           <span class="peek-mark">MassGoWhere<button class="season-dot" type="button" id="m-season" aria-label="Today’s colour: ${esc(season(Date.now()).name)}"><i></i></button></span>
           <button class="why-btn" type="button" id="m-how" aria-label="How it works">${svg(ICON.info)}</button>
@@ -958,8 +1029,9 @@
     const origin = store.get("mgw-origin");
     let here = origin && origin.at && Date.now() - origin.at < 3 * 3600e3 ? origin : null;
     const closest = (o) => [o, ...[...d.parishes].sort((a, b) => R.haversineKm(o, a) - R.haversineKm(o, b)).slice(0, 6)];
-    const pad = { top: 132, bottom: 200, left: 28, right: 28 };
+    const pad = { top: 132, bottom: sheetH() + 24, left: 28, right: 28 };
     const map = currentMap = newMap(ml, mapEl, here ? closest(here) : d.parishes, 0, { fitBoundsOptions: { padding: pad, maxZoom: 14.5 } });
+    fitter(map, here ? closest(here) : d.parishes, 132);
     const pins = d.parishes.map((p) => {
       const mk = addPin(ml, map, p, "", { time: " " });
       return { p, mk, el: mk.getElement(), tag: mk.getElement().querySelector(".pin-time") };
@@ -989,8 +1061,8 @@
         store.set("mgw-origin", here);
         if (dot) dot.remove();
         dot = addDot(ml, map, here, "me", "You");
-        const pts = closest(here), lngs = pts.map((x) => x.lng), lats = pts.map((x) => x.lat);
-        map.fitBounds([[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]], { padding: pad, maxZoom: 15, duration: reduceMotion() ? 0 : 700 });
+        fitter(map, closest(here), 132);
+        mapFit(sheetH() + 24, reduceMotion() ? 0 : 700);
       }, () => { loc.classList.remove("busy"); say("We couldn’t get your location. Check that location is allowed for this site."); },
       { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
     });
@@ -1086,7 +1158,7 @@
     if (soft) {
       view.querySelector(".a-ctrl")?.replaceWith(Object.assign(document.createElement("div"), { innerHTML: ctrl }).firstChild);
       view.querySelectorAll(".hero, .alts, .answer .btn-primary").forEach((el) => el.classList.add("busy"));
-    } else view.innerHTML = `${top}<section class="answer sheet-card">${ctrl}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p id="step">Looking at Mass times at 32 parishes…</p></div></section>`;
+    } else view.innerHTML = `${top}<section class="answer sheet-card${sheetCls()}">${GRAB()}${ctrl}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p id="step">Looking at Mass times at 32 parishes…</p></div></section>`;
     const stepTimer = setTimeout(() => { const el = document.getElementById("step"); if (el) el.textContent = `Checking ${mode.id === "transit" ? "bus & MRT routes" : mode.id === "drive" ? "driving routes" : "walking routes"} from ${from}…`; }, 900);
     if (soft) clearTimeout(stepTimer);
     // data.json only adds the source line and special-day notice; it must not hold up the answer
@@ -1143,6 +1215,13 @@
       return `<button class="alt-card" type="button" role="option" aria-selected="${i === sel}" data-i="${i}">${o.parish.id === nearestId ? `<span class="tag">Nearest</span>` : ""}<b>${day}${clock(s)}</b><small>${esc(shortName(o.parish.name))} · ${mins(o.travelMin)}</small></button>`;
     }).join("")}</div>`);
     const navHref = (o) => gmaps(o.parish, tripMode(o, mode).id, origin);
+    // folded, the sheet is one line: the time, the church and when to leave, and Navigate
+    const collapseSum = (o) => {
+      const s = new Date(o.start).getTime(), lv = document.createElement("div");
+      lv.innerHTML = leaveHTML(o, at, mode);
+      return `<div class="collapse-sum"><b>${clock(s)}</b><span><strong>${esc(shortName(o.parish.name))}</strong>${esc(lv.querySelector("strong")?.textContent || "")}</span>
+        <a class="cs-go" href="${navHref(o)}" target="_blank" rel="noopener" aria-label="Navigate to ${esc(o.parish.name)}">${svg(ICON.nav)}</a></div>`;
+    };
     const countdown = (o) => {
       if (at || o.lateMin > 0) return clearInterval(leaveTimer);
       tickLeave(new Date(o.start).getTime(), new Date(o.leaveBy).getTime(), o.travelMin, o.travelSource === "estimate", tripMode(o, mode));
@@ -1155,6 +1234,7 @@
       h.innerHTML = hero(o);
       h.classList.remove("swap"); void h.offsetWidth; h.classList.add("swap");
       view.querySelector("#go").href = navHref(o);
+      view.querySelector(".collapse-sum")?.replaceWith(Object.assign(document.createElement("div"), { innerHTML: collapseSum(o) }).firstElementChild);
       view.querySelectorAll(".alt-card").forEach((c) => c.setAttribute("aria-selected", String(Number(c.dataset.i) === i)));
       amap?.select(o.parish.id);
       countdown(o);
@@ -1164,13 +1244,13 @@
     const paint = (res) => {
       if (stale()) return;
       if (res.outside) {
-        view.innerHTML = `${top}<section class="answer sheet-card"><h1>That’s outside Singapore.</h1>
+        view.innerHTML = `${top}<section class="answer sheet-card${sheetCls()}">${GRAB()}<h1>That’s outside Singapore.</h1>
           <p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p></section>`;
         painted = true;
         return;
       }
       if (!res.best) {
-        view.innerHTML = `${top}<section class="answer sheet-card">${ctrl}<h1 class="none">No ${adj}Mass${esc(inLang)} you can reach ${sunday || lang ? (at ? `within a week of ${esc(whenText(at))}` : "this week") : at ? `within two days of ${esc(whenText(at))}` : "in the next two days"}.</h1>
+        view.innerHTML = `${top}<section class="answer sheet-card${sheetCls()}">${GRAB()}${ctrl}<h1 class="none">No ${adj}Mass${esc(inLang)} you can reach ${sunday || lang ? (at ? `within a week of ${esc(whenText(at))}` : "this week") : at ? `within two days of ${esc(whenText(at))}` : "in the next two days"}.</h1>
           <p class="lede">Try another time${part ? ", time of day" : ""}${lang ? ", language" : ""} or way of travelling.</p>
           <p class="browse-wrap"><a class="link" href="#/churches?view=list">All churches and Mass times</a></p></section>`;
         painted = true;
@@ -1181,7 +1261,8 @@
       const b = res.best, start = new Date(b.start).getTime();
       const special = S.specialDay(start, d);
       view.innerHTML = `${top}
-        <section class="answer sheet-card ${soft ? "retimed" : "reveal"}">
+        <section class="answer sheet-card ${soft ? "retimed" : "reveal"}${sheetCls()}">${GRAB()}
+          ${collapseSum(b)}
           ${ctrl}
           <div class="hero" id="hero">${hero(b)}</div>
           <a class="btn btn-primary" id="go" href="${navHref(b)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
@@ -1225,6 +1306,7 @@
         if (leaveBox.textContent !== before) { leaveBox.classList.remove("updated"); void leaveBox.offsetWidth; leaveBox.classList.add("updated"); }
       }
       view.querySelector(".answer .est")?.remove();
+      view.querySelector(".collapse-sum")?.replaceWith(Object.assign(document.createElement("div"), { innerHTML: collapseSum(opts[sel]) }).firstElementChild);
       const alts = view.querySelector(".alts");
       if (alts) alts.outerHTML = cards();
       countdown(opts[sel]);
@@ -1240,7 +1322,7 @@
     if (!stale()) applyData();
     view.querySelectorAll(".busy").forEach((el) => el.classList.remove("busy"));
     if (!painted) {
-      view.innerHTML = `${top}<section class="answer sheet-card"><h1>We couldn’t check Mass times just now.</h1>
+      view.innerHTML = `${top}<section class="answer sheet-card${sheetCls()}">${GRAB()}<h1>We couldn’t check Mass times just now.</h1>
         <p class="lede">Check your connection and try again.</p>
         <p style="margin-top:20px"><button class="btn btn-primary" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Try again</button></p></section>`;
     }
@@ -1434,7 +1516,7 @@
     rememberPlace({ ...origin, label: from });
     const ctrl = `<div class="a-ctrl"><button class="when-pill${at ? " set" : ""}" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time">${svg(ICON.clock)}<span>${esc(at ? whenText(at) : "Now")}</span>${svg(ICON.chev)}</button>${modeSeg(mode.id)}</div>`;
     const bar = `<div class="amap"><div id="map" class="answer-map top-map"></div>${answerTop(from, K.title)}</div>`;
-    view.innerHTML = `${bar}<section class="answer sheet-card">${ctrl}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p>Looking at ${K.looking} at 32 parishes…</p></div></section>`;
+    view.innerHTML = `${bar}<section class="answer sheet-card${sheetCls()}">${GRAB()}${ctrl}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p>Looking at ${K.looking} at 32 parishes…</p></div></section>`;
     const ms = (v) => (v == null ? null : new Date(v).getTime());
     const t0 = () => at ?? Date.now();
     // Today / Tomorrow / Sat 3 Oct, as on the calendar; "now" words only when you're going now, else your planned time
@@ -1453,18 +1535,18 @@
       const leaveAt = ms(b.leaveAt), leaveBy = ms(b.leaveBy), start = ms(b.start), lastIn = ms(b.lastIn);
       const now = t0(), day = (x) => onDay(x, now);
       const soonNow = leaveAt - now < 2 * 60000;
-      if (b.type === "session") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveBy)}${day(leaveBy)}`}</strong><span>${trip}</span><span class="early">You’ll arrive 5 min before it starts.</span>`;
+      if (b.type === "session") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveBy)}${day(leaveBy)}`}</strong><span>${trip}</span>`;
       // the latest you could arrive, said the same way whether it has opened or not; no "leave as late as": for
       // Confession that only sets you up to miss it (a queue, and it stops when Mass begins)
       const stay = kind === "adoration" ? `Get there by ${clock(lastIn)}${day(lastIn)} to have at least 20 minutes before it closes.`
         : `Get there by ${clock(lastIn)}: Confession ends at ${clock(ms(b.end))}, and there may be a queue.`;
       if (start <= now + b.travelMin * 60000) {
-        return `<strong>${soonNow ? goNow : `Leave at ${clock(leaveAt)}`}</strong><span>${trip}, arriving ${about}${clock(ms(b.arrive))}</span><span class="early">${stay}</span>`;
+        return `<strong>${soonNow ? goNow : `Leave at ${clock(leaveAt)}`}</strong><span>${trip}</span><span class="early">${stay}</span>`;
       }
       // Confession not started yet: the latest you can leave is set by when it opens (be there at the start: the queue
       // forms early and it stops when Mass begins); an Adoration room you can come to any time before it closes
-      if (kind === "confession") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveAt)}${day(leaveAt)}`}</strong><span>${trip}, arriving as it starts at ${clock(start)}</span><span class="early">Confession ends at ${clock(ms(b.end))}, and there may be a queue.</span>`;
-      return `<strong>Leave at ${clock(leaveAt)}${day(leaveAt)}</strong><span>${trip}, arriving as it opens</span><span class="early">${stay}</span>`;
+      if (kind === "confession") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveAt)}${day(leaveAt)}`}</strong><span>${trip}</span>`;
+      return `<strong>Leave at ${clock(leaveAt)}${day(leaveAt)}</strong><span>${trip}</span>`;
     };
     const meta = (b) => [kind === "confession" && b.mass ? `Before the ${clock(ms(b.mass))} Mass` : "", b.location, b.type === "session" ? "" : b.name, b.note].filter(Boolean);
     const altRow = (a) => {
@@ -1477,7 +1559,7 @@
     const paint = (res) => {
       if (stale()) return;
       if (res.outside) {
-        view.innerHTML = `${bar}<section class="answer sheet-card"><h1>That’s outside Singapore.</h1><p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p></section>`;
+        view.innerHTML = `${bar}<section class="answer sheet-card${sheetCls()}">${GRAB()}<h1>That’s outside Singapore.</h1><p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p></section>`;
         return;
       }
       const b = res.best;
@@ -1488,8 +1570,8 @@
           <ul class="rows">${[...res.unconfirmed].sort((a, b) => near(a) - near(b)).map((x) => `<li><a class="row row-church" href="#/church/${x.parish.id}"><span class="n">${esc(x.parish.name)}<small class="times">${esc(x.text)}</small></span></a>${x.parish.website ? `<a class="btn btn-quiet" href="${esc(x.parish.website)}" target="_blank" rel="noopener"><span>Website</span></a>` : ""}</li>`).join("")}</ul></section>` : "";
       const browse = `<p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches?view=list&filters=1&what=${kind}">${svg(ICON.map)}<span>${K.title} times at every church</span></a></p>`;
       if (!b) {
-        view.innerHTML = `${bar}<section class="answer sheet-card reveal">${ctrl}<h1 class="none">No ${K.none} you can reach ${K.days}.</h1>
-          <p class="lede">Try another way of travelling, or look at the times at every church.</p></section>${unsure}${browse}`;
+        view.innerHTML = `${bar}<section class="answer sheet-card reveal${sheetCls()}">${GRAB()}${ctrl}<h1 class="none">No ${K.none} you can reach ${K.days}.</h1>
+          <p class="lede">Try another way of travelling, or look at the times at every church.</p>${unsure}${browse}</section>`;
         return;
       }
       const p = b.parish, w = when(b), alt = (res.alternatives || []).filter(Boolean);
@@ -1498,7 +1580,9 @@
         : b.source === "reported" ? "a report to MassGoWhere, not yet on the parish website"
         : `the <a href="${esc(p.website || `#/church/${p.id}`)}" target="_blank" rel="noopener">parish website</a>`;
       view.innerHTML = `${bar}
-        <section class="answer sheet-card reveal">
+        <section class="answer sheet-card reveal${sheetCls()}">${GRAB()}
+          <div class="collapse-sum"><b>${w.time.hm}${w.time.ap}</b><span><strong>${esc(shortName(p.name))}</strong>${esc(w.day)}</span>
+            <a class="cs-go" href="${gmaps(p, tripMode(b, mode).id, origin)}" target="_blank" rel="noopener" aria-label="Navigate to ${esc(p.name)}">${svg(ICON.nav)}</a></div>
           ${ctrl}
           <div class="hero">
             <p class="day">${esc(w.day)}</p>
@@ -1511,10 +1595,10 @@
           ${b.travelSource === "estimate" ? `<p class="est">Travel times are estimates; checking live routes…</p>` : ""}
           ${special ? `<p class="notice">${esc(special)}: times often change that day. Please check with the parish.</p>` : ""}
           ${kind === "confession" ? `<p class="muted">Confession depends on a priest being free, so it can start late or end early.</p>` : ""}
-        </section>
-        ${alt.length ? `<section class="more" aria-label="Other options"><h2>Other churches you can get to</h2><ul class="rows">${alt.map(altRow).join("")}</ul></section>` : ""}
-        ${unsure}${browse}
-        <p class="source">Times from ${src}${res.checked ? `, checked ${fmtDate(res.checked)}` : ""}. Parishes change them; check with the parish before you go.</p>`;
+          ${alt.length ? `<section class="more" aria-label="Other options"><h2>Other churches you can get to</h2><ul class="rows">${alt.map(altRow).join("")}</ul></section>` : ""}
+          ${unsure}${browse}
+          <p class="source">Times from ${src}${res.checked ? `, checked ${fmtDate(res.checked)}` : ""}. Parishes change them; check with the parish before you go.</p>
+        </section>`;
       // the same map as a Mass answer: "Open" where it's open when you'd arrive, else when it opens or starts
       const openOn = (e) => e.type === "open" && ms(e.start) <= t0(); // as the list says it: open now
       answerMap(view.querySelector("#map"), origin, from === "your location" ? "You" : from, stale, {
@@ -1532,7 +1616,7 @@
     try { paint(await fetchOpen(q, kind, true)); } catch { /* the live call may still work */ }
     const full = await fullP;
     if (full.r) paint(full.r);
-    else if (!view.querySelector(".answer h1")) view.innerHTML = `${bar}<section class="answer sheet-card"><h1>We couldn’t check just now.</h1><p class="lede">Check your connection and try again.</p></section>`;
+    else if (!view.querySelector(".answer h1")) view.innerHTML = `${bar}<section class="answer sheet-card${sheetCls()}">${GRAB()}<h1>We couldn’t check just now.</h1><p class="lede">Check your connection and try again.</p></section>`;
   }
 
   // ---------- church ----------
@@ -2093,10 +2177,13 @@
       const km = (p) => R.haversineKm(origin, p);
       const all = [...listed(res), ...(res.around || [])].map((x) => x.parish).filter(Boolean).sort((a, b) => km(a) - km(b));
       const reach = 3 * Math.max(km(all[0] || res.best.parish), km(res.best.parish));
-      const ps = [res.best.parish, ...all.filter((p) => km(p) <= reach)];
+      // every option on the cards is always in view, so tapping a card never sends its pin off screen
+      const ps = [res.best.parish, ...listed(res).map((x) => x.parish), ...all.filter((p) => km(p) <= reach)];
       const pts = [origin, ...ps.flatMap((p) => [p, { lat: 2 * origin.lat - p.lat, lng: 2 * origin.lng - p.lng }])];
       // room above the pins for their time labels, and below the controls over the top of the map
-      map = currentMap = newMap(ml, el, pts, 40, { cooperativeGestures: true, fitBoundsOptions: { padding: { top: el.classList.contains("top-map") ? 96 : 56, bottom: 30, left: 40, right: 40 }, maxZoom: 15 } });
+      const top = el.classList.contains("top-map");
+      map = currentMap = newMap(ml, el, pts, 40, { cooperativeGestures: !top, fitBoundsOptions: { padding: { top: top ? 124 : 56, bottom: top ? sheetH() + 24 : 30, left: 40, right: 40 }, maxZoom: 15 } });
+      if (top) fitter(map, pts, 124);
       addDot(ml, map, origin, "me", youLabel);
       draw();
     };
