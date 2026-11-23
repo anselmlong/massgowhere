@@ -967,7 +967,7 @@
     const kept = [], meets = (a, b) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
     for (const x of pins.filter((x) => x.info && x.info.label).sort((a, b) => a.info.order - b.info.order)) {
       const { x: px, y: py } = map.project([x.p.lng, x.p.lat]);
-      const w = 16 + x.info.label.length * 8, tag = [px - w / 2 - 2, py - 66, px + w / 2 + 2, py - 36], pin = [px - 13, py - 36, px + 13, py];
+      const w = 16 + x.info.label.length * 8, tag = [px - w / 2 - 2, py - 52, px + w / 2 + 2, py - 28], pin = [px - 10, py - 26, px + 10, py];
       const hit = kept.some((k) => meets(tag, k) || meets(pin, k));
       x.el.classList.toggle("quiet", hit);
       x.el.style.zIndex = hit ? 1 : 2;
