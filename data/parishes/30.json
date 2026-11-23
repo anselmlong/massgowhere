@@ -2,9 +2,9 @@
  "id": 30,
  "name": "Church of St Vincent de Paul",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611142027_33RD_SUNDAY%20IN%20ORDINARY%20TIME%20-%2015%20November%202026.pdf?alt=media&token=098f4c86-117a-4248-afb9-f50a5b487c32"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611221729_SOLEMNITY_OF%20CHRIST%20THE%20KING%20-%2022%20November%202026.pdf?alt=media&token=9031bb40-b956-45d5-bd41-c1959d9553ad"
  ],
- "fetched_at": "2026-11-15T12:32+08:00",
+ "fetched_at": "2026-11-23T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -50,7 +50,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": ""
+   "note": "Every 5th Sunday"
   },
   {
    "d": 0,
@@ -70,7 +70,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -90,7 +90,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Liturgy of the Hours"
   },
   {
    "d": 1,
@@ -100,7 +100,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 1,
@@ -120,7 +120,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -140,7 +140,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Liturgy of the Hours"
   },
   {
    "d": 2,
@@ -150,7 +150,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 2,
@@ -170,7 +170,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -190,7 +190,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Liturgy of the Hours"
   },
   {
    "d": 3,
@@ -200,7 +200,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Divine Mercy"
   },
   {
    "d": 3,
@@ -210,7 +210,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 3,
@@ -230,7 +230,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -250,7 +250,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Liturgy of the Hours"
   },
   {
    "d": 4,
@@ -260,7 +260,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 4,
@@ -280,7 +280,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -300,7 +300,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "St Faustina Room",
-   "note": ""
+   "note": "Liturgy of the Hours"
   },
   {
    "d": 5,
@@ -310,7 +310,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 5,
@@ -330,7 +330,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -350,7 +350,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Rosary"
   },
   {
    "d": 6,
@@ -360,7 +360,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": ""
+   "note": "Sunset Mass"
   }
  ],
  "dated": [],
@@ -368,33 +368,63 @@
  "public_holiday_masses": [],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room open every day from 07:00 to 18:00; closed on Public Holidays.",
-  "confession": "Confession: 30 minutes before to 10 minutes before weekend Masses.",
+  "adoration": "Adoration Room: Open every day from 7am to 6pm; closed on Public Holidays.",
+  "confession": "30 mins before to 10 mins before Mass (weekend Masses only)",
   "devotions": [
-   "Rosary: Monday-Saturday at 06:15 and 17:30; Sunday 30 minutes before Mass.",
-   "Divine Mercy: Wednesdays at 17:00 in St Faustina Room.",
-   "Sacred Heart of Jesus: Fridays after 6pm Mass.",
-   "Liturgy of the Hours - Divine Office: Mon-Fri at 07:45 in St Faustina Room."
+   "Rosary: Monday – Saturday: 6.15am | 5.30pm; Sunday: 30 minutes before Mass",
+   "Divine Mercy: Wednesdays | 5pm | St Faustina Room",
+   "Sacred Heart of Jesus: Fridays | after 6pm Mass",
+   "Liturgy of the Hours-Divine Office: Mon – Fri | 7.45am | St Faustina Room"
   ],
-  "office_hours": "Parish Office: Weekdays 09:00-18:00; Saturday 09:00-12:00 and 17:00-18:00; Sunday 08:00-12:00 and 17:00-18:00; closed on Public Holidays.",
+  "office_hours": "Parish Office: Weekdays 9am to 6pm; Saturday 9am to 12pm | 5pm to 6pm; Sunday 8am to 12pm | 5pm to 6pm; Closed on Public Holidays",
   "good_to_know": [
-   "Adoration Room open every day from 07:00 to 18:00; closed on Public Holidays.",
-   "Confession: 30 minutes before to 10 minutes before weekend Masses.",
-   "Rosary: Monday-Saturday at 06:15 and 17:30; Sunday 30 minutes before Mass.",
-   "Divine Mercy: Wednesdays at 17:00 in St Faustina Room."
+   "Adoration Room is open every day from 7am to 6pm; closed on Public Holidays.",
+   "Confession is available 30 minutes before to 10 minutes before weekend Masses.",
+   "Rosary is prayed Monday to Saturday at 6.15am and 5.30pm; on Sunday 30 minutes before Mass.",
+   "Divine Mercy is prayed on Wednesdays at 5pm in St Faustina Room."
   ]
  },
  "events": [
   {
+   "date": "2026-11-24",
+   "time": "",
+   "title": "PIETA Singapore: A support group for bereaved parents",
+   "text": "A support group for bereaved parents. Inviting all parents who have lost a child to unite with us in faith to seek God's comfort, wisdom and hope. Next session will be via Zoom on Tue, 24th Nov from 7:30pm to 9:15pm. Please email pieta.singapore@gmail.com for the Zoom link."
+  },
+  {
    "date": "2026-11-25",
    "time": "",
    "title": "A Discussion Night for Young Adults on Artificial Intelligence through the Lens of the Catholic Faith",
-   "text": "19:30-21:30"
+   "text": "Join Caritas Young Adults for a night of discussion (with pizza and ice cream) as we pause to consider how we are using AI tools, their benefits, and their effects on our lives from the lens of faith. Sign up now at bit.ly/streetcreed or scan the QR code. For enquiries, please email Caritas Singapor"
+  },
+  {
+   "date": "2026-11-29",
+   "time": "",
+   "title": "SVDP Migrant Talk: Fruit of the Spirit: 'Faithfulness and Self-Control'",
+   "text": "All are welcome. Scan the QR code to register."
+  },
+  {
+   "date": "2026-12-17",
+   "time": "",
+   "title": "GO DEEPER – from the mind to the heart: Evening Talk",
+   "text": "Join Fr Laurence Freeman OSB, and discover how Christian meditation can bring the peace of Christ in today’s chaotic and confusing world. Organised by World Community for Christian Meditation (Singapore). For more details and registration, please scan the QR code. Enquiries: email wccmsingaporenews@"
+  },
+  {
+   "date": "2026-12-18",
+   "time": "",
+   "title": "GO DEEPER – from the mind to the heart: Retreat (non-staying)",
+   "text": "A non-staying retreat with Fr Laurence Freeman OSB. Organised by World Community for Christian Meditation (Singapore). For more details and registration, please scan the QR code. Enquiries: email wccmsingaporenews@gmail.com or visit website www.wccmsingapore.org."
+  },
+  {
+   "date": "2026-12-20",
+   "time": "",
+   "title": "Christmas Fiesta & Fair",
+   "text": "Our parish will be holding a Christmas Fiesta & Fair on the 20 Dec. It will include a Christmas Fair and a Nativity play. We are inviting volunteers and contributors to come forward to be a part of this event in the following areas: a) spreading Christmas cheer - Carolling, Nativity play; b) contrib"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611142027_33RD_SUNDAY%20IN%20ORDINARY%20TIME%20-%2015%20November%202026.pdf?alt=media&token=098f4c86-117a-4248-afb9-f50a5b487c32",
-  "date": "2026-11-14"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611221729_SOLEMNITY_OF%20CHRIST%20THE%20KING%20-%2022%20November%202026.pdf?alt=media&token=9031bb40-b956-45d5-bd41-c1959d9553ad",
+  "date": "2026-11-22"
  },
  "disputes": [],
  "vs_mycatholic": {

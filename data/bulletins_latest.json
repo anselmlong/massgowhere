@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-22T12:31+08:00",
+ "fetchedAt": "2026-11-23T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -209,9 +209,9 @@
   },
   "30": {
    "from": "myCatholicSG",
-   "title": "33RD SUNDAY IN ORDINARY TIME - 15 November 2026",
-   "date": "2026-11-14",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611142027_33RD_SUNDAY%20IN%20ORDINARY%20TIME%20-%2015%20November%202026.pdf?alt=media&token=098f4c86-117a-4248-afb9-f50a5b487c32",
+   "title": "SOLEMNITY OF CHRIST THE KING - 22 November 2026",
+   "date": "2026-11-22",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611221729_SOLEMNITY_OF%20CHRIST%20THE%20KING%20-%2022%20November%202026.pdf?alt=media&token=9031bb40-b956-45d5-bd41-c1959d9553ad",
    "page": "https://mycatholic.sg/bulletin/stvincentdepaul"
   },
   "31": {
