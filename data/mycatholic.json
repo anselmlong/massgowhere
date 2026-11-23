@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-21",
+"asOf": "2026-11-23",
 "rules": {
 "1": [
 {
@@ -234,14 +234,12 @@
 },
 {
 "d": 6,
-"weeks": [
-3
-],
+"weeks": [],
 "except": [],
 "type": "Mass",
 "t": "19:30",
 "lang": "Tamil",
-"loc": "Main Church",
+"loc": "Damien Hall",
 "note": ""
 },
 {
@@ -6452,6 +6450,15 @@
 "note": "Intercessory prayers"
 },
 {
+"k": "r",
+"date": "2026-11-22",
+"type": "Mass",
+"t": "13:00",
+"lang": "Bahasa Indonesia",
+"loc": "Main Church",
+"note": "Last Sunday of every month"
+},
+{
 "k": "o",
 "date": "2026-12-24",
 "type": "Mass",
@@ -6621,15 +6628,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas · Christmas Midnight Mass"
-},
-{
-"k": "r",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "13:00",
-"lang": "Bahasa Indonesia",
-"loc": "Main Church",
-"note": "Last Sunday of every month"
 }
 ],
 "2": [
@@ -7988,33 +7986,6 @@
 },
 {
 "k": "r",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "17:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "18:15",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-28",
 "type": "Mass",
 "t": "17:00",
@@ -8132,27 +8103,9 @@
 },
 {
 "k": "o",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
 "date": "2026-11-28",
 "type": "Mass",
 "t": "16:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-21",
-"type": "Mass",
-"t": "18:30",
 "lang": "English",
 "loc": "Main Church",
 "note": "New Timing!"
@@ -8165,24 +8118,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-21",
-"type": "Confession",
-"t": "15:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-21",
-"type": "Confession",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 },
 {
 "k": "o",
