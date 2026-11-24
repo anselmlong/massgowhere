@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-23",
+"asOf": "2026-11-24",
 "rules": {
 "1": [
 {
@@ -1527,16 +1527,6 @@
 "note": ""
 },
 {
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Chapel",
-"note": ""
-},
-{
 "d": 2,
 "weeks": [],
 "except": [],
@@ -1614,6 +1604,16 @@
 "t": "10:15",
 "lang": "English",
 "loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
 "note": ""
 }
 ],
@@ -2207,6 +2207,18 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"d": 5,
+"weeks": [
+1
+],
+"except": [],
+"type": "Devotion",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Devotion straight after Mass. No Confession"
 }
 ],
 "17": [
@@ -6450,15 +6462,6 @@
 "note": "Intercessory prayers"
 },
 {
-"k": "r",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "13:00",
-"lang": "Bahasa Indonesia",
-"loc": "Main Church",
-"note": "Last Sunday of every month"
-},
-{
 "k": "o",
 "date": "2026-12-24",
 "type": "Mass",
@@ -7738,6 +7741,24 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-12-09",
 "type": "Confession",
@@ -7817,6 +7838,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas · Christmas Mass at Night"
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Thanksgiving Mass"
 }
 ],
 "9": [
@@ -7932,33 +7962,6 @@
 "10": [
 {
 "k": "r",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "08:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "12:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-29",
 "type": "Mass",
 "t": "08:00",
@@ -8067,24 +8070,6 @@
 },
 {
 "k": "o",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "07:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "11:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "New Timing!"
-},
-{
-"k": "o",
 "date": "2026-11-29",
 "type": "Mass",
 "t": "07:30",
@@ -8148,46 +8133,10 @@
 },
 {
 "k": "o",
-"date": "2026-11-22",
-"type": "Confession",
-"t": "07:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Confession",
-"t": "11:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
 "date": "2026-11-29",
 "type": "Confession",
 "t": "11:00",
 "lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Confession",
-"t": "09:00",
-"lang": "Tamil/English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "o",
-"date": "2026-11-22",
-"type": "Confession",
-"t": "18:00",
-"lang": "Tamil/English",
 "loc": "Main Church",
 "note": ""
 },
@@ -8384,15 +8333,6 @@
 },
 {
 "k": "a",
-"date": "2026-11-22",
-"type": "Mass",
-"t": "15:00",
-"lang": "Vietnamese",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "a",
 "date": "2026-12-13",
 "type": "Mass",
 "t": "15:00",
@@ -8489,6 +8429,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "22:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "17": [
@@ -9751,6 +9700,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "New Year Day"
+},
+{
+"k": "a",
+"date": "2026-12-11",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "31": [
