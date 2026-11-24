@@ -781,3 +781,166 @@ html.previewing .shell { padding-bottom: 96px; }
 /* an open card sits above every pin and label; the open pin's own label hides, as the card says its time */
 #map .maplibregl-popup { z-index: 3; }
 .church-pin[aria-expanded="true"] .pin-time { opacity: 0; }
+
+/* ---------- map first ----------
+   Home is the map; answers are the map with the answer in a sheet over it. Colour rule: the season colour fills only
+   the one action (Find, Navigate, Set) and the season mark. Chosen things are ink; everything else is the field grey. */
+html[data-accent] { --accent-soft: var(--field) !important; --accent-deep: #16181d !important; }
+.sheet .q.now, .trip-steps li::before { background: var(--ink); color: var(--bg); }
+.pin-time { background: #16181d; }
+html.map-first .top, html.map-first .foot { display: none; }
+html.map-first .shell { padding: 0; }
+html.map-first, html.map-first body { overflow: hidden; overscroll-behavior: none; }
+
+.mhome { position: fixed; inset: 0; }
+#map.full-map { position: absolute; inset: 0; height: auto; margin: 0; border-radius: 0; }
+.full-map .maplibregl-ctrl-top-right { display: none; }
+.full-map .maplibregl-ctrl-bottom-right, .top-map .maplibregl-ctrl-bottom-right { bottom: calc(var(--sheet-h, 180px) + 4px); transition: bottom .35s var(--ease); }
+.map-fail { padding: 120px 24px; text-align: center; }
+.map-top { position: absolute; top: 0; left: 0; right: 0; z-index: 3; max-width: 560px; margin: 0 auto; padding: max(12px, env(safe-area-inset-top)) 16px 0; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+.map-top > * { pointer-events: auto; }
+.map-search { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px; border: 0; border-radius: var(--radius); background: var(--raised); color: var(--ink-3); font-size: 16px; text-align: left; cursor: pointer; box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 8px 24px -10px rgb(0 0 0 / .35); }
+.map-search svg { width: 20px; height: 20px; flex: none; }
+.kinds { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; align-self: flex-start; max-width: 100%; }
+.kinds::-webkit-scrollbar { display: none; }
+.kind { flex: none; min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: var(--raised); color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 1px 3px rgb(0 0 0 / .16); transition: background-color .2s, color .2s, scale .2s var(--ease); }
+.kind[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.kind:active, .btn-find:active, .alt-card:active, .fchip:active { scale: .97; }
+.locate-fab { position: absolute; right: 16px; bottom: calc(var(--sheet-h, 180px) + 12px); z-index: 3; transition: bottom .35s var(--ease); width: 48px; height: 48px; border: 0; border-radius: 50%; background: var(--raised); color: var(--ink); display: grid; place-items: center; cursor: pointer; box-shadow: 0 1px 3px rgb(0 0 0 / .18), 0 6px 16px -8px rgb(0 0 0 / .4); }
+.locate-fab svg { width: 22px; height: 22px; }
+.locate-fab.busy svg { animation: locating 1s linear infinite; }
+.peek { position: absolute; left: 50%; bottom: 0; translate: -50% 0; z-index: 3; width: 100%; max-width: 560px; padding: 8px 16px max(20px, env(safe-area-inset-bottom)); background: var(--raised); border-top: 1px solid var(--line); border-radius: 22px 22px 0 0; box-shadow: 0 -10px 40px rgb(0 0 0 / .18); display: flex; flex-direction: column; gap: 8px; }
+.grab { align-self: center; width: 40px; height: 5px; border-radius: 3px; background: var(--line); }
+.peek-head { display: flex; align-items: center; justify-content: space-between; padding-left: 4px; }
+.peek-mark { display: inline-flex; align-items: center; gap: 2px; font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+.season-dot { width: 32px; height: 44px; border: 0; background: none; display: grid; place-items: center; cursor: pointer; }
+.season-dot i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.peek .why-btn { margin: 0 -10px 0 0; }
+.peek-row { display: flex; gap: 8px; }
+.peek-row .btn-find { flex: 1; min-height: 56px; width: auto; }
+.peek .msg { margin: 0 4px; }
+.when-pill { display: inline-flex; align-items: center; gap: 6px; min-width: 0; min-height: 44px; padding: 0 12px; border: 0; border-radius: 999px; background: var(--field); color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; }
+.peek .when-pill { min-height: 56px; border-radius: var(--radius); flex: none; max-width: 48%; }
+.when-pill span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.when-pill svg { width: 18px; height: 18px; flex: none; }
+.when-pill svg:last-child { width: 14px; height: 14px; }
+.when-pill.set { background: var(--ink); color: var(--bg); }
+.church-pin { --pin: #16181d; }
+.church-pin.dim { --pin: #545a66; }
+.church-pin.mini { width: 26px; height: 26px; padding: 0; align-items: center; filter: drop-shadow(0 1px 2px rgb(0 0 0 / .4)); }
+.church-pin.mini svg { width: 12px; height: 16px; }
+.church-pin.mini path:first-child { fill: #9aa0aa; }
+.church-pin.mini .x, .church-pin.mini .pin-time { display: none; }
+#map .maplibregl-popup-content strong { font-weight: 650; }
+
+/* the answer: the map on top, the answer in a sheet that overlaps it */
+.amap { position: fixed; inset: 0; }
+#map.top-map { height: 100%; min-height: 0; margin: 0; border-radius: 0; }
+.a-top { position: absolute; }
+.from-pill { display: flex; align-items: center; gap: 2px; min-height: 52px; padding: 0 4px; border-radius: var(--radius); background: var(--raised); box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 8px 24px -10px rgb(0 0 0 / .35); }
+.from-pill .back { width: 44px; height: 44px; display: grid; place-items: center; color: var(--ink); border-radius: 50%; flex: none; }
+.from-pill .back svg { width: 20px; height: 20px; }
+.from-pill .from { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; min-height: 44px; border: 0; background: none; color: var(--ink); font-size: 16px; text-align: left; cursor: pointer; }
+.from-pill .from span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.from-pill .from svg { width: 18px; height: 18px; flex: none; }
+.from-pill .from svg.you { color: #1a73e8; }
+.kind-pill { flex: none; display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 0 10px 0 14px; border: 0; border-radius: 11px; background: var(--field); color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; }
+.kind-pill svg { width: 14px; height: 14px; }
+.sheet-card { position: fixed; z-index: 3; left: 50%; bottom: 0; translate: -50% 0; width: 100%; max-width: 560px; max-height: min(66dvh, calc(100dvh - 84px - env(safe-area-inset-top))); overflow-y: auto; overscroll-behavior: contain; margin: 0; padding: 0 16px max(16px, env(safe-area-inset-bottom)); background: var(--bg); border-top: 1px solid var(--line); border-radius: 22px 22px 0 0; box-shadow: 0 -10px 40px rgb(0 0 0 / .18); scrollbar-width: none; }
+.sheet-card::-webkit-scrollbar { display: none; }
+.sheet-card.answer { padding-top: 0; }
+.sheet-card .alts { margin-inline: -16px; padding-inline: 16px; }
+.sheet-card .loading { padding: 40px 0; }
+.sheet-card h1.none { font-size: 24px; margin-top: 16px; }
+.a-ctrl { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.mode-seg { flex: none; display: grid; grid-template-columns: repeat(3, 46px); gap: 2px; padding: 3px; border-radius: var(--radius); background: var(--field); }
+.mode-seg button { height: 40px; border: 0; border-radius: 11px; background: none; color: var(--ink-2); display: grid; place-items: center; cursor: pointer; }
+.mode-seg button svg { width: 20px; height: 20px; }
+.mode-seg button[aria-checked="true"] { background: var(--bg); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 2px 8px -2px rgb(0 0 0 / .08); }
+.sheet-card .day { margin: 0; }
+.sheet-card .time { font-size: clamp(54px, 16vw, 72px); margin: 0 0 6px; }
+.sheet-card .church { font-size: 21px; }
+.sheet-card .church-thumb { width: 60px; height: 60px; }
+.sheet-card .leave { padding: 10px 14px; }
+.sheet-card .leave strong { font-size: 18px; }
+.leave-row { margin: 12px 0; }
+.leave-row { display: flex; align-items: center; gap: 4px; }
+.leave-row .leave { flex: 1; margin: 0; }
+.leave-row .why-btn { margin: 0; }
+.sheet-card .est { text-align: center; }
+.hero.swap { animation: swap .35s var(--ease) both; }
+@keyframes swap { from { opacity: 0; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+.alts { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 14px calc(-1 * var(--gutter)) 0; padding: 2px var(--gutter) 4px; scrollbar-width: none; }
+.alts::-webkit-scrollbar { display: none; }
+.alt-card { flex: none; width: 156px; min-height: 60px; padding: 8px 12px; border: 2px solid transparent; border-radius: var(--radius); background: var(--field); color: var(--ink); text-align: left; cursor: pointer; scroll-snap-align: start; transition: background-color .2s, border-color .2s, scale .2s var(--ease); }
+.alt-card b { display: block; font-size: 17px; font-weight: 700; line-height: 1.25; }
+.alt-card small { display: block; font-size: 13px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.alt-card .tag { display: inline-block; margin-bottom: 2px; padding: 1px 6px; border-radius: 999px; background: var(--bg); font-size: 11px; font-weight: 700; color: var(--ink-2); }
+.alt-card[aria-selected="true"] { border-color: var(--ink); background: var(--bg); }
+.busy { opacity: .5; pointer-events: none; transition: opacity .2s; }
+.sheet-card .browse-wrap { margin-top: 18px; }
+
+/* filters in the time sheet: Sunday is a toggle; time of day and language open a short menu */
+.fchips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)); padding: 2px var(--gutter); }
+.fchips::-webkit-scrollbar { display: none; }
+.fchip { flex: none; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; border: 2px solid transparent; border-radius: 999px; background: var(--field); color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.fchip svg { width: 14px; height: 14px; }
+.fchip .tick { width: 16px; height: 16px; stroke-width: 3; display: none; }
+.fchip[aria-pressed="true"], .fchip.on { background: var(--ink); color: var(--bg); }
+.fchip[aria-pressed="true"] .tick { display: block; }
+.fchip[aria-expanded="true"] { border-color: var(--ink); }
+.fmenu { padding: 6px; border: 1px solid var(--line); border-radius: 16px; background: var(--raised); box-shadow: 0 10px 30px -12px rgb(0 0 0 / .3); animation: swap .2s var(--ease) both; }
+.fmenu button { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: none; color: var(--ink); font-size: 16px; text-align: left; cursor: pointer; }
+.fmenu button span { flex: 1; }
+.fmenu button small { color: var(--ink-3); font-size: 14px; }
+.fmenu button .tick { width: 18px; height: 18px; stroke-width: 3; visibility: hidden; }
+.fmenu button[aria-selected="true"] { background: var(--field); font-weight: 600; }
+.fmenu button[aria-selected="true"] .tick { visibility: visible; }
+
+/* the (i) sheet */
+.theme-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 600; }
+.seg-mini { display: grid; grid-template-columns: repeat(3, auto); gap: 2px; padding: 3px; border-radius: var(--radius); background: var(--field); }
+.seg-mini button { min-height: 44px; padding: 0 12px; border: 0; border-radius: 11px; background: none; color: var(--ink-2); font-size: 14px; font-weight: 600; cursor: pointer; }
+.seg-mini button[aria-checked="true"] { background: var(--bg); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+.fb-mini { display: grid; gap: 8px; }
+.fb-mini label { font-size: 15px; color: var(--ink-2); }
+.fb-mini textarea { width: 100%; border: 1px solid var(--field-line); border-radius: 12px; padding: 10px 12px; background: var(--bg); font-size: 16px; resize: vertical; }
+.fb-mini .fb-status { margin: 0; font-size: 14px; color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero.swap, .fmenu { animation: none; }
+  .kind, .alt-card, .fchip { transition: none; }
+}
+.fwrap { position: relative; }
+.fwrap .fmenu { position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 5; }
+
+/* folding: the handle is a real button (tap or drag); folded, a sheet keeps only what you need to act */
+.grab-btn { position: sticky; top: 0; z-index: 2; display: flex; justify-content: center; align-items: center; width: calc(100% + 32px); height: 28px; margin: 0 -16px 4px; padding: 0; border: 0; background: inherit; cursor: grab; border-radius: 22px 22px 0 0; touch-action: none; }
+.grab-btn span { width: 40px; height: 5px; border-radius: 3px; background: var(--line); transition: background-color .15s, width .2s var(--ease); }
+@media (hover: hover) { .grab-btn:hover span { background: var(--field-line); width: 48px; } }
+.grab-btn:focus-visible { outline: none; }
+.grab-btn:focus-visible span { background: var(--ink); width: 48px; }
+.peek .grab-btn { margin: -8px -16px -4px; background: none; }
+.peek.collapsed .peek-head, .peek.collapsed .msg { display: none; }
+.collapse-sum { display: none; align-items: center; gap: 12px; min-height: 56px; padding: 0 0 4px; cursor: pointer; }
+.collapse-sum b { font-family: var(--font-head); font-size: 28px; line-height: 1; letter-spacing: -0.03em; font-weight: 700; flex: none; }
+.collapse-sum span { flex: 1; min-width: 0; display: grid; font-size: 14px; color: var(--ink-2); line-height: 1.3; }
+.collapse-sum span strong { font-size: 16px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cs-go { flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); }
+.cs-go svg { width: 22px; height: 22px; }
+.sheet-card.collapsed { overflow: hidden; }
+.sheet-card.collapsed > :not(.grab-btn):not(.collapse-sum) { display: none; }
+.sheet-card.collapsed > .collapse-sum { display: flex; }
+.sheet-card.collapsed > .collapse-sum, .peek:not(.collapsed) .peek-head { animation: swap .3s var(--ease) both; }
+@media (prefers-reduced-motion: reduce) {
+  .collapse-sum, .peek .peek-head, .grab-btn span { animation: none !important; transition: none; }
+  .full-map .maplibregl-ctrl-bottom-right, .top-map .maplibregl-ctrl-bottom-right, .locate-fab { transition: none; }
+}
+
+/* smaller pins: a 44px tap area still, but a lighter mark, so a busy map reads as places rather than a wall of black */
+.church-pin { filter: drop-shadow(0 0 1px rgb(0 0 0 / .45)) drop-shadow(0 1px 2px rgb(0 0 0 / .25)); }
+.church-pin svg { width: 19px; height: 24px; }
+.church-pin.dim svg { width: 16px; height: 20px; }
+.church-pin .pin-time { bottom: 30px; padding: 0 5px; font-size: 11.5px; }
+.church-pin.dim .pin-time { bottom: 25px; }
+.church-pin.mini svg { width: 10px; height: 13px; }

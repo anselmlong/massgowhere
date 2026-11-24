@@ -2,6 +2,24 @@
 
 Grouped by day of release (Singapore time). The site deploys on every merge to `main`. Bot changes go live after a restart on the VPS.
 
+## 0.6: map first (unreleased)
+
+### Home
+- **The map is the home screen.** Every church shows its next Mass in the next 12 hours; churches with nothing soon are small grey dots, and any pin opens its card. Chips switch the labels between Mass, Adoration and Confession.
+- **One button: Nearest Mass** (or Nearest open room, Nearest Confession). "Now ▾" next to it sets the time, plus Sunday or Sunset, time of day and language as filter chips.
+- **Search a place** sits on top of the map, with "Catch a Mass on the way" in its sheet. How it works, the theme, Telegram and feedback are behind (i).
+- The step-by-step home and the other layouts stay available behind `?preview=1`.
+
+### Answer page
+- **The map on top, the answer in a sheet over it:** the time, the church, "Leave in 32 min" and the trip, then Navigate.
+- **The other Masses you can make are cards under Navigate.** Tapping one makes it the answer and its pin the dark one. The nearest church gets a "Nearest" tag.
+- Time, filters and travel mode change in place, from the sheet. Where from and Mass / Adoration / Confession change from the bar over the map.
+- Adoration and Confession answers use the same layout.
+
+### Look
+- The season colour now fills only the one action (Find, Navigate, Set) and the season mark. Chosen things are ink; pins are ink and grey.
+- New icons: the filled location arrow, and a turn arrow in a diamond for Navigate.
+
 ## 0.5: 2 Oct 2026 (this tester round)
 
 ### Data

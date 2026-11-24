@@ -19,10 +19,12 @@
   const tripMode = (e, mode) => (e && e.walk ? modeOf("walk") : mode);
   const svg = (paths, cls = "") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
   const ICON = {
-    locate: '<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/><circle cx="12" cy="12" r="7"/>',
+    // where you are: the filled arrow every map app uses
+    locate: '<path d="M20.5 3.5 3.5 10.6l7.4 2.5 2.5 7.4z" fill="currentColor"/>',
     search: '<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>',
     back: '<path d="M15 5l-7 7 7 7"/>',
-    nav: '<path d="M4 11.5 20 4l-7.5 16-2-6.5z"/>',
+    // directions: a turn arrow in a diamond, so it never reads as the location arrow
+    nav: '<path d="M12 2.8 21.2 12 12 21.2 2.8 12z"/><path d="M9.5 15v-2.5a1.5 1.5 0 0 1 1.5-1.5h4.5M13.5 9l2 2-2 2"/>',
     x: '<path d="M6 6l12 12M18 6 6 18"/>',
     map: '<path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/>',
     route: '<circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/>',
@@ -51,6 +53,12 @@
     get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* private mode */ } },
   };
+
+  // every sheet over the map can be folded down to its handle and a one-line summary, and unfolded again; remembered
+  // while you move between screens
+  let sheetCollapsed = false;
+  const sheetCls = () => (sheetCollapsed ? " collapsed" : "");
+  const GRAB = () => `<button class="grab-btn" type="button" aria-expanded="${!sheetCollapsed}" aria-label="${sheetCollapsed ? "Show details" : "Hide details"}"><span></span></button>`;
 
   // ---------- liturgical season -> accent ----------
   const ord = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th"}`;
@@ -103,9 +111,10 @@
     ["serif", "Source Serif + Sans", "Serif headings, like a missal", "Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700"],
   ];
   const LAYOUTS = [
+    ["map", "Map first", "The map of churches, with one button (default)"],
     ["simple", "Simple", "One big button; options tucked behind “Change”"],
     ["list", "Settings list", "Labelled rows: From, Leaving, Travel, Mass"],
-    ["wizard", "Step by step", "One question at a time: what, where from, when, how, which Mass (default)"],
+    ["wizard", "Step by step", "One question at a time: what, where from, when, how, which Mass"],
     ["quick", "Quick picks", "Travel and time of day as tap-to-choose buttons"],
     ["sentence", "Sentence", "The earlier “I’m leaving from…” sentence"],
   ];
@@ -114,7 +123,7 @@
   const design = () => ({
     look: pickFrom(LOOKS, store.get("mgw-palette"), "season"),
     font: pickFrom(FONTS, store.get("mgw-font"), "atkinson"),
-    layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "wizard"),
+    layout: pickFrom(LAYOUTS, store.get("mgw-layout"), "map"),
     scheme: pickFrom(MODES_UI, store.get("mgw-scheme"), "light"),
   });
   function applyPalette() {
@@ -243,13 +252,82 @@
     return infoP.get(id);
   };
 
+  // ---------- the sheet over the map: fold and unfold ----------
+  // the height of the sheet as drawn, which the map keeps its pins and controls above
+  const sheetEl = () => view.querySelector(".sheet-card, .peek");
+  const sheetH = () => { const el = sheetEl(); return el ? Math.min(el.getBoundingClientRect().height, innerHeight * 0.75) : 0; };
+  let sheetRO = null, sheetSeen = null, fitH = 0;
+  // the map on screen frames its pins above the sheet; set by the map, cleared when it goes
+  let mapFit = null, mapFitAt = 0;
+  function syncSheet(animate) {
+    const el = sheetEl();
+    if (!el) return;
+    const h = sheetH();
+    document.documentElement.style.setProperty("--sheet-h", `${Math.round(h)}px`);
+    // refit when you fold or unfold, and while the answer is still arriving (the sheet grows from its loading state);
+    // after that, a change in the sheet leaves the map where you moved it
+    if (mapFit && (animate || (Math.abs(h - fitH) > 40 && Date.now() - mapFitAt < 6000))) {
+      fitH = h;
+      mapFit(h + 24, reduceMotion() ? 0 : 350);
+    }
+    if (el !== sheetSeen) {
+      sheetSeen = el;
+      sheetRO?.disconnect();
+      sheetRO = new ResizeObserver(() => syncSheet(false));
+      sheetRO.observe(el);
+    }
+  }
+  const fitter = (map, pts, top) => {
+    const lngs = pts.map((x) => x.lng), lats = pts.map((x) => x.lat);
+    mapFitAt = Date.now();
+    fitH = sheetH();
+    mapFit = (bottom, duration) => map.fitBounds([[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]],
+      { padding: { top, bottom: Math.min(bottom, innerHeight - top - 80), left: 36, right: 36 }, maxZoom: 15, duration });
+  };
+  function setSheet(collapsed) {
+    const el = sheetEl();
+    if (!el || collapsed === sheetCollapsed) return;
+    sheetCollapsed = collapsed;
+    el.classList.toggle("collapsed", collapsed);
+    el.scrollTop = 0;
+    const g = el.querySelector(".grab-btn");
+    g?.setAttribute("aria-expanded", String(!collapsed));
+    g?.setAttribute("aria-label", collapsed ? "Show details" : "Hide details");
+    syncSheet(true);
+  }
+  new MutationObserver(() => requestAnimationFrame(() => syncSheet(false))).observe(view, { childList: true });
+  let dragged = 0; // a drag ends in a click too: don't let that click undo it
+  view.addEventListener("click", (e) => {
+    if (Date.now() - dragged < 400) return;
+    if (e.target.closest(".grab-btn")) setSheet(!sheetCollapsed);
+    else if (e.target.closest(".collapse-sum") && !e.target.closest("a")) setSheet(false);
+  });
+  // drag the handle (or the folded summary) down to fold, up to unfold, like a native sheet
+  let fold = null;
+  view.addEventListener("touchstart", (e) => {
+    if (!e.target.closest(".grab-btn, .collapse-sum")) return;
+    fold = { y: e.touches[0].clientY, dy: 0 };
+  }, { passive: true });
+  view.addEventListener("touchmove", (e) => { if (fold) fold.dy = e.touches[0].clientY - fold.y; }, { passive: true });
+  view.addEventListener("touchend", () => {
+    if (!fold) return;
+    if (Math.abs(fold.dy) > 10) dragged = Date.now();
+    if (fold.dy > 40) setSheet(true); else if (fold.dy < -40) setSheet(false);
+    fold = null;
+  });
+
   // ---------- router ----------
   let currentMap = null;
   function route() {
     if (currentMap) { currentMap.remove(); currentMap = null; }
+    mapFit = null;
     const [path, qs] = location.hash.replace(/^#/, "").split("?");
     const q = new URLSearchParams(qs || "");
     window.scrollTo(0, 0);
+    // the map-first screens (home, answers) run edge to edge with their own controls: no page header or footer
+    const mapFirst = path.startsWith("/next") || path.startsWith("/open") || (!/^\/(church|way)/.test(path) && design().layout === "map");
+    document.documentElement.classList.toggle("map-first", mapFirst);
+    document.documentElement.classList.toggle("map-home", mapFirst && !/^\/(next|open)/.test(path));
     if (path.startsWith("/next")) return renderNext(q);
     if (path.startsWith("/open")) return renderOpen(q);
     if (path.startsWith("/church/")) return renderChurch(Number(path.split("/")[2]), q);
@@ -401,7 +479,7 @@
         <p>If another church has a Mass starting within ${R.WINDOW_MIN} minutes of that one, we pick the shortest trip, so you aren’t sent across the island to arrive a few minutes sooner.</p>
         <p>Travel times come from OneMap, Singapore’s official map. “Leave by” gets you there 5 minutes early, so you have time to settle in and prepare for Mass.</p>
         ${sunday ? `<p>For your Sunday obligation we count Sunday Masses and Saturday Sunset Masses (from 4pm).</p>` : ""}
-        <p>The other churches you can make it to are listed below the answer.</p>
+        <p>The other Masses you can make are the cards under Navigate. Tap one to see it on the map.</p>
       </div>`, ".sheet-close");
   }
 
@@ -414,7 +492,7 @@
   const placeTitle = (x) => (x.BUILDING && x.BUILDING !== "NIL" ? x.BUILDING : x.SEARCHVAL)
     .replace(/\b\w+/g, (w) => (/^(MRT|LRT|NUS|NTU|SMU|CBD|HDB)$/.test(w) || /^[A-Z]{1,3}\d+$/.test(w) ? w : w[0] + w.slice(1).toLowerCase()));
 
-  function openPlaceSheet(pick, { title = "Leaving from", here = true } = {}) {
+  function openPlaceSheet(pick, { title = "Leaving from", here = true, way = false } = {}) {
     const recent = recentPlaces();
     openSheet(title, `
       <div class="search">${svg(ICON.search)}<input id="place-q" type="search" inputmode="search" autocomplete="off" placeholder="Postal code or place" aria-label="Postal code or place" aria-controls="place-res">
@@ -423,6 +501,7 @@
     const input = sheet.querySelector("#place-q"), res = sheet.querySelector("#place-res");
     const home = () => {
       res.innerHTML = `${here ? `<button class="opt" type="button" data-here>${svg(ICON.locate)}<span>Use my location<small>Where you are when you tap Find</small></span></button>` : ""}
+        ${way ? `<a class="opt" href="#/way">${svg(ICON.route)}<span>Going somewhere?<small>Catch a Mass on the way</small></span></a>` : ""}
         ${recent.length ? `<p class="label">Recent</p><div class="recent">${recent.map((r, i) => `<button type="button" data-recent="${i}">${svg(ICON.recent)}${esc(r.label)}</button>`).join("")}</div>` : ""}`;
     };
     home();
@@ -505,7 +584,8 @@
   }
 
   // title/none/verb/quick/earliest let the same wheels ask "Need to be there by" as well as "Leave at"
-  function openTimeSheet(current, pick, { title = "Leave at", none = "Leave now", verb = "Leave", quick: shortcuts = null, earliest = 0 } = {}) {
+  // filters (optional): { sunday, part, lang } shown as one row of chips under the shortcuts; pick(at, filters)
+  function openTimeSheet(current, pick, { title = "Leave at", none = "Leave now", verb = "Leave", quick: shortcuts = null, earliest = 0, filters = null } = {}) {
     const now = Date.now(), today = sgMidnight(now);
     const days = Array.from({ length: 7 }, (_, i) => today + i * DAY);
     // shortcuts for the times people plan around: after work, Saturday vigil, Sunday morning
@@ -518,6 +598,11 @@
     ].filter(Boolean);
     openSheet(title, `
       <div class="quick"><button class="q now" type="button" data-at="">${none}</button>${quick.map((x) => `<button class="q" type="button" data-at="${x.t}">${x.l}</button>`).join("")}</div>
+      ${filters ? `<div class="fwrap"><div class="fchips" role="group" aria-label="Filters">
+        <button type="button" class="fchip" data-f="sunday" aria-pressed="${!!filters.sunday}">${svg('<path d="m5 12 5 5 9-10"/>', "tick")}Sunday or Sunset</button>
+        <button type="button" class="fchip" data-f="part" aria-expanded="false" aria-controls="fmenu"><span></span>${svg(ICON.chev)}</button>
+        <button type="button" class="fchip" data-f="lang" aria-expanded="false" aria-controls="fmenu"><span></span>${svg(ICON.chev)}</button>
+      </div><div class="fmenu" id="fmenu" role="listbox" hidden></div></div>` : ""}
       <div class="wheels">
         <div class="wheel day" aria-label="Day"></div><div class="wheel" aria-label="Hour"></div><div class="wheel" aria-label="Minute"></div><div class="wheel" aria-label="AM or PM"></div>
       </div>
@@ -545,7 +630,47 @@
       wheel(els[3], ["am", "pm"], init[3], settle),
     ];
     settle();
-    sheet.querySelectorAll("[data-at]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.at ? Number(b.dataset.at) : null); }));
+    // filter chips: Sunday is a toggle; time of day and language open a short menu, and once chosen the chip says it
+    const f = filters && { sunday: !!filters.sunday, part: filters.part || "", lang: filters.lang || "" };
+    if (f) {
+      const chip = (k) => sheet.querySelector(`[data-f="${k}"]`), menu = sheet.querySelector("#fmenu");
+      const paintChips = () => {
+        chip("sunday").setAttribute("aria-pressed", String(f.sunday));
+        chip("part").querySelector("span").textContent = f.part ? PARTS[f.part].label : "Any time";
+        chip("lang").querySelector("span").textContent = f.lang || "Language";
+        chip("part").classList.toggle("on", !!f.part);
+        chip("lang").classList.toggle("on", !!f.lang);
+      };
+      const open = async (k) => {
+        const was = chip(k).getAttribute("aria-expanded") === "true";
+        ["part", "lang"].forEach((x) => chip(x).setAttribute("aria-expanded", "false"));
+        if (was) { menu.hidden = true; return; }
+        let opts = [["", "Any time"], ...Object.entries(PARTS).map(([id, x]) => [id, x.label, x.range])];
+        if (k === "lang") {
+          const dd = await data().catch(() => null);
+          const langs = dd ? [...new Set(Object.values(dd.rules).flat().filter((r) => r.type === "Mass").map((r) => S.langName(r.lang)))]
+            .sort((a, b) => (a === "English" ? -1 : b === "English" ? 1 : a.localeCompare(b))) : ["English"];
+          opts = [["", "Any language"], ...langs.map((l) => [l, l])];
+        }
+        menu.innerHTML = opts.map(([v, l, sub]) => `<button type="button" role="option" aria-selected="${f[k] === v}" data-v="${esc(v)}"><span>${esc(l)}</span>${sub ? `<small>${esc(sub)}</small>` : ""}${svg('<path d="m5 12 5 5 9-10"/>', "tick")}</button>`).join("");
+        menu.hidden = false;
+        chip(k).setAttribute("aria-expanded", "true");
+        menu.onclick = (e) => {
+          const o = e.target.closest("[data-v]");
+          if (!o) return;
+          f[k] = o.dataset.v;
+          menu.hidden = true;
+          chip(k).setAttribute("aria-expanded", "false");
+          paintChips();
+          chip(k).focus();
+        };
+      };
+      chip("sunday").addEventListener("click", () => { f.sunday = !f.sunday; paintChips(); });
+      chip("part").addEventListener("click", () => open("part"));
+      chip("lang").addEventListener("click", () => open("lang"));
+      paintChips();
+    }
+    sheet.querySelectorAll("[data-at]").forEach((b) => b.addEventListener("click", () => { closeSheet(); pick(b.dataset.at ? Number(b.dataset.at) : null, f); }));
   }
 
   // ---------- home ----------
@@ -558,10 +683,11 @@
   // the "I might be up to 15 min late" switch is hidden (and ignored) until there's demand for it
   const LATE_UI = false;
   function renderHome() {
+    const layout = design().layout;
+    if (layout === "map") return renderMapHome();
     const mode = store.get("mgw-mode") || "transit";
     if (plan.at != null && plan.at <= Date.now()) plan.at = null;
     const here = !plan.place && plan.at == null;
-    const layout = design().layout;
     const place = plan.place ? plan.place.label : "my location";
     // can't avoid being late? a Mass that has just started still counts, up to 15 minutes in
     const lateSwitch = `<label class="late-switch"><input type="checkbox" id="late" ${store.get("mgw-late") ? "checked" : ""}>
@@ -756,6 +882,184 @@
     view.querySelectorAll("[data-kind]").forEach((b) => b.addEventListener("click", () => findFrom(b, `/open?kind=${b.dataset.kind}&`, at())));
   }
 
+  // ---------- home: the map ----------
+  // The map is the explanation. Every church carries a label for what you're looking for: its next Mass today, when its
+  // Adoration room closes, when Confession starts. So a glance answers most questions before any tap. Churches with
+  // nothing more today are small grey dots; any pin opens its card. One action: the nearest one you can make.
+  const KINDS = [["mass", "Mass"], ["adoration", "Adoration"], ["confession", "Confession"]];
+  const FIND = { mass: "Nearest Mass", adoration: "Nearest open room", confession: "Nearest Confession" };
+  const planQuery = () => {
+    const at = plan.at != null && plan.at > Date.now() ? `&at=${plan.at}` : "";
+    if (plan.kind !== "mass") return { path: `/open?kind=${plan.kind}&`, extra: at };
+    return { path: "/next?", extra: at + (plan.part ? `&part=${plan.part}` : "") + (plan.sunday ? "&sunday=1" : "") + (plan.lang ? `&lang=${encodeURIComponent(plan.lang)}` : "") };
+  };
+  // search from a place you chose, or ask the phone where you are; say() explains a refusal
+  function findNearest(btn, place, say) {
+    const mode = store.get("mgw-mode") || "transit";
+    const { path, extra } = planQuery();
+    if (place) return go(`${path}lat=${place.lat}&lng=${place.lng}&mode=${mode}&from=${encodeURIComponent(place.label)}${extra}`);
+    if (!navigator.geolocation) return say("This browser can’t share your location. Search a place instead.");
+    const label = btn && btn.querySelector("span"), was = label && label.textContent;
+    btn?.setAttribute("aria-busy", "true");
+    if (label) label.textContent = "Finding you…";
+    navigator.geolocation.getCurrentPosition(
+      (pos) => go(`${path}lat=${pos.coords.latitude.toFixed(5)}&lng=${pos.coords.longitude.toFixed(5)}&mode=${mode}&from=${encodeURIComponent("your location")}${extra}`),
+      (err) => {
+        btn?.removeAttribute("aria-busy");
+        if (label) label.textContent = was;
+        say(err.code === 1 ? "Location is off for this site. Search a place instead, or allow location in your browser settings." : "Couldn’t get your location just now. Search a place instead.");
+      },
+      { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 });
+  }
+  // the one sheet behind (i): how it works, the theme, Telegram, feedback
+  function openHowSheet() {
+    const scheme = design().scheme;
+    openSheet("How it works", `${HOW_STEPS()}
+      <div class="theme-row"><span>Theme</span><div class="seg-mini" role="radiogroup" aria-label="Theme">${MODES_UI.map(([k, l]) =>
+        `<button type="button" role="radio" aria-checked="${scheme === k}" data-scheme="${k}">${k === "auto" ? "Auto" : l}</button>`).join("")}</div></div>
+      <a class="tg" href="https://t.me/massgowherebot" target="_blank" rel="noopener">${svg(ICON.telegram)}<span><strong>Same answer on Telegram</strong></span>${svg(ICON.right, "go")}</a>
+      <form class="fb-mini" novalidate><label for="fbm">Feedback, or a Mass time that’s wrong</label><textarea id="fbm" rows="3" maxlength="2000"></textarea>
+        <button class="btn btn-quiet" type="submit">Send</button><p class="fb-status" role="status"></p></form>
+      <p class="muted" style="margin:0">Built by <a href="https://anselmlong.com" target="_blank" rel="noopener">Anselm</a> · <a href="https://ko-fi.com/anselmlong" target="_blank" rel="noopener">Ko-fi</a> · <a href="#/churches">All churches</a></p>`, ".sheet-close");
+    sheet.querySelectorAll("[data-scheme]").forEach((b) => b.addEventListener("click", () => {
+      store.set("mgw-scheme", b.dataset.scheme);
+      applyPalette(); paintToggle();
+      sheet.querySelectorAll("[data-scheme]").forEach((x) => x.setAttribute("aria-checked", String(x === b)));
+    }));
+    const f = sheet.querySelector(".fb-mini");
+    f.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const status = f.querySelector(".fb-status"), message = f.querySelector("textarea").value.trim();
+      if (message.length < 2) { status.textContent = "Write a few words first."; return; }
+      status.textContent = "Sending…";
+      try {
+        const r = await fetch("api/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, signal: AbortSignal.timeout(10000),
+          body: JSON.stringify({ message, contact: "", website: "", page: location.hash.split("?")[0] || "#/" }) });
+        if (!r.ok) throw new Error(r.status);
+        f.querySelector("textarea").value = "";
+        status.textContent = "Thank you! Anselm will read it.";
+      } catch { status.textContent = "Couldn’t send just now. You can also message @massgowherebot and send /feedback."; }
+    });
+  }
+  // what a church's pin says for the kind you're looking for, from time t: a short label (empty: nothing more today,
+  // drawn as a small grey dot), the words for screen readers, and the line on its card
+  function pinInfo(d, p, kind, t) {
+    // labelled when it's within 12 hours: late at night, tomorrow morning's times still show; the card says the day
+    const dayEnd = t + 12 * 3600e3;
+    const when = (ms) => (dayKey(ms) === dayKey(t) ? clock(ms) : `${wk(ms)} ${clock(ms)}`);
+    if (kind === "mass") {
+      const e = S.expandParish(String(p.id), d, t, 7).filter(S.inPart(plan.part)).filter(S.inLang(plan.lang)).filter((x) => !plan.sunday || S.forSunday(x)).find((x) => x.start >= t);
+      if (!e) return { label: "", line: "No Mass listed in the next week", order: Infinity };
+      const lang = S.langName(e.lang) !== "English" ? ` (${S.langName(e.lang)})` : "";
+      if (e.start < dayEnd) return { label: clock(e.start), say: `Mass ${when(e.start)}`, line: `Next Mass ${when(e.start)}${lang}`, order: e.start };
+      return { label: "", line: `Next Mass ${when(e.start)}${lang}`, order: Infinity };
+    }
+    const X = window.MassServices;
+    const w = X.expandServices(String(p.id), d, kind, t, 1).filter((x) => (x.end ?? x.start) > t).sort((a, b) => a.start - b.start)[0];
+    if (!w) return { label: "", line: "Check with the parish for times", order: Infinity };
+    if (w.type === "open" && w.start <= t) return { label: `till ${clock(w.end)}`, say: `open until ${clock(w.end)}`, line: `Open until ${clock(w.end)}`, order: w.start };
+    const range = w.end ? `${when(w.start)} to ${clock(w.end)}` : when(w.start);
+    if (w.start < dayEnd) return { label: clock(w.start), say: `${kind === "adoration" ? "opens" : "Confession"} ${clock(w.start)}`, line: range, order: w.start };
+    return { label: "", line: `Next ${range}`, order: Infinity };
+  }
+  // every label shows; where they overlap, the sooner Mass sits on top
+  function declutter(map, pins) {
+    const order = pins.filter((x) => x.info && x.info.label).sort((a, b) => b.info.order - a.info.order);
+    order.forEach((x, i) => { x.el.style.zIndex = 2 + i; });
+  }
+  async function renderMapHome() {
+    if (plan.at != null && plan.at <= Date.now()) plan.at = null;
+    const filtersOn = () => [plan.sunday ? "Sunday" : plan.part ? PARTS[plan.part].label : "", plan.lang].filter(Boolean);
+    const whenWord = () => [plan.at == null ? "Now" : whenText(plan.at), ...(plan.kind === "mass" ? filtersOn() : [])].join(" · ");
+    view.innerHTML = `<section class="mhome">
+      <div id="map" class="full-map" role="region" aria-label="Map of Singapore’s Catholic churches"></div>
+      <div class="map-top">
+        <button class="map-search" type="button" id="m-search">${svg(ICON.search)}<span>Search a place</span></button>
+        <div class="kinds" role="group" aria-label="Looking for">${KINDS.map(([k, l]) => `<button type="button" class="kind" data-k="${k}" aria-pressed="${plan.kind === k}">${l}</button>`).join("")}</div>
+      </div>
+      <button class="locate-fab" type="button" id="m-locate" aria-label="Show my location">${svg(ICON.locate)}</button>
+      <div class="peek${sheetCls()}">
+        ${GRAB()}
+        <div class="peek-head">
+          <span class="peek-mark">MassGoWhere<button class="season-dot" type="button" id="m-season" aria-label="Today’s colour: ${esc(season(Date.now()).name)}"><i></i></button></span>
+          <button class="why-btn" type="button" id="m-how" aria-label="How it works">${svg(ICON.info)}</button>
+        </div>
+        <div class="peek-row">
+          <button class="when-pill" type="button" id="m-when" aria-label="Leaving ${esc(whenText(plan.at))}. Change the time">${svg(ICON.clock)}<span>${esc(whenWord())}</span>${svg(ICON.chev)}</button>
+          <button class="btn btn-primary btn-find" type="button" id="find">${svg(ICON.locate)}<span>${FIND[plan.kind]}</span></button>
+        </div>
+        <p class="msg" id="msg" role="status" hidden></p>
+      </div>
+    </section>`;
+    warmMap();
+    const msg = view.querySelector("#msg"), findBtn = view.querySelector("#find");
+    const say = (t) => { msg.textContent = t; msg.hidden = false; };
+    let relabel = () => {};
+    const syncControls = () => {
+      view.querySelectorAll(".kind").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.k === plan.kind)));
+      findBtn.querySelector("span").textContent = FIND[plan.kind];
+      view.querySelector("#m-when span").textContent = whenWord();
+      relabel();
+    };
+    view.querySelectorAll(".kind").forEach((b) => b.addEventListener("click", () => { plan.kind = b.dataset.k; syncControls(); }));
+    view.querySelector("#m-search").addEventListener("click", () => openPlaceSheet((p) => findNearest(findBtn, p, say), { title: "Search a place", way: true }));
+    view.querySelector("#m-when").addEventListener("click", () => openTimeSheet(plan.at, (at, f) => {
+      plan.at = at;
+      if (f) { plan.sunday = f.sunday; plan.part = f.part; plan.lang = f.lang; store.set("mgw-lang", f.lang); }
+      syncControls();
+    }, { filters: plan.kind === "mass" ? { sunday: plan.sunday, part: plan.part, lang: plan.lang } : null }));
+    view.querySelector("#m-season").addEventListener("click", openSeasonSheet);
+    view.querySelector("#m-how").addEventListener("click", openHowSheet);
+    findBtn.addEventListener("click", () => findNearest(findBtn, null, say));
+
+    const d = await loadData();
+    const mapEl = view.querySelector("#map");
+    if (!d || !mapEl) return;
+    let ml;
+    try { ml = await maplibre(); } catch { mapEl.innerHTML = `<p class="lede map-fail">The map could not load. <a href="#/churches?view=list">See every church in a list</a>.</p>`; return; }
+    if (!mapEl.isConnected) return;
+    // where you were in the last three hours (older, and you have likely moved), else the whole island
+    const origin = store.get("mgw-origin");
+    let here = origin && origin.at && Date.now() - origin.at < 3 * 3600e3 ? origin : null;
+    const closest = (o) => [o, ...[...d.parishes].sort((a, b) => R.haversineKm(o, a) - R.haversineKm(o, b)).slice(0, 6)];
+    const pad = { top: 132, bottom: sheetH() + 24, left: 28, right: 28 };
+    const map = currentMap = newMap(ml, mapEl, here ? closest(here) : d.parishes, 0, { fitBoundsOptions: { padding: pad, maxZoom: 14.5 } });
+    fitter(map, here ? closest(here) : d.parishes, 132);
+    const pins = d.parishes.map((p) => {
+      const mk = addPin(ml, map, p, "", { time: " " });
+      return { p, mk, el: mk.getElement(), tag: mk.getElement().querySelector(".pin-time") };
+    });
+    let dot = here ? addDot(ml, map, here, "me", "You") : null;
+    relabel = () => {
+      const t = plan.at ?? Date.now();
+      for (const x of pins) {
+        x.info = pinInfo(d, x.p, plan.kind, t);
+        x.el.classList.toggle("mini", !x.info.label);
+        x.tag.textContent = x.info.label;
+        x.el.setAttribute("aria-label", x.info.say ? `${x.p.name}, ${x.info.say}` : x.p.name);
+        x.mk.getPopup().setHTML(`<strong>${esc(x.p.name)}</strong><span>${esc(x.info.line)}</span><a href="#/church/${x.p.id}">${plan.kind === "mass" ? "Mass times" : "Times"} and details</a>`);
+      }
+      declutter(map, pins);
+    };
+    relabel();
+    const loc = view.querySelector("#m-locate");
+    loc.addEventListener("click", () => {
+      if (!navigator.geolocation) return say("This browser can’t share your location.");
+      loc.classList.add("busy");
+      navigator.geolocation.getCurrentPosition((pos) => {
+        loc.classList.remove("busy");
+        if (!mapEl.isConnected) return;
+        here = { lat: Number(pos.coords.latitude.toFixed(5)), lng: Number(pos.coords.longitude.toFixed(5)), label: "your location", at: Date.now() };
+        store.set("mgw-origin", here);
+        if (dot) dot.remove();
+        dot = addDot(ml, map, here, "me", "You");
+        fitter(map, closest(here), 132);
+        mapFit(sheetH() + 24, reduceMotion() ? 0 : 700);
+      }, () => { loc.classList.remove("busy"); say("We couldn’t get your location. Check that location is allowed for this site."); },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+    });
+  }
+
   function clearable(input, onClear) {
     const btn = input.parentElement.querySelector(".clear");
     const sync = () => { btn.hidden = !input.value; };
@@ -810,6 +1114,19 @@
     }
   }
 
+  // ---------- the answer: the map, with the answer in a sheet over it ----------
+  // The map shows every option at once; the sheet says the one to take: the time, the church, when to leave, Navigate.
+  // The other Masses you can make sit under Navigate as cards; tapping one makes it the answer and its pin the dark one.
+  const shortName = (n) => (n.match(/\(([^)]+)\)/) || [])[1] || n.replace(/^Church of (the )?/, "").replace(/^Cathedral of the /, "");
+  const modeSeg = (id) => `<div class="mode-seg" role="radiogroup" aria-label="How you’re travelling">${MODES.map((m) =>
+    `<button type="button" role="radio" aria-checked="${m.id === id}" data-mode="${m.id}" aria-label="${m.label}">${svg(m.icon)}</button>`).join("")}</div>`;
+  // the top of an answer: back to the map, where from (tap to change), and what you're looking for (tap to change)
+  const answerTop = (from, kindLabel) => `<div class="map-top a-top"><div class="from-pill">
+      <a class="back" href="#/" aria-label="Back to the map">${svg(ICON.back)}</a>
+      <button class="from" type="button" id="from-btn" aria-label="From ${esc(from)}. Change">${from === "your location" ? svg(ICON.locate, "you") : svg(ICON.pin)}<span>${esc(from === "your location" ? "My location" : from)}</span></button>
+      <button class="kind-pill" type="button" id="kind-btn" aria-label="Looking for ${esc(kindLabel)}. Change">${esc(kindLabel)}${svg(ICON.chev)}</button>
+    </div></div>`;
+  let answerSelect = null; // set by the answer on screen: makes card i the answer
   async function renderNext(q) {
     const mode = modeOf(q.get("mode"));
     const origin = { lat: Number(q.get("lat")), lng: Number(q.get("lng")) };
@@ -823,29 +1140,24 @@
     const stale = () => location.hash !== myHash;
     store.set("mgw-origin", { ...origin, label: from, at: Date.now() });
     rememberPlace({ ...origin, label: from });
-    // only the leave time changes here; where from and how are set on the home screen
-    const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
-        <span class="from">From ${esc(from)} · ${mode.label}${sunday ? " · Sunday or Sunset" : ""}${part ? ` · ${PARTS[part].label} Masses` : ""}${lang ? ` · ${esc(lang)}` : ""}</span></div>
-      <div class="when one${at ? " set" : ""}"><button class="when-chip" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time">${svg(ICON.clock)}<span>${at ? `Leaving ${esc(whenText(at))}` : "Leaving now"}</span><em class="chg">Change</em></button></div>`;
-    // a time change keeps the answer on screen, dimmed, until the new one arrives
+    answerSelect = null;
+    const whenLine = [at ? whenText(at) : "Now", sunday ? "Sunday" : part ? PARTS[part].label : "", lang].filter(Boolean).join(" · ");
+    const ctrl = `<div class="a-ctrl"><button class="when-pill${at || sunday || part || lang ? " set" : ""}" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time or filters">${svg(ICON.clock)}<span>${esc(whenLine)}</span>${svg(ICON.chev)}</button>${modeSeg(mode.id)}</div>`;
+    const top = `<div class="amap"><div id="map" class="answer-map top-map"></div>${answerTop(from, "Mass")}</div>`;
+    // a time or travel change keeps the answer on screen, dimmed, until the new one arrives
     const soft = softNext && view.querySelector(".answer");
     softNext = false;
     if (soft) {
-      view.querySelector(".bar").remove();
-      view.querySelector(".when")?.remove();
-      view.insertAdjacentHTML("afterbegin", bar);
-      view.querySelectorAll(".answer, .more").forEach((el) => el.classList.add("busy"));
-    } else view.innerHTML = `${bar}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p id="step">Looking at Mass times at 32 parishes…</p></div>`;
-    const stepTimer = setTimeout(() => { const el = document.getElementById("step"); if (el) el.textContent = `Checking ${mode.id === "transit" ? "bus & MRT routes" : mode.id === "drive" ? "driving routes" : "walking routes"} from ${from}…`;
-    }, 900);
+      view.querySelector(".a-ctrl")?.replaceWith(Object.assign(document.createElement("div"), { innerHTML: ctrl }).firstChild);
+      view.querySelectorAll(".hero, .alts, .answer .btn-primary").forEach((el) => el.classList.add("busy"));
+    } else view.innerHTML = `${top}<section class="answer sheet-card${sheetCls()}">${GRAB()}${ctrl}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p id="step">Looking at Mass times at 32 parishes…</p></div></section>`;
+    const stepTimer = setTimeout(() => { const el = document.getElementById("step"); if (el) el.textContent = `Checking ${mode.id === "transit" ? "bus & MRT routes" : mode.id === "drive" ? "driving routes" : "walking routes"} from ${from}…`; }, 900);
     if (soft) clearTimeout(stepTimer);
-    // data.json only adds the source line and special-day notice; it must not
-    // hold up the answer, so fetch it in parallel and patch it in when it lands.
+    // data.json only adds the source line and special-day notice; it must not hold up the answer
     const d = { parishes: [], holidays: {} };
     const dataP = Promise.race([data(), new Promise((_, no) => setTimeout(no, 4000))])
       .then((loaded) => { for (const k of Object.keys(loaded || {})) d[k] = loaded[k]; })
       .catch(() => {});
-    // backfill whatever depends on data.json, only if the answer is already painted
     const applyData = () => {
       const church = view.querySelector(".answer .church");
       const src = view.querySelector(".source");
@@ -855,9 +1167,7 @@
         if (p) src.innerHTML = answerSource(p, Number(church?.getAttribute("data-start")) || 0);
       }
     };
-
-    // a small photo of the church beside the time, so you know it when you see it; the credits list is tiny and
-    // usually lands before the answer, and if not the photo slots into empty space without moving anything
+    // the church's photo beside the time, so you know it when you see it
     let photos = null;
     const thumbHTML = (p) => {
       const c = photos?.[p.id];
@@ -871,180 +1181,219 @@
       if (row && id && !row.querySelector(".church-thumb")) row.insertAdjacentHTML("beforeend", thumbHTML({ id }));
     });
 
-    // Fast first frame: estimate-only answer in a few ms, then auto-refine with exact OneMap times.
-    let painted = false, amap = null;
+    // the options: our pick, the others you can make, and the nearest church when it isn't one of them
+    let opts = [], sel = 0, nearestId = null, amap = null, painted = false;
+    const optionsOf = (res) => {
+      const list = [res.best, ...(res.alternatives || []).filter(Boolean)];
+      const n = res.nearest;
+      nearestId = n ? n.parish.id : null;
+      if (n && n.next && !list.some((o) => o.parish.id === n.parish.id)) list.push({ ...n.next, parish: n.parish });
+      return list;
+    };
+    const hero = (o) => {
+      const start = new Date(o.start).getTime(), t = clockParts(start), p = o.parish;
+      const day = dayLabel(start);
+      const tags = [o.language && o.language !== "English" ? `${o.language} Mass` : "", o.note].filter(Boolean).join(" · ");
+      return `${day !== "Today" ? `<p class="day">${esc(day)}</p>` : ""}
+        <div class="time-row"><p class="time">${t.hm}<small>${t.ap}</small></p>${thumbHTML(p)}</div>
+        <h1 class="church" data-id="${p.id}" data-start="${start}"><a href="#/church/${p.id}" aria-label="${esc(p.name)}: Mass times and details"><span>${esc(p.name)}</span>${svg(ICON.right)}</a></h1>
+        ${tags ? `<p class="meta">${esc(tags)}</p>` : ""}
+        <div class="leave-row"><div class="leave${at ? " plan" : ""}" id="leave">${leaveHTML(o, at, mode)}</div>
+          <button class="why-btn" type="button" id="why" aria-label="Why this Mass, and where the times come from">${svg(ICON.info)}</button></div>`;
+    };
+    const cards = () => (opts.length < 2 ? "" : `<div class="alts" role="listbox" aria-label="Other Masses you can make">${opts.map((o, i) => {
+      const s = new Date(o.start).getTime();
+      const day = dayKey(s) === dayKey(new Date(opts[0].start).getTime()) ? "" : `${wk(s)} `;
+      return `<button class="alt-card" type="button" role="option" aria-selected="${i === sel}" data-i="${i}">${o.parish.id === nearestId ? `<span class="tag">Nearest</span>` : ""}<b>${day}${clock(s)}</b><small>${esc(shortName(o.parish.name))} · ${mins(o.travelMin)}</small></button>`;
+    }).join("")}</div>`);
+    const navHref = (o) => gmaps(o.parish, tripMode(o, mode).id, origin);
+    // folded, the sheet is one line: the time, the church and when to leave, and Navigate
+    const collapseSum = (o) => {
+      const s = new Date(o.start).getTime(), lv = document.createElement("div");
+      lv.innerHTML = leaveHTML(o, at, mode);
+      return `<div class="collapse-sum"><b>${clock(s)}</b><span><strong>${esc(shortName(o.parish.name))}</strong>${esc(lv.querySelector("strong")?.textContent || "")}</span>
+        <a class="cs-go" href="${navHref(o)}" target="_blank" rel="noopener" aria-label="Navigate to ${esc(o.parish.name)}">${svg(ICON.nav)}</a></div>`;
+    };
+    const countdown = (o) => {
+      if (at || o.lateMin > 0) return clearInterval(leaveTimer);
+      tickLeave(new Date(o.start).getTime(), new Date(o.leaveBy).getTime(), o.travelMin, o.travelSource === "estimate", tripMode(o, mode));
+    };
+    answerSelect = (i) => {
+      if (stale() || !opts[i]) return;
+      sel = i;
+      const o = opts[i];
+      const h = view.querySelector("#hero");
+      h.innerHTML = hero(o);
+      h.classList.remove("swap"); void h.offsetWidth; h.classList.add("swap");
+      view.querySelector("#go").href = navHref(o);
+      view.querySelector(".collapse-sum")?.replaceWith(Object.assign(document.createElement("div"), { innerHTML: collapseSum(o) }).firstElementChild);
+      view.querySelectorAll(".alt-card").forEach((c) => c.setAttribute("aria-selected", String(Number(c.dataset.i) === i)));
+      amap?.select(o.parish.id);
+      countdown(o);
+      applyData();
+    };
+
     const paint = (res) => {
       if (stale()) return;
       if (res.outside) {
-        view.innerHTML = `${bar}<section class="answer"><h1>That’s outside Singapore.</h1>
-          <p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p>
-          <p style="margin-top:28px"><a class="btn btn-quiet" href="#/">Back to search</a></p></section>`;
+        view.innerHTML = `${top}<section class="answer sheet-card${sheetCls()}">${GRAB()}<h1>That’s outside Singapore.</h1>
+          <p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p></section>`;
         painted = true;
         return;
       }
-      const b = res.best;
-      if (!b) {
-        view.innerHTML = `${bar}<section class="answer reveal"><h1>No ${adj}Mass${esc(inLang)} you can reach ${sunday || lang ? (at ? `within a week of ${esc(whenText(at))}` : "this week") : at ? `within two days of ${esc(whenText(at))}` : "in the next two days"}.</h1>
-          <p class="lede">Try another time${part ? ", time of day" : ""}${lang ? ", language" : ""} or way of travelling, or browse the churches and their times.</p>
-          <p style="margin-top:28px"><a class="btn btn-quiet" href="#/churches">Browse all churches</a></p></section>`;
+      if (!res.best) {
+        view.innerHTML = `${top}<section class="answer sheet-card${sheetCls()}">${GRAB()}${ctrl}<h1 class="none">No ${adj}Mass${esc(inLang)} you can reach ${sunday || lang ? (at ? `within a week of ${esc(whenText(at))}` : "this week") : at ? `within two days of ${esc(whenText(at))}` : "in the next two days"}.</h1>
+          <p class="lede">Try another time${part ? ", time of day" : ""}${lang ? ", language" : ""} or way of travelling.</p>
+          <p class="browse-wrap"><a class="link" href="#/churches?view=list">All churches and Mass times</a></p></section>`;
         painted = true;
         return;
       }
-      const start = new Date(b.start).getTime(), leave = new Date(b.leaveBy).getTime();
-      const t = clockParts(start);
-      const p = b.parish;
-      const est = b.travelSource === "estimate";
-      const meta = [S.isSunset(start) ? "Sunset Mass: counts for Sunday" : "", b.language !== "English" ? `${b.language} Mass` : "", b.note].filter(Boolean).join(" · ");
+      opts = optionsOf(res);
+      sel = 0;
+      const b = res.best, start = new Date(b.start).getTime();
       const special = S.specialDay(start, d);
-      const alt = (res.alternatives || []).filter(Boolean);
-      const near = res.nearest && res.nearest.parish.id !== p.id ? res.nearest : null;
-      view.innerHTML = `${bar}
-        <section class="answer ${soft ? "retimed" : "reveal"}">
-          <div class="day-row"><p class="day">${dayLabel(start)}${at ? (dayKey(at) === dayKey(start) && new Date(b.leaveBy).getTime() - at <= LONG_WAIT ? `, ${mins(Math.round((start - at) / 60000))} after you set off` : "") : start - Date.now() < 12 * 3600e3 ? `, ${until(start)}` : ""}</p>
-            <button class="why-btn" type="button" id="why" aria-label="Why this Mass?" title="Why this Mass?">${svg(ICON.info)}</button></div>
-          <div class="time-row"><p class="time">${t.hm}<small>${t.ap}</small></p>${thumbHTML(p)}</div>
-          <h1 class="church" data-id="${p.id}" data-start="${start}"><a href="#/church/${p.id}" aria-label="${esc(p.name)}: Mass times and details"><span>${esc(p.name)}</span>${svg(ICON.right)}</a></h1>
-          ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
-          <div class="leave${at ? " plan" : ""}" id="leave">${leaveHTML(b, at, mode)}</div>
-          <a class="btn btn-primary" href="${gmaps(p, tripMode(b, mode).id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
-          ${est ? `<p class="est" style="text-align:center">Travel time is an estimate; checking live routes…</p>` : ""}
+      view.innerHTML = `${top}
+        <section class="answer sheet-card ${soft ? "retimed" : "reveal"}${sheetCls()}">${GRAB()}
+          ${collapseSum(b)}
+          ${ctrl}
+          <div class="hero" id="hero">${hero(b)}</div>
+          <a class="btn btn-primary" id="go" href="${navHref(b)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
+          ${b.travelSource === "estimate" ? `<p class="est">Travel times are estimates; checking live routes…</p>` : ""}
           ${special ? `<p class="notice">${esc(special)}: Mass times often change ${dayKey(start) === dayKey(Date.now()) ? "today" : "that day"}. Please check with the parish.</p>` : ""}
-          <button class="see-more" type="button" onclick="document.getElementById('near-map').scrollIntoView({ behavior: 'smooth' })">${svg(ICON.down)}<span>${alt.length ? "More churches you can make it to" : "See it on a map"}</span></button>
-        </section>
-        <section class="near-map" id="near-map" aria-label="Map of the churches near you">
-          <div id="map" class="answer-map"></div>
-          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span>${alt.length || near ? `<span><i class="l-church dim"></i>In the list below</span>` : ""}${(res.around || []).some((a) => a.parish && ![p, ...alt.map((x) => x.parish), near?.parish].some((q) => q && q.id === a.parish.id)) ? `<span><i class="l-church faint"></i>Also nearby</span>` : ""}<span>Each time is the next Mass you can make there</span></p>
-        </section>
-        ${alt.length || near ? `<section class="more" id="more" aria-label="Other options">
-          ${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
-          ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
-            <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
-            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : `No reachable ${adj}Mass in the next two days`}</small></span><span class="d">${mins(near.travelMin)} ${near.walk ? "walk" : "away"}</span></a></li></ul>` : ""}
-        </section>` : ""}
-        <p class="browse-wrap"><a class="link" href="#/churches${part ? `?part=${part}` : ""}">Browse all churches and Mass times</a></p>
-        <p class="source">${answerSource(d.parishes.find((x) => x.id === p.id), start)}</p>`;
-      rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
+          ${cards()}
+          <p class="browse-wrap"><a class="link" href="#/churches?view=list">All churches and Mass times</a></p>
+          <p class="source">${answerSource(d.parishes.find((x) => x.id === b.parish.id), start)}</p>
+        </section>`;
+      rememberTrips(origin, mode.id, opts);
       view.focus({ preventScroll: true });
-      if (at || b.lateMin > 0) clearInterval(leaveTimer); else tickLeave(start, leave, b.travelMin, est, tripMode(b, mode));
+      countdown(b);
       amap = answerMap(view.querySelector("#map"), origin, from === "your location" ? "You" : from, stale);
       amap.update(res);
-      // the "more churches" cue is only for when the map starts below the fold
-      const moreEl = view.querySelector("#near-map"), cue = view.querySelector(".see-more");
-      if (moreEl && cue && moreEl.getBoundingClientRect().top < innerHeight - 80) cue.hidden = true;
       painted = true;
     };
 
     // Work out the distance estimate here, and ask the API for live routes at the same time. Live usually lands
     // within a couple of seconds: wait for it so the answer appears once and never jumps. Only when it's slow do
-    // we show the estimate first, then settle the live times in place (a gentle highlight, no repaint).
+    // we show the estimate first, then settle the live times in place.
     const fullP = fetchNext(q, false).then((r) => ({ r }), (e) => ({ e }));
     const fastP = fetchNext(q, true);
-    const LIVE_WAIT_MS = 2500;
-    const quick = await Promise.race([fullP, new Promise((ok) => setTimeout(() => ok(null), LIVE_WAIT_MS))]);
+    const quick = await Promise.race([fullP, new Promise((ok) => setTimeout(() => ok(null), 2500))]);
     let liveShown = false;
-    if (quick && quick.r) {
-      paint(quick.r);
-      liveShown = true;
-    } else {
-      try { paint(await fastP); } catch { /* offline; the live attempt below may also fail -> error screen */ }
+    if (quick && quick.r) { paint(quick.r); liveShown = true; } else {
+      try { paint(await fastP); } catch { /* offline; the live attempt below may also fail */ }
     }
     clearTimeout(stepTimer);
     if (stale()) return;
-
-    // 2) exact refine — swap in live OneMap times without repainting the hero answer
+    // live OneMap times: settle them in place; a different pick repaints
     const refine = (res) => {
-      if (stale()) return;
-      if (!res.best) return; // answer unchanged on "no Mass"; leave the frame as-is
-      const b = res.best;
-      // if real routing moved the best to a different church, repaint the whole view
-      const heroName = view.querySelector(".answer .church");
-      const same = heroName && heroName.textContent === b.parish.name;
-      if (!same) return paint(res);
-      const leave = new Date(b.leaveBy).getTime();
-      const est = b.travelSource === "estimate";
+      if (stale() || !res.best) return;
+      if (!opts.length || opts[0].parish.id !== res.best.parish.id) return paint(res);
+      const was = opts[sel]?.parish.id;
+      opts = optionsOf(res);
+      sel = Math.max(0, opts.findIndex((o) => o.parish.id === was));
       const leaveBox = document.getElementById("leave");
       if (leaveBox) {
         const before = leaveBox.textContent;
-        leaveBox.innerHTML = leaveHTML(b, at, mode);
-        // times moved a little: say so quietly rather than flicker
+        leaveBox.innerHTML = leaveHTML(opts[sel], at, mode);
         if (leaveBox.textContent !== before) { leaveBox.classList.remove("updated"); void leaveBox.offsetWidth; leaveBox.classList.add("updated"); }
       }
-      // drop the "checking live routes…" note once we have exact numbers
-      const estNote = view.querySelector(".answer .est");
-      if (estNote && !est) estNote.remove();
-      if (!at && !(b.lateMin > 0)) tickLeave(new Date(b.start).getTime(), leave, b.travelMin, est, tripMode(b, mode));
-      // re-render only the "other options" block with exact times (keeps the hero steady)
-      const alt = (res.alternatives || []).filter(Boolean);
-      const near = res.nearest && res.nearest.parish.id !== b.parish.id ? res.nearest : null;
-      const more = view.querySelector("section.more");
-      if (more) {
-        more.innerHTML = `${alt.length ? `<h2>Other churches you can make it to</h2><ul class="rows">${alt.map((a) => row(a, mode)).join("")}</ul>` : ""}
-          ${near ? `<h2 style="margin-top:${alt.length ? 26 : 0}px">Nearest church</h2><ul class="rows"><li>
-            <a class="row" href="#/church/${near.parish.id}">${near.next ? `<span class="t">${clock(new Date(near.next.start).getTime())}<small>${dayLabel(new Date(near.next.start).getTime())}</small></span>` : `<span class="t">–</span>`}
-            <span class="n">${esc(near.parish.name)}<small>${near.next ? `Leave by ${clock(new Date(near.next.leaveBy).getTime())}` : `No reachable ${adj}Mass in the next two days`}</small></span><span class="d">${mins(near.travelMin)} ${near.walk ? "walk" : "away"}</span></a></li></ul>` : ""}`;
-      }
-      rememberTrips(origin, mode.id, [b, ...alt, near && near.next && { ...near.next, parish: near.parish, travelMin: near.travelMin, travelSource: near.travelSource, walk: near.walk }]);
+      view.querySelector(".answer .est")?.remove();
+      view.querySelector(".collapse-sum")?.replaceWith(Object.assign(document.createElement("div"), { innerHTML: collapseSum(opts[sel]) }).firstElementChild);
+      const alts = view.querySelector(".alts");
+      if (alts) alts.outerHTML = cards();
+      countdown(opts[sel]);
+      rememberTrips(origin, mode.id, opts);
       amap?.update(res);
+      amap?.select(opts[sel].parish.id);
     };
     if (!liveShown) {
       const full = await fullP;
       if (full.r && !stale()) refine(full.r);
     }
-    // once data.json has landed, backfill the source line (and any data-dependent bits)
     await dataP;
     if (!stale()) applyData();
-    // never leave the answer dimmed and unclickable, whichever frames arrived
     view.querySelectorAll(".busy").forEach((el) => el.classList.remove("busy"));
     if (!painted) {
-      view.innerHTML = `${bar}<section class="answer"><h1>We couldn’t check Mass times just now.</h1>
+      view.innerHTML = `${top}<section class="answer sheet-card${sheetCls()}">${GRAB()}<h1>We couldn’t check Mass times just now.</h1>
         <p class="lede">Check your connection and try again.</p>
-        <p style="margin-top:28px"><button class="btn btn-primary" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Try again</button></p></section>`;
+        <p style="margin-top:20px"><button class="btn btn-primary" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Try again</button></p></section>`;
     }
   }
-  // the headline is "Leave by <the latest you can go>", now or planned; "Leave now" only when that's right away
   // a leave-by on another day than the one you're setting off from says which day
   const onDay = (ms, from) => {
     if (dayKey(ms) === dayKey(from)) return "";
     return dayKey(ms) === dayKey(from + DAY) ? " tomorrow" : ` on ${wk(ms, "long")}`;
   };
   const LONG_WAIT = 60 * 60000; // arriving more than an hour early isn't a plan anyone means
+  // the leave line: a countdown when you're going now ("Leave in 32 min"), the latest time when you've planned ahead;
+  // then how long the trip is. Why 5 minutes early, and the rest, live behind (i)
   function leaveHTML(b, at, mode) {
     mode = tripMode(b, mode);
     const about = b.travelSource === "estimate" ? "about " : "";
     const leave = new Date(b.leaveBy).getTime();
     const trip = `${about}${mins(b.travelMin)} ${mode.phrase}`;
-    if (b.lateMin > 0) return `<strong>${at ? `Leave at ${clock(at)}` : "Leave now"}</strong><span class="late">You’ll be about ${mins(b.lateMin)} late</span><span>${trip}</span>`;
-    const early = `<span class="early">You’ll arrive 5 min early, to prepare for Mass.</span>`;
-    if (!at) return `<strong>${leave - Date.now() < 2 * 60000 ? "Leave now" : `Leave by ${clock(leave)}${onDay(leave, Date.now())}`}</strong><span>${trip}</span>${early}`;
-    // the first Mass after your time may be hours away (late at night: tomorrow morning); then the useful
-    // answer is when to set off for it, not "arrive at 10:31pm" for a 7am Mass
-    if (leave - at > LONG_WAIT) return `<strong>Leave by ${clock(leave)}${onDay(leave, at)}</strong><span>${trip}</span><span>First Mass after ${esc(whenText(at))}</span>`;
-    // the headline is always the latest you can leave; your planned time is said underneath
+    if (b.lateMin > 0) return `<strong>${at ? `Leave at ${clock(at)}` : "Leave now"}</strong><span class="late">about ${mins(b.lateMin)} late</span><span>${trip}</span>`;
+    if (!at) {
+      const m = Math.ceil((leave - Date.now()) / 60000);
+      return `<strong>${m <= 1 ? "Leave now" : m <= 180 ? `Leave in ${mins(m)}` : `Leave by ${clock(leave)}${onDay(leave, Date.now())}`}</strong><span>${trip}</span>`;
+    }
+    if (leave - at > LONG_WAIT) return `<strong>Leave by ${clock(leave)}${onDay(leave, at)}</strong><span>${trip}</span>`;
     return `<strong>Leave by ${clock(leave)}${onDay(leave, at)}</strong><span>${trip}</span>` +
-      (leave - at >= 5 * 60000 ? `<span>Leaving at ${clock(at)} gets you there by ${about}${clock(at + b.travelMin * 60000)}</span>` : "") + early;
+      (leave - at >= 5 * 60000 ? `<span>Leaving ${clock(at)}, there by ${about}${clock(at + b.travelMin * 60000)}</span>` : "");
   }
-  // changing the leave time on the answer screen rewrites the link in place (no history entry per tap) and re-ranks
+  // changing the time, filters or travel on an answer rewrites the link in place (no history entry per tap) and re-ranks;
+  // changing where from is a new search (a history entry)
   let softNext = false;
-  function setLeaveAt(at) {
+  function setAnswerParams(o, push = false) {
     const [path, qs] = location.hash.replace(/^#/, "").split("?");
     const q = new URLSearchParams(qs || "");
-    if (at) q.set("at", at); else q.delete("at");
+    for (const [k, v] of Object.entries(o)) { if (v == null || v === "" || v === false) q.delete(k); else q.set(k, v); }
+    if (push) return go(`${path}?${q}`);
     history.replaceState(null, "", `#${path}?${q}`);
-    softNext = true;
+    softNext = path.startsWith("/next");
     route();
   }
+  const setLeaveAt = (at) => setAnswerParams({ at });
+  function openKindSheet(current, q) {
+    openSheet("Looking for", `<div class="opts">${KINDS.map(([k, l]) => `<button class="opt" type="button" data-kind-to="${k}" aria-pressed="${k === current}">${svg(k === "mass" ? ICON.clock : ICON[k])}<span>${l}</span></button>`).join("")}</div>`, "[aria-pressed='true']");
+    sheet.querySelectorAll("[data-kind-to]").forEach((b) => b.addEventListener("click", () => {
+      closeSheet();
+      const k = b.dataset.kindTo;
+      if (k === current) return;
+      plan.kind = k;
+      const keep = new URLSearchParams();
+      for (const x of ["lat", "lng", "mode", "from", "at"]) if (q.get(x)) keep.set(x, q.get(x));
+      go(k === "mass" ? `/next?${keep}` : `/open?kind=${k}&${keep}`);
+    }));
+  }
   view.addEventListener("click", (e) => {
-    if (!location.hash.startsWith("#/next")) return;
-    const cur = parseAt(new URLSearchParams(location.hash.split("?")[1] || "").get("at"));
-    if (e.target.closest("#when")) openTimeSheet(cur, setLeaveAt);
+    const onNext = location.hash.startsWith("#/next"), onOpen = location.hash.startsWith("#/open");
+    if (!onNext && !onOpen) return;
+    const q = new URLSearchParams(location.hash.split("?")[1] || "");
+    const cur = parseAt(q.get("at"));
+    if (e.target.closest("#when")) {
+      openTimeSheet(cur, (at, f) => setAnswerParams({ at, ...(f ? { sunday: f.sunday ? "1" : "", part: f.part, lang: f.lang } : {}) }),
+        { filters: onNext ? { sunday: q.get("sunday") === "1", part: partOf(q.get("part")), lang: q.get("lang") || "" } : null });
+    }
+    const m = e.target.closest(".mode-seg [data-mode]");
+    if (m && m.getAttribute("aria-checked") !== "true") { store.set("mgw-mode", m.dataset.mode); setAnswerParams({ mode: m.dataset.mode }); }
+    if (e.target.closest("#from-btn")) {
+      openPlaceSheet((p) => {
+        if (p) return setAnswerParams({ lat: p.lat, lng: p.lng, from: p.label }, true);
+        navigator.geolocation?.getCurrentPosition((pos) => setAnswerParams({ lat: pos.coords.latitude.toFixed(5), lng: pos.coords.longitude.toFixed(5), from: "your location" }, true),
+          () => {}, { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 });
+      }, { title: "Search from", way: true });
+    }
+    if (e.target.closest("#kind-btn")) openKindSheet(onNext ? "mass" : q.get("kind"), q);
+    const c = e.target.closest(".alt-card");
+    if (c && answerSelect) answerSelect(Number(c.dataset.i));
     const ph = e.target.closest("[data-photo]");
     if (ph) openPhoto(ph.dataset.photo, view.querySelector(".answer .church span")?.textContent || "The church");
-    if (e.target.closest("#why")) {
-      const q = new URLSearchParams(location.hash.split("?")[1] || "");
+    if (onNext && e.target.closest("#why")) {
       openWhySheet({ from: q.get("from") || "your location", mode: modeOf(q.get("mode")), at: cur, part: partOf(q.get("part")), sunday: q.get("sunday") === "1", lang: q.get("lang") || "" });
     }
   });
-  // the leave-by line counts down while the page is open; at zero it says so and the Navigate button draws the eye
+  // the leave line counts down while the page is open; at zero it says so and the Navigate button draws the eye
   let leaveTimer = null;
   function tickLeave(start, leave, travelMin, est, mode) {
     clearInterval(leaveTimer);
@@ -1057,11 +1406,11 @@
         clearInterval(leaveTimer);
         box.innerHTML = `<strong>You may have missed this one</strong><span><button class="link" type="button" onclick="window.dispatchEvent(new HashChangeEvent('hashchange'))">Find the next Mass</button></span>`;
         document.querySelector(".answer .btn-primary")?.classList.remove("go-now");
-      } else if (m <= 0) {
-        box.innerHTML = `<strong>Time to leave</strong><span>${trip}</span><span class="early">You’ll arrive 5 min early, to prepare for Mass.</span>`;
+      } else if (m <= 1) {
+        box.innerHTML = `<strong>Leave now</strong><span>${trip}</span>`;
         document.querySelector(".answer .btn-primary")?.classList.add("go-now");
-      } else if (m <= 60) {
-        box.innerHTML = `<strong>Leave by ${clock(leave)}</strong><span>in ${mins(m)} · ${trip}</span><span class="early">You’ll arrive 5 min early, to prepare for Mass.</span>`;
+      } else if (m <= 180) {
+        box.innerHTML = `<strong>Leave in ${mins(m)}</strong><span>${trip}</span>`;
       }
     };
     draw();
@@ -1157,9 +1506,9 @@
     const myHash = location.hash, stale = () => location.hash !== myHash;
     store.set("mgw-origin", { ...origin, label: from, at: Date.now() });
     rememberPlace({ ...origin, label: from });
-    const bar = `<div class="bar"><button class="back" type="button" aria-label="Back" onclick="location.hash='#/'">${svg(ICON.back)}</button>
-        <span class="from">${K.title} · From ${esc(from)} · ${mode.label}${at ? ` · leaving ${esc(whenText(at))}` : ""}</span></div>`;
-    view.innerHTML = `${bar}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p>Looking at ${K.looking} at 32 parishes…</p></div>`;
+    const ctrl = `<div class="a-ctrl"><button class="when-pill${at ? " set" : ""}" type="button" id="when" aria-label="Leaving ${esc(whenText(at))}. Change the time">${svg(ICON.clock)}<span>${esc(at ? whenText(at) : "Now")}</span>${svg(ICON.chev)}</button>${modeSeg(mode.id)}</div>`;
+    const bar = `<div class="amap"><div id="map" class="answer-map top-map"></div>${answerTop(from, K.title)}</div>`;
+    view.innerHTML = `${bar}<section class="answer sheet-card${sheetCls()}">${GRAB()}${ctrl}<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p>Looking at ${K.looking} at 32 parishes…</p></div></section>`;
     const ms = (v) => (v == null ? null : new Date(v).getTime());
     const t0 = () => at ?? Date.now();
     // Today / Tomorrow / Sat 3 Oct, as on the calendar; "now" words only when you're going now, else your planned time
@@ -1178,18 +1527,18 @@
       const leaveAt = ms(b.leaveAt), leaveBy = ms(b.leaveBy), start = ms(b.start), lastIn = ms(b.lastIn);
       const now = t0(), day = (x) => onDay(x, now);
       const soonNow = leaveAt - now < 2 * 60000;
-      if (b.type === "session") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveBy)}${day(leaveBy)}`}</strong><span>${trip}</span><span class="early">You’ll arrive 5 min before it starts.</span>`;
+      if (b.type === "session") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveBy)}${day(leaveBy)}`}</strong><span>${trip}</span>`;
       // the latest you could arrive, said the same way whether it has opened or not; no "leave as late as": for
       // Confession that only sets you up to miss it (a queue, and it stops when Mass begins)
       const stay = kind === "adoration" ? `Get there by ${clock(lastIn)}${day(lastIn)} to have at least 20 minutes before it closes.`
         : `Get there by ${clock(lastIn)}: Confession ends at ${clock(ms(b.end))}, and there may be a queue.`;
       if (start <= now + b.travelMin * 60000) {
-        return `<strong>${soonNow ? goNow : `Leave at ${clock(leaveAt)}`}</strong><span>${trip}, arriving ${about}${clock(ms(b.arrive))}</span><span class="early">${stay}</span>`;
+        return `<strong>${soonNow ? goNow : `Leave at ${clock(leaveAt)}`}</strong><span>${trip}</span><span class="early">${stay}</span>`;
       }
       // Confession not started yet: the latest you can leave is set by when it opens (be there at the start: the queue
       // forms early and it stops when Mass begins); an Adoration room you can come to any time before it closes
-      if (kind === "confession") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveAt)}${day(leaveAt)}`}</strong><span>${trip}, arriving as it starts at ${clock(start)}</span><span class="early">Confession ends at ${clock(ms(b.end))}, and there may be a queue.</span>`;
-      return `<strong>Leave at ${clock(leaveAt)}${day(leaveAt)}</strong><span>${trip}, arriving as it opens</span><span class="early">${stay}</span>`;
+      if (kind === "confession") return `<strong>${soonNow ? goNow : `Leave by ${clock(leaveAt)}${day(leaveAt)}`}</strong><span>${trip}</span>`;
+      return `<strong>Leave at ${clock(leaveAt)}${day(leaveAt)}</strong><span>${trip}</span>`;
     };
     const meta = (b) => [kind === "confession" && b.mass ? `Before the ${clock(ms(b.mass))} Mass` : "", b.location, b.type === "session" ? "" : b.name, b.note].filter(Boolean);
     const altRow = (a) => {
@@ -1202,8 +1551,7 @@
     const paint = (res) => {
       if (stale()) return;
       if (res.outside) {
-        view.innerHTML = `${bar}<section class="answer"><h1>That’s outside Singapore.</h1><p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p>
-          <p style="margin-top:28px"><a class="btn btn-quiet" href="#/">Back to search</a></p></section>`;
+        view.innerHTML = `${bar}<section class="answer sheet-card${sheetCls()}">${GRAB()}<h1>That’s outside Singapore.</h1><p class="lede">MassGoWhere covers Singapore’s 32 parishes. Search for a Singapore postal code or place instead.</p></section>`;
         return;
       }
       const b = res.best;
@@ -1214,8 +1562,8 @@
           <ul class="rows">${[...res.unconfirmed].sort((a, b) => near(a) - near(b)).map((x) => `<li><a class="row row-church" href="#/church/${x.parish.id}"><span class="n">${esc(x.parish.name)}<small class="times">${esc(x.text)}</small></span></a>${x.parish.website ? `<a class="btn btn-quiet" href="${esc(x.parish.website)}" target="_blank" rel="noopener"><span>Website</span></a>` : ""}</li>`).join("")}</ul></section>` : "";
       const browse = `<p class="browse-wrap"><a class="btn btn-quiet browse" href="#/churches?view=list&filters=1&what=${kind}">${svg(ICON.map)}<span>${K.title} times at every church</span></a></p>`;
       if (!b) {
-        view.innerHTML = `${bar}<section class="answer reveal"><h1>No ${K.none} you can reach ${K.days}.</h1>
-          <p class="lede">Try another way of travelling, or look at the times at every church.</p></section>${unsure}${browse}`;
+        view.innerHTML = `${bar}<section class="answer sheet-card reveal${sheetCls()}">${GRAB()}${ctrl}<h1 class="none">No ${K.none} you can reach ${K.days}.</h1>
+          <p class="lede">Try another way of travelling, or look at the times at every church.</p>${unsure}${browse}</section>`;
         return;
       }
       const p = b.parish, w = when(b), alt = (res.alternatives || []).filter(Boolean);
@@ -1224,24 +1572,25 @@
         : b.source === "reported" ? "a report to MassGoWhere, not yet on the parish website"
         : `the <a href="${esc(p.website || `#/church/${p.id}`)}" target="_blank" rel="noopener">parish website</a>`;
       view.innerHTML = `${bar}
-        <section class="answer reveal">
-          <div class="day-row"><p class="day">${esc(w.day)}</p></div>
-          <p class="time">${w.pre ? `<small class="pre">${w.pre}</small>` : ""}${w.time.hm}<small>${w.time.ap}</small></p>
-          <h1 class="church" data-id="${p.id}"><a href="#/church/${p.id}" aria-label="${esc(p.name)}: times and details"><span>${esc(p.name)}</span>${svg(ICON.right)}</a></h1>
-          ${meta(b).length ? `<p class="meta">${meta(b).map(esc).join(" · ")}</p>` : ""}
-          <div class="leave" id="leave">${leaveBox(b)}</div>
+        <section class="answer sheet-card reveal${sheetCls()}">${GRAB()}
+          <div class="collapse-sum"><b>${w.time.hm}${w.time.ap}</b><span><strong>${esc(shortName(p.name))}</strong>${esc(w.day)}</span>
+            <a class="cs-go" href="${gmaps(p, tripMode(b, mode).id, origin)}" target="_blank" rel="noopener" aria-label="Navigate to ${esc(p.name)}">${svg(ICON.nav)}</a></div>
+          ${ctrl}
+          <div class="hero">
+            <p class="day">${esc(w.day)}</p>
+            <div class="time-row"><p class="time">${w.pre ? `<small class="pre">${w.pre}</small>` : ""}${w.time.hm}<small>${w.time.ap}</small></p></div>
+            <h1 class="church" data-id="${p.id}"><a href="#/church/${p.id}" aria-label="${esc(p.name)}: times and details"><span>${esc(p.name)}</span>${svg(ICON.right)}</a></h1>
+            ${meta(b).length ? `<p class="meta">${meta(b).map(esc).join(" · ")}</p>` : ""}
+            <div class="leave-row"><div class="leave" id="leave">${leaveBox(b)}</div></div>
+          </div>
           <a class="btn btn-primary" href="${gmaps(p, tripMode(b, mode).id, origin)}" target="_blank" rel="noopener">${svg(ICON.nav)}<span>Navigate</span></a>
-          ${b.travelSource === "estimate" ? `<p class="est" style="text-align:center">Travel time is an estimate; checking live routes…</p>` : ""}
+          ${b.travelSource === "estimate" ? `<p class="est">Travel times are estimates; checking live routes…</p>` : ""}
           ${special ? `<p class="notice">${esc(special)}: times often change that day. Please check with the parish.</p>` : ""}
           ${kind === "confession" ? `<p class="muted">Confession depends on a priest being free, so it can start late or end early.</p>` : ""}
-        </section>
-        <section class="near-map" id="near-map" aria-label="Map of the churches you can get to">
-          <div id="map" class="answer-map"></div>
-          <p class="legend"><span><i class="l-you"></i>${esc(from === "your location" ? "You" : from)}</span><span><i class="l-church"></i>Our pick</span>${alt.length ? `<span><i class="l-church dim"></i>In the list below</span>` : ""}<span>${kind === "adoration" ? "“Open”, or the time it opens" : "When Confession starts, or “Open” if it already has"}</span></p>
-        </section>
-        ${alt.length ? `<section class="more" aria-label="Other options"><h2>Other churches you can get to</h2><ul class="rows">${alt.map(altRow).join("")}</ul></section>` : ""}
-        ${unsure}${browse}
-        <p class="source">Times from ${src}${res.checked ? `, checked ${fmtDate(res.checked)}` : ""}. Parishes change them; check with the parish before you go.</p>`;
+          ${alt.length ? `<section class="more" aria-label="Other options"><h2>Other churches you can get to</h2><ul class="rows">${alt.map(altRow).join("")}</ul></section>` : ""}
+          ${unsure}${browse}
+          <p class="source">Times from ${src}${res.checked ? `, checked ${fmtDate(res.checked)}` : ""}. Parishes change them; check with the parish before you go.</p>
+        </section>`;
       // the same map as a Mass answer: "Open" where it's open when you'd arrive, else when it opens or starts
       const openOn = (e) => e.type === "open" && ms(e.start) <= t0(); // as the list says it: open now
       answerMap(view.querySelector("#map"), origin, from === "your location" ? "You" : from, stale, {
@@ -1259,7 +1608,7 @@
     try { paint(await fetchOpen(q, kind, true)); } catch { /* the live call may still work */ }
     const full = await fullP;
     if (full.r) paint(full.r);
-    else if (!view.querySelector(".answer")) view.innerHTML = `${bar}<section class="answer"><h1>We couldn’t check just now.</h1><p class="lede">Check your connection and try again.</p></section>`;
+    else if (!view.querySelector(".answer h1")) view.innerHTML = `${bar}<section class="answer sheet-card${sheetCls()}">${GRAB()}<h1>We couldn’t check just now.</h1><p class="lede">Check your connection and try again.</p></section>`;
   }
 
   // ---------- church ----------
@@ -1787,21 +2136,28 @@
   const listed = (res) => [...(res.alternatives || []).filter(Boolean).map((a) => ({ parish: a.parish, next: a })), ...(res.nearest ? [res.nearest] : [])];
   // fmt (optional): how a pin and its card describe an option; Adoration and Confession pass their own
   function answerMap(el, origin, youLabel, stale, fmt = {}) {
-    let res = null, map = null, ml = null, marks = [];
+    let res = null, map = null, ml = null, marks = [], selId = null;
     const t = (ms) => clock(new Date(ms).getTime());
     const pinTime = fmt.pin || ((e) => t(e.start));
     const line = fmt.line || ((e) => `Mass ${t(e.start)} ${esc(dayLabel(new Date(e.start).getTime()).toLowerCase())} · leave by ${t(e.leaveBy)}`);
     const draw = () => {
       marks.forEach((m) => m.remove());
-      const b = res.best, seen = new Set([b.parish.id]);
+      // the dark pin is the answer on screen: our pick, or the card you tapped
+      const opts = [{ parish: res.best.parish, next: res.best }, ...listed(res)];
+      const pick = opts.find((o) => o.next && o.parish.id === selId) || opts[0];
+      const b = pick.next, seen = new Set([pick.parish.id]);
       const fresh = (o) => !seen.has(o.parish.id) && seen.add(o.parish.id);
-      const inList = listed(res).filter(fresh);
+      const inList = opts.filter((o) => o.next).filter(fresh);
       const nearby = (res.around || []).filter((a) => a.parish).filter(fresh);
       const card = (p, e, extra) => `<strong>${esc(p.name)}</strong><span>${e ? line(e) : "No Mass you can reach soon"}</span>${extra || ""}<a href="#/church/${p.id}">${fmt.link || "Mass times"}</a>`;
-      // drawn first, so the pins in the list sit on top where they overlap
-      marks = nearby.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, `<span>Not in the list: ${!o.next ? "no Mass you can reach soon" : new Date(o.next.start) > new Date(b.start) ? "its next Mass is later" : "a longer trip than the ones listed"}</span>`), { dim: true, faint: true, time: o.next ? pinTime(o.next) : "" }));
-      marks.push(...inList.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.parish.id === res.nearest?.parish.id ? "<span>Nearest church</span>" : "<span>In the list below</span>"), { dim: true, time: o.next ? pinTime(o.next) : "" })));
-      marks.push(addPin(ml, map, b.parish, card(b.parish, b, "<span>Our pick for you</span>"), { time: pinTime(b) }));
+      // nearby but not an option: a small grey dot; its card says why. Drawn first, so the options sit on top
+      marks = nearby.map((o) => {
+        const mk = addPin(ml, map, o.parish, card(o.parish, o.next, `<span>${!o.next ? "Nothing you can reach soon" : new Date(o.next.start) > new Date(res.best.start) ? "Its next Mass is later" : "A longer trip than the others"}</span>`), { dim: true, faint: true });
+        mk.getElement().classList.add("mini");
+        return mk;
+      });
+      marks.push(...inList.map((o) => addPin(ml, map, o.parish, card(o.parish, o.next, o.parish.id === res.nearest?.parish.id ? "<span>Nearest church</span>" : ""), { dim: true, time: pinTime(o.next) })));
+      marks.push(addPin(ml, map, pick.parish, card(pick.parish, b, ""), { time: pinTime(b) }));
     };
     const start = async () => {
       try { ml = await maplibre(); } catch { el.innerHTML = '<p class="lede" style="padding:20px">The map could not load.</p>'; return; }
@@ -1813,9 +2169,13 @@
       const km = (p) => R.haversineKm(origin, p);
       const all = [...listed(res), ...(res.around || [])].map((x) => x.parish).filter(Boolean).sort((a, b) => km(a) - km(b));
       const reach = 3 * Math.max(km(all[0] || res.best.parish), km(res.best.parish));
-      const ps = [res.best.parish, ...all.filter((p) => km(p) <= reach)];
+      // every option on the cards is always in view, so tapping a card never sends its pin off screen
+      const ps = [res.best.parish, ...listed(res).map((x) => x.parish), ...all.filter((p) => km(p) <= reach)];
       const pts = [origin, ...ps.flatMap((p) => [p, { lat: 2 * origin.lat - p.lat, lng: 2 * origin.lng - p.lng }])];
-      map = currentMap = newMap(ml, el, pts, 40, { cooperativeGestures: true }); // room above pins for their time labels
+      // room above the pins for their time labels, and below the controls over the top of the map
+      const top = el.classList.contains("top-map");
+      map = currentMap = newMap(ml, el, pts, 40, { cooperativeGestures: !top, fitBoundsOptions: { padding: { top: top ? 124 : 56, bottom: top ? sheetH() + 24 : 30, left: 40, right: 40 }, maxZoom: 15 } });
+      if (top) fitter(map, pts, 124);
       addDot(ml, map, origin, "me", youLabel);
       draw();
     };
@@ -1825,7 +2185,7 @@
       start();
     }, { rootMargin: "300px 0px" });
     io.observe(el);
-    return { update(r) { res = r; if (map) draw(); } };
+    return { update(r) { res = r; if (map) draw(); }, select(id) { selId = id; if (map && res) draw(); } };
   }
 
   // browse. The map is just the map: every church, tap for its next Mass. The list is every church with its next
