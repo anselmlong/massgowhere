@@ -962,17 +962,10 @@
     if (w.start < dayEnd) return { label: clock(w.start), say: `${kind === "adoration" ? "opens" : "Confession"} ${clock(w.start)}`, line: range, order: w.start };
     return { label: "", line: `Next ${range}`, order: Infinity };
   }
-  // where labels would overlap, the later one keeps its pin but not its label; zooming in brings it back
+  // every label shows; where they overlap, the sooner Mass sits on top
   function declutter(map, pins) {
-    const kept = [], meets = (a, b) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
-    for (const x of pins.filter((x) => x.info && x.info.label).sort((a, b) => a.info.order - b.info.order)) {
-      const { x: px, y: py } = map.project([x.p.lng, x.p.lat]);
-      const w = 16 + x.info.label.length * 8, tag = [px - w / 2 - 2, py - 52, px + w / 2 + 2, py - 28], pin = [px - 10, py - 26, px + 10, py];
-      const hit = kept.some((k) => meets(tag, k) || meets(pin, k));
-      x.el.classList.toggle("quiet", hit);
-      x.el.style.zIndex = hit ? 1 : 2;
-      if (!hit) kept.push(tag, pin);
-    }
+    const order = pins.filter((x) => x.info && x.info.label).sort((a, b) => b.info.order - a.info.order);
+    order.forEach((x, i) => { x.el.style.zIndex = 2 + i; });
   }
   async function renderMapHome() {
     if (plan.at != null && plan.at <= Date.now()) plan.at = null;
@@ -1049,7 +1042,6 @@
       declutter(map, pins);
     };
     relabel();
-    map.on("moveend", () => declutter(map, pins));
     const loc = view.querySelector("#m-locate");
     loc.addEventListener("click", () => {
       if (!navigator.geolocation) return say("This browser can’t share your location.");

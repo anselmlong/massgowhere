@@ -943,7 +943,4 @@ html.map-first, html.map-first body { overflow: hidden; overscroll-behavior: non
 .church-pin.dim svg { width: 16px; height: 20px; }
 .church-pin .pin-time { bottom: 30px; padding: 0 5px; font-size: 11.5px; }
 .church-pin.dim .pin-time { bottom: 25px; }
-/* a pin whose label gave way to a neighbour's steps back too: smaller and grey */
-.full-map .church-pin.quiet:not(.mini) { --pin: #545a66; }
-.full-map .church-pin.quiet:not(.mini) svg { width: 15px; height: 19px; }
 .church-pin.mini svg { width: 10px; height: 13px; }
