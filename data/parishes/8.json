@@ -2,9 +2,9 @@
  "id": 8,
  "name": "Church of the Holy Trinity",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611201053_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=b5b815ec-ae01-4ea1-8a59-10ab3a7d9d5d"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611231523_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=36386c5d-80e8-4420-aef3-e0390d4bdb6a"
  ],
- "fetched_at": "2026-11-20T12:33+08:00",
+ "fetched_at": "2026-11-24T12:34+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -272,15 +272,6 @@
    "action": "add"
   },
   {
-   "type": "Mass",
-   "date": "2026-11-28",
-   "time": "19:30",
-   "language": "English",
-   "location": "",
-   "title": "Neocatechumenal Way Eucharist",
-   "action": "add"
-  },
-  {
    "type": "Devotion",
    "date": "2026-11-30",
    "time": "20:00",
@@ -314,72 +305,46 @@
  ],
  "notes": [],
  "info": {
-  "office_hours": "Monday - Friday 9am - 6pm; Saturday/Sunday 9am - 1pm; Public Holidays Closed",
   "good_to_know": [
-   "Infant Baptism for December 2026 registration is open until 30 November.",
-   "The Big Hero: 28th November 2026, 9.00am – 5.00pm, for ages 10 – 12.",
-   "L1 Catechism 2027 Registration: Starting from 1 December 2026. Catechists will be assisting with registration at the Foyer area on 13 December 2026, 17 and 24 January 2027."
+   "Church of the Holy Trinity is at 20 Tampines St 11, Singapore 529455. Tel: 67842332. Website: holytrinity.org.sg.",
+   "Wedding bookings must be made 1 year in advance; enquire at the Parish Office."
   ]
  },
  "events": [
   {
    "date": "2026-11-25",
-   "time": "10:00",
-   "title": "JOY Ministry, for the Elderly",
-   "text": "For the elderly."
-  },
-  {
-   "date": "2026-11-25",
    "time": "20:00",
    "title": "Faith Formation Session on the Liturgy",
-   "text": "By Father Kenson Koh. Venue to be determined."
+   "text": "By Father Kenson Koh. Interested in the Mass? Ever wondered what each part means? Join us and discover the highest prayer of the Church! Venue to be determined."
   },
   {
    "date": "2026-11-28",
    "time": "09:00",
    "title": "The Big Hero",
-   "text": "For ages 10 – 12. By Jesus Youth."
-  },
-  {
-   "date": "2026-12-13",
-   "time": "",
-   "title": "L1 Catechism 2027 Registration",
-   "text": "Catechists will be assisting with registration at the Foyer area."
+   "text": "For ages 10-12. Encounter Jesus in a great way! By Jesus Youth."
   },
   {
    "date": "2027-01-13",
    "time": "20:00",
    "title": "Faith Formation Session on the Liturgy",
-   "text": "By Father Kenson Koh. Venue to be determined."
-  },
-  {
-   "date": "2027-01-17",
-   "time": "",
-   "title": "L1 Catechism 2027 Registration",
-   "text": "Catechists will be assisting with registration at the Foyer area."
-  },
-  {
-   "date": "2027-01-24",
-   "time": "",
-   "title": "L1 Catechism 2027 Registration",
-   "text": "Catechists will be assisting with registration at the Foyer area."
+   "text": "By Father Kenson Koh. Interested in the Mass? Ever wondered what each part means? Join us and discover the highest prayer of the Church! Venue to be determined."
   },
   {
    "date": "2027-01-27",
    "time": "20:00",
    "title": "Faith Formation Session on the Liturgy",
-   "text": "By Father Kenson Koh. Venue to be determined."
+   "text": "By Father Kenson Koh. Interested in the Mass? Ever wondered what each part means? Join us and discover the highest prayer of the Church! Venue to be determined."
   },
   {
    "date": "2027-02-24",
    "time": "20:00",
    "title": "Faith Formation Session on the Liturgy",
-   "text": "By Father Kenson Koh. Venue to be determined."
+   "text": "By Father Kenson Koh. Interested in the Mass? Ever wondered what each part means? Join us and discover the highest prayer of the Church! Venue to be determined."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611201053_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=b5b815ec-ae01-4ea1-8a59-10ab3a7d9d5d",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611231523_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=36386c5d-80e8-4420-aef3-e0390d4bdb6a",
+  "date": "2026-11-23"
  },
  "disputes": [],
  "vs_mycatholic": {

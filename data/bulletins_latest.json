@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-23T12:31+08:00",
+ "fetchedAt": "2026-11-24T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -54,8 +54,8 @@
   "8": {
    "from": "myCatholicSG",
    "title": "Solemnity of Christ the King",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611201053_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=b5b815ec-ae01-4ea1-8a59-10ab3a7d9d5d",
+   "date": "2026-11-23",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611231523_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=36386c5d-80e8-4420-aef3-e0390d4bdb6a",
    "page": "https://mycatholic.sg/bulletin/holytrinity"
   },
   "9": {
