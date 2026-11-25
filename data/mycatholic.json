@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-24",
+"asOf": "2026-11-25",
 "rules": {
 "1": [
 {
@@ -8069,6 +8069,24 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "19:00",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "19:00",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "o",
 "date": "2026-11-29",
 "type": "Mass",
@@ -8229,6 +8247,42 @@
 "lang": "Tamil",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "23:30",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Adoration",
+"t": "23:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "With Benediction"
+},
+{
+"k": "a",
+"date": "2027-02-06",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Lunar New Year"
 }
 ],
 "11": [
@@ -8963,6 +9017,42 @@
 ],
 "19": [
 {
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-12-15",
 "type": "Confession",
@@ -8970,6 +9060,69 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "19:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Christmas Eve - Midnight Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:00",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Only one english Mass on 25 Dec"
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "19:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year · No 6:30pm Mass"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year · No 6:30pm Mass"
 }
 ],
 "20": [
