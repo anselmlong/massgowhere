@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-25",
+"asOf": "2026-11-26",
 "rules": {
 "1": [
 {
@@ -2099,16 +2099,6 @@
 "note": ""
 },
 {
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Confession",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Every Friday from 730pm to 830pm."
-},
-{
 "d": 1,
 "weeks": [],
 "except": [],
@@ -2117,16 +2107,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Adoration",
-"t": "19:30",
-"lang": "English",
-"loc": "Main Church",
-"note": "Exposition of the Blessed Sacrament from 7.30pm to 8.30pm. Concurrent with Confession."
 },
 {
 "d": 5,
@@ -2210,6 +2190,26 @@
 },
 {
 "d": 5,
+"weeks": [],
+"except": [],
+"type": "Adoration",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday (except 1st Fri of the month) after 6pm Mass"
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Confession",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday except 1st Fri of the month, after 6pm Mass"
+},
+{
+"d": 5,
 "weeks": [
 1
 ],
@@ -2218,7 +2218,7 @@
 "t": "18:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "Devotion straight after Mass. No Confession"
+"note": "Devotion straight after 6pm Mass. No Confession"
 }
 ],
 "17": [
@@ -2701,41 +2701,11 @@
 "note": ""
 },
 {
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 4,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "d": 2,
 "weeks": [],
 "except": [],
 "type": "Mass",
 "t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"d": 5,
-"weeks": [],
-"except": [],
-"type": "Mass",
-"t": "12:15",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -2816,6 +2786,36 @@
 "except": [],
 "type": "Mass",
 "t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 5,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"d": 4,
+"weeks": [],
+"except": [],
+"type": "Mass",
+"t": "18:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
@@ -7956,7 +7956,7 @@
 "t": "20:00",
 "lang": "English / Chinese",
 "loc": "Main Church",
-"note": "Service · Penitential Service at IHM"
+"note": "Service · Penitential Service @ 8pm"
 }
 ],
 "10": [
@@ -8283,6 +8283,42 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Lunar New Year"
+},
+{
+"k": "o",
+"date": "2027-02-10",
+"type": "Mass",
+"t": "12:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Ash Wednesday"
+},
+{
+"k": "a",
+"date": "2027-02-10",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Ash Wednesday"
+},
+{
+"k": "a",
+"date": "2027-02-10",
+"type": "Mass",
+"t": "19:30",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": "Ash Wednesday"
+},
+{
+"k": "r",
+"date": "2027-02-10",
+"type": "Mass",
+"t": "19:00",
+"lang": "Tamil",
+"loc": "Main Church",
+"note": ""
 }
 ],
 "11": [
@@ -8375,6 +8411,24 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Adoration",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday (except 1st Fri of the month) after 6pm Mass"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Confession",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday except 1st Fri of the month, after 6pm Mass"
 },
 {
 "k": "a",
@@ -8492,6 +8546,24 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "r",
+"date": "2027-02-05",
+"type": "Adoration",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday (except 1st Fri of the month) after 6pm Mass"
+},
+{
+"k": "r",
+"date": "2027-02-05",
+"type": "Confession",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Every Friday except 1st Fri of the month, after 6pm Mass"
 }
 ],
 "17": [
@@ -8849,6 +8921,107 @@
 "note": "Service · Prayer Service for Week of Christian Unity"
 }
 ],
+"13": [
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "08:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Day"
+},
+{
+"k": "a",
+"date": "2026-12-15",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Eve"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "16:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+}
+],
 "15": [
 {
 "k": "r",
@@ -8860,11 +9033,182 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-27",
+"type": "Mass",
+"t": "15:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-30",
 "type": "Mass",
 "t": "18:00",
 "lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-11",
+"type": "Confession",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-11",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-20",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Christmas Vigil Mass"
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "22:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Christmas Vigil Mass"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Christmas Mass - No Evening Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:15",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas · Christmas Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:45",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Christmas Mass - No Evening Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Christmas Mass - No Evening Mass"
+},
+{
+"k": "r",
+"date": "2026-12-27",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-27",
+"type": "Mass",
+"t": "16:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Change of Mass Timing to 4pm due to Christmas Fiesta"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "20:00",
+"lang": "Bahasa Indonesia",
 "loc": "Main Church",
 "note": ""
 }
@@ -9727,6 +10071,251 @@
 "note": ""
 }
 ],
+"26": [
+{
+"k": "a",
+"date": "2026-12-08",
+"type": "Adoration",
+"t": "11:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "Observing the Hour of Grace on Feast of the Immaculate Conception"
+},
+{
+"k": "r",
+"date": "2026-12-08",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-08",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Invitation to Celebrate Diaconate Ordination of Friar Marvin Voo, OFM"
+},
+{
+"k": "o",
+"date": "2026-12-11",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Mass followed by prayer and reflection as we build our Nativity Crib @ Piazza"
+},
+{
+"k": "a",
+"date": "2026-12-15",
+"type": "Mass",
+"t": "20:00",
+"lang": "Tagalog",
+"loc": "Main Church",
+"note": "Simbang Gabi Mass"
+},
+{
+"k": "a",
+"date": "2026-12-16",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas Crib Service followed by Children's mass at 6pm"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "20:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Cantare followed by mass at 9pm"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:00",
+"lang": "Tamil",
+"loc": "St Clare Hall",
+"note": "Christmas · Adoration followed by midnight mass"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Cantare followed by midnight mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:15",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Adoration",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "08:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Mary Mother of God"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Mary Mother of God"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Mary Mother of God"
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+}
+],
 "27": [
 {
 "k": "r",
@@ -10050,6 +10639,51 @@
 ],
 "29": [
 {
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Adoration",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "First Friday Devotion and Holy Hour"
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-12-16",
 "type": "Confession",
@@ -10057,6 +10691,60 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Midnight Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-11-25",
+"type": "Mass",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "08:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year"
 }
 ],
 "30": [
