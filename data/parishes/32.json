@@ -2,14 +2,34 @@
  "id": 32,
  "name": "Church of the Transfiguration",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611171455_22_Nov%202026.pdf?alt=media&token=dd3cfadb-8ffb-4cdb-aa9f-4c4922fc19b5"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611251114_29_Nov%202026.pdf?alt=media&token=2e9fd5dc-995f-4dcf-8f3a-8674a08c72f9"
  ],
- "fetched_at": "2026-11-18T12:32+08:00",
+ "fetched_at": "2026-11-26T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
+  {
+   "d": 0,
+   "t": "07:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "08:00",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
   {
    "d": 0,
    "t": "08:30",
@@ -22,10 +42,50 @@
   },
   {
    "d": 0,
+   "t": "10:20",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "10:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "11:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "16:20",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "16:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -52,6 +112,26 @@
   },
   {
    "d": 1,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -66,6 +146,16 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -87,7 +177,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Adoration Room",
+   "loc": "",
    "note": ""
   },
   {
@@ -96,6 +186,26 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -116,6 +226,16 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -137,7 +257,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "L3 Auditorium",
+   "loc": "",
    "note": ""
   },
   {
@@ -149,7 +269,7 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Church Hall",
+   "loc": "",
    "note": ""
   },
   {
@@ -164,24 +284,32 @@
   },
   {
    "d": 5,
-   "t": "18:30",
+   "t": "15:00",
    "weeks": [],
    "except": [],
-   "type": "Mass",
+   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
   },
   {
    "d": 5,
-   "t": "20:00",
-   "weeks": [
-    1
-   ],
+   "t": "17:50",
+   "weeks": [],
    "except": [],
-   "type": "Adoration",
+   "type": "Devotion",
    "lang": "English",
-   "loc": "Church Hall",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "18:30",
+   "weeks": [],
+   "except": [],
+   "type": "Mass",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -191,7 +319,19 @@
    "except": [],
    "type": "Devotion",
    "lang": "Chinese",
-   "loc": "L4 Room 4.2",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "",
    "note": ""
   },
   {
@@ -200,6 +340,26 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "15:20",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "15:30",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -222,14 +382,20 @@
  ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Weekday 7am–10pm; Weekend 7am–8pm; Public holiday 9am–5pm; closed on Mondays 9am–2pm for cleaning (1st Mondays 9am–4pm).",
-  "confession": "Confession at L2 Confessionals 30 minutes before all weekend Masses when a priest is available.",
-  "office_hours": "Weekday 9am–7pm (lunch 12pm–1pm); Saturday 9am–4pm (lunch 12pm–1pm); Sunday 9am–12pm."
+  "adoration": "Adoration Room: weekday 07:00–22:00; weekend 07:00–20:00; public holiday 09:00–17:00; closed on Mondays 09:00–14:00 for cleaning; on first Mondays closed 09:00–16:00.",
+  "confession": "Confession at L2 Confessionals, 30 minutes before all weekend Eucharistic Celebrations when a priest is available.",
+  "devotions": [
+   "Rosary after weekday morning Eucharistic Celebrations."
+  ],
+  "good_to_know": [
+   "Rosary is 40 minutes before weekend and weekday evening Eucharistic Celebrations.",
+   "Public holiday Mass is at 08:30."
+  ]
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611171455_22_Nov%202026.pdf?alt=media&token=dd3cfadb-8ffb-4cdb-aa9f-4c4922fc19b5",
-  "date": "2026-11-17"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611251114_29_Nov%202026.pdf?alt=media&token=2e9fd5dc-995f-4dcf-8f3a-8674a08c72f9",
+  "date": "2026-11-25"
  },
  "disputes": [],
  "vs_mycatholic": {

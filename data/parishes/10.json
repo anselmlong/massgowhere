@@ -2,9 +2,9 @@
  "id": 10,
  "name": "Church of Our Lady of Lourdes",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611211233_20261122_Our_Lord%20Jesus%20Christ%2C%20King%20of%20the%20Universe.pdf?alt=media&token=db2003cd-eb5b-48e8-a02a-d163f0118c95"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611241923_20261129_1st_Advent.pdf?alt=media&token=c1936b94-9691-4ccc-b6e5-e5f17bae2525"
  ],
- "fetched_at": "2026-11-21T21:02+08:00",
+ "fetched_at": "2026-11-26T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -257,21 +257,19 @@
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "public_holiday_masses": [
+  "09:00",
+  "10:00"
+ ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Daily 08:00 to 20:00.",
-  "confession": "Sacrament of Reconciliation is available 30 minutes before Mass.",
-  "devotions": [
-   "Monday to Friday 11:45: Rosary, except Tuesdays.",
-   "Tuesdays 11:45: Divine Mercy.",
-   "Saturday 17:30: Our Lady of Good Health, Vailankkani."
-  ]
+  "adoration": "The Adoration Room is open daily 8:00am to 8:00pm.",
+  "confession": "Confession is available 30 minutes before Masses on Sat, Sun, Tue, Wed and Fri."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611211233_20261122_Our_Lord%20Jesus%20Christ%2C%20King%20of%20the%20Universe.pdf?alt=media&token=db2003cd-eb5b-48e8-a02a-d163f0118c95",
-  "date": "2026-11-21"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F10%2Fpublic%2Fpdf%2F2611241923_20261129_1st_Advent.pdf?alt=media&token=c1936b94-9691-4ccc-b6e5-e5f17bae2525",
+  "date": "2026-11-25"
  },
  "disputes": [],
  "vs_mycatholic": {

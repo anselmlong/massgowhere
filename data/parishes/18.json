@@ -2,9 +2,9 @@
  "id": 18,
  "name": "St Anne's Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611201008_Nov_21%20%26%2022%202026.pdf?alt=media&token=73a147e7-e0a7-4403-8bb2-dac0919fa819"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611261038_Nov_28%20%26%2029%202026.pdf?alt=media&token=8f97e845-6b8e-463c-ad51-1889e64f8882"
  ],
- "fetched_at": "2026-11-20T12:32+08:00",
+ "fetched_at": "2026-11-26T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -50,7 +50,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Chinese",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -62,7 +62,7 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -72,7 +72,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -82,7 +82,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -92,7 +92,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -102,7 +102,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -112,7 +112,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -122,7 +122,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -132,7 +132,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -142,7 +142,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -152,7 +152,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -164,8 +164,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "St Anne's Church",
+   "note": "Holy Hour"
   },
   {
    "d": 5,
@@ -174,7 +174,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -184,7 +184,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -194,7 +194,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "St Anne's Church",
    "note": ""
   },
   {
@@ -204,38 +204,39 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "St Anne's Church",
+   "note": "Sunset Mass"
   }
  ],
- "dated": [],
+ "dated": [
+  {
+   "action": "add",
+   "date": "2026-12-17",
+   "language": "English",
+   "location": "St Anne's Church",
+   "time": "20:00",
+   "title": "Advent Penitential Service",
+   "type": "Confession"
+  }
+ ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "08:00"
  ],
  "notes": [
-  "No evening Mass on weekday public holidays."
+  "No evening Mass on public holidays."
  ],
  "info": {
-  "confession": "30 mins before English weekend Masses in Church.",
-  "devotions": [
-   "On the last Sunday of the month, prayers at the columbarium after the 11.30am Mass."
-  ],
+  "adoration": "Holy Hour: 1st Thursday of the month at 8.15pm in Church.",
+  "confession": "Confessions: 30 mins before English weekend Masses in Church.",
   "good_to_know": [
-   "Children Liturgy every Sunday at the 11.30am Mass."
+   "Church opening hours: Mon–Sat 6am–10pm; Sun 6am–6pm; Public Holidays on weekdays 7am–1pm."
   ]
  },
- "events": [
-  {
-   "date": "2026-12-04",
-   "time": "18:00",
-   "title": "COURAGE Singapore: An Advent Retreat – The Lord Is Near",
-   "text": "A weekend of prayer and reflection for those who are same-sex attracted or identify as LGBTQ. Registration closes on 23 November 2026. Register at tinyurl.com/courageadvent2026. Venue: St Francis Xavier Retreat Centre; 199 Ponggol Seventeenth Ave, Singapore 829645. Ends Sunday 6 December 2026 at 4pm"
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611201008_Nov_21%20%26%2022%202026.pdf?alt=media&token=73a147e7-e0a7-4403-8bb2-dac0919fa819",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F18%2Fpublic%2Fpdf%2F2611261038_Nov_28%20%26%2029%202026.pdf?alt=media&token=8f97e845-6b8e-463c-ad51-1889e64f8882",
+  "date": "2026-11-26"
  },
  "disputes": [],
  "vs_mycatholic": {
