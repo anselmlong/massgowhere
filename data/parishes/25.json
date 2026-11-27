@@ -2,14 +2,24 @@
  "id": 25,
  "name": "St Joseph's Church (Victoria Street)",
  "source_urls": [
-  "https://drive.google.com/file/d/12P5_knlr27rPSK9FdgB16LYCAlISCt5g/view?usp=drivesdk"
+  "https://drive.google.com/file/d/1upR8ruKLOJDHtB5jFORi4TiEoi-hgfHt/view?usp=sharing"
  ],
- "fetched_at": "2026-11-20T21:04+08:00",
+ "fetched_at": "2026-11-27T21:05+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
+  {
+   "d": 0,
+   "t": "09:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
   {
    "d": 0,
    "t": "10:00",
@@ -19,6 +29,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:45",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": "30 minutes before Spanish Mass"
   },
   {
    "d": 0,
@@ -32,10 +52,30 @@
   },
   {
    "d": 0,
+   "t": "16:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "17:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 1,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -52,6 +92,16 @@
   },
   {
    "d": 2,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 2,
    "t": "18:30",
    "weeks": [],
    "except": [],
@@ -62,10 +112,30 @@
   },
   {
    "d": 3,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 3,
    "t": "18:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 4,
+   "t": "17:45",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -88,17 +158,17 @@
    "type": "Adoration",
    "lang": "English",
    "loc": "",
-   "note": "Eucharistic Adoration"
+   "note": "Eucharistic Adoration and the Sacred Heart Devotion"
   },
   {
    "d": 5,
-   "t": "17:30",
+   "t": "17:45",
    "weeks": [],
    "except": [],
-   "type": "Devotion",
+   "type": "Confession",
    "lang": "English",
    "loc": "",
-   "note": "Sacred Heart Devotion"
+   "note": ""
   },
   {
    "d": 5,
@@ -106,6 +176,16 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
+   "lang": "English",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 6,
+   "t": "16:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -130,8 +210,8 @@
  "info": {},
  "events": [],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/12P5_knlr27rPSK9FdgB16LYCAlISCt5g/view?usp=drivesdk",
-  "date": "2026-11-22"
+  "url": "https://drive.google.com/file/d/1upR8ruKLOJDHtB5jFORi4TiEoi-hgfHt/view?usp=sharing",
+  "date": "2026-11-28"
  },
  "disputes": [],
  "vs_mycatholic": {

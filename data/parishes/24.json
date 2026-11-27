@@ -2,9 +2,9 @@
  "id": 24,
  "name": "St Joseph's Church (Bukit Timah)",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611201019_20261122_SJCBT%20Bulletin.pdf?alt=media&token=0708f9c3-1b0d-4c92-b059-1055c558c9eb"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611271231_20261129_SJCBT%20Bulletin%20v3.pdf?alt=media&token=67550214-2a6d-4d77-822d-f0f13b36fb3b"
  ],
- "fetched_at": "2026-11-20T12:34+08:00",
+ "fetched_at": "2026-11-27T21:05+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -12,12 +12,32 @@
  "rules": [
   {
    "d": 0,
+   "t": "07:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms in Church",
+   "note": ""
+  },
+  {
+   "d": 0,
    "t": "07:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "09:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms in Church",
    "note": ""
   },
   {
@@ -27,7 +47,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "11:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms in Church",
    "note": ""
   },
   {
@@ -37,7 +67,17 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church",
+   "loc": "",
+   "note": ""
+  },
+  {
+   "d": 0,
+   "t": "17:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms in Church",
    "note": ""
   },
   {
@@ -47,7 +87,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church",
+   "loc": "",
    "note": ""
   },
   {
@@ -210,32 +250,42 @@
   },
   {
    "d": 6,
+   "t": "17:15",
+   "weeks": [],
+   "except": [],
+   "type": "Confession",
+   "lang": "English",
+   "loc": "Reconciliation Rooms in Church",
+   "note": ""
+  },
+  {
+   "d": 6,
    "t": "17:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church",
+   "loc": "",
    "note": "Sunset Mass"
   }
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-11-22",
-   "time": "11:30",
+   "type": "Devotion",
+   "date": "2026-12-12",
+   "time": "13:30",
    "language": "English",
-   "location": "St Joseph's Church (Bukit Timah)",
-   "title": "Mass with Youth",
+   "location": "",
+   "title": "Pro-life Rosary",
    "action": "add"
   },
   {
-   "type": "Devotion",
-   "date": "2026-12-18",
-   "time": "19:45",
+   "type": "Mass",
+   "date": "2026-12-12",
+   "time": "14:00",
    "language": "English",
-   "location": "St Joseph's Church (Bukit Timah)",
-   "title": "Prayer thru Music",
+   "location": "",
+   "title": "Our Lady of Guadalupe Feast Day Mass",
    "action": "add"
   }
  ],
@@ -244,72 +294,49 @@
  "notes": [],
  "info": {
   "adoration": "Adoration Room: Mon-Fri 07:00-21:00; Sat 09:30-19:00; Sun 08:00-19:00; Public Holidays 08:00-16:00.",
-  "confession": "Confessions: 15 minutes before all weekend Masses in the Reconciliation Rooms in Church.",
+  "confession": "Confessions: 15 mins before all weekend Masses in the Reconciliation Rooms in Church.",
   "devotions": [
-   "Garden Rosary: First Saturday after the 17:30 Mass.",
-   "Grotto Rosary: Every 13th of the month after the 18:30 Mass (weekdays only).",
-   "Blessing of Expectant Mothers: Every Fourth Sunday of the month."
+   "Holy Hour: First Friday @ 8.00pm in Main Church (unless otherwise stated).",
+   "Mass in Honour of St Joseph: First Wednesday @ 8.00pm in Main Church.",
+   "Divine Mercy: Every Friday @ 8.00pm (except First Fri) in the Chapel of St Joseph.",
+   "Holy Hour for Vocations: Every Third Thursday of the month in the Chapel of St Joseph @ 8.00pm."
   ]
  },
  "events": [
   {
-   "date": "2026-11-25",
-   "time": "",
-   "title": "Creed on the Street",
-   "text": "Join Caritas Young Adults for a night of discussion (with pizza and ice-cream) as we pause to consider how we are using AI tools, their benefits, and their effects on our lives from the lens of faith. Sign up now at bit.ly/streetcreed. For enquiries, please email Caritas Singapore at formation.cst@c"
-  },
-  {
-   "date": "2026-11-27",
-   "time": "17:00",
-   "title": "2nd SCC General Meeting",
-   "text": "Calling all Parishioners to the 2nd SCC General Meeting. Come and meet up with Catholics in our neighbourhood over prayer and fellowship, on Friday, 27 November, 5pm before the debut session of our My Hands His Plans musical. Come together to pray the Divine Mercy prayer and enjoy each other’s compa"
-  },
-  {
-   "date": "2026-11-28",
-   "time": "",
-   "title": "Neighbourhood Prayer Walk",
-   "text": "Neighbourhood Prayer Walk on 28 Nov."
-  },
-  {
-   "date": "2026-11-28",
-   "time": "09:00",
-   "title": "Columbaria Visits",
-   "text": "As part of the Month of praying for the dead in November, the parish is organising visits to columbaria in other parishes on 14 & 28 November 2026, from 9am - 12.30pm. Transport via chartered bus is provided. Places are limited. For more information and to register, please go to: https://tinyurl.com"
-  },
-  {
-   "date": "2026-11-28",
-   "time": "10:00",
-   "title": "Seeds of Growth",
-   "text": "A-levels/IB students, let's wrap up the year together! Come and join us for a time of prayer, sharing, and fellowship over two dates! Sign up at tinyurl.com/OYPSOGNOV26. Venue: L8, Catholic Centre (55 Waterloo Street, S187954). It’s okay if you can’t make it for both sessions, just sign up for the o"
-  },
-  {
    "date": "2026-11-28",
    "time": "13:30",
    "title": "Conversations that Matter",
-   "text": "What if your teen questions their sexuality or expresses views on identity that seem at odds with your Catholic faith? Join Fr David Garcia, OP and Nicholas Gabriel Lim as they explore identity, attraction and morality, offering practical guidance on listening, responding and having meaningful conve"
+   "text": "What if your teen questions their sexuality or expresses views on identity that seem at odds with your Catholic faith? How can you guide them in the Church’s teachings without making them feel rejected? Join Fr David Garcia, OP and Nicholas Gabriel Lim as they explore identity, attraction and morali"
+  },
+  {
+   "date": "2026-12-01",
+   "time": "",
+   "title": "Advent Reflection Series",
+   "text": "Join the Faith and Bible Reflections Community (FAB) for weekly Advent Reflections based on the ONE Advent booklet. Sessions are every Tuesday night and Wednesday morning. The first sessions next week (1 Dec & 2 Dec) will be held face-to-face at St Joseph AVA Room. Come reflect on Scripture and prep"
   },
   {
    "date": "2026-12-04",
    "time": "",
    "title": "Courage : The Lord is Near",
-   "text": "A retreat from 4 – 6 Dec."
-  },
-  {
-   "date": "2026-12-04",
-   "time": "14:00",
-   "title": "Seeds of Growth",
-   "text": "A-levels/IB students, let's wrap up the year together! Come and join us for a time of prayer, sharing, and fellowship over two dates! Sign up at tinyurl.com/OYPSOGNOV26. Venue: L8, Catholic Centre (55 Waterloo Street, S187954). It’s okay if you can’t make it for both sessions, just sign up for the o"
+   "text": "4 – 6 Dec"
   },
   {
    "date": "2026-12-05",
    "time": "",
    "title": "OYP NS Community Outreach",
-   "text": "The NS community (CAYA: Come As You Are) warmly invites all National Servicemen (NSFs) to a morning of fellowship, worship and prayer. Come and connect with fellow brothers, build meaningful friendships, and grow together in faith. Register at tinyurl.com/CAYADECOUTREACH. For enquiries: Please conta"
+   "text": "The NS community (CAYA: Come As You Are) warmly invites all National Servicemen (NSFs) to a morning of fellowship, worship and prayer. Come and connect with fellow brothers, build meaningful friendships, and grow together in faith. Whether you are seeking a deeper relationship with God, hoping to fi"
+  },
+  {
+   "date": "2026-12-18",
+   "time": "19:45",
+   "title": "Prayer thru Music",
+   "text": ""
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611201019_20261122_SJCBT%20Bulletin.pdf?alt=media&token=0708f9c3-1b0d-4c92-b059-1055c558c9eb",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611271231_20261129_SJCBT%20Bulletin%20v3.pdf?alt=media&token=67550214-2a6d-4d77-822d-f0f13b36fb3b",
+  "date": "2026-11-27"
  },
  "disputes": [],
  "vs_mycatholic": {

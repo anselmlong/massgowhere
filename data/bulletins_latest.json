@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-27T12:31+08:00",
+ "fetchedAt": "2026-11-27T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -11,16 +11,16 @@
   },
   "2": {
    "from": "myCatholicSG",
-   "title": "22 November 2026",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611201642_Bulletin_20261122.pdf?alt=media&token=aa265d64-3caf-48e5-9f6d-d8812bb0827b",
+   "title": "29 November 2026",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F2%2Fpublic%2Fpdf%2F2611271728_Bulletin_20261129.pdf?alt=media&token=7ac09799-48af-4ea4-945c-4a5194bcafff",
    "page": "https://mycatholic.sg/bulletin/cathedral"
   },
   "3": {
    "from": "myCatholicSG",
-   "title": "CTK LEAVEN 22 NOVEMBER 2026",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611201603_CTK_LEAVEN%20%2022%20Nov%20Final.pdf?alt=media&token=684b82d8-d757-4e59-9079-d9849d02812a",
+   "title": "CTK LEAVEN 29 NOVEMBER 2026",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611271553_CTK_LEAVEN%20%2029%20Nov%20Final.pdf?alt=media&token=e573e3c3-ef95-4344-a90e-6cd2ae860575",
    "page": "https://mycatholic.sg/bulletin/christtheking"
   },
   "4": {
@@ -53,16 +53,16 @@
   },
   "8": {
    "from": "myCatholicSG",
-   "title": "Solemnity of Christ the King",
-   "date": "2026-11-23",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611231523_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=36386c5d-80e8-4420-aef3-e0390d4bdb6a",
+   "title": "1st Sunday of Advent",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611271305_29.11.26_1st%20Sunday%20of%20Advent%20B%20A5.pdf?alt=media&token=6e056d1e-dc7d-4481-a273-b7ba6885153d",
    "page": "https://mycatholic.sg/bulletin/holytrinity"
   },
   "9": {
    "from": "myCatholicSG",
-   "title": "47. Christ the King - 22 Nov 2026",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611201539_Christ_the%20King%2022Nov26.pdf?alt=media&token=2f243c3d-787e-4518-8eb8-4b0bac0e23ab",
+   "title": "48. 1st Sunday of Advent - 29 Nov 2026",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611271909_48_1st%20Sun%20in%20Advent%2029Nov26.pdf?alt=media&token=ade34697-661e-4fc0-821e-2e159e4a7ff5",
    "page": "https://mycatholic.sg/bulletin/immaculateheartofmary"
   },
   "10": {
@@ -74,9 +74,9 @@
   },
   "11": {
    "from": "myCatholicSG",
-   "title": "15 & 22 Nov 2026",
-   "date": "2026-11-13",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F11%2Fpublic%2Fpdf%2F2611131148_Bulletin_15%20%26%2022%20Nov%202026.pdf?alt=media&token=c3c3f661-3efe-4c95-88ef-5f17e5afa930",
+   "title": "29 Nov & 6 Dec 2026",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F11%2Fpublic%2Fpdf%2F2611271716_Bulletin_29%20Nov%20%26%206%20Dec%202026.pdf?alt=media&token=434b14bf-e864-42d9-bcf5-3365d05fedf1",
    "page": "https://mycatholic.sg/bulletin/nativityofblessedvirgin"
   },
   "12": {
@@ -88,9 +88,9 @@
   },
   "13": {
    "from": "myCatholicSG",
-   "title": "Bulletin : Christ The King",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611201451_2026_11%2022%20-%20Christ%20The%20King.pdf?alt=media&token=0144dbff-e5ee-4635-8e8c-f856c2a7b8f5",
+   "title": "Bulletin: 1st Sunday of Advent Year B",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F13%2Fpublic%2Fpdf%2F2611271534_2026_11%2029%20-%201st%20Sunday%20of%20Advent.pdf?alt=media&token=80431bd7-c78b-42ba-b5d8-0ee243e84649",
    "page": "https://mycatholic.sg/bulletin/queenofpeace"
   },
   "14": {
@@ -103,14 +103,14 @@
   "15": {
    "from": "website",
    "title": "",
-   "date": "2026-11-22",
-   "url": "https://drive.google.com/file/d/10dunEyAstpJior0n1Efwg1B46UX4aikV/view",
+   "date": "2026-11-29",
+   "url": "https://drive.google.com/file/d/1hcFNAfVyfC2Q-KWH4rbBPZp17OWAw905/view",
    "page": "https://www.risenchrist.org.sg/bulletin"
   },
   "16": {
    "from": "website",
    "title": "",
-   "date": "2026-11-28",
+   "date": "2026-12-05",
    "url": "https://drive.google.com/file/d/10s-AiiOUOwCGxlq-ZTLe6dpVPham2iSE/view?usp=drive_link",
    "page": "https://www.churchofthesacredheart.sg/bulletin"
   },
@@ -144,16 +144,16 @@
   },
   "21": {
    "from": "myCatholicSG",
-   "title": "22 Nov 2026 - Yr A Jesus Christ, King of the Universe (Chinese)",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611201635_22_Nov%202026%20-%20Yr%20A%20Jesus%20Christ%2C%20King%20of%20the%20Universe%20Chinese.pdf?alt=media&token=3e322a3f-ad15-4145-bae3-6107ade13d79",
+   "title": "29 Nov 2026 - Yr B 1st Sunday of Advent",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611271642_Nov_29%202026%20-%201st%20Sunday%20of%20Advent%20(Year%20B).pdf?alt=media&token=ed2f9003-f1fe-401f-b97e-57db7478ed4d",
    "page": "https://mycatholic.sg/bulletin/stfrancisassisi"
   },
   "22": {
    "from": "myCatholicSG",
-   "title": "SFXBulletin_2026_11_22",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2611201558_Bulletin_2026_11_22.pdf?alt=media&token=f4234edf-893d-4ebd-8f90-285dd718ac11",
+   "title": "SFXBulletin_2026_11_29",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F22%2Fpublic%2Fpdf%2F2611271537_Bulletin_2026_11_29.pdf?alt=media&token=12f5ae24-4859-42a8-a291-fbf1c8dcd99d",
    "page": "https://mycatholic.sg/bulletin/stfrancisxavier"
   },
   "23": {
@@ -166,16 +166,16 @@
   },
   "24": {
    "from": "myCatholicSG",
-   "title": "22 November 2026 : Christ the King",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611201019_20261122_SJCBT%20Bulletin.pdf?alt=media&token=0708f9c3-1b0d-4c92-b059-1055c558c9eb",
+   "title": "29 November 2026 : First Sunday of Advent",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F24%2Fpublic%2Fpdf%2F2611271231_20261129_SJCBT%20Bulletin%20v3.pdf?alt=media&token=67550214-2a6d-4d77-822d-f0f13b36fb3b",
    "page": "https://mycatholic.sg/bulletin/stjosephbukittimah"
   },
   "25": {
    "from": "website",
    "title": "",
-   "date": "2026-11-22",
-   "url": "https://drive.google.com/file/d/12P5_knlr27rPSK9FdgB16LYCAlISCt5g/view?usp=drivesdk",
+   "date": "2026-11-28",
+   "url": "https://drive.google.com/file/d/1upR8ruKLOJDHtB5jFORi4TiEoi-hgfHt/view?usp=sharing",
    "page": "https://sjcvs.org.sg/"
   },
   "26": {
@@ -196,8 +196,8 @@
   "28": {
    "from": "myCatholicSG",
    "title": "St Stephen Bulletin",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611200924_St_StephenBulletin_22112026.pdf?alt=media&token=4f3c4a41-099f-4236-a197-09776cb29b73",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F28%2Fpublic%2Fpdf%2F2611271250_St_StephenBulletin_29112026.pdf?alt=media&token=03f2ccf5-ec1a-41a6-99ed-559a21bcee97",
    "page": "https://mycatholic.sg/bulletin/ststephen"
   },
   "29": {
@@ -224,8 +224,8 @@
   "32": {
    "from": "myCatholicSG",
    "title": "1st Advent Sunday - 29th Nov 2026",
-   "date": "2026-11-25",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611251114_29_Nov%202026.pdf?alt=media&token=2e9fd5dc-995f-4dcf-8f3a-8674a08c72f9",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611271633_29_Nov%202026.pdf?alt=media&token=9775096e-ff75-4bd2-9627-b26717549a45",
    "page": "https://mycatholic.sg/bulletin/transfiguration"
   }
  }

@@ -2,9 +2,9 @@
  "id": 15,
  "name": "Church of the Risen Christ",
  "source_urls": [
-  "https://drive.google.com/file/d/10dunEyAstpJior0n1Efwg1B46UX4aikV/view"
+  "https://drive.google.com/file/d/1hcFNAfVyfC2Q-KWH4rbBPZp17OWAw905/view"
  ],
- "fetched_at": "2026-11-21T12:31+08:00",
+ "fetched_at": "2026-11-27T21:03+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -26,9 +26,9 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
+   "lang": "Mandarin",
    "loc": "",
-   "note": "(M)"
+   "note": ""
   },
   {
    "d": 0,
@@ -60,7 +60,7 @@
    "type": "Mass",
    "lang": "Tagalog",
    "loc": "",
-   "note": "Monthly Mass"
+   "note": "4th Sunday"
   },
   {
    "d": 0,
@@ -82,7 +82,7 @@
    "type": "Mass",
    "lang": "Tamil",
    "loc": "",
-   "note": "Monthly Mass"
+   "note": "2nd Sunday"
   },
   {
    "d": 1,
@@ -156,16 +156,6 @@
   },
   {
    "d": 4,
-   "t": "15:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "Parish Hall",
-   "note": "Divine Mercy Devotion"
-  },
-  {
-   "d": 4,
    "t": "18:00",
    "weeks": [],
    "except": [],
@@ -173,16 +163,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 4,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Other",
-   "lang": "English",
-   "loc": "Parish Hall",
-   "note": "Breaking of the Word: gospel reflection for the weekend liturgy"
   },
   {
    "d": 5,
@@ -193,6 +173,16 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "15:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Parish Hall",
+   "note": "Divine Mercy Devotion"
   },
   {
    "d": 5,
@@ -214,7 +204,7 @@
    "type": "Mass",
    "lang": "Indonesian",
    "loc": "",
-   "note": "Monthly Mass"
+   "note": "1st Friday"
   },
   {
    "d": 6,
@@ -243,7 +233,7 @@
    "date": "2026-12-11",
    "time": "10:30",
    "language": "English",
-   "location": "Church of the Risen Christ",
+   "location": "Risen Christ",
    "title": "Advent Penitential Service",
    "action": "add"
   },
@@ -252,7 +242,7 @@
    "date": "2026-12-11",
    "time": "20:00",
    "language": "English",
-   "location": "Church of the Risen Christ",
+   "location": "Risen Christ",
    "title": "Advent Penitential Service",
    "action": "add"
   }
@@ -263,51 +253,54 @@
   "17:30"
  ],
  "notes": [
-  "Advent Penitential Services are also held at other parishes from 8 to 15 December."
+  "Weekday Mass times differ on public holidays."
  ],
  "info": {
   "devotions": [
-   "Divine Mercy Devotion: Thursdays 3pm in the Parish Hall"
-  ],
-  "good_to_know": [
-   "The church is at 91 Toa Payoh Central, Singapore 319193."
+   "Divine Mercy Devotion: Fridays 3pm in the Parish Hall"
   ]
  },
  "events": [
   {
-   "date": "2026-11-28",
-   "time": "10:00",
-   "title": "Seeds of Growth (Session 1)",
-   "text": "A two-session series for A-Level and IB students, at Level 8, Catholic Centre (55 Waterloo Street). Sign up at tinyurl.com/OYPSOGNOV26."
+   "date": "2026-12-03",
+   "time": "20:00",
+   "title": "Breaking of the Word for Advent",
+   "text": "Parish Hall. All are welcome; join us to prepare our hearts for our Lord's Nativity."
   },
   {
-   "date": "2026-12-04",
-   "time": "14:00",
-   "title": "Seeds of Growth (Session 2)",
-   "text": "Second session of the series for A-Level and IB students, at Level 8, Catholic Centre (55 Waterloo Street). Sign up at tinyurl.com/OYPSOGNOV26."
+   "date": "2026-12-06",
+   "time": "",
+   "title": "Advent/Christmas Project",
+   "text": "Runs from 6 Dec 2026 to 3 Jan 2027. Pray for someone who has left the faith or stopped going to Mass, write their name on a prayer card and hang the top portion on the Christmas tree at the right side of the Sanctuary, then invite them to Christmas Mass and the Christmas Fiesta on 27 Dec."
   },
   {
-   "date": "2026-12-05",
-   "time": "10:30",
-   "title": "Come as You Are",
-   "text": "NSF community outreach for NSF and pre-enlistees, at Level 8, Catholic Centre (55 Waterloo Street). Sign up at tinyurl.com/CAYADECOUTREACH."
+   "date": "2026-12-10",
+   "time": "20:00",
+   "title": "Breaking of the Word for Advent",
+   "text": "Parish Hall. All are welcome; join us to prepare our hearts for our Lord's Nativity."
+  },
+  {
+   "date": "2026-12-17",
+   "time": "20:00",
+   "title": "Breaking of the Word for Advent",
+   "text": "Parish Hall. All are welcome; join us to prepare our hearts for our Lord's Nativity."
   },
   {
    "date": "2026-12-27",
    "time": "",
-   "title": "Christmas Fiesta",
-   "text": "Parish Christmas celebration; parishioners are invited to bring along someone who has drifted from the faith."
+   "title": "Christmas Fiesta 2026",
+   "text": "Volunteers are needed to decorate, host games, welcome guests and serve food. Sign up at tinyurl.com/CFVOL2026."
   },
   {
    "date": "2027-01-05",
    "time": "",
    "title": "Keryma 27: Discipleship School for Young Adults",
-   "text": "For young adults aged 18-25: opening stay-in retreat 5-15 Jan 2027, five weeks of Christian Living on four full Saturdays (23 and 30 Jan, 13 and 20 Feb), closing retreat 25 Feb-1 Mar 2027. Sign up at bit.ly/keryma2027."
+   "text": "For young adults aged 18-25. Opening stay-in retreat 5-15 Jan 2027, five weeks of Christian Living on 23 and 30 Jan and 13 and 20 Feb, closing retreat 25 Feb - 1 Mar 2027. Sign up at bit.ly/keryma2027."
   }
  ],
  "bulletin": {
-  "url": "https://drive.google.com/file/d/10dunEyAstpJior0n1Efwg1B46UX4aikV/view",
-  "date": "2026-11-22"
+  "url": "https://drive.google.com/file/d/1hcFNAfVyfC2Q-KWH4rbBPZp17OWAw905/view",
+  "date": "2026-11-29"
  },
  "disputes": [],
  "vs_mycatholic": {

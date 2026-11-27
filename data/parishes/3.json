@@ -2,9 +2,9 @@
  "id": 3,
  "name": "Church of Christ the King",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611201603_CTK_LEAVEN%20%2022%20Nov%20Final.pdf?alt=media&token=684b82d8-d757-4e59-9079-d9849d02812a"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611271553_CTK_LEAVEN%20%2029%20Nov%20Final.pdf?alt=media&token=e573e3c3-ef95-4344-a90e-6cd2ae860575"
  ],
- "fetched_at": "2026-11-20T21:02+08:00",
+ "fetched_at": "2026-11-27T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -12,30 +12,10 @@
  "rules": [
   {
    "d": 0,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "07:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "08:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -52,30 +32,10 @@
   },
   {
    "d": 0,
-   "t": "09:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "10:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "11:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -92,32 +52,10 @@
   },
   {
    "d": 0,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
    "t": "17:00",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 0,
-   "t": "18:00",
-   "weeks": [
-    4
-   ],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -141,7 +79,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "via Zoom",
+   "loc": "Zoom",
    "note": "Nightly Rosary"
   },
   {
@@ -171,7 +109,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "via Zoom",
+   "loc": "Zoom",
    "note": "Nightly Rosary"
   },
   {
@@ -231,7 +169,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "via Zoom",
+   "loc": "Zoom",
    "note": "Nightly Rosary"
   },
   {
@@ -261,7 +199,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "via Zoom",
+   "loc": "Zoom",
    "note": "Nightly Rosary"
   },
   {
@@ -291,7 +229,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "via Zoom",
+   "loc": "Zoom",
    "note": "Nightly Rosary"
   },
   {
@@ -300,16 +238,6 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -331,55 +259,37 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "via Zoom",
+   "loc": "Zoom",
    "note": "Nightly Rosary"
   }
  ],
  "dated": [
   {
    "type": "Mass",
-   "date": "2026-11-22",
-   "time": "11:30",
+   "date": "2026-12-31",
+   "time": "18:00",
    "language": "English",
    "location": "",
-   "title": "Solemnity of Our Lord Jesus Christ, King of the Universe",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-29",
-   "time": "13:00",
-   "language": "English",
-   "location": "Room 107",
-   "title": "Devotion to St Peregrine",
-   "action": "add"
-  },
-  {
-   "type": "Confession",
-   "date": "2026-12-09",
-   "time": "10:30",
-   "language": "English",
-   "location": "Christ the King Church",
-   "title": "Advent Penitential Service",
-   "action": "add"
-  },
-  {
-   "type": "Confession",
-   "date": "2026-12-09",
-   "time": "20:00",
-   "language": "English",
-   "location": "Christ the King Church",
-   "title": "Advent Penitential Service",
-   "action": "add"
+   "title": "Vigil Mass for Solemnity of Mary, Mother of God",
+   "action": "cancel"
   },
   {
    "type": "Mass",
-   "date": "2026-12-06",
-   "time": "15:00",
+   "date": "2027-01-01",
+   "time": "07:30",
    "language": "English",
    "location": "",
-   "title": "Infant Baptism",
-   "action": "add"
+   "title": "Solemnity of Mary, Mother of God",
+   "action": "cancel"
+  },
+  {
+   "type": "Mass",
+   "date": "2027-01-01",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "No 6pm Mass",
+   "action": "cancel"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
@@ -389,35 +299,43 @@
  ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: Mon-Sun 7am to 9.30pm; public holidays 7am to 12 noon.",
-  "confession": "Confession available half an hour before all weekend Masses.",
+  "adoration": "The Adoration Room is open Mon-Sun 7am to 9.30pm; on public holidays 7am to 12 noon.",
+  "confession": "The Sacrament of Reconciliation is available half an hour before all weekend Masses.",
   "devotions": [
-   "Divine Mercy devotion every Tuesday at 8pm in the Main Church.",
-   "Nightly Rosary via Zoom at 8.30pm except Tuesdays. Zoom ID: 862 1111 7348, Passcode: nccctk."
+   "Sacred Heart Devotion is held every Friday after the 6pm evening Mass in the Main Church.",
+   "Nightly Rosary is via Zoom at 8.30pm except Tuesdays. Zoom ID: 862 1111 7348, Passcode: nccctk."
   ],
-  "office_hours": "Parish Office: Mon-Fri 9am to 6pm; Sat & Sun 9am to 1pm; public holidays closed.",
+  "office_hours": "Parish Office: Mon-Fri 9am to 6pm; Sat & Sun 9am to 1pm; Public Holidays closed.",
   "good_to_know": [
-   "Tamil Mass at 6.30pm at the Main Church on the 4th Sunday of the month.",
-   "Sacred Heart Devotion every Friday after 6pm evening Mass in the Main Church."
+   "Address: 2221 Ang Mo Kio Ave 8 S(569809).",
+   "Telephone: 6459 9958.",
+   "Email: christthekingchurch@catholic.org.sg.",
+   "Website: https://www.christtheking.com.sg"
   ]
  },
  "events": [
   {
-   "date": "2026-11-22",
-   "time": "",
-   "title": "Feast Day Celebration and community fellowship",
-   "text": "Feast Day Celebration and community fellowship on 22 November 2026."
+   "date": "2026-12-16",
+   "time": "19:30",
+   "title": "Cantata as part of Simbang Gabi",
+   "text": "Cantata as part of Simbang Gabi."
   },
   {
-   "date": "2026-12-01",
-   "time": "19:30",
-   "title": "Infant Baptism preparation session",
-   "text": "Preparation session for Infant Baptism on 1 December 2026 at 7.30pm. Parents and godparents must attend."
+   "date": "2026-12-24",
+   "time": "17:30",
+   "title": "Cantata before Christmas Vigil Mass",
+   "text": "Cantata before Christmas Vigil Mass."
+  },
+  {
+   "date": "2026-12-24",
+   "time": "22:30",
+   "title": "Cantata before Christmas Vigil Mass",
+   "text": "Cantata before Christmas Vigil Mass."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611201603_CTK_LEAVEN%20%2022%20Nov%20Final.pdf?alt=media&token=684b82d8-d757-4e59-9079-d9849d02812a",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F3%2Fpublic%2Fpdf%2F2611271553_CTK_LEAVEN%20%2029%20Nov%20Final.pdf?alt=media&token=e573e3c3-ef95-4344-a90e-6cd2ae860575",
+  "date": "2026-11-27"
  },
  "disputes": [],
  "vs_mycatholic": {

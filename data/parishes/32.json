@@ -2,9 +2,9 @@
  "id": 32,
  "name": "Church of the Transfiguration",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611251114_29_Nov%202026.pdf?alt=media&token=2e9fd5dc-995f-4dcf-8f3a-8674a08c72f9"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611271633_29_Nov%202026.pdf?alt=media&token=9775096e-ff75-4bd2-9627-b26717549a45"
  ],
- "fetched_at": "2026-11-26T12:33+08:00",
+ "fetched_at": "2026-11-27T21:08+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -27,8 +27,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "L2 Confessionals",
+   "note": "when priest is available"
   },
   {
    "d": 0,
@@ -57,8 +57,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "L2 Confessionals",
+   "note": "when priest is available"
   },
   {
    "d": 0,
@@ -87,8 +87,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "L2 Confessionals",
+   "note": "when priest is available"
   },
   {
    "d": 0,
@@ -117,8 +117,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "L3 Room 3.4",
+   "note": "St Thérèse Intercessory"
   },
   {
    "d": 1,
@@ -177,8 +177,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Adoration Room",
+   "note": "Intercessory"
   },
   {
    "d": 3,
@@ -197,8 +197,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "L3 Room 3.4",
+   "note": "St Thérèse Intercessory"
   },
   {
    "d": 3,
@@ -257,7 +257,7 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
+   "loc": "L3 Auditorium",
    "note": ""
   },
   {
@@ -269,8 +269,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Church Hall",
+   "note": "Eucharistic Healing Session; Holy Hour with Reparation"
   },
   {
    "d": 5,
@@ -289,8 +289,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "L3 Room 3.4",
+   "note": "St Thérèse Intercessory"
   },
   {
    "d": 5,
@@ -311,6 +311,18 @@
    "lang": "English",
    "loc": "",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "20:00",
+   "weeks": [
+    1
+   ],
+   "except": [],
+   "type": "Adoration",
+   "lang": "English",
+   "loc": "Church Hall",
+   "note": "Holy Hour with Reparation"
   },
   {
    "d": 5,
@@ -319,20 +331,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "Chinese",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "20:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "L4 Room 4.2",
+   "note": "Chinese Prayer Group"
   },
   {
    "d": 6,
@@ -361,8 +361,8 @@
    "except": [],
    "type": "Confession",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "L2 Confessionals",
+   "note": "when priest is available"
   },
   {
    "d": 6,
@@ -382,20 +382,14 @@
  ],
  "notes": [],
  "info": {
-  "adoration": "Adoration Room: weekday 07:00–22:00; weekend 07:00–20:00; public holiday 09:00–17:00; closed on Mondays 09:00–14:00 for cleaning; on first Mondays closed 09:00–16:00.",
-  "confession": "Confession at L2 Confessionals, 30 minutes before all weekend Eucharistic Celebrations when a priest is available.",
-  "devotions": [
-   "Rosary after weekday morning Eucharistic Celebrations."
-  ],
-  "good_to_know": [
-   "Rosary is 40 minutes before weekend and weekday evening Eucharistic Celebrations.",
-   "Public holiday Mass is at 08:30."
-  ]
+  "adoration": "Adoration Room: weekday 07:00–22:00, weekend 07:00–20:00, public holidays 09:00–17:00; closed Mondays 09:00–14:00 for cleaning (1st Mondays 09:00–16:00).",
+  "confession": "Confession at L2 Confessionals 30 minutes before all weekend Masses when a priest is available.",
+  "office_hours": "Weekday 09:00–19:00 (lunch 12:00–13:00); Saturday 09:00–16:00 (lunch 12:00–13:00); Sunday 09:00–12:00."
  },
  "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611251114_29_Nov%202026.pdf?alt=media&token=2e9fd5dc-995f-4dcf-8f3a-8674a08c72f9",
-  "date": "2026-11-25"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F32%2Fpublic%2Fpdf%2F2611271633_29_Nov%202026.pdf?alt=media&token=9775096e-ff75-4bd2-9627-b26717549a45",
+  "date": "2026-11-27"
  },
  "disputes": [],
  "vs_mycatholic": {

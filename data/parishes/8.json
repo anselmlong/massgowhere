@@ -2,9 +2,9 @@
  "id": 8,
  "name": "Church of the Holy Trinity",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611231523_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=36386c5d-80e8-4420-aef3-e0390d4bdb6a"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611271305_29.11.26_1st%20Sunday%20of%20Advent%20B%20A5.pdf?alt=media&token=6e056d1e-dc7d-4481-a273-b7ba6885153d"
  ],
- "fetched_at": "2026-11-24T12:34+08:00",
+ "fetched_at": "2026-11-27T21:04+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -261,90 +261,71 @@
    "note": ""
   }
  ],
- "dated": [
-  {
-   "type": "Devotion",
-   "date": "2026-11-27",
-   "time": "19:15",
-   "language": "English",
-   "location": "",
-   "title": "Divine Mercy Devotion",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-30",
-   "time": "20:00",
-   "language": "English",
-   "location": "Holy Trinity Chapel, Level 1",
-   "title": "Hour of Prayer",
-   "action": "add"
-  },
-  {
-   "type": "Confession",
-   "date": "2026-12-09",
-   "time": "10:30",
-   "language": "English",
-   "location": "3rd floor, Main Church",
-   "title": "Advent Penitential Service",
-   "action": "add"
-  },
-  {
-   "type": "Confession",
-   "date": "2026-12-09",
-   "time": "20:00",
-   "language": "English",
-   "location": "3rd floor, Main Church",
-   "title": "Advent Penitential Service",
-   "action": "add"
-  }
- ],
- "no_weekday_mass_on_public_holidays": false,
+ "dated": [],
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "09:00"
  ],
  "notes": [],
  "info": {
+  "office_hours": "Monday - Friday 9am - 6pm; Saturday/Sunday 9am - 1pm; Public Holidays Closed",
   "good_to_know": [
-   "Church of the Holy Trinity is at 20 Tampines St 11, Singapore 529455. Tel: 67842332. Website: holytrinity.org.sg.",
-   "Wedding bookings must be made 1 year in advance; enquire at the Parish Office."
+   "Wedding bookings to be made 1 year in advance. Please enquire at the Parish Office."
   ]
  },
  "events": [
   {
-   "date": "2026-11-25",
-   "time": "20:00",
-   "title": "Faith Formation Session on the Liturgy",
-   "text": "By Father Kenson Koh. Interested in the Mass? Ever wondered what each part means? Join us and discover the highest prayer of the Church! Venue to be determined."
+   "date": "2026-11-30",
+   "time": "19:45",
+   "title": "RCIA Mandarin",
+   "text": "19:45"
   },
   {
-   "date": "2026-11-28",
+   "date": "2026-12-02",
+   "time": "10:00",
+   "title": "JOY Ministry, for the Elderly",
+   "text": "10:00"
+  },
+  {
+   "date": "2026-12-03",
+   "time": "19:45",
+   "title": "RCIA",
+   "text": "19:45"
+  },
+  {
+   "date": "2026-12-04",
+   "time": "09:30",
+   "title": "Catholic Praying Mothers",
+   "text": "09:30"
+  },
+  {
+   "date": "2026-12-05",
    "time": "09:00",
-   "title": "The Big Hero",
-   "text": "For ages 10-12. Encounter Jesus in a great way! By Jesus Youth."
+   "title": "Society of St Vincent de Paul – Rations Day",
+   "text": "09:00"
   },
   {
    "date": "2027-01-13",
    "time": "20:00",
    "title": "Faith Formation Session on the Liturgy",
-   "text": "By Father Kenson Koh. Interested in the Mass? Ever wondered what each part means? Join us and discover the highest prayer of the Church! Venue to be determined."
+   "text": "20:00"
   },
   {
    "date": "2027-01-27",
    "time": "20:00",
    "title": "Faith Formation Session on the Liturgy",
-   "text": "By Father Kenson Koh. Interested in the Mass? Ever wondered what each part means? Join us and discover the highest prayer of the Church! Venue to be determined."
+   "text": "20:00"
   },
   {
    "date": "2027-02-24",
    "time": "20:00",
    "title": "Faith Formation Session on the Liturgy",
-   "text": "By Father Kenson Koh. Interested in the Mass? Ever wondered what each part means? Join us and discover the highest prayer of the Church! Venue to be determined."
+   "text": "20:00"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611231523_22.11.26_Solemnity%20of%20Christ%20the%20King%20A%20A5%20-%20Copy.pdf?alt=media&token=36386c5d-80e8-4420-aef3-e0390d4bdb6a",
-  "date": "2026-11-23"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F8%2Fpublic%2Fpdf%2F2611271305_29.11.26_1st%20Sunday%20of%20Advent%20B%20A5.pdf?alt=media&token=6e056d1e-dc7d-4481-a273-b7ba6885153d",
+  "date": "2026-11-27"
  },
  "disputes": [],
  "vs_mycatholic": {

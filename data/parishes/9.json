@@ -2,9 +2,9 @@
  "id": 9,
  "name": "Church of the Immaculate Heart of Mary",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611201539_Christ_the%20King%2022Nov26.pdf?alt=media&token=2f243c3d-787e-4518-8eb8-4b0bac0e23ab"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611271909_48_1st%20Sun%20in%20Advent%2029Nov26.pdf?alt=media&token=ade34697-661e-4fc0-821e-2e159e4a7ff5"
  ],
- "fetched_at": "2026-11-20T21:02+08:00",
+ "fetched_at": "2026-11-27T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -51,7 +51,7 @@
    "type": "Mass",
    "lang": "Myanmar",
    "loc": "",
-   "note": "Myanmar Mass"
+   "note": "2nd & 4th Sunday only"
   },
   {
    "d": 0,
@@ -171,7 +171,7 @@
    "type": "Mass",
    "lang": "English",
    "loc": "",
-   "note": "followed by Novena Devotion"
+   "note": "Novena Devotion after Mass"
   },
   {
    "d": 6,
@@ -197,26 +197,44 @@
  "dated": [],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
- "notes": [],
+ "notes": [
+  "No weekday Mass on public holidays"
+ ],
  "info": {
-  "confession": "Walk-in confession at the priest's office.",
-  "office_hours": "9.30am to 5.30pm; 9.00am to 11.00am; 9.00am to 12.00pm; closed on public holidays.",
-  "good_to_know": [
-   "Church of the Immaculate Heart of Mary, 24 Highland Road, Singapore 549115.",
-   "Parish office: 6288 9140; info@ihm.sg."
-  ]
+  "devotions": [
+   "Novena Devotion after Saturday 07:00 Mass"
+  ],
+  "office_hours": "Monday to Friday: 9.30 am to 5.30 pm; Saturday: 9.00 am to 11.00 am; Sunday: 9.00 am to 12.00 pm (except on public holidays); closed on public holidays"
  },
  "events": [
+  {
+   "date": "2026-11-29",
+   "time": "",
+   "title": "Love Offering",
+   "text": "Sunday 29 Nov : Love Offering"
+  },
+  {
+   "date": "2026-12-06",
+   "time": "",
+   "title": "Love Offering",
+   "text": "Sunday 06 Dec : Love Offering"
+  },
   {
    "date": "2026-12-26",
    "time": "",
    "title": "Infant Baptism Briefing",
-   "text": "Briefing for parents ahead of the Infant Baptism day on 02 Jan 2027. Contact the parish office for details."
+   "text": "Briefing Date: 26 Dec 2026"
+  },
+  {
+   "date": "2027-01-02",
+   "time": "",
+   "title": "Infant Baptism Day",
+   "text": "Baptism Day: 02 Jan 2027"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611201539_Christ_the%20King%2022Nov26.pdf?alt=media&token=2f243c3d-787e-4518-8eb8-4b0bac0e23ab",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F9%2Fpublic%2Fpdf%2F2611271909_48_1st%20Sun%20in%20Advent%2029Nov26.pdf?alt=media&token=ade34697-661e-4fc0-821e-2e159e4a7ff5",
+  "date": "2026-11-27"
  },
  "disputes": [],
  "vs_mycatholic": {
