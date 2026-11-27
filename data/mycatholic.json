@@ -1,5 +1,5 @@
 {
-"asOf": "2026-11-26",
+"asOf": "2026-11-27",
 "rules": {
 "1": [
 {
@@ -6736,6 +6736,51 @@
 ],
 "3": [
 {
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-12-09",
 "type": "Confession",
@@ -6752,6 +6797,78 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Vigil Mass"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Vigil Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Nativity of the Lord"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:30",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas · Nativity of the Lord"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Nativity of the Lord"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Nativity of the Lord"
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Solemnity of Mary, Mother of God - Vigil Mass"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Solemnity of Mary, Mother of God"
 }
 ],
 "5": [
@@ -7951,7 +8068,7 @@
 },
 {
 "k": "a",
-"date": "2026-12-17",
+"date": "2026-12-15",
 "type": "Other",
 "t": "20:00",
 "lang": "English / Chinese",
@@ -9042,6 +9159,69 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-27",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "20:00",
+"lang": "Bahasa Indonesia",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2026-11-30",
 "type": "Mass",
@@ -9087,15 +9267,6 @@
 "note": "Christmas · Christmas Vigil Mass"
 },
 {
-"k": "r",
-"date": "2026-12-24",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "a",
 "date": "2026-12-24",
 "type": "Mass",
@@ -9103,24 +9274,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas · Christmas Vigil Mass"
-},
-{
-"k": "r",
-"date": "2026-12-25",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2026-12-25",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
 },
 {
 "k": "a",
@@ -9159,15 +9312,6 @@
 "note": "Christmas · Christmas Mass - No Evening Mass"
 },
 {
-"k": "r",
-"date": "2026-12-27",
-"type": "Mass",
-"t": "17:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "a",
 "date": "2026-12-27",
 "type": "Mass",
@@ -9177,40 +9321,13 @@
 "note": "Change of Mass Timing to 4pm due to Christmas Fiesta"
 },
 {
-"k": "r",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "06:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
 "k": "a",
 "date": "2027-01-01",
 "type": "Mass",
-"t": "07:00",
+"t": "07:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "New Year"
-},
-{
-"k": "r",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "18:00",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
-"date": "2027-01-01",
-"type": "Mass",
-"t": "20:00",
-"lang": "Bahasa Indonesia",
-"loc": "Main Church",
-"note": ""
+"note": "New Year · Public Holiday"
 }
 ],
 "16": [
@@ -9457,7 +9574,7 @@
 "t": "19:30",
 "lang": "English",
 "loc": "Main Church",
-"note": "New Year · No 6:30pm Mass"
+"note": "New Year · Thanksgiving Mass (No 6:30pm Mass)"
 },
 {
 "k": "a",
@@ -9899,15 +10016,6 @@
 },
 {
 "k": "r",
-"date": "2026-11-25",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-26",
 "type": "Mass",
 "t": "18:30",
@@ -9932,15 +10040,6 @@
 "lang": "English",
 "loc": "Main Church",
 "note": ""
-},
-{
-"k": "a",
-"date": "2026-11-25",
-"type": "Mass",
-"t": "20:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Triduum Mass by Fr Marcus Chew. NO 6.30pm Mass."
 },
 {
 "k": "a",
@@ -10561,6 +10660,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Milestone Wedding Anniversary"
+},
+{
+"k": "a",
+"date": "2026-12-10",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Combine with SJC & OLOL @ SJC (VictoriaStreet)"
 }
 ],
 "28": [
@@ -10706,15 +10814,6 @@
 "date": "2026-12-25",
 "type": "Mass",
 "t": "10:00",
-"lang": "English",
-"loc": "Main Church",
-"note": "Christmas"
-},
-{
-"k": "a",
-"date": "2026-11-25",
-"type": "Mass",
-"t": "12:00",
 "lang": "English",
 "loc": "Main Church",
 "note": "Christmas"
