@@ -2,24 +2,14 @@
  "id": 7,
  "name": "Church of the Holy Spirit",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611201336_CHS_Bulletin%2021%20-%2022%20November%202026.pdf?alt=media&token=274fcdfe-3df1-455f-b990-b64aa680c0d9"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611270930_CHS_Interactive%20Bulletin%2020261129.pdf?alt=media&token=082eca55-e8e9-4455-b006-1069a97c5262"
  ],
- "fetched_at": "2026-11-20T21:01+08:00",
+ "fetched_at": "2026-11-27T12:31+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
  ],
  "rules": [
-  {
-   "d": 0,
-   "t": "06:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "before the 7am Mass; ends when Mass begins"
-  },
   {
    "d": 0,
    "t": "07:00",
@@ -29,16 +19,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "09:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "before the 9.30am Mass; ends when Mass begins"
   },
   {
    "d": 0,
@@ -52,16 +32,6 @@
   },
   {
    "d": 0,
-   "t": "11:00",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "before the 11.30am Mass; ends when Mass begins"
-  },
-  {
-   "d": 0,
    "t": "11:30",
    "weeks": [],
    "except": [],
@@ -69,16 +39,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 0,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "before the 5pm Mass; ends when Mass begins"
   },
   {
    "d": 0,
@@ -199,16 +159,6 @@
    "lang": "English",
    "loc": "",
    "note": ""
-  },
-  {
-   "d": 6,
-   "t": "16:30",
-   "weeks": [],
-   "except": [],
-   "type": "Confession",
-   "lang": "English",
-   "loc": "",
-   "note": "30 minutes before Sunset Mass; ends when Mass begins"
   },
   {
    "d": 6,
@@ -223,12 +173,21 @@
  ],
  "dated": [
   {
+   "type": "Adoration",
+   "date": "2026-12-04",
+   "time": "19:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Holy Hour",
+   "action": "add"
+  },
+  {
    "type": "Confession",
    "date": "2026-12-08",
    "time": "10:30",
    "language": "English",
-   "location": "Church of the Holy Spirit",
-   "title": "Advent Penitential Service (North District)",
+   "location": "",
+   "title": "Advent Penitential Service (North District, at Holy Spirit)",
    "action": "add"
   },
   {
@@ -236,17 +195,17 @@
    "date": "2026-12-08",
    "time": "20:00",
    "language": "English",
-   "location": "Church of the Holy Spirit",
-   "title": "Advent Penitential Service (North District)",
+   "location": "",
+   "title": "Advent Penitential Service (North District, at Holy Spirit)",
    "action": "add"
   },
   {
-   "type": "Mass",
+   "type": "Other",
    "date": "2026-12-24",
    "time": "16:30",
    "language": "English",
    "location": "",
-   "title": "Christmas Eve – Children's Christmas Pageant",
+   "title": "Children's Christmas Pageant",
    "action": "add"
   },
   {
@@ -255,7 +214,7 @@
    "time": "17:00",
    "language": "English",
    "location": "",
-   "title": "Christmas Eve – Children's Mass",
+   "title": "Children's Christmas Mass",
    "action": "add"
   },
   {
@@ -284,60 +243,39 @@
    "location": "",
    "title": "Christmas Day Mass",
    "action": "add"
+  },
+  {
+   "type": "Other",
+   "date": "2027-01-09",
+   "time": "09:00",
+   "language": "English",
+   "location": "Main Church",
+   "title": "Infant Baptism",
+   "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": true,
+ "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [
   "09:00"
  ],
  "notes": [
-  "On public holidays the usual weekday Masses are replaced by a single morning Mass."
+  "On public holidays the weekday Masses give way to the public holiday Mass.",
+  "The 9am Christmas Day Mass is not the usual Sunday schedule."
  ],
  "info": {
-  "adoration": "Adoration Room open daily 8:00am-9:30pm.",
-  "confession": "30 minutes before the Saturday Sunset Mass and before every Sunday Mass; confessions stop when Mass begins.",
-  "office_hours": "Mon-Fri 8:00am-4:00pm; Sat 8:00am-12:00pm; Sun 8:00am-1:00pm; closed on public holidays.",
+  "adoration": "Adoration Room open daily 8am-9.30pm. Holy Hour: Fri 4 Dec, 7pm, Main Church, Mass followed by Eucharistic adoration.",
+  "office_hours": "Parish office: Monday-Friday 8am-4pm; Saturday 8am-12nn; Sunday 8am-1pm; closed on public holidays.",
   "good_to_know": [
-   "Oratory open Mon-Fri 10:00am-10:00pm, Sat & Sun 1:00pm-10:00pm.",
-   "Chapel open Mon-Fri 8:00am-6:30pm and Sat 8:00am-12:00pm; closed Sundays and public holidays.",
-   "Columbarium open daily 8:00am-9:30pm."
+   "Chapel open Monday-Friday 8am-6.30pm and Saturday 8am-12nn; closed Sundays and public holidays.",
+   "Oratory open Monday-Friday 10am-10pm, Saturday-Sunday 1pm-10pm.",
+   "Columbarium open daily 8am-9.30pm.",
+   "7Gifts Bookshop open Tuesday and Thursday 8am-12nn, Saturday 4pm-6.15pm, Sunday 8am-12.45pm and 4.30-6.15pm."
   ]
  },
- "events": [
-  {
-   "date": "2026-11-24",
-   "time": "19:30",
-   "title": "Monthly Pieta Session (for bereaved parents)",
-   "text": "Held on Zoom, 7:30pm-9:15pm, for any parent who has lost a child. Email pieta.singapore@gmail.com for the Zoom link."
-  },
-  {
-   "date": "2026-11-27",
-   "time": "19:45",
-   "title": "CHS Youth Session",
-   "text": "Youth Room #02-01; theme is Paraliturgy. All youths aged 13 and above are welcome."
-  },
-  {
-   "date": "2026-11-27",
-   "time": "20:00",
-   "title": "Night Prayer (Compline) with talk on single-parent families",
-   "text": "On Zoom, 8:00pm-9:00pm, with a talk by Pamela Tan of Beginning Experience on Pope Leo's December prayer intention. Meeting ID 847 2766 8552, passcode COMPLINE."
-  },
-  {
-   "date": "2026-11-28",
-   "time": "13:30",
-   "title": "Surviving the Holidays Talk and Advent Wreath Making",
-   "text": "1:30pm-5:30pm in Room 03-13 for separated or divorced individuals, single parents and their children, with Christmas cookie decorating for children. Registration closes 22 November 2026."
-  },
-  {
-   "date": "2026-12-12",
-   "time": "14:00",
-   "title": "Parish Day of Recollection – The Light Shines in the Darkness",
-   "text": "2:00pm-4:30pm in the Chapel, led by Monsignor Marinko Antalović, followed by Sunset Mass and fellowship. Register at https://bit.ly/chs_advent."
-  }
- ],
+ "events": [],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611201336_CHS_Bulletin%2021%20-%2022%20November%202026.pdf?alt=media&token=274fcdfe-3df1-455f-b990-b64aa680c0d9",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611270930_CHS_Interactive%20Bulletin%2020261129.pdf?alt=media&token=082eca55-e8e9-4455-b006-1069a97c5262",
+  "date": "2026-11-27"
  },
  "disputes": [],
  "vs_mycatholic": {

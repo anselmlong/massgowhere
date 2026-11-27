@@ -1,6 +1,6 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-26T12:31+08:00",
+ "fetchedAt": "2026-11-27T12:31+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
@@ -39,16 +39,16 @@
   },
   "6": {
    "from": "myCatholicSG",
-   "title": "Our Lord Jesus Christ,King Of The Universe",
-   "date": "2026-11-19",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611191824_Our_Lord%20Jesus%20Christ%2CKing%20Of%20The%20Universe.pdf?alt=media&token=aaa61bc3-cd21-4951-bd6a-3c76acdc34e3",
+   "title": "1st Sunday Of Advent",
+   "date": "2026-11-26",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F6%2Fpublic%2Fpdf%2F2611261931_1st_Sunday%20Of%20Advent.pdf?alt=media&token=44515e71-e053-41b5-96c6-35ec420d3a1e",
    "page": "https://mycatholic.sg/bulletin/holyfamily"
   },
   "7": {
    "from": "myCatholicSG",
-   "title": "Thirty Fourth Sunday in Ordinary Time",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611201336_CHS_Bulletin%2021%20-%2022%20November%202026.pdf?alt=media&token=274fcdfe-3df1-455f-b990-b64aa680c0d9",
+   "title": "1st Sunday of Advent",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F7%2Fpublic%2Fpdf%2F2611270930_CHS_Interactive%20Bulletin%2020261129.pdf?alt=media&token=082eca55-e8e9-4455-b006-1069a97c5262",
    "page": "https://mycatholic.sg/bulletin/holyspirit"
   },
   "8": {
@@ -131,15 +131,15 @@
   "19": {
    "from": "website",
    "title": "",
-   "date": "2026-11-22",
-   "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_22.pdf",
+   "date": "2026-11-29",
+   "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_29.pdf",
    "page": "https://saint-anthony.org/bulletin/"
   },
   "20": {
    "from": "myCatholicSG",
-   "title": "堂区周报 2026年11月22日 - 2026年11月28日",
-   "date": "2026-11-20",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611201434_52_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E4%B8%BB%E6%97%A5%EF%BC%88%E5%9F%BA%E7%9D%A3%E6%99%AE%E4%B8%96%E5%90%9B%E7%8E%8B%E8%8A%82-11%E6%9C%8822%E6%97%A5%EF%BC%89.pdf?alt=media&token=9c3c6e55-153e-49ff-affc-f2b2aaa8814f",
+   "title": "堂区周报 2026年11月29日 - 2026年12月5日",
+   "date": "2026-11-27",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611271144_01_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B0%86%E4%B8%B4%E6%9C%9F%E7%AC%AC%E4%B8%80%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%8829%E6%97%A5%EF%BC%89.pdf?alt=media&token=3b7be397-d66e-4804-8886-eef68176abd4",
    "page": "https://mycatholic.sg/bulletin/stbernadette"
   },
   "21": {
@@ -181,7 +181,7 @@
   "26": {
    "from": "website",
    "title": "",
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "url": "https://www.stmary.sg/announcements",
    "page": "https://www.stmary.sg/announcements",
    "kind": "announcements"

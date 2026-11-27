@@ -2,9 +2,9 @@
  "id": 20,
  "name": "Church of St Bernadette",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611201434_52_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E4%B8%BB%E6%97%A5%EF%BC%88%E5%9F%BA%E7%9D%A3%E6%99%AE%E4%B8%96%E5%90%9B%E7%8E%8B%E8%8A%82-11%E6%9C%8822%E6%97%A5%EF%BC%89.pdf?alt=media&token=9c3c6e55-153e-49ff-affc-f2b2aaa8814f"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611271144_01_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B0%86%E4%B8%B4%E6%9C%9F%E7%AC%AC%E4%B8%80%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%8829%E6%97%A5%EF%BC%89.pdf?alt=media&token=3b7be397-d66e-4804-8886-eef68176abd4"
  ],
- "fetched_at": "2026-11-20T21:02+08:00",
+ "fetched_at": "2026-11-27T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -187,16 +187,6 @@
   },
   {
    "d": 6,
-   "t": "09:00",
-   "weeks": [],
-   "except": [],
-   "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": "Public Holiday"
-  },
-  {
-   "d": 6,
    "t": "18:00",
    "weeks": [],
    "except": [],
@@ -211,41 +201,47 @@
  "public_holiday_masses": [
   "09:00"
  ],
- "notes": [
-  "The O Antiphons devotion runs from November 7/8 to December 19/20, involving a 15-minute reflection before Sunday Mass.",
-  "St. Vincent de Paul Christmas Wish Collection will be held on November 21-22 and November 28-29 outside the restaurant.",
-  "The Christmas Caroling team will perform on December 5 (Saturday) at 2:00pm and December 13 (Sunday) at 2:00pm and 3:45pm."
- ],
- "info": {
-  "office_hours": "Monday to Friday: 9:30am–6:30pm; Saturday: 9:30am–7:30pm; Sunday: 7:30am–7:30pm",
-  "good_to_know": [
-   "Media Center (Sacrament/Relics) is open Saturday: 5:00pm–7:30pm, Sunday: 8:30am–1:00pm.",
-   "St. Bernadette Exhibition Hall is open Tuesday: 4:00pm–6:00pm, Saturday: 10:00am–12:00pm, 3:30pm–5:30pm, Sunday: 9:00am–1:00pm, 3:00pm–5:00pm.",
-   "Second-hand shop is open Thursday: 10:30am–3:00pm, Saturday: 9:00am–4:00pm, and the last Sunday of the month: 9:00am–1:00pm."
-  ]
- },
+ "notes": [],
+ "info": {},
  "events": [
   {
-   "date": "2026-11-27",
-   "time": "18:30",
-   "title": "Youth Activity: Seven Miles - Fifth Mile!",
-   "text": "The Youth Office invites young people aged 15 to 35 to participate in this biennial festival. Sign up before November 25th."
+   "date": "2026-12-05",
+   "time": "",
+   "title": "Christmas Market at Media Centre",
+   "text": "Buy meaningful Christmas gifts and items at the parish Media Centre. Runs 5–6 December."
+  },
+  {
+   "date": "2026-12-05",
+   "time": "14:00",
+   "title": "Christmas caroling at Great World",
+   "text": "Church choir shares Christmas joy with the wider community."
+  },
+  {
+   "date": "2026-12-13",
+   "time": "14:00",
+   "title": "Christmas caroling at Great World",
+   "text": "Church choir shares Christmas joy with the wider community."
+  },
+  {
+   "date": "2026-12-13",
+   "time": "15:45",
+   "title": "Christmas caroling at Great World",
+   "text": "Church choir shares Christmas joy with the wider community."
+  },
+  {
+   "date": "2027-03-27",
+   "time": "",
+   "title": "Adult Confirmation preparation course",
+   "text": "Registration open; preparation for the sacrament on 27 March 2027. Register at https://tinyurl.com/mr3ubjsb."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611201434_52_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B8%B8%E5%B9%B4%E6%9C%9F%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E4%B8%BB%E6%97%A5%EF%BC%88%E5%9F%BA%E7%9D%A3%E6%99%AE%E4%B8%96%E5%90%9B%E7%8E%8B%E8%8A%82-11%E6%9C%8822%E6%97%A5%EF%BC%89.pdf?alt=media&token=9c3c6e55-153e-49ff-affc-f2b2aaa8814f",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F20%2Fpublic%2Fpdf%2F2611271144_01_%E5%A0%82%E5%8C%BA%E5%91%A8%E6%8A%A5%20-%20%E5%B0%86%E4%B8%B4%E6%9C%9F%E7%AC%AC%E4%B8%80%E4%B8%BB%E6%97%A5%20%EF%BC%8811%E6%9C%8829%E6%97%A5%EF%BC%89.pdf?alt=media&token=3b7be397-d66e-4804-8886-eef68176abd4",
+  "date": "2026-11-27"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
-   [
-    "Mass",
-    "Saturday",
-    "09:00",
-    [],
-    []
-   ],
    [
     "Mass",
     "Sunday",

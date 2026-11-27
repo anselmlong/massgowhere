@@ -2,9 +2,9 @@
  "id": 19,
  "name": "Church of St Anthony",
  "source_urls": [
-  "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_22.pdf"
+  "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_29.pdf"
  ],
- "fetched_at": "2026-11-20T12:32+08:00",
+ "fetched_at": "2026-11-27T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -137,12 +137,12 @@
  ],
  "dated": [
   {
-   "type": "Mass",
-   "date": "2026-11-21",
-   "time": "19:30",
-   "language": "Tagalog",
-   "location": "",
-   "title": "",
+   "type": "Devotion",
+   "date": "2026-12-01",
+   "time": "20:00",
+   "language": "English",
+   "location": "St Agnes",
+   "title": "Divine Mercy Devotion",
    "action": "add"
   },
   {
@@ -171,16 +171,48 @@
    "location": "",
    "title": "",
    "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-15",
+   "time": "20:00",
+   "language": "English",
+   "location": "",
+   "title": "Advent reconciliation service at our parish",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-26",
+   "time": "19:30",
+   "language": "Tagalog",
+   "location": "",
+   "title": "",
+   "action": "add"
   }
  ],
  "no_weekday_mass_on_public_holidays": false,
  "public_holiday_masses": [],
  "notes": [],
- "info": {},
- "events": [],
+ "info": {
+  "confession": "Confessions: 15 mins before Mass.",
+  "devotions": [
+   "Devotion to St Anthony: Tuesday after 6.30pm Mass.",
+   "Devotion to the Sacred Heart of Jesus: First Friday, after the 6.30pm Mass."
+  ],
+  "office_hours": "Monday to Saturday: 9am to 5pm. Sunday: 9am to 1pm. Public Holidays: Closed."
+ },
+ "events": [
+  {
+   "date": "2026-12-05",
+   "time": "09:00",
+   "title": "Church Cleaning Day",
+   "text": "The Church is inviting parishioners to join the ministries to clean our parish. Gather at the Auditorium at Level 1 for a briefing at 9am before we start cleaning. Please bring along cleaning materials as we may not have sufficient."
+  }
+ ],
  "bulletin": {
-  "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_22.pdf",
-  "date": "2026-11-22"
+  "url": "https://saint-anthony.org/wp-content/uploads/2026/11/Voice-2026_11_29.pdf",
+  "date": "2026-11-29"
  },
  "disputes": [],
  "vs_mycatholic": {
