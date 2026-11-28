@@ -6732,6 +6732,15 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "New Year' Eve"
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "13:15",
+"lang": "English",
+"loc": "JM Beurel Centre Level 1",
+"note": ""
 }
 ],
 "3": [
@@ -7836,6 +7845,152 @@
 "lang": "Mandarin",
 "loc": "Church - 4th Floor Big Room",
 "note": ""
+}
+],
+"7": [
+{
+"k": "r",
+"date": "2026-12-04",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "CHAPEL",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-03",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "CHAPEL",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-12-04",
+"type": "Mass",
+"t": "19:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Mass followed by Parish Holy Hour"
+},
+{
+"k": "o",
+"date": "2026-12-15",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "o",
+"date": "2026-12-08",
+"type": "Confession",
+"t": "10:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-12-08",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "o",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "17:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Children's Mass"
+},
+{
+"k": "o",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "o",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "o",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-03",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "07:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
 }
 ],
 "8": [
@@ -9067,13 +9222,76 @@
 "note": "Christmas Eve"
 },
 {
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "12:15",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "a",
 "date": "2027-01-01",
 "type": "Mass",
 "t": "08:00",
 "lang": "Mandarin",
 "loc": "Main Church",
-"note": ""
+"note": "New Year"
 },
 {
 "k": "a",
@@ -9082,7 +9300,7 @@
 "t": "12:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christmas Day"
+"note": "Christmas · Christmas Day"
 },
 {
 "k": "a",
@@ -9091,7 +9309,7 @@
 "t": "17:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Christmas Day"
+"note": "Christmas · Christmas Day"
 },
 {
 "k": "a",
@@ -9118,7 +9336,7 @@
 "t": "10:00",
 "lang": "English",
 "loc": "Main Church",
-"note": ""
+"note": "New Year"
 },
 {
 "k": "a",
@@ -9130,11 +9348,29 @@
 "note": ""
 },
 {
-"k": "r",
-"date": "2027-01-01",
+"k": "a",
+"date": "2026-12-25",
 "type": "Mass",
-"t": "18:30",
+"t": "08:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "10:00",
 "lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "20:00",
+"lang": "Mandarin",
 "loc": "Main Church",
 "note": ""
 }
@@ -10016,15 +10252,6 @@
 },
 {
 "k": "r",
-"date": "2026-11-26",
-"type": "Mass",
-"t": "18:30",
-"lang": "English",
-"loc": "Main Church",
-"note": ""
-},
-{
-"k": "r",
 "date": "2026-11-27",
 "type": "Mass",
 "t": "20:00",
@@ -10042,13 +10269,49 @@
 "note": ""
 },
 {
-"k": "a",
-"date": "2026-11-26",
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
 "type": "Mass",
 "t": "20:00",
 "lang": "English",
 "loc": "Main Church",
-"note": "Triduum Mass by Fr Timothy Soo. NO 6.30pm Mass"
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
 },
 {
 "k": "a",
@@ -10067,6 +10330,197 @@
 "lang": "English",
 "loc": "Main Church",
 "note": "Feast Day Mass celebrated by His Eminence Cardinal William Goh"
+},
+{
+"k": "a",
+"date": "2026-12-16",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "17:30",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Children's Pageant followed by Vigil Mass, The Nativity of the Lord"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · @8.30pm, there will be carolling before Mass"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:59",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · @11.30pm, there will be carolling before Mass"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas · Last mass for the day. No evening mass."
+},
+{
+"k": "a",
+"date": "2026-12-31",
+"type": "Mass",
+"t": "23:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Thanksgiving Mass. Reflection at 10.30pm"
+},
+{
+"k": "a",
+"date": "2027-01-01",
+"type": "Mass",
+"t": "09:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "New Year · Celebrating Mary, the Holy Mother of God. Only 1 mass as it's a Public Holiday."
+}
+],
+"24": [
+{
+"k": "r",
+"date": "2026-12-02",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-04",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-17",
+"type": "Adoration",
+"t": "20:00",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": "Holy Hour for Vocations"
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Chapel Of St Joseph",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Chapel",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-14",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Advent Penitential"
+},
+{
+"k": "a",
+"date": "2026-12-17",
+"type": "Mass",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Simbang Gabi"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "21:00",
+"lang": "Mandarin",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "23:55",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "08:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
+},
+{
+"k": "a",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": "Christmas"
 }
 ],
 "25": [
@@ -10922,6 +11376,24 @@
 "note": ""
 },
 {
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "06:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-25",
+"type": "Mass",
+"t": "18:30",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
 "k": "o",
 "date": "2026-12-25",
 "type": "Mass",
@@ -11133,6 +11605,24 @@
 "date": "2027-02-06",
 "type": "Mass",
 "t": "11:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "a",
+"date": "2026-12-14",
+"type": "Confession",
+"t": "20:00",
+"lang": "English",
+"loc": "Main Church",
+"note": ""
+},
+{
+"k": "r",
+"date": "2026-12-24",
+"type": "Mass",
+"t": "18:30",
 "lang": "English",
 "loc": "Main Church",
 "note": ""
