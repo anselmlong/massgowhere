@@ -2,9 +2,9 @@
  "id": 12,
  "name": "Church of Our Lady of Perpetual Succour",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611191925_Solemnity_of%20Christ%20the%20King%2022%20Nov%202026.pdf?alt=media&token=1220a99d-c83d-434f-b7cb-4e13d35772d6"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611280906_1st_Sunday%20of%20Advent%2029%20Nov%202026.pdf?alt=media&token=6f3e65b6-e03f-4570-8b5a-6d46e893ad1c"
  ],
- "fetched_at": "2026-11-20T12:32+08:00",
+ "fetched_at": "2026-11-28T12:33+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -272,7 +272,7 @@
    "type": "Devotion",
    "lang": "English",
    "loc": "",
-   "note": "Novena Service"
+   "note": "Novena Svc"
   },
   {
    "d": 6,
@@ -297,51 +297,6 @@
  ],
  "dated": [
   {
-   "type": "Devotion",
-   "date": "2026-11-26",
-   "time": "20:00",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "action": "add"
-  },
-  {
-   "type": "Adoration",
-   "date": "2026-11-27",
-   "time": "20:00",
-   "language": "English",
-   "location": "Adoration Room, OLPS",
-   "title": "Children's Eucharistic Adoration",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-27",
-   "time": "20:00",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-28",
-   "time": "13:00",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "action": "add"
-  },
-  {
-   "type": "Devotion",
-   "date": "2026-11-28",
-   "time": "20:00",
-   "language": "English",
-   "location": "OLPS Adoration Room",
-   "title": "Prayers for L9 Confirmation Retreat",
-   "action": "add"
-  },
-  {
    "type": "Confession",
    "date": "2026-12-10",
    "time": "10:30",
@@ -358,29 +313,60 @@
    "location": "Main Church",
    "title": "Advent Penitential Service",
    "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-15",
+   "time": "20:00",
+   "language": "Tagalog",
+   "location": "Parish Hall",
+   "title": "OLPS Filipino Community Simbang Gabi 2026",
+   "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "08:00"
  ],
  "notes": [
-  "No weekday Mass at usual times on public holidays."
+  "Weekday Mass on a Public holiday is at 08:00 only.",
+  "Adoration room is closed every Wednesday 10:00-12:00 for cleaning.",
+  "Standing along the aisles is not permitted during Mass and services."
  ],
  "info": {
-  "adoration": "Adoration room open 6:00am to 10:15pm daily (closed every Wednesday from 10:00am to 12:00 noon for cleaning).",
+  "adoration": "Adoration room open 06:00 to 22:15 daily (closed every Wednesday 10:00-12:00 for cleaning).",
   "confession": "30 mins before Weekend Mass in the Main Church.",
   "devotions": [
-   "Liturgy of the Word for Children every 2nd & 4th Sunday of the month at the 10.30am Mass.",
-   "Christian Meditation every Wed at 8pm in St John/St Luke room.",
-   "Divine Mercy Devotion every Tue at 6.45pm in the Main Church.",
-   "Rosary Prayers Mon to Fri at 5.15pm in the Main Church."
+   "Rosary Prayers: Mon to Fri at 17:15 in the Main Church.",
+   "Divine Mercy Devotion: every Tue at 18:45 in the Main Church.",
+   "Christian Meditation: every Wed at 20:00 in St John/St Luke room.",
+   "Novena Svc: Saturday at 15:30.",
+   "Liturgy of the Word for Children: every 2nd & 4th Sunday at the 10:30 Mass.",
+   "Holy Hour and Devotion to the Sacred Heart of Jesus: Friday, 4 Dec, after the 18:00 evening Mass."
+  ],
+  "good_to_know": [
+   "Weekday Mass on a Public holiday is at 08:00 only.",
+   "Standing along the aisles is not permitted during Mass and services.",
+   "Columbarium open 07:00 to 19:00 daily."
   ]
  },
- "events": [],
+ "events": [
+  {
+   "date": "2027-01-16",
+   "time": "",
+   "title": "Lead Like Jesus (LLJ)",
+   "text": "A foundational leadership module that focuses on heart-centred, transformative leadership grounded in the teachings of Jesus Christ, emphasising servant leadership, integrity, and compassion."
+  },
+  {
+   "date": "2027-01-23",
+   "time": "",
+   "title": "Lead Like Jesus (LLJ)",
+   "text": "A foundational leadership module that focuses on heart-centred, transformative leadership grounded in the teachings of Jesus Christ, emphasising servant leadership, integrity, and compassion."
+  }
+ ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611191925_Solemnity_of%20Christ%20the%20King%2022%20Nov%202026.pdf?alt=media&token=1220a99d-c83d-434f-b7cb-4e13d35772d6",
-  "date": "2026-11-19"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F12%2Fpublic%2Fpdf%2F2611280906_1st_Sunday%20of%20Advent%2029%20Nov%202026.pdf?alt=media&token=6f3e65b6-e03f-4570-8b5a-6d46e893ad1c",
+  "date": "2026-11-28"
  },
  "disputes": [],
  "vs_mycatholic": {

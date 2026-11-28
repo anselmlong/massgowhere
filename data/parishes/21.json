@@ -2,9 +2,9 @@
  "id": 21,
  "name": "Church of St Francis of Assisi",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611201635_22_Nov%202026%20-%20Yr%20A%20Jesus%20Christ%2C%20King%20of%20the%20Universe%20Chinese.pdf?alt=media&token=3e322a3f-ad15-4145-bae3-6107ade13d79"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611271642_Nov_29%202026%20-%201st%20Sunday%20of%20Advent%20(Year%20B).pdf?alt=media&token=ed2f9003-f1fe-401f-b97e-57db7478ed4d"
  ],
- "fetched_at": "2026-11-20T21:06+08:00",
+ "fetched_at": "2026-11-28T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
   },
   {
@@ -37,8 +37,20 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "14:00",
+   "weeks": [
+    3
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Tagalog",
+   "loc": "Church of St Francis of Assisi",
+   "note": "3rd Sunday"
   },
   {
    "d": 0,
@@ -46,9 +58,43 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "Chinese",
-   "loc": "",
+   "lang": "Mandarin",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 0,
+   "t": "19:30",
+   "weeks": [],
+   "except": [
+    4
+   ],
+   "type": "Mass",
+   "lang": "Tamil",
+   "loc": "Church of St Francis of Assisi",
+   "note": "Except 4th Sunday"
+  },
+  {
+   "d": 0,
+   "t": "19:30",
+   "weeks": [
+    4
+   ],
+   "except": [],
+   "type": "Mass",
+   "lang": "Malayalam",
+   "loc": "Church of St Francis of Assisi",
+   "note": "4th Sunday"
+  },
+  {
+   "d": 0,
+   "t": "20:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Family Rosary Group"
   },
   {
    "d": 1,
@@ -57,8 +103,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 1,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Church of St Francis of Assisi",
+   "note": "Before daily evening Mass"
   },
   {
    "d": 1,
@@ -67,8 +123,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 1,
+   "t": "20:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Family Rosary Group"
   },
   {
    "d": 2,
@@ -77,8 +143,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 2,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Church of St Francis of Assisi",
+   "note": "Before daily evening Mass"
   },
   {
    "d": 2,
@@ -87,8 +163,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 2,
+   "t": "20:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Family Rosary Group"
   },
   {
    "d": 3,
@@ -97,8 +183,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 3,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Church of St Francis of Assisi",
+   "note": "Before daily evening Mass"
   },
   {
    "d": 3,
@@ -107,8 +203,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 3,
+   "t": "20:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Family Rosary Group"
   },
   {
    "d": 4,
@@ -117,8 +223,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 4,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Church of St Francis of Assisi",
+   "note": "Before daily evening Mass"
   },
   {
    "d": 4,
@@ -127,8 +243,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 4,
+   "t": "20:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Family Rosary Group"
   },
   {
    "d": 5,
@@ -137,8 +263,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "17:50",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Church of St Francis of Assisi",
+   "note": "Before daily evening Mass"
   },
   {
    "d": 5,
@@ -147,8 +283,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 5,
+   "t": "20:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Family Rosary Group"
   },
   {
    "d": 6,
@@ -157,8 +303,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
+   "loc": "Church of St Francis of Assisi",
    "note": ""
+  },
+  {
+   "d": 6,
+   "t": "17:20",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Church of St Francis of Assisi",
+   "note": "Before Sunset Mass"
   },
   {
    "d": 6,
@@ -167,8 +323,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "",
-   "note": ""
+   "loc": "Church of St Francis of Assisi",
+   "note": "Sunset Mass"
   },
   {
    "d": 6,
@@ -179,107 +335,69 @@
    "except": [],
    "type": "Mass",
    "lang": "Tamil",
-   "loc": "",
-   "note": "Every fourth Saturday"
+   "loc": "Church of St Francis of Assisi",
+   "note": "4th Saturday"
+  },
+  {
+   "d": 6,
+   "t": "20:15",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "Zoom",
+   "note": "Family Rosary Group"
   }
  ],
  "dated": [],
  "no_weekday_mass_on_public_holidays": true,
- "public_holiday_masses": [
-  "06:30"
- ],
+ "public_holiday_masses": [],
  "notes": [
-  "No evening Mass on public holidays.",
-  "The Blessed Sacrament room is permanently closed from 16 Nov 2026."
+  "Church gate is closed on public holidays.",
+  "Adoration Room is permanently closed from 16 Nov 2026."
  ],
  "info": {
-  "adoration": "The Blessed Sacrament room is permanently closed from 16 Nov 2026. The church is open daily 06:30–21:00 except public holidays for prayer.",
-  "confession": "Confession is 15 minutes before Mass or by appointment.",
+  "adoration": "The Adoration Room is permanently closed from 16 Nov 2026. Personal prayers are welcome in the Church, open daily 6.30am to 9.00pm except public holidays.",
+  "confession": "Confession is 15 minutes before Weekend Masses; weekdays by appointment only.",
   "devotions": [
-   "Holy Mercy Prayer Group and Purgatorial Souls Prayer Group: All Souls' remembrance after Chinese Mass every Sunday in November at the basement columbarium.",
-   "Family Rosary Novena: 20:00 online, 17–25 Nov and 27 Nov."
+   "Daily rosary over Zoom at 8.15pm.",
+   "Rosary at 5.50pm before daily evening Mass.",
+   "Rosary at 5.20pm before Sunset Mass.",
+   "Friday Divine Mercy devotion after evening Mass; no devotion from 11 Dec onwards, resumes 8 Jan 2027."
   ],
-  "office_hours": "Parish office: 62640078. Church doors open daily 06:00–22:00; on Sundays they close after the 19:30 Mass. Closed on public holidays.",
+  "office_hours": "Parish Office: 62640078",
   "good_to_know": [
-   "Anointing of the Sick: contact the parish office before surgery; major surgery can be arranged at home, minor in church.",
-   "Infant Baptism: application form at www.csfa.sg. Date: 9 Jan 2027 (Saturday).",
-   "Marriage: enquire at the parish office at least 1 year in advance.",
-   "Funerals: contact the parish office before arranging with a funeral director."
+   "Church gate hours are given as 6am to 10pm (Sundays closed after 7.30pm Mass) and also as 6.30am to 9.00pm except public holidays; check with the parish.",
+   "Infant Baptism next schedule on Sat 9 Jan 2027 at 10am.",
+   "West District Advent Penitential Service at this church on 14 Dec at 8pm."
   ]
  },
  "events": [
   {
-   "date": "2026-11-26",
-   "time": "20:00",
-   "title": "Advent reflection (English)",
-   "text": "Every Thursday from 26 Nov, 20:00–21:30, Level 4 St Thomas Aquinas Room. Reflection handbook provided."
-  },
-  {
    "date": "2026-11-28",
-   "time": "10:00",
-   "title": "Chinese Holy Hour",
-   "text": "10:00–11:00 at St Joseph's Church (Bukit Timah) small chapel. Tea after."
-  },
-  {
-   "date": "2026-12-05",
-   "time": "10:00",
-   "title": "Advent Chinese confession",
-   "text": "10:00–11:30 at St Joseph's Church (Victoria Street)."
-  },
-  {
-   "date": "2026-12-11",
-   "time": "20:00",
-   "title": "West District confession",
-   "text": "At Church of the Holy Eucharist."
-  },
-  {
-   "date": "2026-12-14",
-   "time": "20:00",
-   "title": "West District confession",
-   "text": "At Church of St Francis of Assisi."
-  },
-  {
-   "date": "2026-12-16",
-   "time": "20:00",
-   "title": "West District confession",
-   "text": "At Church of Our Lady Queen of Angels."
-  },
-  {
-   "date": "2026-12-17",
-   "time": "20:00",
-   "title": "West District confession",
-   "text": "At Church of St Ignatius."
-  },
-  {
-   "date": "2026-12-18",
-   "time": "20:00",
-   "title": "West District confession",
-   "text": "At Church of the Holy Cross."
-  },
-  {
-   "date": "2027-01-16",
-   "time": "15:00",
-   "title": "Chinese Children's Catechism Class 2027",
-   "text": "Saturdays 15:00–16:15 at Church of the Holy Cross (in person) / Zoom. For children born in 2020 or 2021. Free, donations welcome. Register: 85012959 / 81136087."
+   "time": "",
+   "title": "SFA Youths Weekly Session",
+   "text": "15:00-17:30"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611201635_22_Nov%202026%20-%20Yr%20A%20Jesus%20Christ%2C%20King%20of%20the%20Universe%20Chinese.pdf?alt=media&token=3e322a3f-ad15-4145-bae3-6107ade13d79",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F21%2Fpublic%2Fpdf%2F2611271642_Nov_29%202026%20-%201st%20Sunday%20of%20Advent%20(Year%20B).pdf?alt=media&token=ed2f9003-f1fe-401f-b97e-57db7478ed4d",
+  "date": "2026-11-27"
  },
  "disputes": [],
  "vs_mycatholic": {
-  "only_on_parish_site": [],
-  "only_on_mycatholic": [
+  "only_on_parish_site": [
    [
     "Mass",
     "Sunday",
-    "14:00",
+    "19:30",
+    [],
     [
-     3
-    ],
-    []
-   ],
+     4
+    ]
+   ]
+  ],
+  "only_on_mycatholic": [
    [
     "Mass",
     "Sunday",
@@ -304,15 +422,6 @@
     "19:30",
     [
      3
-    ],
-    []
-   ],
-   [
-    "Mass",
-    "Sunday",
-    "19:30",
-    [
-     4
     ],
     []
    ],

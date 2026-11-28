@@ -2,9 +2,9 @@
  "id": 27,
  "name": "Church of St Michael",
  "source_urls": [
-  "https://sh1.sendinblue.com/mk/sc/Li5oK0USAiQW4WKW46Q5u_07WNeK3evcT-UkNaKsRi2t9rkXa19YN1sjRCHuKlSqow0QnQMu6uaJC5q0MPE00bOXfs-Bm4U?t=1795228604626"
+  "https://sh1.sendinblue.com/mk/sc/PwA0LmFrd2ZLtNm4W-3UoLylYqBabqDmWhqLvz23jkF5I7wBLrIrtpBR9aqJ0WZ3MUdB2O8FdzHUxd0pdSPE6ZDzXbKgQD0?t=1795791220616"
  ],
- "fetched_at": "2026-11-21T12:33+08:00",
+ "fetched_at": "2026-11-28T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -213,15 +213,6 @@
  ],
  "dated": [
   {
-   "type": "Devotion",
-   "date": "2026-11-21",
-   "time": "20:00",
-   "language": "English",
-   "location": "Worship Hall",
-   "title": "Encounter Praise and Worship",
-   "action": "add"
-  },
-  {
    "type": "Adoration",
    "date": "2026-12-04",
    "time": "19:00",
@@ -231,77 +222,72 @@
    "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "07:30"
  ],
  "notes": [
-  "When a public holiday falls on a Sunday, the holiday is observed on the following Monday."
+  "When a public holiday falls on a Sunday, it is observed on the following Monday."
  ],
  "info": {
-  "adoration": "Holy Hour: Friday 4 December 2026, 7pm, Worship Hall.",
   "confession": "30 minutes before the weekend Masses: Saturdays 5pm; Sundays 9am, 11am and 5pm.",
   "devotions": [
-   "Chaplet of Divine Mercy: Tuesdays after the 6pm Mass, Worship Hall (from 3 November 2026)"
-  ],
-  "good_to_know": [
-   "Church of St Michael, 17 St Michael's Road, Singapore 327976.",
-   "Parish contact: 6291 9272, csm.secretariat@catholic.org.sg."
+   "Chaplet of Divine Mercy: Tuesdays after the 6pm Mass, Worship Hall"
   ]
  },
  "events": [
   {
-   "date": "2026-11-26",
-   "time": "20:00",
-   "title": "RCIA: God's gift of healing (Anointing and Reconciliation)",
-   "text": "St Michael's Room, CSM, 8pm. Open to any Catholic who wants to rediscover the faith; just drop by."
-  },
-  {
    "date": "2026-12-02",
    "time": "09:00",
    "title": "CSM Workout & Breakfast",
-   "text": "9am to 11am at Church of St Michael, with KWSC @ St. George. For older adults above 60 living in St. George's and St. Michael's estates."
+   "text": "At Church of St Michael, 9am to 11am, with KWSC @ St. George. Open to older adults above 60 staying in St. George's and St. Michael's estate."
   },
   {
    "date": "2026-12-03",
    "time": "20:00",
-   "title": "RCIA: The Call to Love (Marriage and the Priesthood)",
-   "text": "St Michael's Room, CSM, 8pm. Open to any Catholic who wants to rediscover the faith; just drop by."
+   "title": "RCIA session: The Call to Love (Marriage and the Priesthood)",
+   "text": "At St Michael's Room in CSM, 8pm. An open invitation to any Catholic who wants to rediscover the faith; just drop by."
   },
   {
    "date": "2026-12-10",
    "time": "20:00",
-   "title": "RCIA: Catholicism and Christianity",
-   "text": "St Michael's Room, CSM, 8pm. Open to any Catholic who wants to rediscover the faith; just drop by."
+   "title": "RCIA session: Catholicism and Christianity",
+   "text": "At St Michael's Room in CSM, 8pm. An open invitation to any Catholic who wants to rediscover the faith; just drop by."
   },
   {
    "date": "2026-12-16",
    "time": "09:00",
    "title": "CSM Workout & Breakfast",
-   "text": "9am to 11am at Church of St Michael, with KWSC @ St. George. For older adults above 60 living in St. George's and St. Michael's estates."
+   "text": "At Church of St Michael, 9am to 11am, with KWSC @ St. George. Open to older adults above 60 staying in St. George's and St. Michael's estate."
   },
   {
    "date": "2026-12-17",
    "time": "20:00",
-   "title": "RCIA: The Communion of Saints",
-   "text": "St Michael's Room, CSM, 8pm. Open to any Catholic who wants to rediscover the faith; just drop by."
+   "title": "RCIA session: The Communion of Saints",
+   "text": "At St Michael's Room in CSM, 8pm. An open invitation to any Catholic who wants to rediscover the faith; just drop by."
   },
   {
    "date": "2026-12-30",
    "time": "09:00",
    "title": "CSM Workout & Breakfast",
-   "text": "9am to 11am at Church of St Michael, with KWSC @ St. George. For older adults above 60 living in St. George's and St. Michael's estates."
+   "text": "At Church of St Michael, 9am to 11am, with KWSC @ St. George. Open to older adults above 60 staying in St. George's and St. Michael's estate."
   },
   {
-   "date": "2027-05-22",
-   "time": "",
-   "title": "Holy Land Mission 2027",
-   "text": "22-30 May 2027 pilgrimage; answer the call to serve. Details and sign-up at www.gebirah.org/holy-land."
+   "date": "2027-01-16",
+   "time": "09:00",
+   "title": "Lead Like Jesus (session 1)",
+   "text": "At Agape Village, 9am to 5.30pm. A foundational leadership module on heart-centred, servant leadership grounded in the teachings of Jesus Christ. Register at www.catholicleader.sg."
+  },
+  {
+   "date": "2027-01-23",
+   "time": "09:00",
+   "title": "Lead Like Jesus (session 2)",
+   "text": "At Agape Village, 9am to 5.30pm. A foundational leadership module on heart-centred, servant leadership grounded in the teachings of Jesus Christ. Register at www.catholicleader.sg."
   }
  ],
  "bulletin": {
-  "url": "https://sh1.sendinblue.com/mk/sc/Li5oK0USAiQW4WKW46Q5u_07WNeK3evcT-UkNaKsRi2t9rkXa19YN1sjRCHuKlSqow0QnQMu6uaJC5q0MPE00bOXfs-Bm4U?t=1795228604626",
-  "date": "2026-11-22"
+  "url": "https://sh1.sendinblue.com/mk/sc/PwA0LmFrd2ZLtNm4W-3UoLylYqBabqDmWhqLvz23jkF5I7wBLrIrtpBR9aqJ0WZ3MUdB2O8FdzHUxd0pdSPE6ZDzXbKgQD0?t=1795791220616",
+  "date": "2026-11-29"
  },
  "disputes": [],
  "vs_mycatholic": {

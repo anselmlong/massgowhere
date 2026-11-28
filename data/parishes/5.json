@@ -2,9 +2,9 @@
  "id": 5,
  "name": "Church of the Holy Cross",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611202001_English_Bulletin%2022%20Nov.pdf?alt=media&token=c68f7d42-495b-4637-972d-b6efa312ec03"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611280947_English_Bulletin%2029%20Nov.pdf?alt=media&token=a10e591e-7fc8-4730-a4a0-a2056a34c304"
  ],
- "fetched_at": "2026-11-20T21:04+08:00",
+ "fetched_at": "2026-11-28T12:32+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -17,7 +17,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -27,7 +27,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -37,7 +37,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -47,7 +47,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -57,8 +57,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lauds (Morning Prayer)"
   },
   {
    "d": 1,
@@ -67,7 +67,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -77,8 +77,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lunchtime Mass"
   },
   {
    "d": 1,
@@ -87,8 +87,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "with Vespers"
   },
   {
    "d": 2,
@@ -97,8 +97,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lauds (Morning Prayer)"
   },
   {
    "d": 2,
@@ -107,7 +107,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -117,8 +117,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lunchtime Mass"
   },
   {
    "d": 2,
@@ -127,8 +127,18 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "with Vespers"
+  },
+  {
+   "d": 2,
+   "t": "20:00",
+   "weeks": [],
+   "except": [],
+   "type": "Devotion",
+   "lang": "English",
+   "loc": "All Saints Hall",
+   "note": "Charismatic Renewal Movement praise and worship"
   },
   {
    "d": 3,
@@ -137,8 +147,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lauds (Morning Prayer)"
   },
   {
    "d": 3,
@@ -147,7 +157,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -157,8 +167,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lunchtime Mass"
   },
   {
    "d": 3,
@@ -167,8 +177,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "with Vespers"
   },
   {
    "d": 4,
@@ -177,8 +187,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lauds (Morning Prayer)"
   },
   {
    "d": 4,
@@ -187,7 +197,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -197,8 +207,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lunchtime Mass"
   },
   {
    "d": 4,
@@ -207,8 +217,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "with Vespers"
   },
   {
    "d": 5,
@@ -217,8 +227,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lauds (Morning Prayer)"
   },
   {
    "d": 5,
@@ -227,7 +237,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -237,8 +247,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Lunchtime Mass"
   },
   {
    "d": 5,
@@ -247,8 +257,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "with Vespers"
   },
   {
    "d": 5,
@@ -259,8 +269,8 @@
    "except": [],
    "type": "Adoration",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Holy Hour"
   },
   {
    "d": 6,
@@ -269,7 +279,7 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
+   "loc": "",
    "note": ""
   },
   {
@@ -279,8 +289,8 @@
    "except": [],
    "type": "Devotion",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Novena Devotion"
   },
   {
    "d": 6,
@@ -289,8 +299,8 @@
    "except": [],
    "type": "Mass",
    "lang": "English",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Sunset Mass"
   },
   {
    "d": 6,
@@ -299,79 +309,226 @@
    "except": [],
    "type": "Mass",
    "lang": "Mandarin",
-   "loc": "Church of the Holy Cross",
-   "note": ""
+   "loc": "",
+   "note": "Sunset Mass"
   }
  ],
  "dated": [
   {
-   "action": "add",
-   "date": "2026-11-26",
-   "language": "English",
-   "location": "Zoom",
+   "type": "Confession",
+   "date": "2026-12-11",
    "time": "20:00",
-   "title": "Parish Rosary",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-11-27",
    "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "20:00",
-   "title": "Prayer for All Departed Souls",
-   "type": "Devotion"
-  },
-  {
-   "action": "add",
-   "date": "2026-12-04",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "20:00",
-   "title": "Parish Holy Hour",
-   "type": "Adoration"
-  },
-  {
-   "action": "add",
-   "date": "2026-12-18",
-   "language": "English",
-   "location": "Church of the Holy Cross",
-   "time": "20:00",
+   "location": "Church of the Blessed Sacrament",
    "title": "Advent Penitential Service",
-   "type": "Confession"
+   "action": "add"
+  },
+  {
+   "type": "Devotion",
+   "date": "2026-12-12",
+   "time": "13:30",
+   "language": "English",
+   "location": "Church of Our Lady of Lourdes",
+   "title": "Prolife Rosary",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-12",
+   "time": "14:00",
+   "language": "English",
+   "location": "Church of Our Lady of Lourdes",
+   "title": "Our Lady of Guadalupe Feast Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-14",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Francis of Assisi",
+   "title": "Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-16",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Mary of the Angels",
+   "title": "Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Confession",
+   "date": "2026-12-17",
+   "time": "20:00",
+   "language": "English",
+   "location": "Church of St Ignatius",
+   "title": "Advent Penitential Service",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-24",
+   "time": "19:00",
+   "language": "Mandarin",
+   "location": "",
+   "title": "Christmas Eve Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-24",
+   "time": "21:30",
+   "language": "English",
+   "location": "",
+   "title": "Christmas Eve Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "07:30",
+   "language": "English",
+   "location": "",
+   "title": "Christmas Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "09:30",
+   "language": "English",
+   "location": "",
+   "title": "Christmas Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "17:00",
+   "language": "English",
+   "location": "",
+   "title": "Christmas Day Mass",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-25",
+   "time": "12:15",
+   "language": "English",
+   "location": "",
+   "title": "No Noon Mass",
+   "action": "cancel"
+  },
+  {
+   "type": "Mass",
+   "date": "2026-12-31",
+   "time": "18:00",
+   "language": "English",
+   "location": "",
+   "title": "Year-End Thanksgiving Mass, followed by Year End Party",
+   "action": "add"
+  },
+  {
+   "type": "Mass",
+   "date": "2027-01-01",
+   "time": "07:30",
+   "language": "English",
+   "location": "",
+   "title": "Solemnity of Mary, the Holy Mother of God",
+   "action": "add"
   }
  ],
- "no_weekday_mass_on_public_holidays": false,
+ "no_weekday_mass_on_public_holidays": true,
  "public_holiday_masses": [
   "07:30"
  ],
- "notes": [],
+ "notes": [
+  "No weekday Masses on public holidays."
+ ],
  "info": {
-  "adoration": "Adoration Room open daily until 22:00."
+  "adoration": "Adoration Room open daily until 10pm. Holy Hour: every 1st Friday at 8pm.",
+  "devotions": [
+   "Novena Devotion: Saturdays 3.30pm",
+   "Charismatic Renewal Movement praise and worship: Tuesdays 8pm, All Saints Hall"
+  ],
+  "good_to_know": [
+   "Parish secretariat: 6777 5858, chc.secretariat@catholic.org.sg"
+  ]
  },
  "events": [
   {
    "date": "2026-11-28",
-   "time": "13:30",
-   "title": "Conversations That Matter: When Your Teen Questions Their Sexuality",
-   "text": "Conversations That Matter: When Your Teen Questions Their Sexuality. Saturday 28 Nov 2026, 1.30pm - 4pm, Church of the Holy Cross (Auditorium). $20 for 1 pax | $35 for 2 pax. Join Fr David Garcia, OP and psychologist Nicholas Gabriel Lim. Register: familylife.sg/CTM_B."
+   "time": "10:00",
+   "title": "OYP Seeds of Growth (Session 1)",
+   "text": "For A-level/IB students and graduating secondary students entering JC or IB: prayer, sharing and fellowship at L8, Catholic Centre, 55 Waterloo Street. Sign up at tinyurl.com/OYPSOGNOV26."
+  },
+  {
+   "date": "2026-12-03",
+   "time": "19:30",
+   "title": "Faith Enrichment – RCIA: The Sacraments and their Liturgy",
+   "text": "Thursdays 7.30-9.30pm at All Saints Hall. Pre-registration is not required; all are welcome."
+  },
+  {
+   "date": "2026-12-04",
+   "time": "14:00",
+   "title": "OYP Seeds of Growth (Session 2)",
+   "text": "Second session for A-level/IB and graduating secondary students at L8, Catholic Centre, 55 Waterloo Street. Sign up at tinyurl.com/OYPSOGNOV26."
+  },
+  {
+   "date": "2026-12-05",
+   "time": "10:30",
+   "title": "OYP NS Community Outreach",
+   "text": "Morning of fellowship, worship and prayer for National Servicemen at Catholic Centre Level 8. Register at tinyurl.com/CAYADECOUTREACH."
+  },
+  {
+   "date": "2026-12-06",
+   "time": "13:00",
+   "title": "Ballroom Dancing Practice",
+   "text": "1-2pm at the Church Foyer, to prepare for the Year-End Thanksgiving Celebration. Register at tinyurl.com/CHC-BALLROOM-DANCING."
   },
   {
    "date": "2026-12-06",
    "time": "14:00",
    "title": "Understanding Advent and Christmas",
-   "text": "Understanding Advent and Christmas. Sunday 6 Dec 2026, 2pm - 3.30pm. Session conducted by Fr Terence Pereira. Register: tinyurl.com/CHC-TP6DEC26."
+   "text": "2-3.30pm, a session conducted by Fr Terence Pereira. Register at tinyurl.com/CHC-TP6DEC26."
+  },
+  {
+   "date": "2026-12-10",
+   "time": "19:30",
+   "title": "Faith Enrichment – RCIA: Baptism and Confirmation",
+   "text": "Thursdays 7.30-9.30pm at All Saints Hall. Pre-registration is not required; all are welcome."
+  },
+  {
+   "date": "2026-12-17",
+   "time": "19:30",
+   "title": "Faith Enrichment – RCIA: The Eucharist",
+   "text": "Thursdays 7.30-9.30pm at All Saints Hall. Pre-registration is not required; all are welcome."
   },
   {
    "date": "2026-12-26",
    "time": "20:00",
    "title": "Christmas Carols",
-   "text": "Christmas Carols. Saturday 26 Dec 2026, 8pm, Auditorium. Register: tinyurl.com/holycross-carol or scan QR code."
+   "text": "8pm at the Auditorium. Register at tinyurl.com/holycross-carol."
+  },
+  {
+   "date": "2027-01-02",
+   "time": "11:00",
+   "title": "Catechism Ministry Briefing for Parents (Second Run)",
+   "text": "11am-12pm at the Auditorium, for parents of children aged 5-7 new to Catechism and of children/teens who attended Catechism 2026. Register at tinyurl.com/2Jan2027Briefing."
+  },
+  {
+   "date": "2027-02-21",
+   "time": "",
+   "title": "A Journey of Faith to India pilgrimage",
+   "text": "21 Feb - 2 Mar 2027, organised by the parish and led by Fr John King Bharath, following the footsteps of the Apostles and Saints. Contact Diana at 9186 0616."
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611202001_English_Bulletin%2022%20Nov.pdf?alt=media&token=c68f7d42-495b-4637-972d-b6efa312ec03",
-  "date": "2026-11-20"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F5%2Fpublic%2Fpdf%2F2611280947_English_Bulletin%2029%20Nov.pdf?alt=media&token=a10e591e-7fc8-4730-a4a0-a2056a34c304",
+  "date": "2026-11-28"
  },
  "disputes": [],
  "vs_mycatholic": {
