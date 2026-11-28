@@ -2,9 +2,9 @@
  "id": 1,
  "name": "Blessed Sacrament Church",
  "source_urls": [
-  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611211738_CHURCH_BULLETIN%20%2022%20-%2028%20NOV.pdf?alt=media&token=a5966078-cf3a-499f-9ada-0d49c5df2a6a"
+  "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611281750_Spotlight_Dec%2026.pdf?alt=media&token=08af7c6a-9523-4b54-b0d0-b9e1a490f427"
  ],
- "fetched_at": "2026-11-21T21:02+08:00",
+ "fetched_at": "2026-11-28T21:02+08:00",
  "fetch_mode": [],
  "models": [
   "deepseek/deepseek-v4.1-flash"
@@ -16,7 +16,7 @@
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "Chinese",
+   "lang": "Mandarin",
    "loc": "",
    "note": ""
   },
@@ -48,7 +48,7 @@
    ],
    "except": [],
    "type": "Mass",
-   "lang": "Indonesian",
+   "lang": "Bahasa Indonesia",
    "loc": "",
    "note": ""
   },
@@ -237,67 +237,11 @@
    "note": ""
   },
   {
-   "d": 5,
-   "t": "19:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "19:45",
-   "weeks": [
-    2
-   ],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 5,
-   "t": "20:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
    "d": 6,
    "t": "08:30",
    "weeks": [],
    "except": [],
    "type": "Mass",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "09:00",
-   "weeks": [
-    1
-   ],
-   "except": [],
-   "type": "Adoration",
-   "lang": "English",
-   "loc": "",
-   "note": ""
-  },
-  {
-   "d": 6,
-   "t": "17:00",
-   "weeks": [],
-   "except": [],
-   "type": "Devotion",
    "lang": "English",
    "loc": "",
    "note": ""
@@ -326,46 +270,38 @@
   }
  ],
  "dated": [],
- "no_weekday_mass_on_public_holidays": false,
- "public_holiday_masses": [],
+ "no_weekday_mass_on_public_holidays": true,
+ "public_holiday_masses": [
+  "08:30"
+ ],
  "notes": [],
  "info": {
-  "confession": "Confession available 15 minutes before Masses.",
-  "office_hours": "Parish Office: Tel 64740582, Opening Hours 10am-6pm."
+  "office_hours": "10am-6pm, Lunch Hours 1pm-2pm"
  },
  "events": [
   {
-   "date": "2026-11-24",
-   "time": "19:30",
-   "title": "Pieta Prayer Support for Bereaved Parents",
-   "text": "Pieta Prayer Support for Bereaved Parents"
-  },
-  {
-   "date": "2026-12-02",
-   "time": "09:00",
-   "title": "教委 2026 爱的礼物：步行祈祷 • 发现圣诞马槽",
-   "text": "教委 2026 爱的礼物：步行祈祷 • 发现圣诞马槽"
-  },
-  {
-   "date": "2026-12-04",
-   "time": "",
-   "title": "Marriage Encounter Weekend",
-   "text": "Marriage Encounter Weekend"
-  },
-  {
-   "date": "2026-12-12",
-   "time": "09:00",
-   "title": "CHARIS In Thanksgiving",
-   "text": "CHARIS In Thanksgiving"
+   "date": "2026-12-08",
+   "time": "11:30",
+   "title": "Solemnity of the Immaculate Conception",
+   "text": "Solemnity of the Immaculate Conception"
   }
  ],
  "bulletin": {
-  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611211738_CHURCH_BULLETIN%20%2022%20-%2028%20NOV.pdf?alt=media&token=a5966078-cf3a-499f-9ada-0d49c5df2a6a",
-  "date": "2026-11-21"
+  "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611281750_Spotlight_Dec%2026.pdf?alt=media&token=08af7c6a-9523-4b54-b0d0-b9e1a490f427",
+  "date": "2026-11-28"
  },
  "disputes": [],
  "vs_mycatholic": {
   "only_on_parish_site": [
+   [
+    "Mass",
+    "Saturday",
+    "19:30",
+    [
+     3
+    ],
+    []
+   ],
    [
     "Mass",
     "Sunday",
@@ -386,6 +322,13 @@
    ]
   ],
   "only_on_mycatholic": [
+   [
+    "Mass",
+    "Saturday",
+    "19:30",
+    [],
+    []
+   ],
    [
     "Mass",
     "Sunday",

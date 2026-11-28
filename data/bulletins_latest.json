@@ -1,12 +1,12 @@
 {
  "_comment": "Each parish's newest bulletin (scripts/fetch_bulletins.py): myCatholicSG's (date = posted, SGT), else the parish website's (date = written in the link or on its first page).",
- "fetchedAt": "2026-11-28T12:31+08:00",
+ "fetchedAt": "2026-11-28T21:01+08:00",
  "parishes": {
   "1": {
    "from": "myCatholicSG",
-   "title": "22nd Nov - 28th Nov 2026",
-   "date": "2026-11-21",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611211738_CHURCH_BULLETIN%20%2022%20-%2028%20NOV.pdf?alt=media&token=a5966078-cf3a-499f-9ada-0d49c5df2a6a",
+   "title": "29th Nov - 5th Dec 2026",
+   "date": "2026-11-28",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F1%2Fpublic%2Fpdf%2F2611281750_Spotlight_Dec%2026.pdf?alt=media&token=08af7c6a-9523-4b54-b0d0-b9e1a490f427",
    "page": "https://mycatholic.sg/bulletin/blessedsacrament"
   },
   "2": {
@@ -209,9 +209,9 @@
   },
   "30": {
    "from": "myCatholicSG",
-   "title": "SOLEMNITY OF CHRIST THE KING - 22 November 2026",
-   "date": "2026-11-22",
-   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611221729_SOLEMNITY_OF%20CHRIST%20THE%20KING%20-%2022%20November%202026.pdf?alt=media&token=9031bb40-b956-45d5-bd41-c1959d9553ad",
+   "title": "1ST SUNDAY OF ADVENT - 29 November 2026",
+   "date": "2026-11-28",
+   "url": "https://firebasestorage.googleapis.com/v0/b/mycatholicsg-prod01-sg/o/bulletin%2F30%2Fpublic%2Fpdf%2F2611281811_1ST_SUNDAY%20OF%20ADVENT%20-%2029%20November%202026.pdf?alt=media&token=1d8b71ed-475d-435c-8348-2ab2512ebb1e",
    "page": "https://mycatholic.sg/bulletin/stvincentdepaul"
   },
   "31": {
